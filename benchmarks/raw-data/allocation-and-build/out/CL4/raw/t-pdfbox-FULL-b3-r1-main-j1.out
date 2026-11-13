@@ -1,0 +1,90 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.pdfbox.benchmark.TextExtraction.extractPDFSpecSorted
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3347.278 ms/op
+# Warmup Iteration   2: 3335.158 ms/op
+# Warmup Iteration   3: 3213.247 ms/op
+# Warmup Iteration   4: 3199.372 ms/op
+# Warmup Iteration   5: 3220.367 ms/op
+Iteration   1: 3270.885 ms/op
+Iteration   2: 3301.043 ms/op
+Iteration   3: 3260.544 ms/op
+Iteration   4: 3339.776 ms/op
+Iteration   5: 3174.189 ms/op
+Iteration   6: 3309.550 ms/op
+Iteration   7: 3204.927 ms/op
+Iteration   8: 3200.272 ms/op
+Iteration   9: 3179.782 ms/op
+Iteration  10: 3234.042 ms/op
+
+Result "org.apache.pdfbox.benchmark.TextExtraction.extractPDFSpecSorted":
+  3247.501 ±(99.9%) 87.481 ms/op [Average]
+  (min, avg, max) = (3174.189, 3247.501, 3339.776), stdev = 57.863
+  CI (99.9%): [3160.020, 3334.982] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.pdfbox.benchmark.TextExtraction.extractPDFSpecUnsorted
+
+# Run progress: 50.00% complete, ETA 00:00:48
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3063.361 ms/op
+# Warmup Iteration   2: 3083.158 ms/op
+# Warmup Iteration   3: 3054.253 ms/op
+# Warmup Iteration   4: 3092.733 ms/op
+# Warmup Iteration   5: 3083.214 ms/op
+Iteration   1: 3146.320 ms/op
+Iteration   2: 3079.131 ms/op
+Iteration   3: 3122.332 ms/op
+Iteration   4: 3179.026 ms/op
+Iteration   5: 3091.684 ms/op
+Iteration   6: 3061.546 ms/op
+Iteration   7: 3102.631 ms/op
+Iteration   8: 3096.767 ms/op
+Iteration   9: 3083.242 ms/op
+Iteration  10: 3091.081 ms/op
+
+Result "org.apache.pdfbox.benchmark.TextExtraction.extractPDFSpecUnsorted":
+  3105.376 ±(99.9%) 52.762 ms/op [Average]
+  (min, avg, max) = (3061.546, 3105.376, 3179.026), stdev = 34.899
+  CI (99.9%): [3052.614, 3158.139] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:35
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                              Mode  Cnt     Score    Error  Units
+TextExtraction.extractPDFSpecSorted    avgt   10  3247.501 ± 87.481  ms/op
+TextExtraction.extractPDFSpecUnsorted  avgt   10  3105.376 ± 52.762  ms/op

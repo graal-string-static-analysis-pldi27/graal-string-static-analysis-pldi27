@@ -1,0 +1,94 @@
+# C99 campaign results  SLOT=AL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL1  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## stringbuffers  [jmh] OpenJDK stringbuffers (misc-benchmarks)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.212 [0.210,0.215] FASTER (3 keys)  alloc 4.223 [4.170,4.276] MORE (1 keys)
+  StringBuffers.appendAndToString                                        FULL 0.121 [0.117,0.124] FASTER
+  StringBuffers.substring                                                FULL 0.271 [0.265,0.280] FASTER
+  StringBuffers.toStringComplex                                          FULL 0.293 [0.289,0.299] FASTER
+  ~alloc MB                                                              FULL 4.223 [4.170,4.276] MORE
+  ~rss MB                                                                FULL 1.000 [0.997,1.002] n.s.
+
+## logback-perf  [jmh] logback-perf FileAppenderBenchmark (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.995 [0.979,1.009] n.s. (1 keys)  alloc 0.887 [0.878,0.896] LESS (1 keys)
+  FileAppenderBenchmark.enhancedLogbackToFile                            FULL 0.995 [0.979,1.009] n.s.
+  ~alloc MB                                                              FULL 0.887 [0.878,0.896] LESS
+  ~rss MB                                                                FULL 0.982 [0.948,1.014] n.s.
+
+## jte  [jmh] jte JMH TemplateOutputTest + JteBench (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.986 [0.967,1.006] n.s. (7 keys)  alloc 0.997 [0.979,1.016] n.s. (1 keys)
+  TemplateOutputTest.stringBuilder                                       FULL 0.925 [0.894,0.961] FASTER
+  TemplateOutputTest.templateOutput                                      FULL 0.994 [0.962,1.038] n.s.
+  bench.JteBench.directString                                            FULL 1.012 [0.992,1.028] n.s.
+  bench.JteBench.engineString                                            FULL 1.020 [1.001,1.039] SLOWER
+  bench.JteBench.engineStringEsc                                         FULL 1.011 [0.986,1.037] n.s.
+  bench.JteBench.engineUtf8                                              FULL 1.023 [1.003,1.043] SLOWER
+  bench.JteBench.engineUtf8Esc                                           FULL 0.922 [0.899,0.957] FASTER
+  ~alloc MB                                                              FULL 0.997 [0.979,1.016] n.s.
+  ~rss MB                                                                FULL 1.006 [1.002,1.010] MORE
+
+## StringJoiner  [jmh] OpenJDK StringJoinerBenchmark (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.224 [0.223,0.226] FASTER (32 keys)  alloc 1.651 [1.645,1.658] MORE (1 keys)
+  StringJoinerBenchmark.join 20 1 cyrillic                               FULL 0.130 [0.127,0.132] FASTER
+  StringJoinerBenchmark.join 20 1 latin                                  FULL 0.125 [0.120,0.130] FASTER
+  StringJoinerBenchmark.join 20 128 cyrillic                             FULL 0.117 [0.116,0.118] FASTER
+  StringJoinerBenchmark.join 20 128 latin                                FULL 0.116 [0.115,0.117] FASTER
+  StringJoinerBenchmark.join 20 32 cyrillic                              FULL 0.132 [0.127,0.135] FASTER
+  StringJoinerBenchmark.join 20 32 latin                                 FULL 0.131 [0.128,0.134] FASTER
+  StringJoinerBenchmark.join 20 8 cyrillic                               FULL 0.134 [0.132,0.136] FASTER
+  StringJoinerBenchmark.join 20 8 latin                                  FULL 0.133 [0.128,0.138] FASTER
+  StringJoinerBenchmark.join 5 1 cyrillic                                FULL 0.171 [0.167,0.178] FASTER
+  StringJoinerBenchmark.join 5 1 latin                                   FULL 0.172 [0.169,0.178] FASTER
+  StringJoinerBenchmark.join 5 128 cyrillic                              FULL 0.157 [0.157,0.157] FASTER
+  StringJoinerBenchmark.join 5 128 latin                                 FULL 0.157 [0.156,0.157] FASTER
+  StringJoinerBenchmark.join 5 32 cyrillic                               FULL 0.180 [0.177,0.183] FASTER
+  StringJoinerBenchmark.join 5 32 latin                                  FULL 0.181 [0.178,0.183] FASTER
+  StringJoinerBenchmark.join 5 8 cyrillic                                FULL 0.182 [0.179,0.185] FASTER
+  StringJoinerBenchmark.join 5 8 latin                                   FULL 0.180 [0.177,0.182] FASTER
+  StringJoinerBenchmark.stringJoiner 20 1 cyrillic                       FULL 0.354 [0.342,0.366] FASTER
+  StringJoinerBenchmark.stringJoiner 20 1 latin                          FULL 0.351 [0.346,0.357] FASTER
+  StringJoinerBenchmark.stringJoiner 20 128 cyrillic                     FULL 0.323 [0.317,0.333] FASTER
+  StringJoinerBenchmark.stringJoiner 20 128 latin                        FULL 0.321 [0.316,0.329] FASTER
+  StringJoinerBenchmark.stringJoiner 20 32 cyrillic                      FULL 0.360 [0.355,0.366] FASTER
+  StringJoinerBenchmark.stringJoiner 20 32 latin                         FULL 0.359 [0.348,0.373] FASTER
+  StringJoinerBenchmark.stringJoiner 20 8 cyrillic                       FULL 0.360 [0.352,0.371] FASTER
+  StringJoinerBenchmark.stringJoiner 20 8 latin                          FULL 0.362 [0.358,0.365] FASTER
+  StringJoinerBenchmark.stringJoiner 5 1 cyrillic                        FULL 0.337 [0.327,0.343] FASTER
+  StringJoinerBenchmark.stringJoiner 5 1 latin                           FULL 0.334 [0.326,0.342] FASTER
+  StringJoinerBenchmark.stringJoiner 5 128 cyrillic                      FULL 0.311 [0.308,0.314] FASTER
+  StringJoinerBenchmark.stringJoiner 5 128 latin                         FULL 0.305 [0.294,0.312] FASTER
+  StringJoinerBenchmark.stringJoiner 5 32 cyrillic                       FULL 0.343 [0.335,0.355] FASTER
+  StringJoinerBenchmark.stringJoiner 5 32 latin                          FULL 0.340 [0.330,0.350] FASTER
+  StringJoinerBenchmark.stringJoiner 5 8 cyrillic                        FULL 0.340 [0.336,0.343] FASTER
+  StringJoinerBenchmark.stringJoiner 5 8 latin                           FULL 0.345 [0.339,0.349] FASTER
+  ~alloc MB                                                              FULL 1.651 [1.645,1.658] MORE
+  ~rss MB                                                                FULL 1.003 [0.998,1.009] n.s.
+
+## string-concat-startup  [jmh] OpenJDK string-concat-startup (misc-benchmarks)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.248 [0.244,0.251] FASTER (16 keys)  alloc 4.668 [4.613,4.740] MORE (1 keys)
+  StringConcatStartup.MixedLarge.run N/A                                 FULL 0.540 [0.530,0.549] FASTER
+  StringConcatStartup.MixedSmall.run N/A                                 FULL 0.400 [0.384,0.420] FASTER
+  StringConcatStartup.StringLarge.run N/A                                FULL 0.130 [0.126,0.133] FASTER
+  StringConcatStartup.StringSingle.constBool 4711                        FULL 0.226 [0.218,0.233] FASTER
+  StringConcatStartup.StringSingle.constBoolString 4711                  FULL 0.127 [0.124,0.130] FASTER
+  StringConcatStartup.StringSingle.constBoolean 4711                     FULL 0.254 [0.246,0.260] FASTER
+  StringConcatStartup.StringSingle.constBooleanString 4711               FULL 0.105 [0.103,0.107] FASTER
+  StringConcatStartup.StringSingle.constFloat 4711                       FULL 0.632 [0.629,0.636] FASTER
+  StringConcatStartup.StringSingle.constFloatString 4711                 FULL 0.493 [0.485,0.498] FASTER
+  StringConcatStartup.StringSingle.constInt 4711                         FULL 0.447 [0.439,0.454] FASTER
+  StringConcatStartup.StringSingle.constIntString 4711                   FULL 0.230 [0.228,0.232] FASTER
+  StringConcatStartup.StringSingle.constInteger 4711                     FULL 0.372 [0.362,0.378] FASTER
+  StringConcatStartup.StringSingle.constIntegerString 4711               FULL 0.167 [0.164,0.169] FASTER
+  StringConcatStartup.StringSingle.constString 4711                      FULL 0.215 [0.212,0.220] FASTER
+  StringConcatStartup.StringThree.stringIntString 4711                   FULL 0.169 [0.167,0.170] FASTER
+  StringConcatStartup.StringThree.stringIntegerString 4711               FULL 0.131 [0.128,0.133] FASTER
+  ~alloc MB                                                              FULL 4.668 [4.613,4.740] MORE
+  ~rss MB                                                                FULL 0.996 [0.992,1.000] n.s.
+
+## frequency: 6 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  logback-perf-BASE-b1-r1-main-j1 2.921
+  logback-perf-BASE-b2-r1-main-j1 2.924
+  logback-perf-BASE-b3-r1-main-j1 2.921
+  logback-perf-FULL-b1-r1-main-j1 2.921
+  logback-perf-FULL-b2-r1-main-j1 2.925
+  logback-perf-FULL-b3-r1-main-j1 2.930
+SUMMARY-DONE

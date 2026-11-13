@@ -1,0 +1,18 @@
+# CMFM  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+commonmark               FULL   |   0.968   0.955   0.955 0.970[0.969,0.970]        0.970 | 0.955/0.955/0.955 | 7/7 | 0 | 3
+flexmark                 FULL   |   0.992   0.989   0.989 0.993[0.993,0.993]        0.993 | 0.991/0.986/0.991 | 2/2 | 0 | 0
+
+## CMFM commonmark FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+SpecBenchmark.parseAndRenderExamples                          15.61  15.76   1.01 9617087.0 9563084.1  0.994   20.4   21.1
+SpecBenchmark.parseAndRenderWholeSpec                          5.58   5.61   1.01 12428024.2 11824731.4  0.951    9.4    9.3
+SpecBenchmark.parseExamples                                   22.50  22.56   1.00 7627730.7 7607763.9  0.997   23.3   24.1
+SpecBenchmark.parseWholeSpec                                   7.51   7.53   1.00 9552293.9 9509376.0  0.996    9.7   10.0
+SpecBenchmark.renderMarkdownWholeSpec                         14.08  13.74   0.98 7963685.1 7554627.7  0.949   15.2   14.5
+SpecBenchmark.renderMarkdownWholeSpecToWriter                 13.29  12.95   0.98 7601947.4 7602166.9  1.000   13.7   13.8
+SpecBenchmark.renderWholeSpec                                 21.43  21.85   1.02 2878900.2 2343165.7  0.814    8.4    7.2
+
+## CMFM flexmark FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+SpecBenchmark.examples                                        68.57  68.19   0.99 31953174.2 31883549.4  0.998   71.5   71.5
+SpecBenchmark.wholeSpec                                       31.43  31.81   1.01 27751242.4 27209511.2  0.980   28.5   28.5
+

@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/json-parser  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+json-parser              BASE b1 size 13.96/14.84/5.35/7.67 | parent 15.6 s 2.09 GB | driver 16.4 s REUSED
+json-parser              BASE b2 size 13.96/14.84/5.35/7.67 | parent 14.3 s 2.05 GB | driver 14.9 s REUSED
+json-parser              FULL b1 size 13.96/14.85/5.39/7.67 | parent 26.1 s 2.21 GB | driver 27.2 s | OK | child aa 10177 ms gen 12.5 s obs 13 s VmHWM 3.28 GB | wait 13.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL b2 size 13.96/14.85/5.39/7.67 | parent 29.4 s 2.26 GB | driver 30.1 s | OK | child aa 10855 ms gen 13.8 s obs 14 s VmHWM 3.26 GB | wait 14.5 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              BASE_A32 b1 size 13.83/14.71/5.23/7.67 | parent 13.6 s 2.11 GB | driver 14.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A32 b2 size 13.83/14.71/5.23/7.67 | parent 13.3 s 2.06 GB | driver 14.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              FULL_A32 b1 size 13.83/14.71/5.26/7.67 | parent 30.2 s 2.22 GB | driver 31.2 s | OK | child aa 9655 ms gen 13.6 s obs 14 s VmHWM 3.21 GB | wait 14.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL_A32 b2 size 13.83/14.71/5.26/7.67 | parent 26.2 s 2.24 GB | driver 26.9 s | OK | child aa 9915 ms gen 12.5 s obs 12 s VmHWM 3.24 GB | wait 13.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              BASE_A128 b1 size 14.22/15.10/5.66/7.67 | parent 13.6 s 2.09 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A128 b2 size 14.22/15.10/5.66/7.67 | parent 13.6 s 2.05 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              FULL_A128 b1 size 14.29/15.17/5.69/7.67 | parent 29.0 s 2.25 GB | driver 29.8 s | OK | child aa 10535 ms gen 14.0 s obs 14 s VmHWM 3.11 GB | wait 14.5 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL_A128 b2 size 14.29/15.17/5.69/7.67 | parent 28.2 s 2.23 GB | driver 29.2 s | OK | child aa 10306 ms gen 12.6 s obs 13 s VmHWM 3.30 GB | wait 13.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              BASE_A256 b1 size 14.81/15.69/6.31/7.60 | parent 13.7 s 2.05 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A256 b2 size 14.81/15.69/6.31/7.60 | parent 17.0 s 2.05 GB | driver 17.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              FULL_A256 b1 size 14.88/15.76/6.35/7.60 | parent 25.8 s 2.21 GB | driver 26.4 s | OK | child aa 10161 ms gen 12.7 s obs 12 s VmHWM 3.43 GB | wait 13.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL_A256 b2 size 14.88/15.76/6.35/7.60 | parent 28.8 s 2.24 GB | driver 29.6 s | OK | child aa 9176 ms gen 12.6 s obs 12 s VmHWM 3.39 GB | wait 13.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+## build cost vs stock (means over builds)
+json-parser              FULL/BASE  parent wall 14.9 -> 27.8 s (x1.86)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 3.27 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK
+json-parser              BASE_A32/BASE  parent wall 14.9 -> 13.4 s (x0.90)  Peak RSS 2.07 -> 2.08 GB (x1.01)  child VmHWM ? GB  size 13.96 -> 13.83 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+json-parser              FULL_A32/BASE  parent wall 14.9 -> 28.2 s (x1.89)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 3.22 GB  size 13.96 -> 13.83 MB (x0.991)  status OK,OK
+json-parser              BASE_A128/BASE  parent wall 14.9 -> 13.6 s (x0.91)  Peak RSS 2.07 -> 2.07 GB (x1.00)  child VmHWM ? GB  size 13.96 -> 14.22 MB (x1.019)  status NO-PROFILE,NO-PROFILE
+json-parser              FULL_A128/BASE  parent wall 14.9 -> 28.6 s (x1.91)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 3.21 GB  size 13.96 -> 14.29 MB (x1.023)  status OK,OK
+json-parser              BASE_A256/BASE  parent wall 14.9 -> 15.3 s (x1.03)  Peak RSS 2.07 -> 2.05 GB (x0.99)  child VmHWM ? GB  size 13.96 -> 14.81 MB (x1.061)  status NO-PROFILE,NO-PROFILE
+json-parser              FULL_A256/BASE  parent wall 14.9 -> 27.3 s (x1.83)  Peak RSS 2.07 -> 2.23 GB (x1.07)  child VmHWM 3.41 GB  size 13.96 -> 14.88 MB (x1.066)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+json-parser              FULL SBS=65 SV=2 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A32 no profile  NO-PROFILE
+json-parser              FULL_A32 SBS=65 SV=2 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A128 no profile  NO-PROFILE
+json-parser              FULL_A128 SBS=65 SV=2 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A256 no profile  NO-PROFILE
+json-parser              FULL_A256 SBS=65 SV=2 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+json-parser              BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.3 s
+json-parser              BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.2 s
+json-parser              BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.9 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

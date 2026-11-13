@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/snakeyaml  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+snakeyaml                BASE b1 size 23.73/25.07/10.51/11.86 | parent 19.2 s 2.31 GB | driver 20.9 s REUSED
+snakeyaml                BASE b2 size 23.73/25.07/10.51/11.86 | parent 28.0 s 2.27 GB | driver 29.1 s REUSED
+snakeyaml                FULL b1 size 23.79/25.14/10.55/11.86 | parent 68.0 s 2.56 GB | driver 69.5 s | OK | child aa 29794 ms gen 36.7 s obs 37 s VmHWM 4.86 GB | wait 37.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL b2 size 23.79/25.14/10.55/11.86 | parent 56.2 s 2.42 GB | driver 57.3 s | OK | child aa 20815 ms gen 26.1 s obs 25 s VmHWM 4.80 GB | wait 26.5 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                BASE_A32 b1 size 23.53/24.87/10.29/11.86 | parent 26.1 s 2.28 GB | driver 27.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                BASE_A32 b2 size 23.53/24.87/10.29/11.86 | parent 24.0 s 2.28 GB | driver 25.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                FULL_A32 b1 size 23.60/24.94/10.34/11.86 | parent 60.0 s 2.54 GB | driver 61.9 s | OK | child aa 18613 ms gen 22.7 s obs 22 s VmHWM 4.91 GB | wait 23.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL_A32 b2 size 23.60/24.94/10.34/11.86 | parent 58.9 s 2.72 GB | driver 60.0 s | OK | child aa 26494 ms gen 33.1 s obs 33 s VmHWM 4.99 GB | wait 33.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                BASE_A128 b1 size 24.25/25.59/11.01/11.86 | parent 27.1 s 2.22 GB | driver 28.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                BASE_A128 b2 size 24.25/25.59/11.01/11.86 | parent 27.4 s 2.26 GB | driver 28.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                FULL_A128 b1 size 24.32/25.66/11.06/11.86 | parent 58.9 s 2.87 GB | driver 60.4 s | OK | child aa 23553 ms gen 28.4 s obs 29 s VmHWM 4.92 GB | wait 28.5 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL_A128 b2 size 24.32/25.66/11.06/11.86 | parent 59.6 s 2.57 GB | driver 60.9 s | OK | child aa 21498 ms gen 26.1 s obs 26 s VmHWM 5.01 GB | wait 26.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                BASE_A256 b1 size 25.23/26.58/12.11/11.80 | parent 33.1 s 2.27 GB | driver 34.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                BASE_A256 b2 size 25.23/26.58/12.11/11.80 | parent 29.2 s 2.28 GB | driver 30.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+snakeyaml                FULL_A256 b1 size 25.43/26.78/12.16/11.86 | parent 60.0 s 2.48 GB | driver 62.3 s | OK | child aa 25447 ms gen 31.5 s obs 32 s VmHWM 4.98 GB | wait 32.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL_A256 b2 size 25.43/26.78/12.16/11.86 | parent 68.0 s 2.76 GB | driver 69.2 s | OK | child aa 32417 ms gen 38.0 s obs 37 s VmHWM 4.96 GB | wait 38.1 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+## build cost vs stock (means over builds)
+snakeyaml                FULL/BASE  parent wall 23.6 -> 62.1 s (x2.63)  Peak RSS 2.29 -> 2.49 GB (x1.09)  child VmHWM 4.83 GB  size 23.73 -> 23.79 MB (x1.003)  status OK,OK
+snakeyaml                BASE_A32/BASE  parent wall 23.6 -> 25.1 s (x1.06)  Peak RSS 2.29 -> 2.28 GB (x1.00)  child VmHWM ? GB  size 23.73 -> 23.53 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+snakeyaml                FULL_A32/BASE  parent wall 23.6 -> 59.5 s (x2.52)  Peak RSS 2.29 -> 2.63 GB (x1.15)  child VmHWM 4.95 GB  size 23.73 -> 23.60 MB (x0.994)  status OK,OK
+snakeyaml                BASE_A128/BASE  parent wall 23.6 -> 27.2 s (x1.15)  Peak RSS 2.29 -> 2.24 GB (x0.98)  child VmHWM ? GB  size 23.73 -> 24.25 MB (x1.022)  status NO-PROFILE,NO-PROFILE
+snakeyaml                FULL_A128/BASE  parent wall 23.6 -> 59.2 s (x2.51)  Peak RSS 2.29 -> 2.72 GB (x1.19)  child VmHWM 4.96 GB  size 23.73 -> 24.32 MB (x1.025)  status OK,OK
+snakeyaml                BASE_A256/BASE  parent wall 23.6 -> 31.1 s (x1.32)  Peak RSS 2.29 -> 2.27 GB (x0.99)  child VmHWM ? GB  size 23.73 -> 25.23 MB (x1.064)  status NO-PROFILE,NO-PROFILE
+snakeyaml                FULL_A256/BASE  parent wall 23.6 -> 64.0 s (x2.71)  Peak RSS 2.29 -> 2.62 GB (x1.14)  child VmHWM 4.97 GB  size 23.73 -> 25.43 MB (x1.072)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+snakeyaml                FULL SBS=6 SV=198 (ACC=169 ELEM=7) LS=0 (JOINER=0)  OK
+snakeyaml                BASE_A32 no profile  NO-PROFILE
+snakeyaml                FULL_A32 SBS=6 SV=198 (ACC=169 ELEM=7) LS=0 (JOINER=0)  OK
+snakeyaml                BASE_A128 no profile  NO-PROFILE
+snakeyaml                FULL_A128 SBS=6 SV=198 (ACC=169 ELEM=7) LS=0 (JOINER=0)  OK
+snakeyaml                BASE_A256 no profile  NO-PROFILE
+snakeyaml                FULL_A256 SBS=6 SV=198 (ACC=169 ELEM=7) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+snakeyaml                BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.3 s
+snakeyaml                BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.0 s
+snakeyaml                BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.4 s
+snakeyaml                BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.6 s
+snakeyaml                BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.0 s
+snakeyaml                BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.4 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

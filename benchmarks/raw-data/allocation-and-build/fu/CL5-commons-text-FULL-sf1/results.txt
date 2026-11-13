@@ -1,0 +1,13 @@
+# C99 campaign results  SLOT=CL5  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL5-commons-text-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-text  [jmh] commons-text LongestCommonSubsequencePerformance (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 0.999 [0.985,1.015] n.s. (4 keys)  alloc 0.998 [0.977,1.016] n.s. (1 keys)
+  LongestCommonSubsequencePerformance.testLCS                            FULL 1.006 [0.960,1.038] n.s.
+  LongestCommonSubsequencePerformance.testLCSBaseline                    FULL 1.004 [0.975,1.041] n.s.  BIMODAL(BASE)
+  LongestCommonSubsequencePerformance.testLCSLen                         FULL 0.987 [0.963,1.009] n.s.
+  LongestCommonSubsequencePerformance.testLCSLenBaseline                 FULL 0.999 [0.978,1.020] n.s.
+  ~alloc MB                                                              FULL 0.998 [0.977,1.016] n.s.  BIMODAL(BASE)
+  ~rss MB                                                                FULL 1.002 [0.997,1.007] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

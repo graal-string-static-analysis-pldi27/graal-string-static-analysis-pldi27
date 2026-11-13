@@ -1,0 +1,18 @@
+# XL5  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+tinylog                  FULL   |   0.993   1.000   1.000 1.000[1.000,1.000]        1.000 | 0.999/1.001/1.000 | 12/12 | 0 | 0
+
+## XL5 tinylog FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+Tinylog2Benchmark.discard async=false,locationInfo=CLASS_OR_  16.77  16.70   1.01      24.0      24.0  1.000   10.0   10.0
+Tinylog2Benchmark.discard async=false,locationInfo=FULL       16.66  16.76   1.02      24.0      24.0  1.000    9.9   10.0
+Tinylog2Benchmark.discard async=false,locationInfo=NONE       16.73  16.83   1.02      24.0      24.0  1.000   10.0   10.1
+Tinylog2Benchmark.discard async=true,locationInfo=CLASS_OR_C  16.65  16.51   1.01      24.0      24.0  1.000    9.9    9.9
+Tinylog2Benchmark.discard async=true,locationInfo=FULL        16.51  16.74   1.03      24.0      24.0  1.000    9.8   10.0
+Tinylog2Benchmark.discard async=true,locationInfo=NONE        16.68  16.46   1.00      24.0      24.0  1.000    9.9    9.9
+Tinylog2Benchmark.output async=false,locationInfo=CLASS_OR_C   0.00   0.00   1.00 7242931241.0 7242974057.8  1.000   12.6   12.4
+Tinylog2Benchmark.output async=false,locationInfo=FULL         0.00   0.00   1.00 3843195316.9 3843244250.5  1.000    6.7    6.6
+Tinylog2Benchmark.output async=false,locationInfo=NONE         0.00   0.00   1.00 1905851542.2 1906994490.0  1.001    3.3    3.3
+Tinylog2Benchmark.output async=true,locationInfo=CLASS_OR_CA   0.00   0.00   1.00 6477050456.7 6471175809.7  0.999   11.2   11.1
+Tinylog2Benchmark.output async=true,locationInfo=FULL          0.00   0.00   1.00 2961148040.5 2951848919.0  0.997    5.1    5.1
+Tinylog2Benchmark.output async=true,locationInfo=NONE          0.00   0.00   1.00 898152529.9 899043819.5  1.001    1.6    1.5
+

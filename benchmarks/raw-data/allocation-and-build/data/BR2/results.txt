@@ -1,0 +1,19 @@
+# C99 campaign results  SLOT=BR2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BR2  CFGS=BASE SBS SV LS  runs/build=5  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## lucene-bytask  [metric] Lucene byTask indexLineFile 2M enwiki lines (recheck s2 recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=60
+  GEOMEAN SBS/BASE  time 0.996 [0.985,1.008] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 1.004 [0.985,1.023] n.s. (2 keys)  alloc 0.929 [0.928,0.929] LESS (1 keys)
+  GEOMEAN LS/BASE  time 0.991 [0.981,1.001] n.s. (2 keys)  alloc 1.000 [0.999,1.000] n.s. (1 keys)
+  addDoc s r0 (warm-up)                                                  SBS 0.998 [0.992,1.005] info-only | SV 1.007 [0.994,1.020] info-only | LS 0.995 [0.989,1.002] info-only
+  addDoc s r1                                                            SBS 1.000 [0.989,1.013] n.s. | SV 1.008 [0.986,1.032] n.s. | LS 0.991 [0.982,1.002] n.s.
+  addDoc s r2                                                            SBS 0.993 [0.976,1.008] n.s. | SV 1.000 [0.979,1.018] n.s. | LS 0.992 [0.975,1.006] n.s.
+  wall s                                                                 SBS 0.997 [0.989,1.005] info-only | SV 1.005 [0.989,1.021] info-only | LS 0.993 [0.985,1.001] info-only
+  ~alloc MB                                                              SBS 1.000 [1.000,1.000] n.s. | SV 0.929 [0.928,0.929] LESS | LS 1.000 [0.999,1.000] n.s.
+  ~rss MB                                                                SBS 0.998 [0.978,1.020] n.s. | SV 1.011 [0.990,1.034] n.s. | LS 0.998 [0.974,1.023] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  lucene-bytask              0.996|1.000       1.004|0.929*      0.991|1.000      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,8 @@
+KIND	jmh
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/log4j2-plc.sh
+DESC	log4j2 PatternLayoutComparisonBenchmark, log4j2 arm (hunt/ab candspec; failing logback arm not selected)
+CPUS	0-15
+JMHSET	-f 0 -wi 1 -w 200ms -i 3 -r 200ms
+SLOTITER	200ms

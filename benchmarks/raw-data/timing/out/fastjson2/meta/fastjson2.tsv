@@ -1,0 +1,8 @@
+KIND	jmh
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/fastjson2.sh
+DESC	fastjson2 2.0.66 benchmark module: Eishay{Parse,ParseTree,Write,WriteTree}String + TwitterParseString, fastjson2 arm
+CPUS	0-15
+JMHSET	-f 0 -wi 1 -w 200ms -i 3 -r 200ms
+SLOTITER	200ms

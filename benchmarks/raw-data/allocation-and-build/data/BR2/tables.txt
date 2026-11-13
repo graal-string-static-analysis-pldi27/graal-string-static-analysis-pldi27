@@ -1,0 +1,29 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BR2  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+lucene-bytask            BASE b1 size 28.51/30.19/13.88/13.17 | parent 15.8 s 2.39 GB | driver 16.4 s REUSED
+lucene-bytask            BASE b2 size 28.51/30.19/13.88/13.17 | parent 16.2 s 2.39 GB | driver 16.8 s REUSED
+lucene-bytask            BASE b3 size 28.51/30.19/13.88/13.17 | parent 15.9 s 2.42 GB | driver 16.6 s REUSED
+lucene-bytask            SBS  b1 size 28.51/30.19/13.88/13.17 | parent 30.0 s 2.54 GB | driver 30.7 s | ZERO-ADMIT | child aa 9989 ms gen 12.8 s obs 13 s VmHWM 3.26 GB | wait 13.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS  b2 size 28.51/30.19/13.88/13.17 | parent 29.7 s 2.55 GB | driver 30.4 s | ZERO-ADMIT | child aa 10345 ms gen 13.1 s obs 13 s VmHWM 3.30 GB | wait 13.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS  b3 size 28.51/30.19/13.88/13.17 | parent 29.9 s 2.56 GB | driver 30.6 s | ZERO-ADMIT | child aa 10431 ms gen 13.2 s obs 13 s VmHWM 3.35 GB | wait 13.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3595 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SV   b1 size 28.58/30.26/13.95/13.17 | parent 30.3 s 2.56 GB | driver 30.9 s | OK | child aa 10848 ms gen 13.6 s obs 14 s VmHWM 3.32 GB | wait 13.5 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3593 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV   b2 size 28.58/30.26/13.95/13.17 | parent 31.4 s 2.56 GB | driver 32.1 s | OK | child aa 10858 ms gen 13.7 s obs 14 s VmHWM 3.28 GB | wait 14.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3593 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV   b3 size 28.58/30.26/13.95/13.17 | parent 30.5 s 2.55 GB | driver 31.3 s | OK | child aa 10985 ms gen 13.7 s obs 13 s VmHWM 3.28 GB | wait 14.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3594 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            LS   b1 size 28.51/30.20/13.88/13.17 | parent 32.6 s 2.54 GB | driver 33.3 s | OK | child aa 12678 ms gen 15.4 s obs 15 s VmHWM 5.46 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3593 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS   b2 size 28.51/30.20/13.88/13.17 | parent 32.8 s 2.53 GB | driver 33.4 s | OK | child aa 13194 ms gen 15.9 s obs 16 s VmHWM 5.37 GB | wait 16.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3593 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS   b3 size 28.51/30.20/13.88/13.17 | parent 33.1 s 2.54 GB | driver 33.9 s | OK | child aa 13016 ms gen 15.8 s obs 15 s VmHWM 5.44 GB | wait 16.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3590 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+lucene-bytask            SBS /BASE  parent wall 16.0 -> 29.9 s (x1.87)  Peak RSS 2.40 -> 2.55 GB (x1.06)  child VmHWM 3.30 GB  size 28.51 -> 28.51 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+lucene-bytask            SV  /BASE  parent wall 16.0 -> 30.7 s (x1.92)  Peak RSS 2.40 -> 2.56 GB (x1.07)  child VmHWM 3.30 GB  size 28.51 -> 28.58 MB (x1.002)  status OK,OK,OK
+lucene-bytask            LS  /BASE  parent wall 16.0 -> 32.8 s (x2.06)  Peak RSS 2.40 -> 2.54 GB (x1.06)  child VmHWM 5.42 GB  size 28.51 -> 28.51 MB (x1.000)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+lucene-bytask            SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+lucene-bytask            SV   SBS=0 SV=36 (ACC=15 ELEM=1) LS=0 (JOINER=0)  OK
+lucene-bytask            LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=167 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+lucene-bytask            SBS  b1 ZERO-ADMIT               child obs 13 s VmHWM 3.26 GB | parent wait 13.0 s | driver wall 30.7 s
+lucene-bytask            SBS  b2 ZERO-ADMIT               child obs 13 s VmHWM 3.30 GB | parent wait 13.0 s | driver wall 30.4 s
+lucene-bytask            SBS  b3 ZERO-ADMIT               child obs 13 s VmHWM 3.35 GB | parent wait 13.5 s | driver wall 30.6 s
+## determinism: lucene-bytask SBS: admit counts differ across builds; lucene-bytask SV: admit counts differ across builds; lucene-bytask LS: admit counts differ across builds
+TABLES-DONE

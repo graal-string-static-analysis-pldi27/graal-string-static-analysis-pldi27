@@ -1,0 +1,11 @@
+# C99 campaign results  SLOT=CO  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CO  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## owasp  [metric] OWASP html-sanitizer Benchmark sp (hunt3 ab3 recipe)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.972 [0.953,0.990] FASTER (2 keys)  alloc 0.951 [0.951,0.951] LESS (1 keys)
+  sanitize custom                                                        FULL 0.964 [0.939,0.986] FASTER  BIMODAL(BASE,FULL)
+  sanitize w/ PB                                                         FULL 0.980 [0.967,0.994] FASTER  BIMODAL(BASE)
+  ~alloc MB                                                              FULL 0.951 [0.951,0.951] LESS
+  ~rss MB                                                                FULL 1.001 [0.994,1.007] n.s.  BIMODAL(BASE,FULL)
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

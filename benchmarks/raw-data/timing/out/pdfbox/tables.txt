@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pdfbox  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+pdfbox                   BASE b1 size 59.31/62.18/29.74/27.07 | parent 34.6 s 3.30 GB | driver 35.8 s REUSED
+pdfbox                   BASE b2 size 59.31/62.18/29.74/27.07 | parent 39.5 s 3.27 GB | driver 40.5 s REUSED
+pdfbox                   FULL b1 size 59.71/62.59/30.02/27.13 | parent 77.0 s 3.79 GB | driver 78.2 s | OK | child aa 35687 ms gen 38.9 s obs 38 s VmHWM 9.23 GB | wait 39.0 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL b2 size 59.71/62.59/30.02/27.13 | parent 75.0 s 3.86 GB | driver 76.4 s | OK | child aa 34804 ms gen 39.6 s obs 39 s VmHWM 9.63 GB | wait 39.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   BASE_A32 b1 size 58.92/61.79/29.25/27.13 | parent 32.9 s 3.29 GB | driver 34.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   BASE_A32 b2 size 58.92/61.79/29.25/27.13 | parent 39.6 s 3.53 GB | driver 41.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   FULL_A32 b1 size 59.18/62.06/29.54/27.13 | parent 84.0 s 4.41 GB | driver 85.9 s | OK | child aa 47151 ms gen 50.6 s obs 51 s VmHWM 9.55 GB | wait 50.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL_A32 b2 size 59.18/62.06/29.54/27.13 | parent 93.0 s 4.00 GB | driver 95.0 s | OK | child aa 46528 ms gen 49.9 s obs 50 s VmHWM 9.54 GB | wait 50.1 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   BASE_A128 b1 size 60.49/63.36/30.91/27.07 | parent 37.8 s 3.13 GB | driver 38.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   BASE_A128 b2 size 60.49/63.36/30.91/27.07 | parent 37.7 s 3.17 GB | driver 38.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   FULL_A128 b1 size 60.89/63.77/31.20/27.13 | parent 93.0 s 4.20 GB | driver 94.8 s | OK | child aa 46906 ms gen 50.4 s obs 49 s VmHWM 9.29 GB | wait 50.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL_A128 b2 size 60.89/63.77/31.20/27.13 | parent 88.0 s 4.17 GB | driver 90.2 s | OK | child aa 41123 ms gen 44.8 s obs 44 s VmHWM 9.21 GB | wait 44.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   BASE_A256 b1 size 62.98/65.85/33.42/27.00 | parent 37.9 s 3.36 GB | driver 38.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   BASE_A256 b2 size 62.98/65.85/33.42/27.00 | parent 37.7 s 3.45 GB | driver 39.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+pdfbox                   FULL_A256 b1 size 63.31/66.19/33.72/27.07 | parent 91.0 s 3.99 GB | driver 92.8 s | OK | child aa 45502 ms gen 50.2 s obs 49 s VmHWM 9.69 GB | wait 50.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL_A256 b2 size 63.31/66.19/33.72/27.07 | parent 87.0 s 3.97 GB | driver 88.4 s | OK | child aa 45696 ms gen 51.3 s obs 50 s VmHWM 9.57 GB | wait 51.6 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+## build cost vs stock (means over builds)
+pdfbox                   FULL/BASE  parent wall 37.0 -> 76.0 s (x2.05)  Peak RSS 3.29 -> 3.83 GB (x1.16)  child VmHWM 9.43 GB  size 59.31 -> 59.71 MB (x1.007)  status OK,OK
+pdfbox                   BASE_A32/BASE  parent wall 37.0 -> 36.2 s (x0.98)  Peak RSS 3.29 -> 3.41 GB (x1.04)  child VmHWM ? GB  size 59.31 -> 58.92 MB (x0.993)  status NO-PROFILE,NO-PROFILE
+pdfbox                   FULL_A32/BASE  parent wall 37.0 -> 88.5 s (x2.39)  Peak RSS 3.29 -> 4.21 GB (x1.28)  child VmHWM 9.55 GB  size 59.31 -> 59.18 MB (x0.998)  status OK,OK
+pdfbox                   BASE_A128/BASE  parent wall 37.0 -> 37.8 s (x1.02)  Peak RSS 3.29 -> 3.15 GB (x0.96)  child VmHWM ? GB  size 59.31 -> 60.49 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+pdfbox                   FULL_A128/BASE  parent wall 37.0 -> 90.5 s (x2.44)  Peak RSS 3.29 -> 4.19 GB (x1.27)  child VmHWM 9.25 GB  size 59.31 -> 60.89 MB (x1.027)  status OK,OK
+pdfbox                   BASE_A256/BASE  parent wall 37.0 -> 37.8 s (x1.02)  Peak RSS 3.29 -> 3.41 GB (x1.04)  child VmHWM ? GB  size 59.31 -> 62.98 MB (x1.062)  status NO-PROFILE,NO-PROFILE
+pdfbox                   FULL_A256/BASE  parent wall 37.0 -> 89.0 s (x2.40)  Peak RSS 3.29 -> 3.98 GB (x1.21)  child VmHWM 9.63 GB  size 59.31 -> 63.31 MB (x1.067)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+pdfbox                   FULL SBS=6 SV=247 (ACC=165 ELEM=17) LS=4 (JOINER=0)  OK
+pdfbox                   BASE_A32 no profile  NO-PROFILE
+pdfbox                   FULL_A32 SBS=6 SV=247 (ACC=165 ELEM=17) LS=4 (JOINER=0)  OK
+pdfbox                   BASE_A128 no profile  NO-PROFILE
+pdfbox                   FULL_A128 SBS=6 SV=247 (ACC=165 ELEM=17) LS=4 (JOINER=0)  OK
+pdfbox                   BASE_A256 no profile  NO-PROFILE
+pdfbox                   FULL_A256 SBS=6 SV=247 (ACC=165 ELEM=17) LS=4 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+pdfbox                   BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.1 s
+pdfbox                   BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 41.2 s
+pdfbox                   BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 38.8 s
+pdfbox                   BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 38.5 s
+pdfbox                   BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 38.8 s
+pdfbox                   BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 39.1 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

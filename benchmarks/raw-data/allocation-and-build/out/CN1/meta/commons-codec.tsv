@@ -1,0 +1,7 @@
+KIND	metric
+ARMS	main
+NSTART	4
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/commons-codec.sh
+DESC	commons-codec PhoneticEngine performance test (hunt/ab-b34 candspec)
+CPUS	0-15
+METRIC	main	encode millis | lower | out | 1 | ^Time for encoding .*: ([0-9,]+) millis\.$

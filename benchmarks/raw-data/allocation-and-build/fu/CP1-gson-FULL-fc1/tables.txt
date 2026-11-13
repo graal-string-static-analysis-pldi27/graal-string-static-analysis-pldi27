@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CP1-gson-FULL-fc1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+gson                     BASE b1 size 22.35/23.76/9.77/11.27 | parent 13.7 s 2.43 GB | driver 14.3 s REUSED
+gson                     BASE b2 size 22.35/23.76/9.77/11.27 | parent 13.8 s 2.36 GB | driver 14.4 s REUSED
+gson                     BASE b3 size 22.35/23.76/9.77/11.27 | parent 13.9 s 2.38 GB | driver 14.4 s REUSED
+gson                     FULL b1 size 22.42/23.83/9.82/11.27 | parent 27.6 s 2.49 GB | driver 28.2 s | OK | child aa 10117 ms gen 12.8 s obs 13 s VmHWM 3.21 GB | wait 13.0 s | SBS=0 SV=68(ACC=41 ELEM=1) LS=0(JOINER=0) | IC=4273 TC=346 MIRROR=93 EXACT=0 other=0 REUSED
+gson                     FULL b2 size 22.42/23.83/9.82/11.27 | parent 28.0 s 2.48 GB | driver 28.6 s | OK | child aa 10436 ms gen 13.1 s obs 12 s VmHWM 3.21 GB | wait 13.5 s | SBS=0 SV=68(ACC=41 ELEM=1) LS=0(JOINER=0) | IC=4273 TC=346 MIRROR=93 EXACT=0 other=0 REUSED
+gson                     FULL b3 size 22.42/23.83/9.82/11.27 | parent 27.6 s 2.47 GB | driver 28.2 s | OK | child aa 10252 ms gen 12.9 s obs 13 s VmHWM 3.21 GB | wait 13.0 s | SBS=0 SV=68(ACC=41 ELEM=1) LS=0(JOINER=0) | IC=4273 TC=346 MIRROR=93 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+gson                     FULL/BASE  parent wall 13.8 -> 27.7 s (x2.01)  Peak RSS 2.39 -> 2.48 GB (x1.04)  child VmHWM 3.21 GB  size 22.35 -> 22.42 MB (x1.003)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+gson                     FULL SBS=0 SV=68 (ACC=41 ELEM=1) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

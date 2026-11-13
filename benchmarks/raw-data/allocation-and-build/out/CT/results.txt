@@ -1,0 +1,19 @@
+# C99 campaign results  SLOT=CT  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CT  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## template-benchmark  [jmh] template-benchmark 10 engines (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 1.006 [0.999,1.012] n.s. (10 keys)  alloc 0.952 [0.942,0.968] LESS (1 keys)
+  Freemarker.benchmark                                                   FULL 0.984 [0.975,0.991] FASTER
+  Handlebars.benchmark                                                   FULL 0.957 [0.949,0.966] FASTER
+  JMustache.benchmark                                                    FULL 1.009 [1.000,1.021] SLOWER
+  JStachio.benchmark                                                     FULL 1.005 [0.991,1.023] n.s.
+  JStachioContext.benchmark                                              FULL 1.016 [1.004,1.028] SLOWER
+  Mustache.benchmark                                                     FULL 0.994 [0.985,1.011] n.s.
+  Pebble.benchmark                                                       FULL 0.993 [0.986,0.999] FASTER
+  Qute.benchmark                                                         FULL 1.106 [1.001,1.181] SLOWER
+  Rocker.benchmark                                                       FULL 1.007 [1.001,1.013] SLOWER
+  Trimou.benchmark                                                       FULL 0.994 [0.986,1.002] n.s.
+  ~alloc MB                                                              FULL 0.952 [0.942,0.968] LESS
+  ~rss MB                                                                FULL 0.921 [0.802,1.078] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,26 @@
+# C99 campaign results  SLOT=jte  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jte  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jte  [jmh] jte JMH TemplateOutputTest + JteBench (ab-cmb recipe)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.962 [0.941,0.983] FASTER (7 keys)  alloc 1.021 [1.000,1.042] MORE (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.012 [0.988,1.036] n.s. (7 keys)  alloc 0.977 [0.957,0.997] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.968 [0.956,0.980] FASTER (7 keys)  alloc 1.004 [0.993,1.016] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.984 [0.975,0.993] FASTER (7 keys)  alloc 1.014 [1.005,1.024] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.962 [0.949,0.975] FASTER (7 keys)  alloc 1.019 [1.007,1.030] MORE (1 keys)
+  GEOMEAN BASE_A256/BASE  time 0.985 [0.974,0.996] FASTER (7 keys)  alloc 1.017 [1.007,1.027] MORE (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.976 [0.966,0.986] FASTER (7 keys)  alloc 1.003 [0.991,1.015] n.s. (1 keys)
+  TemplateOutputTest.stringBuilder                                       FULL 0.938 [0.905,0.971] FASTER | BASE_A32 1.058 [1.030,1.086] SLOWER | FULL_A32 0.963 [0.954,0.973] FASTER | BASE_A128 1.016 [0.991,1.042] n.s. | FULL_A128 0.934 [0.925,0.943] FASTER | BASE_A256 0.994 [0.981,1.008] n.s. | FULL_A256 0.950 [0.936,0.965] FASTER
+  TemplateOutputTest.templateOutput                                      FULL 0.977 [0.959,0.995] FASTER | BASE_A32 1.048 [1.029,1.067] SLOWER | FULL_A32 1.016 [0.999,1.033] n.s. | BASE_A128 0.972 [0.960,0.983] FASTER | FULL_A128 0.980 [0.974,0.987] FASTER | BASE_A256 0.978 [0.974,0.982] FASTER | FULL_A256 1.010 [0.986,1.034] n.s.
+  bench.JteBench.directString                                            FULL 0.977 [0.963,0.992] FASTER | BASE_A32 0.999 [0.979,1.019] n.s. | FULL_A32 0.984 [0.976,0.993] FASTER | BASE_A128 0.973 [0.962,0.986] FASTER | FULL_A128 0.982 [0.963,1.002] n.s. | BASE_A256 0.970 [0.958,0.982] FASTER | FULL_A256 0.987 [0.974,1.000] n.s.
+  bench.JteBench.engineString                                            FULL 0.975 [0.967,0.984] FASTER | BASE_A32 0.991 [0.980,1.003] n.s. | FULL_A32 0.978 [0.972,0.984] FASTER | BASE_A128 0.978 [0.964,0.992] FASTER | FULL_A128 0.984 [0.968,1.000] n.s. | BASE_A256 0.979 [0.973,0.985] FASTER | FULL_A256 0.974 [0.968,0.979] FASTER
+  bench.JteBench.engineStringEsc                                         FULL 0.970 [0.949,0.991] FASTER | BASE_A32 0.979 [0.963,0.996] FASTER | FULL_A32 0.971 [0.954,0.988] FASTER | BASE_A128 0.967 [0.949,0.984] FASTER | FULL_A128 0.976 [0.954,0.999] FASTER | BASE_A256 0.969 [0.957,0.981] FASTER | FULL_A256 0.989 [0.964,1.015] n.s.
+  bench.JteBench.engineUtf8                                              FULL 0.998 [0.961,1.036] n.s. | BASE_A32 1.017 [0.968,1.067] n.s. | FULL_A32 0.985 [0.947,1.024] n.s. | BASE_A128 1.006 [0.982,1.031] n.s. | FULL_A128 0.982 [0.962,1.002] n.s. | BASE_A256 1.022 [0.990,1.055] n.s. | FULL_A256 1.031 [0.975,1.090] n.s.
+  bench.JteBench.engineUtf8Esc                                           FULL 0.900 [0.878,0.921] FASTER | BASE_A32 0.992 [0.965,1.021] n.s. | FULL_A32 0.883 [0.874,0.892] FASTER | BASE_A128 0.979 [0.972,0.986] FASTER | FULL_A128 0.896 [0.890,0.902] FASTER | BASE_A256 0.983 [0.974,0.991] FASTER | FULL_A256 0.895 [0.882,0.909] FASTER
+  ~alloc MB                                                              FULL 1.021 [1.000,1.042] MORE | BASE_A32 0.977 [0.957,0.997] LESS | FULL_A32 1.004 [0.993,1.016] n.s. | BASE_A128 1.014 [1.005,1.024] MORE | FULL_A128 1.019 [1.007,1.030] MORE | BASE_A256 1.017 [1.007,1.027] MORE | FULL_A256 1.003 [0.991,1.015] n.s.
+  ~rss MB                                                                FULL 1.001 [0.999,1.004] n.s. | BASE_A32 1.036 [1.002,1.071] MORE | FULL_A32 1.004 [1.003,1.004] MORE | BASE_A128 1.005 [1.003,1.007] MORE | FULL_A128 1.017 [1.015,1.018] MORE | BASE_A256 1.022 [1.019,1.025] MORE | FULL_A256 1.020 [1.019,1.022] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  jte                        0.962*|1.021*     1.012|0.977*      0.968*|1.004      0.984*|1.014*     0.962*|1.019*     0.985*|1.017*     0.976*|1.003     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

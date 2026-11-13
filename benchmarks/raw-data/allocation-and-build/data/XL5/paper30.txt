@@ -1,0 +1,19 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL5  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## tinylog  starts BASE:3 FULL:3  time keys 12
+  FULL/BASE time  ratio 0.9924  (mean FULL 0.9923 n=3, BASE 1.0000 n=3)  error margin 0.0161 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0084  (mean FULL 1.0083 n=3, BASE 1.0000 n=3)  error margin 0.0078 (max sd)  paper-significance n.s.
+    key discard_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.disc BASE 2.38852e+08 sd 5.98e+06  FULL 2.42808e+08 sd 3.07e+06  [higher]
+    key discard_false_FULL: Tinylog2Benchmark.discard false FULL     BASE 2.37703e+08 sd 5.37e+06  FULL 2.43076e+08 sd 3.62e+06  [higher]
+    key discard_false_NONE: Tinylog2Benchmark.discard false NONE     BASE 2.38395e+08 sd 2.72e+06  FULL 2.44941e+08 sd 5.71e+06  [higher]
+    key discard_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.disca BASE 2.37944e+08 sd 3.58e+06  FULL 2.38957e+08 sd 4.05e+06  [higher]
+    key discard_true_FULL: Tinylog2Benchmark.discard true FULL       BASE 2.3514e+08 sd 8.07e+05  FULL 2.43267e+08 sd 1.97e+06  [higher]
+    key discard_true_NONE: Tinylog2Benchmark.discard true NONE       BASE 2.37818e+08 sd 4.32e+06  FULL 2.3957e+08 sd 3.17e+06  [higher]
+    key output_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.outpu BASE 4.12833 sd 0.08  FULL 4.12 sd 0.0759  [lower]
+    key output_false_FULL: Tinylog2Benchmark.output false FULL       BASE 2.37467 sd 0.0462  FULL 2.377 sd 0.0486  [lower]
+    key output_false_NONE: Tinylog2Benchmark.output false NONE       BASE 1.42333 sd 0.00924  FULL 1.418 sd 0.00854  [lower]
+    key output_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.output BASE 3.35567 sd 0.0805  FULL 3.30467 sd 0.0295  [lower]
+    key output_true_FULL: Tinylog2Benchmark.output true FULL         BASE 1.188 sd 0.0547  FULL 1.20333 sd 0.0663  [lower]
+    key output_true_NONE: Tinylog2Benchmark.output true NONE         BASE 0.546333 sd 0.00493  FULL 0.561333 sd 0.0302  [lower]
+
+PAPER30-DONE

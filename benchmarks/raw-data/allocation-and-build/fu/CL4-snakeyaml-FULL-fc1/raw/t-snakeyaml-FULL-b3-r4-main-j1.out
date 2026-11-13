@@ -1,0 +1,222 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 8 threads, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.yaml.snakeyaml.jmh.EmitterBenchmark.emitScalar
+
+# Run progress: 0.00% complete, ETA 00:01:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 0.406 ±(99.9%) 0.007 us/op
+# Warmup Iteration   2: 0.433 ±(99.9%) 0.011 us/op
+# Warmup Iteration   3: 0.433 ±(99.9%) 0.012 us/op
+# Warmup Iteration   4: 0.443 ±(99.9%) 0.016 us/op
+# Warmup Iteration   5: 0.450 ±(99.9%) 0.032 us/op
+Iteration   1: 0.468 ±(99.9%) 0.027 us/op
+Iteration   2: 0.472 ±(99.9%) 0.056 us/op
+Iteration   3: 0.447 ±(99.9%) 0.032 us/op
+Iteration   4: 0.462 ±(99.9%) 0.028 us/op
+Iteration   5: 0.456 ±(99.9%) 0.025 us/op
+Iteration   6: 0.472 ±(99.9%) 0.038 us/op
+Iteration   7: 0.454 ±(99.9%) 0.025 us/op
+Iteration   8: 0.457 ±(99.9%) 0.028 us/op
+Iteration   9: 0.444 ±(99.9%) 0.021 us/op
+Iteration  10: 0.445 ±(99.9%) 0.017 us/op
+
+Result "org.yaml.snakeyaml.jmh.EmitterBenchmark.emitScalar":
+  0.457 ±(99.9%) 0.016 us/op [Average]
+  (min, avg, max) = (0.444, 0.457, 0.472), stdev = 0.011
+  CI (99.9%): [0.441, 0.473] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.yaml.snakeyaml.jmh.ParseBenchmark.load
+# Parameters: (entries = 1000)
+
+# Run progress: 20.00% complete, ETA 00:01:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 
+yaml bytes length: 18780
+2.340 ms/op
+# Warmup Iteration   2: 2.289 ms/op
+# Warmup Iteration   3: 2.300 ms/op
+# Warmup Iteration   4: 2.307 ms/op
+# Warmup Iteration   5: 2.310 ms/op
+Iteration   1: 2.310 ms/op
+Iteration   2: 2.307 ms/op
+Iteration   3: 2.317 ms/op
+Iteration   4: 2.314 ms/op
+Iteration   5: 2.304 ms/op
+Iteration   6: 2.309 ms/op
+Iteration   7: 2.323 ms/op
+Iteration   8: 2.320 ms/op
+Iteration   9: 2.308 ms/op
+Iteration  10: 2.322 ms/op
+
+Result "org.yaml.snakeyaml.jmh.ParseBenchmark.load":
+  2.313 ±(99.9%) 0.010 ms/op [Average]
+  (min, avg, max) = (2.304, 2.313, 2.323), stdev = 0.007
+  CI (99.9%): [2.303, 2.324] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.yaml.snakeyaml.jmh.ParseBenchmark.load
+# Parameters: (entries = 100000)
+
+# Run progress: 40.00% complete, ETA 00:00:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 
+yaml bytes length: 2277780
+541.808 ms/op
+# Warmup Iteration   2: 784.523 ms/op
+# Warmup Iteration   3: 932.527 ms/op
+# Warmup Iteration   4: 906.644 ms/op
+# Warmup Iteration   5: 856.926 ms/op
+Iteration   1: 894.103 ms/op
+Iteration   2: 921.067 ms/op
+Iteration   3: 845.850 ms/op
+Iteration   4: 907.084 ms/op
+Iteration   5: 861.983 ms/op
+Iteration   6: 871.603 ms/op
+Iteration   7: 782.224 ms/op
+Iteration   8: 941.415 ms/op
+Iteration   9: 846.686 ms/op
+Iteration  10: 825.563 ms/op
+
+Result "org.yaml.snakeyaml.jmh.ParseBenchmark.load":
+  869.758 ±(99.9%) 72.219 ms/op [Average]
+  (min, avg, max) = (782.224, 869.758, 941.415), stdev = 47.769
+  CI (99.9%): [797.538, 941.977] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.yaml.snakeyaml.jmh.ParseBenchmark.parse
+# Parameters: (entries = 1000)
+
+# Run progress: 60.00% complete, ETA 00:00:37
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 
+yaml bytes length: 18780
+1.533 ms/op
+# Warmup Iteration   2: 1.483 ms/op
+# Warmup Iteration   3: 1.485 ms/op
+# Warmup Iteration   4: 1.487 ms/op
+# Warmup Iteration   5: 1.487 ms/op
+Iteration   1: 1.487 ms/op
+Iteration   2: 1.487 ms/op
+Iteration   3: 1.489 ms/op
+Iteration   4: 1.488 ms/op
+Iteration   5: 1.487 ms/op
+Iteration   6: 1.486 ms/op
+Iteration   7: 1.487 ms/op
+Iteration   8: 1.488 ms/op
+Iteration   9: 1.490 ms/op
+Iteration  10: 1.489 ms/op
+
+Result "org.yaml.snakeyaml.jmh.ParseBenchmark.parse":
+  1.488 ±(99.9%) 0.002 ms/op [Average]
+  (min, avg, max) = (1.486, 1.488, 1.490), stdev = 0.001
+  CI (99.9%): [1.486, 1.490] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.yaml.snakeyaml.jmh.ParseBenchmark.parse
+# Parameters: (entries = 100000)
+
+# Run progress: 80.00% complete, ETA 00:00:17
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 
+yaml bytes length: 2277780
+159.749 ms/op
+# Warmup Iteration   2: 159.534 ms/op
+# Warmup Iteration   3: 159.833 ms/op
+# Warmup Iteration   4: 159.920 ms/op
+# Warmup Iteration   5: 157.955 ms/op
+Iteration   1: 156.996 ms/op
+Iteration   2: 156.959 ms/op
+Iteration   3: 157.480 ms/op
+Iteration   4: 157.669 ms/op
+Iteration   5: 158.011 ms/op
+Iteration   6: 158.027 ms/op
+Iteration   7: 158.195 ms/op
+Iteration   8: 158.250 ms/op
+Iteration   9: 158.359 ms/op
+Iteration  10: 158.325 ms/op
+
+Result "org.yaml.snakeyaml.jmh.ParseBenchmark.parse":
+  157.827 ±(99.9%) 0.798 ms/op [Average]
+  (min, avg, max) = (156.959, 157.827, 158.359), stdev = 0.528
+  CI (99.9%): [157.029, 158.625] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:28
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                    (entries)  Mode  Cnt    Score    Error  Units
+EmitterBenchmark.emitScalar        N/A  avgt   10    0.457 ±  0.016  us/op
+ParseBenchmark.load               1000  avgt   10    2.313 ±  0.010  ms/op
+ParseBenchmark.load             100000  avgt   10  869.758 ± 72.219  ms/op
+ParseBenchmark.parse              1000  avgt   10    1.488 ±  0.002  ms/op
+ParseBenchmark.parse            100000  avgt   10  157.827 ±  0.798  ms/op

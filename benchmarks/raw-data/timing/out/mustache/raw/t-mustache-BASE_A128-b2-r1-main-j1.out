@@ -1,0 +1,138 @@
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.Main.benchEscapeHTML
+
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 358.219 ops/s
+Iteration   1: 363.089 ops/s
+Iteration   2: 361.840 ops/s
+Iteration   3: 361.814 ops/s
+
+Result "mustachejava.benchmarks.Main.benchEscapeHTML":
+  362.248 ±(99.9%) 13.295 ops/s [Average]
+  (min, avg, max) = (361.814, 362.248, 363.089), stdev = 0.729
+  CI (99.9%): [348.953, 375.543] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.Main.benchEscapeHTMLwithSW
+
+# Run progress: 20.00% complete, ETA 00:00:08
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 128.748 ops/s
+Iteration   1: 128.153 ops/s
+Iteration   2: 127.432 ops/s
+Iteration   3: 127.374 ops/s
+
+Result "mustachejava.benchmarks.Main.benchEscapeHTMLwithSW":
+  127.653 ±(99.9%) 7.915 ops/s [Average]
+  (min, avg, max) = (127.374, 127.653, 128.153), stdev = 0.434
+  CI (99.9%): [119.738, 135.568] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testCompilation
+
+# Run progress: 40.00% complete, ETA 00:00:06
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 16165.739 ops/s
+Iteration   1: 16245.196 ops/s
+Iteration   2: 16194.839 ops/s
+Iteration   3: 16179.467 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testCompilation":
+  16206.501 ±(99.9%) 627.238 ops/s [Average]
+  (min, avg, max) = (16179.467, 16206.501, 16245.196), stdev = 34.381
+  CI (99.9%): [15579.263, 16833.738] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testExecution
+
+# Run progress: 60.00% complete, ETA 00:00:04
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 752301.171 ops/s
+Iteration   1: 751287.420 ops/s
+Iteration   2: 742079.683 ops/s
+Iteration   3: 747201.925 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testExecution":
+  746856.343 ±(99.9%) 84168.989 ops/s [Average]
+  (min, avg, max) = (742079.683, 746856.343, 751287.420), stdev = 4613.586
+  CI (99.9%): [662687.354, 831025.331] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testTimeline
+
+# Run progress: 80.00% complete, ETA 00:00:02
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 37242.602 ops/s
+Iteration   1: 37151.253 ops/s
+Iteration   2: 37285.828 ops/s
+Iteration   3: 37149.052 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testTimeline":
+  37195.378 ±(99.9%) 1429.218 ops/s [Average]
+  (min, avg, max) = (37149.052, 37195.378, 37285.828), stdev = 78.340
+  CI (99.9%): [35766.159, 38624.596] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:10
+
+Benchmark                    Mode  Cnt       Score       Error  Units
+Main.benchEscapeHTML        thrpt    3     362.248 ±    13.295  ops/s
+Main.benchEscapeHTMLwithSW  thrpt    3     127.653 ±     7.915  ops/s
+TweetBench.testCompilation  thrpt    3   16206.501 ±   627.238  ops/s
+TweetBench.testExecution    thrpt    3  746856.343 ± 84168.989  ops/s
+TweetBench.testTimeline     thrpt    3   37195.378 ±  1429.218  ops/s

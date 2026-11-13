@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/log4j2-plc  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+log4j2-plc               BASE b1 size 39.65/41.73/18.31/19.40 | parent 28.6 s 2.70 GB | driver 29.9 s REUSED
+log4j2-plc               BASE b2 size 39.65/41.73/18.31/19.40 | parent 32.1 s 2.61 GB | driver 33.4 s REUSED
+log4j2-plc               FULL b1 size 39.72/41.80/18.40/19.40 | parent 68.0 s 3.34 GB | driver 69.4 s | OK | child aa 32959 ms gen 38.8 s obs 38 s VmHWM 7.19 GB | wait 39.1 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL b2 size 39.72/41.80/18.40/19.40 | parent 69.0 s 3.45 GB | driver 70.7 s | OK | child aa 34290 ms gen 38.7 s obs 38 s VmHWM 7.22 GB | wait 39.1 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               BASE_A32 b1 size 39.32/41.40/17.97/19.40 | parent 28.0 s 2.61 GB | driver 29.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               BASE_A32 b2 size 39.32/41.40/17.97/19.40 | parent 29.9 s 2.81 GB | driver 31.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               FULL_A32 b1 size 39.39/41.47/18.06/19.40 | parent 70.0 s 3.22 GB | driver 72.3 s | OK | child aa 31091 ms gen 35.4 s obs 34 s VmHWM 7.21 GB | wait 35.6 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL_A32 b2 size 39.39/41.47/18.06/19.40 | parent 70.0 s 3.44 GB | driver 71.4 s | OK | child aa 33672 ms gen 37.5 s obs 38 s VmHWM 7.21 GB | wait 37.6 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               BASE_A128 b1 size 40.44/42.52/19.12/19.40 | parent 30.5 s 2.71 GB | driver 31.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               BASE_A128 b2 size 40.44/42.52/19.12/19.40 | parent 29.8 s 2.73 GB | driver 30.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               FULL_A128 b1 size 40.57/42.65/19.21/19.40 | parent 65.0 s 3.25 GB | driver 66.8 s | OK | child aa 34043 ms gen 37.7 s obs 37 s VmHWM 7.36 GB | wait 38.1 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL_A128 b2 size 40.57/42.65/19.21/19.40 | parent 60.0 s 3.19 GB | driver 61.4 s | OK | child aa 24895 ms gen 28.2 s obs 28 s VmHWM 7.23 GB | wait 28.6 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               BASE_A256 b1 size 42.14/44.22/20.87/19.33 | parent 31.8 s 2.88 GB | driver 32.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               BASE_A256 b2 size 42.14/44.22/20.86/19.33 | parent 30.6 s 2.76 GB | driver 31.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+log4j2-plc               FULL_A256 b1 size 42.21/44.29/20.96/19.33 | parent 69.0 s 3.31 GB | driver 71.2 s | OK | child aa 30291 ms gen 33.9 s obs 33 s VmHWM 7.21 GB | wait 34.1 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL_A256 b2 size 42.21/44.29/20.96/19.33 | parent 68.0 s 3.60 GB | driver 70.1 s | OK | child aa 29253 ms gen 35.3 s obs 36 s VmHWM 7.14 GB | wait 35.6 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+## build cost vs stock (means over builds)
+log4j2-plc               FULL/BASE  parent wall 30.4 -> 68.5 s (x2.26)  Peak RSS 2.66 -> 3.40 GB (x1.28)  child VmHWM 7.21 GB  size 39.65 -> 39.72 MB (x1.002)  status OK,OK
+log4j2-plc               BASE_A32/BASE  parent wall 30.4 -> 28.9 s (x0.95)  Peak RSS 2.66 -> 2.71 GB (x1.02)  child VmHWM ? GB  size 39.65 -> 39.32 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+log4j2-plc               FULL_A32/BASE  parent wall 30.4 -> 70.0 s (x2.31)  Peak RSS 2.66 -> 3.33 GB (x1.25)  child VmHWM 7.21 GB  size 39.65 -> 39.39 MB (x0.993)  status OK,OK
+log4j2-plc               BASE_A128/BASE  parent wall 30.4 -> 30.1 s (x0.99)  Peak RSS 2.66 -> 2.72 GB (x1.02)  child VmHWM ? GB  size 39.65 -> 40.44 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+log4j2-plc               FULL_A128/BASE  parent wall 30.4 -> 62.5 s (x2.06)  Peak RSS 2.66 -> 3.22 GB (x1.21)  child VmHWM 7.29 GB  size 39.65 -> 40.57 MB (x1.023)  status OK,OK
+log4j2-plc               BASE_A256/BASE  parent wall 30.4 -> 31.2 s (x1.03)  Peak RSS 2.66 -> 2.82 GB (x1.06)  child VmHWM ? GB  size 39.65 -> 42.14 MB (x1.063)  status NO-PROFILE,NO-PROFILE
+log4j2-plc               FULL_A256/BASE  parent wall 30.4 -> 68.5 s (x2.26)  Peak RSS 2.66 -> 3.46 GB (x1.30)  child VmHWM 7.17 GB  size 39.65 -> 42.21 MB (x1.064)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+log4j2-plc               FULL SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+log4j2-plc               BASE_A32 no profile  NO-PROFILE
+log4j2-plc               FULL_A32 SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+log4j2-plc               BASE_A128 no profile  NO-PROFILE
+log4j2-plc               FULL_A128 SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+log4j2-plc               BASE_A256 no profile  NO-PROFILE
+log4j2-plc               FULL_A256 SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+log4j2-plc               BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.2 s
+log4j2-plc               BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.4 s
+log4j2-plc               BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.8 s
+log4j2-plc               BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.7 s
+log4j2-plc               BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.9 s
+log4j2-plc               BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.6 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/yauaa  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+yauaa                    BASE b1 size 63.57/66.33/25.66/35.45 | parent 33.3 s 3.11 GB | driver 34.4 s REUSED
+yauaa                    BASE b2 size 63.57/66.33/25.66/35.45 | parent 41.0 s 3.24 GB | driver 42.7 s REUSED
+yauaa                    FULL b1 size 63.90/66.66/25.92/35.52 | parent 105.0 s 4.29 GB | driver 107.5 s | OK | child aa 50802 ms gen 56.2 s obs 56 s VmHWM 9.58 GB | wait 56.6 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    FULL b2 size 63.90/66.66/25.92/35.52 | parent 99.0 s 3.82 GB | driver 100.3 s | OK | child aa 50935 ms gen 57.4 s obs 57 s VmHWM 9.87 GB | wait 57.6 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    BASE_A32 b1 size 63.18/65.93/25.20/35.52 | parent 33.1 s 3.38 GB | driver 34.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    BASE_A32 b2 size 63.18/65.93/25.20/35.52 | parent 37.1 s 3.28 GB | driver 38.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    FULL_A32 b1 size 63.44/66.20/25.46/35.52 | parent 82.0 s 3.75 GB | driver 83.4 s | OK | child aa 44031 ms gen 49.2 s obs 49 s VmHWM 9.59 GB | wait 49.6 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    FULL_A32 b2 size 63.44/66.20/25.46/35.52 | parent 71.0 s 3.75 GB | driver 72.6 s | OK | child aa 35998 ms gen 39.2 s obs 38 s VmHWM 9.58 GB | wait 39.6 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    BASE_A128 b1 size 64.69/67.44/26.78/35.45 | parent 27.9 s 2.98 GB | driver 28.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    BASE_A128 b2 size 64.69/67.44/26.78/35.45 | parent 29.8 s 3.00 GB | driver 30.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    FULL_A128 b1 size 65.01/67.78/27.04/35.52 | parent 67.0 s 3.80 GB | driver 68.8 s | OK | child aa 34754 ms gen 37.8 s obs 37 s VmHWM 9.63 GB | wait 38.0 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    FULL_A128 b2 size 65.01/67.78/27.04/35.52 | parent 51.7 s 3.71 GB | driver 52.5 s | OK | child aa 24511 ms gen 27.2 s obs 26 s VmHWM 9.51 GB | wait 27.5 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    BASE_A256 b1 size 67.05/69.80/29.21/35.39 | parent 21.9 s 2.95 GB | driver 22.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    BASE_A256 b2 size 67.05/69.80/29.21/35.39 | parent 22.1 s 2.98 GB | driver 22.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+yauaa                    FULL_A256 b1 size 67.37/70.14/29.48/35.45 | parent 49.6 s 3.68 GB | driver 50.4 s | OK | child aa 23874 ms gen 26.5 s obs 26 s VmHWM 9.48 GB | wait 26.5 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+yauaa                    FULL_A256 b2 size 67.37/70.14/29.48/35.45 | parent 50.6 s 3.69 GB | driver 51.4 s | OK | child aa 24024 ms gen 26.6 s obs 26 s VmHWM 9.59 GB | wait 27.0 s | SBS=7 SV=294(ACC=219 ELEM=13) LS=12(JOINER=0) | IC=8996 TC=1042 MIRROR=159 EXACT=0 other=7 REUSED
+## build cost vs stock (means over builds)
+yauaa                    FULL/BASE  parent wall 37.1 -> 102.0 s (x2.75)  Peak RSS 3.17 -> 4.05 GB (x1.28)  child VmHWM 9.73 GB  size 63.57 -> 63.90 MB (x1.005)  status OK,OK
+yauaa                    BASE_A32/BASE  parent wall 37.1 -> 35.1 s (x0.94)  Peak RSS 3.17 -> 3.33 GB (x1.05)  child VmHWM ? GB  size 63.57 -> 63.18 MB (x0.994)  status NO-PROFILE,NO-PROFILE
+yauaa                    FULL_A32/BASE  parent wall 37.1 -> 76.5 s (x2.06)  Peak RSS 3.17 -> 3.75 GB (x1.18)  child VmHWM 9.59 GB  size 63.57 -> 63.44 MB (x0.998)  status OK,OK
+yauaa                    BASE_A128/BASE  parent wall 37.1 -> 28.9 s (x0.78)  Peak RSS 3.17 -> 2.99 GB (x0.94)  child VmHWM ? GB  size 63.57 -> 64.69 MB (x1.018)  status NO-PROFILE,NO-PROFILE
+yauaa                    FULL_A128/BASE  parent wall 37.1 -> 59.4 s (x1.60)  Peak RSS 3.17 -> 3.75 GB (x1.18)  child VmHWM 9.57 GB  size 63.57 -> 65.01 MB (x1.023)  status OK,OK
+yauaa                    BASE_A256/BASE  parent wall 37.1 -> 22.0 s (x0.59)  Peak RSS 3.17 -> 2.96 GB (x0.93)  child VmHWM ? GB  size 63.57 -> 67.05 MB (x1.055)  status NO-PROFILE,NO-PROFILE
+yauaa                    FULL_A256/BASE  parent wall 37.1 -> 50.1 s (x1.35)  Peak RSS 3.17 -> 3.69 GB (x1.16)  child VmHWM 9.53 GB  size 63.57 -> 67.37 MB (x1.060)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+yauaa                    FULL SBS=7 SV=294 (ACC=219 ELEM=13) LS=12 (JOINER=0)  OK
+yauaa                    BASE_A32 no profile  NO-PROFILE
+yauaa                    FULL_A32 SBS=7 SV=294 (ACC=219 ELEM=13) LS=12 (JOINER=0)  OK
+yauaa                    BASE_A128 no profile  NO-PROFILE
+yauaa                    FULL_A128 SBS=7 SV=294 (ACC=219 ELEM=13) LS=12 (JOINER=0)  OK
+yauaa                    BASE_A256 no profile  NO-PROFILE
+yauaa                    FULL_A256 SBS=7 SV=294 (ACC=219 ELEM=13) LS=12 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+yauaa                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.5 s
+yauaa                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 38.0 s
+yauaa                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.7 s
+yauaa                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.9 s
+yauaa                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.6 s
+yauaa                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.8 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

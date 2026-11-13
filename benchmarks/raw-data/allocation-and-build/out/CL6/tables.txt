@@ -1,0 +1,25 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL6  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+re2j                     BASE b1 size 23.60/24.88/10.53/11.73 | parent 13.4 s 2.30 GB | driver 14.0 s REUSED
+re2j                     BASE b2 size 23.60/24.88/10.53/11.73 | parent 13.7 s 2.28 GB | driver 14.3 s REUSED
+re2j                     BASE b3 size 23.60/24.88/10.53/11.73 | parent 13.5 s 2.33 GB | driver 14.1 s REUSED
+re2j                     FULL b1 size 23.66/24.95/10.58/11.73 | parent 26.7 s 2.36 GB | driver 27.3 s | OK | child aa 9487 ms gen 11.9 s obs 11 s VmHWM 3.00 GB | wait 12.0 s | SBS=2 SV=123(ACC=103 ELEM=5) LS=0(JOINER=0) | IC=3884 TC=359 MIRROR=59 EXACT=0 other=3 REUSED
+re2j                     FULL b2 size 23.66/24.95/10.58/11.73 | parent 26.7 s 2.39 GB | driver 27.4 s | OK | child aa 9345 ms gen 11.7 s obs 12 s VmHWM 2.96 GB | wait 12.0 s | SBS=2 SV=123(ACC=103 ELEM=5) LS=0(JOINER=0) | IC=3884 TC=359 MIRROR=59 EXACT=0 other=3 REUSED
+re2j                     FULL b3 size 23.66/24.95/10.58/11.73 | parent 26.5 s 2.34 GB | driver 27.2 s | OK | child aa 9476 ms gen 11.9 s obs 11 s VmHWM 3.03 GB | wait 12.0 s | SBS=2 SV=123(ACC=103 ELEM=5) LS=0(JOINER=0) | IC=3884 TC=359 MIRROR=59 EXACT=0 other=3 REUSED
+tinylog                  BASE b1 size 39.06/41.13/18.24/18.87 | parent 18.2 s 2.49 GB | driver 18.9 s REUSED
+tinylog                  BASE b2 size 39.06/41.13/18.24/18.87 | parent 18.1 s 2.48 GB | driver 18.7 s REUSED
+tinylog                  BASE b3 size 39.06/41.13/18.24/18.87 | parent 17.9 s 2.47 GB | driver 18.5 s REUSED
+tinylog                  FULL b1 size 39.13/41.21/18.32/18.87 | parent 37.3 s 2.92 GB | driver 38.0 s | OK | child aa 15009 ms gen 17.7 s obs 17 s VmHWM 4.21 GB | wait 18.0 s | SBS=6 SV=205(ACC=132 ELEM=13) LS=42(JOINER=0) | IC=6537 TC=657 MIRROR=98 EXACT=0 other=37 REUSED
+tinylog                  FULL b2 size 39.13/41.21/18.32/18.87 | parent 37.8 s 2.89 GB | driver 38.6 s | OK | child aa 15443 ms gen 18.0 s obs 18 s VmHWM 4.18 GB | wait 18.5 s | SBS=6 SV=205(ACC=132 ELEM=13) LS=42(JOINER=0) | IC=6537 TC=657 MIRROR=98 EXACT=0 other=37 REUSED
+tinylog                  FULL b3 size 39.13/41.21/18.32/18.87 | parent 37.2 s 2.99 GB | driver 38.0 s | OK | child aa 15120 ms gen 17.8 s obs 17 s VmHWM 4.28 GB | wait 18.0 s | SBS=6 SV=205(ACC=132 ELEM=13) LS=42(JOINER=0) | IC=6537 TC=657 MIRROR=98 EXACT=0 other=37 REUSED
+## build cost vs stock (means over builds)
+re2j                     FULL/BASE  parent wall 13.5 -> 26.6 s (x1.97)  Peak RSS 2.30 -> 2.36 GB (x1.03)  child VmHWM 3.00 GB  size 23.60 -> 23.66 MB (x1.003)  status OK,OK,OK
+tinylog                  FULL/BASE  parent wall 18.1 -> 37.4 s (x2.07)  Peak RSS 2.48 -> 2.93 GB (x1.18)  child VmHWM 4.22 GB  size 39.06 -> 39.13 MB (x1.002)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+re2j                     FULL SBS=2 SV=123 (ACC=103 ELEM=5) LS=0 (JOINER=0)  OK
+tinylog                  FULL SBS=6 SV=205 (ACC=132 ELEM=13) LS=42 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

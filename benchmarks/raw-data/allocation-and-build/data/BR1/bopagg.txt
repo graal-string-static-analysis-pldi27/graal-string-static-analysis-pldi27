@@ -1,0 +1,36 @@
+# BR1  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+spring                   LS     |   0.983   0.969   0.969 0.968[0.968,0.968]        0.968 | 0.948/0.972/0.985 | 2/2 | 0 | 2
+spring                   SBS    |   0.953   0.999   0.999 0.999[0.999,0.999]        0.999 | 0.978/1.023/0.996 | 2/2 | 0 | 0
+spring                   SV     |   0.849   0.814   0.814 0.872[0.867,0.877]        0.869 | 0.805/0.813/0.823 | 2/2 | 0 | 2
+stringbuilder-to-string  LS     |   0.985   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 3/3 | 0 | 0
+stringbuilder-to-string  SBS    |   0.992   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 3/3 | 0 | 0
+stringbuilder-to-string  SV     |   0.624   0.636   0.636 0.636[0.635,0.637]        0.637 | 0.635/0.636/0.636 | 3/3 | 0 | 3
+
+## BR1 spring LS vs BASE: key | ops% BASE | ops% LS | ops ratio | B/op BASE | B/op LS | ratio | bytes% BASE | bytes% LS
+StringUtilsBenchmark.cleanPath pathsCount=20,segmentCount=10   2.19   2.25   1.02   41687.8   40289.2  0.966   64.9   65.3
+StringUtilsBenchmark.collectionToDelimitedString elementCoun  97.81  97.75   0.99     506.2     491.5  0.971   35.1   34.7
+
+## BR1 spring SBS vs BASE: key | ops% BASE | ops% SBS | ops ratio | B/op BASE | B/op SBS | ratio | bytes% BASE | bytes% SBS
+StringUtilsBenchmark.cleanPath pathsCount=20,segmentCount=10   2.19   2.04   0.95   41687.8   41665.4  0.999   64.9   63.1
+StringUtilsBenchmark.collectionToDelimitedString elementCoun  97.81  97.96   1.03     506.2     505.3  0.998   35.1   36.9
+
+## BR1 spring SV vs BASE: key | ops% BASE | ops% SV | ops ratio | B/op BASE | B/op SV | ratio | bytes% BASE | bytes% SV
+StringUtilsBenchmark.cleanPath pathsCount=20,segmentCount=10   2.19   2.11   1.01   41687.8   40746.2  0.977   64.9   71.9
+StringUtilsBenchmark.collectionToDelimitedString elementCoun  97.81  97.89   1.05     506.2     342.8  0.677   35.1   28.1
+
+## BR1 stringbuilder-to-string LS vs BASE: key | ops% BASE | ops% LS | ops ratio | B/op BASE | B/op LS | ratio | bytes% BASE | bytes% LS
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=128   59.69  60.43   1.02     760.7     760.6  1.000   33.5   34.4
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=256   31.64  31.30   1.00    1403.7    1403.5  1.000   32.7   32.9
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=1024   8.67   8.27   0.96    5285.8    5285.6  1.000   33.8   32.7
+
+## BR1 stringbuilder-to-string SBS vs BASE: key | ops% BASE | ops% SBS | ops ratio | B/op BASE | B/op SBS | ratio | bytes% BASE | bytes% SBS
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=128   59.69  59.88   1.03     760.7     760.5  1.000   33.5   33.8
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=256   31.64  31.69   1.03    1403.7    1403.6  1.000   32.7   33.1
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=1024   8.67   8.42   1.00    5285.8    5285.0  1.000   33.8   33.1
+
+## BR1 stringbuilder-to-string SV vs BASE: key | ops% BASE | ops% SV | ops ratio | B/op BASE | B/op SV | ratio | bytes% BASE | bytes% SV
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=128   59.69  60.52   1.07     760.7     504.9  0.664   33.5   36.1
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=256   31.64  31.39   1.05    1403.7     890.2  0.634   32.7   33.0
+StringBuilderToString.toStringWithMixedChars MIXED_SIZE=1024   8.67   8.09   0.99    5285.8    3226.2  0.610   33.8   30.9
+

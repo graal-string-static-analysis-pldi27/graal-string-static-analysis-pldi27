@@ -1,0 +1,33 @@
+# XB3  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+commons-csv              LS     |   0.974   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 7/7 | 0 | 0
+commons-csv              SBS    |   0.975   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 7/7 | 0 | 0
+commons-csv              SV     |   0.987   0.995   0.995 0.997[0.997,0.997]        0.997 | 0.995/0.995/0.995 | 7/7 | 0 | 1
+
+## XB3 commons-csv LS vs BASE: key | ops% BASE | ops% LS | ops ratio | B/op BASE | B/op LS | ratio | bytes% BASE | bytes% LS
+CSVBenchmark.parseCommonsCSV                                   5.57   5.34   1.00 1450039184.7 1450040394.6  1.000    9.0    8.9
+CSVBenchmark.parseGenJavaCSV                                   1.64   1.56   0.99 3940458276.1 3940437682.9  1.000    7.2    7.0
+CSVBenchmark.parseJavaCSV                                     12.29  11.73   1.00 1319838040.5 1319836975.8  1.000   18.1   17.7
+CSVBenchmark.parseOpenCSV                                      7.14   6.89   1.01 2532519679.7 2532516503.1  1.000   20.1   20.0
+CSVBenchmark.parseSuperCSV                                     6.48   6.22   1.00 1659004120.1 1659005077.6  1.000   12.0   11.8
+CSVBenchmark.read                                             59.41  60.97   1.07 276191232.8 276191252.6  1.000   18.3   19.3
+CSVBenchmark.scan                                              7.47   7.29   1.02 1845302790.1 1845305414.6  1.000   15.4   15.4
+
+## XB3 commons-csv SBS vs BASE: key | ops% BASE | ops% SBS | ops ratio | B/op BASE | B/op SBS | ratio | bytes% BASE | bytes% SBS
+CSVBenchmark.parseCommonsCSV                                   5.57   5.33   1.00 1450039184.7 1450040703.3  1.000    9.0    8.8
+CSVBenchmark.parseGenJavaCSV                                   1.64   1.57   1.00 3940458276.1 3940437425.7  1.000    7.2    7.1
+CSVBenchmark.parseJavaCSV                                     12.29  11.69   0.99 1319838040.5 1319836755.3  1.000   18.1   17.6
+CSVBenchmark.parseOpenCSV                                      7.14   7.02   1.03 2532519679.7 2532516373.7  1.000   20.1   20.3
+CSVBenchmark.parseSuperCSV                                     6.48   6.21   1.00 1659004120.1 1659004384.0  1.000   12.0   11.8
+CSVBenchmark.read                                             59.41  61.00   1.07 276191232.8 276191215.1  1.000   18.3   19.3
+CSVBenchmark.scan                                              7.47   7.18   1.00 1845302790.1 1845304209.7  1.000   15.4   15.1
+
+## XB3 commons-csv SV vs BASE: key | ops% BASE | ops% SV | ops ratio | B/op BASE | B/op SV | ratio | bytes% BASE | bytes% SV
+CSVBenchmark.parseCommonsCSV                                   5.57   5.28   0.98 1450039184.7 1450041548.5  1.000    9.0    8.6
+CSVBenchmark.parseGenJavaCSV                                   1.64   1.77   1.12 3940458276.1 3818119058.8  0.969    7.2    7.6
+CSVBenchmark.parseJavaCSV                                     12.29  11.94   1.00 1319838040.5 1313290785.7  0.995   18.1   17.7
+CSVBenchmark.parseOpenCSV                                      7.14   7.06   1.02 2532519679.7 2532519161.9  1.000   20.1   20.2
+CSVBenchmark.parseSuperCSV                                     6.48   6.22   0.99 1659004120.1 1659002754.6  1.000   12.0   11.6
+CSVBenchmark.read                                             59.41  60.34   1.05 276191232.8 276190884.6  1.000   18.3   18.8
+CSVBenchmark.scan                                              7.47   7.38   1.02 1845302790.1 1845305597.1  1.000   15.4   15.4
+

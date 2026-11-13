@@ -1,0 +1,64 @@
+1794231198.953294 Warning: The option '-H:IncludeResources=input/.*\.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+1794231198.953471 Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+1794231200.217596 ========================================================================================================================
+1794231200.219139 GraalVM Native Image: Generating 'minimal-json-BASE-b1' (executable)...
+1794231200.219156 ========================================================================================================================
+1794231200.219167 For detailed information and explanations on the build output, visit:
+1794231200.219179 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794231200.219193 ------------------------------------------------------------------------------------------------------------------------
+1794231201.702551 [1/8] Initializing...                                                                                    (2.2s @ 0.39GB)
+1794231201.702822  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794231201.702949  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794231201.703024  C compiler: gcc (linux, x86_64, 15.2.0)
+1794231201.703131  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794231201.703157  1 user-specific feature(s):
+1794231201.703312  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794231201.704247 ------------------------------------------------------------------------------------------------------------------------
+1794231201.704271  2 experimental option(s) unlocked:
+1794231201.704311  - '-H:CodeAlignment' (origin(s): command line)
+1794231201.704332  - '-H:IncludeResources': Use a resource-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+1794231201.705264 ------------------------------------------------------------------------------------------------------------------------
+1794231201.705274 Build resources:
+1794231201.705343  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794231201.705386  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794231204.850090 [2/8] Performing analysis...  [******]                                                                   (2.8s @ 0.67GB)
+1794231204.866429     4,420 types,   5,386 fields, and  20,836 methods found reachable
+1794231204.866951     1,384 types,      60 fields, and     926 methods registered for reflection
+1794231204.866997        58 types,      59 fields, and      52 methods registered for JNI access
+1794231204.867024         0 downcalls and 0 upcalls registered for foreign access
+1794231204.867047         4 native libraries: dl, pthread, rt, z
+1794231205.800909 [3/8] Building universe...                                                                               (0.9s @ 0.58GB)
+1794231206.308243 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 0.77GB)
+1794231206.665548 [5/8] Inlining methods...     [***]                                                                      (0.2s @ 0.59GB)
+1794231209.156889 [6/8] Compiling methods...    [**]                                                                       (2.5s @ 0.70GB)
+1794231210.343996 [7/8] Laying out methods...   [*]                                                                        (1.2s @ 0.78GB)
+1794231211.497256 [8/8] Creating image...       [*]                                                                        (1.0s @ 0.61GB)
+1794231211.497492    7.74MB (40.22%) for code area:    12,275 compilation units
+1794231211.497541    9.24MB (48.02%) for image heap:  105,053 objects and 71 resources
+1794231211.497590    2.26MB (11.77%) for other data
+1794231211.497625   19.24MB in total image size, 18.09MB in total file size
+1794231211.497685 ------------------------------------------------------------------------------------------------------------------------
+1794231211.498267 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794231211.498506    4.04MB java.base                                            2.08MB byte[] for code metadata
+1794231211.498537  962.71kB svm.jar (Native Image)                               1.47MB byte[] for java.lang.String
+1794231211.498564  894.78kB jackson-databind-2.5.0.jar                         998.85kB java.lang.String
+1794231211.498590  230.61kB jackson-core-2.5.0.jar                             848.64kB com.oracle.svm.core.hub.DynamicHubCompanion
+1794231211.498634  230.56kB gson-2.3.1.jar                                     584.79kB java.lang.Class
+1794231211.498676  199.62kB asm-3.3.1.jar                                      581.20kB byte[] for general heap data
+1794231211.498708  111.06kB java.logging                                       326.11kB java.util.HashMap$Node
+1794231211.498737   90.80kB org.graalvm.nativeimage.base                       234.12kB java.lang.Object[]
+1794231211.498767   70.08kB json-simple-1.1.1.jar                              200.62kB heap alignment
+1794231211.498876   68.36kB json-smart-2.1.1.jar                               189.70kB java.lang.String[]
+1794231211.499459  477.77kB for 25 more packages                                 1.73MB for 1196 more object types
+1794231211.500324 ------------------------------------------------------------------------------------------------------------------------
+1794231211.500331 Recommendations:
+1794231211.500371  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794231211.500384  HEAP: Set max heap for improved and more predictable memory usage.
+1794231211.500462  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794231211.502358 ------------------------------------------------------------------------------------------------------------------------
+1794231211.503175                         0.7s (5.4% of total time) in 55 GCs | Peak RSS: 2.21GB | CPU load: 13.62
+1794231211.503515 ------------------------------------------------------------------------------------------------------------------------
+1794231211.503520 Build artifacts:
+1794231211.503851  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CP1/bin/minimal-json-BASE-b1 (executable)
+1794231211.503868 ========================================================================================================================
+1794231211.503933 Finished generating 'minimal-json-BASE-b1' in 12.0s.

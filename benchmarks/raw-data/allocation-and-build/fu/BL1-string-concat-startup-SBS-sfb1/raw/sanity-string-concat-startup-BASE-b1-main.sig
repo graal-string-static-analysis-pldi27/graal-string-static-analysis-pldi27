@@ -1,0 +1,16 @@
+StringConcatStartup.MixedLarge.run N/A
+StringConcatStartup.MixedSmall.run N/A
+StringConcatStartup.StringLarge.run N/A
+StringConcatStartup.StringSingle.constBool 4711
+StringConcatStartup.StringSingle.constBoolString 4711
+StringConcatStartup.StringSingle.constBoolean 4711
+StringConcatStartup.StringSingle.constBooleanString 4711
+StringConcatStartup.StringSingle.constFloat 4711
+StringConcatStartup.StringSingle.constFloatString 4711
+StringConcatStartup.StringSingle.constInt 4711
+StringConcatStartup.StringSingle.constIntString 4711
+StringConcatStartup.StringSingle.constInteger 4711
+StringConcatStartup.StringSingle.constIntegerString 4711
+StringConcatStartup.StringSingle.constString 4711
+StringConcatStartup.StringThree.stringIntString 4711
+StringConcatStartup.StringThree.stringIntegerString 4711

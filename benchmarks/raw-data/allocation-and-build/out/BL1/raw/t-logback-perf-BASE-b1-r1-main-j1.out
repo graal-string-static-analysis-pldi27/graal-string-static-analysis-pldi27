@@ -1,0 +1,51 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true -DperfTarget=/dev/shm/perf-target/
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 5 s per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: ch.qos.logback.perf.FileAppenderBenchmark.enhancedLogbackToFile
+
+# Run progress: 0.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3201.096 ops/ms
+# Warmup Iteration   2: 3410.172 ops/ms
+# Warmup Iteration   3: 3420.854 ops/ms
+# Warmup Iteration   4: 3420.583 ops/ms
+# Warmup Iteration   5: 3290.679 ops/ms
+Iteration   1: 3402.597 ops/ms
+Iteration   2: 3363.472 ops/ms
+Iteration   3: 3305.919 ops/ms
+Iteration   4: 3389.494 ops/ms
+Iteration   5: 3376.104 ops/ms
+Iteration   6: 3326.931 ops/ms
+Iteration   7: 3313.406 ops/ms
+Iteration   8: 3364.498 ops/ms
+Iteration   9: 3319.636 ops/ms
+Iteration  10: Deleted logback file: /dev/shm/perf-target/logback-perf.log of length 67108864
+3387.027 ops/ms
+
+Result "ch.qos.logback.perf.FileAppenderBenchmark.enhancedLogbackToFile":
+  3354.908 ±(99.9%) 53.490 ops/ms [Average]
+  (min, avg, max) = (3305.919, 3354.908, 3402.597), stdev = 35.380
+  CI (99.9%): [3301.418, 3408.398] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:15
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                     Mode  Cnt     Score    Error   Units
+FileAppenderBenchmark.enhancedLogbackToFile  thrpt   10  3354.908 ± 53.490  ops/ms

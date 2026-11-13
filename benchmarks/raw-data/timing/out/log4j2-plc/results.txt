@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=log4j2-plc  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/log4j2-plc  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## log4j2-plc  [jmh] log4j2 PatternLayoutComparisonBenchmark, log4j2 arm (hunt/ab candspec; failing logback arm not selected)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.085 [1.017,1.162] SLOWER (1 keys)  alloc 0.925 [0.866,0.984] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.041 [1.028,1.053] SLOWER (1 keys)  alloc 0.964 [0.955,0.973] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.056 [1.038,1.075] SLOWER (1 keys)  alloc 0.950 [0.936,0.965] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.033 [1.019,1.047] SLOWER (1 keys)  alloc 0.970 [0.959,0.982] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.037 [1.007,1.068] SLOWER (1 keys)  alloc 0.965 [0.938,0.992] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.138 [1.106,1.172] SLOWER (1 keys)  alloc 0.881 [0.860,0.902] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.133 [1.117,1.149] SLOWER (1 keys)  alloc 0.880 [0.864,0.896] LESS (1 keys)
+  PatternLayoutComparisonBenchmark.log4j2                                FULL 1.085 [1.017,1.162] SLOWER | BASE_A32 1.041 [1.028,1.053] SLOWER | FULL_A32 1.056 [1.038,1.075] SLOWER | BASE_A128 1.033 [1.019,1.047] SLOWER | FULL_A128 1.037 [1.007,1.068] SLOWER | BASE_A256 1.138 [1.106,1.172] SLOWER | FULL_A256 1.133 [1.117,1.149] SLOWER
+  ~alloc MB                                                              FULL 0.925 [0.866,0.984] LESS | BASE_A32 0.964 [0.955,0.973] LESS | FULL_A32 0.950 [0.936,0.965] LESS | BASE_A128 0.970 [0.959,0.982] LESS | FULL_A128 0.965 [0.938,0.992] LESS | BASE_A256 0.881 [0.860,0.902] LESS | FULL_A256 0.880 [0.864,0.896] LESS
+  ~rss MB                                                                FULL 1.003 [1.000,1.006] n.s. | BASE_A32 0.995 [0.991,0.999] LESS | FULL_A32 1.004 [1.000,1.008] MORE | BASE_A128 1.011 [1.009,1.013] MORE | FULL_A128 1.001 [0.999,1.003] n.s. | BASE_A256 1.019 [1.016,1.022] MORE | FULL_A256 1.014 [1.012,1.017] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  log4j2-plc                 1.085*|0.925*     1.041*|0.964*     1.056*|0.950*     1.033*|0.970*     1.037*|0.965*     1.138*|0.881*     1.133*|0.880*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

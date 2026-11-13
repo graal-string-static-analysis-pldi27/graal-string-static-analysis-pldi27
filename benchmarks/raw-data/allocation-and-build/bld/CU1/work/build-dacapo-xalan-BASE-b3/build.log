@@ -1,0 +1,62 @@
+1792869990.675609 ========================================================================================================================
+1792869990.677839 GraalVM Native Image: Generating 'dacapo-xalan-BASE-b3' (executable)...
+1792869990.677886 ========================================================================================================================
+1792869990.677899 For detailed information and explanations on the build output, visit:
+1792869990.677911 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792869990.677931 ------------------------------------------------------------------------------------------------------------------------
+1792869992.275658 [1/8] Initializing...                                                                                    (2.2s @ 0.47GB)
+1792869992.275883  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792869992.276020  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792869992.276099  C compiler: gcc (linux, x86_64, 15.2.0)
+1792869992.276213  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792869992.276241  1 user-specific feature(s):
+1792869992.276458  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792869992.277051 ------------------------------------------------------------------------------------------------------------------------
+1792869992.277084  1 experimental option(s) unlocked:
+1792869992.277136  - '-H:CodeAlignment' (origin(s): command line)
+1792869992.278395 ------------------------------------------------------------------------------------------------------------------------
+1792869992.278427 Build resources:
+1792869992.278615  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792869992.278728  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792869992.292341 Skipped 634 predefined class(es) because the classpath already contains a class with the same name: org.apache.xml.serializer.WriterToUTF8Buffered, org.apache.xml.utils.ObjectStack, org.apache.xerces.impl.XMLDocumentScannerImpl$TrailingMiscDispatcher, org.apache.xml.dtm.ref.IncrementalSAXSource, javax.xml.transform.stream.StreamResult, org.apache.xalan.templates.ElemIf, org.apache.xalan.transformer.MsgMgr, org.apache.xpath.objects.XRTreeFrag, org.xml.sax.ErrorHandler, org.apache.xml.utils.URI$MalformedURIException, ...
+1792869997.133323 [2/8] Performing analysis...  [*****]                                                                    (4.6s @ 0.88GB)
+1792869997.155273     6,879 types,  10,762 fields, and  33,199 methods found reachable
+1792869997.155918     2,474 types,     700 fields, and   3,260 methods registered for reflection
+1792869997.155959        59 types,      60 fields, and      52 methods registered for JNI access
+1792869997.155987         0 downcalls and 0 upcalls registered for foreign access
+1792869997.156032         4 native libraries: dl, pthread, rt, z
+1792869998.397596 [3/8] Building universe...                                                                               (1.2s @ 1.05GB)
+1792869998.911730 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.07GB)
+1792869999.447152 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.14GB)
+1792870003.624465 [6/8] Compiling methods...    [**]                                                                       (4.2s @ 0.98GB)
+1792870005.740935 [7/8] Laying out methods...   [**]                                                                       (2.1s @ 1.27GB)
+1792870007.618030 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.41GB)
+1792870007.618324   16.86MB (43.93%) for code area:    20,826 compilation units
+1792870007.618407   18.02MB (46.97%) for image heap:  189,452 objects and 169 resources
+1792870007.618446    3.49MB ( 9.10%) for other data
+1792870007.618488   38.37MB in total image size, 36.57MB in total file size
+1792870007.618554 ------------------------------------------------------------------------------------------------------------------------
+1792870007.619271 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792870007.619495    7.13MB java.base                                            4.38MB byte[] for code metadata
+1792870007.619527    4.34MB java.xml                                             2.39MB byte[] for java.lang.String
+1792870007.619573    1.39MB svm.jar (Native Image)                               1.65MB java.lang.String
+1792870007.620047    1.10MB xercesImpl.jar                                       1.38MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792870007.620068    1.01MB xalan.jar                                          987.73kB java.lang.Class
+1792870007.620087  295.92kB dacapo-evaluation-git-e947cbfc.jar                 875.42kB byte[] for general heap data
+1792870007.620101  223.61kB jdk.zipfs                                          567.19kB int[]
+1792870007.620117  196.19kB serializer.jar                                     539.07kB heap alignment
+1792870007.620132  112.20kB java.logging                                       526.78kB int[][]
+1792870007.620149   93.47kB org.graalvm.nativeimage.base                       426.82kB java.util.HashMap$Node
+1792870007.620813  336.41kB for 13 more packages                                 4.31MB for 1652 more object types
+1792870007.621528 ------------------------------------------------------------------------------------------------------------------------
+1792870007.621535 Recommendations:
+1792870007.621568  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792870007.621607  HEAP: Set max heap for improved and more predictable memory usage.
+1792870007.621631  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792870007.624487 ------------------------------------------------------------------------------------------------------------------------
+1792870007.625092                        1.2s (6.9% of total time) in 175 GCs | Peak RSS: 2.44GB | CPU load: 13.82
+1792870007.625384 ------------------------------------------------------------------------------------------------------------------------
+1792870007.625389 Build artifacts:
+1792870007.625720  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-xalan-BASE-b3 (executable)
+1792870007.625734 ========================================================================================================================
+1792870007.625778 Finished generating 'dacapo-xalan-BASE-b3' in 17.6s.

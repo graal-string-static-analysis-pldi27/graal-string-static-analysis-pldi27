@@ -1,0 +1,29 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AU  CFGS=BASE FULL  RPB=5  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## json-parser  starts BASE:30 FULL:30  time keys 1
+  FULL/BASE time  ratio 0.6313  (mean FULL 0.6313 n=30, BASE 1.0000 n=30)  error margin 0.0112 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 0.2138  (mean FULL 0.2138 n=30, BASE 1.0000 n=30)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key Total Runtime us                                             BASE 9.92039e+06 sd 9.92e+04  FULL 6.26236e+06 sd 1.11e+05  [lower]
+
+## biojava  starts BASE:30 FULL:30  time keys 1
+  FULL/BASE time  ratio 0.8724  (mean FULL 0.8724 n=30, BASE 1.0000 n=30)  error margin 0.0047 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 0.2978  (mean FULL 0.2978 n=30, BASE 1.0000 n=30)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key iteration ms                                                 BASE 12843.8 sd 59.7  FULL 11205.5 sd 32.9  [lower]
+
+## jsoup  starts BASE:30 FULL:30  time keys 2
+  FULL/BASE time  ratio 0.8912  (mean FULL 0.8912 n=30, BASE 1.0000 n=30)  error margin 0.0058 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 0.9221  (mean FULL 0.9221 n=30, BASE 1.0000 n=30)  error margin 0.0001 (max sd)  paper-significance FASTER/LESS
+    key large: wall/rep ms                                           BASE 13.0528 sd 0.0816  FULL 11.6526 sd 0.0684  [lower]
+    key medium: wall/rep ms                                          BASE 0.278389 sd 0.00179  FULL 0.247681 sd 0.00112  [lower]
+
+## regex-redux  starts BASE:30 FULL:30  time keys 1
+  FULL/BASE time  ratio 0.9870  (mean FULL 0.9870 n=30, BASE 1.0000 n=30)  error margin 0.0136 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.7174  (mean FULL 0.7174 n=30, BASE 1.0000 n=30)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key iteration s                                                  BASE 6.38493 sd 0.0845  FULL 6.30214 sd 0.0866  [lower]
+
+## luindex  starts BASE:30 FULL:30  time keys 1
+  FULL/BASE time  ratio 0.9944  (mean FULL 0.9944 n=30, BASE 1.0000 n=30)  error margin 0.0040 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9306  (mean FULL 0.9306 n=30, BASE 1.0000 n=30)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key iteration ms                                                 BASE 6671.75 sd 26.9  FULL 6634.11 sd 20.4  [lower]
+
+PAPER30-DONE

@@ -1,0 +1,24 @@
+# C99 campaign results  SLOT=snakeyaml  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/snakeyaml  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## snakeyaml  [jmh] SnakeYAML Parse/Emitter (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.052 [1.034,1.075] SLOWER (5 keys)  alloc 0.954 [0.947,0.961] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.013 [0.991,1.037] n.s. (5 keys)  alloc 0.969 [0.949,0.989] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.011 [0.988,1.038] n.s. (5 keys)  alloc 0.951 [0.939,0.963] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.030 [1.013,1.052] SLOWER (5 keys)  alloc 0.977 [0.968,0.985] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.989 [0.960,1.021] n.s. (5 keys)  alloc 0.977 [0.969,0.985] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.043 [1.022,1.068] SLOWER (5 keys)  alloc 0.930 [0.919,0.942] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.017 [1.002,1.037] SLOWER (5 keys)  alloc 0.936 [0.928,0.945] LESS (1 keys)
+  EmitterBenchmark.emitScalar N/A                                        FULL 1.075 [1.061,1.089] SLOWER | BASE_A32 1.051 [1.009,1.094] SLOWER | FULL_A32 1.063 [1.049,1.077] SLOWER | BASE_A128 1.024 [1.007,1.041] SLOWER | FULL_A128 1.058 [1.035,1.082] SLOWER | BASE_A256 1.129 [1.113,1.147] SLOWER | FULL_A256 1.115 [1.094,1.137] SLOWER
+  ParseBenchmark.load 1000                                               FULL 0.999 [0.975,1.023] n.s. | BASE_A32 0.977 [0.950,1.004] n.s. | FULL_A32 1.143 [1.090,1.198] SLOWER | BASE_A128 0.999 [0.977,1.022] n.s. | FULL_A128 0.986 [0.960,1.013] n.s. | BASE_A256 1.027 [0.997,1.059] n.s. | FULL_A256 1.028 [1.009,1.048] SLOWER
+  ParseBenchmark.load 100000                                             FULL 1.059 [0.909,1.254] n.s. | BASE_A32 0.991 [0.796,1.245] n.s. | FULL_A32 0.867 [0.750,1.018] n.s. | BASE_A128 0.983 [0.853,1.151] n.s. | FULL_A128 0.951 [0.767,1.192] n.s. | BASE_A256 0.918 [0.806,1.065] n.s. | FULL_A256 0.872 [0.761,1.016] n.s.
+  ParseBenchmark.parse 1000                                              FULL 1.081 [1.059,1.103] SLOWER | BASE_A32 1.045 [1.028,1.062] SLOWER | FULL_A32 1.010 [0.989,1.030] n.s. | BASE_A128 1.081 [1.066,1.096] SLOWER | FULL_A128 0.977 [0.957,0.998] FASTER | BASE_A256 1.084 [1.064,1.104] SLOWER | FULL_A256 1.044 [1.025,1.063] SLOWER
+  ParseBenchmark.parse 100000                                            FULL 1.050 [1.020,1.081] SLOWER | BASE_A32 1.003 [0.977,1.030] n.s. | FULL_A32 0.994 [0.965,1.024] n.s. | BASE_A128 1.069 [1.051,1.086] SLOWER | FULL_A128 0.977 [0.961,0.994] FASTER | BASE_A256 1.068 [1.052,1.086] SLOWER | FULL_A256 1.045 [1.025,1.064] SLOWER
+  ~alloc MB                                                              FULL 0.954 [0.947,0.961] LESS | BASE_A32 0.969 [0.949,0.989] LESS | FULL_A32 0.951 [0.939,0.963] LESS | BASE_A128 0.977 [0.968,0.985] LESS | FULL_A128 0.977 [0.969,0.985] LESS | BASE_A256 0.930 [0.919,0.942] LESS | FULL_A256 0.936 [0.928,0.945] LESS
+  ~rss MB                                                                FULL 1.027 [0.989,1.068] n.s. | BASE_A32 1.032 [0.995,1.071] n.s. | FULL_A32 1.041 [1.005,1.078] MORE | BASE_A128 1.043 [1.006,1.082] MORE | FULL_A128 0.997 [0.954,1.043] n.s. | BASE_A256 1.023 [0.986,1.062] n.s. | FULL_A256 1.027 [0.991,1.064] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  snakeyaml                  1.052*|0.954*     1.013|0.969*      1.011|0.951*      1.030*|0.977*     0.989|0.977*      1.043*|0.930*     1.017*|0.936*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

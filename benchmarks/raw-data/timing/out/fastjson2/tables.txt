@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/fastjson2  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+fastjson2                BASE b1 size 37.55/39.52/18.02/17.63 | parent 45.6 s 2.82 GB | driver 47.2 s REUSED
+fastjson2                BASE b2 size 37.55/39.52/18.01/17.63 | parent 48.1 s 2.98 GB | driver 49.0 s REUSED
+fastjson2                FULL b1 size 37.62/39.59/18.07/17.63 | parent 103.0 s 3.65 GB | driver 104.3 s | OK | child aa 46441 ms gen 53.5 s obs 53 s VmHWM 7.15 GB | wait 53.6 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                FULL b2 size 37.62/39.59/18.05/17.63 | parent 100.0 s 3.46 GB | driver 101.6 s | OK | child aa 46026 ms gen 52.8 s obs 53 s VmHWM 6.85 GB | wait 51.7 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                BASE_A32 b1 size 37.29/39.26/17.71/17.63 | parent 49.4 s 2.75 GB | driver 50.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                BASE_A32 b2 size 37.29/39.26/17.71/17.63 | parent 42.9 s 2.82 GB | driver 44.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                FULL_A32 b1 size 37.29/39.26/17.73/17.63 | parent 103.0 s 3.54 GB | driver 105.0 s | OK | child aa 44037 ms gen 50.9 s obs 51 s VmHWM 6.97 GB | wait 50.2 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                FULL_A32 b2 size 37.29/39.26/17.73/17.63 | parent 86.0 s 3.48 GB | driver 87.6 s | OK | child aa 40341 ms gen 46.8 s obs 46 s VmHWM 6.81 GB | wait 47.1 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                BASE_A128 b1 size 38.34/40.31/18.77/17.63 | parent 39.9 s 2.82 GB | driver 40.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                BASE_A128 b2 size 38.34/40.31/18.79/17.63 | parent 47.8 s 2.84 GB | driver 49.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                FULL_A128 b1 size 38.41/40.38/18.84/17.63 | parent 100.0 s 3.80 GB | driver 101.8 s | OK | child aa 43715 ms gen 49.5 s obs 48 s VmHWM 6.77 GB | wait 48.6 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                FULL_A128 b2 size 38.41/40.38/18.82/17.63 | parent 105.0 s 3.42 GB | driver 106.9 s | OK | child aa 51175 ms gen 58.6 s obs 58 s VmHWM 6.85 GB | wait 58.6 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7500 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                BASE_A256 b1 size 39.91/41.88/20.44/17.56 | parent 45.8 s 2.93 GB | driver 47.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                BASE_A256 b2 size 39.91/41.88/20.44/17.56 | parent 45.6 s 2.78 GB | driver 46.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+fastjson2                FULL_A256 b1 size 39.98/41.95/20.51/17.56 | parent 105.0 s 3.36 GB | driver 107.1 s | OK | child aa 42439 ms gen 52.4 s obs 52 s VmHWM 6.88 GB | wait 52.6 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+fastjson2                FULL_A256 b2 size 39.98/41.95/20.49/17.56 | parent 99.0 s 3.49 GB | driver 101.0 s | OK | child aa 45219 ms gen 50.2 s obs 49 s VmHWM 6.86 GB | wait 50.1 s | SBS=2 SV=357(ACC=288 ELEM=7) LS=1(JOINER=0) | IC=7499 TC=653 MIRROR=125 EXACT=4 other=17 REUSED
+## build cost vs stock (means over builds)
+fastjson2                FULL/BASE  parent wall 46.9 -> 101.5 s (x2.17)  Peak RSS 2.90 -> 3.55 GB (x1.23)  child VmHWM 7.00 GB  size 37.55 -> 37.62 MB (x1.002)  status OK,OK
+fastjson2                BASE_A32/BASE  parent wall 46.9 -> 46.1 s (x0.99)  Peak RSS 2.90 -> 2.79 GB (x0.96)  child VmHWM ? GB  size 37.55 -> 37.29 MB (x0.993)  status NO-PROFILE,NO-PROFILE
+fastjson2                FULL_A32/BASE  parent wall 46.9 -> 94.5 s (x2.02)  Peak RSS 2.90 -> 3.51 GB (x1.21)  child VmHWM 6.89 GB  size 37.55 -> 37.29 MB (x0.993)  status OK,OK
+fastjson2                BASE_A128/BASE  parent wall 46.9 -> 43.8 s (x0.94)  Peak RSS 2.90 -> 2.83 GB (x0.98)  child VmHWM ? GB  size 37.55 -> 38.34 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+fastjson2                FULL_A128/BASE  parent wall 46.9 -> 102.5 s (x2.19)  Peak RSS 2.90 -> 3.61 GB (x1.24)  child VmHWM 6.81 GB  size 37.55 -> 38.41 MB (x1.023)  status OK,OK
+fastjson2                BASE_A256/BASE  parent wall 46.9 -> 45.7 s (x0.98)  Peak RSS 2.90 -> 2.85 GB (x0.98)  child VmHWM ? GB  size 37.55 -> 39.91 MB (x1.063)  status NO-PROFILE,NO-PROFILE
+fastjson2                FULL_A256/BASE  parent wall 46.9 -> 102.0 s (x2.18)  Peak RSS 2.90 -> 3.42 GB (x1.18)  child VmHWM 6.87 GB  size 37.55 -> 39.98 MB (x1.065)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+fastjson2                FULL SBS=2 SV=357 (ACC=288 ELEM=7) LS=1 (JOINER=0)  OK
+fastjson2                BASE_A32 no profile  NO-PROFILE
+fastjson2                FULL_A32 SBS=2 SV=357 (ACC=288 ELEM=7) LS=1 (JOINER=0)  OK
+fastjson2                BASE_A128 no profile  NO-PROFILE
+fastjson2                FULL_A128 SBS=2 SV=357 (ACC=288 ELEM=7) LS=1 (JOINER=0)  OK
+fastjson2                BASE_A256 no profile  NO-PROFILE
+fastjson2                FULL_A256 SBS=2 SV=357 (ACC=288 ELEM=7) LS=1 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+fastjson2                BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 50.6 s
+fastjson2                BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 44.1 s
+fastjson2                BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 40.8 s
+fastjson2                BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 49.0 s
+fastjson2                BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 47.2 s
+fastjson2                BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 46.9 s
+## determinism: fastjson2 FULL_A128: admit counts differ across builds
+TABLES-DONE

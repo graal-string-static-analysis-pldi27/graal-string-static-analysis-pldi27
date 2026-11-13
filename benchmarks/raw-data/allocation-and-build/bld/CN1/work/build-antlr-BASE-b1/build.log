@@ -1,0 +1,65 @@
+1794232741.082648 Warning: The option '-H:IncludeResources=Java/src/org/antlr/v4/runtime/(Parser|RuleContext)\.java|org/antlr/v4/test/runtime/java/api/perf/(udhr_hin|udhr_kor|emoji)\.txt' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+1794232741.082731 Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+1794232742.067711 ========================================================================================================================
+1794232742.069508 GraalVM Native Image: Generating 'antlr-BASE-b1' (executable)...
+1794232742.069533 ========================================================================================================================
+1794232742.069545 For detailed information and explanations on the build output, visit:
+1794232742.069557 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794232742.069572 ------------------------------------------------------------------------------------------------------------------------
+1794232743.564193 [1/8] Initializing...                                                                                    (2.1s @ 0.35GB)
+1794232743.564473  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794232743.564595  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794232743.564672  C compiler: gcc (linux, x86_64, 15.2.0)
+1794232743.564784  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794232743.564809  1 user-specific feature(s):
+1794232743.565114  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794232743.566238 ------------------------------------------------------------------------------------------------------------------------
+1794232743.566265  2 experimental option(s) unlocked:
+1794232743.566302  - '-H:CodeAlignment' (origin(s): command line)
+1794232743.566326  - '-H:IncludeResources': Use a resource-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+1794232743.567354 ------------------------------------------------------------------------------------------------------------------------
+1794232743.567380 Build resources:
+1794232743.567423  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794232743.567469  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794232747.275527 [2/8] Performing analysis...  [*****]                                                                    (3.4s @ 0.73GB)
+1794232747.293481     4,985 types,   5,949 fields, and  22,503 methods found reachable
+1794232747.294136     1,838 types,     654 fields, and   3,322 methods registered for reflection
+1794232747.294170        69 types,      81 fields, and      60 methods registered for JNI access
+1794232747.294179         0 downcalls and 0 upcalls registered for foreign access
+1794232747.294267         4 native libraries: dl, pthread, rt, z
+1794232748.313441 [3/8] Building universe...                                                                               (1.0s @ 0.88GB)
+1794232748.809200 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 0.88GB)
+1794232749.191810 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 0.78GB)
+1794232752.187689 [6/8] Compiling methods...    [**]                                                                       (3.0s @ 0.75GB)
+1794232753.506860 [7/8] Laying out methods...   [*]                                                                        (1.3s @ 0.76GB)
+1794232754.866340 [8/8] Creating image...       [*]                                                                        (1.2s @ 0.92GB)
+1794232754.866566    9.18MB (39.41%) for code area:    13,633 compilation units
+1794232754.866627   11.53MB (49.52%) for image heap:  135,949 objects and 260 resources
+1794232754.866655    2.58MB (11.08%) for other data
+1794232754.866694   23.29MB in total image size, 22.02MB in total file size
+1794232754.866735 ------------------------------------------------------------------------------------------------------------------------
+1794232754.867357 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794232754.867616    6.07MB java.base                                            2.36MB byte[] for code metadata
+1794232754.867677    1.33MB svm.jar (Native Image)                               1.77MB byte[] for java.lang.String
+1794232754.867725  362.62kB java.rmi                                             1.25MB java.lang.String
+1794232754.867801  121.42kB org.antlr.v4.runtime.atn                           997.00kB com.oracle.svm.core.hub.DynamicHubCompanion
+1794232754.867858  120.34kB java.logging                                       662.80kB byte[] for general heap data
+1794232754.867929  105.37kB jdk.internal.jvmstat                               651.98kB java.lang.Class
+1794232754.867978   91.32kB org.graalvm.nativeimage.base                       347.90kB java.util.HashMap$Node
+1794232754.868023   61.52kB jdk.proxy2                                         342.34kB heap alignment
+1794232754.868071   56.80kB org.antlr.v4.test.runtime.java.api                 292.73kB java.lang.Object[]
+1794232754.868124   52.09kB org.antlr.v4.test.runtime.java.api.perf            283.69kB byte[] for reflection metadata
+1794232754.869075  406.59kB for 22 more packages                                 2.58MB for 1218 more object types
+1794232754.870308 ------------------------------------------------------------------------------------------------------------------------
+1794232754.870314 Recommendations:
+1794232754.870373  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794232754.870383  HEAP: Set max heap for improved and more predictable memory usage.
+1794232754.870440  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794232754.873126 ------------------------------------------------------------------------------------------------------------------------
+1794232754.873913                         0.7s (5.1% of total time) in 64 GCs | Peak RSS: 2.27GB | CPU load: 13.97
+1794232754.874303 ------------------------------------------------------------------------------------------------------------------------
+1794232754.874308 Build artifacts:
+1794232754.874995  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CN1/bin/antlr-BASE-b1 (executable)
+1794232754.875066  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CN1/bin/libmanagement_ext.so (jdk_library)
+1794232754.875112 ========================================================================================================================
+1794232754.875135 Finished generating 'antlr-BASE-b1' in 13.4s.

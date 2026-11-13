@@ -1,0 +1,26 @@
+diff --git a/lucene/benchmark/conf/hunt3-createLineFile-reuters.alg b/lucene/benchmark/conf/hunt3-createLineFile-reuters.alg
+new file mode 100644
+index 0000000..1d3a0cc
+--- /dev/null
++++ b/lucene/benchmark/conf/hunt3-createLineFile-reuters.alg
+@@ -0,0 +1,5 @@
++content.source=org.apache.lucene.benchmark.byTask.feeds.ReutersContentSource
++line.file.out=work/reuters.lines.txt
++keep.image.only.docs = false
++content.source.forever=false
++{WriteLineDoc()}: *
+diff --git a/lucene/benchmark/conf/hunt3-indexLineFile-enwiki.alg b/lucene/benchmark/conf/hunt3-indexLineFile-enwiki.alg
+new file mode 100644
+index 0000000..f0ce101
+--- /dev/null
++++ b/lucene/benchmark/conf/hunt3-indexLineFile-enwiki.alg
+@@ -0,0 +1,9 @@
++analyzer=org.apache.lucene.analysis.core.SimpleAnalyzer
++content.source=org.apache.lucene.benchmark.byTask.feeds.LineDocSource
++docs.file=work/enwiki.random.lines.txt
++content.source.forever=false
++ResetSystemErase
++CreateIndex
++{AddDoc}: *
++CloseIndex
++RepSumByPref AddDoc

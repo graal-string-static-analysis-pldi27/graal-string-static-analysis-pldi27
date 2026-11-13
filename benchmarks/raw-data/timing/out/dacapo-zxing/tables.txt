@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-zxing  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-zxing             BASE b1 size 41.36/43.12/17.53/22.22 | parent 25.2 s 2.49 GB | driver 25.9 s REUSED
+dacapo-zxing             BASE b2 size 41.36/43.12/17.53/22.22 | parent 25.8 s 2.38 GB | driver 26.6 s REUSED
+dacapo-zxing             FULL b1 size 41.42/43.19/17.60/22.22 | parent 51.6 s 2.79 GB | driver 52.5 s | OK | child aa 21592 ms gen 24.5 s obs 24 s VmHWM 3.57 GB | wait 25.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL b2 size 41.42/43.19/17.60/22.22 | parent 51.2 s 3.12 GB | driver 52.2 s | OK | child aa 20791 ms gen 23.6 s obs 23 s VmHWM 3.64 GB | wait 24.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             BASE_A32 b1 size 41.03/42.79/17.24/22.22 | parent 26.9 s 2.41 GB | driver 27.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             BASE_A32 b2 size 41.03/42.79/17.24/22.22 | parent 24.0 s 2.33 GB | driver 24.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             FULL_A32 b1 size 41.16/42.93/17.31/22.28 | parent 50.4 s 2.90 GB | driver 51.3 s | OK | child aa 18747 ms gen 21.6 s obs 21 s VmHWM 3.60 GB | wait 22.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL_A32 b2 size 41.09/42.86/17.31/22.22 | parent 52.7 s 2.89 GB | driver 53.5 s | OK | child aa 20559 ms gen 25.0 s obs 24 s VmHWM 3.81 GB | wait 25.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             BASE_A128 b1 size 42.01/43.78/18.23/22.22 | parent 24.2 s 2.43 GB | driver 25.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             BASE_A128 b2 size 42.01/43.78/18.23/22.22 | parent 24.3 s 2.45 GB | driver 25.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             FULL_A128 b1 size 42.14/43.91/18.30/22.22 | parent 53.3 s 2.91 GB | driver 54.1 s | OK | child aa 20889 ms gen 24.0 s obs 24 s VmHWM 3.41 GB | wait 24.5 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL_A128 b2 size 42.14/43.91/18.30/22.22 | parent 50.8 s 2.87 GB | driver 51.8 s | OK | child aa 18856 ms gen 23.2 s obs 23 s VmHWM 3.68 GB | wait 23.5 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             BASE_A256 b1 size 43.45/45.22/19.72/22.15 | parent 25.6 s 2.42 GB | driver 26.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             BASE_A256 b2 size 43.45/45.22/19.72/22.15 | parent 26.6 s 2.34 GB | driver 27.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-zxing             FULL_A256 b1 size 43.58/45.35/19.80/22.22 | parent 48.2 s 2.96 GB | driver 49.1 s | OK | child aa 18486 ms gen 21.2 s obs 21 s VmHWM 3.56 GB | wait 21.5 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL_A256 b2 size 43.58/45.35/19.80/22.22 | parent 49.6 s 2.94 GB | driver 50.6 s | OK | child aa 19709 ms gen 23.0 s obs 22 s VmHWM 3.65 GB | wait 23.5 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+## build cost vs stock (means over builds)
+dacapo-zxing             FULL/BASE  parent wall 25.5 -> 51.4 s (x2.02)  Peak RSS 2.44 -> 2.96 GB (x1.21)  child VmHWM 3.60 GB  size 41.36 -> 41.42 MB (x1.002)  status OK,OK
+dacapo-zxing             BASE_A32/BASE  parent wall 25.5 -> 25.4 s (x1.00)  Peak RSS 2.44 -> 2.37 GB (x0.97)  child VmHWM ? GB  size 41.36 -> 41.03 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+dacapo-zxing             FULL_A32/BASE  parent wall 25.5 -> 51.5 s (x2.02)  Peak RSS 2.44 -> 2.90 GB (x1.19)  child VmHWM 3.70 GB  size 41.36 -> 41.13 MB (x0.994)  status OK,OK
+dacapo-zxing             BASE_A128/BASE  parent wall 25.5 -> 24.2 s (x0.95)  Peak RSS 2.44 -> 2.44 GB (x1.00)  child VmHWM ? GB  size 41.36 -> 42.01 MB (x1.016)  status NO-PROFILE,NO-PROFILE
+dacapo-zxing             FULL_A128/BASE  parent wall 25.5 -> 52.0 s (x2.04)  Peak RSS 2.44 -> 2.89 GB (x1.19)  child VmHWM 3.54 GB  size 41.36 -> 42.14 MB (x1.019)  status OK,OK
+dacapo-zxing             BASE_A256/BASE  parent wall 25.5 -> 26.1 s (x1.02)  Peak RSS 2.44 -> 2.38 GB (x0.98)  child VmHWM ? GB  size 41.36 -> 43.45 MB (x1.051)  status NO-PROFILE,NO-PROFILE
+dacapo-zxing             FULL_A256/BASE  parent wall 25.5 -> 48.9 s (x1.92)  Peak RSS 2.44 -> 2.95 GB (x1.21)  child VmHWM 3.61 GB  size 41.36 -> 43.58 MB (x1.054)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-zxing             FULL SBS=1 SV=186 (ACC=145 ELEM=2) LS=0 (JOINER=0)  OK
+dacapo-zxing             BASE_A32 no profile  NO-PROFILE
+dacapo-zxing             FULL_A32 SBS=1 SV=186 (ACC=145 ELEM=2) LS=0 (JOINER=0)  OK
+dacapo-zxing             BASE_A128 no profile  NO-PROFILE
+dacapo-zxing             FULL_A128 SBS=1 SV=186 (ACC=145 ELEM=2) LS=0 (JOINER=0)  OK
+dacapo-zxing             BASE_A256 no profile  NO-PROFILE
+dacapo-zxing             FULL_A256 SBS=1 SV=186 (ACC=145 ELEM=2) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-zxing             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.7 s
+dacapo-zxing             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.9 s
+dacapo-zxing             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.4 s
+dacapo-zxing             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.5 s
+dacapo-zxing             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.5 s
+dacapo-zxing             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.4 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

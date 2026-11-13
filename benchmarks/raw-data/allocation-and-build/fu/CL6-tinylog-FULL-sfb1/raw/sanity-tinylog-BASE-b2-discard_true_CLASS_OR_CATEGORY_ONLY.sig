@@ -1,0 +1,1 @@
+Tinylog2Benchmark.discard true CLASS_OR_CATEGORY_ONLY

@@ -1,0 +1,13 @@
+# XL1  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+jte                      FULL   |   0.977   0.983   0.983 0.979[0.978,0.979]        0.978 | 0.983/0.983/0.983 | 7/7 | 0 | 2
+
+## XL1 jte FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+TemplateOutputTest.stringBuilder                              22.84  23.82   1.07    9148.6    8454.6  0.924   25.2   24.9
+TemplateOutputTest.templateOutput                             22.50  21.85   1.00    9176.4    9169.2  0.999   24.9   24.8
+JteBench.directString                                         12.55  12.21   1.00    9159.4    9166.8  1.001   13.9   13.8
+JteBench.engineString                                         11.95  11.77   1.01    9231.4    9232.1  1.000   13.3   13.4
+JteBench.engineStringEsc                                       7.01   6.85   1.01    9417.9    9417.5  1.000    8.0    8.0
+JteBench.engineUtf8                                           16.36  16.10   1.01    4779.4    4779.2  1.000    9.4    9.5
+JteBench.engineUtf8Esc                                         6.79   7.41   1.12    6362.4    6109.3  0.960    5.2    5.6
+

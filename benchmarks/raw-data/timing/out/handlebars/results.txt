@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=handlebars  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/handlebars  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## handlebars  [metric] handlebars.java HbsBench stocks.hbs (hunt/ab-b34 candspec; median of 30 iterations)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.002 [0.993,1.011] n.s. (1 keys)  alloc 0.998 [0.988,1.007] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.006 [0.995,1.019] n.s. (1 keys)  alloc 0.994 [0.982,1.005] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.994 [0.990,0.998] FASTER (1 keys)  alloc 1.006 [1.002,1.010] MORE (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.035 [1.019,1.052] SLOWER (1 keys)  alloc 0.968 [0.951,0.985] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.028 [1.024,1.032] SLOWER (1 keys)  alloc 0.973 [0.969,0.977] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.071 [1.056,1.085] SLOWER (1 keys)  alloc 0.934 [0.922,0.947] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.107 [1.102,1.112] SLOWER (1 keys)  alloc 0.905 [0.901,0.910] LESS (1 keys)
+  stocks.hbs AVG per s                                                   FULL 0.997 [0.987,1.007] info-only | BASE_A32 0.994 [0.982,1.006] info-only | FULL_A32 1.005 [1.002,1.009] info-only | BASE_A128 0.967 [0.951,0.983] info-only | FULL_A128 0.972 [0.969,0.976] info-only | BASE_A256 0.934 [0.921,0.947] info-only | FULL_A256 0.904 [0.900,0.909] info-only
+  stocks.hbs median per s                                                FULL 1.002 [0.993,1.011] n.s. | BASE_A32 1.006 [0.995,1.019] n.s. | FULL_A32 0.994 [0.990,0.998] FASTER | BASE_A128 1.035 [1.019,1.052] SLOWER | FULL_A128 1.028 [1.024,1.032] SLOWER | BASE_A256 1.071 [1.056,1.085] SLOWER | FULL_A256 1.107 [1.102,1.112] SLOWER
+  ~alloc MB                                                              FULL 0.998 [0.988,1.007] n.s. | BASE_A32 0.994 [0.982,1.005] n.s. | FULL_A32 1.006 [1.002,1.010] MORE | BASE_A128 0.968 [0.951,0.985] LESS | FULL_A128 0.973 [0.969,0.977] LESS | BASE_A256 0.934 [0.922,0.947] LESS | FULL_A256 0.905 [0.901,0.910] LESS
+  ~rss MB                                                                FULL 0.993 [0.984,1.001] n.s. | BASE_A32 0.994 [0.988,1.000] LESS | FULL_A32 0.991 [0.986,0.996] LESS | BASE_A128 0.995 [0.988,1.003] n.s. | FULL_A128 1.005 [0.995,1.014] n.s. | BASE_A256 1.013 [1.005,1.021] MORE | FULL_A256 1.015 [1.008,1.022] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  handlebars                 1.002|0.998       1.006|0.994       0.994*|1.006*     1.035*|0.968*     1.028*|0.973*     1.071*|0.934*     1.107*|0.905*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

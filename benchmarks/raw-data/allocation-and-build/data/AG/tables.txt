@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AG  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+guava                    BASE b1 size 14.35/15.26/5.78/7.67 | parent 11.0 s 2.35 GB | driver 11.6 s REUSED
+guava                    BASE b2 size 14.35/15.26/5.78/7.67 | parent 11.1 s 2.34 GB | driver 11.8 s REUSED
+guava                    BASE b3 size 14.35/15.26/5.78/7.67 | parent 10.9 s 2.33 GB | driver 11.6 s REUSED
+guava                    FULL b1 size 14.62/15.53/5.97/7.73 | parent 21.5 s 2.57 GB | driver 22.1 s | OK | child aa 6806 ms gen 9.5 s obs 9 s VmHWM 2.96 GB | wait 10.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    FULL b2 size 14.62/15.53/5.97/7.73 | parent 21.4 s 2.56 GB | driver 22.1 s | OK | child aa 7017 ms gen 9.7 s obs 8 s VmHWM 2.96 GB | wait 10.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    FULL b3 size 14.62/15.53/5.97/7.73 | parent 21.6 s 2.56 GB | driver 22.3 s | OK | child aa 6951 ms gen 9.7 s obs 8 s VmHWM 2.94 GB | wait 10.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+## build cost vs stock (means over builds)
+guava                    FULL/BASE  parent wall 11.0 -> 21.5 s (x1.95)  Peak RSS 2.34 -> 2.56 GB (x1.10)  child VmHWM 2.95 GB  size 14.35 -> 14.62 MB (x1.018)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+guava                    FULL SBS=0 SV=13 (ACC=11 ELEM=0) LS=6 (JOINER=1)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

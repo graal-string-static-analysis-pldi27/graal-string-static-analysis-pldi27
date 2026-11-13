@@ -1,0 +1,30 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BR1  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## spring  starts BASE:3 SBS:3 SV:3 LS:3  time keys 2
+  SBS/BASE time  ratio 1.0116  (mean SBS 1.0117 n=3, BASE 1.0001 n=3)  error margin 0.0490 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9826  (mean SBS 0.9826 n=3, BASE 1.0000 n=3)  error margin 0.0417 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9696  (mean SV 0.9697 n=3, BASE 1.0001 n=3)  error margin 0.0097 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 0.8900  (mean SV 0.8900 n=3, BASE 1.0000 n=3)  error margin 0.0046 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9965  (mean LS 0.9965 n=3, BASE 1.0001 n=3)  error margin 0.0163 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 0.9889  (mean LS 0.9889 n=3, BASE 1.0000 n=3)  error margin 0.0140 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 1.0111  (mean SBS 1.0124 n=30 iterations, BASE 1.0013 n=30)  error margin 0.0476 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+  SV/BASE iter  ratio 0.9692  (mean SV 0.9704 n=30 iterations, BASE 1.0013 n=30)  error margin 0.0307 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+  LS/BASE iter  ratio 0.9963  (mean LS 0.9976 n=30 iterations, BASE 1.0013 n=30)  error margin 0.0307 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10             BASE 28420.9 sd 432  SBS 27080.2 sd 1.99e+03  SV 28745.3 sd 609  LS 28873.4 sd 572  [higher]
+    key StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/ BASE 1.26483e+06 sd 1.59e+04  SBS 1.30154e+06 sd 3.02e+04  SV 1.33077e+06 sd 4.64e+04  LS 1.25444e+06 sd 3.55e+04  [higher]
+
+## stringbuilder-to-string  starts BASE:3 SBS:3 SV:3 LS:3  time keys 3
+  SBS/BASE time  ratio 0.9830  (mean SBS 0.9836 n=3, BASE 1.0005 n=3)  error margin 0.0261 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0162  (mean SBS 1.0162 n=3, BASE 1.0000 n=3)  error margin 0.0255 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9705  (mean SV 0.9710 n=3, BASE 1.0005 n=3)  error margin 0.0261 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.6602  (mean SV 0.6602 n=3, BASE 1.0000 n=3)  error margin 0.0255 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 1.0134  (mean LS 1.0140 n=3, BASE 1.0005 n=3)  error margin 0.0588 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 0.9939  (mean LS 0.9939 n=3, BASE 1.0000 n=3)  error margin 0.0459 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 0.9830  (mean SBS 0.9836 n=30 iterations, BASE 1.0006 n=30)  error margin 0.0218 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+  SV/BASE iter  ratio 0.9707  (mean SV 0.9712 n=30 iterations, BASE 1.0006 n=30)  error margin 0.0218 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+  LS/BASE iter  ratio 1.0134  (mean LS 1.0140 n=30 iterations, BASE 1.0006 n=30)  error margin 0.0489 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+    key StringBuilderToString.toStringWithMixedChars 1024            BASE 326.165 sd 0.771  SBS 324.67 sd 1.35  SV 319.41 sd 14.5  LS 312.59 sd 24.6  [higher]
+    key StringBuilderToString.toStringWithMixedChars 128             BASE 2243.83 sd 79.7  SBS 2313.46 sd 41.3  SV 2398.98 sd 73.2  LS 2294.68 sd 37.1  [higher]
+    key StringBuilderToString.toStringWithMixedChars 256             BASE 1191.84 sd 47.7  SBS 1220.89 sd 16.7  SV 1245.66 sd 56.4  LS 1175.06 sd 85.7  [higher]
+
+PAPER30-DONE

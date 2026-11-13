@@ -1,0 +1,26 @@
+# C99 campaign results  SLOT=commonmark  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/commonmark  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commonmark  [jmh] commonmark SpecBenchmark (hunt/ab candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.995 [0.982,1.007] n.s. (7 keys)  alloc 0.975 [0.961,0.989] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.996 [0.987,1.004] n.s. (7 keys)  alloc 1.005 [0.995,1.015] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.997 [0.987,1.006] n.s. (7 keys)  alloc 0.971 [0.961,0.980] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.991 [0.985,0.997] FASTER (7 keys)  alloc 1.012 [1.006,1.017] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.991 [0.975,1.007] n.s. (7 keys)  alloc 0.976 [0.962,0.989] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.005 [0.996,1.015] n.s. (7 keys)  alloc 0.995 [0.988,1.003] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.004 [0.995,1.014] n.s. (7 keys)  alloc 0.965 [0.959,0.972] LESS (1 keys)
+  SpecBenchmark.parseAndRenderExamples                                   FULL 1.004 [0.981,1.027] n.s. | BASE_A32 0.994 [0.971,1.017] n.s. | FULL_A32 0.997 [0.984,1.011] n.s. | BASE_A128 0.993 [0.981,1.005] n.s. | FULL_A128 1.010 [0.987,1.034] n.s. | BASE_A256 1.003 [0.988,1.018] n.s. | FULL_A256 1.005 [0.990,1.021] n.s.
+  SpecBenchmark.parseAndRenderWholeSpec                                  FULL 0.996 [0.992,1.000] FASTER | BASE_A32 0.999 [0.993,1.006] n.s. | FULL_A32 0.996 [0.994,0.998] FASTER | BASE_A128 0.992 [0.986,0.997] FASTER | FULL_A128 0.950 [0.902,1.002] n.s. | BASE_A256 1.022 [1.015,1.028] SLOWER | FULL_A256 1.010 [1.006,1.014] SLOWER
+  SpecBenchmark.parseExamples                                            FULL 0.998 [0.983,1.012] n.s. | BASE_A32 1.000 [0.993,1.007] n.s. | FULL_A32 1.002 [0.993,1.012] n.s. | BASE_A128 0.982 [0.978,0.987] FASTER | FULL_A128 1.009 [1.004,1.015] SLOWER | BASE_A256 1.018 [1.014,1.021] SLOWER | FULL_A256 1.013 [1.002,1.025] SLOWER
+  SpecBenchmark.parseWholeSpec                                           FULL 0.988 [0.971,1.005] n.s. | BASE_A32 0.996 [0.978,1.014] n.s. | FULL_A32 0.993 [0.982,1.003] n.s. | BASE_A128 0.980 [0.966,0.994] FASTER | FULL_A128 0.998 [0.980,1.016] n.s. | BASE_A256 0.997 [0.987,1.007] n.s. | FULL_A256 0.994 [0.978,1.010] n.s.
+  SpecBenchmark.renderMarkdownWholeSpec                                  FULL 0.984 [0.966,1.003] n.s. | BASE_A32 0.999 [0.977,1.022] n.s. | FULL_A32 0.998 [0.986,1.009] n.s. | BASE_A128 0.991 [0.979,1.003] n.s. | FULL_A128 0.986 [0.972,1.000] FASTER | BASE_A256 0.988 [0.972,1.005] n.s. | FULL_A256 0.999 [0.986,1.011] n.s.
+  SpecBenchmark.renderMarkdownWholeSpecToWriter                          FULL 1.016 [0.999,1.034] n.s. | BASE_A32 0.988 [0.977,1.000] FASTER | FULL_A32 1.027 [1.008,1.046] SLOWER | BASE_A128 0.997 [0.990,1.003] n.s. | FULL_A128 1.003 [0.997,1.008] n.s. | BASE_A256 0.998 [0.980,1.017] n.s. | FULL_A256 1.017 [1.008,1.027] SLOWER
+  SpecBenchmark.renderWholeSpec                                          FULL 0.976 [0.972,0.981] FASTER | BASE_A32 0.993 [0.992,0.995] FASTER | FULL_A32 0.965 [0.962,0.968] FASTER | BASE_A128 1.002 [1.000,1.005] n.s. | FULL_A128 0.982 [0.975,0.990] FASTER | BASE_A256 1.013 [1.010,1.016] SLOWER | FULL_A256 0.994 [0.981,1.008] n.s.
+  ~alloc MB                                                              FULL 0.975 [0.961,0.989] LESS | BASE_A32 1.005 [0.995,1.015] n.s. | FULL_A32 0.971 [0.961,0.980] LESS | BASE_A128 1.012 [1.006,1.017] MORE | FULL_A128 0.976 [0.962,0.989] LESS | BASE_A256 0.995 [0.988,1.003] n.s. | FULL_A256 0.965 [0.959,0.972] LESS
+  ~rss MB                                                                FULL 1.023 [0.986,1.059] n.s. | BASE_A32 0.998 [0.986,1.011] n.s. | FULL_A32 0.990 [0.984,0.995] LESS | BASE_A128 0.998 [0.991,1.004] n.s. | FULL_A128 1.001 [0.993,1.010] n.s. | BASE_A256 1.005 [0.998,1.013] n.s. | FULL_A256 1.009 [1.003,1.015] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  commonmark                 0.995|0.975*      0.996|1.005       0.997|0.971*      0.991*|1.012*     0.991|0.976*      1.005|0.995       1.004|0.965*     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

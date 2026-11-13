@@ -1,0 +1,61 @@
+1794232667.418684 ========================================================================================================================
+1794232667.420370 GraalVM Native Image: Generating 'commons-codec-BASE-b3' (executable)...
+1794232667.420393 ========================================================================================================================
+1794232667.420498 For detailed information and explanations on the build output, visit:
+1794232667.420539 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794232667.420557 ------------------------------------------------------------------------------------------------------------------------
+1794232668.924565 [1/8] Initializing...                                                                                    (2.1s @ 0.37GB)
+1794232668.924862  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794232668.925000  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794232668.925066  C compiler: gcc (linux, x86_64, 15.2.0)
+1794232668.925178  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794232668.925204  1 user-specific feature(s):
+1794232668.925378  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794232668.926004 ------------------------------------------------------------------------------------------------------------------------
+1794232668.926019  1 experimental option(s) unlocked:
+1794232668.926056  - '-H:CodeAlignment' (origin(s): command line)
+1794232668.927017 ------------------------------------------------------------------------------------------------------------------------
+1794232668.927025 Build resources:
+1794232668.927092  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794232668.927129  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794232671.612302 [2/8] Performing analysis...  [******]                                                                   (2.4s @ 0.52GB)
+1794232671.625084     3,350 types,   3,844 fields, and  15,563 methods found reachable
+1794232671.625600     1,083 types,      37 fields, and     456 methods registered for reflection
+1794232671.625656        58 types,      59 fields, and      52 methods registered for JNI access
+1794232671.625683         0 downcalls and 0 upcalls registered for foreign access
+1794232671.625705         4 native libraries: dl, pthread, rt, z
+1794232672.382101 [3/8] Building universe...                                                                               (0.8s @ 0.59GB)
+1794232672.767774 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.64GB)
+1794232673.190741 [5/8] Inlining methods...     [****]                                                                     (0.3s @ 0.73GB)
+1794232675.347668 [6/8] Compiling methods...    [**]                                                                       (2.1s @ 0.62GB)
+1794232676.158750 [7/8] Laying out methods...   [*]                                                                        (0.8s @ 0.56GB)
+1794232677.090971 [8/8] Creating image...       [*]                                                                        (0.8s @ 0.79GB)
+1794232677.091246    5.49MB (36.60%) for code area:     8,974 compilation units
+1794232677.091308    7.67MB (51.15%) for image heap:   90,955 objects and 192 resources
+1794232677.091330    1.84MB (12.25%) for other data
+1794232677.091374   14.99MB in total image size, 14.09MB in total file size
+1794232677.091414 ------------------------------------------------------------------------------------------------------------------------
+1794232677.091945 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794232677.092164    3.78MB java.base                                            1.44MB byte[] for code metadata
+1794232677.092209  908.26kB svm.jar (Native Image)                               1.22MB byte[] for java.lang.String
+1794232677.092242  110.59kB java.logging                                       844.58kB java.lang.String
+1794232677.092338   93.82kB org.apache.commons.codec.language.bm               685.14kB byte[] for general heap data
+1794232677.092390   90.80kB org.graalvm.nativeimage.base                       643.20kB com.oracle.svm.core.hub.DynamicHubCompanion
+1794232677.092427   48.90kB jdk.proxy2                                         435.61kB java.lang.Class
+1794232677.092465   46.06kB jdk.proxy1                                         323.33kB java.util.HashMap$Node
+1794232677.092536   38.09kB org.graalvm.nativeimage.configure                  225.61kB java.lang.Object[]
+1794232677.092702   28.03kB jdk.internal.vm.ci                                 182.08kB java.util.HashMap$Node[]
+1794232677.092750   26.12kB jdk.graal.compiler                                 158.82kB java.lang.String[]
+1794232677.094149   48.54kB for 9 more packages                                  1.51MB for 975 more object types
+1794232677.095330 ------------------------------------------------------------------------------------------------------------------------
+1794232677.095349 Recommendations:
+1794232677.095369  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794232677.095383  HEAP: Set max heap for improved and more predictable memory usage.
+1794232677.095441  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794232677.097343 ------------------------------------------------------------------------------------------------------------------------
+1794232677.098022                         0.6s (5.3% of total time) in 35 GCs | Peak RSS: 2.18GB | CPU load: 14.10
+1794232677.098353 ------------------------------------------------------------------------------------------------------------------------
+1794232677.098361 Build artifacts:
+1794232677.098706  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CN1/bin/commons-codec-BASE-b3 (executable)
+1794232677.098720 ========================================================================================================================
+1794232677.098779 Finished generating 'commons-codec-BASE-b3' in 10.3s.

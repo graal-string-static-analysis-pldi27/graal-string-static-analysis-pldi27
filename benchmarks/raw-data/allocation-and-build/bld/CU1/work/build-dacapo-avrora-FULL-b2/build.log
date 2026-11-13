@@ -1,0 +1,123 @@
+1794171586.610148 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794171587.684742 ========================================================================================================================
+1794171587.686545 GraalVM Native Image: Generating 'dacapo-avrora-FULL-b2' (executable)...
+1794171587.686580 ========================================================================================================================
+1794171587.686597 For detailed information and explanations on the build output, visit:
+1794171587.686616 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794171587.686638 ------------------------------------------------------------------------------------------------------------------------
+1794171589.309621 [1/8] Initializing...                                                                                    (2.2s @ 0.52GB)
+1794171589.309886  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794171589.310009  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794171589.310080  C compiler: gcc (linux, x86_64, 15.2.0)
+1794171589.310189  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794171589.310213  1 user-specific feature(s):
+1794171589.310420  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794171589.311100 ------------------------------------------------------------------------------------------------------------------------
+1794171589.311115  3 experimental option(s) unlocked:
+1794171589.311155  - '-H:CodeAlignment' (origin(s): command line)
+1794171589.311169  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794171589.311181  - '-H:+StringAnalysis' (origin(s): command line)
+1794171589.312290 ------------------------------------------------------------------------------------------------------------------------
+1794171589.312317 Build resources:
+1794171589.312430  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794171589.312482  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794171589.313156 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile8234470949759765561.txt
+1794171589.313181 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child16987651128812467696.log
+1794171589.313684 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile8234470949759765561.txt
+1794171589.313748 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794171589.313773 [string-analysis-fork] Child log: /tmp/string-analysis-child16987651128812467696.log
+1794171589.329895 Skipped 497 predefined class(es) because the classpath already contains a class with the same name: avrora.sim.platform.LED, avrora.arch.legacy.LegacyInstrProperties, avrora.actions.SimAction$TimeoutException, avrora.arch.legacy.LegacyRegister$Set, avrora.arch.legacy.LegacyInstr$OUT, avrora.sim.mcu.RegisterSet$MultiFieldRegister, avrora.sim.mcu.Timer16Bit, avrora.arch.legacy.LegacyInstr$STPI, avrora.arch.legacy.LegacyInstr$WDR, avrora.monitors.PacketMonitor$Mon, ...
+1794171589.590192 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794171589.590252 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile8234470949759765561.txt
+1794171602.610429 [string-analysis-fork] Loaded 4486 entries from child profile: /tmp/string-analysis-profile8234470949759765561.txt
+1794171602.610480 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile8234470949759765561.txt
+1794171602.610796 [string-analysis-timing] beforeAnalysis done: 13020ms
+1794171606.294668 [string-analysis-timing] afterAnalysis start: 16704ms (gap since beforeAnalysis done: 3683ms)
+1794171606.309190 [2/8] Performing analysis...  [*****]                                                                    (3.7s @ 1.11GB)
+1794171606.328425     5,891 types,   7,638 fields, and  26,055 methods found reachable
+1794171606.329545     1,816 types,     153 fields, and   1,431 methods registered for reflection
+1794171606.329591        59 types,      60 fields, and      52 methods registered for JNI access
+1794171606.329602         0 downcalls and 0 upcalls registered for foreign access
+1794171606.329677         4 native libraries: dl, pthread, rt, z
+1794171607.476092 [3/8] Building universe...                                                                               (1.1s @ 0.93GB)
+1794171607.486283 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=2849 chain-else=317 chain-flat=248 acc=0 (chain sites=318, aot-parse sites=0); at strengthen: present=2646 (inlined copies=360) removed=2538 (inlined copies=317) killed-dead=108 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794171607.487066 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=54 chain/widened=13 collapsed=94 collapsed/widened=154 direct=1877 direct/widened=1231 redirect=7 redirect/widened=1; declined sites: no-entry=187 terminal-body-unmarked=4
+1794171607.487152 [ic-widen-decline-by-method] no-entry {charAt(I)C=15, coder()B=69, compareTo(Ljava/lang/String;)I=2, concat(Ljava/lang/String;)Ljava/lang/String;=14, equals(Ljava/lang/Object;)Z=12, equalsIgnoreCase(Ljava/lang/String;)Z=1, getBytes()[B=1, getBytes(Ljava/nio/charset/Charset;)[B=1, getBytes([BIIBI)V=2, hashCode()I=2, indexOf(II)I=1, isLatin1()Z=14, length()I=42, replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;=1, startsWith(Ljava/lang/String;)Z=1, toCharArray()[C=1, toLowerCase(Ljava/util/Locale;)Ljava/lang/String;=1, value()[B=7}
+1794171607.487172 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794171607.487185 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 0
+1794171607.487198 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794171607.488713 [string-analysis] ic-flatstock: 1 stock-path flat calls=3423 legacy (interface caller)=0 legacy (null receiver)=0
+1794171607.489525 [string-analysis] codegen-knobs: chain rep-arm ifs=70 swap sites=8 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1794171607.490404 [string-analysis] ic-csfinal: rep-excluded supertype sites=344 (diamonds=344 guards=0) by decl={CharSequence.charAt=75, CharSequence.length=47, CharSequence.subSequence=14, CharSequence.toString=29, Object.equals=88, Object.hashCode=58, Object.toString=33} rep-list sites left stock=25 unproven sites left stock=0; at strengthen: ifs=333 (dead-arm=1 iba-free nodes=0 folded=2) ifs left=0
+1794171607.490671 [string-analysis] concat-copy: sites=0 lowered-parses=0 count.diag=false
+1794171607.491604 [string-analysis] mirror-append: sites=171 lowered-parses=139 arms=139 lowered-keys=139
+1794171607.491629 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printPHT(Lcck/elf/ELFProgramHeaderTable;)V@174
+1794171607.491660 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printSHT(Lcck/elf/ELFSectionHeaderTable;)V@160
+1794171607.491684 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printSHT(Lcck/elf/ELFSectionHeaderTable;)V@66
+1794171607.491714 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printSymbolTable(Lcck/elf/ELFSymbolTable;Lcck/elf/ELFSectionHeaderTable;)V@108
+1794171607.491745 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printSymbolTable(Lcck/elf/ELFSymbolTable;Lcck/elf/ELFSectionHeaderTable;)V@202
+1794171607.491786 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.actions.ELFDumpAction#printSymbolTable(Lcck/elf/ELFSymbolTable;Lcck/elf/ELFSectionHeaderTable;)V@73
+1794171607.491809 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.CallTimeMonitor$CallTimeMon#report()V@129
+1794171607.491831 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.CallTimeMonitor$CallTimeMon#report()V@80
+1794171607.491855 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.CallTimeMonitor$CallTimeMon#report()V@98
+1794171607.491878 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.EnergyMonitor$Monitor#report()V@213
+1794171607.491901 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.ProfileMonitor$Mon#reportProfile()V@277
+1794171607.491924 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.ProfileMonitor$Mon#reportProfile()V@287
+1794171607.491948 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.ProfileMonitor$Mon#reportProfile()V@304
+1794171607.491971 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.ProfileMonitor$Mon#reportProfile()V@323
+1794171607.491993 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.ProfileMonitor$Mon#reportProfile()V@350
+1794171607.492014 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.SimPerfMonitor$Mon#report()V@197
+1794171607.492040 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.SimPerfMonitor$Mon#report()V@207
+1794171607.492062 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.SimPerfMonitor$Mon#report()V@217
+1794171607.492084 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.monitors.SimPerfMonitor$Mon#report()V@227
+1794171607.492108 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Energy#allModeNames()[Ljava/lang/String;@68
+1794171607.492133 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#ReadSecurityBank(I)B@62
+1794171607.492156 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#WriteSecurityBank(IB)B@55
+1794171607.492181 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#readFIFO(Lavrora/sim/state/ByteFIFO;)B@47
+1794171607.492203 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#readRegister(I)I@34
+1794171607.492225 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#readRegister(I)I@48
+1794171607.492246 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#strobe(I)V@27
+1794171607.492271 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#writeFIFO(Lavrora/sim/state/ByteFIFO;BZ)B@42
+1794171607.492293 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#writeRegister(II)V@27
+1794171607.492321 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio#writeRegister(II)V@41
+1794171607.492345 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio$Receiver#fifoAdd(B)Z@35
+1794171607.492375 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): avrora.sim.radio.CC2420Radio$SPIInterface#exchange(Lavrora/sim/mcu/SPI$Frame;)Lavrora/sim/mcu/SPI$Frame;@38
+1794171607.492401 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): cck.util.Util#warning(Ljava/lang/String;)V@20
+1794171607.492934 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=275/33 list=3/0 (cast/inst parses) stock: no-line=123/4 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=0/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=328
+1794171607.989990 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.02GB)
+1794171608.409247 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.11GB)
+1794171611.783791 [6/8] Compiling methods...    [**]                                                                       (3.4s @ 1.00GB)
+1794171613.518822 [7/8] Laying out methods...   [*]                                                                        (1.7s @ 1.04GB)
+1794171613.535713 [string-analysis] r2-trivial: active=true graphs with rep arms=67, made trivial by the discount=1 (first 20: [java.text.StringCharacterIterator.hashCode() stock 2+31 discounted 1+19]); graphs with a rep call but no recognised arm=141 (first 5: [avrora.Main.loadProgram(String[]), avrora.actions.SimAction.report(Throwable), avrora.arch.legacy.LegacyInstr$IMMIMM_class.getOperands(), avrora.arch.legacy.LegacyInstr$IMMWORD_class.getOperands(), avrora.arch.legacy.LegacyInstr$IMM_class.getOperands()]); graphs with a rep-test If that is no arm=34 (first 5: [avrora.monitors.PacketMonitor$Mon.appendTime(StringBuffer), avrora.sim.output.SimPrinter.println(String), avrora.sim.platform.ExternalFlash.echo(String), avrora.sim.radio.RadioEnergy.allModeNames(), avrora.syntax.atmel.ParseException.getMessage()])
+1794171614.131204 [string-analysis-dc] clinitsim-repaborts=0
+1794171614.174267 [string-analysis-dc] heapreps=0 poolreps=256 {com.oracle.svm.core.stringrep.SingleByteString.POOL=256} poolarrayrefs={CODE=1} scanned=163743
+1794171615.155204 [8/8] Creating image...       [*]                                                                        (1.5s @ 1.18GB)
+1794171615.155560   10.96MB (40.14%) for code area:    15,923 compilation units
+1794171615.155624   13.57MB (49.67%) for image heap:  163,743 objects and 61 resources
+1794171615.155660    2.78MB (10.19%) for other data
+1794171615.155694   27.31MB in total image size, 25.89MB in total file size
+1794171615.155734 ------------------------------------------------------------------------------------------------------------------------
+1794171615.156441 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794171615.156723    6.63MB java.base                                            2.87MB byte[] for code metadata
+1794171615.156747    1.46MB avrora-cvs-20131011.jar                              1.99MB byte[] for java.lang.String
+1794171615.156760    1.37MB svm.jar (Native Image)                               1.41MB java.lang.String
+1794171615.156821  302.69kB dacapo-evaluation-git-e947cbfc.jar                   1.18MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794171615.156843  213.81kB jdk.zipfs                                          786.11kB java.lang.Class
+1794171615.156872  113.19kB java.logging                                       669.73kB byte[] for general heap data
+1794171615.156903   93.47kB org.graalvm.nativeimage.base                       386.02kB java.lang.Object[]
+1794171615.156941   81.95kB jdk.charsets                                       370.84kB heap alignment
+1794171615.156968   55.32kB jdk.proxy2                                         349.20kB java.util.HashMap$Node
+1794171615.157002   42.51kB jdk.proxy1                                         267.99kB java.lang.String[]
+1794171615.157910  130.39kB for 9 more packages                                  3.29MB for 1584 more object types
+1794171615.158634 ------------------------------------------------------------------------------------------------------------------------
+1794171615.158648 Recommendations:
+1794171615.158684  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794171615.158693  HEAP: Set max heap for improved and more predictable memory usage.
+1794171615.158707  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794171615.161212 ------------------------------------------------------------------------------------------------------------------------
+1794171615.161827                         1.1s (3.8% of total time) in 169 GCs | Peak RSS: 2.40GB | CPU load: 7.48
+1794171615.162096 ------------------------------------------------------------------------------------------------------------------------
+1794171615.162101 Build artifacts:
+1794171615.162452  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/dacapo-avrora-FULL-b2 (executable)
+1794171615.162465 ========================================================================================================================
+1794171615.162521 Finished generating 'dacapo-avrora-FULL-b2' in 28.1s.

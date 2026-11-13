@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=XP1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XP1  CFGS=BASE FULL  runs/build=5  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## gson  [port] gson metrics Hunt3Port 11 rows (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=30
+  GEOMEAN FULL/BASE  time 0.997 [0.982,1.011] n.s. (11 keys)  alloc 0.989 [0.989,0.989] LESS (1 keys)
+  parse document=READER_LONG api=GSON_BIND                               FULL 1.016 [0.987,1.047] n.s.
+  parse document=READER_LONG api=GSON_DOM                                FULL 1.044 [0.946,1.169] n.s.
+  parse document=READER_LONG api=GSON_STREAM                             FULL 1.006 [0.986,1.027] n.s.
+  parse document=READER_SHORT api=GSON_BIND                              FULL 0.992 [0.955,1.029] n.s.
+  parse document=READER_SHORT api=GSON_DOM                               FULL 1.026 [0.995,1.058] n.s.
+  parse document=READER_SHORT api=GSON_STREAM                            FULL 1.010 [0.966,1.057] n.s.
+  parse document=TWEETS api=GSON_BIND                                    FULL 0.988 [0.973,1.003] n.s.
+  parse document=TWEETS api=GSON_DOM                                     FULL 1.003 [0.989,1.018] n.s.
+  parse document=TWEETS api=GSON_STREAM                                  FULL 0.993 [0.979,1.005] n.s.
+  serialize pretty=false                                                 FULL 0.945 [0.932,0.958] FASTER
+  serialize pretty=true                                                  FULL 0.945 [0.932,0.960] FASTER
+  ~alloc MB                                                              FULL 0.989 [0.989,0.989] LESS
+  ~rss MB                                                                FULL 0.974 [0.940,1.010] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

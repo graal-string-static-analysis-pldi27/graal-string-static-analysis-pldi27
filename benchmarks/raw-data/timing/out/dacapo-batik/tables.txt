@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-batik  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-batik             BASE b1 size 49.81/52.37/25.55/22.02 | parent 30.9 s 2.97 GB | driver 31.7 s REUSED
+dacapo-batik             BASE b2 size 49.81/52.37/25.55/22.02 | parent 28.8 s 2.90 GB | driver 29.6 s REUSED
+dacapo-batik             FULL b1 size 49.88/52.44/25.60/22.02 | parent 65.0 s 3.59 GB | driver 66.6 s | OK | child aa 27414 ms gen 32.0 s obs 31 s VmHWM 4.72 GB | wait 32.0 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL b2 size 49.88/52.44/25.60/22.02 | parent 67.0 s 3.67 GB | driver 69.3 s | OK | child aa 27146 ms gen 31.1 s obs 31 s VmHWM 4.80 GB | wait 31.6 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             BASE_A32 b1 size 49.42/51.97/25.12/22.02 | parent 31.9 s 2.92 GB | driver 32.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             BASE_A32 b2 size 49.42/51.97/25.12/22.02 | parent 23.7 s 2.90 GB | driver 24.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             FULL_A32 b1 size 49.48/52.04/25.18/22.02 | parent 64.0 s 3.64 GB | driver 65.8 s | OK | child aa 27353 ms gen 30.7 s obs 30 s VmHWM 4.75 GB | wait 31.1 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8278 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL_A32 b2 size 49.48/52.04/25.18/22.02 | parent 56.9 s 3.73 GB | driver 57.7 s | OK | child aa 26436 ms gen 29.7 s obs 29 s VmHWM 4.64 GB | wait 30.1 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8277 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             BASE_A128 b1 size 50.86/53.41/26.63/21.95 | parent 28.4 s 2.90 GB | driver 29.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             BASE_A128 b2 size 50.86/53.41/26.63/21.95 | parent 32.9 s 2.87 GB | driver 34.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             FULL_A128 b1 size 50.99/53.55/26.69/22.02 | parent 63.0 s 3.70 GB | driver 64.3 s | OK | child aa 31148 ms gen 34.3 s obs 34 s VmHWM 4.59 GB | wait 34.6 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL_A128 b2 size 50.99/53.55/26.69/22.02 | parent 66.0 s 3.70 GB | driver 67.5 s | OK | child aa 26804 ms gen 31.7 s obs 32 s VmHWM 4.67 GB | wait 32.1 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             BASE_A256 b1 size 53.15/55.71/28.94/21.95 | parent 27.2 s 2.94 GB | driver 28.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             BASE_A256 b2 size 53.15/55.71/28.94/21.95 | parent 29.0 s 2.96 GB | driver 29.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-batik             FULL_A256 b1 size 53.22/55.78/29.00/21.95 | parent 63.0 s 3.64 GB | driver 64.7 s | OK | child aa 26629 ms gen 31.4 s obs 30 s VmHWM 4.68 GB | wait 31.6 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL_A256 b2 size 53.22/55.78/29.00/21.95 | parent 55.2 s 3.71 GB | driver 56.0 s | OK | child aa 22501 ms gen 25.3 s obs 25 s VmHWM 4.66 GB | wait 25.5 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+## build cost vs stock (means over builds)
+dacapo-batik             FULL/BASE  parent wall 29.9 -> 66.0 s (x2.21)  Peak RSS 2.94 -> 3.63 GB (x1.24)  child VmHWM 4.76 GB  size 49.81 -> 49.88 MB (x1.001)  status OK,OK
+dacapo-batik             BASE_A32/BASE  parent wall 29.9 -> 27.8 s (x0.93)  Peak RSS 2.94 -> 2.91 GB (x0.99)  child VmHWM ? GB  size 49.81 -> 49.42 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+dacapo-batik             FULL_A32/BASE  parent wall 29.9 -> 60.5 s (x2.03)  Peak RSS 2.94 -> 3.69 GB (x1.26)  child VmHWM 4.69 GB  size 49.81 -> 49.48 MB (x0.993)  status OK,OK
+dacapo-batik             BASE_A128/BASE  parent wall 29.9 -> 30.6 s (x1.03)  Peak RSS 2.94 -> 2.88 GB (x0.98)  child VmHWM ? GB  size 49.81 -> 50.86 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+dacapo-batik             FULL_A128/BASE  parent wall 29.9 -> 64.5 s (x2.16)  Peak RSS 2.94 -> 3.70 GB (x1.26)  child VmHWM 4.63 GB  size 49.81 -> 50.99 MB (x1.024)  status OK,OK
+dacapo-batik             BASE_A256/BASE  parent wall 29.9 -> 28.1 s (x0.94)  Peak RSS 2.94 -> 2.95 GB (x1.01)  child VmHWM ? GB  size 49.81 -> 53.15 MB (x1.067)  status NO-PROFILE,NO-PROFILE
+dacapo-batik             FULL_A256/BASE  parent wall 29.9 -> 59.1 s (x1.98)  Peak RSS 2.94 -> 3.67 GB (x1.25)  child VmHWM 4.67 GB  size 49.81 -> 53.22 MB (x1.068)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-batik             FULL SBS=1 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-batik             BASE_A32 no profile  NO-PROFILE
+dacapo-batik             FULL_A32 SBS=1 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-batik             BASE_A128 no profile  NO-PROFILE
+dacapo-batik             FULL_A128 SBS=1 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-batik             BASE_A256 no profile  NO-PROFILE
+dacapo-batik             FULL_A256 SBS=1 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-batik             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.8 s
+dacapo-batik             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.4 s
+dacapo-batik             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.3 s
+dacapo-batik             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.0 s
+dacapo-batik             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.1 s
+dacapo-batik             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.8 s
+## determinism: dacapo-batik FULL_A32: admit counts differ across builds
+TABLES-DONE

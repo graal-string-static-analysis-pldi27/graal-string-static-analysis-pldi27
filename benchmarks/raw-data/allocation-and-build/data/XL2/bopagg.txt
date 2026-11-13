@@ -1,0 +1,13 @@
+# XL2  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+jsqlparser               FULL   |   0.981   0.981   0.981 0.981[0.981,0.981]        0.981 | 0.975/0.975/0.992 | 1/1 | 0 | 0
+snakeyaml                FULL   |   1.051   1.001   1.001 1.005[1.005,1.006]        1.006 | 0.991/1.005/1.007 | 3/3 | 1 | 1
+
+## XL2 jsqlparser FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+JSQLParserBenchmark.parseSQLStatements version=latest        100.00 100.00   0.99 10040119.5 9846596.9  0.981  100.0  100.0
+
+## XL2 snakeyaml FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:EmitterBenchmark.emitScalar                                 99.95  99.95   0.97    2079.6    2081.2  1.001   49.7   47.4
+M:ParseBenchmark.load                                          0.02   0.02   1.03 4045487.8 3947385.7  0.976   17.6   17.4
+M:ParseBenchmark.parse                                         0.03   0.03   1.07 4648561.4 4778475.1  1.028   32.7   35.2
+

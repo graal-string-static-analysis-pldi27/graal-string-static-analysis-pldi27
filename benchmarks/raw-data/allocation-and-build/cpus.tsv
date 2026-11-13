@@ -1,0 +1,67 @@
+# C100 final campaign CPU pinning (the ONE rule; supervisor 2026-11-05: every row on one full CCD = CPUs 0-15 = L3 domain 0,
+# 8 cores x 2 SMT threads; no per-row exceptions, no thread-flag overrides; mechanism = cpus-unify.patch, c100_cpu_setup.md).
+# Tab-separated: row cpus class threadflag note   (class = the c100_cpu_setup.md ST/MT classification, informational only;
+#   threadflag "-" = nothing appended; DaCapo per_cpu / ForkJoin rows size themselves from the 16-CPU mask)
+stringbuffers	0-15	ST	-	was 4,6; 1 busy thread
+string-concat	0-15	ST	-	was 4,6; 1 busy thread
+StringJoiner	0-15	ST	-	former row jdk-micro; was 4,6; 1 busy thread
+string-concat-startup	0-15	ST	-	was 4,6; 1 busy thread
+json-parser	0-15	ST	-	was 4,6; 1 busy thread
+stringbuilders	0-15	ST	-	was 4,6; 1 busy thread
+guava	0-15	ST	-	was 4,6; 1 busy thread
+biojava	0-15	ST	-	was 4,6; 1 busy thread
+jsoup	0-15	ST	-	was 4,6; 1 busy thread
+StringSubstring	0-15	ST	-	former row jdk-micro-c99; was 4,6; 1 busy thread
+stringbuilder-to-string	0-15	ST	-	was 4,6; 1 busy thread
+commons-lang-join	0-15	ST	-	was 0-7; 1 busy thread
+lucene-bytask	0-15	ST	-	was 4,6; Lucene merge thread helper
+jte	0-15	ST	-	was 4,6; 1 busy thread
+spring	0-15	ST	-	was 0-7; 1 busy thread
+regex-redux	0-15	MT	-	was 0-7; ForkJoin common pool sizes itself from the mask
+luindex	0-15	ST	-	was 4,6; Lucene merge thread helper
+logback-perf	0-15	MT	-	was 0-7; recipe JMH -t 4 (no override)
+dacapo-h2	0-15	MT	-	was 4,6; DaCapo per_cpu (terminals = nCPU)
+template-benchmark	0-15	MT	-	was 0-31; its own @Threads(16) (no override)
+commons-csv	0-15	ST	-	was 0-7; 1 busy thread
+rhino	0-15	ST	-	was 0-7; 1 busy thread
+commons-lang	0-15	ST	-	was 0-7; 1 busy thread
+dacapo-lusearch	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+calcite	0-15	ST	-	was 0-7; 1 busy thread
+thymeleaf	0-15	ST	-	was 4,6; 1 busy thread
+dacapo-avrora	0-15	ST	-	was 4,6; DaCapo thread-model single (fixed sim-node threads)
+dacapo-graphchi	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+dacapo-pmd	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+dacapo-batik	0-15	ST	-	was 4,6; 1 busy thread
+owasp	0-15	ST	-	was 4,6; 1 busy thread
+dacapo-xalan	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+dacapo-zxing	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+dacapo-sunflow	0-15	MT	-	was 4,6; DaCapo per_cpu (threads = nCPU)
+dacapo-fop	0-15	ST	-	was 4,6; 1 busy thread
+guava-g1b	0-15	ST	-	was 4,6; G1b allocation-only copy of guava (never timed; sanity/JVM ref only)
+opennlp	0-15	MT	-	C100 fin tier C hunt row; upstream @Threads(MAX) = the 16-CPU mask
+commonmark	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+jackson	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+pdfbox	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+snakeyaml	0-15	MT	-	C100 fin tier C hunt row; Emitter @Threads(8) upstream
+yauaa	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+sql-formatter	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+commons-text	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+flexmark	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+jsqlparser	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+mustache	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+snakeyaml-engine	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+fastcsv	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+re2j	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+tinylog	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread (async arms: tinylog writer thread)
+lucene-jmh	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+minimal-json	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+gson	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+commons-codec	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+antlr	0-15	ST	-	C100 fin tier C hunt row; 1 busy thread
+java-json-benchmark	0-15	MT	-	C100 fin tier C2 hunt row; airline CLI -t default = availableProcessors-1 = 15 JMH threads under 0-15 (C98: 31 under 0-31)
+log4j2-plc	0-15	ST	-	C100 fin tier C2 hunt row; 1 busy thread (log4j2 arm only)
+palantir	0-15	MT	-	C100 fin tier C2 hunt row; formatter thread pool over the 24 input files (sizes itself from the mask)
+handlebars	0-15	ST	-	C100 fin tier C2 hunt row; 1 busy thread
+csv-parsers-comparison	0-15	ST	-	C100 fin tier C2 hunt row; single-threaded upstream main
+fastjson2	0-15	ST	-	C100 candidate hunt row (XL12); 1 busy thread (fastjson2 arms only)
+jackson-yaml	0-15	ST	-	C100 candidate hunt row (XL12); 1 busy thread

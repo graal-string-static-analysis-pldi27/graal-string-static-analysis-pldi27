@@ -1,0 +1,9 @@
+# CL3  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+commons-lang             FULL   |   1.015   1.019   1.019 1.016[1.016,1.016]        1.016 | 1.020/1.025/1.013 | 3/3 | 1 | 0
+
+## CL3 commons-lang FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:CharSequenceUtilsBenchmark.benchmarkToCharArrayCurrent      38.91  39.13   1.03     253.3     257.6  1.017   40.5   40.9
+M:CharSequenceUtilsBenchmark.benchmarkToCharArrayNew          39.02  38.69   1.01     256.5     257.6  1.004   41.2   40.4
+M:CharSequenceUtilsBenchmark.benchmarkToCharArrayOld          22.07  22.18   1.03     201.3     208.7  1.037   18.3   18.8
+

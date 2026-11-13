@@ -1,0 +1,90 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.fasterxml.jackson.perf.yaml.YAMLStdReadVanilla.readPojoMediaItem
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: [JMH Process ID: 1832234]22957.067 ops/s
+# Warmup Iteration   2: 23429.748 ops/s
+# Warmup Iteration   3: 23001.825 ops/s
+# Warmup Iteration   4: 22998.066 ops/s
+# Warmup Iteration   5: 22938.544 ops/s
+Iteration   1: 23035.238 ops/s
+Iteration   2: 22957.230 ops/s
+Iteration   3: 22980.512 ops/s
+Iteration   4: 23023.014 ops/s
+Iteration   5: 23006.809 ops/s
+Iteration   6: 23064.657 ops/s
+Iteration   7: 23012.368 ops/s
+Iteration   8: 23002.025 ops/s
+Iteration   9: 22822.937 ops/s
+Iteration  10: 22906.571 ops/s
+
+Result "com.fasterxml.jackson.perf.yaml.YAMLStdReadVanilla.readPojoMediaItem":
+  22981.136 ±(99.9%) 106.769 ops/s [Average]
+  (min, avg, max) = (22822.937, 22981.136, 23064.657), stdev = 70.621
+  CI (99.9%): [22874.367, 23087.905] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.fasterxml.jackson.perf.yaml.YAMLStdWriteVanilla.writePojoMediaItem
+
+# Run progress: 50.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: [JMH Process ID: 1832234]36826.061 ops/s
+# Warmup Iteration   2: 36668.310 ops/s
+# Warmup Iteration   3: 36575.292 ops/s
+# Warmup Iteration   4: 36627.916 ops/s
+# Warmup Iteration   5: 36453.233 ops/s
+Iteration   1: 36602.918 ops/s
+Iteration   2: 36643.900 ops/s
+Iteration   3: 36573.322 ops/s
+Iteration   4: 36563.753 ops/s
+Iteration   5: 36546.545 ops/s
+Iteration   6: 36626.649 ops/s
+Iteration   7: 36467.619 ops/s
+Iteration   8: 36202.716 ops/s
+Iteration   9: 36083.236 ops/s
+Iteration  10: 36196.488 ops/s
+
+Result "com.fasterxml.jackson.perf.yaml.YAMLStdWriteVanilla.writePojoMediaItem":
+  36450.715 ±(99.9%) 314.675 ops/s [Average]
+  (min, avg, max) = (36083.236, 36450.715, 36643.900), stdev = 208.138
+  CI (99.9%): [36136.039, 36765.390] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:30
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                Mode  Cnt      Score     Error  Units
+YAMLStdReadVanilla.readPojoMediaItem    thrpt   10  22981.136 ± 106.769  ops/s
+YAMLStdWriteVanilla.writePojoMediaItem  thrpt   10  36450.715 ± 314.675  ops/s

@@ -1,0 +1,45 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL2  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## stringbuilders  starts BASE:3 SBS:3 SV:3 LS:3  time keys 17
+  SBS/BASE time  ratio 1.0118  (mean SBS 1.0119 n=3, BASE 1.0001 n=3)  error margin 0.0082 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9902  (mean SBS 0.9902 n=3, BASE 1.0000 n=3)  error margin 0.0083 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.7707  (mean SV 0.7708 n=3, BASE 1.0001 n=3)  error margin 0.0068 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 1.3306  (mean SV 1.3306 n=3, BASE 1.0000 n=3)  error margin 0.0175 (max sd)  paper-significance SLOWER/MORE
+  LS/BASE time  ratio 0.9952  (mean LS 0.9952 n=3, BASE 1.0001 n=3)  error margin 0.0068 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0038  (mean LS 1.0038 n=3, BASE 1.0000 n=3)  error margin 0.0069 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 1.0118  (mean SBS 1.0119 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0071 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 17 keys]
+  SV/BASE iter  ratio 0.7707  (mean SV 0.7708 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0065 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 17 keys]
+  LS/BASE iter  ratio 0.9951  (mean LS 0.9953 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0065 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 17 keys]
+    key StringBuilders.appendLoop16                                  BASE 3662.42 sd 64.3  SBS 3636.86 sd 70.8  SV 3678.24 sd 70.3  LS 3735.94 sd 13  [higher]
+    key StringBuilders.appendLoop8                                   BASE 7411.61 sd 132  SBS 7384.29 sd 69.8  SV 7483.22 sd 13.8  LS 7482.72 sd 23.7  [higher]
+    key StringBuilders.concat16p8p7                                  BASE 14317.9 sd 196  SBS 14198.7 sd 176  SV 18147.2 sd 37.6  LS 14282.7 sd 56.2  [higher]
+    key StringBuilders.concat22p40p31                                BASE 8377.63 sd 116  SBS 8189.62 sd 198  SV 9998.59 sd 126  LS 8416.5 sd 55.6  [higher]
+    key StringBuilders.concat3p4p2                                   BASE 14164.8 sd 181  SBS 13701.8 sd 358  SV 17734.8 sd 97  LS 14297.4 sd 288  [higher]
+    key StringBuilders.concat3p9p8                                   BASE 10962.1 sd 51  SBS 10835.1 sd 157  SV 13315.1 sd 87.6  LS 10933.6 sd 30.1  [higher]
+    key StringBuilders.toStringCharWithBool8                         BASE 10356.6 sd 202  SBS 10043.5 sd 181  SV 12183.9 sd 89.1  LS 10240.4 sd 262  [higher]
+    key StringBuilders.toStringCharWithChar1                         BASE 38524.3 sd 225  SBS 37947.9 sd 660  SV 86700.2 sd 3.18e+03  LS 38068.6 sd 170  [higher]
+    key StringBuilders.toStringCharWithChar16                        BASE 15534 sd 90.4  SBS 15384.3 sd 192  SV 20048.6 sd 314  LS 15527 sd 72.2  [higher]
+    key StringBuilders.toStringCharWithChar2                         BASE 34483 sd 596  SBS 34702.5 sd 778  SV 74278.8 sd 1.31e+03  LS 35137.3 sd 598  [higher]
+    key StringBuilders.toStringCharWithChar4                         BASE 30104.5 sd 417  SBS 29944.4 sd 448  SV 53228.4 sd 1.16e+03  LS 30507.1 sd 397  [higher]
+    key StringBuilders.toStringCharWithChar8                         BASE 23136.8 sd 115  SBS 23100.6 sd 331  SV 34617.3 sd 582  LS 23263.2 sd 183  [higher]
+    key StringBuilders.toStringCharWithFloat8                        BASE 2727.17 sd 24.7  SBS 2745.25 sd 2.16  SV 2846.59 sd 34.1  LS 2739.38 sd 5.81  [higher]
+    key StringBuilders.toStringCharWithInt8                          BASE 8822.87 sd 91.5  SBS 8837.47 sd 84.5  SV 10313 sd 154  LS 8967.79 sd 52.5  [higher]
+    key StringBuilders.toStringCharWithMixed8                        BASE 6380.99 sd 48.8  SBS 6166.89 sd 217  SV 7385.78 sd 78.7  LS 6398.96 sd 110  [higher]
+    key StringBuilders.toStringCharWithString16                      BASE 3851.41 sd 45.8  SBS 3832.21 sd 67.5  SV 4273.71 sd 110  LS 3807.42 sd 120  [higher]
+    key StringBuilders.toStringCharWithString8                       BASE 7133.38 sd 67.2  SBS 6958.24 sd 215  SV 8390.3 sd 116  LS 7267.12 sd 219  [higher]
+
+## StringSubstring  starts BASE:3 SBS:3 SV:3 LS:3  time keys 3
+  SBS/BASE time  ratio 0.9818  (mean SBS 0.9817 n=3, BASE 0.9999 n=3)  error margin 0.0175 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0113  (mean SBS 1.0113 n=3, BASE 1.0000 n=3)  error margin 0.0168 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.3150  (mean SV 0.3149 n=3, BASE 0.9999 n=3)  error margin 0.0175 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 2.4782  (mean SV 2.4782 n=3, BASE 1.0000 n=3)  error margin 0.0417 (max sd)  paper-significance SLOWER/MORE
+  LS/BASE time  ratio 0.9857  (mean LS 0.9857 n=3, BASE 0.9999 n=3)  error margin 0.0175 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0092  (mean LS 1.0092 n=3, BASE 1.0000 n=3)  error margin 0.0123 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 0.9818  (mean SBS 0.9817 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0156 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+  SV/BASE iter  ratio 0.3149  (mean SV 0.3149 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0156 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+  LS/BASE iter  ratio 0.9857  (mean LS 0.9856 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0156 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+    key StringSubstring.empty                                        BASE 6.49033 sd 0.223  SBS 6.324 sd 0.0949  SV 3.45 sd 0.0584  LS 6.332 sd 0.0872  [lower]
+    key StringSubstring.from26toEnd0                                 BASE 21.9 sd 0.156  SBS 21.898 sd 0.498  SV 5.13133 sd 0.0609  LS 22.0213 sd 0.298  [lower]
+    key StringSubstring.from26toEnd1                                 BASE 23.9353 sd 0.485  SBS 23.247 sd 0.343  SV 6.00367 sd 0.166  LS 23.3693 sd 0.637  [lower]
+
+PAPER30-DONE

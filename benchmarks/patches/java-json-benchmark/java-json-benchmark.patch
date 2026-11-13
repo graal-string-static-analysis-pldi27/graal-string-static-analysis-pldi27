@@ -1,0 +1,327 @@
+diff --git a/build.gradle b/build.gradle
+index 487b049..091388f 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -123,6 +123,20 @@ dependencies {
+ 
+ shadowJar {
+     archiveFileName = 'app.jar'
++    exclude 'org/graalvm/**'
++    exclude 'com/oracle/svm/**'
++    exclude 'META-INF/services/org.graalvm.nativeimage.hosted.Feature'
++    exclude 'META-INF/native-image/org.graalvm.*/**'
++    exclude 'io/quarkus/**'
++    exclude 'META-INF/services/io.quarkus.runtime.graal.*'
++    exclude 'org/apache/fory/**'
++    exclude 'org/wildfly/common/**'
++    exclude 'META-INF/native-image/org.apache.fory/**'
++    exclude 'META-INF/services/org.apache.fory.**'
++    exclude 'org/jboss/**'
++    exclude 'META-INF/services/org.jboss.**'
++    exclude 'com/alibaba/fastjson2/**'
++    exclude 'META-INF/native-image/com.alibaba.fastjson2/**'
+     exclude 'META-INF/*.SF'
+     exclude 'META-INF/*.DSA'
+     exclude 'META-INF/*.RSA'
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/data/JsonSource.java b/src/main/java/com/github/fabienrenaud/jjb/data/JsonSource.java
+index 8d542c1..58c1cda 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/data/JsonSource.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/data/JsonSource.java
+@@ -1,10 +1,5 @@
+ package com.github.fabienrenaud.jjb.data;
+ 
+-import com.alibaba.fastjson2.JSONFactory;
+-import com.alibaba.fastjson2.JSONReader;
+-import com.alibaba.fastjson2.JSONWriter;
+-import com.alibaba.fastjson2.reader.ObjectReaderProvider;
+-import com.alibaba.fastjson2.writer.ObjectWriterProvider;
+ import com.github.fabienrenaud.jjb.RandomUtils;
+ import com.github.fabienrenaud.jjb.data.gen.DataGenerator;
+ import com.github.fabienrenaud.jjb.provider.JsonProvider;
+@@ -34,7 +29,6 @@ public abstract class JsonSource<T> {
+     private final StreamSerializer<T> streamSerializer;
+     private final StreamDeserializer<T> streamDeserializer;
+ 
+-    private final FastjsonProvider fastjsonFeatures;
+ 
+     JsonSource(int quantity, int individualSize, JsonProvider provider, DataGenerator<T> dataGenerator, StreamSerializer<T> streamSerializer, StreamDeserializer<T> streamDeserializer) {
+         this.provider = provider;
+@@ -57,23 +51,6 @@ public abstract class JsonSource<T> {
+             return arr;
+         });
+ 
+-        ObjectWriterProvider featuresWriterProvider = new ObjectWriterProvider();
+-        featuresWriterProvider.setDisableAutoType(true);
+-        featuresWriterProvider.setDisableArrayMapping(true);
+-        featuresWriterProvider.setDisableJSONB(true);
+-        featuresWriterProvider.setDisableReferenceDetect(true);
+-        JSONFactory.createWriteContext(featuresWriterProvider);
+-
+-        ObjectReaderProvider featuresReaderProvider = new ObjectReaderProvider();
+-        featuresReaderProvider.setDisableArrayMapping(true);
+-        featuresReaderProvider.setDisableAutoType(true);
+-        featuresReaderProvider.setDisableJSONB(true);
+-        featuresReaderProvider.setDisableReferenceDetect(true);
+-        featuresReaderProvider.setDisableSmartMatch(true);
+-
+-        fastjsonFeatures = new FastjsonProvider(
+-                JSONFactory.createReadContext(featuresReaderProvider),
+-                JSONFactory.createWriteContext(featuresWriterProvider));
+     }
+ 
+     private void populateFields(int quantity, int individualSize) {
+@@ -150,9 +127,5 @@ public abstract class JsonSource<T> {
+         return bound == 1 ? 0 : RandomUtils.nextInt(bound);
+     }
+ 
+-    public FastjsonProvider fastjsonFeatures() {
+-        return fastjsonFeatures;
+-    }
+ 
+-    public record FastjsonProvider (JSONReader.Context readerContext, JSONWriter.Context writerContext) {}
+ }
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/databind/Deserialization.java b/src/main/java/com/github/fabienrenaud/jjb/databind/Deserialization.java
+index e4ce68e..c08e715 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/databind/Deserialization.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/databind/Deserialization.java
+@@ -1,6 +1,5 @@
+ package com.github.fabienrenaud.jjb.databind;
+ 
+-import com.alibaba.fastjson2.JSON;
+ import com.bluelinelabs.logansquare.LoganSquare;
+ import com.cedarsoftware.io.JsonIo;
+ import com.github.fabienrenaud.jjb.JsonBench;
+@@ -56,29 +55,12 @@ public class Deserialization extends JsonBench {
+         return JSON_SOURCE().provider().yasson().fromJson(JSON_SOURCE().nextReader(), JSON_SOURCE().pojoType());
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object fastjson() {
+-        return JSON.parseObject(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType());
+-    }
+-
+-    @Benchmark
+-    @Override
+-    public Object fastjson_features() {
+-        return JSON.parseObject(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType(), JSON_SOURCE().fastjsonFeatures().readerContext());
+-    }
+-
+     @Benchmark
+     @Override
+     public Object flexjson() throws JsonSyntaxException {
+         return JSON_SOURCE().provider().flexjsonDeser().deserialize(JSON_SOURCE().nextReader(), JSON_SOURCE().pojoType());
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object foryjson() {
+-        return JSON_SOURCE().provider().foryJson().fromJson(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType());
+-    }
+ 
+     @Benchmark
+     @Override
+@@ -144,12 +126,6 @@ public class Deserialization extends JsonBench {
+         return JSON_SOURCE().provider().moshi().fromJson(JSON_SOURCE().nextOkioBufferedSource());
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object qson() throws Exception {
+-        return JSON_SOURCE().provider().qson().read(JSON_SOURCE().nextByteArray(), JSON_SOURCE().pojoType());
+-    }
+-
+     @Benchmark
+     @Override
+     public Object quickbuf_json() throws Exception {
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/databind/Serialization.java b/src/main/java/com/github/fabienrenaud/jjb/databind/Serialization.java
+index 70882e2..33e1571 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/databind/Serialization.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/databind/Serialization.java
+@@ -1,6 +1,5 @@
+ package com.github.fabienrenaud.jjb.databind;
+ 
+-import com.alibaba.fastjson2.JSON;
+ import com.bluelinelabs.logansquare.LoganSquare;
+ import com.cedarsoftware.io.JsonIo;
+ import com.github.fabienrenaud.jjb.JsonBench;
+@@ -66,22 +65,6 @@ public class Serialization extends JsonBench {
+         return baos;
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object fastjson() throws Exception {
+-        ByteArrayOutputStream baos = JsonUtils.byteArrayOutputStream();
+-        JSON.writeTo(baos, JSON_SOURCE().nextPojo());
+-        return baos;
+-    }
+-
+-    @Benchmark
+-    @Override
+-    public Object fastjson_features() throws Exception {
+-        ByteArrayOutputStream baos = JsonUtils.byteArrayOutputStream();
+-        JSON.writeTo(baos, JSON_SOURCE().nextPojo(), JSON_SOURCE().fastjsonFeatures().writerContext());
+-        return baos;
+-    }
+-
+     @Benchmark
+     @Override
+     public Object flexjson() {
+@@ -90,13 +73,6 @@ public class Serialization extends JsonBench {
+         return b;
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object foryjson() {
+-        ByteArrayOutputStream baos = JsonUtils.byteArrayOutputStream();
+-        JSON_SOURCE().provider().foryJson().writeJsonTo(JSON_SOURCE().nextPojo(), baos);
+-        return baos;
+-    }
+ 
+     @Benchmark
+     @Override
+@@ -178,14 +154,6 @@ public class Serialization extends JsonBench {
+         return baos;
+     }
+ 
+-    @Benchmark
+-    @Override
+-    public Object qson() throws Exception {
+-        ByteArrayOutputStream baos = JsonUtils.byteArrayOutputStream();
+-        JSON_SOURCE().provider().qson().writeStream(JSON_SOURCE().nextPojo(), baos);
+-        return baos;
+-    }
+-
+     @Benchmark
+     @Override
+     public Object quickbuf_json() throws Exception {
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/provider/ClientsJsonProvider.java b/src/main/java/com/github/fabienrenaud/jjb/provider/ClientsJsonProvider.java
+index 66a368c..b16ba6e 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/provider/ClientsJsonProvider.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/provider/ClientsJsonProvider.java
+@@ -29,7 +29,6 @@ import flexjson.JSONSerializer;
+ import flexjson.transformer.AbstractTransformer;
+ import io.avaje.jsonb.jackson.JacksonAdapter;
+ import io.avaje.jsonb.stream.JsonStream;
+-import io.quarkus.qson.generator.QsonMapper;
+ import jodd.json.TypeJsonSerializer;
+ import jodd.typeconverter.TypeConverterManager;
+ import org.apache.johnzon.core.JsonProviderImpl;
+@@ -102,7 +101,6 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
+             .use(LocalDate.class, (objectBinder, o, type, aClass) -> LocalDate.parse((String) o))
+             .use(OffsetDateTime.class, (objectBinder, o, type, aClass) -> OffsetDateTime.parse((String) o));
+ 
+-    private final org.apache.fory.json.ForyJson foryJson = org.apache.fory.json.ForyJson.builder().build();
+ 	private final org.boon.json.ObjectMapper boon = org.boon.json.JsonFactory.create();
+     private final Mapper johnzon;
+     private final com.squareup.moshi.JsonAdapter<Clients> moshi =
+@@ -148,7 +146,6 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
+                 }
+             }).build().adapter(Clients.class);
+ 
+-    private final QsonMapper qson = new QsonMapper();
+ 
+     /*
+      * DSL-json
+@@ -234,11 +231,6 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
+         return FLEXJSON_SER.get();
+     }
+ 
+-    @Override
+-    public org.apache.fory.json.ForyJson foryJson() {
+-        return foryJson;
+-    }
+-
+     @Override
+     public org.boon.json.ObjectMapper boon() {
+         return boon;
+@@ -284,11 +276,6 @@ public class ClientsJsonProvider implements JsonProvider<Clients> {
+         return moshi;
+     }
+ 
+-    @Override
+-    public QsonMapper qson() {
+-        return qson;
+-    }
+-
+     @Override
+     public ProtoMessage<?> quickbufPojo() {
+         return QUICKBUF_MESSAGE.get();
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/provider/JsonProvider.java b/src/main/java/com/github/fabienrenaud/jjb/provider/JsonProvider.java
+index 3a94bdf..eb3d0e0 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/provider/JsonProvider.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/provider/JsonProvider.java
+@@ -8,7 +8,6 @@ import com.google.gson.Gson;
+ import com.owlike.genson.Genson;
+ import flexjson.JSONDeserializer;
+ import flexjson.JSONSerializer;
+-import io.quarkus.qson.generator.QsonMapper;
+ import org.apache.johnzon.mapper.Mapper;
+ 
+ import jakarta.json.bind.Jsonb;
+@@ -37,7 +36,6 @@ public interface JsonProvider<T> {
+ 
+     JSONSerializer flexjsonSer();
+ 
+-    org.apache.fory.json.ForyJson foryJson();
+ 
+     org.boon.json.ObjectMapper boon();
+ 
+@@ -57,7 +55,6 @@ public interface JsonProvider<T> {
+ 
+     io.avaje.jsonb.JsonType<T> avajeJsonb_default();
+ 
+-    QsonMapper qson();
+ 
+     ProtoMessage<?> quickbufPojo();
+ 
+diff --git a/src/main/java/com/github/fabienrenaud/jjb/provider/UsersJsonProvider.java b/src/main/java/com/github/fabienrenaud/jjb/provider/UsersJsonProvider.java
+index 91085b6..6f5d943 100644
+--- a/src/main/java/com/github/fabienrenaud/jjb/provider/UsersJsonProvider.java
++++ b/src/main/java/com/github/fabienrenaud/jjb/provider/UsersJsonProvider.java
+@@ -18,7 +18,6 @@ import flexjson.JSONDeserializer;
+ import io.avaje.jsonb.JsonType;
+ import io.avaje.jsonb.stream.JsonStream;
+ import io.avaje.jsonb.jackson.JacksonAdapter;
+-import io.quarkus.qson.generator.QsonMapper;
+ import org.apache.johnzon.core.JsonProviderImpl;
+ import org.apache.johnzon.mapper.Mapper;
+ import org.eclipse.yasson.JsonBindingProvider;
+@@ -44,11 +43,9 @@ public class UsersJsonProvider implements JsonProvider<Users> {
+             .withProvider(new org.glassfish.json.JsonProviderImpl())
+             .build();
+     private final JSONDeserializer<Users> flexjsonDeser = new JSONDeserializer<>();
+-    private final org.apache.fory.json.ForyJson foryJson = org.apache.fory.json.ForyJson.builder().build();
+     private final org.boon.json.ObjectMapper boon = org.boon.json.JsonFactory.create();
+     private final org.apache.johnzon.mapper.Mapper johnzon;
+     private final com.squareup.moshi.JsonAdapter<Users> moshi = new Moshi.Builder().build().adapter(Users.class);
+-    private final QsonMapper qson = new QsonMapper();
+ 
+     /*
+      * DSL-json
+@@ -124,11 +121,6 @@ public class UsersJsonProvider implements JsonProvider<Users> {
+         return FLEXJSON_SER.get();
+     }
+ 
+-    @Override
+-    public org.apache.fory.json.ForyJson foryJson() {
+-        return foryJson;
+-    }
+-
+     @Override
+     public org.boon.json.ObjectMapper boon() {
+         return boon;
+@@ -176,11 +168,6 @@ public class UsersJsonProvider implements JsonProvider<Users> {
+ 
+     private static final ThreadLocal<flexjson.JSONSerializer> FLEXJSON_SER = ThreadLocal.withInitial(flexjson.JSONSerializer::new);
+ 
+-    @Override
+-    public QsonMapper qson() {
+-        return qson;
+-    }
+-
+     private static final ThreadLocal<jodd.json.JsonParser> JODD_DESER = ThreadLocal.withInitial(jodd.json.JsonParser::new);
+ 
+     private static final ThreadLocal<jodd.json.JsonSerializer> JODD_SER = ThreadLocal.withInitial(jodd.json.JsonSerializer::new);

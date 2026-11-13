@@ -1,0 +1,26 @@
+# C99 campaign results  SLOT=jsoup  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jsoup  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=1 UM=3 US=1 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## jsoup  [metric] jsoup HtmlToPlainText large+medium (hunt/ab candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=32
+  GEOMEAN FULL/BASE  time 0.897 [0.890,0.903] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  GEOMEAN BASE_A32/BASE  time 0.999 [0.995,1.003] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (2 keys)
+  GEOMEAN FULL_A32/BASE  time 0.908 [0.905,0.911] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  GEOMEAN BASE_A128/BASE  time 1.001 [0.998,1.005] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (2 keys)
+  GEOMEAN FULL_A128/BASE  time 0.895 [0.894,0.896] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  GEOMEAN BASE_A256/BASE  time 1.015 [1.013,1.016] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] LESS (2 keys)
+  GEOMEAN FULL_A256/BASE  time 0.911 [0.909,0.914] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  large: wall/rep ms                                                     FULL 0.897 [0.888,0.905] FASTER | BASE_A32 0.994 [0.989,0.999] FASTER | FULL_A32 0.907 [0.904,0.911] FASTER | BASE_A128 1.002 [0.999,1.005] n.s. | FULL_A128 0.892 [0.888,0.896] FASTER | BASE_A256 1.018 [1.014,1.022] SLOWER | FULL_A256 0.908 [0.905,0.912] FASTER
+  large: wall/rep ms [cold]                                              FULL 0.892 [0.883,0.902] FASTER | BASE_A32 0.993 [0.989,0.997] FASTER | FULL_A32 0.905 [0.901,0.910] FASTER | BASE_A128 1.000 [0.993,1.007] n.s. | FULL_A128 0.891 [0.884,0.898] FASTER | BASE_A256 1.018 [1.013,1.022] SLOWER | FULL_A256 0.907 [0.900,0.914] FASTER
+  medium: wall/rep ms                                                    FULL 0.897 [0.892,0.902] FASTER | BASE_A32 1.004 [1.001,1.006] SLOWER | FULL_A32 0.908 [0.905,0.912] FASTER | BASE_A128 1.001 [0.997,1.005] n.s. | FULL_A128 0.898 [0.896,0.900] FASTER | BASE_A256 1.012 [1.010,1.013] SLOWER | FULL_A256 0.914 [0.911,0.917] FASTER
+  medium: wall/rep ms [cold]                                             FULL 0.897 [0.894,0.899] FASTER | BASE_A32 1.002 [0.996,1.008] n.s. | FULL_A32 0.907 [0.904,0.911] FASTER | BASE_A128 1.003 [1.000,1.005] n.s. | FULL_A128 0.895 [0.894,0.897] FASTER | BASE_A256 1.011 [1.009,1.012] SLOWER | FULL_A256 0.909 [0.903,0.915] FASTER
+  ~alloc MB/iter large                                                   FULL 0.921 [0.921,0.921] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.921 [0.921,0.921] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 0.921 [0.921,0.921] LESS | BASE_A256 1.000 [1.000,1.000] LESS | FULL_A256 0.921 [0.921,0.921] LESS
+  ~alloc MB/iter medium                                                  FULL 0.923 [0.923,0.923] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.923 [0.923,0.923] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 0.923 [0.923,0.923] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.923 [0.923,0.923] LESS
+  ~rss MB large                                                          FULL 1.005 [0.998,1.013] n.s. | BASE_A32 0.998 [0.990,1.006] n.s. | FULL_A32 0.999 [0.992,1.006] n.s. | BASE_A128 0.999 [0.984,1.015] n.s. | FULL_A128 1.004 [0.998,1.010] n.s. | BASE_A256 1.005 [0.998,1.011] n.s. | FULL_A256 1.007 [1.000,1.013] n.s.
+  ~rss MB medium                                                         FULL 1.003 [0.994,1.011] n.s. | BASE_A32 1.001 [0.994,1.008] n.s. | FULL_A32 0.998 [0.991,1.005] n.s. | BASE_A128 1.006 [1.000,1.012] MORE | FULL_A128 1.002 [0.990,1.014] n.s. | BASE_A256 1.007 [1.000,1.013] MORE | FULL_A256 1.010 [1.002,1.019] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  jsoup                      0.897*|0.922*     0.999|1.000       0.908*|0.922*     1.001|1.000       0.895*|0.922*     1.015*|1.000*     0.911*|0.922*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

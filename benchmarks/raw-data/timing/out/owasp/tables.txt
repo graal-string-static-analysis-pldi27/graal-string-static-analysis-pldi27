@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/owasp  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+owasp                    BASE b1 size 19.34/20.33/9.22/9.11 | parent 33.9 s 2.71 GB | driver 34.7 s REUSED
+owasp                    BASE b2 size 19.34/20.33/9.22/9.11 | parent 30.3 s 2.69 GB | driver 31.7 s REUSED
+owasp                    FULL b1 size 19.34/20.33/9.24/9.11 | parent 56.5 s 3.21 GB | driver 57.9 s | OK | child aa 19450 ms gen 24.4 s obs 23 s VmHWM 2.85 GB | wait 25.0 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    FULL b2 size 19.34/20.33/9.24/9.11 | parent 45.1 s 3.16 GB | driver 47.0 s | OK | child aa 15327 ms gen 18.4 s obs 18 s VmHWM 3.27 GB | wait 18.5 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    BASE_A32 b1 size 19.20/20.19/9.08/9.11 | parent 35.2 s 2.63 GB | driver 36.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    BASE_A32 b2 size 19.20/20.19/9.08/9.11 | parent 26.5 s 2.59 GB | driver 27.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    FULL_A32 b1 size 19.20/20.20/9.10/9.11 | parent 48.0 s 3.21 GB | driver 49.4 s | OK | child aa 15814 ms gen 21.0 s obs 21 s VmHWM 3.28 GB | wait 21.5 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    FULL_A32 b2 size 19.20/20.20/9.10/9.11 | parent 53.3 s 3.18 GB | driver 54.5 s | OK | child aa 23907 ms gen 28.3 s obs 28 s VmHWM 3.62 GB | wait 28.6 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    BASE_A128 b1 size 19.66/20.65/9.57/9.11 | parent 29.8 s 2.58 GB | driver 31.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    BASE_A128 b2 size 19.66/20.65/9.57/9.11 | parent 28.6 s 2.47 GB | driver 30.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    FULL_A128 b1 size 19.66/20.66/9.59/9.11 | parent 57.6 s 3.31 GB | driver 59.1 s | OK | child aa 18381 ms gen 25.3 s obs 25 s VmHWM 3.37 GB | wait 26.0 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    FULL_A128 b2 size 19.66/20.66/9.59/9.11 | parent 45.8 s 3.35 GB | driver 47.6 s | OK | child aa 13878 ms gen 19.1 s obs 19 s VmHWM 3.46 GB | wait 19.5 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    BASE_A256 b1 size 20.38/21.37/10.33/9.04 | parent 32.5 s 2.61 GB | driver 33.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    BASE_A256 b2 size 20.38/21.37/10.33/9.04 | parent 26.4 s 2.69 GB | driver 27.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+owasp                    FULL_A256 b1 size 20.38/21.38/10.35/9.04 | parent 53.2 s 3.25 GB | driver 54.6 s | OK | child aa 17129 ms gen 23.6 s obs 24 s VmHWM 3.40 GB | wait 24.5 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+owasp                    FULL_A256 b2 size 20.38/21.38/10.35/9.04 | parent 58.8 s 3.12 GB | driver 60.2 s | OK | child aa 26665 ms gen 32.1 s obs 32 s VmHWM 3.39 GB | wait 32.6 s | SBS=0 SV=29(ACC=25 ELEM=0) LS=0(JOINER=0) | IC=3591 TC=306 MIRROR=14 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+owasp                    FULL/BASE  parent wall 32.1 -> 50.8 s (x1.58)  Peak RSS 2.70 -> 3.19 GB (x1.18)  child VmHWM 3.06 GB  size 19.34 -> 19.34 MB (x1.000)  status OK,OK
+owasp                    BASE_A32/BASE  parent wall 32.1 -> 30.9 s (x0.96)  Peak RSS 2.70 -> 2.61 GB (x0.97)  child VmHWM ? GB  size 19.34 -> 19.20 MB (x0.993)  status NO-PROFILE,NO-PROFILE
+owasp                    FULL_A32/BASE  parent wall 32.1 -> 50.6 s (x1.58)  Peak RSS 2.70 -> 3.20 GB (x1.18)  child VmHWM 3.45 GB  size 19.34 -> 19.20 MB (x0.993)  status OK,OK
+owasp                    BASE_A128/BASE  parent wall 32.1 -> 29.2 s (x0.91)  Peak RSS 2.70 -> 2.53 GB (x0.94)  child VmHWM ? GB  size 19.34 -> 19.66 MB (x1.017)  status NO-PROFILE,NO-PROFILE
+owasp                    FULL_A128/BASE  parent wall 32.1 -> 51.7 s (x1.61)  Peak RSS 2.70 -> 3.33 GB (x1.23)  child VmHWM 3.42 GB  size 19.34 -> 19.66 MB (x1.017)  status OK,OK
+owasp                    BASE_A256/BASE  parent wall 32.1 -> 29.4 s (x0.92)  Peak RSS 2.70 -> 2.65 GB (x0.98)  child VmHWM ? GB  size 19.34 -> 20.38 MB (x1.054)  status NO-PROFILE,NO-PROFILE
+owasp                    FULL_A256/BASE  parent wall 32.1 -> 56.0 s (x1.74)  Peak RSS 2.70 -> 3.19 GB (x1.18)  child VmHWM 3.39 GB  size 19.34 -> 20.38 MB (x1.054)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+owasp                    FULL SBS=0 SV=29 (ACC=25 ELEM=0) LS=0 (JOINER=0)  OK
+owasp                    BASE_A32 no profile  NO-PROFILE
+owasp                    FULL_A32 SBS=0 SV=29 (ACC=25 ELEM=0) LS=0 (JOINER=0)  OK
+owasp                    BASE_A128 no profile  NO-PROFILE
+owasp                    FULL_A128 SBS=0 SV=29 (ACC=25 ELEM=0) LS=0 (JOINER=0)  OK
+owasp                    BASE_A256 no profile  NO-PROFILE
+owasp                    FULL_A256 SBS=0 SV=29 (ACC=25 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+owasp                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 36.3 s
+owasp                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.8 s
+owasp                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.0 s
+owasp                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.4 s
+owasp                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.5 s
+owasp                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.8 s
+## determinism: owasp FULL_A256: admit counts differ across builds
+TABLES-DONE

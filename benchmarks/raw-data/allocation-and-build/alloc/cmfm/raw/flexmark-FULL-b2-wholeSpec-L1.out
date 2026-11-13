@@ -1,0 +1,39 @@
+-XX:+PrintGCSummary .\*SpecBenchmark.\* -foe true -Djmh.ignoreLock=true -e SpecBenchmark\\.\(\?\!wholeSpec\$\) -f 0 -wi 0 -i 1 -r 1s 
+# WARNING: Unable to acquire the JMH lock (/tmp/jmh.lock): already taken by another JMH instance, ignored by user's request.
+# JMH 1.13 (released 3762 days ago, please consider updating!)
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: <none>
+# Measurement: 1 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladsch.flexmark.core.test.util.parser.SpecBenchmark.wholeSpec
+
+# Run progress: 0.00% complete, ETA 00:00:01
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+Iteration   1: 44.663 ops/s
+
+Result "wholeSpec":
+  44.663 ops/s
+
+
+# Run complete. Total time: 00:00:01
+
+Benchmark                 Mode  Cnt   Score   Error  Units
+SpecBenchmark.wholeSpec  thrpt       44.663          ops/s
+GC summary
+  Collected chunk bytes: 1132.25M
+  Collected object bytes: 1126.94M
+  Allocated chunk bytes: 1176.90M
+  Allocated object bytes: 1170.93M
+  Incremental GC count: 0
+  Incremental GC time: 0.000s
+  Complete GC count: 11
+  Complete GC time: 0.082s
+  GC time: 0.082s
+  Run time: 0.983s
+  GC load: 8%

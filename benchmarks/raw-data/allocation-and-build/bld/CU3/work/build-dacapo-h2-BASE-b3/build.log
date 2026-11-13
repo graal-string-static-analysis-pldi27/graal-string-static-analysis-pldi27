@@ -1,0 +1,69 @@
+1792869457.109007 ========================================================================================================================
+1792869457.110441 GraalVM Native Image: Generating 'dacapo-h2-BASE-b3' (executable)...
+1792869457.117152 ========================================================================================================================
+1792869457.117163 For detailed information and explanations on the build output, visit:
+1792869457.117175 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792869457.117190 ------------------------------------------------------------------------------------------------------------------------
+1792869458.734729 [1/8] Initializing...                                                                                    (2.3s @ 0.55GB)
+1792869458.734995  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792869458.735124  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792869458.735202  C compiler: gcc (linux, x86_64, 15.2.0)
+1792869458.735319  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792869458.735344  1 user-specific feature(s):
+1792869458.735508  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792869458.736141 ------------------------------------------------------------------------------------------------------------------------
+1792869458.736165  1 experimental option(s) unlocked:
+1792869458.736206  - '-H:CodeAlignment' (origin(s): command line)
+1792869458.737264 ------------------------------------------------------------------------------------------------------------------------
+1792869458.737275 Build resources:
+1792869458.737349  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792869458.737398  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792869458.751957 Skipped 620 predefined class(es) because the classpath already contains a class with the same name: org.h2.expression.analysis.WindowFunction, org.h2.expression.ExpressionVisitor, org.h2.expression.aggregate.AggregateType, org.h2.mvstore.tx.TxDecisionMaker$LockDecisionMaker, org.h2.expression.function.DateTimeFormatFunction, org.h2.mvstore.db.MVPrimaryIndex, org.h2.command.Parser$1, org.h2.value.ValueBigint, org.h2.mvstore.tx.TransactionMap$CommittedIterator, org.h2.value.ValueTimeTimeZone, ...
+1792869464.757096 [2/8] Performing analysis...  [*****]                                                                    (5.7s @ 1.20GB)
+1792869464.786158     9,330 types,  15,979 fields, and  51,667 methods found reachable
+1792869464.786894     3,000 types,     213 fields, and   2,797 methods registered for reflection
+1792869464.786960        62 types,      63 fields, and      55 methods registered for JNI access
+1792869464.787002         0 downcalls and 0 upcalls registered for foreign access
+1792869464.787035         4 native libraries: dl, pthread, rt, z
+1792869466.283232 [3/8] Building universe...                                                                               (1.5s @ 1.49GB)
+1792869466.910674 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.45GB)
+1792869467.579968 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.68GB)
+1792869473.004660 [6/8] Compiling methods...    [***]                                                                      (5.4s @ 1.41GB)
+1792869476.425498 [7/8] Laying out methods...   [**]                                                                       (3.4s @ 1.82GB)
+1792869478.899771 [8/8] Creating image...       [**]                                                                       (2.2s @ 2.01GB)
+1792869478.900085   28.63MB (48.93%) for code area:    34,382 compilation units
+1792869478.900189   24.71MB (42.22%) for image heap:  249,722 objects and 73 resources
+1792869478.900238    5.18MB ( 8.85%) for other data
+1792869478.900265   58.52MB in total image size, 55.64MB in total file size
+1792869478.900327 ------------------------------------------------------------------------------------------------------------------------
+1792869478.901112 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792869478.901430   13.04MB java.base                                            7.50MB byte[] for code metadata
+1792869478.901471    5.80MB h2-2.2.220.jar                                       3.16MB byte[] for java.lang.String
+1792869478.901503    2.88MB java.xml                                             2.27MB java.lang.String
+1792869478.901572    1.67MB svm.jar (Native Image)                               1.87MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792869478.901606    1.58MB java.desktop                                         1.36MB java.lang.Class
+1792869478.901641  501.01kB derbyclient.jar                                    878.22kB byte[] for embedded resources
+1792869478.901675  368.41kB dacapo-evaluation-git-e947cbfc.jar                 837.87kB byte[] for general heap data
+1792869478.901703  352.60kB java.rmi                                           525.31kB int[][]
+1792869478.901741  233.43kB jdk.zipfs                                          507.36kB java.util.HashMap$Node
+1792869478.901978  214.11kB java.naming                                        472.38kB heap alignment
+1792869478.902636  972.85kB for 28 more packages                                 5.33MB for 2195 more object types
+1792869478.904044 ------------------------------------------------------------------------------------------------------------------------
+1792869478.904060 Recommendations:
+1792869478.904147  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792869478.904253  AWT:  Use the tracing agent to collect metadata for AWT.
+1792869478.904299  HEAP: Set max heap for improved and more predictable memory usage.
+1792869478.904341  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792869478.907939 ------------------------------------------------------------------------------------------------------------------------
+1792869478.908553                        1.7s (7.3% of total time) in 297 GCs | Peak RSS: 3.16GB | CPU load: 13.30
+1792869478.908827 ------------------------------------------------------------------------------------------------------------------------
+1792869478.908832 Build artifacts:
+1792869478.909154  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-h2-BASE-b3 (executable)
+1792869478.909173  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt.so (jdk_library)
+1792869478.909191  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_headless.so (jdk_library)
+1792869478.909207  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_xawt.so (jdk_library)
+1792869478.909224  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libfontmanager.so (jdk_library)
+1792869478.909241  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjava.so (jdk_library_shim)
+1792869478.909256  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjvm.so (jdk_library_shim)
+1792869478.909275 ========================================================================================================================
+1792869478.909321 Finished generating 'dacapo-h2-BASE-b3' in 22.5s.

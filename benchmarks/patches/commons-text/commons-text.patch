@@ -1,0 +1,14 @@
+diff --git a/pom.xml b/pom.xml
+index 4f68cdb..2dc3683 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -642,6 +642,9 @@
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>${commons.compiler.version}</version>
+             <configuration combine.self="override">
++              <compilerArgs>
++                <arg>-proc:full</arg>
++              </compilerArgs>
+               <testIncludes>
+                 <testInclude>**/*</testInclude>
+               </testIncludes>

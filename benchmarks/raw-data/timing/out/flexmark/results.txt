@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=flexmark  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/flexmark  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## flexmark  [jmh] flexmark SpecBenchmark (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.991 [0.983,0.998] FASTER (2 keys)  alloc 1.006 [0.994,1.019] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.013 [1.013,1.014] SLOWER (2 keys)  alloc 0.997 [0.994,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.995 [0.988,1.002] n.s. (2 keys)  alloc 1.004 [0.993,1.014] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.003 [0.997,1.009] n.s. (2 keys)  alloc 1.003 [0.994,1.012] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.001 [0.995,1.006] n.s. (2 keys)  alloc 0.993 [0.988,0.998] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.008 [1.007,1.009] SLOWER (2 keys)  alloc 0.997 [0.994,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.000 [0.998,1.001] n.s. (2 keys)  alloc 0.988 [0.982,0.994] LESS (1 keys)
+  SpecBenchmark.examples                                                 FULL 0.994 [0.993,0.996] FASTER | BASE_A32 1.007 [1.005,1.009] SLOWER | FULL_A32 1.001 [1.000,1.003] n.s. | BASE_A128 0.997 [0.988,1.005] n.s. | FULL_A128 1.004 [1.002,1.006] SLOWER | BASE_A256 1.007 [1.001,1.013] SLOWER | FULL_A256 1.007 [1.002,1.012] SLOWER
+  SpecBenchmark.wholeSpec                                                FULL 0.987 [0.972,1.003] n.s. | BASE_A32 1.020 [1.019,1.021] SLOWER | FULL_A32 0.988 [0.974,1.003] n.s. | BASE_A128 1.009 [1.003,1.015] SLOWER | FULL_A128 0.997 [0.986,1.008] n.s. | BASE_A256 1.009 [1.002,1.017] SLOWER | FULL_A256 0.993 [0.991,0.994] FASTER
+  ~alloc MB                                                              FULL 1.006 [0.994,1.019] n.s. | BASE_A32 0.997 [0.994,1.000] n.s. | FULL_A32 1.004 [0.993,1.014] n.s. | BASE_A128 1.003 [0.994,1.012] n.s. | FULL_A128 0.993 [0.988,0.998] LESS | BASE_A256 0.997 [0.994,1.000] n.s. | FULL_A256 0.988 [0.982,0.994] LESS
+  ~rss MB                                                                FULL 1.004 [1.002,1.007] MORE | BASE_A32 1.003 [0.999,1.007] n.s. | FULL_A32 1.002 [1.000,1.004] MORE | BASE_A128 1.002 [1.001,1.002] MORE | FULL_A128 1.008 [1.005,1.010] MORE | BASE_A256 1.013 [1.012,1.014] MORE | FULL_A256 1.020 [1.017,1.023] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  flexmark                   0.991*|1.006      1.013*|0.997      0.995|1.004       1.003|1.003       1.001|0.993*      1.008*|0.997      1.000|0.988*     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

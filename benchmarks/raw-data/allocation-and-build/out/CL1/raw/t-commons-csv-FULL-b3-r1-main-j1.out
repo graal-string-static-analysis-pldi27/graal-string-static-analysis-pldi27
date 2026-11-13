@@ -1,0 +1,290 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.parseCommonsCSV
+
+# Run progress: 0.00% complete, ETA 00:01:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 2552.802 ms/op
+# Warmup Iteration   2: 2575.063 ms/op
+# Warmup Iteration   3: 2609.308 ms/op
+# Warmup Iteration   4: 2621.887 ms/op
+# Warmup Iteration   5: 2608.703 ms/op
+Iteration   1: 2605.168 ms/op
+Iteration   2: 2632.800 ms/op
+Iteration   3: 2641.406 ms/op
+Iteration   4: 2629.267 ms/op
+Iteration   5: 2619.372 ms/op
+Iteration   6: 2622.715 ms/op
+Iteration   7: 2593.221 ms/op
+Iteration   8: 2547.818 ms/op
+Iteration   9: 2583.305 ms/op
+Iteration  10: 2610.100 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.parseCommonsCSV":
+  2608.517 ±(99.9%) 42.131 ms/op [Average]
+  (min, avg, max) = (2547.818, 2608.517, 2641.406), stdev = 27.867
+  CI (99.9%): [2566.387, 2650.648] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.parseGenJavaCSV
+
+# Run progress: 14.29% complete, ETA 00:03:58
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 7876.454 ms/op
+# Warmup Iteration   2: 7898.884 ms/op
+# Warmup Iteration   3: 7893.681 ms/op
+# Warmup Iteration   4: 7857.049 ms/op
+# Warmup Iteration   5: 7875.657 ms/op
+Iteration   1: 7869.962 ms/op
+Iteration   2: 7896.215 ms/op
+Iteration   3: 7902.016 ms/op
+Iteration   4: 7881.823 ms/op
+Iteration   5: 7890.978 ms/op
+Iteration   6: 7886.821 ms/op
+Iteration   7: 7884.718 ms/op
+Iteration   8: 7878.321 ms/op
+Iteration   9: 7891.687 ms/op
+Iteration  10: 7886.887 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.parseGenJavaCSV":
+  7886.943 ±(99.9%) 13.763 ms/op [Average]
+  (min, avg, max) = (7869.962, 7886.943, 7902.016), stdev = 9.103
+  CI (99.9%): [7873.180, 7900.706] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.parseJavaCSV
+
+# Run progress: 28.57% complete, ETA 00:06:36
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1174.664 ms/op
+# Warmup Iteration   2: 1170.776 ms/op
+# Warmup Iteration   3: 1172.431 ms/op
+# Warmup Iteration   4: 1174.371 ms/op
+# Warmup Iteration   5: 1174.365 ms/op
+Iteration   1: 1173.124 ms/op
+Iteration   2: 1171.507 ms/op
+Iteration   3: 1170.487 ms/op
+Iteration   4: 1174.243 ms/op
+Iteration   5: 1175.134 ms/op
+Iteration   6: 1176.702 ms/op
+Iteration   7: 1175.944 ms/op
+Iteration   8: 1175.507 ms/op
+Iteration   9: 1177.333 ms/op
+Iteration  10: 1176.156 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.parseJavaCSV":
+  1174.614 ±(99.9%) 3.418 ms/op [Average]
+  (min, avg, max) = (1170.487, 1174.614, 1177.333), stdev = 2.261
+  CI (99.9%): [1171.195, 1178.032] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.parseOpenCSV
+
+# Run progress: 42.86% complete, ETA 00:03:55
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1958.107 ms/op
+# Warmup Iteration   2: 1952.946 ms/op
+# Warmup Iteration   3: 1950.073 ms/op
+# Warmup Iteration   4: 1951.162 ms/op
+# Warmup Iteration   5: 1940.783 ms/op
+Iteration   1: 1949.121 ms/op
+Iteration   2: 1959.118 ms/op
+Iteration   3: 1970.083 ms/op
+Iteration   4: 1971.126 ms/op
+Iteration   5: 1970.201 ms/op
+Iteration   6: 1967.001 ms/op
+Iteration   7: 1967.055 ms/op
+Iteration   8: 1970.688 ms/op
+Iteration   9: 1977.527 ms/op
+Iteration  10: 1977.014 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.parseOpenCSV":
+  1967.893 ±(99.9%) 12.702 ms/op [Average]
+  (min, avg, max) = (1949.121, 1967.893, 1977.527), stdev = 8.402
+  CI (99.9%): [1955.191, 1980.596] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.parseSuperCSV
+
+# Run progress: 57.14% complete, ETA 00:02:35
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 2218.311 ms/op
+# Warmup Iteration   2: 2261.828 ms/op
+# Warmup Iteration   3: 2263.118 ms/op
+# Warmup Iteration   4: 2261.849 ms/op
+# Warmup Iteration   5: 2272.628 ms/op
+Iteration   1: 2251.911 ms/op
+Iteration   2: 2262.718 ms/op
+Iteration   3: 2292.521 ms/op
+Iteration   4: 2267.894 ms/op
+Iteration   5: 2239.375 ms/op
+Iteration   6: 2249.567 ms/op
+Iteration   7: 2264.705 ms/op
+Iteration   8: 2251.025 ms/op
+Iteration   9: 2252.149 ms/op
+Iteration  10: 2269.287 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.parseSuperCSV":
+  2260.115 ±(99.9%) 22.410 ms/op [Average]
+  (min, avg, max) = (2239.375, 2260.115, 2292.521), stdev = 14.823
+  CI (99.9%): [2237.705, 2282.525] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.read
+
+# Run progress: 71.43% complete, ETA 00:01:36
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 227.284 ms/op
+# Warmup Iteration   2: 226.803 ms/op
+# Warmup Iteration   3: 226.825 ms/op
+# Warmup Iteration   4: 227.627 ms/op
+# Warmup Iteration   5: 228.028 ms/op
+Iteration   1: 226.127 ms/op
+Iteration   2: 224.424 ms/op
+Iteration   3: 225.013 ms/op
+Iteration   4: 224.821 ms/op
+Iteration   5: 225.576 ms/op
+Iteration   6: 225.805 ms/op
+Iteration   7: 225.912 ms/op
+Iteration   8: 225.627 ms/op
+Iteration   9: 222.999 ms/op
+Iteration  10: 225.397 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.read":
+  225.170 ±(99.9%) 1.400 ms/op [Average]
+  (min, avg, max) = (222.999, 225.170, 226.127), stdev = 0.926
+  CI (99.9%): [223.770, 226.570] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -server -Xms1024M -Xmx1024M
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.commons.csv.CSVBenchmark.scan
+
+# Run progress: 85.71% complete, ETA 00:00:43
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1903.251 ms/op
+# Warmup Iteration   2: 1907.525 ms/op
+# Warmup Iteration   3: 1909.814 ms/op
+# Warmup Iteration   4: 1930.856 ms/op
+# Warmup Iteration   5: 1912.534 ms/op
+Iteration   1: 1913.495 ms/op
+Iteration   2: 1920.072 ms/op
+Iteration   3: 1922.609 ms/op
+Iteration   4: 1903.150 ms/op
+Iteration   5: 1918.370 ms/op
+Iteration   6: 1932.426 ms/op
+Iteration   7: 1911.594 ms/op
+Iteration   8: 1928.705 ms/op
+Iteration   9: 1909.600 ms/op
+Iteration  10: 1909.096 ms/op
+
+Result "org.apache.commons.csv.CSVBenchmark.scan":
+  1916.912 ±(99.9%) 13.968 ms/op [Average]
+  (min, avg, max) = (1903.150, 1916.912, 1932.426), stdev = 9.239
+  CI (99.9%): [1902.944, 1930.880] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:04:48
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                     Mode  Cnt     Score    Error  Units
+CSVBenchmark.parseCommonsCSV  avgt   10  2608.517 ± 42.131  ms/op
+CSVBenchmark.parseGenJavaCSV  avgt   10  7886.943 ± 13.763  ms/op
+CSVBenchmark.parseJavaCSV     avgt   10  1174.614 ±  3.418  ms/op
+CSVBenchmark.parseOpenCSV     avgt   10  1967.893 ± 12.702  ms/op
+CSVBenchmark.parseSuperCSV    avgt   10  2260.115 ± 22.410  ms/op
+CSVBenchmark.read             avgt   10   225.170 ±  1.400  ms/op
+CSVBenchmark.scan             avgt   10  1916.912 ± 13.968  ms/op

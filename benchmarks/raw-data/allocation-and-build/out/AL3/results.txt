@@ -1,0 +1,46 @@
+# C99 campaign results  SLOT=AL3  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL3  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## string-concat  [jmh] OpenJDK StringConcat (misc-benchmarks jar, 37 rows; ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.234 [0.232,0.238] FASTER (37 keys)  alloc 3.436 [3.362,3.481] MORE (1 keys)
+  StringConcat.concat123String 4711                                      FULL 0.986 [0.973,0.996] FASTER
+  StringConcat.concat13String 4711                                       FULL 0.122 [0.120,0.124] FASTER
+  StringConcat.concat13StringConst 4711                                  FULL 0.106 [0.106,0.106] FASTER
+  StringConcat.concat23String 4711                                       FULL 0.110 [0.109,0.112] FASTER
+  StringConcat.concat23StringConst 4711                                  FULL 0.103 [0.100,0.105] FASTER
+  StringConcat.concat30Mix 4711                                          FULL 0.207 [0.200,0.214] FASTER
+  StringConcat.concat3String 4711                                        FULL 0.077 [0.076,0.077] FASTER
+  StringConcat.concat4String 4711                                        FULL 0.070 [0.070,0.070] FASTER
+  StringConcat.concat6String 4711                                        FULL 0.122 [0.120,0.124] FASTER
+  StringConcat.concatConst2String 4711                                   FULL 0.104 [0.103,0.104] FASTER
+  StringConcat.concatConst4String 4711                                   FULL 0.158 [0.158,0.159] FASTER
+  StringConcat.concatConst6Object 4711                                   FULL 0.266 [0.253,0.276] FASTER
+  StringConcat.concatConst6String 4711                                   FULL 0.129 [0.126,0.132] FASTER
+  StringConcat.concatConstBool 4711                                      FULL 0.223 [0.218,0.229] FASTER
+  StringConcat.concatConstBoolByte 4711                                  FULL 0.316 [0.311,0.324] FASTER
+  StringConcat.concatConstBoolString 4711                                FULL 0.132 [0.130,0.135] FASTER
+  StringConcat.concatConstBoolean 4711                                   FULL 0.256 [0.253,0.261] FASTER
+  StringConcat.concatConstBooleanString 4711                             FULL 0.114 [0.112,0.115] FASTER
+  StringConcat.concatConstFloat 4711                                     FULL 0.630 [0.627,0.633] FASTER
+  StringConcat.concatConstFloatString 4711                               FULL 0.498 [0.495,0.500] FASTER
+  StringConcat.concatConstInt 4711                                       FULL 0.445 [0.436,0.452] FASTER
+  StringConcat.concatConstIntConstInt 4711                               FULL 0.459 [0.444,0.478] FASTER
+  StringConcat.concatConstIntString 4711                                 FULL 0.240 [0.232,0.250] FASTER
+  StringConcat.concatConstInteger 4711                                   FULL 0.375 [0.358,0.392] FASTER
+  StringConcat.concatConstIntegerString 4711                             FULL 0.173 [0.165,0.183] FASTER
+  StringConcat.concatConstString 4711                                    FULL 0.222 [0.214,0.229] FASTER
+  StringConcat.concatConstStringConstInt 4711                            FULL 0.258 [0.247,0.273] FASTER
+  StringConcat.concatEmptyConstInt 4711                                  FULL 1.032 [0.999,1.097] n.s.
+  StringConcat.concatEmptyConstString 4711                               FULL 0.951 [0.925,1.003] n.s.
+  StringConcat.concatEmptyLeft 4711                                      FULL 0.951 [0.948,0.955] FASTER
+  StringConcat.concatEmptyRight 4711                                     FULL 0.922 [0.920,0.924] FASTER
+  StringConcat.concatMethodConstString 4711                              FULL 0.224 [0.218,0.232] FASTER
+  StringConcat.concatMix4String 4711                                     FULL 0.815 [0.808,0.821] FASTER
+  StringConcat.concatStringBoolString 4711                               FULL 0.092 [0.090,0.097] FASTER
+  StringConcat.concatStringBooleanString 4711                            FULL 0.080 [0.078,0.084] FASTER
+  StringConcat.concatStringIntString 4711                                FULL 0.176 [0.172,0.185] FASTER
+  StringConcat.concatStringIntegerString 4711                            FULL 0.135 [0.130,0.142] FASTER
+  ~alloc MB                                                              FULL 3.436 [3.362,3.481] MORE
+  ~rss MB                                                                FULL 1.001 [0.996,1.006] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

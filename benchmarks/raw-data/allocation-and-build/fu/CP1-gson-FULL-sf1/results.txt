@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=CP1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CP1-gson-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## gson  [port] gson metrics Hunt3Port 11 rows (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 1.002 [0.972,1.036] n.s. (11 keys)  alloc 0.979 [0.940,1.008] n.s. (1 keys)
+  parse document=READER_LONG api=GSON_BIND                               FULL 1.006 [0.953,1.071] n.s.  BIMODAL(BASE)
+  parse document=READER_LONG api=GSON_DOM                                FULL 0.995 [0.825,1.201] n.s.  BIMODAL(FULL)
+  parse document=READER_LONG api=GSON_STREAM                             FULL 1.002 [0.953,1.054] n.s.  BIMODAL(BASE)
+  parse document=READER_SHORT api=GSON_BIND                              FULL 1.012 [0.966,1.061] n.s.
+  parse document=READER_SHORT api=GSON_DOM                               FULL 1.039 [0.991,1.091] n.s.  BIMODAL(FULL)
+  parse document=READER_SHORT api=GSON_STREAM                            FULL 0.990 [0.935,1.051] n.s.
+  parse document=TWEETS api=GSON_BIND                                    FULL 1.007 [0.993,1.021] n.s.
+  parse document=TWEETS api=GSON_DOM                                     FULL 1.003 [0.988,1.020] n.s.
+  parse document=TWEETS api=GSON_STREAM                                  FULL 1.000 [0.979,1.017] n.s.
+  serialize pretty=false                                                 FULL 0.982 [0.963,1.004] n.s.  BIMODAL(BASE)
+  serialize pretty=true                                                  FULL 0.988 [0.972,1.009] n.s.  BIMODAL(BASE)
+  ~alloc MB                                                              FULL 0.979 [0.940,1.008] n.s.
+  ~rss MB                                                                FULL 1.009 [0.948,1.074] n.s.  BIMODAL(FULL)
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

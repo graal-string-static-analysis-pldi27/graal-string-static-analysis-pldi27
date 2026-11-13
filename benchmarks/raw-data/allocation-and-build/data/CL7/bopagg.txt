@@ -1,0 +1,10 @@
+# CL7  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+lucene-jmh               FULL   |   1.001   1.003   1.001 1.003[1.003,1.003]        1.003 | 1.001/1.018/0.991 | 4/1 | 0 | 0
+
+## CL7 lucene-jmh FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:ByteBuffersDataOutputWriteStringBenchmark.writeString        7.25   7.22   1.00   19213.2   19279.2  1.003  100.0  100.0
+M:CaseFoldBenchmark.simpleCaseFold                            65.06  64.91   1.00       0.0       0.0    0/0    0.0    0.0
+M:LowerCaseBenchmark.asciiFastPath                            21.34  21.55   1.01       0.0       0.0    0/0    0.0    0.0
+M:LowerCaseBenchmark.baseline                                  6.35   6.32   1.00       0.0       0.0    0/0    0.0    0.0
+

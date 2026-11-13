@@ -1,0 +1,7 @@
+# XL3  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+log4j2-plc               FULL   |   1.000   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 1/1 | 0 | 0
+
+## XL3 log4j2-plc FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+PatternLayoutComparisonBenchmark.log4j2                      100.00 100.00   0.95     440.6     440.7  1.000  100.0  100.0
+

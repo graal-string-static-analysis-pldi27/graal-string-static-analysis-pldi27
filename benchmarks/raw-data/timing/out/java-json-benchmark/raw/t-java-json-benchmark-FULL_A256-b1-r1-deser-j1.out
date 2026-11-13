@@ -1,0 +1,332 @@
+Jsonp Provider:org.apache.johnzon.core.JsonProviderImpl
+
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.avajejsonb
+
+# Run progress: 0.00% complete, ETA 00:02:23
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: Using SEED=42 as seed for Random
+1614194.991 ops/s
+Iteration   1: 1580775.498 ops/s
+Iteration   2: 1642573.878 ops/s
+Iteration   3: 1532890.397 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.avajejsonb":
+  1585413.257 ±(99.9%) 1003197.097 ops/s [Average]
+  (min, avg, max) = (1532890.397, 1585413.257, 1642573.878), stdev = 54988.618
+  CI (99.9%): [582216.161, 2588610.354] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.avajejsonb_jackson
+
+# Run progress: 9.09% complete, ETA 00:02:10
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1398584.944 ops/s
+Iteration   1: 1389575.530 ops/s
+Iteration   2: 1400617.397 ops/s
+Iteration   3: 1388327.857 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.avajejsonb_jackson":
+  1392840.261 ±(99.9%) 123401.023 ops/s [Average]
+  (min, avg, max) = (1388327.857, 1392840.261, 1400617.397), stdev = 6764.026
+  CI (99.9%): [1269439.238, 1516241.285] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.dsljson
+
+# Run progress: 18.18% complete, ETA 00:01:57
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 2542632.935 ops/s
+Iteration   1: 2555226.428 ops/s
+Iteration   2: 2551431.903 ops/s
+Iteration   3: 2574141.128 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.dsljson":
+  2560266.486 ±(99.9%) 221928.621 ops/s [Average]
+  (min, avg, max) = (2551431.903, 2560266.486, 2574141.128), stdev = 12164.657
+  CI (99.9%): [2338337.866, 2782195.107] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.dsljson_reflection
+
+# Run progress: 27.27% complete, ETA 00:01:44
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1346485.929 ops/s
+Iteration   1: 1384720.901 ops/s
+Iteration   2: 1406710.260 ops/s
+Iteration   3: 1448242.067 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.dsljson_reflection":
+  1413224.409 ±(99.9%) 588500.821 ops/s [Average]
+  (min, avg, max) = (1384720.901, 1413224.409, 1448242.067), stdev = 32257.716
+  CI (99.9%): [824723.588, 2001725.231] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.gson
+
+# Run progress: 36.36% complete, ETA 00:01:31
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1045227.020 ops/s
+Iteration   1: 1057697.999 ops/s
+Iteration   2: 1053278.297 ops/s
+Iteration   3: 1046916.231 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.gson":
+  1052630.843 ±(99.9%) 98880.352 ops/s [Average]
+  (min, avg, max) = (1046916.231, 1052630.843, 1057697.999), stdev = 5419.966
+  CI (99.9%): [953750.490, 1151511.195] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.databind.Deserialization.moshi
+
+# Run progress: 45.45% complete, ETA 00:01:18
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 908510.331 ops/s
+Iteration   1: 900014.380 ops/s
+Iteration   2: 912339.752 ops/s
+Iteration   3: 854879.911 ops/s
+
+Result "com.github.fabienrenaud.jjb.databind.Deserialization.moshi":
+  889078.014 ±(99.9%) 551887.360 ops/s [Average]
+  (min, avg, max) = (854879.911, 889078.014, 912339.752), stdev = 30250.808
+  CI (99.9%): [337190.654, 1440965.374] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.stream.Deserialization.gson
+
+# Run progress: 54.55% complete, ETA 00:01:05
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1218267.086 ops/s
+Iteration   1: 1235096.838 ops/s
+Iteration   2: 1232414.725 ops/s
+Iteration   3: 1228431.379 ops/s
+
+Result "com.github.fabienrenaud.jjb.stream.Deserialization.gson":
+  1231980.981 ±(99.9%) 61186.378 ops/s [Average]
+  (min, avg, max) = (1228431.379, 1231980.981, 1235096.838), stdev = 3353.832
+  CI (99.9%): [1170794.602, 1293167.359] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.stream.Deserialization.jakartajson
+
+# Run progress: 63.64% complete, ETA 00:00:52
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 8837.928 ops/s
+Iteration   1: 7394.340 ops/s
+Iteration   2: 8224.603 ops/s
+Iteration   3: 8152.641 ops/s
+
+Result "com.github.fabienrenaud.jjb.stream.Deserialization.jakartajson":
+  7923.862 ±(99.9%) 8391.898 ops/s [Average]
+  (min, avg, max) = (7394.340, 7923.862, 8224.603), stdev = 459.988
+  CI (99.9%): [≈ 0, 16315.760] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.stream.Deserialization.minimaljson
+
+# Run progress: 72.73% complete, ETA 00:00:39
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 652996.372 ops/s
+Iteration   1: 1009198.206 ops/s
+Iteration   2: 1035325.687 ops/s
+Iteration   3: 1055432.358 ops/s
+
+Result "com.github.fabienrenaud.jjb.stream.Deserialization.minimaljson":
+  1033318.750 ±(99.9%) 422931.854 ops/s [Average]
+  (min, avg, max) = (1009198.206, 1033318.750, 1055432.358), stdev = 23182.322
+  CI (99.9%): [610386.896, 1456250.605] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.stream.Deserialization.moshi
+
+# Run progress: 81.82% complete, ETA 00:00:26
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 843443.882 ops/s
+Iteration   1: 841236.072 ops/s
+Iteration   2: 846538.850 ops/s
+Iteration   3: 831673.289 ops/s
+
+Result "com.github.fabienrenaud.jjb.stream.Deserialization.moshi":
+  839816.070 ±(99.9%) 137445.030 ops/s [Average]
+  (min, avg, max) = (831673.289, 839816.070, 846538.850), stdev = 7533.826
+  CI (99.9%): [702371.040, 977261.100] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 10 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 15 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.github.fabienrenaud.jjb.stream.Deserialization.orgjson
+
+# Run progress: 90.91% complete, ETA 00:00:13
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 193141.316 ops/s
+Iteration   1: 193195.550 ops/s
+Iteration   2: 191996.196 ops/s
+Iteration   3: 192587.354 ops/s
+
+Result "com.github.fabienrenaud.jjb.stream.Deserialization.orgjson":
+  192593.034 ±(99.9%) 10940.711 ops/s [Average]
+  (min, avg, max) = (191996.196, 192593.034, 193195.550), stdev = 599.697
+  CI (99.9%): [181652.322, 203533.745] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:25
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                             Mode  Cnt        Score         Error  Units
+c.g.f.j.databind.Deserialization.avajejsonb          thrpt    3  1585413.257 ± 1003197.097  ops/s
+c.g.f.j.databind.Deserialization.avajejsonb_jackson  thrpt    3  1392840.261 ±  123401.023  ops/s
+c.g.f.j.databind.Deserialization.dsljson             thrpt    3  2560266.486 ±  221928.621  ops/s
+c.g.f.j.databind.Deserialization.dsljson_reflection  thrpt    3  1413224.409 ±  588500.821  ops/s
+c.g.f.j.databind.Deserialization.gson                thrpt    3  1052630.843 ±   98880.352  ops/s
+c.g.f.j.databind.Deserialization.moshi               thrpt    3   889078.014 ±  551887.360  ops/s
+c.g.f.j.stream.Deserialization.gson                  thrpt    3  1231980.981 ±   61186.378  ops/s
+c.g.f.j.stream.Deserialization.jakartajson           thrpt    3     7923.862 ±    8391.898  ops/s
+c.g.f.j.stream.Deserialization.minimaljson           thrpt    3  1033318.750 ±  422931.854  ops/s
+c.g.f.j.stream.Deserialization.moshi                 thrpt    3   839816.070 ±  137445.030  ops/s
+c.g.f.j.stream.Deserialization.orgjson               thrpt    3   192593.034 ±   10940.711  ops/s

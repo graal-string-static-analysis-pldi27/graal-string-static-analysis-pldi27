@@ -1,0 +1,20 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL12  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## fastjson2  starts BASE:3 FULL:3  time keys 5
+  FULL/BASE time  ratio 0.9939  (mean FULL 0.9942 n=3, BASE 1.0003 n=3)  error margin 0.0236 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0020  (mean FULL 1.0020 n=3, BASE 1.0000 n=3)  error margin 0.0353 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9939  (mean FULL 0.9943 n=30 iterations, BASE 1.0004 n=30)  error margin 0.0198 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 5 keys]
+    key c.a.f.b.eishay.EishayParseString.fastjson2                   BASE 346247 sd 9.78e+03  FULL 344321 sd 2.47e+04  [higher]
+    key c.a.f.b.eishay.EishayParseTreeString.fastjson2               BASE 767814 sd 4.03e+04  FULL 763781 sd 5.77e+04  [higher]
+    key c.a.f.b.eishay.EishayWriteString.fastjson2                   BASE 715632 sd 6.41e+03  FULL 742882 sd 5.12e+03  [higher]
+    key c.a.f.b.eishay.EishayWriteStringTree.fastjson2               BASE 1.09725e+06 sd 1.52e+04  FULL 1.10544e+06 sd 5.23e+03  [higher]
+    key c.a.f.b.twitter.TwitterParseString.fastjson2                 BASE 87606.9 sd 582  FULL 87576.2 sd 1.79e+03  [higher]
+
+## jackson-yaml  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 1.0082  (mean FULL 1.0083 n=3, BASE 1.0001 n=3)  error margin 0.0082 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9963  (mean FULL 0.9963 n=3, BASE 1.0000 n=3)  error margin 0.0090 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0082  (mean FULL 1.0083 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0090 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key YAMLStdReadVanilla.readPojoMediaItem                         BASE 23506.1 sd 291  FULL 23554 sd 259  [higher]
+    key YAMLStdWriteVanilla.writePojoMediaItem                       BASE 36532.3 sd 194  FULL 35863.4 sd 117  [higher]
+
+PAPER30-DONE

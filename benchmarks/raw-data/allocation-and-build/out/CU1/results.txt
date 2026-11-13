@@ -1,0 +1,119 @@
+# C99 campaign results  SLOT=CU1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CU1  CFGS=BASE FULL  runs/build=3  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## dacapo-batik  [metric] DaCapo batik (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.001 [0.996,1.009] n.s. (1 keys)  alloc 0.998 [0.997,0.998] LESS (1 keys)
+  iteration ms                                                           FULL 1.001 [0.996,1.009] n.s.
+  iteration ms [cold]                                                    FULL 1.002 [0.987,1.020] n.s.
+  ~alloc MB/iter                                                         FULL 0.998 [0.997,0.998] LESS
+  ~rss MB                                                                FULL 0.995 [0.969,1.022] n.s.
+
+## dacapo-fop  [metric] DaCapo fop (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.007 [1.000,1.013] SLOWER (1 keys)  alloc 0.993 [0.993,0.993] LESS (1 keys)
+  iteration ms                                                           FULL 1.007 [1.000,1.013] SLOWER
+  iteration ms [cold]                                                    FULL 1.003 [0.995,1.011] n.s.
+  ~alloc MB/iter                                                         FULL 0.993 [0.993,0.993] LESS
+  ~rss MB                                                                FULL 1.044 [1.011,1.083] MORE
+
+## dacapo-pmd  [metric] DaCapo pmd (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.013 [0.998,1.030] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           FULL 1.013 [0.998,1.030] n.s.
+  iteration ms [cold]                                                    FULL 0.999 [0.993,1.005] n.s.
+  ~alloc MB/iter                                                         FULL 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                FULL 0.964 [0.854,1.076] n.s.
+
+## dacapo-avrora  [metric] DaCapo avrora (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.003 [1.001,1.005] SLOWER (1 keys)  alloc 0.994 [0.994,0.994] LESS (1 keys)
+  iteration ms                                                           FULL 1.003 [1.001,1.005] SLOWER
+  iteration ms [cold]                                                    FULL 1.003 [0.998,1.007] n.s.
+  ~alloc MB/iter                                                         FULL 0.994 [0.994,0.994] LESS
+  ~rss MB                                                                FULL 0.999 [0.995,1.003] n.s.
+
+## dacapo-xalan  [metric] DaCapo xalan (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.001 [0.989,1.013] n.s. (1 keys)  alloc 0.999 [0.999,1.000] LESS (1 keys)
+  iteration ms                                                           FULL 1.001 [0.989,1.013] n.s.
+  iteration ms [cold]                                                    FULL 1.004 [0.984,1.024] n.s.
+  ~alloc MB/iter                                                         FULL 0.999 [0.999,1.000] LESS
+  ~rss MB                                                                FULL 1.022 [0.947,1.092] n.s.
+
+## dacapo-zxing  [metric] DaCapo zxing (C99 deploy)  builds BASE:3 FULL:3  starts parsed=36
+  GEOMEAN FULL/BASE  time 1.001 [0.999,1.003] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           FULL 1.001 [0.999,1.003] n.s.
+  iteration ms [cold]                                                    FULL 1.003 [0.999,1.008] n.s.
+  ~alloc MB/iter                                                         FULL 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                FULL 0.978 [0.937,1.014] n.s.
+
+## frequency: 72 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  dacapo-pmd-BASE-b1-r1-main-j1 2.900
+  dacapo-pmd-BASE-b1-r1-main-j2 2.899
+  dacapo-pmd-BASE-b1-r2-main-j1 2.901
+  dacapo-pmd-BASE-b1-r2-main-j2 2.901
+  dacapo-pmd-BASE-b1-r3-main-j1 2.901
+  dacapo-pmd-BASE-b1-r3-main-j2 2.901
+  dacapo-pmd-BASE-b2-r1-main-j1 2.901
+  dacapo-pmd-BASE-b2-r1-main-j2 2.901
+  dacapo-pmd-BASE-b2-r2-main-j1 2.902
+  dacapo-pmd-BASE-b2-r2-main-j2 2.901
+  dacapo-pmd-BASE-b2-r3-main-j1 2.900
+  dacapo-pmd-BASE-b2-r3-main-j2 2.901
+  dacapo-pmd-BASE-b3-r1-main-j1 2.901
+  dacapo-pmd-BASE-b3-r1-main-j2 2.901
+  dacapo-pmd-BASE-b3-r2-main-j1 2.901
+  dacapo-pmd-BASE-b3-r2-main-j2 2.901
+  dacapo-pmd-BASE-b3-r3-main-j1 2.902
+  dacapo-pmd-BASE-b3-r3-main-j2 2.901
+  dacapo-pmd-FULL-b1-r1-main-j1 2.901
+  dacapo-pmd-FULL-b1-r1-main-j2 2.901
+  dacapo-pmd-FULL-b1-r2-main-j1 2.900
+  dacapo-pmd-FULL-b1-r2-main-j2 2.901
+  dacapo-pmd-FULL-b1-r3-main-j1 2.902
+  dacapo-pmd-FULL-b1-r3-main-j2 2.900
+  dacapo-pmd-FULL-b2-r1-main-j1 2.900
+  dacapo-pmd-FULL-b2-r1-main-j2 2.901
+  dacapo-pmd-FULL-b2-r2-main-j1 2.902
+  dacapo-pmd-FULL-b2-r2-main-j2 2.901
+  dacapo-pmd-FULL-b2-r3-main-j1 2.901
+  dacapo-pmd-FULL-b2-r3-main-j2 2.901
+  dacapo-pmd-FULL-b3-r1-main-j1 2.900
+  dacapo-pmd-FULL-b3-r1-main-j2 2.901
+  dacapo-pmd-FULL-b3-r2-main-j1 2.901
+  dacapo-pmd-FULL-b3-r2-main-j2 2.902
+  dacapo-pmd-FULL-b3-r3-main-j1 2.901
+  dacapo-pmd-FULL-b3-r3-main-j2 2.902
+  dacapo-avrora-BASE-b1-r1-main-j1 2.458
+  dacapo-avrora-BASE-b1-r1-main-j2 2.456
+  dacapo-avrora-BASE-b1-r2-main-j1 2.457
+  dacapo-avrora-BASE-b1-r2-main-j2 2.456
+  dacapo-avrora-BASE-b1-r3-main-j1 2.456
+  dacapo-avrora-BASE-b1-r3-main-j2 2.458
+  dacapo-avrora-BASE-b2-r1-main-j1 2.459
+  dacapo-avrora-BASE-b2-r1-main-j2 2.458
+  dacapo-avrora-BASE-b2-r2-main-j1 2.457
+  dacapo-avrora-BASE-b2-r2-main-j2 2.462
+  dacapo-avrora-BASE-b2-r3-main-j1 2.458
+  dacapo-avrora-BASE-b2-r3-main-j2 2.461
+  dacapo-avrora-BASE-b3-r1-main-j1 2.459
+  dacapo-avrora-BASE-b3-r1-main-j2 2.459
+  dacapo-avrora-BASE-b3-r2-main-j1 2.460
+  dacapo-avrora-BASE-b3-r2-main-j2 2.457
+  dacapo-avrora-BASE-b3-r3-main-j1 2.459
+  dacapo-avrora-BASE-b3-r3-main-j2 2.457
+  dacapo-avrora-FULL-b1-r1-main-j1 2.460
+  dacapo-avrora-FULL-b1-r1-main-j2 2.458
+  dacapo-avrora-FULL-b1-r2-main-j1 2.458
+  dacapo-avrora-FULL-b1-r2-main-j2 2.457
+  dacapo-avrora-FULL-b1-r3-main-j1 2.456
+  dacapo-avrora-FULL-b1-r3-main-j2 2.459
+  dacapo-avrora-FULL-b2-r1-main-j1 2.460
+  dacapo-avrora-FULL-b2-r1-main-j2 2.461
+  dacapo-avrora-FULL-b2-r2-main-j1 2.461
+  dacapo-avrora-FULL-b2-r2-main-j2 2.461
+  dacapo-avrora-FULL-b2-r3-main-j1 2.459
+  dacapo-avrora-FULL-b2-r3-main-j2 2.458
+  dacapo-avrora-FULL-b3-r1-main-j1 2.463
+  dacapo-avrora-FULL-b3-r1-main-j2 2.458
+  dacapo-avrora-FULL-b3-r2-main-j1 2.463
+  dacapo-avrora-FULL-b3-r2-main-j2 2.461
+  dacapo-avrora-FULL-b3-r3-main-j1 2.461
+  dacapo-avrora-FULL-b3-r3-main-j2 2.463
+SUMMARY-DONE

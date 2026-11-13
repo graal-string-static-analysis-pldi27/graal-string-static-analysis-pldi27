@@ -1,0 +1,92 @@
+1794172160.111860 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794172161.214599 ========================================================================================================================
+1794172161.216386 GraalVM Native Image: Generating 'dacapo-lusearch-FULL-b2' (executable)...
+1794172161.222728 ========================================================================================================================
+1794172161.222750 For detailed information and explanations on the build output, visit:
+1794172161.222766 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794172161.222784 ------------------------------------------------------------------------------------------------------------------------
+1794172162.908408 [1/8] Initializing...                                                                                    (2.3s @ 0.57GB)
+1794172162.908808  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794172162.908987  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794172162.909069  C compiler: gcc (linux, x86_64, 15.2.0)
+1794172162.909197  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794172162.909224  1 user-specific feature(s):
+1794172162.909823  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794172162.910748 ------------------------------------------------------------------------------------------------------------------------
+1794172162.910778  3 experimental option(s) unlocked:
+1794172162.910844  - '-H:CodeAlignment' (origin(s): command line)
+1794172162.910875  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794172162.910900  - '-H:+StringAnalysis' (origin(s): command line)
+1794172162.911940 ------------------------------------------------------------------------------------------------------------------------
+1794172162.911964 Build resources:
+1794172162.912018  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794172162.912066  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794172162.912575 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile2850299752359284741.txt
+1794172162.912623 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child13516450509356697793.log
+1794172162.912892 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile2850299752359284741.txt
+1794172162.912947 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794172162.912963 [string-analysis-fork] Child log: /tmp/string-analysis-child13516450509356697793.log
+1794172162.928472 Skipped 694 predefined class(es) because the classpath already contains a class with the same name: org.apache.lucene.backward_codecs.lucene87.Lucene87StoredFieldsFormat$Mode, org.apache.lucene.codecs.DocValuesProducer, org.apache.lucene.analysis.CharacterUtils, org.apache.lucene.index.Term, org.apache.lucene.search.PhraseQuery, org.apache.lucene.codecs.lucene94.Lucene94FieldInfosFormat, org.apache.lucene.util.fst.ReverseBytesReader, org.apache.lucene.queryparser.classic.QueryParser$LookaheadSuccess, org.apache.lucene.util.packed.PackedInts$ReaderIterator, org.apache.lucene.backward_codecs.lucene86.Lucene86PointsReader, ...
+1794172163.202617 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794172163.202681 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile2850299752359284741.txt
+1794172179.738874 [string-analysis-fork] Loaded 4636 entries from child profile: /tmp/string-analysis-profile2850299752359284741.txt
+1794172179.738978 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile2850299752359284741.txt
+1794172179.739509 [string-analysis-timing] beforeAnalysis done: 16536ms
+1794172184.307763 [string-analysis-timing] afterAnalysis start: 21105ms (gap since beforeAnalysis done: 4568ms)
+1794172184.324381 [2/8] Performing analysis...  [*****]                                                                    (4.5s @ 1.13GB)
+1794172184.345455     6,569 types,   9,707 fields, and  30,975 methods found reachable
+1794172184.346273     2,280 types,     601 fields, and   3,108 methods registered for reflection
+1794172184.346347        63 types,      76 fields, and      54 methods registered for JNI access
+1794172184.346395         0 downcalls and 0 upcalls registered for foreign access
+1794172184.346429         4 native libraries: dl, pthread, rt, z
+1794172185.609572 [3/8] Building universe...                                                                               (1.3s @ 1.23GB)
+1794172185.618317 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=3239 chain-else=340 chain-flat=274 acc=0 (chain sites=341, aot-parse sites=0); at strengthen: present=3406 (inlined copies=812) removed=3279 (inlined copies=749) killed-dead=127 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794172185.618959 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=118 chain/widened=16 collapsed=48 collapsed/widened=157 direct=2215 direct/widened=1278 redirect=4 redirect/widened=1; declined sites: no-entry=360 terminal-body-unmarked=4
+1794172185.619073 [ic-widen-decline-by-method] no-entry {charAt(I)C=24, coder()B=129, compareTo(Ljava/lang/String;)I=2, concat(Ljava/lang/String;)Ljava/lang/String;=14, equals(Ljava/lang/Object;)Z=8, equalsIgnoreCase(Ljava/lang/String;)Z=1, getBytes()[B=4, getBytes(Ljava/nio/charset/Charset;)[B=4, getBytes([BIB)V=2, getBytes([BIIBI)V=1, getChars(II[CI)V=14, hashCode()I=8, indexOf(I)I=1, indexOf(II)I=3, indexOf(III)I=1, isEmpty()Z=6, isLatin1()Z=16, length()I=95, startsWith(Ljava/lang/String;)Z=1, toCharArray()[C=2, toLowerCase(Ljava/util/Locale;)Ljava/lang/String;=1, toUpperCase(Ljava/util/Locale;)Ljava/lang/String;=1, value()[B=22}
+1794172185.619093 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794172185.619107 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 6
+1794172185.619121 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794172185.619438 [string-analysis] ic-flatstock: 1 stock-path flat calls=3832 legacy (interface caller)=0 legacy (null receiver)=0
+1794172185.619850 [string-analysis] codegen-knobs: chain rep-arm ifs=274 swap sites=8 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1794172185.620296 [string-analysis] ic-csfinal: rep-excluded supertype sites=370 (diamonds=370 guards=0) by decl={CharSequence.charAt=79, CharSequence.length=51, CharSequence.subSequence=14, CharSequence.toString=29, Object.equals=98, Object.hashCode=61, Object.toString=38} rep-list sites left stock=30 unproven sites left stock=0; at strengthen: ifs=359 (dead-arm=1 iba-free nodes=0 folded=2) ifs left=0
+1794172185.620455 [string-analysis] concat-copy: sites=2 lowered-parses=2 count.diag=false
+1794172185.620899 [string-analysis] mirror-append: sites=73 lowered-parses=73 arms=73 lowered-keys=73
+1794172185.621640 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=300/35 list=2/0 (cast/inst parses) stock: no-line=149/7 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=1/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=341
+1794172186.234038 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.21GB)
+1794172186.693767 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.38GB)
+1794172190.801748 [6/8] Compiling methods...    [**]                                                                       (4.1s @ 1.21GB)
+1794172192.794876 [7/8] Laying out methods...   [*]                                                                        (2.0s @ 1.35GB)
+1794172192.815587 [string-analysis] r2-trivial: active=true graphs with rep arms=201, made trivial by the discount=0; graphs with a rep call but no recognised arm=60 (first 5: [com.oracle.svm.core.stringrep.RepConcat.binary(String, String), com.oracle.svm.core.stringrep.RepConcat.copyOf(String), com.oracle.svm.core.stringrep.RepConcat.flat(String), java.io.BufferedWriter.write(String, int, int), java.lang.AbstractStringBuilder.appendRep(String)]); graphs with a rep-test If that is no arm=194 (first 5: [com.oracle.svm.common.option.CommonOptionParser.parseOption(EconomicMap, Predicate, String, EconomicMap, String, CommonOptionParser$BooleanOptionFormat), com.oracle.svm.common.option.CommonOptionParser.parseValue(Class, OptionKey, LocatableOption, String), com.oracle.svm.common.option.CommonOptionParser.printFlags(Predicate, EconomicMap, String, PrintStream, boolean), com.oracle.svm.common.option.CommonOptionParser.printOption(Consumer, String, String, boolean, int, int, int), com.oracle.svm.common.option.LocatableOption.toString()])
+1794172193.515832 [string-analysis-dc] clinitsim-repaborts=0
+1794172193.565745 [string-analysis-dc] heapreps=0 poolreps=256 {com.oracle.svm.core.stringrep.SingleByteString.POOL=256} poolarrayrefs={CODE=1} scanned=179140
+1794172194.744175 [8/8] Creating image...       [*]                                                                        (1.7s @ 1.54GB)
+1794172194.744514   14.95MB (44.45%) for code area:    19,553 compilation units
+1794172194.744602   15.47MB (45.98%) for image heap:  179,140 objects and 67 resources
+1794172194.744643    3.22MB ( 9.57%) for other data
+1794172194.744668   33.64MB in total image size, 31.92MB in total file size
+1794172194.744688 ------------------------------------------------------------------------------------------------------------------------
+1794172194.745343 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794172194.745567    8.43MB java.base                                            3.78MB byte[] for code metadata
+1794172194.745597    2.18MB lucene-core-9.10.0-SNAPSHOT.jar                      2.23MB byte[] for java.lang.String
+1794172194.745622    1.65MB svm.jar (Native Image)                               1.53MB java.lang.String
+1794172194.745706  795.35kB lucene-backward-codecs-9.10.0-SNAPSHOT.jar           1.31MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794172194.745799  374.53kB dacapo-evaluation-git-e947cbfc.jar                 878.41kB java.lang.Class
+1794172194.745839  215.86kB jdk.zipfs                                          673.10kB byte[] for general heap data
+1794172194.745864  151.19kB lucene-queryparser-9.10.0-SNAPSHOT.jar             394.38kB java.lang.Object[]
+1794172194.745890  126.09kB java.logging                                       360.43kB java.util.HashMap$Node
+1794172194.745919   97.16kB org.graalvm.nativeimage.base                       334.88kB byte[] for embedded resources
+1794172194.745948   81.95kB jdk.charsets                                       279.23kB java.lang.String[]
+1794172194.746549  291.98kB for 17 more packages                                 3.69MB for 1573 more object types
+1794172194.747824 ------------------------------------------------------------------------------------------------------------------------
+1794172194.747831 Recommendations:
+1794172194.747874  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794172194.747887  HEAP: Set max heap for improved and more predictable memory usage.
+1794172194.747900  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794172194.750665 ------------------------------------------------------------------------------------------------------------------------
+1794172194.751240                         1.3s (3.8% of total time) in 237 GCs | Peak RSS: 2.59GB | CPU load: 7.10
+1794172194.751535 ------------------------------------------------------------------------------------------------------------------------
+1794172194.751561 Build artifacts:
+1794172194.751851  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU2/bin/dacapo-lusearch-FULL-b2 (executable)
+1794172194.751876  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU2/bin/libmanagement_ext.so (jdk_library)
+1794172194.751898 ========================================================================================================================
+1794172194.751939 Finished generating 'dacapo-lusearch-FULL-b2' in 34.2s.

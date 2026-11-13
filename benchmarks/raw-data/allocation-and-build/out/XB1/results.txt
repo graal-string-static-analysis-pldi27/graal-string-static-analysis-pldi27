@@ -1,0 +1,17 @@
+# C99 campaign results  SLOT=XB1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB1  CFGS=BASE SBS SV LS  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## owasp  [metric] OWASP html-sanitizer Benchmark sp (hunt3 ab3 recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=60
+  GEOMEAN SBS/BASE  time 1.004 [0.997,1.011] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.997 [0.988,1.005] n.s. (2 keys)  alloc 0.951 [0.950,0.951] LESS (1 keys)
+  GEOMEAN LS/BASE  time 1.006 [0.999,1.012] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  sanitize custom                                                        SBS 1.001 [0.991,1.011] n.s. | SV 0.994 [0.986,1.003] n.s. | LS 1.004 [0.996,1.011] n.s.
+  sanitize w/ PB                                                         SBS 1.006 [0.999,1.013] n.s. | SV 1.000 [0.989,1.010] n.s. | LS 1.008 [1.001,1.014] SLOWER
+  ~alloc MB                                                              SBS 1.000 [1.000,1.000] n.s. | SV 0.951 [0.950,0.951] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 0.998 [0.994,1.002] n.s. | SV 0.996 [0.992,1.001] n.s. | LS 0.994 [0.988,1.000] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  owasp                      1.004|1.000       0.997|0.951*      1.006|1.000      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

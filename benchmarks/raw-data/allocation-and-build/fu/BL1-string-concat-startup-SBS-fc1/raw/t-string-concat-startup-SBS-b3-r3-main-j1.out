@@ -1,0 +1,663 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.MixedLarge.run
+
+# Run progress: 0.00% complete, ETA 00:12:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 18.290 ops/ms
+# Warmup Iteration   2: 18.405 ops/ms
+# Warmup Iteration   3: 18.089 ops/ms
+# Warmup Iteration   4: 18.082 ops/ms
+# Warmup Iteration   5: 18.101 ops/ms
+Iteration   1: 18.091 ops/ms
+Iteration   2: 18.094 ops/ms
+Iteration   3: 18.401 ops/ms
+Iteration   4: 18.434 ops/ms
+Iteration   5: 18.455 ops/ms
+Iteration   6: 18.447 ops/ms
+Iteration   7: 18.471 ops/ms
+Iteration   8: 18.371 ops/ms
+Iteration   9: 18.123 ops/ms
+Iteration  10: 18.085 ops/ms
+
+Result "org.test.StringConcatStartup.MixedLarge.run":
+  18.297 ±(99.9%) 0.263 ops/ms [Average]
+  (min, avg, max) = (18.085, 18.297, 18.471), stdev = 0.174
+  CI (99.9%): [18.034, 18.560] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.MixedSmall.run
+
+# Run progress: 2.08% complete, ETA 00:11:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 2651.217 ops/ms
+# Warmup Iteration   2: 2627.613 ops/ms
+# Warmup Iteration   3: 2573.219 ops/ms
+# Warmup Iteration   4: 2556.265 ops/ms
+# Warmup Iteration   5: 2590.872 ops/ms
+Iteration   1: 2565.670 ops/ms
+Iteration   2: 2560.982 ops/ms
+Iteration   3: 2565.102 ops/ms
+Iteration   4: 2558.853 ops/ms
+Iteration   5: 2564.786 ops/ms
+Iteration   6: 2562.363 ops/ms
+Iteration   7: 2570.254 ops/ms
+Iteration   8: 2552.244 ops/ms
+Iteration   9: 2554.822 ops/ms
+Iteration  10: 2596.984 ops/ms
+
+Result "org.test.StringConcatStartup.MixedSmall.run":
+  2565.206 ±(99.9%) 18.707 ops/ms [Average]
+  (min, avg, max) = (2552.244, 2565.206, 2596.984), stdev = 12.373
+  CI (99.9%): [2546.499, 2583.913] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringLarge.run
+
+# Run progress: 4.17% complete, ETA 00:11:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 20.072 ops/ms
+# Warmup Iteration   2: 20.034 ops/ms
+# Warmup Iteration   3: 19.933 ops/ms
+# Warmup Iteration   4: 20.069 ops/ms
+# Warmup Iteration   5: 20.081 ops/ms
+Iteration   1: 20.064 ops/ms
+Iteration   2: 20.599 ops/ms
+Iteration   3: 20.752 ops/ms
+Iteration   4: 20.782 ops/ms
+Iteration   5: 20.780 ops/ms
+Iteration   6: 20.745 ops/ms
+Iteration   7: 20.760 ops/ms
+Iteration   8: 20.748 ops/ms
+Iteration   9: 20.914 ops/ms
+Iteration  10: 21.022 ops/ms
+
+Result "org.test.StringConcatStartup.StringLarge.run":
+  20.716 ±(99.9%) 0.386 ops/ms [Average]
+  (min, avg, max) = (20.064, 20.716, 21.022), stdev = 0.255
+  CI (99.9%): [20.331, 21.102] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constBool
+# Parameters: (intValue = 4711)
+
+# Run progress: 6.25% complete, ETA 00:11:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 39448.651 ops/ms
+# Warmup Iteration   2: 39121.011 ops/ms
+# Warmup Iteration   3: 39088.046 ops/ms
+# Warmup Iteration   4: 39080.578 ops/ms
+# Warmup Iteration   5: 39096.825 ops/ms
+Iteration   1: 39323.963 ops/ms
+Iteration   2: 39118.185 ops/ms
+Iteration   3: 39094.740 ops/ms
+Iteration   4: 39076.137 ops/ms
+Iteration   5: 39170.616 ops/ms
+Iteration   6: 39069.754 ops/ms
+Iteration   7: 39046.058 ops/ms
+Iteration   8: 39070.759 ops/ms
+Iteration   9: 39059.795 ops/ms
+Iteration  10: 39049.160 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constBool":
+  39107.917 ±(99.9%) 127.817 ops/ms [Average]
+  (min, avg, max) = (39046.058, 39107.917, 39323.963), stdev = 84.543
+  CI (99.9%): [38980.100, 39235.734] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constBoolString
+# Parameters: (intValue = 4711)
+
+# Run progress: 8.33% complete, ETA 00:11:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 19534.757 ops/ms
+# Warmup Iteration   2: 19404.238 ops/ms
+# Warmup Iteration   3: 19417.833 ops/ms
+# Warmup Iteration   4: 19399.073 ops/ms
+# Warmup Iteration   5: 19383.274 ops/ms
+Iteration   1: 19404.948 ops/ms
+Iteration   2: 19401.677 ops/ms
+Iteration   3: 19396.624 ops/ms
+Iteration   4: 19394.768 ops/ms
+Iteration   5: 19389.386 ops/ms
+Iteration   6: 19377.640 ops/ms
+Iteration   7: 19407.529 ops/ms
+Iteration   8: 19403.438 ops/ms
+Iteration   9: 19414.300 ops/ms
+Iteration  10: 19410.881 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constBoolString":
+  19400.119 ±(99.9%) 16.484 ops/ms [Average]
+  (min, avg, max) = (19377.640, 19400.119, 19414.300), stdev = 10.903
+  CI (99.9%): [19383.635, 19416.603] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constBoolean
+# Parameters: (intValue = 4711)
+
+# Run progress: 10.42% complete, ETA 00:10:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 36321.761 ops/ms
+# Warmup Iteration   2: 35968.393 ops/ms
+# Warmup Iteration   3: 36016.842 ops/ms
+# Warmup Iteration   4: 35362.999 ops/ms
+# Warmup Iteration   5: 36102.221 ops/ms
+Iteration   1: 36023.517 ops/ms
+Iteration   2: 35570.386 ops/ms
+Iteration   3: 36042.216 ops/ms
+Iteration   4: 36269.006 ops/ms
+Iteration   5: 35736.175 ops/ms
+Iteration   6: 35665.211 ops/ms
+Iteration   7: 35954.432 ops/ms
+Iteration   8: 36044.610 ops/ms
+Iteration   9: 36023.938 ops/ms
+Iteration  10: 35973.386 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constBoolean":
+  35930.288 ±(99.9%) 317.812 ops/ms [Average]
+  (min, avg, max) = (35570.386, 35930.288, 36269.006), stdev = 210.213
+  CI (99.9%): [35612.476, 36248.100] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constBooleanString
+# Parameters: (intValue = 4711)
+
+# Run progress: 12.50% complete, ETA 00:10:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 15587.463 ops/ms
+# Warmup Iteration   2: 15434.713 ops/ms
+# Warmup Iteration   3: 15448.437 ops/ms
+# Warmup Iteration   4: 15461.121 ops/ms
+# Warmup Iteration   5: 15445.775 ops/ms
+Iteration   1: 15433.479 ops/ms
+Iteration   2: 15439.259 ops/ms
+Iteration   3: 15455.380 ops/ms
+Iteration   4: 15444.366 ops/ms
+Iteration   5: 15483.390 ops/ms
+Iteration   6: 15449.357 ops/ms
+Iteration   7: 15461.797 ops/ms
+Iteration   8: 15454.979 ops/ms
+Iteration   9: 15451.015 ops/ms
+Iteration  10: 15462.390 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constBooleanString":
+  15453.541 ±(99.9%) 21.126 ops/ms [Average]
+  (min, avg, max) = (15433.479, 15453.541, 15483.390), stdev = 13.974
+  CI (99.9%): [15432.415, 15474.667] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constFloat
+# Parameters: (intValue = 4711)
+
+# Run progress: 14.58% complete, ETA 00:10:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 10812.802 ops/ms
+# Warmup Iteration   2: 10802.717 ops/ms
+# Warmup Iteration   3: 10797.583 ops/ms
+# Warmup Iteration   4: 10754.533 ops/ms
+# Warmup Iteration   5: 10756.031 ops/ms
+Iteration   1: 10759.571 ops/ms
+Iteration   2: 10758.516 ops/ms
+Iteration   3: 10762.218 ops/ms
+Iteration   4: 10757.212 ops/ms
+Iteration   5: 10721.924 ops/ms
+Iteration   6: 10716.761 ops/ms
+Iteration   7: 10704.064 ops/ms
+Iteration   8: 10715.211 ops/ms
+Iteration   9: 10711.128 ops/ms
+Iteration  10: 10713.202 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constFloat":
+  10731.981 ±(99.9%) 36.330 ops/ms [Average]
+  (min, avg, max) = (10704.064, 10731.981, 10762.218), stdev = 24.030
+  CI (99.9%): [10695.651, 10768.311] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constFloatString
+# Parameters: (intValue = 4711)
+
+# Run progress: 16.67% complete, ETA 00:10:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 8530.386 ops/ms
+# Warmup Iteration   2: 8531.497 ops/ms
+# Warmup Iteration   3: 8528.230 ops/ms
+# Warmup Iteration   4: 8480.934 ops/ms
+# Warmup Iteration   5: 8366.471 ops/ms
+Iteration   1: 8358.583 ops/ms
+Iteration   2: 8358.591 ops/ms
+Iteration   3: 8349.883 ops/ms
+Iteration   4: 8341.325 ops/ms
+Iteration   5: 8339.460 ops/ms
+Iteration   6: 8344.362 ops/ms
+Iteration   7: 8343.774 ops/ms
+Iteration   8: 8338.721 ops/ms
+Iteration   9: 8339.462 ops/ms
+Iteration  10: 8342.470 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constFloatString":
+  8345.663 ±(99.9%) 11.395 ops/ms [Average]
+  (min, avg, max) = (8338.721, 8345.663, 8358.591), stdev = 7.537
+  CI (99.9%): [8334.268, 8357.058] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constInt
+# Parameters: (intValue = 4711)
+
+# Run progress: 18.75% complete, ETA 00:09:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 33180.202 ops/ms
+# Warmup Iteration   2: 33146.564 ops/ms
+# Warmup Iteration   3: 32813.020 ops/ms
+# Warmup Iteration   4: 32994.559 ops/ms
+# Warmup Iteration   5: 33008.828 ops/ms
+Iteration   1: 33012.857 ops/ms
+Iteration   2: 32959.864 ops/ms
+Iteration   3: 32829.796 ops/ms
+Iteration   4: 32734.012 ops/ms
+Iteration   5: 32925.888 ops/ms
+Iteration   6: 32777.086 ops/ms
+Iteration   7: 33080.026 ops/ms
+Iteration   8: 32820.350 ops/ms
+Iteration   9: 32716.892 ops/ms
+Iteration  10: 32822.715 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constInt":
+  32867.949 ±(99.9%) 183.484 ops/ms [Average]
+  (min, avg, max) = (32716.892, 32867.949, 33080.026), stdev = 121.363
+  CI (99.9%): [32684.465, 33051.433] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constIntString
+# Parameters: (intValue = 4711)
+
+# Run progress: 20.83% complete, ETA 00:09:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 17431.660 ops/ms
+# Warmup Iteration   2: 17278.704 ops/ms
+# Warmup Iteration   3: 17376.387 ops/ms
+# Warmup Iteration   4: 17387.208 ops/ms
+# Warmup Iteration   5: 17215.030 ops/ms
+Iteration   1: 17255.505 ops/ms
+Iteration   2: 17391.896 ops/ms
+Iteration   3: 17246.221 ops/ms
+Iteration   4: 17417.232 ops/ms
+Iteration   5: 17356.740 ops/ms
+Iteration   6: 17293.322 ops/ms
+Iteration   7: 17394.713 ops/ms
+Iteration   8: 17394.432 ops/ms
+Iteration   9: 17413.156 ops/ms
+Iteration  10: 17411.833 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constIntString":
+  17357.505 ±(99.9%) 101.362 ops/ms [Average]
+  (min, avg, max) = (17246.221, 17357.505, 17417.232), stdev = 67.045
+  CI (99.9%): [17256.143, 17458.867] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constInteger
+# Parameters: (intValue = 4711)
+
+# Run progress: 22.92% complete, ETA 00:09:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 30376.490 ops/ms
+# Warmup Iteration   2: 29712.190 ops/ms
+# Warmup Iteration   3: 29761.853 ops/ms
+# Warmup Iteration   4: 29675.568 ops/ms
+# Warmup Iteration   5: 29997.338 ops/ms
+Iteration   1: 29920.786 ops/ms
+Iteration   2: 29993.075 ops/ms
+Iteration   3: 29714.836 ops/ms
+Iteration   4: 30227.881 ops/ms
+Iteration   5: 30609.909 ops/ms
+Iteration   6: 30609.574 ops/ms
+Iteration   7: 30498.267 ops/ms
+Iteration   8: 30617.466 ops/ms
+Iteration   9: 30495.338 ops/ms
+Iteration  10: 30675.373 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constInteger":
+  30336.251 ±(99.9%) 524.575 ops/ms [Average]
+  (min, avg, max) = (29714.836, 30336.251, 30675.373), stdev = 346.974
+  CI (99.9%): [29811.675, 30860.826] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constIntegerString
+# Parameters: (intValue = 4711)
+
+# Run progress: 25.00% complete, ETA 00:09:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 14334.634 ops/ms
+# Warmup Iteration   2: 14023.486 ops/ms
+# Warmup Iteration   3: 14213.565 ops/ms
+# Warmup Iteration   4: 14054.767 ops/ms
+# Warmup Iteration   5: 14242.252 ops/ms
+Iteration   1: 14151.680 ops/ms
+Iteration   2: 14152.533 ops/ms
+Iteration   3: 14117.679 ops/ms
+Iteration   4: 14166.100 ops/ms
+Iteration   5: 14152.915 ops/ms
+Iteration   6: 14165.724 ops/ms
+Iteration   7: 14138.572 ops/ms
+Iteration   8: 14161.867 ops/ms
+Iteration   9: 14173.338 ops/ms
+Iteration  10: 14180.363 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constIntegerString":
+  14156.077 ±(99.9%) 27.314 ops/ms [Average]
+  (min, avg, max) = (14117.679, 14156.077, 14180.363), stdev = 18.066
+  CI (99.9%): [14128.764, 14183.391] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringSingle.constString
+# Parameters: (intValue = 4711)
+
+# Run progress: 27.08% complete, ETA 00:08:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 35965.277 ops/ms
+# Warmup Iteration   2: 35415.265 ops/ms
+# Warmup Iteration   3: 34789.371 ops/ms
+# Warmup Iteration   4: 34763.353 ops/ms
+# Warmup Iteration   5: 35780.621 ops/ms
+Iteration   1: 35739.827 ops/ms
+Iteration   2: 35704.605 ops/ms
+Iteration   3: 35703.282 ops/ms
+Iteration   4: 35631.375 ops/ms
+Iteration   5: 35822.534 ops/ms
+Iteration   6: 35684.446 ops/ms
+Iteration   7: 35684.187 ops/ms
+Iteration   8: 35669.456 ops/ms
+Iteration   9: 35676.985 ops/ms
+Iteration  10: 35675.764 ops/ms
+
+Result "org.test.StringConcatStartup.StringSingle.constString":
+  35699.246 ±(99.9%) 77.874 ops/ms [Average]
+  (min, avg, max) = (35631.375, 35699.246, 35822.534), stdev = 51.509
+  CI (99.9%): [35621.372, 35777.120] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringThree.stringIntString
+# Parameters: (intValue = 4711)
+
+# Run progress: 29.17% complete, ETA 00:08:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 12197.037 ops/ms
+# Warmup Iteration   2: 12158.565 ops/ms
+# Warmup Iteration   3: 12198.944 ops/ms
+# Warmup Iteration   4: 12103.945 ops/ms
+# Warmup Iteration   5: 12249.234 ops/ms
+Iteration   1: 12103.655 ops/ms
+Iteration   2: 12169.137 ops/ms
+Iteration   3: 12088.311 ops/ms
+Iteration   4: 12145.286 ops/ms
+Iteration   5: 12083.996 ops/ms
+Iteration   6: 12146.264 ops/ms
+Iteration   7: 12159.006 ops/ms
+Iteration   8: 12164.743 ops/ms
+Iteration   9: 12142.241 ops/ms
+Iteration  10: 12133.901 ops/ms
+
+Result "org.test.StringConcatStartup.StringThree.stringIntString":
+  12133.654 ±(99.9%) 46.892 ops/ms [Average]
+  (min, avg, max) = (12083.996, 12133.654, 12169.137), stdev = 31.016
+  CI (99.9%): [12086.761, 12180.546] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringConcatStartup.StringThree.stringIntegerString
+# Parameters: (intValue = 4711)
+
+# Run progress: 31.25% complete, ETA 00:08:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 10525.205 ops/ms
+# Warmup Iteration   2: 10455.530 ops/ms
+# Warmup Iteration   3: 10489.930 ops/ms
+# Warmup Iteration   4: 10454.497 ops/ms
+# Warmup Iteration   5: 10525.940 ops/ms
+Iteration   1: 10408.560 ops/ms
+Iteration   2: 10457.428 ops/ms
+Iteration   3: 10457.466 ops/ms
+Iteration   4: 10508.997 ops/ms
+Iteration   5: 10587.906 ops/ms
+Iteration   6: 10447.908 ops/ms
+Iteration   7: 10493.571 ops/ms
+Iteration   8: 10456.216 ops/ms
+Iteration   9: 10425.729 ops/ms
+Iteration  10: 10434.358 ops/ms
+
+Result "org.test.StringConcatStartup.StringThree.stringIntegerString":
+  10467.814 ±(99.9%) 77.956 ops/ms [Average]
+  (min, avg, max) = (10408.560, 10467.814, 10587.906), stdev = 51.563
+  CI (99.9%): [10389.858, 10545.770] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:04:00
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                            (intValue)   Mode  Cnt      Score     Error   Units
+StringConcatStartup.MixedLarge.run                          N/A  thrpt   10     18.297 ±   0.263  ops/ms
+StringConcatStartup.MixedSmall.run                          N/A  thrpt   10   2565.206 ±  18.707  ops/ms
+StringConcatStartup.StringLarge.run                         N/A  thrpt   10     20.716 ±   0.386  ops/ms
+StringConcatStartup.StringSingle.constBool                 4711  thrpt   10  39107.917 ± 127.817  ops/ms
+StringConcatStartup.StringSingle.constBoolString           4711  thrpt   10  19400.119 ±  16.484  ops/ms
+StringConcatStartup.StringSingle.constBoolean              4711  thrpt   10  35930.288 ± 317.812  ops/ms
+StringConcatStartup.StringSingle.constBooleanString        4711  thrpt   10  15453.541 ±  21.126  ops/ms
+StringConcatStartup.StringSingle.constFloat                4711  thrpt   10  10731.981 ±  36.330  ops/ms
+StringConcatStartup.StringSingle.constFloatString          4711  thrpt   10   8345.663 ±  11.395  ops/ms
+StringConcatStartup.StringSingle.constInt                  4711  thrpt   10  32867.949 ± 183.484  ops/ms
+StringConcatStartup.StringSingle.constIntString            4711  thrpt   10  17357.505 ± 101.362  ops/ms
+StringConcatStartup.StringSingle.constInteger              4711  thrpt   10  30336.251 ± 524.575  ops/ms
+StringConcatStartup.StringSingle.constIntegerString        4711  thrpt   10  14156.077 ±  27.314  ops/ms
+StringConcatStartup.StringSingle.constString               4711  thrpt   10  35699.246 ±  77.874  ops/ms
+StringConcatStartup.StringThree.stringIntString            4711  thrpt   10  12133.654 ±  46.892  ops/ms
+StringConcatStartup.StringThree.stringIntegerString        4711  thrpt   10  10467.814 ±  77.956  ops/ms

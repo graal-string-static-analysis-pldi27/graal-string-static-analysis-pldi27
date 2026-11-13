@@ -1,0 +1,235 @@
+1794171436.594192 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794171437.746992 ========================================================================================================================
+1794171437.748788 GraalVM Native Image: Generating 'dacapo-pmd-FULL-b2' (executable)...
+1794171437.748807 ========================================================================================================================
+1794171437.748817 For detailed information and explanations on the build output, visit:
+1794171437.748832 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794171437.748850 ------------------------------------------------------------------------------------------------------------------------
+1794171439.564233 [1/8] Initializing...                                                                                    (2.5s @ 0.28GB)
+1794171439.564518  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794171439.564644  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794171439.564722  C compiler: gcc (linux, x86_64, 15.2.0)
+1794171439.564832  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794171439.564858  1 user-specific feature(s):
+1794171439.565054  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794171439.565752 ------------------------------------------------------------------------------------------------------------------------
+1794171439.565773  3 experimental option(s) unlocked:
+1794171439.565801  - '-H:CodeAlignment' (origin(s): command line)
+1794171439.565814  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794171439.565826  - '-H:+StringAnalysis' (origin(s): command line)
+1794171439.566869 ------------------------------------------------------------------------------------------------------------------------
+1794171439.566887 Build resources:
+1794171439.566938  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794171439.566983  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794171439.567438 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile13794477405294309019.txt
+1794171439.567462 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child14118083966391266604.log
+1794171439.567758 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile13794477405294309019.txt
+1794171439.567819 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794171439.567846 [string-analysis-fork] Child log: /tmp/string-analysis-child14118083966391266604.log
+1794171439.583680 Skipped 2198 predefined class(es) because the classpath already contains a class with the same name: net.sourceforge.pmd.lang.java.symboltable.Search, net.sourceforge.pmd.lang.java.JavaDataFlowHandler, net.sf.saxon.pattern.AnyNodeTest, com.beust.jcommander.internal.Maps, net.sf.saxon.event.StandardOutputResolver, net.sf.saxon.expr.IntegerRangeTest, net.sourceforge.pmd.renderers.internal.sarif.SarifLog$ArtifactLocation$ArtifactLocationBuilder, net.sourceforge.pmd.lang.java.rule.performance.BooleanInstantiationRule, net.sourceforge.pmd.PmdAnalysis, net.sourceforge.pmd.lang.antlr.AntlrTokenManager$ANTLRSyntaxError, ...
+1794171439.906695 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794171439.906753 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile13794477405294309019.txt
+1794171473.959823 [string-analysis-fork] Loaded 12831 entries from child profile: /tmp/string-analysis-profile13794477405294309019.txt
+1794171473.959910 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile13794477405294309019.txt
+1794171473.960249 [string-analysis-timing] beforeAnalysis done: 34053ms
+1794171479.858485 [string-analysis-timing] afterAnalysis start: 39951ms (gap since beforeAnalysis done: 5898ms)
+1794171479.882458 [2/8] Performing analysis...  [*****]                                                                    (5.9s @ 3.26GB)
+1794171479.913743    10,097 types,  14,848 fields, and  47,504 methods found reachable
+1794171479.915231     5,000 types,   6,178 fields, and  22,142 methods registered for reflection
+1794171479.915269        59 types,      60 fields, and      52 methods registered for JNI access
+1794171479.915296         0 downcalls and 0 upcalls registered for foreign access
+1794171479.915330         4 native libraries: dl, pthread, rt, z
+1794171481.678954 [3/8] Building universe...                                                                               (1.8s @ 2.71GB)
+1794171481.687771 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=6594 chain-else=574 chain-flat=274 acc=0 (chain sites=575, aot-parse sites=0); at strengthen: present=6556 (inlined copies=1100) removed=6269 (inlined copies=1007) killed-dead=287 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794171481.688434 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=268 chain/widened=72 collapsed=54 collapsed/widened=165 direct=4978 direct/widened=2782 redirect=47 redirect/widened=1; declined sites: no-entry=405 terminal-body-unmarked=4
+1794171481.688584 [ic-widen-decline-by-method] no-entry {charAt(I)C=37, coder()B=130, compareTo(Ljava/lang/String;)I=2, concat(Ljava/lang/String;)Ljava/lang/String;=26, equals(Ljava/lang/Object;)Z=18, equalsIgnoreCase(Ljava/lang/String;)Z=2, getBytes()[B=2, getBytes(Ljava/nio/charset/Charset;)[B=2, getBytes([BIIBI)V=4, getChars(II[CI)V=5, hashCode()I=12, indexOf(I)I=2, indexOf(II)I=3, indexOf(III)I=1, intern()Ljava/lang/String;=1, isEmpty()Z=6, isLatin1()Z=18, lastIndexOf(II)I=1, length()I=101, replace(CC)Ljava/lang/String;=1, replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;=1, split(Ljava/lang/String;)[Ljava/lang/String;=1, split(Ljava/lang/String;I)[Ljava/lang/String;=1, startsWith(Ljava/lang/String;)Z=3, substring(II)Ljava/lang/String;=1, toCharArray()[C=1, toLowerCase()Ljava/lang/String;=2, toLowerCase(Ljava/util/Locale;)Ljava/lang/String;=4, toUpperCase(Ljava/util/Locale;)Ljava/lang/String;=1, value()[B=16}
+1794171481.688608 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794171481.688622 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 6
+1794171481.688638 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794171481.689073 [string-analysis] ic-flatstock: 1 stock-path flat calls=8319 legacy (interface caller)=0 legacy (null receiver)=0
+1794171481.689623 [string-analysis] codegen-knobs: chain rep-arm ifs=360 swap sites=9 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1794171481.690115 [string-analysis] ic-csfinal: rep-excluded supertype sites=788 (diamonds=784 guards=4) by decl={CharSequence.charAt=160, CharSequence.length=145, CharSequence.subSequence=31, CharSequence.toString=32, Object.equals=181, Object.hashCode=95, Object.toString=144} rep-list sites left stock=62 unproven sites left stock=0; at strengthen: ifs=770 (dead-arm=1 iba-free nodes=2 folded=2) ifs left=0
+1794171481.690235 [string-analysis] concat-copy: sites=0 lowered-parses=0 count.diag=false
+1794171481.690882 [string-analysis] mirror-append: sites=465 lowered-parses=330 arms=331 lowered-keys=330
+1794171481.690916 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.Controller#checkUniqueOutputDestination(Ljava/lang/String;)Z@53
+1794171481.690943 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.expr.ExpressionParser#parsePathPattern()Lnet/sf/saxon/pattern/Pattern;@768
+1794171481.691003 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.expr.ExpressionParser#parsePattern(Ljava/lang/String;Lnet/sf/saxon/expr/StaticContext;)Lnet/sf/saxon/pattern/Pattern;@94
+1794171481.691042 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.expr.ExpressionParser#parseSequenceType(Ljava/lang/String;Lnet/sf/saxon/expr/StaticContext;)Lnet/sf/saxon/value/SequenceType;@89
+1794171481.691070 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.DeepEqual#explain(Lnet/sf/saxon/Configuration;Ljava/lang/String;I)V@29
+1794171481.691112 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatDate#formatComponent(Lnet/sf/saxon/value/CalendarValue;Ljava/lang/CharSequence;Lnet/sf/saxon/number/Numberer;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@1380
+1794171481.691155 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatDate#formatDate(Lnet/sf/saxon/value/CalendarValue;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@41
+1794171481.691199 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatDate#formatNumber(Ljava/lang/String;ILjava/lang/String;ZLnet/sf/saxon/number/Numberer;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@577
+1794171481.691244 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatDate#formatNumber(Ljava/lang/String;ILjava/lang/String;ZLnet/sf/saxon/number/Numberer;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@653
+1794171481.691284 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatDate#formatNumber(Ljava/lang/String;ILjava/lang/String;ZLnet/sf/saxon/number/Numberer;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@916
+1794171481.691323 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber#adjustToDecimal(DI)Ljava/math/BigDecimal;@529
+1794171481.691366 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber#formatNumber(Lnet/sf/saxon/value/NumericValue;[Lnet/sf/saxon/functions/FormatNumber$SubPicture;Lnet/sf/saxon/trans/DecimalSymbols;)Ljava/lang/CharSequence;@52
+1794171481.691401 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@296
+1794171481.691434 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@304
+1794171481.691469 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@331
+1794171481.691502 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@339
+1794171481.691537 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@840
+1794171481.691570 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@848
+1794171481.691604 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@875
+1794171481.691641 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#<init>(Lnet/sf/saxon/functions/FormatNumber;[ILnet/sf/saxon/trans/DecimalSymbols;)V@883
+1794171481.691679 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#format(Lnet/sf/saxon/value/NumericValue;Lnet/sf/saxon/trans/DecimalSymbols;Ljava/lang/String;)Ljava/lang/CharSequence;@44
+1794171481.691719 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#format(Lnet/sf/saxon/value/NumericValue;Lnet/sf/saxon/trans/DecimalSymbols;Ljava/lang/String;)Ljava/lang/CharSequence;@51
+1794171481.691757 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.FormatNumber$SubPicture#format(Lnet/sf/saxon/value/NumericValue;Lnet/sf/saxon/trans/DecimalSymbols;Ljava/lang/String;)Ljava/lang/CharSequence;@65
+1794171481.691786 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.ResolveURI#escapeSpaces(Ljava/lang/String;)Ljava/lang/String;@41
+1794171481.691816 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.Trace#traceItem(Lnet/sf/saxon/om/Item;Ljava/lang/String;Ljava/io/PrintStream;)V@13
+1794171481.691850 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.Trace#traceItem(Lnet/sf/saxon/om/Item;Ljava/lang/String;Ljava/io/PrintStream;)V@46
+1794171481.691880 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.Trace#traceItem(Lnet/sf/saxon/om/Item;Ljava/lang/String;Ljava/io/PrintStream;)V@94
+1794171481.691918 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.UnparsedText#readFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@539
+1794171481.691956 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.functions.UnparsedText#readFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/CharSequence;@66
+1794171481.691987 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.Comment#checkContent(Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/String;@36
+1794171481.692020 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.Comment#checkContent(Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/String;@51
+1794171481.692051 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.GlobalVariable#lookForCycles(Ljava/util/Stack;Lnet/sf/saxon/query/XQueryFunctionLibrary;)V@125
+1794171481.692083 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.GlobalVariable#lookForCycles(Ljava/util/Stack;Lnet/sf/saxon/query/XQueryFunctionLibrary;)V@188
+1794171481.692113 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.GlobalVariable#lookForCycles(Ljava/util/Stack;Lnet/sf/saxon/query/XQueryFunctionLibrary;)V@245
+1794171481.692144 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.GlobalVariable#lookForCycles(Ljava/util/Stack;Lnet/sf/saxon/query/XQueryFunctionLibrary;)V@76
+1794171481.692176 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.Message#processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;@275
+1794171481.692210 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ProcessingInstruction#checkContent(Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/String;@33
+1794171481.692243 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ProcessingInstruction#checkContent(Ljava/lang/String;Lnet/sf/saxon/expr/XPathContext;)Ljava/lang/String;@48
+1794171481.692284 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#parseListOfElementNames(Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;Ljava/lang/String;)Ljava/lang/String;@147
+1794171481.692335 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#parseListOfElementNames(Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;Ljava/lang/String;)Ljava/lang/String;@45
+1794171481.692379 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@1059
+1794171481.692421 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@1225
+1794171481.692464 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@1295
+1794171481.692507 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@1420
+1794171481.692552 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@1429
+1794171481.692595 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.instruct.ResultDocument#setSerializationProperty(Ljava/util/Properties;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/sf/saxon/om/NamespaceResolver;ZLnet/sf/saxon/om/NameChecker;)V@710
+1794171481.692621 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.AbstractNumberer#toAlpha(JII)Ljava/lang/String;@77
+1794171481.692649 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.AbstractNumberer#toAlphaSequence(JLjava/lang/String;)Ljava/lang/String;@73
+1794171481.692673 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#dayName(III)Ljava/lang/String;@70
+1794171481.692698 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#monthName(III)Ljava/lang/String;@52
+1794171481.692726 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@134
+1794171481.692757 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@189
+1794171481.692784 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@195
+1794171481.692812 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@237
+1794171481.692840 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@292
+1794171481.692871 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@298
+1794171481.692897 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@31
+1794171481.692925 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@340
+1794171481.692953 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@381
+1794171481.692980 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@387
+1794171481.693007 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@86
+1794171481.693034 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toOrdinalWords(Ljava/lang/String;JI)Ljava/lang/String;@92
+1794171481.693059 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@122
+1794171481.693084 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@171
+1794171481.693109 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@177
+1794171481.693133 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@214
+1794171481.693157 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@263
+1794171481.693181 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@269
+1794171481.693205 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@30
+1794171481.693229 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@306
+1794171481.693253 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@342
+1794171481.693277 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@348
+1794171481.693301 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@428
+1794171481.693330 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@79
+1794171481.693354 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.number.Numberer_en#toWords(J)Ljava/lang/String;@85
+1794171481.693384 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#checkSchemaNamespaceImported(ILnet/sf/saxon/query/Declaration;)V@137
+1794171481.693417 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#checkSchemaNamespaceImported(ILnet/sf/saxon/query/Declaration;)V@170
+1794171481.693446 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#checkSchemaNamespaceImported(ILnet/sf/saxon/query/Declaration;)V@204
+1794171481.693475 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#checkSchemaNamespaceImported(ILnet/sf/saxon/query/Declaration;)V@230
+1794171481.693504 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#checkSchemaNamespaceImported(ILnet/sf/saxon/query/Declaration;)V@98
+1794171481.693533 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#declareVariable(Lnet/sf/saxon/expr/VariableDeclaration;)V@121
+1794171481.693561 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#declareVariable(Lnet/sf/saxon/expr/VariableDeclaration;)V@143
+1794171481.693589 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#declareVariable(Lnet/sf/saxon/expr/VariableDeclaration;)V@186
+1794171481.693616 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#lookForModuleCycles(Ljava/util/Stack;I)V@111
+1794171481.693643 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#lookForModuleCycles(Ljava/util/Stack;I)V@147
+1794171481.693669 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryModule#lookForModuleCycles(Ljava/util/Stack;I)V@66
+1794171481.693698 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryParser#analyzeEntityReference(Ljava/lang/String;)Ljava/lang/String;@103
+1794171481.693726 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryParser#grumble(Ljava/lang/String;Ljava/lang/String;)V@102
+1794171481.693753 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryParser#grumble(Ljava/lang/String;Ljava/lang/String;)V@72
+1794171481.693781 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryParser#grumble(Ljava/lang/String;Ljava/lang/String;)V@98
+1794171481.693814 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.query.QueryParser#parseQuery(Ljava/lang/String;IILnet/sf/saxon/query/QueryModule;)Lnet/sf/saxon/expr/Expression;@105
+1794171481.693848 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.AttributeValueTemplate#make(Ljava/lang/String;ILnet/sf/saxon/expr/StaticContext;)Lnet/sf/saxon/expr/Expression;@154
+1794171481.693878 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLOutput#gatherOutputProperties(Ljava/util/Properties;Ljava/util/HashMap;)V@436
+1794171481.693907 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLOutput#gatherOutputProperties(Ljava/util/Properties;Ljava/util/HashMap;)V@503
+1794171481.693936 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLOutput#gatherOutputProperties(Ljava/util/Properties;Ljava/util/HashMap;)V@766
+1794171481.693972 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLOutput#prepareCharacterMaps(Lnet/sf/saxon/style/StyleElement;Ljava/lang/String;Ljava/util/Properties;)Ljava/lang/String;@115
+1794171481.694007 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLOutput#prepareCharacterMaps(Lnet/sf/saxon/style/StyleElement;Ljava/lang/String;Ljava/util/Properties;)Ljava/lang/String;@164
+1794171481.694033 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.style.XSLTemplate#prepareAttributes()V@785
+1794171481.694062 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.trace.ContextStackFrame$VariableEvaluation#print(Ljava/io/PrintStream;)V@20
+1794171481.694096 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.trans.StandardUnparsedTextResolver#resolve(Ljava/net/URI;Ljava/lang/String;Lnet/sf/saxon/Configuration;)Ljava/io/Reader;@340
+1794171481.694124 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sf.saxon.value.DurationValue#getComponent(I)Lnet/sf/saxon/value/AtomicValue;@267
+1794171481.694155 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomConfigurationErrors(Ljava/io/Writer;Ljava/util/List;)V@166
+1794171481.694185 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomConfigurationErrors(Ljava/io/Writer;Ljava/util/List;)V@192
+1794171481.694216 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomProcessingErrors(Ljava/io/Writer;Ljava/util/List;)V@167
+1794171481.694244 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomProcessingErrors(Ljava/io/Writer;Ljava/util/List;)V@193
+1794171481.694273 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomRuleViolations(Ljava/io/Writer;Ljava/util/Iterator;)V@135
+1794171481.694306 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomRuleViolations(Ljava/io/Writer;Ljava/util/Iterator;)V@257
+1794171481.694335 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomSuppressions(Ljava/io/Writer;Ljava/util/List;)V@182
+1794171481.694363 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#glomSuppressions(Ljava/io/Writer;Ljava/util/List;)V@242
+1794171481.694393 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#maybeWrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;@69
+1794171481.694424 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#maybeWrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;@90
+1794171481.694454 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.HTMLRenderer#maybeWrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;@99
+1794171481.694483 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.IDEAJRenderer#renderDirectory(Ljava/io/Writer;Ljava/util/Iterator;)V@113
+1794171481.694513 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.IDEAJRenderer#renderDirectory(Ljava/io/Writer;Ljava/util/Iterator;)V@91
+1794171481.694536 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@131
+1794171481.694559 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@181
+1794171481.694583 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@254
+1794171481.694608 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@540
+1794171481.694630 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@678
+1794171481.694651 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@720
+1794171481.694673 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@748
+1794171481.694696 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#end()V@908
+1794171481.694726 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.TextColorRenderer#getRelativePath(Ljava/lang/String;)Ljava/lang/String;@67
+1794171481.694749 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.VBHTMLRenderer#end()V@146
+1794171481.694772 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.VBHTMLRenderer#end()V@306
+1794171481.694795 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): net.sourceforge.pmd.renderers.YAHTMLRenderer#end()V@103
+1794171481.694823 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.apache.commons.lang3.text.translate.UnicodeUnescaper#translate(Ljava/lang/CharSequence;ILjava/io/Writer;)I@183
+1794171481.694853 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.apache.commons.lang3.text.translate.UnicodeUnescaper#translate(Ljava/lang/CharSequence;ILjava/io/Writer;)I@229
+1794171481.694881 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@109
+1794171481.694911 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@119
+1794171481.694939 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@129
+1794171481.694967 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@66
+1794171481.694996 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@80
+1794171481.695023 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#format(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;@94
+1794171481.695047 [string-analysis] mirror-append: site never parsed (dead or inlined before parse): org.junit.Assert#formatClassAndValue(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;@34
+1794171481.695079 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=772/46 list=15/4 (cast/inst parses) stock: no-line=175/6 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=1/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=973
+1794171482.438505 [4/8] Parsing methods...      [*]                                                                        (0.7s @ 2.68GB)
+1794171483.138099 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 3.15GB)
+1794171490.032001 [6/8] Compiling methods...    [***]                                                                      (6.9s @ 2.32GB)
+1794171493.327126 [7/8] Laying out methods...   [**]                                                                       (3.3s @ 2.64GB)
+1794171493.357001 [string-analysis] r2-trivial: active=true graphs with rep arms=459, made trivial by the discount=5 (first 20: [java.io.StringWriter.write(String, int, int) stock 2+27 discounted 1+16, java.util.Objects.equals(Object, Object) stock 1+25 discounted 1+25, net.sf.saxon.pattern.LocalNameTest.hashCode() stock 2+31 discounted 1+19, org.apache.commons.lang3.StringUtils.trim(String) stock 2+26 discounted 1+14, org.apache.xerces.xinclude.XIncludeHandler.isEqual(String, String) stock 2+32 discounted 1+20]); graphs with a rep call but no recognised arm=273 (first 5: [com.beust.jcommander.JCommander.addDescription(Object), com.beust.jcommander.JCommander.getOptionPrefixes(String[], String), com.beust.jcommander.JCommander.parse(boolean, String[]), com.beust.jcommander.JCommander.parseValues(String[], boolean), com.beust.jcommander.JCommander.readPassword(String, boolean)]); graphs with a rep-test If that is no arm=380 (first 5: [com.beust.jcommander.JCommander.usage(StringBuilder, String), com.beust.jcommander.JCommander.validateOptions(), com.beust.jcommander.JCommander.wrapDescription(StringBuilder, int, String), com.oracle.svm.common.option.CommonOptionParser.parseOption(EconomicMap, Predicate, String, EconomicMap, String, CommonOptionParser$BooleanOptionFormat), com.oracle.svm.common.option.CommonOptionParser.parseValue(Class, OptionKey, LocatableOption, String)])
+1794171494.396932 [string-analysis-dc] clinitsim-repaborts=0
+1794171494.470186 [string-analysis-dc] heapreps=0 poolreps=256 {com.oracle.svm.core.stringrep.SingleByteString.POOL=256} poolarrayrefs={CODE=1} scanned=281104
+1794171496.250975 [8/8] Creating image...       [**]                                                                       (2.6s @ 2.85GB)
+1794171496.251286   25.97MB (43.27%) for code area:    31,176 compilation units
+1794171496.251350   28.70MB (47.82%) for image heap:  281,104 objects and 680 resources
+1794171496.251455    5.35MB ( 8.91%) for other data
+1794171496.251507   60.02MB in total image size, 57.41MB in total file size
+1794171496.251552 ------------------------------------------------------------------------------------------------------------------------
+1794171496.252098 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794171496.252347    8.37MB java.base                                            6.59MB byte[] for code metadata
+1794171496.252386    3.76MB saxon-9.1.0.8.jar                                    3.80MB byte[] for java.lang.String
+1794171496.252420    3.22MB java.xml                                             2.77MB byte[] for embedded resources
+1794171496.252444    2.23MB java.desktop                                         2.68MB java.lang.String
+1794171496.252471    1.76MB svm.jar (Native Image)                               2.02MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794171496.252495    1.63MB pmd-java-6.55.0.jar                                  1.84MB byte[] for reflection metadata
+1794171496.252515    1.47MB xercesImpl.jar                                       1.56MB java.lang.Class
+1794171496.252570  930.16kB pmd-core-6.55.0.jar                                820.89kB byte[] for general heap data
+1794171496.252596  302.74kB dacapo-evaluation-git-e947cbfc.jar                 556.39kB java.lang.String[]
+1794171496.252619  223.57kB jdk.zipfs                                          525.43kB int[][]
+1794171496.253410    1.15MB for 21 more packages                                 5.55MB for 1777 more object types
+1794171496.254324 ------------------------------------------------------------------------------------------------------------------------
+1794171496.254343 Recommendations:
+1794171496.254363  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794171496.254374  AWT:  Use the tracing agent to collect metadata for AWT.
+1794171496.254383  HEAP: Set max heap for improved and more predictable memory usage.
+1794171496.254393  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794171496.258526 ------------------------------------------------------------------------------------------------------------------------
+1794171496.259124                         1.8s (3.0% of total time) in 175 GCs | Peak RSS: 5.03GB | CPU load: 5.52
+1794171496.259405 ------------------------------------------------------------------------------------------------------------------------
+1794171496.259410 Build artifacts:
+1794171496.259750  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/dacapo-pmd-FULL-b2 (executable)
+1794171496.259769  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libawt.so (jdk_library)
+1794171496.259781  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libawt_headless.so (jdk_library)
+1794171496.259792  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libawt_xawt.so (jdk_library)
+1794171496.259804  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libfontmanager.so (jdk_library)
+1794171496.259816  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libjava.so (jdk_library_shim)
+1794171496.259827  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libjavajpeg.so (jdk_library)
+1794171496.259839  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/libjvm.so (jdk_library_shim)
+1794171496.259850  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CU1/bin/liblcms.so (jdk_library)
+1794171496.259862 ========================================================================================================================
+1794171496.259908 Finished generating 'dacapo-pmd-FULL-b2' in 59.2s.

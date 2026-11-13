@@ -1,0 +1,35 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL8  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## java-json-benchmark  starts BASE:3 FULL:3  time keys 22
+  FULL/BASE time  ratio 1.0044  (mean FULL 1.0045 n=3, BASE 1.0001 n=3)  error margin 0.0042 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9955  (mean FULL 0.9955 n=3, BASE 1.0000 n=3)  error margin 0.0063 (max sd)  paper-significance n.s.
+    key deser: c.g.f.j.databind.Deserialization.avajejsonb           BASE 1.70661e+06 sd 4.59e+04  FULL 1.66985e+06 sd 5.44e+04  [higher]
+    key deser: c.g.f.j.databind.Deserialization.avajejsonb_jackson   BASE 1.45581e+06 sd 3.36e+03  FULL 1.44519e+06 sd 5.3e+03  [higher]
+    key deser: c.g.f.j.databind.Deserialization.dsljson              BASE 2.32913e+06 sd 4.99e+04  FULL 2.41102e+06 sd 3.78e+04  [higher]
+    key deser: c.g.f.j.databind.Deserialization.dsljson_reflection   BASE 1.40627e+06 sd 3.9e+03  FULL 1.45108e+06 sd 1.73e+04  [higher]
+    key deser: c.g.f.j.databind.Deserialization.gson                 BASE 1.10987e+06 sd 3.84e+03  FULL 1.08574e+06 sd 9.64e+03  [higher]
+    key deser: c.g.f.j.databind.Deserialization.moshi                BASE 924663 sd 6.25e+03  FULL 929914 sd 8.3e+03  [higher]
+    key deser: c.g.f.j.stream.Deserialization.gson                   BASE 1.27409e+06 sd 2.25e+03  FULL 1.27151e+06 sd 1.17e+03  [higher]
+    key deser: c.g.f.j.stream.Deserialization.jakartajson            BASE 9099.4 sd 176  FULL 9056.12 sd 73.7  [higher]
+    key deser: c.g.f.j.stream.Deserialization.minimaljson            BASE 942826 sd 6.85e+03  FULL 932582 sd 3.83e+03  [higher]
+    key deser: c.g.f.j.stream.Deserialization.moshi                  BASE 915860 sd 6.77e+03  FULL 903219 sd 1e+04  [higher]
+    key deser: c.g.f.j.stream.Deserialization.orgjson                BASE 176326 sd 714  FULL 177258 sd 1.55e+03  [higher]
+    key ser: c.g.f.j.databind.Serialization.avajejsonb               BASE 1.73311e+06 sd 3.91e+04  FULL 1.72582e+06 sd 2.55e+04  [higher]
+    key ser: c.g.f.j.databind.Serialization.avajejsonb_jackson       BASE 1.54567e+06 sd 5.02e+03  FULL 1.49773e+06 sd 1.28e+05  [higher]
+    key ser: c.g.f.j.databind.Serialization.dsljson                  BASE 2.39615e+06 sd 6.01e+03  FULL 2.40195e+06 sd 1.94e+04  [higher]
+    key ser: c.g.f.j.databind.Serialization.dsljson_reflection       BASE 1.4916e+06 sd 2.37e+04  FULL 1.47016e+06 sd 1.82e+04  [higher]
+    key ser: c.g.f.j.databind.Serialization.gson                     BASE 851649 sd 2.29e+04  FULL 837529 sd 1.1e+04  [higher]
+    key ser: c.g.f.j.databind.Serialization.moshi                    BASE 667401 sd 958  FULL 649405 sd 1.27e+04  [higher]
+    key ser: c.g.f.j.stream.Serialization.gson                       BASE 270174 sd 5e+03  FULL 271502 sd 3.37e+03  [higher]
+    key ser: c.g.f.j.stream.Serialization.jakartajson                BASE 1.09002e+06 sd 1.21e+04  FULL 1.0751e+06 sd 2.24e+04  [higher]
+    key ser: c.g.f.j.stream.Serialization.minimaljson                BASE 866725 sd 1.36e+04  FULL 860770 sd 2.61e+04  [higher]
+    key ser: c.g.f.j.stream.Serialization.moshi                      BASE 693998 sd 2.56e+03  FULL 685061 sd 7.3e+03  [higher]
+    key ser: c.g.f.j.stream.Serialization.orgjson                    BASE 193614 sd 488  FULL 199790 sd 1.41e+03  [higher]
+
+## log4j2-plc  starts BASE:3 FULL:3  time keys 1
+  FULL/BASE time  ratio 1.0291  (mean FULL 1.0293 n=3, BASE 1.0002 n=3)  error margin 0.0670 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9733  (mean FULL 0.9733 n=3, BASE 1.0000 n=3)  error margin 0.0613 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0291  (mean FULL 1.0293 n=30 iterations, BASE 1.0002 n=30)  error margin 0.0558 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key PatternLayoutComparisonBenchmark.log4j2                      BASE 3.13866e+06 sd 5.83e+04  FULL 3.05773e+06 sd 1.93e+05  [higher]
+
+PAPER30-DONE

@@ -1,0 +1,64 @@
+1794234194.596030 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794234194.898455 Warning: Option 'DynamicProxyConfigurationResources' is deprecated and might be removed in a future release: This can be caused by a proxy-config.json file in your META-INF directory. Consider including proxy configuration in the reflection section of reachability-metadata.md instead.. Please refer to the GraalVM release notes.
+1794234195.758964 ========================================================================================================================
+1794234195.760616 GraalVM Native Image: Generating 'palantir-BASE-b1' (executable)...
+1794234195.760669 ========================================================================================================================
+1794234195.760681 For detailed information and explanations on the build output, visit:
+1794234195.760695 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794234195.760709 ------------------------------------------------------------------------------------------------------------------------
+1794234197.243208 [1/8] Initializing...                                                                                    (2.2s @ 0.44GB)
+1794234197.243518  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794234197.243587  Graal compiler: optimization level: 2, target machine: compatibility
+1794234197.243662  C compiler: gcc (linux, x86_64, 15.2.0)
+1794234197.243771  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794234197.243796  1 user-specific feature(s):
+1794234197.244015  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794234197.244958 ------------------------------------------------------------------------------------------------------------------------
+1794234197.244986  3 experimental option(s) unlocked:
+1794234197.245038  - '-H:+IncludeAllLocales' (origin(s): command line)
+1794234197.245050  - '-H:-UseContainerSupport' (origin(s): command line)
+1794234197.245059  - '-H:CodeAlignment' (origin(s): command line)
+1794234197.246259 ------------------------------------------------------------------------------------------------------------------------
+1794234197.246267 Build resources:
+1794234197.246361  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794234197.246400  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794234206.448390 [2/8] Performing analysis...  [*******]                                                                  (6.4s @ 1.25GB)
+1794234206.474844    10,481 types,  12,418 fields, and  46,792 methods found reachable
+1794234206.475902    29,582 types,     124 fields, and   2,984 methods registered for reflection
+1794234206.475996        60 types,      60 fields, and      56 methods registered for JNI access
+1794234206.476026         0 downcalls and 0 upcalls registered for foreign access
+1794234206.476051         4 native libraries: dl, pthread, rt, z
+1794234208.029444 [3/8] Building universe...                                                                               (1.6s @ 1.33GB)
+1794234208.654990 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.54GB)
+1794234209.233302 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.51GB)
+1794234213.870848 [6/8] Compiling methods...    [**]                                                                       (4.6s @ 1.41GB)
+1794234216.425444 [7/8] Laying out methods...   [**]                                                                       (2.5s @ 1.70GB)
+1794234220.319383 [8/8] Creating image...       [**]                                                                       (3.6s @ 2.03GB)
+1794234220.319765   19.12MB (27.73%) for code area:    30,491 compilation units
+1794234220.319845   44.56MB (64.63%) for image heap:  601,910 objects and 26,614 resources
+1794234220.319879    5.27MB ( 7.64%) for other data
+1794234220.319921   68.95MB in total image size, 66.39MB in total file size
+1794234220.319964 ------------------------------------------------------------------------------------------------------------------------
+1794234220.320706 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794234220.321036    5.94MB jdk.compiler                                         8.46MB byte[] for java.lang.String
+1794234220.321108    5.82MB java.base                                            5.77MB byte[] for general heap data
+1794234220.321158    1.78MB jackson-databind-2.22.3.jar                          5.18MB byte[] for code metadata
+1794234220.321690    1.46MB svm.jar (Native Image)                               4.70MB java.lang.String
+1794234220.321719  687.73kB guava-33.7.2-jre.jar                                 2.40MB java.lang.Object[]
+1794234220.321735  521.31kB com.palantir.javaformat.java                         2.25MB c.o.svm.core.configure.ConditionalRuntimeValue
+1794234220.321748  268.25kB jackson-core-2.22.3.jar                              2.01MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794234220.321761  249.11kB jdk.zipfs                                            1.80MB com.oracle.svm.core.configure.RuntimeConditionSet
+1794234220.321773  204.28kB jdk.internal.md                                      1.63MB java.util.concurrent.ConcurrentHashMap$Node
+1794234220.321784  176.74kB functionaljava-5.0.jar                               1.61MB java.lang.Class
+1794234220.322444    1.16MB for 28 more packages                                 8.76MB for 1951 more object types
+1794234220.323212 ------------------------------------------------------------------------------------------------------------------------
+1794234220.323218 Recommendations:
+1794234220.323258  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794234220.323311  HEAP: Set max heap for improved and more predictable memory usage.
+1794234220.326646 ------------------------------------------------------------------------------------------------------------------------
+1794234220.327267                        1.7s (6.8% of total time) in 262 GCs | Peak RSS: 3.29GB | CPU load: 11.71
+1794234220.327560 ------------------------------------------------------------------------------------------------------------------------
+1794234220.327565 Build artifacts:
+1794234220.327890  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CP3/bin/palantir-BASE-b1 (executable)
+1794234220.327904 ========================================================================================================================
+1794234220.327954 Finished generating 'palantir-BASE-b1' in 25.2s.

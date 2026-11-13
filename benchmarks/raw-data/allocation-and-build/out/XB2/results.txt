@@ -1,0 +1,36 @@
+# C99 campaign results  SLOT=XB2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB2  CFGS=BASE SBS SV LS  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## antlr  [metric] ANTLR 4 TimeLexerSpeed (21 rows; hunt/ab-b34 candspec)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=96
+  GEOMEAN SBS/BASE  time 1.003 [0.994,1.011] n.s. (21 keys)  alloc 1.000 [0.999,1.001] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 1.006 [0.999,1.012] n.s. (21 keys)  alloc 1.000 [0.998,1.001] n.s. (1 keys)
+  GEOMEAN LS/BASE  time 1.000 [0.991,1.010] n.s. (21 keys)  alloc 1.000 [0.999,1.001] n.s. (1 keys)
+  lex_legacy_grapheme_utf8 udhr_hin DFA-cleared us                       SBS 0.995 [0.967,1.028] n.s. | SV 0.984 [0.958,1.012] n.s. | LS 0.978 [0.958,1.001] n.s.
+  lex_legacy_grapheme_utf8 udhr_hin us                                   SBS 0.990 [0.966,1.016] n.s. | SV 0.987 [0.966,1.005] n.s. | LS 0.988 [0.972,1.005] n.s.  BIMODAL(SV)
+  lex_legacy_grapheme_utf8 udhr_kor DFA-cleared us                       SBS 0.990 [0.977,1.002] n.s. | SV 0.984 [0.968,0.999] FASTER | LS 0.991 [0.977,1.004] n.s.  BIMODAL(SV)
+  lex_legacy_grapheme_utf8 udhr_kor us                                   SBS 0.991 [0.973,1.006] n.s. | SV 0.988 [0.968,1.007] n.s. | LS 0.988 [0.970,1.002] n.s.
+  lex_legacy_java_utf8 DFA-cleared us                                    SBS 1.004 [0.993,1.014] n.s. | SV 1.009 [0.996,1.021] n.s. | LS 1.004 [0.995,1.012] n.s.  BIMODAL(BASE,SBS,SV,LS)
+  lex_legacy_java_utf8 us                                                SBS 0.995 [0.986,1.006] n.s. | SV 0.999 [0.989,1.010] n.s. | LS 0.998 [0.990,1.007] n.s.
+  lex_new_grapheme_utf8 emoji DFA-cleared us                             SBS 0.994 [0.985,1.006] n.s. | SV 0.994 [0.984,1.005] n.s. | LS 0.996 [0.983,1.014] n.s.  BIMODAL(BASE,LS)
+  lex_new_grapheme_utf8 emoji us                                         SBS 0.996 [0.982,1.012] n.s. | SV 0.988 [0.975,1.003] n.s. | LS 0.998 [0.980,1.016] n.s.  BIMODAL(LS)
+  lex_new_grapheme_utf8 udhr_hin DFA-cleared us                          SBS 0.987 [0.971,0.997] FASTER | SV 0.982 [0.962,0.999] FASTER | LS 0.985 [0.970,0.995] FASTER  BIMODAL(BASE,SV)
+  lex_new_grapheme_utf8 udhr_hin us                                      SBS 0.990 [0.974,1.006] n.s. | SV 0.980 [0.965,0.996] FASTER | LS 0.981 [0.969,0.994] FASTER  BIMODAL(BASE,SBS)
+  lex_new_grapheme_utf8 udhr_kor DFA-cleared us                          SBS 0.991 [0.969,1.017] n.s. | SV 0.978 [0.962,0.995] FASTER | LS 0.984 [0.967,1.002] n.s.  BIMODAL(BASE)
+  lex_new_grapheme_utf8 udhr_kor us                                      SBS 0.988 [0.970,1.011] n.s. | SV 0.977 [0.964,0.992] FASTER | LS 0.980 [0.967,0.993] FASTER
+  lex_new_java_utf8 DFA-cleared us                                       SBS 0.981 [0.961,1.001] n.s. | SV 0.986 [0.959,1.014] n.s. | LS 0.990 [0.978,1.002] n.s.
+  lex_new_java_utf8 us                                                   SBS 0.989 [0.972,1.007] n.s. | SV 0.998 [0.968,1.027] n.s. | LS 0.995 [0.981,1.009] n.s.  BIMODAL(SV)
+  load_legacy_java_ascii Parser us                                       SBS 0.963 [0.873,1.058] n.s. | SV 1.011 [0.927,1.092] n.s. | LS 0.975 [0.897,1.047] n.s.
+  load_legacy_java_ascii RuleContext us                                  SBS 1.089 [0.991,1.209] n.s. | SV 1.103 [0.972,1.250] n.s. | LS 1.103 [0.995,1.231] n.s.
+  load_legacy_java_utf8 Parser us                                        SBS 1.053 [0.929,1.213] n.s. | SV 1.098 [0.958,1.274] n.s. | LS 0.987 [0.849,1.161] n.s.
+  load_legacy_java_utf8 udhr_hin us                                      SBS 1.025 [0.990,1.060] n.s. | SV 0.991 [0.961,1.023] n.s. | LS 1.001 [0.967,1.037] n.s.
+  load_new_utf8 Parser us                                                SBS 1.013 [0.948,1.082] n.s. | SV 1.013 [0.945,1.082] n.s. | LS 1.058 [0.980,1.137] n.s.
+  load_new_utf8 RuleContext us                                           SBS 1.010 [0.878,1.113] n.s. | SV 1.058 [0.901,1.212] n.s. | LS 1.010 [0.865,1.133] n.s.  BIMODAL(SBS)
+  load_new_utf8 udhr_hin us                                              SBS 1.035 [1.009,1.063] SLOWER | SV 1.019 [0.996,1.045] n.s. | LS 1.026 [0.992,1.060] n.s.
+  ~alloc MB                                                              SBS 1.000 [0.999,1.001] n.s. | SV 1.000 [0.998,1.001] n.s. | LS 1.000 [0.999,1.001] n.s.  BIMODAL(BASE,SBS,SV,LS)
+  ~rss MB                                                                SBS 0.973 [0.906,1.044] n.s. | SV 1.058 [0.960,1.145] n.s. | LS 1.011 [0.932,1.093] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  antlr                      1.003|1.000       1.006|1.000       1.000|1.000      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL8-log4j2-plc-FULL-sf1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+log4j2-plc               BASE b1 size 39.65/41.73/18.31/19.40 | parent 18.0 s 2.64 GB | driver 18.6 s REUSED
+log4j2-plc               BASE b2 size 39.65/41.73/18.31/19.40 | parent 18.1 s 2.63 GB | driver 18.7 s REUSED
+log4j2-plc               BASE b3 size 39.65/41.73/18.31/19.40 | parent 18.2 s 2.70 GB | driver 18.7 s REUSED
+log4j2-plc               FULL b1 size 39.72/41.80/18.40/19.40 | parent 41.2 s 3.10 GB | driver 41.8 s | OK | child aa 18014 ms gen 21.0 s obs 21 s VmHWM 7.16 GB | wait 21.0 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL b2 size 39.72/41.80/18.40/19.40 | parent 41.4 s 3.10 GB | driver 42.0 s | OK | child aa 18030 ms gen 21.1 s obs 20 s VmHWM 7.22 GB | wait 21.0 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL b3 size 39.72/41.80/18.40/19.40 | parent 41.1 s 3.21 GB | driver 41.8 s | OK | child aa 17974 ms gen 20.9 s obs 20 s VmHWM 7.14 GB | wait 21.0 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+## build cost vs stock (means over builds)
+log4j2-plc               FULL/BASE  parent wall 18.1 -> 41.2 s (x2.28)  Peak RSS 2.66 -> 3.14 GB (x1.18)  child VmHWM 7.17 GB  size 39.65 -> 39.72 MB (x1.002)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+log4j2-plc               FULL SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

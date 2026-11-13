@@ -1,0 +1,30 @@
+# C99 campaign results  SLOT=pr-json-parser  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-json-parser  CFGS=BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=1 UM=3 US=1 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## json-parser  [metric] AWFY json-parser Json 100 100 (ab-cmb recipe)  builds BASE:2 SBS:2 SV:2 LS:2 BASE_A32:2 SBS_A32:2 SV_A32:2 LS_A32:2 BASE_A128:2 SBS_A128:2 SV_A128:2 LS_A128:2 BASE_A256:2 SBS_A256:2 SV_A256:2 LS_A256:2  starts parsed=32
+  GEOMEAN SBS/BASE  time 0.634 [0.630,0.639] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN SV/BASE  time 0.993 [0.990,0.996] FASTER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN LS/BASE  time 0.999 [0.991,1.007] n.s. (1 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.985 [0.980,0.991] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN SBS_A32/BASE  time 0.651 [0.642,0.661] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN SV_A32/BASE  time 0.967 [0.961,0.974] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN LS_A32/BASE  time 0.963 [0.955,0.971] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.993 [0.972,1.015] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SBS_A128/BASE  time 0.626 [0.623,0.628] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN SV_A128/BASE  time 0.990 [0.979,1.001] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN LS_A128/BASE  time 0.978 [0.975,0.982] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 0.995 [0.982,1.009] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SBS_A256/BASE  time 0.627 [0.624,0.629] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN SV_A256/BASE  time 1.004 [0.994,1.014] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN LS_A256/BASE  time 0.982 [0.976,0.989] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  Total Runtime us                                                       SBS 0.634 [0.630,0.639] FASTER | SV 0.993 [0.990,0.996] FASTER | LS 0.999 [0.991,1.007] n.s. | BASE_A32 0.985 [0.980,0.991] FASTER | SBS_A32 0.651 [0.642,0.661] FASTER | SV_A32 0.967 [0.961,0.974] FASTER | LS_A32 0.963 [0.955,0.971] FASTER | BASE_A128 0.993 [0.972,1.015] n.s. | SBS_A128 0.626 [0.623,0.628] FASTER | SV_A128 0.990 [0.979,1.001] n.s. | LS_A128 0.978 [0.975,0.982] FASTER | BASE_A256 0.995 [0.982,1.009] n.s. | SBS_A256 0.627 [0.624,0.629] FASTER | SV_A256 1.004 [0.994,1.014] n.s. | LS_A256 0.982 [0.976,0.989] FASTER
+  Total Runtime us [cold]                                                SBS 0.613 [0.608,0.618] FASTER | SV 0.980 [0.963,0.997] FASTER | LS 0.982 [0.978,0.987] FASTER | BASE_A32 0.980 [0.973,0.987] FASTER | SBS_A32 0.629 [0.615,0.643] FASTER | SV_A32 0.965 [0.958,0.972] FASTER | LS_A32 0.964 [0.951,0.976] FASTER | BASE_A128 0.986 [0.971,1.001] n.s. | SBS_A128 0.608 [0.600,0.616] FASTER | SV_A128 0.977 [0.969,0.986] FASTER | LS_A128 0.967 [0.962,0.973] FASTER | BASE_A256 0.970 [0.962,0.978] FASTER | SBS_A256 0.612 [0.608,0.615] FASTER | SV_A256 0.984 [0.977,0.990] FASTER | LS_A256 0.980 [0.973,0.987] FASTER
+  ~alloc MB/iter                                                         SBS 0.214 [0.214,0.214] LESS | SV 1.000 [1.000,1.000] n.s. | LS 1.000 [1.000,1.000] MORE | BASE_A32 1.000 [1.000,1.000] LESS | SBS_A32 0.214 [0.214,0.214] LESS | SV_A32 1.000 [1.000,1.000] LESS | LS_A32 1.000 [1.000,1.000] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | SBS_A128 0.214 [0.214,0.214] LESS | SV_A128 1.000 [1.000,1.000] LESS | LS_A128 1.000 [1.000,1.000] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | SBS_A256 0.214 [0.214,0.214] LESS | SV_A256 1.000 [1.000,1.000] n.s. | LS_A256 1.000 [1.000,1.000] LESS
+  ~rss MB                                                                SBS 0.993 [0.991,0.994] LESS | SV 0.991 [0.985,0.997] LESS | LS 0.998 [0.997,1.000] LESS | BASE_A32 1.002 [1.000,1.003] n.s. | SBS_A32 0.987 [0.985,0.989] LESS | SV_A32 0.988 [0.987,0.989] LESS | LS_A32 0.995 [0.992,0.999] LESS | BASE_A128 1.003 [1.002,1.004] MORE | SBS_A128 0.999 [0.997,1.000] LESS | SV_A128 0.999 [0.997,1.002] n.s. | LS_A128 1.004 [1.004,1.005] MORE | BASE_A256 1.002 [0.999,1.006] n.s. | SBS_A256 1.006 [1.000,1.011] MORE | SV_A256 1.010 [1.009,1.011] MORE | LS_A256 1.005 [1.001,1.009] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS                BASE_A32          SBS_A32           SV_A32            LS_A32            BASE_A128         SBS_A128          SV_A128           LS_A128           BASE_A256         SBS_A256          SV_A256           LS_A256          
+  json-parser                0.634*|0.214*     0.993*|1.000      0.999|1.000*      0.985*|1.000*     0.651*|0.214*     0.967*|1.000*     0.963*|1.000*     0.993|1.000       0.626*|0.214*     0.990|1.000*      0.978*|1.000*     0.995|1.000       0.627*|0.214*     1.004|1.000       0.982*|1.000*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

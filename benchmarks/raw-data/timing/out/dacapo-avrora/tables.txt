@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-avrora  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-avrora            BASE b1 size 25.89/27.31/10.93/13.57 | parent 21.0 s 2.29 GB | driver 22.0 s REUSED
+dacapo-avrora            BASE b2 size 25.89/27.31/10.93/13.57 | parent 23.1 s 2.27 GB | driver 23.9 s REUSED
+dacapo-avrora            FULL b1 size 25.89/27.31/10.96/13.57 | parent 41.3 s 2.36 GB | driver 42.1 s | OK | child aa 15677 ms gen 18.6 s obs 17 s VmHWM 3.25 GB | wait 19.0 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL b2 size 25.89/27.31/10.96/13.57 | parent 38.4 s 2.46 GB | driver 39.6 s | OK | child aa 15434 ms gen 18.2 s obs 18 s VmHWM 3.15 GB | wait 18.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            BASE_A32 b1 size 25.69/27.11/10.71/13.57 | parent 21.5 s 2.30 GB | driver 22.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            BASE_A32 b2 size 25.69/27.11/10.71/13.57 | parent 22.5 s 2.18 GB | driver 23.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            FULL_A32 b1 size 25.76/27.18/10.74/13.63 | parent 39.5 s 2.41 GB | driver 40.3 s | OK | child aa 18020 ms gen 20.9 s obs 21 s VmHWM 3.21 GB | wait 21.0 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL_A32 b2 size 25.76/27.18/10.74/13.63 | parent 40.4 s 2.38 GB | driver 41.4 s | OK | child aa 15424 ms gen 18.2 s obs 18 s VmHWM 3.05 GB | wait 18.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            BASE_A128 b1 size 26.41/27.83/11.49/13.57 | parent 20.5 s 2.27 GB | driver 21.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            BASE_A128 b2 size 26.41/27.83/11.49/13.57 | parent 23.0 s 2.19 GB | driver 23.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            FULL_A128 b1 size 26.48/27.90/11.52/13.57 | parent 41.2 s 2.39 GB | driver 42.3 s | OK | child aa 17952 ms gen 20.8 s obs 21 s VmHWM 3.13 GB | wait 21.0 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL_A128 b2 size 26.48/27.90/11.52/13.57 | parent 39.5 s 2.38 GB | driver 40.4 s | OK | child aa 13054 ms gen 17.9 s obs 18 s VmHWM 3.17 GB | wait 18.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            BASE_A256 b1 size 27.59/29.01/12.67/13.57 | parent 23.5 s 2.27 GB | driver 24.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            BASE_A256 b2 size 27.59/29.01/12.67/13.57 | parent 18.8 s 2.26 GB | driver 19.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-avrora            FULL_A256 b1 size 27.66/29.08/12.71/13.57 | parent 40.0 s 2.37 GB | driver 40.8 s | OK | child aa 15526 ms gen 18.2 s obs 17 s VmHWM 3.19 GB | wait 18.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL_A256 b2 size 27.66/29.08/12.71/13.57 | parent 45.1 s 2.38 GB | driver 46.0 s | OK | child aa 16162 ms gen 19.8 s obs 20 s VmHWM 3.19 GB | wait 20.0 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+## build cost vs stock (means over builds)
+dacapo-avrora            FULL/BASE  parent wall 22.1 -> 39.8 s (x1.81)  Peak RSS 2.28 -> 2.41 GB (x1.06)  child VmHWM 3.20 GB  size 25.89 -> 25.89 MB (x1.000)  status OK,OK
+dacapo-avrora            BASE_A32/BASE  parent wall 22.1 -> 22.0 s (x1.00)  Peak RSS 2.28 -> 2.24 GB (x0.98)  child VmHWM ? GB  size 25.89 -> 25.69 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+dacapo-avrora            FULL_A32/BASE  parent wall 22.1 -> 40.0 s (x1.81)  Peak RSS 2.28 -> 2.40 GB (x1.05)  child VmHWM 3.13 GB  size 25.89 -> 25.76 MB (x0.995)  status OK,OK
+dacapo-avrora            BASE_A128/BASE  parent wall 22.1 -> 21.8 s (x0.99)  Peak RSS 2.28 -> 2.23 GB (x0.98)  child VmHWM ? GB  size 25.89 -> 26.41 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+dacapo-avrora            FULL_A128/BASE  parent wall 22.1 -> 40.4 s (x1.83)  Peak RSS 2.28 -> 2.38 GB (x1.05)  child VmHWM 3.15 GB  size 25.89 -> 26.48 MB (x1.023)  status OK,OK
+dacapo-avrora            BASE_A256/BASE  parent wall 22.1 -> 21.1 s (x0.96)  Peak RSS 2.28 -> 2.26 GB (x0.99)  child VmHWM ? GB  size 25.89 -> 27.59 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+dacapo-avrora            FULL_A256/BASE  parent wall 22.1 -> 42.5 s (x1.93)  Peak RSS 2.28 -> 2.38 GB (x1.04)  child VmHWM 3.19 GB  size 25.89 -> 27.66 MB (x1.068)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-avrora            FULL SBS=13 SV=401 (ACC=372 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-avrora            BASE_A32 no profile  NO-PROFILE
+dacapo-avrora            FULL_A32 SBS=13 SV=401 (ACC=372 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-avrora            BASE_A128 no profile  NO-PROFILE
+dacapo-avrora            FULL_A128 SBS=13 SV=401 (ACC=372 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-avrora            BASE_A256 no profile  NO-PROFILE
+dacapo-avrora            FULL_A256 SBS=13 SV=401 (ACC=372 ELEM=3) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-avrora            BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.5 s
+dacapo-avrora            BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.3 s
+dacapo-avrora            BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.5 s
+dacapo-avrora            BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.8 s
+dacapo-avrora            BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.4 s
+dacapo-avrora            BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.5 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,84 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-stringbuilders  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+stringbuilders           BASE b1 size 22.61/23.90/9.63/11.67 | parent 33.0 s 2.28 GB | driver 33.7 s REUSED
+stringbuilders           BASE b2 size 22.61/23.90/9.63/11.67 | parent 30.1 s 2.25 GB | driver 31.3 s REUSED
+stringbuilders           SBS  b1 size 22.61/23.90/9.63/11.67 | parent 58.0 s 2.50 GB | driver 58.9 s | OK | child aa 21259 ms gen 26.1 s obs 27 s VmHWM 2.94 GB | wait 26.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SBS  b2 size 22.61/23.90/9.63/11.67 | parent 52.3 s 2.42 GB | driver 53.2 s | OK | child aa 23622 ms gen 27.1 s obs 27 s VmHWM 2.98 GB | wait 27.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SV   b1 size 22.68/23.96/9.66/11.67 | parent 57.7 s 2.40 GB | driver 59.1 s | OK | child aa 26270 ms gen 31.6 s obs 31 s VmHWM 4.02 GB | wait 31.6 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           SV   b2 size 22.68/23.96/9.66/11.67 | parent 59.5 s 2.39 GB | driver 60.7 s | OK | child aa 27691 ms gen 32.6 s obs 32 s VmHWM 4.13 GB | wait 33.1 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           LS   b1 size 22.61/23.90/9.63/11.67 | parent 51.1 s 2.39 GB | driver 52.0 s | ZERO-ADMIT | child aa 18108 ms gen 23.0 s obs 23 s VmHWM 2.64 GB | wait 23.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           LS   b2 size 22.61/23.90/9.63/11.67 | parent 53.1 s 2.34 GB | driver 54.2 s | ZERO-ADMIT | child aa 14476 ms gen 19.3 s obs 19 s VmHWM 2.66 GB | wait 19.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           BASE_A32 b1 size 22.42/23.70/9.43/11.67 | parent 32.8 s 2.18 GB | driver 34.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           BASE_A32 b2 size 22.42/23.70/9.43/11.67 | parent 30.7 s 2.17 GB | driver 31.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           SBS_A32 b1 size 22.42/23.70/9.43/11.67 | parent 53.6 s 2.51 GB | driver 54.7 s | OK | child aa 20041 ms gen 24.4 s obs 25 s VmHWM 3.03 GB | wait 24.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SBS_A32 b2 size 22.42/23.70/9.43/11.67 | parent 57.2 s 2.44 GB | driver 58.5 s | OK | child aa 18139 ms gen 24.9 s obs 26 s VmHWM 2.93 GB | wait 25.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SV_A32 b1 size 22.48/23.77/9.46/11.67 | parent 60.0 s 2.37 GB | driver 62.2 s | OK | child aa 25709 ms gen 31.1 s obs 31 s VmHWM 4.10 GB | wait 31.6 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           SV_A32 b2 size 22.48/23.77/9.46/11.67 | parent 58.2 s 2.63 GB | driver 59.6 s | OK | child aa 24215 ms gen 28.1 s obs 28 s VmHWM 4.06 GB | wait 28.6 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           LS_A32 b1 size 22.42/23.70/9.43/11.67 | parent 50.9 s 2.44 GB | driver 52.0 s | ZERO-ADMIT | child aa 13522 ms gen 17.8 s obs 18 s VmHWM 2.70 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           LS_A32 b2 size 22.42/23.70/9.43/11.67 | parent 46.7 s 2.48 GB | driver 47.8 s | ZERO-ADMIT | child aa 14753 ms gen 17.9 s obs 18 s VmHWM 2.72 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           BASE_A128 b1 size 23.14/24.42/10.11/11.67 | parent 31.7 s 2.26 GB | driver 32.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           BASE_A128 b2 size 23.14/24.42/10.11/11.67 | parent 28.4 s 2.18 GB | driver 29.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           SBS_A128 b1 size 23.14/24.42/10.11/11.67 | parent 58.8 s 2.38 GB | driver 59.7 s | OK | child aa 20511 ms gen 25.9 s obs 25 s VmHWM 2.98 GB | wait 26.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SBS_A128 b2 size 23.14/24.42/10.11/11.67 | parent 58.3 s 2.62 GB | driver 59.2 s | OK | child aa 23061 ms gen 27.6 s obs 28 s VmHWM 2.97 GB | wait 27.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SV_A128 b1 size 23.14/24.42/10.14/11.67 | parent 52.3 s 2.37 GB | driver 53.3 s | OK | child aa 20113 ms gen 23.1 s obs 23 s VmHWM 4.15 GB | wait 23.6 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           SV_A128 b2 size 23.14/24.42/10.14/11.67 | parent 60.0 s 2.46 GB | driver 61.4 s | OK | child aa 25451 ms gen 31.1 s obs 31 s VmHWM 4.13 GB | wait 31.6 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           LS_A128 b1 size 23.14/24.42/10.11/11.67 | parent 39.0 s 2.31 GB | driver 40.1 s | ZERO-ADMIT | child aa 14450 ms gen 18.6 s obs 19 s VmHWM 2.67 GB | wait 18.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           LS_A128 b2 size 23.14/24.42/10.11/11.67 | parent 43.3 s 2.35 GB | driver 44.2 s | ZERO-ADMIT | child aa 10432 ms gen 14.6 s obs 13 s VmHWM 2.75 GB | wait 14.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           BASE_A256 b1 size 24.12/25.40/11.15/11.60 | parent 27.6 s 2.18 GB | driver 29.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           BASE_A256 b2 size 24.12/25.40/11.15/11.60 | parent 29.6 s 2.16 GB | driver 30.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+stringbuilders           SBS_A256 b1 size 24.12/25.40/11.15/11.60 | parent 54.2 s 2.65 GB | driver 55.7 s | OK | child aa 17510 ms gen 21.6 s obs 21 s VmHWM 3.37 GB | wait 22.0 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SBS_A256 b2 size 24.12/25.40/11.15/11.60 | parent 52.9 s 2.35 GB | driver 54.4 s | OK | child aa 18127 ms gen 23.5 s obs 22 s VmHWM 2.93 GB | wait 23.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           SV_A256 b1 size 24.12/25.41/11.17/11.60 | parent 59.8 s 2.43 GB | driver 60.9 s | OK | child aa 18767 ms gen 24.5 s obs 24 s VmHWM 4.11 GB | wait 25.0 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           SV_A256 b2 size 24.12/25.41/11.17/11.60 | parent 52.8 s 2.35 GB | driver 54.3 s | OK | child aa 20729 ms gen 26.0 s obs 26 s VmHWM 4.09 GB | wait 26.0 s | SBS=0 SV=132(ACC=117 ELEM=5) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuilders           LS_A256 b1 size 24.12/25.40/11.15/11.60 | parent 54.1 s 2.40 GB | driver 55.1 s | ZERO-ADMIT | child aa 16064 ms gen 20.8 s obs 20 s VmHWM 2.65 GB | wait 21.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+stringbuilders           LS_A256 b2 size 24.12/25.40/11.15/11.60 | parent 50.5 s 2.38 GB | driver 52.1 s | ZERO-ADMIT | child aa 14190 ms gen 17.7 s obs 16 s VmHWM 2.59 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3811 TC=366 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+stringbuilders           SBS /BASE  parent wall 31.6 -> 55.1 s (x1.75)  Peak RSS 2.26 -> 2.46 GB (x1.09)  child VmHWM 2.96 GB  size 22.61 -> 22.61 MB (x1.000)  status OK,OK
+stringbuilders           SV  /BASE  parent wall 31.6 -> 58.6 s (x1.86)  Peak RSS 2.26 -> 2.40 GB (x1.06)  child VmHWM 4.07 GB  size 22.61 -> 22.68 MB (x1.003)  status OK,OK
+stringbuilders           LS  /BASE  parent wall 31.6 -> 52.1 s (x1.65)  Peak RSS 2.26 -> 2.37 GB (x1.04)  child VmHWM 2.65 GB  size 22.61 -> 22.61 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+stringbuilders           BASE_A32/BASE  parent wall 31.6 -> 31.8 s (x1.01)  Peak RSS 2.26 -> 2.17 GB (x0.96)  child VmHWM ? GB  size 22.61 -> 22.42 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+stringbuilders           SBS_A32/BASE  parent wall 31.6 -> 55.4 s (x1.76)  Peak RSS 2.26 -> 2.47 GB (x1.09)  child VmHWM 2.98 GB  size 22.61 -> 22.42 MB (x0.991)  status OK,OK
+stringbuilders           SV_A32/BASE  parent wall 31.6 -> 59.1 s (x1.87)  Peak RSS 2.26 -> 2.50 GB (x1.10)  child VmHWM 4.08 GB  size 22.61 -> 22.48 MB (x0.994)  status OK,OK
+stringbuilders           LS_A32/BASE  parent wall 31.6 -> 48.8 s (x1.55)  Peak RSS 2.26 -> 2.46 GB (x1.09)  child VmHWM 2.71 GB  size 22.61 -> 22.42 MB (x0.991)  status ZERO-ADMIT,ZERO-ADMIT
+stringbuilders           BASE_A128/BASE  parent wall 31.6 -> 30.0 s (x0.95)  Peak RSS 2.26 -> 2.22 GB (x0.98)  child VmHWM ? GB  size 22.61 -> 23.14 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+stringbuilders           SBS_A128/BASE  parent wall 31.6 -> 58.5 s (x1.86)  Peak RSS 2.26 -> 2.50 GB (x1.10)  child VmHWM 2.98 GB  size 22.61 -> 23.14 MB (x1.023)  status OK,OK
+stringbuilders           SV_A128/BASE  parent wall 31.6 -> 56.1 s (x1.78)  Peak RSS 2.26 -> 2.42 GB (x1.07)  child VmHWM 4.14 GB  size 22.61 -> 23.14 MB (x1.023)  status OK,OK
+stringbuilders           LS_A128/BASE  parent wall 31.6 -> 41.1 s (x1.30)  Peak RSS 2.26 -> 2.33 GB (x1.03)  child VmHWM 2.71 GB  size 22.61 -> 23.14 MB (x1.023)  status ZERO-ADMIT,ZERO-ADMIT
+stringbuilders           BASE_A256/BASE  parent wall 31.6 -> 28.6 s (x0.91)  Peak RSS 2.26 -> 2.17 GB (x0.96)  child VmHWM ? GB  size 22.61 -> 24.12 MB (x1.067)  status NO-PROFILE,NO-PROFILE
+stringbuilders           SBS_A256/BASE  parent wall 31.6 -> 53.5 s (x1.70)  Peak RSS 2.26 -> 2.50 GB (x1.10)  child VmHWM 3.15 GB  size 22.61 -> 24.12 MB (x1.067)  status OK,OK
+stringbuilders           SV_A256/BASE  parent wall 31.6 -> 56.3 s (x1.78)  Peak RSS 2.26 -> 2.39 GB (x1.06)  child VmHWM 4.10 GB  size 22.61 -> 24.12 MB (x1.067)  status OK,OK
+stringbuilders           LS_A256/BASE  parent wall 31.6 -> 52.3 s (x1.66)  Peak RSS 2.26 -> 2.39 GB (x1.06)  child VmHWM 2.62 GB  size 22.61 -> 24.12 MB (x1.067)  status ZERO-ADMIT,ZERO-ADMIT
+## admits per rep kind (b1 profile; FULL/mode builds)
+stringbuilders           SBS  SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+stringbuilders           SV   SBS=0 SV=132 (ACC=117 ELEM=5) LS=0 (JOINER=0)  OK
+stringbuilders           LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+stringbuilders           BASE_A32 no profile  NO-PROFILE
+stringbuilders           SBS_A32 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+stringbuilders           SV_A32 SBS=0 SV=132 (ACC=117 ELEM=5) LS=0 (JOINER=0)  OK
+stringbuilders           LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+stringbuilders           BASE_A128 no profile  NO-PROFILE
+stringbuilders           SBS_A128 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+stringbuilders           SV_A128 SBS=0 SV=132 (ACC=117 ELEM=5) LS=0 (JOINER=0)  OK
+stringbuilders           LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+stringbuilders           BASE_A256 no profile  NO-PROFILE
+stringbuilders           SBS_A256 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+stringbuilders           SV_A256 SBS=0 SV=132 (ACC=117 ELEM=5) LS=0 (JOINER=0)  OK
+stringbuilders           LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+stringbuilders           LS   b1 ZERO-ADMIT               child obs 23 s VmHWM 2.64 GB | parent wait 23.1 s | driver wall 52.0 s
+stringbuilders           LS   b2 ZERO-ADMIT               child obs 19 s VmHWM 2.66 GB | parent wait 19.5 s | driver wall 54.2 s
+stringbuilders           BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.2 s
+stringbuilders           BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.6 s
+stringbuilders           LS_A32 b1 ZERO-ADMIT               child obs 18 s VmHWM 2.70 GB | parent wait 18.0 s | driver wall 52.0 s
+stringbuilders           LS_A32 b2 ZERO-ADMIT               child obs 18 s VmHWM 2.72 GB | parent wait 18.0 s | driver wall 47.8 s
+stringbuilders           BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.9 s
+stringbuilders           BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.7 s
+stringbuilders           LS_A128 b1 ZERO-ADMIT               child obs 19 s VmHWM 2.67 GB | parent wait 18.5 s | driver wall 40.1 s
+stringbuilders           LS_A128 b2 ZERO-ADMIT               child obs 13 s VmHWM 2.75 GB | parent wait 14.5 s | driver wall 44.2 s
+stringbuilders           BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.1 s
+stringbuilders           BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.3 s
+stringbuilders           LS_A256 b1 ZERO-ADMIT               child obs 20 s VmHWM 2.65 GB | parent wait 21.0 s | driver wall 55.1 s
+stringbuilders           LS_A256 b2 ZERO-ADMIT               child obs 16 s VmHWM 2.59 GB | parent wait 18.0 s | driver wall 52.1 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

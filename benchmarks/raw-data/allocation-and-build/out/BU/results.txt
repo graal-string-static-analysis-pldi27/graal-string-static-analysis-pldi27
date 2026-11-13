@@ -1,0 +1,72 @@
+# C99 campaign results  SLOT=BU  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BU  CFGS=BASE SBS SV LS  runs/build=3  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## json-parser  [metric] AWFY json-parser Json 100 100 (ab-cmb recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=72
+  GEOMEAN SBS/BASE  time 0.639 [0.630,0.648] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN SV/BASE  time 0.996 [0.991,1.003] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN LS/BASE  time 1.008 [1.000,1.015] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  Total Runtime us                                                       SBS 0.639 [0.630,0.648] FASTER | SV 0.996 [0.991,1.003] n.s. | LS 1.008 [1.000,1.015] n.s.
+  Total Runtime us [cold]                                                SBS 0.624 [0.616,0.633] FASTER | SV 0.989 [0.981,0.995] FASTER | LS 1.001 [0.994,1.008] n.s.
+  ~alloc MB/iter                                                         SBS 0.214 [0.214,0.214] LESS | SV 1.000 [1.000,1.000] n.s. | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 0.992 [0.987,0.998] LESS | SV 0.998 [0.994,1.002] n.s. | LS 1.001 [0.997,1.005] n.s.
+
+## biojava  [metric] DaCapo biojava (ab-cmb recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=72
+  GEOMEAN SBS/BASE  time 0.885 [0.874,0.891] FASTER (1 keys)  alloc 0.315 [0.315,0.315] LESS (1 keys)
+  GEOMEAN SV/BASE  time 0.943 [0.931,0.951] FASTER (1 keys)  alloc 0.952 [0.952,0.952] LESS (1 keys)
+  GEOMEAN LS/BASE  time 0.998 [0.985,1.005] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           SBS 0.885 [0.874,0.891] FASTER | SV 0.943 [0.931,0.951] FASTER | LS 0.998 [0.985,1.005] n.s.
+  iteration ms [cold]                                                    SBS 0.865 [0.854,0.872] FASTER | SV 0.941 [0.928,0.948] FASTER | LS 0.999 [0.985,1.007] n.s.
+  ~alloc MB/iter                                                         SBS 0.315 [0.315,0.315] LESS | SV 0.952 [0.952,0.952] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 1.364 [1.327,1.404] MORE | SV 1.050 [1.009,1.105] MORE | LS 1.038 [1.007,1.085] MORE
+
+## jsoup  [metric] jsoup HtmlToPlainText large+medium (hunt/ab candspec)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=144
+  GEOMEAN SBS/BASE  time 0.998 [0.994,1.001] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (2 keys)
+  GEOMEAN SV/BASE  time 0.894 [0.890,0.897] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  GEOMEAN LS/BASE  time 0.997 [0.994,1.000] FASTER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (2 keys)
+  large: wall/rep ms                                                     SBS 0.998 [0.994,1.003] n.s. | SV 0.897 [0.893,0.902] FASTER | LS 0.999 [0.995,1.002] n.s.
+  large: wall/rep ms [cold]                                              SBS 0.998 [0.993,1.003] n.s. | SV 0.896 [0.890,0.901] FASTER | LS 0.997 [0.993,1.000] n.s.
+  medium: wall/rep ms                                                    SBS 0.997 [0.992,1.001] n.s. | SV 0.891 [0.886,0.895] FASTER | LS 0.996 [0.991,1.000] FASTER  BIMODAL(SBS)
+  medium: wall/rep ms [cold]                                             SBS 0.997 [0.992,1.001] n.s. | SV 0.890 [0.887,0.894] FASTER | LS 0.996 [0.992,1.000] FASTER
+  ~alloc MB/iter large                                                   SBS 1.000 [1.000,1.000] n.s. | SV 0.921 [0.921,0.921] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~alloc MB/iter medium                                                  SBS 1.000 [1.000,1.000] n.s. | SV 0.923 [0.923,0.923] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB large                                                          SBS 1.000 [0.996,1.004] n.s. | SV 0.998 [0.995,1.001] n.s. | LS 0.999 [0.996,1.001] n.s.
+  ~rss MB medium                                                         SBS 1.000 [0.995,1.005] n.s. | SV 0.996 [0.993,1.000] n.s. | LS 0.998 [0.994,1.002] n.s.
+
+## dacapo-batik  [metric] DaCapo batik (C99 deploy)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=72
+  GEOMEAN SBS/BASE  time 0.992 [0.982,1.004] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.997 [0.988,1.005] n.s. (1 keys)  alloc 0.998 [0.998,0.998] LESS (1 keys)
+  GEOMEAN LS/BASE  time 0.997 [0.990,1.004] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           SBS 0.992 [0.982,1.004] n.s. | SV 0.997 [0.988,1.005] n.s. | LS 0.997 [0.990,1.004] n.s.
+  iteration ms [cold]                                                    SBS 1.011 [0.988,1.035] n.s. | SV 0.996 [0.980,1.013] n.s. | LS 0.998 [0.979,1.016] n.s.
+  ~alloc MB/iter                                                         SBS 1.000 [1.000,1.000] n.s. | SV 0.998 [0.998,0.998] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 0.983 [0.942,1.024] n.s. | SV 1.005 [0.982,1.028] n.s. | LS 1.004 [0.979,1.028] n.s.
+
+## regex-redux  [metric] regex-redux fasta 5M (recheck s2 recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=72
+  GEOMEAN SBS/BASE  time 1.001 [0.991,1.013] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.991 [0.978,1.003] n.s. (1 keys)  alloc 0.717 [0.717,0.717] LESS (1 keys)
+  GEOMEAN LS/BASE  time 1.002 [0.990,1.014] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration s                                                            SBS 1.001 [0.991,1.013] n.s. | SV 0.991 [0.978,1.003] n.s. | LS 1.002 [0.990,1.014] n.s.
+  iteration s [cold]                                                     SBS 0.991 [0.974,1.010] n.s. | SV 0.985 [0.967,1.003] n.s. | LS 0.996 [0.981,1.010] n.s.
+  ~alloc MB/iter                                                         SBS 1.000 [1.000,1.000] n.s. | SV 0.717 [0.717,0.717] LESS | LS 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 1.034 [0.993,1.072] n.s. | SV 0.961 [0.927,0.991] LESS | LS 1.034 [0.988,1.080] n.s.
+
+## luindex  [metric] DaCapo luindex (ab-cmb recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=72
+  GEOMEAN SBS/BASE  time 1.017 [0.999,1.048] n.s. (1 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  GEOMEAN SV/BASE  time 1.007 [1.001,1.016] SLOWER (1 keys)  alloc 0.931 [0.931,0.931] LESS (1 keys)
+  GEOMEAN LS/BASE  time 1.011 [1.008,1.014] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  iteration ms                                                           SBS 1.017 [0.999,1.048] n.s. | SV 1.007 [1.001,1.016] SLOWER | LS 1.011 [1.008,1.014] SLOWER  BIMODAL(BASE,SBS,SV)
+  iteration ms [cold]                                                    SBS 1.017 [1.000,1.048] SLOWER | SV 1.010 [1.004,1.018] SLOWER | LS 1.011 [1.007,1.014] SLOWER  BIMODAL(SBS,SV)
+  ~alloc MB/iter                                                         SBS 1.000 [1.000,1.000] MORE | SV 0.931 [0.931,0.931] LESS | LS 1.000 [1.000,1.000] MORE
+  ~rss MB                                                                SBS 0.997 [0.992,1.003] n.s. | SV 1.066 [1.052,1.081] MORE | LS 1.003 [0.997,1.009] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  json-parser                0.639*|0.214*     0.996|1.000       1.008|1.000      
+  biojava                    0.885*|0.315*     0.943*|0.952*     0.998|1.000      
+  jsoup                      0.998|1.000       0.894*|0.922*     0.997*|1.000     
+  dacapo-batik               0.992|1.000       0.997|0.998*      0.997|1.000      
+  regex-redux                1.001|1.000       0.991|0.717*      1.002|1.000      
+  luindex                    1.017|1.000*      1.007*|0.931*     1.011*|1.000*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

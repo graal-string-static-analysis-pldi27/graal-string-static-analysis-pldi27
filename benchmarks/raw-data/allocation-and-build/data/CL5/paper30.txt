@@ -1,0 +1,76 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL5  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## yauaa  starts BASE:3 FULL:3  time keys 15
+  FULL/BASE time  ratio 0.9979  (mean FULL 0.9976 n=3, BASE 0.9997 n=3)  error margin 0.0157 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9954  (mean FULL 0.9954 n=3, BASE 1.0000 n=3)  error margin 0.0114 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9995  (mean FULL 0.9971 n=30 iterations, BASE 0.9977 n=30)  error margin 0.0193 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 15 keys]
+    key AnalyzerBenchmarks.android6Chrome46                          BASE 0.496667 sd 0.00473  FULL 0.506333 sd 0.00306  [lower]
+    key AnalyzerBenchmarks.androidPhone                              BASE 0.699667 sd 0.017  FULL 0.659 sd 0.01  [lower]
+    key AnalyzerBenchmarks.googleAdsBot                              BASE 0.087 sd 0.00346  FULL 0.091 sd 0.001  [lower]
+    key AnalyzerBenchmarks.googleAdsBotMobile                        BASE 0.349667 sd 0.0157  FULL 0.350333 sd 0.02  [lower]
+    key AnalyzerBenchmarks.googleBotMobileAndroid                    BASE 0.576667 sd 0.0106  FULL 0.57 sd 0.0125  [lower]
+    key AnalyzerBenchmarks.googlebot                                 BASE 0.15 sd 0.0104  FULL 0.152 sd 0.00794  [lower]
+    key AnalyzerBenchmarks.hackerSQL                                 BASE 0.0803333 sd 0.00252  FULL 0.0793333 sd 0.00252  [lower]
+    key AnalyzerBenchmarks.hackerShellShock                          BASE 0.0586667 sd 0.000577  FULL 0.0586667 sd 0.00115  [lower]
+    key AnalyzerBenchmarks.iPad                                      BASE 0.283667 sd 0.00945  FULL 0.274667 sd 0.0118  [lower]
+    key AnalyzerBenchmarks.iPhone                                    BASE 0.286 sd 0.004  FULL 0.293 sd 0.00557  [lower]
+    key AnalyzerBenchmarks.iPhoneFacebookApp                         BASE 0.616333 sd 0.0175  FULL 0.612333 sd 0.0232  [lower]
+    key AnalyzerBenchmarks.win10Chrome51                             BASE 0.271333 sd 0.00252  FULL 0.272 sd 0.00755  [lower]
+    key AnalyzerBenchmarks.win10Edge13                               BASE 0.310667 sd 0.00569  FULL 0.304 sd 0.0144  [lower]
+    key AnalyzerBenchmarks.win10IE11                                 BASE 0.262 sd 0.001  FULL 0.263333 sd 0.00503  [lower]
+    key AnalyzerBenchmarks.win7ie11                                  BASE 0.267667 sd 0.00702  FULL 0.268 sd 0.00889  [lower]
+
+## sql-formatter  starts BASE:3 FULL:3  time keys 1
+  FULL/BASE time  ratio 1.0075  (mean FULL 1.0075 n=3, BASE 1.0000 n=3)  error margin 0.0047 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9823  (mean FULL 0.9823 n=3, BASE 1.0000 n=3)  error margin 0.0049 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0075  (mean FULL 1.0075 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0060 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key Benchmark.format                                             BASE 181386 sd 434  FULL 182751 sd 852  [lower]
+
+## commons-text  starts BASE:3 FULL:3  time keys 4
+  FULL/BASE time  ratio 1.0071  (mean FULL 1.0069 n=3, BASE 0.9998 n=3)  error margin 0.0111 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0029  (mean FULL 1.0029 n=3, BASE 1.0000 n=3)  error margin 0.0159 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0071  (mean FULL 1.0069 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0095 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 4 keys]
+    key LongestCommonSubsequencePerformance.testLCS                  BASE 3.73467 sd 0.0658  FULL 3.84567 sd 0.185  [lower]
+    key LongestCommonSubsequencePerformance.testLCSBaseline          BASE 1.80167 sd 0.0384  FULL 1.80167 sd 0.0384  [lower]
+    key LongestCommonSubsequencePerformance.testLCSLen               BASE 1.64833 sd 0.0491  FULL 1.66833 sd 0.0466  [lower]
+    key LongestCommonSubsequencePerformance.testLCSLenBaseline       BASE 1.821 sd 0.0366  FULL 1.79833 sd 0.037  [lower]
+
+## flexmark  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 0.9976  (mean FULL 0.9977 n=3, BASE 1.0000 n=3)  error margin 0.0043 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9948  (mean FULL 0.9948 n=3, BASE 1.0000 n=3)  error margin 0.0041 (max sd)  paper-significance n.s.
+    key SpecBenchmark.examples                                       BASE 59.645 sd 0.247  FULL 59.315 sd 0.153  [higher]
+    key SpecBenchmark.wholeSpec                                      BASE 27.5937 sd 0.145  FULL 27.878 sd 0.165  [higher]
+
+## jsqlparser  starts BASE:3 FULL:3  time keys 1
+  FULL/BASE time  ratio 1.0299  (mean FULL 1.0299 n=3, BASE 1.0000 n=3)  error margin 0.0186 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9740  (mean FULL 0.9740 n=3, BASE 1.0000 n=3)  error margin 0.0257 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0299  (mean FULL 1.0299 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0187 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key JSQLParserBenchmark.parseSQLStatements latest                BASE 51.1073 sd 0.668  FULL 52.6353 sd 0.949  [lower]
+
+## mustache  starts BASE:3 FULL:3  time keys 5
+  FULL/BASE time  ratio 0.9983  (mean FULL 0.9983 n=3, BASE 1.0001 n=3)  error margin 0.0073 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9993  (mean FULL 0.9993 n=3, BASE 1.0000 n=3)  error margin 0.0047 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9983  (mean FULL 0.9983 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0067 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 5 keys]
+    key Main.benchEscapeHTML                                         BASE 366.662 sd 5.8  FULL 360.649 sd 4  [higher]
+    key Main.benchEscapeHTMLwithSW                                   BASE 128.605 sd 0.257  FULL 128.643 sd 0.302  [higher]
+    key TweetBench.testCompilation                                   BASE 16048.1 sd 189  FULL 16212.7 sd 206  [higher]
+    key TweetBench.testExecution                                     BASE 804238 sd 3.69e+03  FULL 803589 sd 1.12e+04  [higher]
+    key TweetBench.testTimeline                                      BASE 39649.5 sd 685  FULL 40273.4 sd 384  [higher]
+
+## snakeyaml-engine  starts BASE:3 FULL:3  time keys 4
+  FULL/BASE time  ratio 1.0151  (mean FULL 1.0148 n=3, BASE 0.9997 n=3)  error margin 0.0091 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0049  (mean FULL 1.0049 n=3, BASE 1.0000 n=3)  error margin 0.0067 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0154  (mean FULL 1.0140 n=30 iterations, BASE 0.9985 n=30)  error margin 0.0282 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 4 keys]
+    key ParseBenchmark.load 1000                                     BASE 2.05733 sd 0.031  FULL 2.10767 sd 0.0522  [lower]
+    key ParseBenchmark.load 100000                                   BASE 753.037 sd 41  FULL 824.928 sd 11  [lower]
+    key ParseBenchmark.parse 1000                                    BASE 1.10933 sd 0.011  FULL 1.07133 sd 0.00252  [lower]
+    key ParseBenchmark.parse 100000                                  BASE 118.305 sd 0.525  FULL 115.793 sd 0.563  [lower]
+
+## fastcsv  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 0.9861  (mean FULL 0.9862 n=3, BASE 1.0001 n=3)  error margin 0.0090 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0124  (mean FULL 1.0124 n=3, BASE 1.0000 n=3)  error margin 0.0115 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9861  (mean FULL 0.9863 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0104 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key FastCsvReadBenchmark.read                                    BASE 5.94149e+06 sd 7.76e+04  FULL 6.02802e+06 sd 5.3e+04  [higher]
+    key FastCsvWriteBenchmark.write                                  BASE 1.3427e+06 sd 8.79e+03  FULL 1.36082e+06 sd 1.85e+04  [higher]
+
+PAPER30-DONE

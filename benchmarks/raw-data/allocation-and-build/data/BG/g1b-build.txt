@@ -1,0 +1,21 @@
+=== 2026-11-07T19:25:13+00:00 FIN_ROWS_DIR=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/rows SLOTS_TSV=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/slots-g1b.tsv SLOT=G1B ROWS=guava-g1b CFGS=BASE SBS SV LS PHASE=build OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b RPB=2 NB=1
+PRE /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b/meta/run.tsv records CFGS=[BASE FULL], this run adds SBS (one CFGS set per slot; use a fresh OUT)
+RUN-DONE exit=1
+=== 2026-11-08T12:48:58+00:00 FIN_ROWS_DIR=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/rows SLOTS_TSV=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/slots-g1b.tsv SLOT=G1B ROWS=guava-g1b CFGS=BASE SBS SV LS PHASE=build OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG RPB=2 NB=1
+PRE WANT_BUILD unset: give the commit the CE dist was rebuilt at (its BUILD_COMMIT)
+RUN-DONE exit=1
+=== 2026-11-08T12:49:55+00:00 FIN_ROWS_DIR=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/rows SLOTS_TSV=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/alloc/g1b/slots-g1b.tsv SLOT=G1B ROWS=guava-g1b CFGS=BASE SBS SV LS PHASE=build OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG RPB=2 NB=1
+WARN-BUSY build-start: loadavg1=0.13; other processes (timing may be disturbed; flag the round):
+    680393 /bin/bash -c source /home/anonymous/.claude/shell-snapshots/snapshot-bash-1793474595756-f2youl.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \builtin unalias -- 'unsetenv'; \builtin 
+    680397 bash /home/anonymous/.local/bin/pi-task --session c100-fin-w2 --cwd /home/anonymous/graal-string-analysis/benchmarks/cycle100/final --timeout 259200 -f pi-brief-w2.txt
+    680403 timeout 259200 pi -p --mode json --session-dir /home/anonymous/.pi/task-sessions --session-id c100-fin-w2 ORCHESTRATOR SETTINGS FOR THIS JOB (two steps, run strictly one after the other, machine exclusive
+2026-11-08T12:50:07+00:00 STEP build-guava-g1b-BASE-b1 PASS rc=0 wall=12s ok /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG/bin/guava-g1b-BASE-b1 wall=11.6s rc=0  
+2026-11-08T12:50:30+00:00 STEP build-guava-g1b-SBS-b1 PASS rc=0 wall=23s ok /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG/bin/guava-g1b-SBS-b1 wall=22.7s rc=0  OK CTX-OK ctxk=1 pathk=1 pathk.bwd=1 
+2026-11-08T12:50:53+00:00 STEP build-guava-g1b-SV-b1 PASS rc=0 wall=23s ok /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG/bin/guava-g1b-SV-b1 wall=22.7s rc=0  OK CTX-OK ctxk=1 pathk=1 pathk.bwd=1 
+2026-11-08T12:51:13+00:00 STEP build-guava-g1b-LS-b1 PASS rc=0 wall=20s ok /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/g1b-BG/bin/guava-g1b-LS-b1 wall=20.3s rc=0  OK CTX-OK ctxk=1 pathk=1 pathk.bwd=1 
+2026-11-08T12:51:13+00:00 STEP jvmref-guava-g1b PASS rc=0 wall=0s cached /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/refs/guava-g1b/main-6f4bae40dbeb.sig
+2026-11-08T12:54:34+00:00 STEP sanity-guava-g1b-BASE-b1 PASS rc=0 wall=201s sanity ok (rows vs jvm) arms=[main]
+2026-11-08T12:57:56+00:00 STEP sanity-guava-g1b-SBS-b1 PASS rc=0 wall=202s sanity ok (rows vs jvm) arms=[main]
+2026-11-08T13:01:16+00:00 STEP sanity-guava-g1b-SV-b1 PASS rc=0 wall=200s sanity ok (rows vs jvm) arms=[main]
+2026-11-08T13:04:38+00:00 STEP sanity-guava-g1b-LS-b1 PASS rc=0 wall=202s sanity ok (rows vs jvm) arms=[main]
+RUN-DONE exit=0

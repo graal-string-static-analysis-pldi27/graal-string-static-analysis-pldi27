@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CU1-dacapo-pmd-FULL-fc1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-pmd               BASE b1 size 57.15/59.76/25.78/28.64 | parent 23.7 s 3.47 GB | driver 24.4 s REUSED
+dacapo-pmd               BASE b2 size 57.15/59.76/25.78/28.64 | parent 23.8 s 3.63 GB | driver 24.6 s REUSED
+dacapo-pmd               BASE b3 size 57.15/59.76/25.78/28.64 | parent 23.9 s 3.38 GB | driver 24.6 s REUSED
+dacapo-pmd               FULL b1 size 57.41/60.02/25.97/28.70 | parent 59.3 s 5.20 GB | driver 60.1 s | OK | child aa 31235 ms gen 34.2 s obs 34 s VmHWM 11.38 GB | wait 34.0 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b2 size 57.41/60.02/25.97/28.70 | parent 59.2 s 5.03 GB | driver 60.0 s | OK | child aa 31100 ms gen 34.0 s obs 34 s VmHWM 11.32 GB | wait 34.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b3 size 57.41/60.02/25.97/28.70 | parent 58.8 s 4.81 GB | driver 59.6 s | OK | child aa 30699 ms gen 33.6 s obs 33 s VmHWM 11.53 GB | wait 33.6 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+## build cost vs stock (means over builds)
+dacapo-pmd               FULL/BASE  parent wall 23.8 -> 59.1 s (x2.48)  Peak RSS 3.49 -> 5.01 GB (x1.44)  child VmHWM 11.41 GB  size 57.15 -> 57.41 MB (x1.005)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-pmd               FULL SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

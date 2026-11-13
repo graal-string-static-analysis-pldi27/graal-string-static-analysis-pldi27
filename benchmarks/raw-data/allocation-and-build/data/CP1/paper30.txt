@@ -1,0 +1,46 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CP1  CFGS=BASE FULL  RPB=5  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## minimal-json  starts BASE:15 FULL:15  time keys 24
+  FULL/BASE time  ratio 1.0011  (mean FULL 1.0008 n=15, BASE 0.9998 n=15)  error margin 0.0069 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9857  (mean FULL 0.9857 n=15, BASE 1.0000 n=15)  error margin 0.0293 (max sd)  paper-significance n.s.
+    key input=caliper parser=gson method=timeReadFromString          BASE 375916 sd 2.8e+03  FULL 391419 sd 1.19e+04  [lower]
+    key input=caliper parser=gson method=timeWriteToString           BASE 953829 sd 1.25e+04  FULL 946126 sd 1.07e+04  [lower]
+    key input=caliper parser=jackson method=timeReadFromString       BASE 415698 sd 3.95e+03  FULL 420669 sd 6.04e+03  [lower]
+    key input=caliper parser=jackson method=timeWriteToString        BASE 176373 sd 1.91e+03  FULL 176195 sd 866  [lower]
+    key input=caliper parser=minimal-json method=timeReadFromString  BASE 331578 sd 1.81e+04  FULL 343910 sd 1.48e+04  [lower]
+    key input=caliper parser=minimal-json method=timeWriteToString   BASE 546002 sd 1.12e+04  FULL 540524 sd 2.98e+03  [lower]
+    key input=caliper parser=org-json method=timeReadFromString      BASE 3.23182e+06 sd 2.42e+04  FULL 3.24152e+06 sd 2.07e+04  [lower]
+    key input=caliper parser=org-json method=timeWriteToString       BASE 2.55915e+06 sd 3.58e+04  FULL 2.52377e+06 sd 2.61e+04  [lower]
+    key input=long-string parser=gson method=timeReadFromString      BASE 875.333 sd 36.5  FULL 851.6 sd 12.1  [lower]
+    key input=long-string parser=gson method=timeWriteToString       BASE 2142.4 sd 50.2  FULL 2071.47 sd 55.3  [lower]
+    key input=long-string parser=jackson method=timeReadFromString   BASE 606.2 sd 24.1  FULL 613.6 sd 21.4  [lower]
+    key input=long-string parser=jackson method=timeWriteToString    BASE 674.4 sd 42.3  FULL 661.267 sd 31.3  [lower]
+    key input=long-string parser=minimal-json method=timeReadFromStr BASE 1187.2 sd 5.35  FULL 1200.93 sd 37.7  [lower]
+    key input=long-string parser=minimal-json method=timeWriteToStri BASE 2829.2 sd 71.8  FULL 2787.67 sd 15  [lower]
+    key input=long-string parser=org-json method=timeReadFromString  BASE 15564.1 sd 111  FULL 15519 sd 135  [lower]
+    key input=long-string parser=org-json method=timeWriteToString   BASE 13459.6 sd 193  FULL 13412 sd 124  [lower]
+    key input=rap parser=gson method=timeReadFromString              BASE 223507 sd 1.48e+03  FULL 224911 sd 6.66e+03  [lower]
+    key input=rap parser=gson method=timeWriteToString               BASE 756412 sd 7.45e+03  FULL 765230 sd 1.73e+04  [lower]
+    key input=rap parser=jackson method=timeReadFromString           BASE 158987 sd 2.25e+03  FULL 170239 sd 7.04e+03  [lower]
+    key input=rap parser=jackson method=timeWriteToString            BASE 91035.3 sd 1.06e+03  FULL 91067.7 sd 638  [lower]
+    key input=rap parser=minimal-json method=timeReadFromString      BASE 177475 sd 2.06e+03  FULL 174153 sd 1.65e+03  [lower]
+    key input=rap parser=minimal-json method=timeWriteToString       BASE 164716 sd 2.7e+03  FULL 163233 sd 1.07e+03  [lower]
+    key input=rap parser=org-json method=timeReadFromString          BASE 1.39563e+06 sd 1.05e+04  FULL 1.39354e+06 sd 7.53e+03  [lower]
+    key input=rap parser=org-json method=timeWriteToString           BASE 821595 sd 1.1e+04  FULL 810946 sd 6.06e+03  [lower]
+
+## gson  starts BASE:15 FULL:15  time keys 11
+  FULL/BASE time  ratio 1.0145  (mean FULL 1.0134 n=15, BASE 0.9989 n=15)  error margin 0.0225 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9886  (mean FULL 0.9886 n=15, BASE 1.0000 n=15)  error margin 0.0001 (max sd)  paper-significance FASTER/LESS
+    key parse document=READER_LONG api=GSON_BIND                     BASE 643202 sd 2.31e+04  FULL 667900 sd 2.82e+04  [lower]
+    key parse document=READER_LONG api=GSON_DOM                      BASE 695694 sd 1.03e+05  FULL 686313 sd 8.2e+04  [lower]
+    key parse document=READER_LONG api=GSON_STREAM                   BASE 564022 sd 1.56e+04  FULL 587738 sd 2.25e+04  [lower]
+    key parse document=READER_SHORT api=GSON_BIND                    BASE 45957.9 sd 1.34e+03  FULL 47253.8 sd 1.41e+03  [lower]
+    key parse document=READER_SHORT api=GSON_DOM                     BASE 65733.1 sd 3.23e+03  FULL 67565.9 sd 3.96e+03  [lower]
+    key parse document=READER_SHORT api=GSON_STREAM                  BASE 48935.2 sd 2.83e+03  FULL 50795.4 sd 1.09e+03  [lower]
+    key parse document=TWEETS api=GSON_BIND                          BASE 560926 sd 3.98e+03  FULL 570836 sd 3.22e+03  [lower]
+    key parse document=TWEETS api=GSON_DOM                           BASE 348363 sd 4.63e+03  FULL 356898 sd 2.42e+04  [lower]
+    key parse document=TWEETS api=GSON_STREAM                        BASE 236753 sd 4.13e+03  FULL 238491 sd 5.12e+03  [lower]
+    key serialize pretty=false                                       BASE 846.533 sd 21.8  FULL 821 sd 5.04  [lower]
+    key serialize pretty=true                                        BASE 1099.07 sd 21.3  FULL 1076.8 sd 8.92  [lower]
+
+PAPER30-DONE

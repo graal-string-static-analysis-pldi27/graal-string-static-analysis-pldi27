@@ -1,0 +1,61 @@
+1792864268.080438 ========================================================================================================================
+1792864268.081941 GraalVM Native Image: Generating 'guava-BASE-b2' (executable)...
+1792864268.081959 ========================================================================================================================
+1792864268.081970 For detailed information and explanations on the build output, visit:
+1792864268.081981 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792864268.081996 ------------------------------------------------------------------------------------------------------------------------
+1792864269.731286 [1/8] Initializing...                                                                                    (2.6s @ 0.26GB)
+1792864269.731545  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792864269.731675  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792864269.731749  C compiler: gcc (linux, x86_64, 15.2.0)
+1792864269.731861  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792864269.731885  1 user-specific feature(s):
+1792864269.732087  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792864269.732705 ------------------------------------------------------------------------------------------------------------------------
+1792864269.732720  1 experimental option(s) unlocked:
+1792864269.732765  - '-H:CodeAlignment' (origin(s): command line)
+1792864269.733716 ------------------------------------------------------------------------------------------------------------------------
+1792864269.733730 Build resources:
+1792864269.733784  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792864269.733821  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792864272.249937 [2/8] Performing analysis...  [*****]                                                                    (2.4s @ 0.69GB)
+1792864272.263913     3,417 types,   3,867 fields, and  15,804 methods found reachable
+1792864272.264448     1,114 types,      39 fields, and     441 methods registered for reflection
+1792864272.264484        58 types,      59 fields, and      52 methods registered for JNI access
+1792864272.264511         0 downcalls and 0 upcalls registered for foreign access
+1792864272.264562         4 native libraries: dl, pthread, rt, z
+1792864273.040675 [3/8] Building universe...                                                                               (0.8s @ 0.81GB)
+1792864273.415819 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.91GB)
+1792864273.875446 [5/8] Inlining methods...     [****]                                                                     (0.4s @ 0.62GB)
+1792864276.366153 [6/8] Compiling methods...    [**]                                                                       (2.5s @ 0.69GB)
+1792864277.206230 [7/8] Laying out methods...   [*]                                                                        (0.8s @ 0.64GB)
+1792864278.210048 [8/8] Creating image...       [*]                                                                        (0.9s @ 0.87GB)
+1792864278.210301    5.78MB (37.88%) for code area:     9,045 compilation units
+1792864278.210375    7.67MB (50.25%) for image heap:   90,759 objects and 55 resources
+1792864278.210413    1.81MB (11.87%) for other data
+1792864278.210442   15.26MB in total image size, 14.35MB in total file size
+1792864278.210465 ------------------------------------------------------------------------------------------------------------------------
+1792864278.211251 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792864278.211477    3.75MB java.base                                            1.47MB byte[] for code metadata
+1792864278.211521  909.82kB svm.jar (Native Image)                               1.23MB byte[] for java.lang.String
+1792864278.211549  365.62kB com.google.common.base                             849.02kB java.lang.String
+1792864278.211587  112.19kB java.logging                                       656.06kB com.oracle.svm.core.hub.DynamicHubCompanion
+1792864278.211701   90.80kB org.graalvm.nativeimage.base                       461.17kB byte[] for general heap data
+1792864278.211794   48.90kB jdk.proxy2                                         443.92kB java.lang.Class
+1792864278.211824   42.51kB jdk.proxy1                                         323.33kB java.util.HashMap$Node
+1792864278.211852   38.34kB com.google.common.collect                          316.86kB heap alignment
+1792864278.211880   38.09kB org.graalvm.nativeimage.configure                  223.42kB java.lang.Object[]
+1792864278.211912   28.03kB jdk.internal.vm.ci                                 182.08kB java.util.HashMap$Node[]
+1792864278.212777   87.42kB for 9 more packages                                  1.52MB for 977 more object types
+1792864278.213631 ------------------------------------------------------------------------------------------------------------------------
+1792864278.213637 Recommendations:
+1792864278.213680  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792864278.213689  HEAP: Set max heap for improved and more predictable memory usage.
+1792864278.213770  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792864278.215536 ------------------------------------------------------------------------------------------------------------------------
+1792864278.216199                         0.7s (5.7% of total time) in 37 GCs | Peak RSS: 2.34GB | CPU load: 13.94
+1792864278.216506 ------------------------------------------------------------------------------------------------------------------------
+1792864278.216511 Build artifacts:
+1792864278.216899  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/guava-BASE-b2 (executable)
+1792864278.216919 ========================================================================================================================
+1792864278.216948 Finished generating 'guava-BASE-b2' in 11.1s.

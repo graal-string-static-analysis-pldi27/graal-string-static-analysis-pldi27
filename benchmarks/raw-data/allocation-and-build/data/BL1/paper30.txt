@@ -1,0 +1,117 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL1  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## stringbuffers  starts BASE:3 SBS:3 SV:3 LS:3  time keys 3
+  SBS/BASE time  ratio 1.0069  (mean SBS 1.0070 n=3, BASE 1.0001 n=3)  error margin 0.0134 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9948  (mean SBS 0.9948 n=3, BASE 1.0000 n=3)  error margin 0.0123 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.6276  (mean SV 0.6276 n=3, BASE 1.0001 n=3)  error margin 0.0072 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 2.0461  (mean SV 2.0461 n=3, BASE 1.0000 n=3)  error margin 0.0498 (max sd)  paper-significance SLOWER/MORE
+  LS/BASE time  ratio 0.3301  (mean LS 0.3302 n=3, BASE 1.0001 n=3)  error margin 0.0072 (max sd)  paper-significance FASTER/LESS
+  LS/BASE alloc ratio 3.2692  (mean LS 3.2692 n=3, BASE 1.0000 n=3)  error margin 0.0303 (max sd)  paper-significance SLOWER/MORE
+  SBS/BASE iter  ratio 1.0069  (mean SBS 1.0070 n=30 iterations, BASE 1.0002 n=30)  error margin 0.0116 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 3 keys]
+  SV/BASE iter  ratio 0.6276  (mean SV 0.6277 n=30 iterations, BASE 1.0002 n=30)  error margin 0.0076 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+  LS/BASE iter  ratio 0.3301  (mean LS 0.3302 n=30 iterations, BASE 1.0002 n=30)  error margin 0.0076 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+    key StringBuffers.appendAndToString                              BASE 24247.1 sd 330  SBS 23735.9 sd 318  SV 24327.9 sd 321  LS 198969 sd 4.18e+03  [higher]
+    key StringBuffers.substring                                      BASE 50057.9 sd 884  SBS 50003.9 sd 1.18e+03  SV 199009 sd 5.97e+03  LS 49967 sd 452  [higher]
+    key StringBuffers.toStringComplex                                BASE 9965.2 sd 170  SBS 9984.5 sd 126  SV 10108.9 sd 34.4  LS 33812.3 sd 105  [higher]
+
+## logback-perf  starts BASE:3 SBS:3 SV:3 LS:3  time keys 1
+  SBS/BASE time  ratio 0.9816  (mean SBS 0.9819 n=3, BASE 1.0002 n=3)  error margin 0.0190 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0152  (mean SBS 1.0152 n=3, BASE 1.0000 n=3)  error margin 0.0195 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9868  (mean SV 0.9870 n=3, BASE 1.0002 n=3)  error margin 0.0190 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.8949  (mean SV 0.8949 n=3, BASE 1.0000 n=3)  error margin 0.0161 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9805  (mean LS 0.9808 n=3, BASE 1.0002 n=3)  error margin 0.0190 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0171  (mean LS 1.0171 n=3, BASE 1.0000 n=3)  error margin 0.0161 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 0.9807  (mean SBS 0.9812 n=27 iterations, BASE 1.0005 n=27)  error margin 0.0263 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+  SV/BASE iter  ratio 0.9845  (mean SV 0.9849 n=27 iterations, BASE 1.0005 n=27)  error margin 0.0229 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+  LS/BASE iter  ratio 0.9792  (mean LS 0.9797 n=27 iterations, BASE 1.0005 n=27)  error margin 0.0229 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key FileAppenderBenchmark.enhancedLogbackToFile                  BASE 3323.14 sd 62.3  SBS 3385.22 sd 61.4  SV 3367.43 sd 53  LS 3388.41 sd 16.7  [higher]
+
+## jte  starts BASE:3 SBS:3 SV:3 LS:3  time keys 7
+  SBS/BASE time  ratio 0.9834  (mean SBS 0.9834 n=3, BASE 1.0000 n=3)  error margin 0.0122 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0209  (mean SBS 1.0209 n=3, BASE 1.0000 n=3)  error margin 0.0159 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9567  (mean SV 0.9566 n=3, BASE 1.0000 n=3)  error margin 0.0138 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 1.0250  (mean SV 1.0250 n=3, BASE 1.0000 n=3)  error margin 0.0159 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 0.9767  (mean LS 0.9766 n=3, BASE 1.0000 n=3)  error margin 0.0122 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0236  (mean LS 1.0236 n=3, BASE 1.0000 n=3)  error margin 0.0159 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 0.9835  (mean SBS 0.9834 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0107 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+  SV/BASE iter  ratio 0.9567  (mean SV 0.9566 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0117 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 7 keys]
+  LS/BASE iter  ratio 0.9767  (mean LS 0.9766 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0107 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 7 keys]
+    key TemplateOutputTest.stringBuilder                             BASE 764.348 sd 19  SBS 753.725 sd 10.2  SV 690.665 sd 15.9  LS 748.764 sd 10.2  [lower]
+    key TemplateOutputTest.templateOutput                            BASE 784.602 sd 18.7  SBS 752.288 sd 6.63  SV 769.895 sd 23.4  LS 759.117 sd 18.9  [lower]
+    key bench.JteBench.directString                                  BASE 1394.34 sd 28.4  SBS 1355.42 sd 2.93  SV 1351.13 sd 22  LS 1351.62 sd 22.3  [lower]
+    key bench.JteBench.engineString                                  BASE 1431.48 sd 11.4  SBS 1418.29 sd 14.7  SV 1391.3 sd 26.6  LS 1407.71 sd 33  [lower]
+    key bench.JteBench.engineStringEsc                               BASE 2433.74 sd 26.2  SBS 2421.85 sd 54.6  SV 2411.47 sd 27.9  LS 2396.79 sd 30.4  [lower]
+    key bench.JteBench.engineUtf8                                    BASE 1046.32 sd 9.38  SBS 1040.3 sd 39.2  SV 1026.39 sd 21.2  LS 1020.42 sd 4.84  [lower]
+    key bench.JteBench.engineUtf8Esc                                 BASE 2517.91 sd 18.4  SBS 2487.54 sd 38.4  SV 2276.3 sd 86.8  LS 2459.98 sd 8.9  [lower]
+
+## StringJoiner  starts BASE:3 SBS:3 SV:3 LS:3  time keys 32
+  SBS/BASE time  ratio 1.0015  (mean SBS 1.0014 n=3, BASE 0.9999 n=3)  error margin 0.0176 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9989  (mean SBS 0.9989 n=3, BASE 1.0000 n=3)  error margin 0.0119 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9935  (mean SV 0.9934 n=3, BASE 0.9999 n=3)  error margin 0.0192 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 1.0050  (mean SV 1.0050 n=3, BASE 1.0000 n=3)  error margin 0.0119 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 0.2126  (mean LS 0.2126 n=3, BASE 0.9999 n=3)  error margin 0.0176 (max sd)  paper-significance FASTER/LESS
+  LS/BASE alloc ratio 1.7421  (mean LS 1.7421 n=3, BASE 1.0000 n=3)  error margin 0.0119 (max sd)  paper-significance SLOWER/MORE
+  SBS/BASE iter  ratio 1.0015  (mean SBS 1.0013 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0146 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 32 keys]
+  SV/BASE iter  ratio 0.9935  (mean SV 0.9933 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0161 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 32 keys]
+  LS/BASE iter  ratio 0.2126  (mean LS 0.2125 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0146 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 32 keys]
+    key StringJoinerBenchmark.join 20 1 cyrillic                     BASE 576.042 sd 17.4  SBS 574.533 sd 20.7  SV 560.654 sd 24.7  LS 67.115 sd 1.12  [lower]
+    key StringJoinerBenchmark.join 20 1 latin                        BASE 579.791 sd 20.6  SBS 572.855 sd 17.4  SV 561.732 sd 19.1  LS 67.974 sd 1.25  [lower]
+    key StringJoinerBenchmark.join 20 128 cyrillic                   BASE 628.069 sd 3.96  SBS 627.604 sd 3.37  SV 624.345 sd 0.687  LS 67.1063 sd 0.922  [lower]
+    key StringJoinerBenchmark.join 20 128 latin                      BASE 628.698 sd 3.66  SBS 626.385 sd 1.12  SV 630.258 sd 8.03  LS 67.4087 sd 0.613  [lower]
+    key StringJoinerBenchmark.join 20 32 cyrillic                    BASE 556.169 sd 15.8  SBS 557.877 sd 10.8  SV 544.084 sd 22.5  LS 67.8827 sd 0.842  [lower]
+    key StringJoinerBenchmark.join 20 32 latin                       BASE 546.096 sd 10.9  SBS 549.076 sd 19.6  SV 539.542 sd 19.6  LS 67.726 sd 0.375  [lower]
+    key StringJoinerBenchmark.join 20 8 cyrillic                     BASE 551.972 sd 23.9  SBS 546.319 sd 23.1  SV 543.059 sd 15.4  LS 68.192 sd 0.758  [lower]
+    key StringJoinerBenchmark.join 20 8 latin                        BASE 559.021 sd 21.9  SBS 544.324 sd 13.5  SV 537.773 sd 11.4  LS 67.5723 sd 0.969  [lower]
+    key StringJoinerBenchmark.join 5 1 cyrillic                      BASE 150.988 sd 5.7  SBS 148.599 sd 6.18  SV 151.253 sd 8.09  LS 24.0143 sd 0.503  [lower]
+    key StringJoinerBenchmark.join 5 1 latin                         BASE 151.39 sd 5.95  SBS 152.271 sd 3.51  SV 151.47 sd 11.5  LS 23.891 sd 0.287  [lower]
+    key StringJoinerBenchmark.join 5 128 cyrillic                    BASE 164.525 sd 1.2  SBS 167.633 sd 6.8  SV 163.352 sd 0.0963  LS 24.515 sd 0.605  [lower]
+    key StringJoinerBenchmark.join 5 128 latin                       BASE 163.925 sd 0.0333  SBS 164.355 sd 1.38  SV 163.535 sd 0.167  LS 24.538 sd 0.844  [lower]
+    key StringJoinerBenchmark.join 5 32 cyrillic                     BASE 145.48 sd 6.26  SBS 145.275 sd 1.23  SV 141.639 sd 2.54  LS 24.2607 sd 0.489  [lower]
+    key StringJoinerBenchmark.join 5 32 latin                        BASE 142.715 sd 3.72  SBS 143.83 sd 1.83  SV 140.876 sd 1.22  LS 24.342 sd 0.534  [lower]
+    key StringJoinerBenchmark.join 5 8 cyrillic                      BASE 143.543 sd 4.27  SBS 144.101 sd 2.89  SV 142.501 sd 4.11  LS 24.2537 sd 0.618  [lower]
+    key StringJoinerBenchmark.join 5 8 latin                         BASE 143.021 sd 3.59  SBS 144.575 sd 2.91  SV 141.565 sd 4.76  LS 24.1257 sd 0.102  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 1 cyrillic             BASE 757.378 sd 5.16  SBS 756.46 sd 1.76  SV 751.535 sd 16.5  LS 263.043 sd 13.3  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 1 latin                BASE 751.692 sd 7.25  SBS 757.569 sd 2.19  SV 757.451 sd 3.17  LS 261.532 sd 9.48  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 128 cyrillic           BASE 826.594 sd 3.69  SBS 824.4 sd 4.5  SV 827.179 sd 3.61  LS 255.869 sd 3.07  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 128 latin              BASE 828.658 sd 2.12  SBS 827.006 sd 2.51  SV 836.953 sd 9.44  LS 257.023 sd 1.17  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 32 cyrillic            BASE 742.435 sd 7.23  SBS 732.278 sd 17.2  SV 737.85 sd 15.8  LS 257.13 sd 3.18  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 32 latin               BASE 743.401 sd 4.12  SBS 751.051 sd 12.5  SV 741.193 sd 11.8  LS 257.474 sd 5.45  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 8 cyrillic             BASE 741.363 sd 8.03  SBS 738.369 sd 20.1  SV 735.066 sd 10.9  LS 256.567 sd 2.82  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 8 latin                BASE 740.987 sd 6.75  SBS 741.312 sd 11.3  SV 735.075 sd 3.72  LS 265.104 sd 13.5  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 1 cyrillic              BASE 188.698 sd 5.45  SBS 208.949 sd 7.75  SV 198.231 sd 7.4  LS 62.059 sd 0.319  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 1 latin                 BASE 196.615 sd 4.15  SBS 192.45 sd 4.7  SV 195.83 sd 6.85  LS 62.059 sd 0.299  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 128 cyrillic            BASE 209.914 sd 10.2  SBS 206.663 sd 1.85  SV 205.67 sd 1.79  LS 62.0643 sd 0.319  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 128 latin               BASE 207.132 sd 5.29  SBS 207.024 sd 0.231  SV 206.358 sd 2.82  LS 62.344 sd 0.344  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 32 cyrillic             BASE 186.866 sd 5.95  SBS 189.636 sd 5.45  SV 188.717 sd 5.79  LS 62.4437 sd 0.346  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 32 latin                BASE 192.71 sd 4.15  SBS 187.034 sd 3.91  SV 186.745 sd 5.84  LS 62.053 sd 0.271  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 8 cyrillic              BASE 186.564 sd 4.58  SBS 185.946 sd 1.83  SV 192.801 sd 11.8  LS 62.111 sd 0.197  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 8 latin                 BASE 187.811 sd 6.45  SBS 191.956 sd 7.03  SV 186.192 sd 6.16  LS 62.0573 sd 0.329  [lower]
+
+## string-concat-startup  starts BASE:3 SBS:3 SV:3 LS:3  time keys 16
+  SBS/BASE time  ratio 1.0214  (mean SBS 1.0215 n=3, BASE 1.0000 n=3)  error margin 0.0158 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9804  (mean SBS 0.9804 n=3, BASE 1.0000 n=3)  error margin 0.0115 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 1.0092  (mean SV 1.0092 n=3, BASE 1.0000 n=3)  error margin 0.0056 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9923  (mean SV 0.9923 n=3, BASE 1.0000 n=3)  error margin 0.0067 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 0.2504  (mean LS 0.2504 n=3, BASE 1.0000 n=3)  error margin 0.0048 (max sd)  paper-significance FASTER/LESS
+  LS/BASE alloc ratio 4.6301  (mean LS 4.6301 n=3, BASE 1.0000 n=3)  error margin 0.0067 (max sd)  paper-significance SLOWER/MORE
+  SBS/BASE iter  ratio 1.0215  (mean SBS 1.0215 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0132 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 16 keys]
+  SV/BASE iter  ratio 1.0092  (mean SV 1.0092 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0048 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 16 keys]
+  LS/BASE iter  ratio 0.2504  (mean LS 0.2504 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0041 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 16 keys]
+    key StringConcatStartup.MixedLarge.run N/A                       BASE 19.157 sd 0.137  SBS 18.9177 sd 0.297  SV 18.912 sd 0.0699  LS 35.2283 sd 0.163  [higher]
+    key StringConcatStartup.MixedSmall.run N/A                       BASE 2839.29 sd 30.4  SBS 2806.62 sd 75.5  SV 2750.37 sd 102  LS 6841.84 sd 12.6  [higher]
+    key StringConcatStartup.StringLarge.run N/A                      BASE 21.598 sd 0.087  SBS 21.2683 sd 0.337  SV 21.139 sd 0.234  LS 162.043 sd 0.576  [higher]
+    key StringConcatStartup.StringSingle.constBool 4711              BASE 40028.9 sd 154  SBS 39367.1 sd 545  SV 38582.8 sd 482  LS 178239 sd 138  [higher]
+    key StringConcatStartup.StringSingle.constBoolString 4711        BASE 19936.9 sd 8.12  SBS 19776.1 sd 134  SV 19676.8 sd 318  LS 153044 sd 315  [higher]
+    key StringConcatStartup.StringSingle.constBoolean 4711           BASE 37563.5 sd 76.5  SBS 37033.1 sd 198  SV 36907.9 sd 115  LS 146212 sd 204  [higher]
+    key StringConcatStartup.StringSingle.constBooleanString 4711     BASE 16076 sd 16.9  SBS 16018.4 sd 55.7  SV 15979.1 sd 103  LS 150615 sd 277  [higher]
+    key StringConcatStartup.StringSingle.constFloat 4711             BASE 11034.1 sd 22.6  SBS 10988.8 sd 33  SV 11046.9 sd 35.2  LS 17420.6 sd 33.2  [higher]
+    key StringConcatStartup.StringSingle.constFloatString 4711       BASE 8698.21 sd 66.7  SBS 8680.25 sd 48.1  SV 8655.37 sd 37.8  LS 17446.3 sd 68.6  [higher]
+    key StringConcatStartup.StringSingle.constInt 4711               BASE 33161.3 sd 412  SBS 32383.4 sd 459  SV 33245.3 sd 224  LS 73784.7 sd 106  [higher]
+    key StringConcatStartup.StringSingle.constIntString 4711         BASE 17694.2 sd 206  SBS 17426.5 sd 88.7  SV 17641.3 sd 134  LS 75345.9 sd 113  [higher]
+    key StringConcatStartup.StringSingle.constInteger 4711           BASE 31004.5 sd 924  SBS 30948.3 sd 970  SV 31265.5 sd 265  LS 85385.2 sd 1.18e+03  [higher]
+    key StringConcatStartup.StringSingle.constIntegerString 4711     BASE 14714.2 sd 71.3  SBS 12436.4 sd 3.37e+03  SV 14459.3 sd 91.1  LS 87522.9 sd 191  [higher]
+    key StringConcatStartup.StringSingle.constString 4711            BASE 36497.9 sd 200  SBS 36028.9 sd 579  SV 37004.1 sd 962  LS 170128 sd 156  [higher]
+    key StringConcatStartup.StringThree.stringIntString 4711         BASE 12543.8 sd 64.2  SBS 12553 sd 109  SV 12580.4 sd 40  LS 73468.5 sd 86.6  [higher]
+    key StringConcatStartup.StringThree.stringIntegerString 4711     BASE 11006.3 sd 31.5  SBS 11005.8 sd 12.7  SV 10902.7 sd 30.8  LS 82819.3 sd 113  [higher]
+
+PAPER30-DONE

@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/csv-parsers-comparison  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+csv-parsers-comparison   BASE b1 size 33.29/35.14/15.43/16.19 | parent 39.7 s 2.66 GB | driver 40.9 s REUSED
+csv-parsers-comparison   BASE b2 size 33.29/35.14/15.43/16.19 | parent 34.3 s 2.62 GB | driver 35.6 s REUSED
+csv-parsers-comparison   FULL b1 size 33.29/35.15/15.46/16.19 | parent 72.0 s 3.29 GB | driver 73.4 s | OK | child aa 28395 ms gen 35.0 s obs 35 s VmHWM 4.24 GB | wait 35.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   FULL b2 size 33.29/35.15/15.46/16.19 | parent 76.0 s 3.30 GB | driver 77.7 s | OK | child aa 28625 ms gen 35.4 s obs 36 s VmHWM 4.34 GB | wait 35.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6801 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   BASE_A32 b1 size 32.97/34.82/15.13/16.19 | parent 26.9 s 2.74 GB | driver 28.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   BASE_A32 b2 size 32.97/34.82/15.13/16.19 | parent 33.8 s 2.72 GB | driver 34.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   FULL_A32 b1 size 33.03/34.88/15.16/16.19 | parent 81.0 s 3.23 GB | driver 83.0 s | OK | child aa 34152 ms gen 41.6 s obs 42 s VmHWM 4.67 GB | wait 42.1 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   FULL_A32 b2 size 33.03/34.88/15.16/16.19 | parent 74.0 s 3.36 GB | driver 75.7 s | OK | child aa 35449 ms gen 41.3 s obs 42 s VmHWM 4.18 GB | wait 41.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   BASE_A128 b1 size 34.02/35.86/16.16/16.19 | parent 30.6 s 2.66 GB | driver 32.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   BASE_A128 b2 size 34.02/35.86/16.16/16.19 | parent 33.8 s 2.75 GB | driver 34.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   FULL_A128 b1 size 34.02/35.87/16.19/16.19 | parent 64.0 s 3.13 GB | driver 66.2 s | OK | child aa 28510 ms gen 32.4 s obs 32 s VmHWM 4.31 GB | wait 32.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   FULL_A128 b2 size 34.02/35.87/16.19/16.19 | parent 64.0 s 3.42 GB | driver 65.5 s | OK | child aa 25166 ms gen 29.7 s obs 29 s VmHWM 4.27 GB | wait 30.0 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   BASE_A256 b1 size 35.59/37.44/17.78/16.12 | parent 26.6 s 2.66 GB | driver 27.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   BASE_A256 b2 size 35.59/37.44/17.78/16.12 | parent 27.4 s 2.59 GB | driver 28.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+csv-parsers-comparison   FULL_A256 b1 size 35.59/37.44/17.82/16.12 | parent 66.0 s 3.33 GB | driver 68.2 s | OK | child aa 28219 ms gen 34.4 s obs 34 s VmHWM 4.60 GB | wait 34.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+csv-parsers-comparison   FULL_A256 b2 size 35.59/37.44/17.82/16.12 | parent 59.5 s 3.23 GB | driver 60.9 s | OK | child aa 24821 ms gen 28.7 s obs 28 s VmHWM 4.21 GB | wait 28.6 s | SBS=3 SV=239(ACC=202 ELEM=0) LS=0(JOINER=0) | IC=6798 TC=576 MIRROR=94 EXACT=0 other=11 REUSED
+## build cost vs stock (means over builds)
+csv-parsers-comparison   FULL/BASE  parent wall 37.0 -> 74.0 s (x2.00)  Peak RSS 2.64 -> 3.29 GB (x1.25)  child VmHWM 4.29 GB  size 33.29 -> 33.29 MB (x1.000)  status OK,OK
+csv-parsers-comparison   BASE_A32/BASE  parent wall 37.0 -> 30.3 s (x0.82)  Peak RSS 2.64 -> 2.73 GB (x1.03)  child VmHWM ? GB  size 33.29 -> 32.97 MB (x0.990)  status NO-PROFILE,NO-PROFILE
+csv-parsers-comparison   FULL_A32/BASE  parent wall 37.0 -> 77.5 s (x2.09)  Peak RSS 2.64 -> 3.29 GB (x1.25)  child VmHWM 4.43 GB  size 33.29 -> 33.03 MB (x0.992)  status OK,OK
+csv-parsers-comparison   BASE_A128/BASE  parent wall 37.0 -> 32.2 s (x0.87)  Peak RSS 2.64 -> 2.71 GB (x1.02)  child VmHWM ? GB  size 33.29 -> 34.02 MB (x1.022)  status NO-PROFILE,NO-PROFILE
+csv-parsers-comparison   FULL_A128/BASE  parent wall 37.0 -> 64.0 s (x1.73)  Peak RSS 2.64 -> 3.27 GB (x1.24)  child VmHWM 4.29 GB  size 33.29 -> 34.02 MB (x1.022)  status OK,OK
+csv-parsers-comparison   BASE_A256/BASE  parent wall 37.0 -> 27.0 s (x0.73)  Peak RSS 2.64 -> 2.62 GB (x0.99)  child VmHWM ? GB  size 33.29 -> 35.59 MB (x1.069)  status NO-PROFILE,NO-PROFILE
+csv-parsers-comparison   FULL_A256/BASE  parent wall 37.0 -> 62.8 s (x1.70)  Peak RSS 2.64 -> 3.28 GB (x1.24)  child VmHWM 4.41 GB  size 33.29 -> 35.59 MB (x1.069)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+csv-parsers-comparison   FULL SBS=3 SV=239 (ACC=202 ELEM=0) LS=0 (JOINER=0)  OK
+csv-parsers-comparison   BASE_A32 no profile  NO-PROFILE
+csv-parsers-comparison   FULL_A32 SBS=3 SV=239 (ACC=202 ELEM=0) LS=0 (JOINER=0)  OK
+csv-parsers-comparison   BASE_A128 no profile  NO-PROFILE
+csv-parsers-comparison   FULL_A128 SBS=3 SV=239 (ACC=202 ELEM=0) LS=0 (JOINER=0)  OK
+csv-parsers-comparison   BASE_A256 no profile  NO-PROFILE
+csv-parsers-comparison   FULL_A256 SBS=3 SV=239 (ACC=202 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+csv-parsers-comparison   BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.2 s
+csv-parsers-comparison   BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.9 s
+csv-parsers-comparison   BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.0 s
+csv-parsers-comparison   BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.9 s
+csv-parsers-comparison   BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.7 s
+csv-parsers-comparison   BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.5 s
+## determinism: csv-parsers-comparison FULL: admit counts differ across builds
+TABLES-DONE

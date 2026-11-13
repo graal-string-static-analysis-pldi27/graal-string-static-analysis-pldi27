@@ -1,0 +1,92 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.springframework.util.StringUtilsBenchmark.cleanPath
+# Parameters: (pathsCount = 20, segmentCount = 10)
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 27529.942 ops/s
+# Warmup Iteration   2: 28405.367 ops/s
+# Warmup Iteration   3: 30310.836 ops/s
+# Warmup Iteration   4: 29469.384 ops/s
+# Warmup Iteration   5: 29858.732 ops/s
+Iteration   1: 28883.667 ops/s
+Iteration   2: 30397.635 ops/s
+Iteration   3: 30073.075 ops/s
+Iteration   4: 29646.946 ops/s
+Iteration   5: 27425.706 ops/s
+Iteration   6: 29645.109 ops/s
+Iteration   7: 29390.605 ops/s
+Iteration   8: 31020.995 ops/s
+Iteration   9: 27938.877 ops/s
+Iteration  10: 30377.487 ops/s
+
+Result "org.springframework.util.StringUtilsBenchmark.cleanPath":
+  29480.010 ±(99.9%) 1700.633 ops/s [Average]
+  (min, avg, max) = (27425.706, 29480.010, 31020.995), stdev = 1124.863
+  CI (99.9%): [27779.377, 31180.643] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.springframework.util.StringUtilsBenchmark.collectionToDelimitedString
+# Parameters: (elementCount = 10, elementMaxSize = 20, elementMinSize = 10)
+
+# Run progress: 50.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1234282.887 ops/s
+# Warmup Iteration   2: 1246893.437 ops/s
+# Warmup Iteration   3: 1256599.253 ops/s
+# Warmup Iteration   4: 1236219.461 ops/s
+# Warmup Iteration   5: 1250723.264 ops/s
+Iteration   1: 1273743.731 ops/s
+Iteration   2: 1279912.662 ops/s
+Iteration   3: 1327747.181 ops/s
+Iteration   4: 1332355.280 ops/s
+Iteration   5: 1300061.645 ops/s
+Iteration   6: 1294816.703 ops/s
+Iteration   7: 1288525.469 ops/s
+Iteration   8: 1234824.997 ops/s
+Iteration   9: 1255371.043 ops/s
+Iteration  10: 1264451.905 ops/s
+
+Result "org.springframework.util.StringUtilsBenchmark.collectionToDelimitedString":
+  1285181.062 ±(99.9%) 46120.269 ops/s [Average]
+  (min, avg, max) = (1234824.997, 1285181.062, 1332355.280), stdev = 30505.702
+  CI (99.9%): [1239060.793, 1331301.330] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:30
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                         (elementCount)  (elementMaxSize)  (elementMinSize)  (pathsCount)  (segmentCount)   Mode  Cnt        Score       Error  Units
+StringUtilsBenchmark.cleanPath                               N/A               N/A               N/A            20              10  thrpt   10    29480.010 ±  1700.633  ops/s
+StringUtilsBenchmark.collectionToDelimitedString              10                20                10           N/A             N/A  thrpt   10  1285181.062 ± 46120.269  ops/s

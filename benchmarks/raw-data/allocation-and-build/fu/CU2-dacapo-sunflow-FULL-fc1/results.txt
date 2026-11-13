@@ -1,0 +1,12 @@
+# C99 campaign results  SLOT=CU2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CU2-dacapo-sunflow-FULL-fc1  CFGS=BASE FULL  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## dacapo-sunflow  [metric] DaCapo sunflow (C99 deploy)  builds BASE:3 FULL:3  starts parsed=48
+  GEOMEAN FULL/BASE  time 1.055 [0.930,1.201] n.s. (1 keys)  alloc 1.001 [0.999,1.003] n.s. (1 keys)
+  iteration ms                                                           FULL 1.055 [0.930,1.201] n.s.
+  iteration ms [cold]                                                    FULL 1.003 [0.989,1.016] n.s.
+  ~alloc MB/iter                                                         FULL 1.001 [0.999,1.003] n.s.
+  ~rss MB                                                                FULL 0.650 [0.267,1.462] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

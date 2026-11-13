@@ -1,0 +1,13 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BR2  CFGS=BASE SBS SV LS  RPB=5  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## lucene-bytask  starts BASE:15 SBS:15 SV:15 LS:15  time keys 2
+  SBS/BASE time  ratio 0.9964  (mean SBS 0.9964 n=15, BASE 0.9999 n=15)  error margin 0.0150 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9999  (mean SBS 0.9999 n=15, BASE 1.0000 n=15)  error margin 0.0004 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 1.0041  (mean SV 1.0040 n=15, BASE 0.9999 n=15)  error margin 0.0199 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9288  (mean SV 0.9288 n=15, BASE 1.0000 n=15)  error margin 0.0004 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9914  (mean LS 0.9913 n=15, BASE 0.9999 n=15)  error margin 0.0150 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 0.9998  (mean LS 0.9998 n=15, BASE 1.0000 n=15)  error margin 0.0004 (max sd)  paper-significance n.s.
+    key addDoc s r1                                                  BASE 164.331 sd 2.12  SBS 164.371 sd 2.8  SV 165.7 sd 4.33  LS 162.845 sd 1.81  [lower]
+    key addDoc s r2                                                  BASE 165.573 sd 3.97  SBS 164.341 sd 2.12  SV 165.534 sd 2.93  LS 164.209 sd 1.71  [lower]
+
+PAPER30-DONE

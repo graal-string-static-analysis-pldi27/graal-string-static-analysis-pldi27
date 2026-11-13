@@ -1,0 +1,61 @@
+1793182121.700983 ========================================================================================================================
+1793182121.702497 GraalVM Native Image: Generating 'jsoup-BASE-b1' (executable)...
+1793182121.702517 ========================================================================================================================
+1793182121.702529 For detailed information and explanations on the build output, visit:
+1793182121.702546 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1793182121.702562 ------------------------------------------------------------------------------------------------------------------------
+1793182123.170509 [1/8] Initializing...                                                                                    (2.0s @ 0.33GB)
+1793182123.170784  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1793182123.170883  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1793182123.170955  C compiler: gcc (linux, x86_64, 15.2.0)
+1793182123.171063  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1793182123.171087  1 user-specific feature(s):
+1793182123.171279  - com.oracle.svm.thirdparty.gson.GsonFeature
+1793182123.171930 ------------------------------------------------------------------------------------------------------------------------
+1793182123.178948  1 experimental option(s) unlocked:
+1793182123.178968  - '-H:CodeAlignment' (origin(s): command line)
+1793182123.178984 ------------------------------------------------------------------------------------------------------------------------
+1793182123.178990 Build resources:
+1793182123.179000  - 28.45GB of memory (21.2% of system memory, using available memory)
+1793182123.179011  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1793182125.811002 [2/8] Performing analysis...  [*****]                                                                    (2.5s @ 0.77GB)
+1793182125.825093     3,643 types,   4,136 fields, and  17,161 methods found reachable
+1793182125.825631     1,116 types,      41 fields, and     436 methods registered for reflection
+1793182125.825661        58 types,      59 fields, and      52 methods registered for JNI access
+1793182125.825677         0 downcalls and 0 upcalls registered for foreign access
+1793182125.825757         4 native libraries: dl, pthread, rt, z
+1793182126.571154 [3/8] Building universe...                                                                               (0.7s @ 0.45GB)
+1793182126.942679 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.58GB)
+1793182127.379456 [5/8] Inlining methods...     [****]                                                                     (0.3s @ 0.80GB)
+1793182129.809772 [6/8] Compiling methods...    [**]                                                                       (2.4s @ 0.70GB)
+1793182130.761764 [7/8] Laying out methods...   [*]                                                                        (0.9s @ 0.64GB)
+1793182131.807903 [8/8] Creating image...       [*]                                                                        (0.9s @ 0.61GB)
+1793182131.808175    6.08MB (37.29%) for code area:     9,944 compilation units
+1793182131.808242    8.26MB (50.64%) for image heap:   94,094 objects and 55 resources
+1793182131.808264    1.97MB (12.07%) for other data
+1793182131.808288   16.31MB in total image size, 15.34MB in total file size
+1793182131.808340 ------------------------------------------------------------------------------------------------------------------------
+1793182131.808891 Top 10 origins of code area:                                Top 10 object types in image heap:
+1793182131.809098    3.85MB java.base                                            1.61MB byte[] for code metadata
+1793182131.809138  905.42kB svm.jar (Native Image)                               1.30MB byte[] for java.lang.String
+1793182131.809170  617.68kB jsoup-1.24.1-SNAPSHOT-examples-iters.jar           890.05kB java.lang.String
+1793182131.809201  110.77kB java.logging                                       699.46kB com.oracle.svm.core.hub.DynamicHubCompanion
+1793182131.809270   90.80kB org.graalvm.nativeimage.base                       551.41kB heap alignment
+1793182131.809415   48.90kB jdk.proxy2                                         477.23kB java.lang.Class
+1793182131.809445   38.97kB jdk.proxy1                                         460.91kB byte[] for general heap data
+1793182131.809510   38.09kB org.graalvm.nativeimage.configure                  315.12kB java.util.HashMap$Node
+1793182131.809541   28.03kB jdk.internal.vm.ci                                 223.24kB java.lang.Object[]
+1793182131.809652   26.12kB jdk.graal.compiler                                 178.82kB java.util.HashMap$Node[]
+1793182131.810161   33.95kB for 6 more packages                                  1.55MB for 1114 more object types
+1793182131.810913 ------------------------------------------------------------------------------------------------------------------------
+1793182131.810918 Recommendations:
+1793182131.810963  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1793182131.810972  HEAP: Set max heap for improved and more predictable memory usage.
+1793182131.811043  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1793182131.812746 ------------------------------------------------------------------------------------------------------------------------
+1793182131.813345                         0.6s (5.3% of total time) in 40 GCs | Peak RSS: 2.15GB | CPU load: 14.02
+1793182131.813652 ------------------------------------------------------------------------------------------------------------------------
+1793182131.813656 Build artifacts:
+1793182131.814024  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/outCE/FU/bin/jsoup-BASE-b1 (executable)
+1793182131.814037 ========================================================================================================================
+1793182131.814086 Finished generating 'jsoup-BASE-b1' in 10.7s.

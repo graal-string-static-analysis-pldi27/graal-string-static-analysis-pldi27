@@ -1,0 +1,37 @@
+# C99 campaign results  SLOT=CX1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CX1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## csv-parsers-comparison  [metric] uniVocity csv-parsers-comparison PerformanceComparison (hunt/ab-b34 candspec; 28 rows, mean of loops 2-6)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 0.981 [0.978,0.984] FASTER (28 keys)  alloc 0.976 [0.976,0.976] LESS (1 keys)
+  huge:Apache Commons CSV ms                                             FULL 1.004 [0.996,1.012] n.s.
+  huge:Bean IO Parser ms                                                 FULL 0.974 [0.969,0.980] FASTER  BIMODAL(BASE)
+  huge:Esperio CSV parser ms                                             FULL 0.939 [0.931,0.948] FASTER
+  huge:Gen-Java CSV ms                                                   FULL 0.891 [0.883,0.899] FASTER
+  huge:JCSV Parser ms                                                    FULL 0.905 [0.893,0.917] FASTER
+  huge:Jackson CSV parser ms                                             FULL 1.009 [1.005,1.014] SLOWER  BIMODAL(BASE)
+  huge:Java CSV Parser ms                                                FULL 0.990 [0.986,0.994] FASTER
+  huge:OpenCSV ms                                                        FULL 0.993 [0.980,1.007] n.s.  BIMODAL(BASE,FULL)
+  huge:Oster Miller CSV parser ms                                        FULL 0.881 [0.877,0.887] FASTER
+  huge:Product Collections parser ms                                     FULL 1.000 [0.996,1.004] n.s.
+  huge:Simple CSV parser ms                                              FULL 1.003 [0.996,1.011] n.s.  BIMODAL(BASE,FULL)
+  huge:SimpleFlatMapper CSV parser ms                                    FULL 0.996 [0.992,1.000] FASTER
+  huge:SuperCSV ms                                                       FULL 0.991 [0.987,0.996] FASTER
+  huge:Way IO Parser ms                                                  FULL 1.011 [1.000,1.023] SLOWER
+  huge:uniVocity CSV parser ms                                           FULL 0.987 [0.976,0.998] FASTER  BIMODAL(BASE,FULL)
+  normal:Apache Commons CSV ms                                           FULL 0.995 [0.984,1.004] n.s.  BIMODAL(BASE,FULL)
+  normal:Gen-Java CSV ms                                                 FULL 0.888 [0.878,0.896] FASTER
+  normal:JCSV Parser ms                                                  FULL 0.899 [0.878,0.922] FASTER  BIMODAL(FULL)
+  normal:Jackson CSV parser ms                                           FULL 1.089 [1.080,1.096] SLOWER  BIMODAL(FULL)
+  normal:Java CSV Parser ms                                              FULL 1.010 [1.006,1.013] SLOWER
+  normal:OpenCSV ms                                                      FULL 0.993 [0.977,1.010] n.s.
+  normal:Oster Miller CSV parser ms                                      FULL 1.002 [0.989,1.017] n.s.  BIMODAL(FULL)
+  normal:Product Collections parser ms                                   FULL 1.043 [1.033,1.052] SLOWER  BIMODAL(BASE,FULL)
+  normal:Simple CSV parser ms                                            FULL 1.001 [0.990,1.016] n.s.  BIMODAL(FULL)
+  normal:SimpleFlatMapper CSV parser ms                                  FULL 1.000 [0.994,1.005] n.s.  BIMODAL(BASE)
+  normal:SuperCSV ms                                                     FULL 0.999 [0.994,1.003] n.s.  BIMODAL(FULL)
+  normal:Way IO Parser ms                                                FULL 1.016 [1.007,1.026] SLOWER
+  normal:uniVocity CSV parser ms                                         FULL 1.000 [0.990,1.011] n.s.  BIMODAL(BASE)
+  ~alloc MB                                                              FULL 0.976 [0.976,0.976] LESS
+  ~rss MB                                                                FULL 1.005 [1.000,1.010] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

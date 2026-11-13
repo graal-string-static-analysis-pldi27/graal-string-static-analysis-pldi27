@@ -1,0 +1,48 @@
+# C99 campaign results  SLOT=pr-logback-perf  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-logback-perf  CFGS=BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## logback-perf  [jmh] logback-perf FileAppenderBenchmark (hunt/ab candspec)  builds BASE:2 SBS:2 SV:2 LS:2 BASE_A32:2 SBS_A32:2 SV_A32:2 LS_A32:2 BASE_A128:2 SBS_A128:2 SV_A128:2 LS_A128:2 BASE_A256:2 SBS_A256:2 SV_A256:2 LS_A256:2  starts parsed=32
+  GEOMEAN SBS/BASE  time 0.950 [0.934,0.966] FASTER (1 keys)  alloc 1.059 [1.034,1.085] MORE (1 keys)
+  GEOMEAN SV/BASE  time 0.983 [0.975,0.990] FASTER (1 keys)  alloc 0.894 [0.885,0.902] LESS (1 keys)
+  GEOMEAN LS/BASE  time 0.960 [0.884,1.050] n.s. (1 keys)  alloc 1.042 [0.969,1.116] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.960 [0.955,0.966] FASTER (1 keys)  alloc 1.047 [1.043,1.051] MORE (1 keys)
+  GEOMEAN SBS_A32/BASE  time 0.954 [0.929,0.981] FASTER (1 keys)  alloc 1.058 [1.033,1.083] MORE (1 keys)
+  GEOMEAN SV_A32/BASE  time 0.923 [0.912,0.935] FASTER (1 keys)  alloc 0.937 [0.928,0.947] LESS (1 keys)
+  GEOMEAN LS_A32/BASE  time 0.990 [0.971,1.010] n.s. (1 keys)  alloc 1.010 [0.987,1.034] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.000 [0.990,1.010] n.s. (1 keys)  alloc 1.008 [1.000,1.016] MORE (1 keys)
+  GEOMEAN SBS_A128/BASE  time 0.963 [0.935,0.993] FASTER (1 keys)  alloc 1.040 [1.015,1.065] MORE (1 keys)
+  GEOMEAN SV_A128/BASE  time 1.015 [1.011,1.020] SLOWER (1 keys)  alloc 0.881 [0.866,0.897] LESS (1 keys)
+  GEOMEAN LS_A128/BASE  time 0.969 [0.936,1.005] n.s. (1 keys)  alloc 1.018 [0.998,1.038] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.014 [1.002,1.027] SLOWER (1 keys)  alloc 0.987 [0.982,0.992] LESS (1 keys)
+  GEOMEAN SBS_A256/BASE  time 0.984 [0.975,0.993] FASTER (1 keys)  alloc 1.020 [1.012,1.029] MORE (1 keys)
+  GEOMEAN SV_A256/BASE  time 1.054 [1.043,1.065] SLOWER (1 keys)  alloc 0.840 [0.829,0.851] LESS (1 keys)
+  GEOMEAN LS_A256/BASE  time 1.049 [1.018,1.081] SLOWER (1 keys)  alloc 0.965 [0.925,1.004] n.s. (1 keys)
+  FileAppenderBenchmark.enhancedLogbackToFile                            SBS 0.950 [0.934,0.966] FASTER | SV 0.983 [0.975,0.990] FASTER | LS 0.960 [0.884,1.050] n.s. | BASE_A32 0.960 [0.955,0.966] FASTER | SBS_A32 0.954 [0.929,0.981] FASTER | SV_A32 0.923 [0.912,0.935] FASTER | LS_A32 0.990 [0.971,1.010] n.s. | BASE_A128 1.000 [0.990,1.010] n.s. | SBS_A128 0.963 [0.935,0.993] FASTER | SV_A128 1.015 [1.011,1.020] SLOWER | LS_A128 0.969 [0.936,1.005] n.s. | BASE_A256 1.014 [1.002,1.027] SLOWER | SBS_A256 0.984 [0.975,0.993] FASTER | SV_A256 1.054 [1.043,1.065] SLOWER | LS_A256 1.049 [1.018,1.081] SLOWER
+  ~alloc MB                                                              SBS 1.059 [1.034,1.085] MORE | SV 0.894 [0.885,0.902] LESS | LS 1.042 [0.969,1.116] n.s. | BASE_A32 1.047 [1.043,1.051] MORE | SBS_A32 1.058 [1.033,1.083] MORE | SV_A32 0.937 [0.928,0.947] LESS | LS_A32 1.010 [0.987,1.034] n.s. | BASE_A128 1.008 [1.000,1.016] MORE | SBS_A128 1.040 [1.015,1.065] MORE | SV_A128 0.881 [0.866,0.897] LESS | LS_A128 1.018 [0.998,1.038] n.s. | BASE_A256 0.987 [0.982,0.992] LESS | SBS_A256 1.020 [1.012,1.029] MORE | SV_A256 0.840 [0.829,0.851] LESS | LS_A256 0.965 [0.925,1.004] n.s.
+  ~rss MB                                                                SBS 1.103 [0.984,1.224] n.s. | SV 0.977 [0.951,1.003] n.s. | LS 1.033 [0.982,1.084] n.s. | BASE_A32 0.968 [0.944,0.993] LESS | SBS_A32 1.123 [0.963,1.286] n.s. | SV_A32 0.986 [0.972,0.999] LESS | LS_A32 1.025 [1.004,1.046] MORE | BASE_A128 0.984 [0.968,1.001] n.s. | SBS_A128 1.017 [0.974,1.061] n.s. | SV_A128 0.973 [0.956,0.991] LESS | LS_A128 1.024 [0.987,1.062] n.s. | BASE_A256 0.991 [0.980,1.002] n.s. | SBS_A256 1.058 [1.032,1.084] MORE | SV_A256 0.983 [0.967,1.000] LESS | LS_A256 0.998 [0.989,1.007] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS                BASE_A32          SBS_A32           SV_A32            LS_A32            BASE_A128         SBS_A128          SV_A128           LS_A128           BASE_A256         SBS_A256          SV_A256           LS_A256          
+  logback-perf               0.950*|1.059*     0.983*|0.894*     0.960|1.042       0.960*|1.047*     0.954*|1.058*     0.923*|0.937*     0.990|1.010       1.000|1.008*      0.963*|1.040*     1.015*|0.881*     0.969|1.018       1.014*|0.987*     0.984*|1.020*     1.054*|0.840*     1.049*|0.965     
+
+## frequency: 20 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  logback-perf-BASE-b1-r1-main-j1 2.882
+  logback-perf-BASE-b2-r1-main-j1 2.919
+  logback-perf-SBS-b1-r1-main-j1 2.928
+  logback-perf-SBS-b2-r1-main-j1 2.934
+  logback-perf-SV-b1-r1-main-j1 2.899
+  logback-perf-SV-b2-r1-main-j1 2.902
+  logback-perf-LS-b2-r1-main-j1 2.904
+  logback-perf-SV_A32-b1-r1-main-j1 2.919
+  logback-perf-SV_A32-b2-r1-main-j1 2.932
+  logback-perf-LS_A32-b1-r1-main-j1 2.931
+  logback-perf-BASE_A128-b1-r1-main-j1 2.932
+  logback-perf-BASE_A128-b2-r1-main-j1 2.936
+  logback-perf-SBS_A128-b1-r1-main-j1 2.934
+  logback-perf-SV_A128-b1-r1-main-j1 2.911
+  logback-perf-SV_A128-b2-r1-main-j1 2.908
+  logback-perf-LS_A128-b2-r1-main-j1 2.925
+  logback-perf-BASE_A256-b2-r1-main-j1 2.939
+  logback-perf-SV_A256-b1-r1-main-j1 2.923
+  logback-perf-SV_A256-b2-r1-main-j1 2.909
+  logback-perf-LS_A256-b1-r1-main-j1 2.920
+SUMMARY-DONE

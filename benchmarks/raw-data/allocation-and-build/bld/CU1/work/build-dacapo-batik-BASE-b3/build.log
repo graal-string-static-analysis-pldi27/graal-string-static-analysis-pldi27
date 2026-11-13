@@ -1,0 +1,71 @@
+1792868691.393516 ========================================================================================================================
+1792868691.395027 GraalVM Native Image: Generating 'dacapo-batik-BASE-b3' (executable)...
+1792868691.395045 ========================================================================================================================
+1792868691.395056 For detailed information and explanations on the build output, visit:
+1792868691.395073 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792868691.395088 ------------------------------------------------------------------------------------------------------------------------
+1792868693.025003 [1/8] Initializing...                                                                                    (2.3s @ 0.47GB)
+1792868693.025293  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792868693.033339  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792868693.033402  C compiler: gcc (linux, x86_64, 15.2.0)
+1792868693.033425  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792868693.033441  1 user-specific feature(s):
+1792868693.033459  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792868693.033493 ------------------------------------------------------------------------------------------------------------------------
+1792868693.033509  1 experimental option(s) unlocked:
+1792868693.033526  - '-H:CodeAlignment' (origin(s): command line)
+1792868693.033558 ------------------------------------------------------------------------------------------------------------------------
+1792868693.033570 Build resources:
+1792868693.033592  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792868693.033628  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792868693.042159 Skipped 839 predefined class(es) because the classpath already contains a class with the same name: org.apache.batik.util.io.AbstractCharDecoder, org.apache.batik.util.ParsedURLDataProtocolHandler$DataParsedURLData, org.w3c.dom.svg.SVGRectElement, org.apache.batik.bridge.SVGShapeElementBridge, org.apache.batik.ext.awt.AreaOfInterestHintKey, org.apache.batik.anim.values.AnimatableTransformListValue, org.apache.batik.ext.awt.image.rendered.AffineRed, org.w3c.css.sac.InputSource, org.apache.batik.dom.xbl.XBLManagerData, org.apache.batik.transcoder.image.ImageTranscoder, ...
+1792868698.622625 [2/8] Performing analysis...  [*****]                                                                    (5.3s @ 1.24GB)
+1792868698.648673     9,259 types,  15,600 fields, and  46,522 methods found reachable
+1792868698.649448     3,129 types,   1,014 fields, and   3,105 methods registered for reflection
+1792868698.649488       105 types,     169 fields, and      81 methods registered for JNI access
+1792868698.649514         0 downcalls and 0 upcalls registered for foreign access
+1792868698.649546         4 native libraries: dl, pthread, rt, z
+1792868700.166731 [3/8] Building universe...                                                                               (1.5s @ 1.39GB)
+1792868700.782917 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.46GB)
+1792868701.405477 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.46GB)
+1792868706.729632 [6/8] Compiling methods...    [***]                                                                      (5.3s @ 1.24GB)
+1792868709.625280 [7/8] Laying out methods...   [**]                                                                       (2.9s @ 1.58GB)
+1792868711.987909 [8/8] Creating image...       [**]                                                                       (2.1s @ 1.77GB)
+1792868711.988187   25.55MB (48.78%) for code area:    30,158 compilation units
+1792868711.988243   22.02MB (42.05%) for image heap:  232,821 objects and 78 resources
+1792868711.988270    4.80MB ( 9.17%) for other data
+1792868711.988360   52.37MB in total image size, 49.81MB in total file size
+1792868711.988442 ------------------------------------------------------------------------------------------------------------------------
+1792868711.989131 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792868711.989432    9.18MB java.base                                            6.46MB byte[] for code metadata
+1792868711.989473    5.84MB java.desktop                                         2.92MB byte[] for java.lang.String
+1792868711.989499    3.99MB batik-all-1.16.jar                                   2.10MB java.lang.String
+1792868711.989551    2.91MB java.xml                                             1.85MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792868711.989577    1.56MB svm.jar (Native Image)                               1.35MB java.lang.Class
+1792868711.989609  299.83kB dacapo-evaluation-git-e947cbfc.jar                 828.64kB byte[] for general heap data
+1792868711.989637  216.56kB jdk.zipfs                                          526.22kB int[][]
+1792868711.989666  116.75kB java.logging                                       462.05kB java.util.HashMap$Node
+1792868711.989697   93.51kB org.graalvm.nativeimage.base                       439.54kB java.lang.Object[]
+1792868711.989723   82.26kB jdk.charsets                                       392.94kB java.lang.String[]
+1792868711.991624  361.22kB for 13 more packages                                 4.68MB for 1757 more object types
+1792868711.992484 ------------------------------------------------------------------------------------------------------------------------
+1792868711.992489 Recommendations:
+1792868711.992527  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792868711.992572  HEAP: Set max heap for improved and more predictable memory usage.
+1792868711.992587  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792868711.996021 ------------------------------------------------------------------------------------------------------------------------
+1792868711.996620                        1.6s (7.2% of total time) in 297 GCs | Peak RSS: 2.94GB | CPU load: 13.63
+1792868711.996909 ------------------------------------------------------------------------------------------------------------------------
+1792868711.996914 Build artifacts:
+1792868711.997281  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-batik-BASE-b3 (executable)
+1792868711.997293  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt.so (jdk_library)
+1792868711.997306  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_headless.so (jdk_library)
+1792868711.997318  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_xawt.so (jdk_library)
+1792868711.997330  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libfontmanager.so (jdk_library)
+1792868711.997346  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjava.so (jdk_library_shim)
+1792868711.997361  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjavajpeg.so (jdk_library)
+1792868711.997377  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjvm.so (jdk_library_shim)
+1792868711.997393  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/liblcms.so (jdk_library)
+1792868711.997411  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libmlib_image.so (jdk_library)
+1792868711.997429 ========================================================================================================================
+1792868711.997457 Finished generating 'dacapo-batik-BASE-b3' in 21.3s.

@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=commons-codec  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/commons-codec  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-codec  [metric] commons-codec PhoneticEngine performance test (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=64
+  GEOMEAN FULL/BASE  time 0.993 [0.984,1.002] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.999 [0.988,1.011] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.004 [0.991,1.016] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.008 [1.000,1.017] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.995 [0.985,1.005] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.024 [1.008,1.041] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.028 [1.011,1.046] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  encode millis                                                          FULL 0.993 [0.984,1.002] n.s. | BASE_A32 0.999 [0.988,1.011] n.s. | FULL_A32 1.004 [0.991,1.016] n.s. | BASE_A128 1.008 [1.000,1.017] n.s. | FULL_A128 0.995 [0.985,1.005] n.s. | BASE_A256 1.024 [1.008,1.041] SLOWER | FULL_A256 1.028 [1.011,1.046] SLOWER  BIMODAL(BASE_A256)
+  ~alloc MB                                                              FULL 1.000 [1.000,1.000] n.s. | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 1.000 [1.000,1.000] n.s. | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 1.000 [1.000,1.000] n.s. | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                FULL 0.996 [0.984,1.010] n.s. | BASE_A32 0.990 [0.975,1.007] n.s. | FULL_A32 0.986 [0.976,1.000] n.s. | BASE_A128 0.992 [0.978,1.008] n.s. | FULL_A128 1.000 [0.989,1.014] n.s. | BASE_A256 0.991 [0.981,1.005] n.s. | FULL_A256 0.994 [0.983,1.007] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  commons-codec              0.993|1.000       0.999|1.000       1.004|1.000       1.008|1.000       0.995|1.000       1.024*|1.000      1.028*|1.000     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,6 @@
+# C101 align rebuild-and-remeasure slots (mkrb.sh; README "Rebuild and remeasure"): <slot>-rb<N> = slots.tsv line of <slot>
+#   with reuse (column 11) = none: all images newly built into bld/<slot>-rb<N>; run with SLOTS_TSV=slots-rb.tsv ONLY=<slot>-rb<N>
+pr-stringbuilder-to-string-rb1	P	jmh	n	1	2	1	BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256	stringbuilder-to-string	-	none	-	200ms
+dacapo-pmd-rb1	D	uniform	n	1	2	1	BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256	dacapo-pmd	-	none	-	-
+pr-luindex-rb1	P	uniform	n	1	2	1	BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256	luindex	-	none	-	-
+jackson-rb1	N	jmh	n	1	2	1	BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256	jackson	-	none	-	500ms

@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=pdfbox  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pdfbox  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## pdfbox  [jmh] PDFBox TextExtraction (hunt/ab candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.991 [0.982,1.000] n.s. (2 keys)  alloc 0.998 [0.997,0.998] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.011 [1.002,1.020] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.006 [0.984,1.029] n.s. (2 keys)  alloc 0.998 [0.997,0.998] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.046 [1.025,1.067] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.000 [0.995,1.004] n.s. (2 keys)  alloc 0.998 [0.998,0.998] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.052 [1.033,1.071] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.055 [1.046,1.064] SLOWER (2 keys)  alloc 0.998 [0.998,0.998] LESS (1 keys)
+  TextExtraction.extractPDFSpecSorted                                    FULL 0.996 [0.977,1.016] n.s. | BASE_A32 1.015 [0.998,1.033] n.s. | FULL_A32 0.998 [0.975,1.022] n.s. | BASE_A128 1.054 [1.036,1.072] SLOWER | FULL_A128 1.004 [0.996,1.013] n.s. | BASE_A256 1.046 [1.019,1.074] SLOWER | FULL_A256 1.063 [1.054,1.072] SLOWER
+  TextExtraction.extractPDFSpecUnsorted                                  FULL 0.986 [0.984,0.987] FASTER | BASE_A32 1.007 [1.005,1.009] SLOWER | FULL_A32 1.014 [0.991,1.038] n.s. | BASE_A128 1.039 [1.013,1.064] SLOWER | FULL_A128 0.995 [0.993,0.997] FASTER | BASE_A256 1.058 [1.047,1.070] SLOWER | FULL_A256 1.047 [1.036,1.059] SLOWER
+  ~alloc MB                                                              FULL 0.998 [0.997,0.998] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.998 [0.997,0.998] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 0.998 [0.998,0.998] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.998 [0.998,0.998] LESS
+  ~rss MB                                                                FULL 0.816 [0.691,0.993] LESS | BASE_A32 0.952 [0.681,1.333] n.s. | FULL_A32 1.176 [0.680,1.875] n.s. | BASE_A128 0.885 [0.654,1.210] n.s. | FULL_A128 1.309 [0.993,1.755] n.s. | BASE_A256 1.219 [0.649,2.023] n.s. | FULL_A256 0.987 [0.720,1.365] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  pdfbox                     0.991|0.998*      1.011*|1.000      1.006|0.998*      1.046*|1.000      1.000|0.998*      1.052*|1.000      1.055*|0.998*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

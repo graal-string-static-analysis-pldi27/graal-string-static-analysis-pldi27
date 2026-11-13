@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=palantir  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/palantir  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## palantir  [metric] palantir-java-format CLI -i --palantir over 24 files (hunt/ab candspec; CPU-time metric, inputs restored per run)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=64
+  GEOMEAN FULL/BASE  time 0.993 [0.967,1.020] n.s. (1 keys)  alloc 0.997 [0.993,1.001] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.022 [0.996,1.049] n.s. (1 keys)  alloc 0.998 [0.994,1.002] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.012 [0.990,1.036] n.s. (1 keys)  alloc 0.997 [0.993,1.001] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.981 [0.950,1.006] n.s. (1 keys)  alloc 0.996 [0.989,1.000] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.022 [0.995,1.049] n.s. (1 keys)  alloc 0.998 [0.993,1.003] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.020 [0.993,1.048] n.s. (1 keys)  alloc 0.999 [0.996,1.004] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.018 [0.998,1.042] n.s. (1 keys)  alloc 0.999 [0.994,1.003] n.s. (1 keys)
+  cpu ms                                                                 FULL 0.993 [0.967,1.020] n.s. | BASE_A32 1.022 [0.996,1.049] n.s. | FULL_A32 1.012 [0.990,1.036] n.s. | BASE_A128 0.981 [0.950,1.006] n.s. | FULL_A128 1.022 [0.995,1.049] n.s. | BASE_A256 1.020 [0.993,1.048] n.s. | FULL_A256 1.018 [0.998,1.042] n.s.
+  wall s                                                                 FULL 0.990 [0.949,1.044] info-only | BASE_A32 0.999 [0.947,1.053] info-only | FULL_A32 1.000 [0.960,1.045] info-only | BASE_A128 0.956 [0.906,1.010] info-only | FULL_A128 1.000 [0.950,1.054] info-only | BASE_A256 1.000 [0.959,1.045] info-only | FULL_A256 1.010 [0.968,1.055] info-only
+  ~alloc MB                                                              FULL 0.997 [0.993,1.001] n.s. | BASE_A32 0.998 [0.994,1.002] n.s. | FULL_A32 0.997 [0.993,1.001] n.s. | BASE_A128 0.996 [0.989,1.000] LESS | FULL_A128 0.998 [0.993,1.003] n.s. | BASE_A256 0.999 [0.996,1.004] n.s. | FULL_A256 0.999 [0.994,1.003] n.s.
+  ~rss MB                                                                FULL 1.017 [0.978,1.057] n.s. | BASE_A32 0.988 [0.937,1.035] n.s. | FULL_A32 1.016 [0.977,1.056] n.s. | BASE_A128 1.046 [1.008,1.087] MORE | FULL_A128 1.015 [0.977,1.053] n.s. | BASE_A256 1.025 [0.960,1.125] n.s. | FULL_A256 1.025 [0.983,1.066] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  palantir                   0.993|0.997       1.022|0.998       1.012|0.997       0.981|0.996*      1.022|0.998       1.020|0.999       1.018|0.999      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

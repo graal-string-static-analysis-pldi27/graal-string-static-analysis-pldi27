@@ -1,0 +1,12 @@
+# C99 campaign results  SLOT=BU  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/BU-luindex-LS-sf1  CFGS=BASE LS  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## luindex  [metric] DaCapo luindex (ab-cmb recipe)  builds BASE:3 LS:3  starts parsed=24
+  GEOMEAN LS/BASE  time 1.009 [1.004,1.014] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  iteration ms                                                           LS 1.009 [1.004,1.014] SLOWER  BIMODAL(LS)
+  iteration ms [cold]                                                    LS 1.006 [1.001,1.011] SLOWER  BIMODAL(LS)
+  ~alloc MB/iter                                                         LS 1.000 [1.000,1.000] LESS
+  ~rss MB                                                                LS 1.001 [0.996,1.007] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,93 @@
+1794234342.811079 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794234342.811169 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794234343.070670 Warning: Option 'DynamicProxyConfigurationResources' is deprecated and might be removed in a future release: This can be caused by a proxy-config.json file in your META-INF directory. Consider including proxy configuration in the reflection section of reachability-metadata.md instead.. Please refer to the GraalVM release notes.
+1794234343.923843 ========================================================================================================================
+1794234343.925711 GraalVM Native Image: Generating 'palantir-FULL-b2' (executable)...
+1794234343.925733 ========================================================================================================================
+1794234343.925752 For detailed information and explanations on the build output, visit:
+1794234343.925770 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794234343.925787 ------------------------------------------------------------------------------------------------------------------------
+1794234345.536140 [1/8] Initializing...                                                                                    (2.3s @ 0.54GB)
+1794234345.536403  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794234345.536465  Graal compiler: optimization level: 2, target machine: compatibility
+1794234345.536550  C compiler: gcc (linux, x86_64, 15.2.0)
+1794234345.536685  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794234345.536713  1 user-specific feature(s):
+1794234345.537132  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794234345.538819 ------------------------------------------------------------------------------------------------------------------------
+1794234345.538854  5 experimental option(s) unlocked:
+1794234345.538926  - '-H:+IncludeAllLocales' (origin(s): command line)
+1794234345.538937  - '-H:-UseContainerSupport' (origin(s): command line)
+1794234345.538947  - '-H:CodeAlignment' (origin(s): command line)
+1794234345.538958  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794234345.538966  - '-H:+StringAnalysis' (origin(s): command line)
+1794234345.540322 ------------------------------------------------------------------------------------------------------------------------
+1794234345.540346 Build resources:
+1794234345.540426  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794234345.540472  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794234345.540914 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile7879815880551373657.txt
+1794234345.540930 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child9745185194752756060.log
+1794234345.541325 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile7879815880551373657.txt
+1794234345.541385 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794234345.541399 [string-analysis-fork] Child log: /tmp/string-analysis-child9745185194752756060.log
+1794234350.331318 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794234350.331376 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile7879815880551373657.txt
+1794234388.864175 [string-analysis-fork] Loaded 5625 entries from child profile: /tmp/string-analysis-profile7879815880551373657.txt
+1794234388.864276 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile7879815880551373657.txt
+1794234388.864736 [string-analysis-timing] beforeAnalysis done: 38533ms
+1794234396.785608 [string-analysis-timing] afterAnalysis start: 46454ms (gap since beforeAnalysis done: 7921ms)
+1794234396.810086 [2/8] Performing analysis...  [*******]                                                                  (7.9s @ 1.82GB)
+1794234396.838443    10,490 types,  12,436 fields, and  46,960 methods found reachable
+1794234396.839640    29,582 types,     124 fields, and   2,984 methods registered for reflection
+1794234396.839722        60 types,      60 fields, and      56 methods registered for JNI access
+1794234396.839751         0 downcalls and 0 upcalls registered for foreign access
+1794234396.839777         4 native libraries: dl, pthread, rt, z
+1794234398.520512 [3/8] Building universe...                                                                               (1.7s @ 1.90GB)
+1794234398.528986 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=4122 chain-else=152 chain-flat=13 acc=0 (chain sites=152, aot-parse sites=0); at strengthen: present=3633 (inlined copies=459) removed=3497 (inlined copies=412) killed-dead=136 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794234398.529615 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=123 chain/widened=21 collapsed/widened=6 direct=2747 direct/widened=1703 redirect/widened=1 super-collapsed=1; declined sites: no-entry=310 terminal-body-unmarked=4
+1794234398.529734 [ic-widen-decline-by-method] no-entry {charAt(I)C=21, codePointAt(I)I=1, codePointBefore(I)I=1, coder()B=89, compareTo(Ljava/lang/String;)I=2, concat(Ljava/lang/String;)Ljava/lang/String;=11, contains(Ljava/lang/CharSequence;)Z=1, endsWith(Ljava/lang/String;)Z=3, equals(Ljava/lang/Object;)Z=14, getBytes()[B=3, getBytes(Ljava/nio/charset/Charset;)[B=3, getBytes([BIB)V=2, getBytes([BIIBI)V=1, getChars(II[CI)V=13, hashCode()I=8, indexOf(I)I=2, indexOf(II)I=3, indexOf(III)I=1, isEmpty()Z=12, isLatin1()Z=17, lastIndexOf(II)I=1, length()I=68, offsetByCodePoints(II)I=1, split(Ljava/lang/String;)[Ljava/lang/String;=1, startsWith(Ljava/lang/String;)Z=4, substring(I)Ljava/lang/String;=2, substring(II)Ljava/lang/String;=3, toCharArray()[C=1, value()[B=21}
+1794234398.529757 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794234398.529771 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 6
+1794234398.529786 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794234398.530172 [string-analysis] ic-flatstock: 1 stock-path flat calls=4601 legacy (interface caller)=0 legacy (null receiver)=0
+1794234398.530598 [string-analysis] codegen-knobs: chain rep-arm ifs=193 swap sites=1 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=1 super casts=0
+1794234398.531065 [string-analysis] ic-csfinal: rep-excluded supertype sites=650 (diamonds=650 guards=0) by decl={CharSequence.charAt=139, CharSequence.length=115, CharSequence.subSequence=28, CharSequence.toString=56, Object.equals=168, Object.hashCode=95, Object.toString=49} rep-list sites left stock=51 unproven sites left stock=0; at strengthen: ifs=642 (dead-arm=1 iba-free nodes=4 folded=2) ifs left=0
+1794234398.532537 [string-analysis] concat-copy: sites=1 lowered-parses=1 count.diag=false
+1794234398.533441 [string-analysis] mirror-append: sites=38 lowered-parses=38 arms=39 lowered-keys=38
+1794234398.534505 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=438/51 list=3/0 (cast/inst parses) stock: no-line=152/15 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=1/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=506
+1794234399.192743 [4/8] Parsing methods...      [*]                                                                        (0.7s @ 2.09GB)
+1794234399.782022 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 2.16GB)
+1794234404.690116 [6/8] Compiling methods...    [**]                                                                       (4.9s @ 2.14GB)
+1794234407.436258 [7/8] Laying out methods...   [**]                                                                       (2.7s @ 2.41GB)
+1794234407.471808 [string-analysis] r2-trivial: active=true graphs with rep arms=186, made trivial by the discount=3 (first 20: [com.fasterxml.jackson.core.Version.isSnapshot() stock 2+32 discounted 1+17, com.google.common.base.Platform.stringIsNullOrEmpty(String) stock 2+26 discounted 1+14, java.util.Objects.equals(Object, Object) stock 1+25 discounted 1+25]); graphs with a rep call but no recognised arm=43 (first 5: [com.fasterxml.jackson.core.Base64Variant.decode(String, ByteArrayBuilder), com.fasterxml.jackson.core.io.ContentReference.buildSourceDescription(), com.fasterxml.jackson.core.io.NumberInput.<clinit>(), com.fasterxml.jackson.core.io.NumberInput.parseAsInt(String, int), com.fasterxml.jackson.core.io.NumberInput.parseAsLong(String, long)]); graphs with a rep-test If that is no arm=139 (first 5: [com.fasterxml.jackson.core.JsonLocation.toString(), com.fasterxml.jackson.core.Version.compareTo(Version), com.fasterxml.jackson.core.Version.toString(), com.fasterxml.jackson.core.io.NumberInput.parseAsInt(String, int), com.fasterxml.jackson.core.io.NumberInput.parseAsLong(String, long)])
+1794234408.910709 [string-analysis-dc] clinitsim-repaborts=1 [com.fasterxml.jackson.core.io.NumberInput(com.oracle.svm.core.stringrep.StringView)]
+1794234409.025537 [string-analysis-dc] heapreps=0 poolreps=0 scanned=602325
+1794234411.654412 [8/8] Creating image...       [**]                                                                       (3.9s @ 2.64GB)
+1794234411.654799   19.23MB (27.86%) for code area:    30,593 compilation units
+1794234411.654902   44.56MB (64.57%) for image heap:  602,325 objects and 26,614 resources
+1794234411.654933    5.22MB ( 7.57%) for other data
+1794234411.654980   69.02MB in total image size, 66.46MB in total file size
+1794234411.655021 ------------------------------------------------------------------------------------------------------------------------
+1794234411.655689 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794234411.655880    5.94MB jdk.compiler                                         8.46MB byte[] for java.lang.String
+1794234411.655991    5.83MB java.base                                            5.77MB byte[] for general heap data
+1794234411.656024    1.78MB jackson-databind-2.22.3.jar                          5.21MB byte[] for code metadata
+1794234411.656050    1.54MB svm.jar (Native Image)                               4.71MB java.lang.String
+1794234411.656127  691.77kB guava-33.7.2-jre.jar                                 2.40MB java.lang.Object[]
+1794234411.656171  518.07kB com.palantir.javaformat.java                         2.25MB c.o.svm.core.configure.ConditionalRuntimeValue
+1794234411.656203  270.12kB jackson-core-2.22.3.jar                              2.01MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794234411.656251  250.63kB jdk.zipfs                                            1.80MB com.oracle.svm.core.configure.RuntimeConditionSet
+1794234411.656290  204.71kB jdk.internal.md                                      1.63MB java.util.concurrent.ConcurrentHashMap$Node
+1794234411.656322  176.74kB functionaljava-5.0.jar                               1.61MB java.lang.Class
+1794234411.657032    1.17MB for 28 more packages                                 8.72MB for 1951 more object types
+1794234411.657902 ------------------------------------------------------------------------------------------------------------------------
+1794234411.657907 Recommendations:
+1794234411.658006  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794234411.658026  HEAP: Set max heap for improved and more predictable memory usage.
+1794234411.661431 ------------------------------------------------------------------------------------------------------------------------
+1794234411.662042                         2.0s (2.8% of total time) in 313 GCs | Peak RSS: 4.04GB | CPU load: 4.79
+1794234411.662318 ------------------------------------------------------------------------------------------------------------------------
+1794234411.662323 Build artifacts:
+1794234411.662624  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CP3/bin/palantir-FULL-b2 (executable)
+1794234411.662637 ========================================================================================================================
+1794234411.662711 Finished generating 'palantir-FULL-b2' in 1m 8s.

@@ -1,0 +1,130 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuffers.appendAndToString
+
+# Run progress: 0.00% complete, ETA 00:00:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 23861.417 ops/ms
+# Warmup Iteration   2: 24226.054 ops/ms
+# Warmup Iteration   3: 24158.894 ops/ms
+# Warmup Iteration   4: 24125.563 ops/ms
+# Warmup Iteration   5: 24268.879 ops/ms
+Iteration   1: 24199.031 ops/ms
+Iteration   2: 24160.009 ops/ms
+Iteration   3: 24045.289 ops/ms
+Iteration   4: 24144.730 ops/ms
+Iteration   5: 24263.120 ops/ms
+Iteration   6: 24248.441 ops/ms
+Iteration   7: 24273.012 ops/ms
+Iteration   8: 24325.019 ops/ms
+Iteration   9: 24174.641 ops/ms
+Iteration  10: 24133.233 ops/ms
+
+Result "org.test.StringBuffers.appendAndToString":
+  24196.653 ±(99.9%) 124.335 ops/ms [Average]
+  (min, avg, max) = (24045.289, 24196.653, 24325.019), stdev = 82.240
+  CI (99.9%): [24072.318, 24320.987] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuffers.substring
+
+# Run progress: 33.33% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 49916.430 ops/ms
+# Warmup Iteration   2: 49544.100 ops/ms
+# Warmup Iteration   3: 49821.755 ops/ms
+# Warmup Iteration   4: 50504.251 ops/ms
+# Warmup Iteration   5: 50113.882 ops/ms
+Iteration   1: 51507.229 ops/ms
+Iteration   2: 50724.325 ops/ms
+Iteration   3: 49548.566 ops/ms
+Iteration   4: 49812.238 ops/ms
+Iteration   5: 49571.570 ops/ms
+Iteration   6: 52040.276 ops/ms
+Iteration   7: 49928.515 ops/ms
+Iteration   8: 50819.943 ops/ms
+Iteration   9: 50710.077 ops/ms
+Iteration  10: 50763.174 ops/ms
+
+Result "org.test.StringBuffers.substring":
+  50542.591 ±(99.9%) 1255.005 ops/ms [Average]
+  (min, avg, max) = (49548.566, 50542.591, 52040.276), stdev = 830.108
+  CI (99.9%): [49287.586, 51797.597] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuffers.toStringComplex
+
+# Run progress: 66.67% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 10143.532 ops/ms
+# Warmup Iteration   2: 10146.316 ops/ms
+# Warmup Iteration   3: 10160.091 ops/ms
+# Warmup Iteration   4: 10080.843 ops/ms
+# Warmup Iteration   5: 10165.817 ops/ms
+Iteration   1: 10147.294 ops/ms
+Iteration   2: 10102.114 ops/ms
+Iteration   3: 10145.271 ops/ms
+Iteration   4: 10166.645 ops/ms
+Iteration   5: 10116.993 ops/ms
+Iteration   6: 10155.512 ops/ms
+Iteration   7: 10143.522 ops/ms
+Iteration   8: 10109.551 ops/ms
+Iteration   9: 10166.036 ops/ms
+Iteration  10: 10175.384 ops/ms
+
+Result "org.test.StringBuffers.toStringComplex":
+  10142.832 ±(99.9%) 38.332 ops/ms [Average]
+  (min, avg, max) = (10102.114, 10142.832, 10175.384), stdev = 25.354
+  CI (99.9%): [10104.501, 10181.164] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:45
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                         Mode  Cnt      Score      Error   Units
+StringBuffers.appendAndToString  thrpt   10  24196.653 ±  124.335  ops/ms
+StringBuffers.substring          thrpt   10  50542.591 ± 1255.005  ops/ms
+StringBuffers.toStringComplex    thrpt   10  10142.832 ±   38.332  ops/ms

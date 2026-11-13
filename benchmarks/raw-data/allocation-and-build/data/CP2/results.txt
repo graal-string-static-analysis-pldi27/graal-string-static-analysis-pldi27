@@ -1,0 +1,11 @@
+# C99 campaign results  SLOT=CP2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CP2  CFGS=BASE FULL  runs/build=5  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## handlebars  [metric] handlebars.java HbsBench stocks.hbs (hunt/ab-b34 candspec; median of 30 iterations)  builds BASE:3 FULL:3  starts parsed=30
+  GEOMEAN FULL/BASE  time 0.982 [0.948,1.002] n.s. (1 keys)  alloc 1.018 [0.999,1.054] n.s. (1 keys)
+  stocks.hbs AVG per s                                                   FULL 1.019 [0.999,1.055] info-only
+  stocks.hbs median per s                                                FULL 0.982 [0.948,1.002] n.s.
+  ~alloc MB                                                              FULL 1.018 [0.999,1.054] n.s.
+  ~rss MB                                                                FULL 1.000 [0.996,1.003] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

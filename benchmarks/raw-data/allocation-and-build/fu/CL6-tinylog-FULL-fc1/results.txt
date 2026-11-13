@@ -1,0 +1,67 @@
+# C99 campaign results  SLOT=CL6  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL6-tinylog-FULL-fc1  CFGS=BASE FULL  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## tinylog  [jmh] tinylog2 Tinylog2Benchmark discard|output x async x locationInfo (12 arms; hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=288
+  GEOMEAN FULL/BASE  time 1.010 [1.002,1.016] SLOWER (12 keys)  alloc 0.994 [0.990,1.000] LESS (12 keys)
+  discard_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.discard false  FULL 1.018 [1.004,1.030] SLOWER
+  discard_false_FULL: Tinylog2Benchmark.discard false FULL               FULL 1.016 [0.997,1.035] n.s.
+  discard_false_NONE: Tinylog2Benchmark.discard false NONE               FULL 1.016 [1.001,1.031] SLOWER
+  discard_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.discard true CL FULL 1.007 [0.999,1.015] n.s.
+  discard_true_FULL: Tinylog2Benchmark.discard true FULL                 FULL 1.008 [0.999,1.017] n.s.
+  discard_true_NONE: Tinylog2Benchmark.discard true NONE                 FULL 1.006 [0.995,1.016] n.s.
+  output_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.output false CL FULL 1.018 [1.002,1.034] SLOWER  BIMODAL(BASE,FULL)
+  output_false_FULL: Tinylog2Benchmark.output false FULL                 FULL 0.993 [0.981,1.005] n.s.  BIMODAL(BASE,FULL)
+  output_false_NONE: Tinylog2Benchmark.output false NONE                 FULL 1.005 [0.997,1.014] n.s.
+  output_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.output true CLAS FULL 1.027 [1.003,1.059] SLOWER  BIMODAL(BASE,FULL)
+  output_true_FULL: Tinylog2Benchmark.output true FULL                   FULL 0.991 [0.967,1.013] n.s.  BIMODAL(BASE,FULL)
+  output_true_NONE: Tinylog2Benchmark.output true NONE                   FULL 1.013 [0.988,1.039] n.s.
+  ~alloc MB discard_false_CLASS_OR_CATEGORY_ONLY                         FULL 0.984 [0.972,0.999] LESS
+  ~alloc MB discard_false_FULL                                           FULL 0.986 [0.970,1.002] n.s.
+  ~alloc MB discard_false_NONE                                           FULL 0.984 [0.971,0.999] LESS
+  ~alloc MB discard_true_CLASS_OR_CATEGORY_ONLY                          FULL 0.993 [0.985,1.000] LESS
+  ~alloc MB discard_true_FULL                                            FULL 0.992 [0.985,1.000] n.s.
+  ~alloc MB discard_true_NONE                                            FULL 0.994 [0.985,1.004] n.s.
+  ~alloc MB output_false_CLASS_OR_CATEGORY_ONLY                          FULL 1.000 [1.000,1.000] n.s.
+  ~alloc MB output_false_FULL                                            FULL 1.000 [1.000,1.000] n.s.
+  ~alloc MB output_false_NONE                                            FULL 1.000 [0.999,1.002] n.s.
+  ~alloc MB output_true_CLASS_OR_CATEGORY_ONLY                           FULL 1.001 [1.000,1.003] MORE
+  ~alloc MB output_true_FULL                                             FULL 0.999 [0.997,1.001] n.s.  BIMODAL(BASE)
+  ~alloc MB output_true_NONE                                             FULL 1.000 [0.999,1.001] n.s.
+  ~rss MB discard_false_CLASS_OR_CATEGORY_ONLY                           FULL 1.004 [1.000,1.008] MORE
+  ~rss MB discard_false_FULL                                             FULL 1.003 [0.972,1.035] n.s.
+  ~rss MB discard_false_NONE                                             FULL 1.002 [0.969,1.037] n.s.
+  ~rss MB discard_true_CLASS_OR_CATEGORY_ONLY                            FULL 1.003 [0.999,1.007] n.s.
+  ~rss MB discard_true_FULL                                              FULL 0.999 [0.988,1.005] n.s.
+  ~rss MB discard_true_NONE                                              FULL 1.004 [0.997,1.016] n.s.
+  ~rss MB output_false_CLASS_OR_CATEGORY_ONLY                            FULL 1.004 [1.001,1.007] MORE
+  ~rss MB output_false_FULL                                              FULL 1.005 [1.002,1.008] MORE
+  ~rss MB output_false_NONE                                              FULL 1.004 [1.001,1.008] MORE
+  ~rss MB output_true_CLASS_OR_CATEGORY_ONLY                             FULL 1.003 [0.999,1.006] n.s.
+  ~rss MB output_true_FULL                                               FULL 1.002 [0.999,1.005] n.s.
+  ~rss MB output_true_NONE                                               FULL 1.129 [1.052,1.212] MORE
+
+## frequency: 24 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  tinylog-BASE-b1-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.645
+  tinylog-BASE-b1-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.641
+  tinylog-BASE-b1-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.640
+  tinylog-BASE-b1-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.642
+  tinylog-BASE-b2-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.640
+  tinylog-BASE-b2-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.645
+  tinylog-BASE-b2-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.642
+  tinylog-BASE-b2-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.646
+  tinylog-BASE-b3-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.645
+  tinylog-BASE-b3-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.642
+  tinylog-BASE-b3-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.643
+  tinylog-BASE-b3-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.638
+  tinylog-FULL-b1-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.643
+  tinylog-FULL-b1-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.639
+  tinylog-FULL-b1-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.641
+  tinylog-FULL-b1-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.641
+  tinylog-FULL-b2-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.641
+  tinylog-FULL-b2-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.639
+  tinylog-FULL-b2-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.642
+  tinylog-FULL-b2-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.642
+  tinylog-FULL-b3-r1-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.645
+  tinylog-FULL-b3-r2-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.647
+  tinylog-FULL-b3-r3-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.651
+  tinylog-FULL-b3-r4-output_true_CLASS_OR_CATEGORY_ONLY-j1 2.655
+SUMMARY-DONE

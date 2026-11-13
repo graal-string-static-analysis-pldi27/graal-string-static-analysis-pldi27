@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/minimal-json  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+minimal-json             BASE b1 size 18.09/19.24/7.74/9.24 | parent 30.3 s 1.99 GB | driver 31.0 s REUSED
+minimal-json             BASE b2 size 18.09/19.24/7.74/9.24 | parent 23.7 s 2.17 GB | driver 25.1 s REUSED
+minimal-json             FULL b1 size 18.16/19.31/7.80/9.24 | parent 60.0 s 2.39 GB | driver 61.6 s | OK | child aa 23810 ms gen 28.1 s obs 29 s VmHWM 5.61 GB | wait 28.5 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             FULL b2 size 18.16/19.31/7.80/9.24 | parent 49.9 s 2.32 GB | driver 51.0 s | OK | child aa 18822 ms gen 22.1 s obs 22 s VmHWM 5.45 GB | wait 22.5 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             BASE_A32 b1 size 17.96/19.11/7.57/9.24 | parent 30.4 s 2.23 GB | driver 31.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             BASE_A32 b2 size 17.89/19.05/7.57/9.24 | parent 25.0 s 2.16 GB | driver 26.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             FULL_A32 b1 size 17.96/19.12/7.62/9.24 | parent 50.4 s 2.34 GB | driver 52.2 s | OK | child aa 19407 ms gen 23.9 s obs 24 s VmHWM 5.76 GB | wait 24.0 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             FULL_A32 b2 size 17.96/19.12/7.62/9.24 | parent 60.0 s 2.36 GB | driver 62.6 s | OK | child aa 24713 ms gen 29.7 s obs 29 s VmHWM 5.45 GB | wait 30.1 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             BASE_A128 b1 size 18.48/19.64/8.17/9.18 | parent 25.5 s 2.19 GB | driver 27.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             BASE_A128 b2 size 18.48/19.64/8.17/9.18 | parent 30.6 s 2.18 GB | driver 31.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             FULL_A128 b1 size 18.61/19.77/8.23/9.24 | parent 53.3 s 2.39 GB | driver 54.5 s | OK | child aa 24863 ms gen 29.6 s obs 30 s VmHWM 5.55 GB | wait 30.0 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             FULL_A128 b2 size 18.61/19.77/8.23/9.24 | parent 56.5 s 2.30 GB | driver 57.7 s | OK | child aa 25264 ms gen 29.4 s obs 30 s VmHWM 5.52 GB | wait 29.6 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             BASE_A256 b1 size 19.40/20.56/9.10/9.18 | parent 23.7 s 2.22 GB | driver 24.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             BASE_A256 b2 size 19.40/20.56/9.10/9.18 | parent 23.2 s 2.22 GB | driver 24.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+minimal-json             FULL_A256 b1 size 19.47/20.62/9.16/9.18 | parent 61.0 s 2.33 GB | driver 62.5 s | OK | child aa 25154 ms gen 31.7 s obs 32 s VmHWM 5.56 GB | wait 32.1 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+minimal-json             FULL_A256 b2 size 19.47/20.62/9.16/9.18 | parent 58.9 s 2.34 GB | driver 59.8 s | OK | child aa 27461 ms gen 33.0 s obs 33 s VmHWM 5.52 GB | wait 33.5 s | SBS=0 SV=68(ACC=50 ELEM=0) LS=0(JOINER=0) | IC=3710 TC=289 MIRROR=75 EXACT=0 other=11 REUSED
+## build cost vs stock (means over builds)
+minimal-json             FULL/BASE  parent wall 27.0 -> 55.0 s (x2.04)  Peak RSS 2.08 -> 2.35 GB (x1.13)  child VmHWM 5.53 GB  size 18.09 -> 18.16 MB (x1.004)  status OK,OK
+minimal-json             BASE_A32/BASE  parent wall 27.0 -> 27.7 s (x1.03)  Peak RSS 2.08 -> 2.20 GB (x1.06)  child VmHWM ? GB  size 18.09 -> 17.93 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+minimal-json             FULL_A32/BASE  parent wall 27.0 -> 55.2 s (x2.04)  Peak RSS 2.08 -> 2.35 GB (x1.13)  child VmHWM 5.61 GB  size 18.09 -> 17.96 MB (x0.993)  status OK,OK
+minimal-json             BASE_A128/BASE  parent wall 27.0 -> 28.1 s (x1.04)  Peak RSS 2.08 -> 2.19 GB (x1.05)  child VmHWM ? GB  size 18.09 -> 18.48 MB (x1.022)  status NO-PROFILE,NO-PROFILE
+minimal-json             FULL_A128/BASE  parent wall 27.0 -> 54.9 s (x2.03)  Peak RSS 2.08 -> 2.34 GB (x1.13)  child VmHWM 5.53 GB  size 18.09 -> 18.61 MB (x1.029)  status OK,OK
+minimal-json             BASE_A256/BASE  parent wall 27.0 -> 23.4 s (x0.87)  Peak RSS 2.08 -> 2.22 GB (x1.07)  child VmHWM ? GB  size 18.09 -> 19.40 MB (x1.072)  status NO-PROFILE,NO-PROFILE
+minimal-json             FULL_A256/BASE  parent wall 27.0 -> 60.0 s (x2.22)  Peak RSS 2.08 -> 2.33 GB (x1.12)  child VmHWM 5.54 GB  size 18.09 -> 19.47 MB (x1.076)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+minimal-json             FULL SBS=0 SV=68 (ACC=50 ELEM=0) LS=0 (JOINER=0)  OK
+minimal-json             BASE_A32 no profile  NO-PROFILE
+minimal-json             FULL_A32 SBS=0 SV=68 (ACC=50 ELEM=0) LS=0 (JOINER=0)  OK
+minimal-json             BASE_A128 no profile  NO-PROFILE
+minimal-json             FULL_A128 SBS=0 SV=68 (ACC=50 ELEM=0) LS=0 (JOINER=0)  OK
+minimal-json             BASE_A256 no profile  NO-PROFILE
+minimal-json             FULL_A256 SBS=0 SV=68 (ACC=50 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+minimal-json             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.8 s
+minimal-json             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.3 s
+minimal-json             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.1 s
+minimal-json             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.9 s
+minimal-json             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.8 s
+minimal-json             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.7 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,497 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# Detecting actual CPU count: 16 detected
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.instancePerThread
+# Parameters: (allCaches = true)
+
+# Run progress: 0.00% complete, ETA 00:03:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 29710.561 ops/s
+# Warmup Iteration   2: 30091.840 ops/s
+# Warmup Iteration   3: 29963.484 ops/s
+# Warmup Iteration   4: 30193.711 ops/s
+# Warmup Iteration   5: 29856.561 ops/s
+Iteration   1: 30089.898 ops/s
+Iteration   2: 29869.953 ops/s
+Iteration   3: 29506.691 ops/s
+Iteration   4: 29911.713 ops/s
+Iteration   5: 30030.244 ops/s
+Iteration   6: 29396.962 ops/s
+Iteration   7: 29664.005 ops/s
+Iteration   8: 29679.050 ops/s
+Iteration   9: 29517.388 ops/s
+Iteration  10: 29720.074 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.instancePerThread":
+  29738.598 ±(99.9%) 350.809 ops/s [Average]
+  (min, avg, max) = (29396.962, 29738.598, 30089.898), stdev = 232.038
+  CI (99.9%): [29387.789, 30089.407] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.instancePerThread
+# Parameters: (allCaches = false)
+
+# Run progress: 8.33% complete, ETA 00:02:47
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 19062.760 ops/s
+# Warmup Iteration   2: 19048.421 ops/s
+# Warmup Iteration   3: 18870.731 ops/s
+# Warmup Iteration   4: 18840.817 ops/s
+# Warmup Iteration   5: 18821.283 ops/s
+Iteration   1: 18973.630 ops/s
+Iteration   2: 19003.598 ops/s
+Iteration   3: 18811.341 ops/s
+Iteration   4: 18715.727 ops/s
+Iteration   5: 18908.383 ops/s
+Iteration   6: 18842.844 ops/s
+Iteration   7: 18980.648 ops/s
+Iteration   8: 18907.257 ops/s
+Iteration   9: 19023.992 ops/s
+Iteration  10: 18895.232 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.instancePerThread":
+  18906.265 ±(99.9%) 145.073 ops/s [Average]
+  (min, avg, max) = (18715.727, 18906.265, 19023.992), stdev = 95.957
+  CI (99.9%): [18761.192, 19051.338] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.newInstancePerCall
+# Parameters: (allCaches = true)
+
+# Run progress: 16.67% complete, ETA 00:02:32
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3970.035 ops/s
+# Warmup Iteration   2: 4132.741 ops/s
+# Warmup Iteration   3: 4056.324 ops/s
+# Warmup Iteration   4: 4080.681 ops/s
+# Warmup Iteration   5: 4044.899 ops/s
+Iteration   1: 4056.573 ops/s
+Iteration   2: 4149.214 ops/s
+Iteration   3: 4048.572 ops/s
+Iteration   4: 4058.372 ops/s
+Iteration   5: 4068.723 ops/s
+Iteration   6: 4155.200 ops/s
+Iteration   7: 4094.379 ops/s
+Iteration   8: 4114.353 ops/s
+Iteration   9: 4095.357 ops/s
+Iteration  10: 4071.771 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.newInstancePerCall":
+  4091.251 ±(99.9%) 57.463 ops/s [Average]
+  (min, avg, max) = (4048.572, 4091.251, 4155.200), stdev = 38.008
+  CI (99.9%): [4033.788, 4148.714] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.newInstancePerCall
+# Parameters: (allCaches = false)
+
+# Run progress: 25.00% complete, ETA 00:02:17
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 5995.947 ops/s
+# Warmup Iteration   2: 6683.921 ops/s
+# Warmup Iteration   3: 6278.087 ops/s
+# Warmup Iteration   4: 6979.590 ops/s
+# Warmup Iteration   5: 7361.855 ops/s
+Iteration   1: 7504.646 ops/s
+Iteration   2: 7954.110 ops/s
+Iteration   3: 7993.723 ops/s
+Iteration   4: 7298.864 ops/s
+Iteration   5: 7660.167 ops/s
+Iteration   6: 7879.538 ops/s
+Iteration   7: 7892.858 ops/s
+Iteration   8: 8144.636 ops/s
+Iteration   9: 7898.728 ops/s
+Iteration  10: 7942.748 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.newInstancePerCall":
+  7817.002 ±(99.9%) 383.852 ops/s [Average]
+  (min, avg, max) = (7298.864, 7817.002, 8144.636), stdev = 253.894
+  CI (99.9%): [7433.150, 8200.853] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.sharedInstance
+# Parameters: (allCaches = true)
+
+# Run progress: 33.33% complete, ETA 00:02:02
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 29838.822 ops/s
+# Warmup Iteration   2: 29707.942 ops/s
+# Warmup Iteration   3: 29530.458 ops/s
+# Warmup Iteration   4: 29988.096 ops/s
+# Warmup Iteration   5: 29823.156 ops/s
+Iteration   1: 29486.553 ops/s
+Iteration   2: 29591.805 ops/s
+Iteration   3: 29398.935 ops/s
+Iteration   4: 29310.205 ops/s
+Iteration   5: 29664.173 ops/s
+Iteration   6: 29426.545 ops/s
+Iteration   7: 29512.278 ops/s
+Iteration   8: 29315.190 ops/s
+Iteration   9: 29534.385 ops/s
+Iteration  10: 29480.714 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.sharedInstance":
+  29472.078 ±(99.9%) 171.090 ops/s [Average]
+  (min, avg, max) = (29310.205, 29472.078, 29664.173), stdev = 113.165
+  CI (99.9%): [29300.988, 29643.168] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.postag.POSTaggerMEBenchmark.sharedInstance
+# Parameters: (allCaches = false)
+
+# Run progress: 41.67% complete, ETA 00:01:46
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 18890.653 ops/s
+# Warmup Iteration   2: 19053.279 ops/s
+# Warmup Iteration   3: 18923.406 ops/s
+# Warmup Iteration   4: 18896.753 ops/s
+# Warmup Iteration   5: 19096.999 ops/s
+Iteration   1: 19055.036 ops/s
+Iteration   2: 18931.930 ops/s
+Iteration   3: 18902.345 ops/s
+Iteration   4: 18875.225 ops/s
+Iteration   5: 18942.636 ops/s
+Iteration   6: 18697.850 ops/s
+Iteration   7: 18741.335 ops/s
+Iteration   8: 18741.605 ops/s
+Iteration   9: 18914.826 ops/s
+Iteration  10: 18592.725 ops/s
+
+Result "opennlp.tools.postag.POSTaggerMEBenchmark.sharedInstance":
+  18839.551 ±(99.9%) 211.851 ops/s [Average]
+  (min, avg, max) = (18592.725, 18839.551, 19055.036), stdev = 140.126
+  CI (99.9%): [18627.700, 19051.402] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.instancePerThread
+
+# Run progress: 50.00% complete, ETA 00:01:31
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 243644.310 ops/s
+# Warmup Iteration   2: 241145.696 ops/s
+# Warmup Iteration   3: 238548.126 ops/s
+# Warmup Iteration   4: 239735.602 ops/s
+# Warmup Iteration   5: 236279.620 ops/s
+Iteration   1: 238437.602 ops/s
+Iteration   2: 238370.267 ops/s
+Iteration   3: 236314.068 ops/s
+Iteration   4: 232659.269 ops/s
+Iteration   5: 237982.492 ops/s
+Iteration   6: 237322.385 ops/s
+Iteration   7: 236500.049 ops/s
+Iteration   8: 232785.822 ops/s
+Iteration   9: 233252.659 ops/s
+Iteration  10: 235844.628 ops/s
+
+Result "opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.instancePerThread":
+  235946.924 ±(99.9%) 3441.040 ops/s [Average]
+  (min, avg, max) = (232659.269, 235946.924, 238437.602), stdev = 2276.035
+  CI (99.9%): [232505.884, 239387.964] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.newInstancePerCall
+
+# Run progress: 58.33% complete, ETA 00:01:16
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 234878.680 ops/s
+# Warmup Iteration   2: 237270.651 ops/s
+# Warmup Iteration   3: 236037.301 ops/s
+# Warmup Iteration   4: 234275.754 ops/s
+# Warmup Iteration   5: 236464.826 ops/s
+Iteration   1: 235975.757 ops/s
+Iteration   2: 235617.125 ops/s
+Iteration   3: 236355.080 ops/s
+Iteration   4: 237049.408 ops/s
+Iteration   5: 230081.710 ops/s
+Iteration   6: 236276.690 ops/s
+Iteration   7: 235402.676 ops/s
+Iteration   8: 234607.788 ops/s
+Iteration   9: 235763.553 ops/s
+Iteration  10: 236335.722 ops/s
+
+Result "opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.newInstancePerCall":
+  235346.551 ±(99.9%) 2967.375 ops/s [Average]
+  (min, avg, max) = (230081.710, 235346.551, 237049.408), stdev = 1962.735
+  CI (99.9%): [232379.176, 238313.925] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.sharedInstance
+
+# Run progress: 66.67% complete, ETA 00:01:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 236962.144 ops/s
+# Warmup Iteration   2: 238352.395 ops/s
+# Warmup Iteration   3: 239298.848 ops/s
+# Warmup Iteration   4: 233119.882 ops/s
+# Warmup Iteration   5: 233386.114 ops/s
+Iteration   1: 237564.965 ops/s
+Iteration   2: 239253.534 ops/s
+Iteration   3: 237685.206 ops/s
+Iteration   4: 235278.153 ops/s
+Iteration   5: 238127.636 ops/s
+Iteration   6: 237382.779 ops/s
+Iteration   7: 236452.705 ops/s
+Iteration   8: 237234.469 ops/s
+Iteration   9: 230038.695 ops/s
+Iteration  10: 236772.189 ops/s
+
+Result "opennlp.tools.sentdetect.SentenceDetectorMEBenchmark.sharedInstance":
+  236579.033 ±(99.9%) 3816.221 ops/s [Average]
+  (min, avg, max) = (230038.695, 236579.033, 239253.534), stdev = 2524.194
+  CI (99.9%): [232762.812, 240395.254] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.tokenize.TokenizerMEBenchmark.instancePerThread
+
+# Run progress: 75.00% complete, ETA 00:00:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 214100.553 ops/s
+# Warmup Iteration   2: 215259.164 ops/s
+# Warmup Iteration   3: 216741.216 ops/s
+# Warmup Iteration   4: 215521.872 ops/s
+# Warmup Iteration   5: 216937.250 ops/s
+Iteration   1: 216559.263 ops/s
+Iteration   2: 215194.174 ops/s
+Iteration   3: 216061.691 ops/s
+Iteration   4: 217177.560 ops/s
+Iteration   5: 215600.972 ops/s
+Iteration   6: 214324.831 ops/s
+Iteration   7: 214296.762 ops/s
+Iteration   8: 215287.605 ops/s
+Iteration   9: 207934.210 ops/s
+Iteration  10: 204590.708 ops/s
+
+Result "opennlp.tools.tokenize.TokenizerMEBenchmark.instancePerThread":
+  213702.778 ±(99.9%) 6196.425 ops/s [Average]
+  (min, avg, max) = (204590.708, 213702.778, 217177.560), stdev = 4098.552
+  CI (99.9%): [207506.352, 219899.203] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.tokenize.TokenizerMEBenchmark.newInstancePerCall
+
+# Run progress: 83.33% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 211338.274 ops/s
+# Warmup Iteration   2: 210935.034 ops/s
+# Warmup Iteration   3: 208580.927 ops/s
+# Warmup Iteration   4: 211083.866 ops/s
+# Warmup Iteration   5: 211062.522 ops/s
+Iteration   1: 209700.075 ops/s
+Iteration   2: 207527.390 ops/s
+Iteration   3: 210457.201 ops/s
+Iteration   4: 208033.620 ops/s
+Iteration   5: 209583.692 ops/s
+Iteration   6: 212461.365 ops/s
+Iteration   7: 212661.775 ops/s
+Iteration   8: 211381.313 ops/s
+Iteration   9: 211966.443 ops/s
+Iteration  10: 210164.183 ops/s
+
+Result "opennlp.tools.tokenize.TokenizerMEBenchmark.newInstancePerCall":
+  210393.706 ±(99.9%) 2659.415 ops/s [Average]
+  (min, avg, max) = (207527.390, 210393.706, 212661.775), stdev = 1759.039
+  CI (99.9%): [207734.290, 213053.121] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 16 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: opennlp.tools.tokenize.TokenizerMEBenchmark.sharedInstance
+
+# Run progress: 91.67% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 216307.603 ops/s
+# Warmup Iteration   2: 214780.632 ops/s
+# Warmup Iteration   3: 216049.758 ops/s
+# Warmup Iteration   4: 210433.160 ops/s
+# Warmup Iteration   5: 213734.124 ops/s
+Iteration   1: 213415.255 ops/s
+Iteration   2: 215236.313 ops/s
+Iteration   3: 213897.575 ops/s
+Iteration   4: 214860.607 ops/s
+Iteration   5: 210316.813 ops/s
+Iteration   6: 211304.091 ops/s
+Iteration   7: 214477.212 ops/s
+Iteration   8: 217405.313 ops/s
+Iteration   9: 210362.529 ops/s
+Iteration  10: 215694.424 ops/s
+
+Result "opennlp.tools.tokenize.TokenizerMEBenchmark.sharedInstance":
+  213697.013 ±(99.9%) 3579.959 ops/s [Average]
+  (min, avg, max) = (210316.813, 213697.013, 217405.313), stdev = 2367.921
+  CI (99.9%): [210117.054, 217276.972] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:02
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                                      (allCaches)   Mode  Cnt       Score      Error  Units
+o.t.postag.POSTaggerMEBenchmark.instancePerThread                     true  thrpt   10   29738.598 ±  350.809  ops/s
+o.t.postag.POSTaggerMEBenchmark.instancePerThread                    false  thrpt   10   18906.265 ±  145.073  ops/s
+o.t.postag.POSTaggerMEBenchmark.newInstancePerCall                    true  thrpt   10    4091.251 ±   57.463  ops/s
+o.t.postag.POSTaggerMEBenchmark.newInstancePerCall                   false  thrpt   10    7817.002 ±  383.852  ops/s
+o.t.postag.POSTaggerMEBenchmark.sharedInstance                        true  thrpt   10   29472.078 ±  171.090  ops/s
+o.t.postag.POSTaggerMEBenchmark.sharedInstance                       false  thrpt   10   18839.551 ±  211.851  ops/s
+o.t.sentdetect.SentenceDetectorMEBenchmark.instancePerThread           N/A  thrpt   10  235946.924 ± 3441.040  ops/s
+o.t.sentdetect.SentenceDetectorMEBenchmark.newInstancePerCall          N/A  thrpt   10  235346.551 ± 2967.375  ops/s
+o.t.sentdetect.SentenceDetectorMEBenchmark.sharedInstance              N/A  thrpt   10  236579.033 ± 3816.221  ops/s
+o.t.tokenize.TokenizerMEBenchmark.instancePerThread                    N/A  thrpt   10  213702.778 ± 6196.425  ops/s
+o.t.tokenize.TokenizerMEBenchmark.newInstancePerCall                   N/A  thrpt   10  210393.706 ± 2659.415  ops/s
+o.t.tokenize.TokenizerMEBenchmark.sharedInstance                       N/A  thrpt   10  213697.013 ± 3579.959  ops/s

@@ -1,0 +1,10 @@
+KIND	metric
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/rows/owasp.sh
+DESC	OWASP html-sanitizer Benchmark sp (hunt3 ab3 recipe)
+CPUS	0-15
+JMHSET	-
+SLOTITER	-
+METRIC	main	sanitize custom | lower | both | 1 | Full sanitize custom :\s+(\d+)
+METRIC	main	sanitize w/ PB | lower | both | 1 | Full sanitize w/ PB  :\s+(\d+)

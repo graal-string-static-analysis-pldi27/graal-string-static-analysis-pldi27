@@ -1,0 +1,11 @@
+# C99 campaign results  SLOT=CP3  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CP3-palantir-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## palantir  [metric] palantir-java-format CLI -i --palantir over 24 files (hunt/ab candspec; CPU-time metric, inputs restored per run)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.991 [0.966,1.015] n.s. (1 keys)  alloc 1.001 [0.997,1.005] n.s. (1 keys)
+  cpu ms                                                                 FULL 0.991 [0.966,1.015] n.s.  BIMODAL(BASE)
+  wall s                                                                 FULL 0.986 [0.944,1.029] info-only
+  ~alloc MB                                                              FULL 1.001 [0.997,1.005] n.s.  BIMODAL(FULL)
+  ~rss MB                                                                FULL 0.994 [0.971,1.012] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

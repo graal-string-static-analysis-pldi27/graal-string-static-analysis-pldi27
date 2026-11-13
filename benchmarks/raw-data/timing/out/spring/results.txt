@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=spring  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/spring  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## spring  [jmh] Spring StringUtilsBenchmark (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.952 [0.926,0.978] FASTER (2 keys)  alloc 0.904 [0.884,0.925] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.004 [0.992,1.017] n.s. (2 keys)  alloc 0.990 [0.984,0.997] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.995 [0.980,1.010] n.s. (2 keys)  alloc 0.874 [0.854,0.894] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.966 [0.927,1.007] n.s. (2 keys)  alloc 1.029 [1.006,1.052] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.961 [0.956,0.966] FASTER (2 keys)  alloc 0.878 [0.873,0.883] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 0.989 [0.974,1.005] n.s. (2 keys)  alloc 1.009 [0.996,1.023] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.961 [0.954,0.969] FASTER (2 keys)  alloc 0.892 [0.885,0.898] LESS (1 keys)
+  StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10                       FULL 0.988 [0.951,1.027] n.s. | BASE_A32 0.999 [0.976,1.022] n.s. | FULL_A32 1.024 [1.013,1.035] SLOWER | BASE_A128 1.004 [0.947,1.068] n.s. | FULL_A128 0.998 [0.977,1.019] n.s. | BASE_A256 0.993 [0.976,1.011] n.s. | FULL_A256 0.975 [0.947,1.003] n.s.
+  StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/A N/A      FULL 0.917 [0.901,0.934] FASTER | BASE_A32 1.009 [0.977,1.043] n.s. | FULL_A32 0.967 [0.943,0.992] FASTER | BASE_A128 0.929 [0.907,0.952] FASTER | FULL_A128 0.925 [0.916,0.934] FASTER | BASE_A256 0.985 [0.969,1.001] n.s. | FULL_A256 0.948 [0.922,0.975] FASTER
+  ~alloc MB                                                              FULL 0.904 [0.884,0.925] LESS | BASE_A32 0.990 [0.984,0.997] LESS | FULL_A32 0.874 [0.854,0.894] LESS | BASE_A128 1.029 [1.006,1.052] MORE | FULL_A128 0.878 [0.873,0.883] LESS | BASE_A256 1.009 [0.996,1.023] n.s. | FULL_A256 0.892 [0.885,0.898] LESS
+  ~rss MB                                                                FULL 1.001 [0.994,1.008] n.s. | BASE_A32 1.000 [0.995,1.004] n.s. | FULL_A32 0.999 [0.993,1.006] n.s. | BASE_A128 0.995 [0.992,0.997] LESS | FULL_A128 0.998 [0.994,1.002] n.s. | BASE_A256 1.007 [1.003,1.011] MORE | FULL_A256 1.010 [1.008,1.013] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  spring                     0.952*|0.904*     1.004|0.990*      0.995|0.874*      0.966|1.029*      0.961*|0.878*     0.989|1.009       0.961*|0.892*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=XL2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL2  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## snakeyaml  [jmh] SnakeYAML Parse/Emitter (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.969 [0.963,0.975] FASTER (5 keys)  alloc 1.003 [0.999,1.006] n.s. (1 keys)
+  EmitterBenchmark.emitScalar N/A                                        FULL 1.025 [1.008,1.040] SLOWER
+  ParseBenchmark.load 1000                                               FULL 0.982 [0.973,0.989] FASTER
+  ParseBenchmark.load 100000                                             FULL 0.975 [0.935,1.014] n.s.
+  ParseBenchmark.parse 1000                                              FULL 0.936 [0.924,0.948] FASTER
+  ParseBenchmark.parse 100000                                            FULL 0.931 [0.924,0.937] FASTER
+  ~alloc MB                                                              FULL 1.003 [0.999,1.006] n.s.
+  ~rss MB                                                                FULL 0.987 [0.975,0.998] LESS
+
+## jsqlparser  [jmh] JSqlParser JSQLParserBenchmark version=latest (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 1.013 [1.006,1.023] SLOWER (1 keys)  alloc 0.986 [0.982,0.990] LESS (1 keys)
+  JSQLParserBenchmark.parseSQLStatements latest                          FULL 1.013 [1.006,1.023] SLOWER
+  ~alloc MB                                                              FULL 0.986 [0.982,0.990] LESS
+  ~rss MB                                                                FULL 0.984 [0.922,1.045] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

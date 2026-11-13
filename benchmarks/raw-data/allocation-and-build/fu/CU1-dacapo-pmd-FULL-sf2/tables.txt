@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CU1-dacapo-pmd-FULL-sf2  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-pmd               BASE b1 size 57.15/59.76/25.78/28.64 | parent 23.0 s 3.76 GB | driver 23.6 s REUSED
+dacapo-pmd               BASE b2 size 57.15/59.76/25.78/28.64 | parent 22.9 s 3.57 GB | driver 23.5 s REUSED
+dacapo-pmd               BASE b3 size 57.15/59.76/25.78/28.64 | parent 23.0 s 4.16 GB | driver 23.6 s REUSED
+dacapo-pmd               FULL b1 size 57.41/60.02/25.97/28.70 | parent 57.7 s 5.08 GB | driver 58.4 s | OK | child aa 30341 ms gen 33.1 s obs 33 s VmHWM 12.19 GB | wait 33.0 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b2 size 57.41/60.02/25.97/28.70 | parent 58.5 s 4.75 GB | driver 59.2 s | OK | child aa 30740 ms gen 33.5 s obs 34 s VmHWM 11.21 GB | wait 33.6 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b3 size 57.41/60.02/25.97/28.70 | parent 58.8 s 4.54 GB | driver 59.5 s | OK | child aa 30442 ms gen 33.2 s obs 33 s VmHWM 12.29 GB | wait 33.0 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11888 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+## build cost vs stock (means over builds)
+dacapo-pmd               FULL/BASE  parent wall 23.0 -> 58.3 s (x2.54)  Peak RSS 3.83 -> 4.79 GB (x1.25)  child VmHWM 11.89 GB  size 57.15 -> 57.41 MB (x1.005)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-pmd               FULL SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: dacapo-pmd FULL: admit counts differ across builds
+TABLES-DONE

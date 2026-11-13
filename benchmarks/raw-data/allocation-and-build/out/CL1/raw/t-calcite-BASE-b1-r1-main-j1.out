@@ -1,0 +1,92 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -Xmx128m -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.calcite.benchmarks.ParserBenchmark.parseCached
+# Parameters: (comments = true, length = 1000)
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 93.504 us/op
+# Warmup Iteration   2: 92.553 us/op
+# Warmup Iteration   3: 92.702 us/op
+# Warmup Iteration   4: 92.879 us/op
+# Warmup Iteration   5: 93.479 us/op
+Iteration   1: 93.646 us/op
+Iteration   2: 94.130 us/op
+Iteration   3: 93.454 us/op
+Iteration   4: 93.241 us/op
+Iteration   5: 93.763 us/op
+Iteration   6: 93.675 us/op
+Iteration   7: 93.851 us/op
+Iteration   8: 93.341 us/op
+Iteration   9: 93.395 us/op
+Iteration  10: 93.706 us/op
+
+Result "org.apache.calcite.benchmarks.ParserBenchmark.parseCached":
+  93.620 ±(99.9%) 0.405 us/op [Average]
+  (min, avg, max) = (93.241, 93.620, 94.130), stdev = 0.268
+  CI (99.9%): [93.216, 94.025] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -Xmx128m -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.apache.calcite.benchmarks.ParserBenchmark.parseNonCached
+# Parameters: (comments = true, length = 1000)
+
+# Run progress: 50.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 90.668 us/op
+# Warmup Iteration   2: 90.486 us/op
+# Warmup Iteration   3: 90.551 us/op
+# Warmup Iteration   4: 90.738 us/op
+# Warmup Iteration   5: 90.746 us/op
+Iteration   1: 91.078 us/op
+Iteration   2: 90.756 us/op
+Iteration   3: 90.339 us/op
+Iteration   4: 89.210 us/op
+Iteration   5: 89.479 us/op
+Iteration   6: 89.659 us/op
+Iteration   7: 89.656 us/op
+Iteration   8: 89.339 us/op
+Iteration   9: 89.256 us/op
+Iteration  10: 89.471 us/op
+
+Result "org.apache.calcite.benchmarks.ParserBenchmark.parseNonCached":
+  89.824 ±(99.9%) 1.000 us/op [Average]
+  (min, avg, max) = (89.210, 89.824, 91.078), stdev = 0.662
+  CI (99.9%): [88.824, 90.825] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:30
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                       (comments)  (length)  Mode  Cnt   Score   Error  Units
+ParserBenchmark.parseCached           true      1000  avgt   10  93.620 ± 0.405  us/op
+ParserBenchmark.parseNonCached        true      1000  avgt   10  89.824 ± 1.000  us/op

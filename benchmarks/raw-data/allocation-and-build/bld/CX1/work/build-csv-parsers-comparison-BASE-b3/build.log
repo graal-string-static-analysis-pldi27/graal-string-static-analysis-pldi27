@@ -1,0 +1,62 @@
+1794234535.748205 ========================================================================================================================
+1794234535.749756 GraalVM Native Image: Generating 'csv-parsers-comparison-BASE-b3' (executable)...
+1794234535.749775 ========================================================================================================================
+1794234535.749787 For detailed information and explanations on the build output, visit:
+1794234535.749799 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794234535.749813 ------------------------------------------------------------------------------------------------------------------------
+1794234537.318057 [1/8] Initializing...                                                                                    (2.7s @ 0.47GB)
+1794234537.318353  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794234537.318481  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794234537.318554  C compiler: gcc (linux, x86_64, 15.2.0)
+1794234537.318665  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794234537.318689  2 user-specific feature(s):
+1794234537.318914  - com.oracle.svm.polyglot.scala.ScalaFeature
+1794234537.318925  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794234537.319568 ------------------------------------------------------------------------------------------------------------------------
+1794234537.319596  1 experimental option(s) unlocked:
+1794234537.319632  - '-H:CodeAlignment' (origin(s): command line)
+1794234537.320611 ------------------------------------------------------------------------------------------------------------------------
+1794234537.320619 Build resources:
+1794234537.320694  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794234537.320730  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794234541.852833 [2/8] Performing analysis...  [*****]                                                                    (4.2s @ 0.88GB)
+1794234541.875631     7,389 types,  10,679 fields, and  35,106 methods found reachable
+1794234541.876193     2,527 types,      88 fields, and     960 methods registered for reflection
+1794234541.876232        61 types,      62 fields, and      55 methods registered for JNI access
+1794234541.876258         0 downcalls and 0 upcalls registered for foreign access
+1794234541.876300         4 native libraries: dl, pthread, rt, z
+1794234543.308735 [3/8] Building universe...                                                                               (1.4s @ 1.26GB)
+1794234543.881354 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.12GB)
+1794234544.376539 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.36GB)
+1794234548.169575 [6/8] Compiling methods...    [**]                                                                       (3.8s @ 0.91GB)
+1794234550.191067 [7/8] Laying out methods...   [**]                                                                       (2.0s @ 1.11GB)
+1794234551.954376 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.21GB)
+1794234551.954681   15.43MB (43.91%) for code area:    21,079 compilation units
+1794234551.954742   16.19MB (46.06%) for image heap:  171,953 objects and 62 resources
+1794234551.954777    3.53MB (10.03%) for other data
+1794234551.954817   35.14MB in total image size, 33.29MB in total file size
+1794234551.954858 ------------------------------------------------------------------------------------------------------------------------
+1794234551.955550 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794234551.955793    6.38MB java.base                                            4.03MB byte[] for code metadata
+1794234551.955807    2.89MB java.xml                                             2.69MB byte[] for java.lang.String
+1794234551.955842    2.47MB csv-parsers-comparison-1.0-uber.jar                  1.62MB java.lang.String
+1794234551.955884    1.30MB svm.jar (Native Image)                               1.48MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794234551.956091  442.17kB java.management                                      1.00MB java.lang.Class
+1794234551.956300  351.92kB java.rmi                                           613.58kB byte[] for general heap data
+1794234551.956439  164.03kB java.desktop                                       525.31kB int[][]
+1794234551.956549  145.40kB jdk.naming.dns                                     427.94kB heap alignment
+1794234551.956635  133.13kB java.naming                                        372.82kB java.util.HashMap$Node
+1794234551.956729  122.62kB java.logging                                       309.08kB java.lang.String[]
+1794234551.957663  414.86kB for 17 more packages                                 3.12MB for 1646 more object types
+1794234551.958509 ------------------------------------------------------------------------------------------------------------------------
+1794234551.958528 Recommendations:
+1794234551.958557  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794234551.958566  HEAP: Set max heap for improved and more predictable memory usage.
+1794234551.958608  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794234551.961041 ------------------------------------------------------------------------------------------------------------------------
+1794234551.961624                        1.3s (7.2% of total time) in 156 GCs | Peak RSS: 2.66GB | CPU load: 13.82
+1794234551.961915 ------------------------------------------------------------------------------------------------------------------------
+1794234551.961922 Build artifacts:
+1794234551.962263  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CX1/bin/csv-parsers-comparison-BASE-b3 (executable)
+1794234551.962278 ========================================================================================================================
+1794234551.962336 Finished generating 'csv-parsers-comparison-BASE-b3' in 17.3s.

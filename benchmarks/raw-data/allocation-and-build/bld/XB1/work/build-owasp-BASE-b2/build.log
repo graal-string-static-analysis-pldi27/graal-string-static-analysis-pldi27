@@ -1,0 +1,61 @@
+1792873032.378189 ========================================================================================================================
+1792873032.379821 GraalVM Native Image: Generating 'owasp-BASE-b2' (executable)...
+1792873032.379840 ========================================================================================================================
+1792873032.379852 For detailed information and explanations on the build output, visit:
+1792873032.379865 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792873032.379880 ------------------------------------------------------------------------------------------------------------------------
+1792873033.785174 [1/8] Initializing...                                                                                    (2.0s @ 0.36GB)
+1792873033.785254  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792873033.785422  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792873033.785525  C compiler: gcc (linux, x86_64, 15.2.0)
+1792873033.785683  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792873033.785718  1 user-specific feature(s):
+1792873033.785991  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792873033.786822 ------------------------------------------------------------------------------------------------------------------------
+1792873033.786845  1 experimental option(s) unlocked:
+1792873033.786902  - '-H:CodeAlignment' (origin(s): command line)
+1792873033.788659 ------------------------------------------------------------------------------------------------------------------------
+1792873033.788676 Build resources:
+1792873033.788760  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792873033.788838  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792873036.771448 [2/8] Performing analysis...  [*****]                                                                    (2.8s @ 0.71GB)
+1792873036.788511     3,727 types,   5,355 fields, and  17,381 methods found reachable
+1792873036.789038     1,249 types,      41 fields, and     482 methods registered for reflection
+1792873036.789148        58 types,      59 fields, and      52 methods registered for JNI access
+1792873036.789214         0 downcalls and 0 upcalls registered for foreign access
+1792873036.789242         4 native libraries: dl, pthread, rt, z
+1792873037.602701 [3/8] Building universe...                                                                               (0.8s @ 1.02GB)
+1792873038.101748 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 0.66GB)
+1792873038.435272 [5/8] Inlining methods...     [***]                                                                      (0.2s @ 0.51GB)
+1792873042.685050 [6/8] Compiling methods...    [**]                                                                       (4.2s @ 1.21GB)
+1792873043.663114 [7/8] Laying out methods...   [*]                                                                        (1.0s @ 1.22GB)
+1792873044.750602 [8/8] Creating image...       [*]                                                                        (1.0s @ 1.21GB)
+1792873044.750876    9.22MB (45.38%) for code area:    10,048 compilation units
+1792873044.750927    9.11MB (44.82%) for image heap:  109,588 objects and 55 resources
+1792873044.750949    1.99MB ( 9.80%) for other data
+1792873044.750992   20.33MB in total image size, 19.34MB in total file size
+1792873044.751033 ------------------------------------------------------------------------------------------------------------------------
+1792873044.751684 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792873044.751925    3.88MB java.base                                            1.98MB byte[] for code metadata
+1792873044.752019    1.91MB htmlparser-1.4.jar                                   1.49MB byte[] for java.lang.String
+1792873044.752059    1.57MB org.owasp.html                                       1.12MB java.lang.String
+1792873044.752160  906.80kB svm.jar (Native Image)                             715.58kB com.oracle.svm.core.hub.DynamicHubCompanion
+1792873044.752197  233.30kB java.xml                                           527.18kB byte[] for general heap data
+1792873044.752228  110.77kB java.logging                                       482.92kB java.lang.Class
+1792873044.752260   90.80kB org.graalvm.nativeimage.base                       401.18kB heap alignment
+1792873044.752294   48.90kB jdk.proxy2                                         315.22kB java.util.HashMap$Node
+1792873044.752325   42.51kB jdk.proxy1                                         238.81kB java.lang.Object[]
+1792873044.752356   38.10kB org.graalvm.nativeimage.configure                  227.86kB java.lang.String[]
+1792873044.752985   89.09kB for 10 more packages                                 1.61MB for 1030 more object types
+1792873044.753871 ------------------------------------------------------------------------------------------------------------------------
+1792873044.753895 Recommendations:
+1792873044.753922  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792873044.753949  HEAP: Set max heap for improved and more predictable memory usage.
+1792873044.753978  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792873044.755866 ------------------------------------------------------------------------------------------------------------------------
+1792873044.756461                         0.8s (6.0% of total time) in 65 GCs | Peak RSS: 2.53GB | CPU load: 13.22
+1792873044.756779 ------------------------------------------------------------------------------------------------------------------------
+1792873044.756801 Build artifacts:
+1792873044.757150  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/owasp-BASE-b2 (executable)
+1792873044.757200 ========================================================================================================================
+1792873044.757223 Finished generating 'owasp-BASE-b2' in 13.0s.

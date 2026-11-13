@@ -1,0 +1,84 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-commons-lang-join  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+commons-lang-join        BASE b1 size 22.74/24.03/9.71/11.67 | parent 32.4 s 2.40 GB | driver 33.3 s REUSED
+commons-lang-join        BASE b2 size 22.74/24.03/9.71/11.67 | parent 31.1 s 2.34 GB | driver 32.3 s REUSED
+commons-lang-join        SBS  b1 size 22.74/24.03/9.71/11.67 | parent 58.0 s 2.52 GB | driver 59.2 s | OK | child aa 21770 ms gen 26.2 s obs 26 s VmHWM 4.30 GB | wait 26.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SBS  b2 size 22.74/24.03/9.71/11.67 | parent 59.0 s 2.52 GB | driver 59.8 s | OK | child aa 23386 ms gen 29.5 s obs 29 s VmHWM 4.39 GB | wait 29.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SV   b1 size 22.74/24.04/9.74/11.67 | parent 57.7 s 2.59 GB | driver 58.9 s | OK | child aa 22090 ms gen 27.1 s obs 26 s VmHWM 3.10 GB | wait 27.1 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        SV   b2 size 22.74/24.04/9.74/11.67 | parent 58.4 s 2.44 GB | driver 59.8 s | OK | child aa 21669 ms gen 26.6 s obs 26 s VmHWM 3.06 GB | wait 27.0 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        LS   b1 size 22.74/24.03/9.71/11.67 | parent 52.9 s 2.53 GB | driver 54.0 s | ZERO-ADMIT | child aa 17316 ms gen 24.1 s obs 24 s VmHWM 2.71 GB | wait 24.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        LS   b2 size 22.74/24.03/9.71/11.67 | parent 54.7 s 2.53 GB | driver 56.2 s | ZERO-ADMIT | child aa 14366 ms gen 19.9 s obs 20 s VmHWM 2.75 GB | wait 20.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        BASE_A32 b1 size 22.55/23.84/9.51/11.67 | parent 25.7 s 2.30 GB | driver 26.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        BASE_A32 b2 size 22.55/23.84/9.51/11.67 | parent 33.0 s 2.32 GB | driver 34.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        SBS_A32 b1 size 22.55/23.84/9.51/11.67 | parent 55.5 s 2.62 GB | driver 56.8 s | OK | child aa 23393 ms gen 29.0 s obs 30 s VmHWM 4.32 GB | wait 29.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SBS_A32 b2 size 22.55/23.84/9.51/11.67 | parent 60.0 s 2.51 GB | driver 61.4 s | OK | child aa 25702 ms gen 30.7 s obs 31 s VmHWM 4.42 GB | wait 31.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SV_A32 b1 size 22.55/23.84/9.54/11.67 | parent 56.0 s 2.56 GB | driver 57.1 s | OK | child aa 22990 ms gen 28.2 s obs 28 s VmHWM 3.06 GB | wait 28.6 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        SV_A32 b2 size 22.55/23.84/9.54/11.67 | parent 42.8 s 2.46 GB | driver 43.9 s | OK | child aa 16185 ms gen 21.0 s obs 20 s VmHWM 3.06 GB | wait 21.0 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3824 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        LS_A32 b1 size 22.55/23.84/9.51/11.67 | parent 35.3 s 2.45 GB | driver 36.3 s | ZERO-ADMIT | child aa 11833 ms gen 15.1 s obs 14 s VmHWM 2.72 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        LS_A32 b2 size 22.55/23.84/9.51/11.67 | parent 35.1 s 2.50 GB | driver 36.0 s | ZERO-ADMIT | child aa 9108 ms gen 13.8 s obs 14 s VmHWM 2.78 GB | wait 14.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        BASE_A128 b1 size 23.20/24.49/10.19/11.67 | parent 33.6 s 2.26 GB | driver 34.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        BASE_A128 b2 size 23.20/24.49/10.19/11.67 | parent 26.6 s 2.29 GB | driver 27.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        SBS_A128 b1 size 23.20/24.49/10.20/11.67 | parent 49.4 s 2.52 GB | driver 50.5 s | OK | child aa 16058 ms gen 19.2 s obs 18 s VmHWM 4.38 GB | wait 19.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SBS_A128 b2 size 23.20/24.49/10.20/11.67 | parent 61.0 s 2.61 GB | driver 62.8 s | OK | child aa 24050 ms gen 30.2 s obs 30 s VmHWM 4.41 GB | wait 30.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SV_A128 b1 size 23.20/24.49/10.22/11.67 | parent 56.1 s 2.54 GB | driver 57.7 s | OK | child aa 21033 ms gen 25.0 s obs 25 s VmHWM 3.13 GB | wait 25.1 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        SV_A128 b2 size 23.20/24.49/10.22/11.67 | parent 58.7 s 2.59 GB | driver 59.8 s | OK | child aa 23046 ms gen 27.3 s obs 26 s VmHWM 3.02 GB | wait 27.1 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        LS_A128 b1 size 23.20/24.49/10.19/11.67 | parent 48.5 s 2.62 GB | driver 49.6 s | ZERO-ADMIT | child aa 15959 ms gen 21.0 s obs 20 s VmHWM 2.77 GB | wait 21.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        LS_A128 b2 size 23.20/24.49/10.19/11.67 | parent 49.0 s 2.47 GB | driver 50.1 s | ZERO-ADMIT | child aa 12629 ms gen 17.7 s obs 17 s VmHWM 2.81 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        BASE_A256 b1 size 24.25/25.54/11.23/11.67 | parent 29.9 s 2.34 GB | driver 31.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        BASE_A256 b2 size 24.25/25.54/11.23/11.67 | parent 26.9 s 2.32 GB | driver 28.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang-join        SBS_A256 b1 size 24.25/25.54/11.23/11.67 | parent 62.0 s 2.49 GB | driver 63.4 s | OK | child aa 20363 ms gen 27.9 s obs 28 s VmHWM 4.28 GB | wait 28.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SBS_A256 b2 size 24.25/25.54/11.23/11.67 | parent 60.0 s 2.71 GB | driver 61.5 s | OK | child aa 25343 ms gen 29.9 s obs 30 s VmHWM 4.40 GB | wait 30.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        SV_A256 b1 size 24.25/25.54/11.26/11.67 | parent 55.2 s 2.52 GB | driver 56.5 s | OK | child aa 20629 ms gen 23.7 s obs 23 s VmHWM 3.02 GB | wait 24.0 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        SV_A256 b2 size 24.25/25.54/11.26/11.67 | parent 60.0 s 2.67 GB | driver 61.9 s | OK | child aa 19776 ms gen 25.5 s obs 26 s VmHWM 3.11 GB | wait 25.5 s | SBS=0 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang-join        LS_A256 b1 size 24.25/25.54/11.23/11.67 | parent 45.6 s 2.49 GB | driver 47.3 s | ZERO-ADMIT | child aa 14328 ms gen 18.6 s obs 18 s VmHWM 2.69 GB | wait 19.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+commons-lang-join        LS_A256 b2 size 24.25/25.54/11.23/11.67 | parent 52.5 s 2.48 GB | driver 53.6 s | ZERO-ADMIT | child aa 14600 ms gen 19.6 s obs 20 s VmHWM 2.79 GB | wait 20.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+commons-lang-join        SBS /BASE  parent wall 31.8 -> 58.5 s (x1.84)  Peak RSS 2.37 -> 2.52 GB (x1.06)  child VmHWM 4.35 GB  size 22.74 -> 22.74 MB (x1.000)  status OK,OK
+commons-lang-join        SV  /BASE  parent wall 31.8 -> 58.0 s (x1.83)  Peak RSS 2.37 -> 2.51 GB (x1.06)  child VmHWM 3.08 GB  size 22.74 -> 22.74 MB (x1.000)  status OK,OK
+commons-lang-join        LS  /BASE  parent wall 31.8 -> 53.8 s (x1.69)  Peak RSS 2.37 -> 2.53 GB (x1.07)  child VmHWM 2.73 GB  size 22.74 -> 22.74 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+commons-lang-join        BASE_A32/BASE  parent wall 31.8 -> 29.4 s (x0.92)  Peak RSS 2.37 -> 2.31 GB (x0.97)  child VmHWM ? GB  size 22.74 -> 22.55 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+commons-lang-join        SBS_A32/BASE  parent wall 31.8 -> 57.8 s (x1.82)  Peak RSS 2.37 -> 2.56 GB (x1.08)  child VmHWM 4.37 GB  size 22.74 -> 22.55 MB (x0.991)  status OK,OK
+commons-lang-join        SV_A32/BASE  parent wall 31.8 -> 49.4 s (x1.56)  Peak RSS 2.37 -> 2.51 GB (x1.06)  child VmHWM 3.06 GB  size 22.74 -> 22.55 MB (x0.991)  status OK,OK
+commons-lang-join        LS_A32/BASE  parent wall 31.8 -> 35.2 s (x1.11)  Peak RSS 2.37 -> 2.48 GB (x1.04)  child VmHWM 2.75 GB  size 22.74 -> 22.55 MB (x0.991)  status ZERO-ADMIT,ZERO-ADMIT
+commons-lang-join        BASE_A128/BASE  parent wall 31.8 -> 30.1 s (x0.95)  Peak RSS 2.37 -> 2.27 GB (x0.96)  child VmHWM ? GB  size 22.74 -> 23.20 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+commons-lang-join        SBS_A128/BASE  parent wall 31.8 -> 55.2 s (x1.74)  Peak RSS 2.37 -> 2.56 GB (x1.08)  child VmHWM 4.39 GB  size 22.74 -> 23.20 MB (x1.020)  status OK,OK
+commons-lang-join        SV_A128/BASE  parent wall 31.8 -> 57.4 s (x1.81)  Peak RSS 2.37 -> 2.56 GB (x1.08)  child VmHWM 3.07 GB  size 22.74 -> 23.20 MB (x1.020)  status OK,OK
+commons-lang-join        LS_A128/BASE  parent wall 31.8 -> 48.8 s (x1.54)  Peak RSS 2.37 -> 2.54 GB (x1.07)  child VmHWM 2.79 GB  size 22.74 -> 23.20 MB (x1.020)  status ZERO-ADMIT,ZERO-ADMIT
+commons-lang-join        BASE_A256/BASE  parent wall 31.8 -> 28.4 s (x0.89)  Peak RSS 2.37 -> 2.33 GB (x0.98)  child VmHWM ? GB  size 22.74 -> 24.25 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+commons-lang-join        SBS_A256/BASE  parent wall 31.8 -> 61.0 s (x1.92)  Peak RSS 2.37 -> 2.60 GB (x1.10)  child VmHWM 4.34 GB  size 22.74 -> 24.25 MB (x1.066)  status OK,OK
+commons-lang-join        SV_A256/BASE  parent wall 31.8 -> 57.6 s (x1.81)  Peak RSS 2.37 -> 2.59 GB (x1.09)  child VmHWM 3.06 GB  size 22.74 -> 24.25 MB (x1.066)  status OK,OK
+commons-lang-join        LS_A256/BASE  parent wall 31.8 -> 49.0 s (x1.54)  Peak RSS 2.37 -> 2.49 GB (x1.05)  child VmHWM 2.74 GB  size 22.74 -> 24.25 MB (x1.066)  status ZERO-ADMIT,ZERO-ADMIT
+## admits per rep kind (b1 profile; FULL/mode builds)
+commons-lang-join        SBS  SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+commons-lang-join        SV   SBS=0 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang-join        LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+commons-lang-join        BASE_A32 no profile  NO-PROFILE
+commons-lang-join        SBS_A32 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+commons-lang-join        SV_A32 SBS=0 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang-join        LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+commons-lang-join        BASE_A128 no profile  NO-PROFILE
+commons-lang-join        SBS_A128 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+commons-lang-join        SV_A128 SBS=0 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang-join        LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+commons-lang-join        BASE_A256 no profile  NO-PROFILE
+commons-lang-join        SBS_A256 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+commons-lang-join        SV_A256 SBS=0 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang-join        LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+commons-lang-join        LS   b1 ZERO-ADMIT               child obs 24 s VmHWM 2.71 GB | parent wait 24.6 s | driver wall 54.0 s
+commons-lang-join        LS   b2 ZERO-ADMIT               child obs 20 s VmHWM 2.75 GB | parent wait 20.0 s | driver wall 56.2 s
+commons-lang-join        BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.6 s
+commons-lang-join        BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.3 s
+commons-lang-join        LS_A32 b1 ZERO-ADMIT               child obs 14 s VmHWM 2.72 GB | parent wait 15.5 s | driver wall 36.3 s
+commons-lang-join        LS_A32 b2 ZERO-ADMIT               child obs 14 s VmHWM 2.78 GB | parent wait 14.0 s | driver wall 36.0 s
+commons-lang-join        BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.8 s
+commons-lang-join        BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.9 s
+commons-lang-join        LS_A128 b1 ZERO-ADMIT               child obs 20 s VmHWM 2.77 GB | parent wait 21.1 s | driver wall 49.6 s
+commons-lang-join        LS_A128 b2 ZERO-ADMIT               child obs 17 s VmHWM 2.81 GB | parent wait 18.0 s | driver wall 50.1 s
+commons-lang-join        BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.3 s
+commons-lang-join        BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.5 s
+commons-lang-join        LS_A256 b1 ZERO-ADMIT               child obs 18 s VmHWM 2.69 GB | parent wait 19.0 s | driver wall 47.3 s
+commons-lang-join        LS_A256 b2 ZERO-ADMIT               child obs 20 s VmHWM 2.79 GB | parent wait 20.0 s | driver wall 53.6 s
+## determinism: commons-lang-join SV_A32: admit counts differ across builds
+TABLES-DONE

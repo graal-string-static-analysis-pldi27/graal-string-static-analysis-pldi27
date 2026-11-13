@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/XL12-jackson-yaml-FULL-sf1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+jackson-yaml             BASE b1 size 27.53/29.17/12.55/13.43 | parent 15.9 s 2.44 GB | driver 16.5 s REUSED
+jackson-yaml             BASE b2 size 27.53/29.17/12.55/13.43 | parent 15.6 s 2.41 GB | driver 16.2 s REUSED
+jackson-yaml             BASE b3 size 27.53/29.17/12.55/13.43 | parent 15.5 s 2.46 GB | driver 16.1 s REUSED
+jackson-yaml             FULL b1 size 27.59/29.24/12.60/13.43 | parent 33.5 s 2.60 GB | driver 34.2 s | OK | child aa 13609 ms gen 16.3 s obs 17 s VmHWM 5.19 GB | wait 16.5 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL b2 size 27.59/29.24/12.60/13.43 | parent 34.0 s 2.61 GB | driver 34.6 s | OK | child aa 14019 ms gen 16.8 s obs 16 s VmHWM 5.22 GB | wait 17.0 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL b3 size 27.59/29.24/12.60/13.43 | parent 33.3 s 2.61 GB | driver 34.0 s | OK | child aa 14302 ms gen 17.0 s obs 17 s VmHWM 5.36 GB | wait 16.5 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+## build cost vs stock (means over builds)
+jackson-yaml             FULL/BASE  parent wall 15.7 -> 33.6 s (x2.14)  Peak RSS 2.44 -> 2.61 GB (x1.07)  child VmHWM 5.26 GB  size 27.53 -> 27.59 MB (x1.002)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+jackson-yaml             FULL SBS=6 SV=238 (ACC=188 ELEM=8) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

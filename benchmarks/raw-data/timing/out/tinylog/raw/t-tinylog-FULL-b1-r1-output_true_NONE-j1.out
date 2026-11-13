@@ -1,0 +1,72 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 1 iterations, 200 ms each
+# Measurement: 3 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.output
+# Parameters: (async = true, locationInfo = NONE)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 0.656 s/op
+Iteration   1: 0.573 s/op
+Iteration   2: 0.556 s/op
+Iteration   3: 0.533 s/op
+
+Result "org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.output":
+  N = 3
+  mean =      0.554 ±(99.9%) 0.359 s/op
+
+  Histogram, s/op:
+    [0.530, 0.533) = 0 
+    [0.533, 0.535) = 1 
+    [0.535, 0.538) = 0 
+    [0.538, 0.540) = 0 
+    [0.540, 0.543) = 0 
+    [0.543, 0.545) = 0 
+    [0.545, 0.548) = 0 
+    [0.548, 0.550) = 0 
+    [0.550, 0.553) = 0 
+    [0.553, 0.555) = 0 
+    [0.555, 0.558) = 1 
+    [0.558, 0.560) = 0 
+    [0.560, 0.563) = 0 
+    [0.563, 0.565) = 0 
+    [0.565, 0.568) = 0 
+    [0.568, 0.570) = 0 
+    [0.570, 0.573) = 0 
+    [0.573, 0.575) = 1 
+    [0.575, 0.578) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      0.533 s/op
+     p(50.0000) =      0.556 s/op
+     p(90.0000) =      0.573 s/op
+     p(95.0000) =      0.573 s/op
+     p(99.0000) =      0.573 s/op
+     p(99.9000) =      0.573 s/op
+     p(99.9900) =      0.573 s/op
+     p(99.9990) =      0.573 s/op
+     p(99.9999) =      0.573 s/op
+    p(100.0000) =      0.573 s/op
+
+
+# Run complete. Total time: 00:00:02
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                 (async)  (locationInfo)  Mode  Cnt  Score   Error  Units
+Tinylog2Benchmark.output     true            NONE    ss    3  0.554 ± 0.359   s/op

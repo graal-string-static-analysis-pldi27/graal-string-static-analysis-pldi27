@@ -1,0 +1,30 @@
+# C99 campaign results  SLOT=logback-perf  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/logback-perf  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## logback-perf  [jmh] logback-perf FileAppenderBenchmark (hunt/ab candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.946 [0.907,0.986] FASTER (1 keys)  alloc 0.933 [0.890,0.977] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.960 [0.916,1.007] n.s. (1 keys)  alloc 1.049 [0.997,1.103] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.900 [0.873,0.927] FASTER (1 keys)  alloc 0.976 [0.954,0.999] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.982 [0.910,1.064] n.s. (1 keys)  alloc 1.019 [0.948,1.092] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.006 [0.976,1.037] n.s. (1 keys)  alloc 0.879 [0.857,0.902] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.032 [1.005,1.059] SLOWER (1 keys)  alloc 0.980 [0.945,1.017] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.992 [0.974,1.011] n.s. (1 keys)  alloc 0.896 [0.879,0.913] LESS (1 keys)
+  FileAppenderBenchmark.enhancedLogbackToFile                            FULL 0.946 [0.907,0.986] FASTER | BASE_A32 0.960 [0.916,1.007] n.s. | FULL_A32 0.900 [0.873,0.927] FASTER | BASE_A128 0.982 [0.910,1.064] n.s. | FULL_A128 1.006 [0.976,1.037] n.s. | BASE_A256 1.032 [1.005,1.059] SLOWER | FULL_A256 0.992 [0.974,1.011] n.s.
+  ~alloc MB                                                              FULL 0.933 [0.890,0.977] LESS | BASE_A32 1.049 [0.997,1.103] n.s. | FULL_A32 0.976 [0.954,0.999] LESS | BASE_A128 1.019 [0.948,1.092] n.s. | FULL_A128 0.879 [0.857,0.902] LESS | BASE_A256 0.980 [0.945,1.017] n.s. | FULL_A256 0.896 [0.879,0.913] LESS
+  ~rss MB                                                                FULL 0.951 [0.888,1.019] n.s. | BASE_A32 0.969 [0.899,1.044] n.s. | FULL_A32 0.937 [0.889,0.989] LESS | BASE_A128 0.957 [0.914,1.004] n.s. | FULL_A128 0.945 [0.903,0.990] LESS | BASE_A256 1.140 [0.893,1.410] n.s. | FULL_A256 0.930 [0.884,0.980] LESS
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  logback-perf               0.946*|0.933*     0.960|1.049       0.900*|0.976*     0.982|1.019       1.006|0.879*      1.032*|0.980      0.992|0.896*     
+
+## frequency: 10 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  logback-perf-BASE-b1-r1-main-j1 2.886
+  logback-perf-BASE-b2-r1-main-j1 2.906
+  logback-perf-FULL-b1-r1-main-j1 2.919
+  logback-perf-FULL-b2-r1-main-j1 2.935
+  logback-perf-BASE_A32-b1-r1-main-j1 2.927
+  logback-perf-BASE_A128-b2-r1-main-j1 2.920
+  logback-perf-FULL_A128-b2-r1-main-j1 2.926
+  logback-perf-BASE_A256-b1-r1-main-j1 2.924
+  logback-perf-FULL_A256-b1-r1-main-j1 2.939
+  logback-perf-FULL_A256-b2-r1-main-j1 2.935
+SUMMARY-DONE

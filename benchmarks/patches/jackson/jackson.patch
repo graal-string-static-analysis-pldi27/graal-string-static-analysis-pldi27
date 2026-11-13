@@ -1,0 +1,13 @@
+diff --git a/pom.xml b/pom.xml
+index da29f54..95cbd60 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -176,6 +176,8 @@
+               <showDeprecation>true</showDeprecation>
+               <showWarnings>true</showWarnings>
+               <optimize>true</optimize>
++              <!-- hunt3 batch2 [BUILD]: JDK 23+ disables implicit annotation processing; JMH BenchmarkList generation needs -proc:full -->
++              <compilerArgs><arg>-proc:full</arg></compilerArgs>
+             </configuration>
+ 	  </plugin>
+ 	  <plugin>

@@ -1,0 +1,90 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: de.siegmar.fastcsv.FastCsvReadBenchmark.read
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 6035874.045 ops/s
+# Warmup Iteration   2: 6096006.320 ops/s
+# Warmup Iteration   3: 6078701.813 ops/s
+# Warmup Iteration   4: 6081696.804 ops/s
+# Warmup Iteration   5: 6085685.403 ops/s
+Iteration   1: 6053329.484 ops/s
+Iteration   2: 6068740.162 ops/s
+Iteration   3: 6076447.411 ops/s
+Iteration   4: 6064159.116 ops/s
+Iteration   5: 5895270.144 ops/s
+Iteration   6: 5981114.219 ops/s
+Iteration   7: 6001590.338 ops/s
+Iteration   8: 6008794.648 ops/s
+Iteration   9: 5989002.245 ops/s
+Iteration  10: 5990695.774 ops/s
+
+Result "de.siegmar.fastcsv.FastCsvReadBenchmark.read":
+  6012914.354 ±(99.9%) 83532.220 ops/s [Average]
+  (min, avg, max) = (5895270.144, 6012914.354, 6076447.411), stdev = 55251.392
+  CI (99.9%): [5929382.134, 6096446.574] (assumes normal distribution)
+
+
+# JMH version: 1.36
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: de.siegmar.fastcsv.FastCsvWriteBenchmark.write
+
+# Run progress: 50.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1356514.579 ops/s
+# Warmup Iteration   2: 1358120.646 ops/s
+# Warmup Iteration   3: 1362768.343 ops/s
+# Warmup Iteration   4: 1360920.103 ops/s
+# Warmup Iteration   5: 1356396.650 ops/s
+Iteration   1: 1355359.943 ops/s
+Iteration   2: 1355075.994 ops/s
+Iteration   3: 1356328.088 ops/s
+Iteration   4: 1351110.368 ops/s
+Iteration   5: 1354138.180 ops/s
+Iteration   6: 1350177.236 ops/s
+Iteration   7: 1351280.642 ops/s
+Iteration   8: 1352485.255 ops/s
+Iteration   9: 1352523.176 ops/s
+Iteration  10: 1347399.591 ops/s
+
+Result "de.siegmar.fastcsv.FastCsvWriteBenchmark.write":
+  1352587.847 ±(99.9%) 4122.066 ops/s [Average]
+  (min, avg, max) = (1347399.591, 1352587.847, 1356328.088), stdev = 2726.492
+  CI (99.9%): [1348465.781, 1356709.913] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:30
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                     Mode  Cnt        Score       Error  Units
+FastCsvReadBenchmark.read    thrpt   10  6012914.354 ± 83532.220  ops/s
+FastCsvWriteBenchmark.write  thrpt   10  1352587.847 ±  4122.066  ops/s

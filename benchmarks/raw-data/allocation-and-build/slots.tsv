@@ -1,0 +1,103 @@
+# C100 final campaign slot table (the ONE place that defines slots; camp-fin.sh and run-fin.sh read it). Tab-separated:
+# slot tier proto raised spr nb rpb30 cfgs rows
+# C100 fin rename (supervisor 2026-11-05): StringJoiner = former jdk-micro, StringSubstring = former jdk-micro-c99 (StringSubstring
+#   benchmarks only); template-benchmark nb 3 (orchestrator 2026-11-05; was 5).
+#   tier A = the 18 FULL wins (FULL+BASE), B = the 19 per-rep rows (BASE SBS SV LS), C = the 18 neutral rows + the 21 C98 hunt rows (C100 fin tier C, SD 2026-11-05; slots CL4-CL7 CP1 CN1) (FULL+BASE)
+#   proto uniform (UW=3 UM=5 US=2) | legacy (port/server/owasp/lucene rows keep their own measurement) | jmh (C100 fin jmh,
+#     supervisor 2026-11-05: JMH rows only, every one with -f 0 -wi 5 -w 1s -i 10 -r 1s; 1 start per build and config =
+#     RPB 1, i.e. 3 builds x 1 start x 10 measured iterations = 30 measured iterations per sub-benchmark; NOT under the
+#     30-start rule; camp-fin runs it as legacy)
+#   raised y = MEASX=MEAS3=$RAISED (default 1): only lucene-bytask (3 rounds per start) is left; JMH rows ignore RAISED
+#   spr = timed process starts per run and arm (uniform US=2; recipe NSTART otherwise); nb = builds per config
+#   rpb30 = runs per build for 30 starts per config (nb x rpb30 x spr = 30; jmh: 1); run-fin.sh derives RPB from the tier
+#     target (jmh slots: always 1)
+#   C100 fin tier C2 (SD 2026-11-05): CL8 CP2 CP3 CX1 = 5 hunt rows added with documented exceptions (c100_final_tierC2.md);
+#     CX1 has a FIXED RPB 2 (run-fin.sh/est.py FIXED_RPB: 3 builds x 2 starts, each start = 5 measured loops per row)
+#   C100 fin extra (orchestrator/supervisor 2026-11-10; docs/archive/research/c100_final_extra_slots.md): tier X = extra
+#     measurement slots after the campaign (own tier tag: the frozen tier A/B/C targets and fu-<t>.done markers stay untouched;
+#     X_STARTS default 15; the protocol comes from proto, as everywhere). Optional columns 10-11 (rows without them: unchanged):
+#     cpus  = per-slot CPU override for every row of the slot, replacing cpus.tsv's CPUS ("-" = cpus.tsv). Documented exception
+#             (supervisor 2026-11-10): XU1 "sunflow pinned to 2 cores: with 16 threads each process settles into a fast or
+#             slow mode independent of build/config" -> 4,6 = 2 physical cores without SMT siblings (the pre-C100 setting);
+#             CPUS is not in the image stamp; the JVM sanity reference re-keys on it (refkey cpus=)
+#     reuse = the slot's build-phase REUSE_FROM ("-" = FIN_REUSE default; "none" = empty = every image a new build; else
+#             kit-relative or absolute OUT dirs): XU1 reuses the CU2 sunflow images (bld/CU2), XL1 = jte FULL re-run with
+#             new BASE and FULL builds (a new layout draw; same recipe/flags as AL1, tier-A JMH protocol)
+#   C100 fin a128 (supervisor 2026-11-10; docs/archive/research/c100_a128_slot.md): optional column 12 align = per-slot
+#     -H:CodeAlignment override of BOTH sides ("-" = the campaign 64). Documented: "footnote control: CodeAlignment=128 on
+#     both sides, not a table value". The value is in every image stamp (flags= + an xalign=<n> token), so nothing is reused
+#     across alignments; XL2 = snakeyaml + jsqlparser BASE FULL at 128, 3 new builds per config (reuse none), tier-A/C JMH protocol,
+#     CPUs from cpus.tsv (0-15); profile gate vs the 64-alignment CL4/CL5 builds (profchk.sh, tier-X SELFREF rows)
+#   C100 fin a128 sunflow (orchestrator 2026-11-10; c100_a128_slot.md section 10): XU2 = dacapo-sunflow BASE FULL at CodeAlignment=128
+#     on both sides, CPUs 4,6 (as XU1), 3 new builds per config (reuse none), uniform protocol as XU1/CU2 (18 starts per config);
+#     profile gate vs the 64-alignment CU2 builds (profchk.sh: tier-X align-override rows get the campaign-slot check too)
+#   C100 fin newwins (supervisor 2026-11-10; docs/archive/research/c100_newwins_slots.md, pi brief pi-brief-newwins.txt): owasp,
+#     commons-csv and antlr count as NEW WINS (out of the neutral tier: CO, CL1, CN1) and get the win-tier treatment as tier-X slots
+#     (SKIP_FU; fu-X.done exists, so no tier-X report re-run):
+#     XA1 = antlr BASE FULL at the tier-A run count: CN1 had 3 builds x RPB 2 x NSTART 4 = 24 starts per config (< 30); re-measured
+#           FULLY (one consistent measurement, no pooling with CN1) on the CN1 images (reuse bld/CN1, fresh copies, no builds) with
+#           FIXED_RPB XA1:3 = 36 starts per config (= the README tier-A/C realisation for NSTART-4 metric rows). owasp (CO: 3 x 2 x 5
+#           = 30 starts per config) and commons-csv (CL1: 3 builds x 1 start x 10 = 30 measured iterations) already meet tier A.
+#     XB1 owasp / XB2 antlr / XB3 commons-csv = BASE SBS SV LS at the tier-B protocol (one slot per row: different spr/proto = one
+#           RPB per slot): XB1 FIXED_RPB 1 = 3 x 1 x 5 = 15 starts per config (the default "at least 2" would give 30); XB2 RPB 2 =
+#           3 x 2 x 4 = 24 (the smallest whole-run count >= 15); XB3 jmh 3 builds x 1 start. BASE = the rows' campaign images
+#           (reuse bld/CO, bld/CN1, bld/CL1: stamp match, BASE:RRR), SBS/SV/LS = 9 new builds per slot. Profile gate: the per-rep
+#           configs of these rows have no reference (no C99/asf profile, no campaign-slot build): within-slot agreement b1=b2=b3
+#           (profchk.sh NOREF list, as the tier-C hunt rows); CPUs from cpus.tsv (0-15, = CO/CN1/CL1)
+#   C100 fin neutral5 (orchestrator 2026-11-10; docs/archive/research/c100_neutral5_prep.md, pi brief pi-brief-neutral5.txt): step 2 of the
+#     neutral-slowdown procedure = CodeAlignment=128 control on both sides (footnote only, never a table value), 3 new builds per
+#     config (reuse none), protocol/CPUs as the row's campaign slot. XL3 = log4j2-plc (CL8). Prepared in slots-neutral5-a128-pending.tsv:
+#     XL4 sql-formatter (CL5), XL5 tinylog (CL6), XU3 dacapo-pmd (CU1), XP1 gson (CP1) - added only for rows step 1 does not resolve
+#     (XL4 not added: sql-formatter resolved by step 1)
+#   C100 fin neutral5b: the step-2 A128 controls for the rows step 1 did not resolve: XL5 tinylog (CL6), XU3 dacapo-pmd (CU1),
+#     XP1 gson (CP1); same shape as XL3 (align 128 both sides, 3 new builds per config, footnote only)
+#   C100 fin XL12 (docs/archive/research/c100_fastjson2_jacksonyaml_setup.md): the 2 C100 new hunt rows
+#     fastjson2 + jackson-yaml, tier X, JMH protocol, 3 new builds per config (reuse none), CPUs 0-15; no reference profile
+#     (profchk.sh NOREF list: within-slot agreement b1=b2=b3)
+AU	A	uniform	n	2	3	5	BASE FULL	json-parser biojava jsoup regex-redux luindex
+AR1	A	jmh	n	1	3	1	BASE FULL	spring stringbuilder-to-string
+AL1	A	jmh	n	1	3	1	BASE FULL	stringbuffers logback-perf jte StringJoiner string-concat-startup
+AL2	A	jmh	n	1	3	1	BASE FULL	stringbuilders StringSubstring
+AG	A	legacy	n	1	3	10	BASE FULL	guava
+AL3	A	jmh	n	1	3	1	BASE FULL	string-concat
+AL4	A	jmh	n	1	3	1	BASE FULL	commons-lang-join
+AR2	A	legacy	y	1	3	10	BASE FULL	lucene-bytask
+BU	B	uniform	n	2	3	5	BASE SBS SV LS	json-parser biojava jsoup dacapo-batik regex-redux luindex
+BR1	B	jmh	n	1	3	1	BASE SBS SV LS	spring stringbuilder-to-string
+BL1	B	jmh	n	1	3	1	BASE SBS SV LS	stringbuffers logback-perf jte StringJoiner string-concat-startup
+BL2	B	jmh	n	1	3	1	BASE SBS SV LS	stringbuilders StringSubstring
+BG	B	legacy	n	1	3	10	BASE SBS SV LS	guava
+BL3	B	jmh	n	1	3	1	BASE SBS SV LS	string-concat
+BL4	B	jmh	n	1	3	1	BASE SBS SV LS	commons-lang-join
+BR2	B	legacy	y	1	3	10	BASE SBS SV LS	lucene-bytask
+CU1	C	uniform	n	2	3	5	BASE FULL	dacapo-batik dacapo-fop dacapo-pmd dacapo-avrora dacapo-xalan dacapo-zxing
+CU2	C	uniform	n	2	3	5	BASE FULL	dacapo-graphchi dacapo-sunflow dacapo-lusearch
+CU3	C	uniform	n	2	3	5	BASE FULL	dacapo-h2
+CL1	C	jmh	n	1	3	1	BASE FULL	calcite thymeleaf commons-csv
+CL2	C	jmh	n	1	3	1	BASE FULL	rhino
+CL3	C	jmh	n	1	3	1	BASE FULL	commons-lang
+CT	C	jmh	n	1	3	1	BASE FULL	template-benchmark
+CO	C	legacy	n	5	3	2	BASE FULL	owasp
+CL4	C	jmh	n	1	3	1	BASE FULL	opennlp commonmark jackson pdfbox snakeyaml
+CL5	C	jmh	n	1	3	1	BASE FULL	yauaa sql-formatter commons-text flexmark jsqlparser mustache snakeyaml-engine fastcsv
+CL6	C	jmh	n	1	3	1	BASE FULL	re2j tinylog
+CL7	C	jmh	n	1	3	1	BASE FULL	lucene-jmh
+CP1	C	legacy	n	1	3	10	BASE FULL	minimal-json gson
+CN1	C	legacy	n	4	3	3	BASE FULL	commons-codec antlr
+CL8	C	jmh	n	1	3	1	BASE FULL	java-json-benchmark log4j2-plc
+CP2	C	legacy	n	1	3	10	BASE FULL	handlebars
+CP3	C	legacy	n	5	3	2	BASE FULL	palantir
+CX1	C	legacy	n	1	3	2	BASE FULL	csv-parsers-comparison
+XU1	X	uniform	n	2	3	5	BASE FULL	dacapo-sunflow	4,6	bld/CU2
+XL1	X	jmh	n	1	3	1	BASE FULL	jte	-	none
+XL2	X	jmh	n	1	3	1	BASE FULL	snakeyaml jsqlparser	-	none	128
+XU2	X	uniform	n	2	3	5	BASE FULL	dacapo-sunflow	4,6	none	128
+XA1	X	legacy	n	4	3	3	BASE FULL	antlr	-	bld/CN1
+XB1	X	legacy	n	5	3	1	BASE SBS SV LS	owasp	-	bld/CO
+XB2	X	legacy	n	4	3	2	BASE SBS SV LS	antlr	-	bld/CN1
+XB3	X	jmh	n	1	3	1	BASE SBS SV LS	commons-csv	-	bld/CL1
+XL3	X	jmh	n	1	3	1	BASE FULL	log4j2-plc	-	none	128
+XL5	X	jmh	n	1	3	1	BASE FULL	tinylog	-	none	128
+XU3	X	uniform	n	2	3	5	BASE FULL	dacapo-pmd	-	none	128
+XP1	X	legacy	n	1	3	10	BASE FULL	gson	-	none	128
+XL12	X	jmh	n	1	3	1	BASE FULL	fastjson2 jackson-yaml	-	none

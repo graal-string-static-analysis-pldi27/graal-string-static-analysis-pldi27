@@ -1,0 +1,12 @@
+# C99 campaign results  SLOT=BL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/BL1-stringbuffers-SBS-fc1  CFGS=BASE SBS  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## stringbuffers  [jmh] OpenJDK stringbuffers (misc-benchmarks)  builds BASE:3 SBS:3  starts parsed=24
+  GEOMEAN SBS/BASE  time 1.009 [0.982,1.053] n.s. (3 keys)  alloc 0.987 [0.937,1.016] n.s. (1 keys)
+  StringBuffers.appendAndToString                                        SBS 0.999 [0.975,1.019] n.s.
+  StringBuffers.substring                                                SBS 1.035 [0.980,1.169] n.s.
+  StringBuffers.toStringComplex                                          SBS 0.993 [0.979,1.006] n.s.
+  ~alloc MB                                                              SBS 0.987 [0.937,1.016] n.s.
+  ~rss MB                                                                SBS 1.003 [1.000,1.006] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

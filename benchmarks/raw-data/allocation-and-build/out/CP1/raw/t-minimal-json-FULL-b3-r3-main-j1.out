@@ -1,0 +1,37 @@
+PORT-CHECK input=rap parser=minimal-json jsonLen=30518 outLen=25820
+PORT-RESULT input=rap parser=minimal-json method=timeReadFromString reps=2048 nsPerRep=173468 (best of 8)
+PORT-RESULT input=rap parser=minimal-json method=timeWriteToString reps=2048 nsPerRep=162470 (best of 8)
+PORT-CHECK input=rap parser=org-json jsonLen=30518 outLen=25820
+PORT-RESULT input=rap parser=org-json method=timeReadFromString reps=256 nsPerRep=1395101 (best of 8)
+PORT-RESULT input=rap parser=org-json method=timeWriteToString reps=512 nsPerRep=808737 (best of 8)
+PORT-CHECK input=rap parser=gson jsonLen=30518 outLen=27244
+PORT-RESULT input=rap parser=gson method=timeReadFromString reps=2048 nsPerRep=223748 (best of 8)
+PORT-RESULT input=rap parser=gson method=timeWriteToString reps=512 nsPerRep=743924 (best of 8)
+PORT-CHECK input=rap parser=jackson jsonLen=30518 outLen=25820
+PORT-RESULT input=rap parser=jackson method=timeReadFromString reps=2048 nsPerRep=170069 (best of 8)
+PORT-RESULT input=rap parser=jackson method=timeWriteToString reps=4096 nsPerRep=92234 (best of 8)
+PORT-CHECK input=caliper parser=minimal-json jsonLen=83389 outLen=83089
+PORT-RESULT input=caliper parser=minimal-json method=timeReadFromString reps=1024 nsPerRep=341755 (best of 8)
+PORT-RESULT input=caliper parser=minimal-json method=timeWriteToString reps=512 nsPerRep=537052 (best of 8)
+PORT-CHECK input=caliper parser=org-json jsonLen=83389 outLen=83089
+PORT-RESULT input=caliper parser=org-json method=timeReadFromString reps=128 nsPerRep=3236173 (best of 8)
+PORT-RESULT input=caliper parser=org-json method=timeWriteToString reps=128 nsPerRep=2500798 (best of 8)
+PORT-CHECK input=caliper parser=gson jsonLen=83389 outLen=83598
+PORT-RESULT input=caliper parser=gson method=timeReadFromString reps=1024 nsPerRep=387469 (best of 8)
+PORT-RESULT input=caliper parser=gson method=timeWriteToString reps=512 nsPerRep=949132 (best of 8)
+PORT-CHECK input=caliper parser=jackson jsonLen=83389 outLen=83089
+PORT-RESULT input=caliper parser=jackson method=timeReadFromString reps=1024 nsPerRep=425882 (best of 8)
+PORT-RESULT input=caliper parser=jackson method=timeWriteToString reps=2048 nsPerRep=176733 (best of 8)
+PORT-CHECK input=long-string parser=minimal-json jsonLen=453 outLen=447
+PORT-RESULT input=long-string parser=minimal-json method=timeReadFromString reps=262144 nsPerRep=1332 (best of 8)
+PORT-RESULT input=long-string parser=minimal-json method=timeWriteToString reps=131072 nsPerRep=2789 (best of 8)
+PORT-CHECK input=long-string parser=org-json jsonLen=453 outLen=447
+PORT-RESULT input=long-string parser=org-json method=timeReadFromString reps=16384 nsPerRep=15438 (best of 8)
+PORT-RESULT input=long-string parser=org-json method=timeWriteToString reps=32768 nsPerRep=13306 (best of 8)
+PORT-CHECK input=long-string parser=gson jsonLen=453 outLen=447
+PORT-RESULT input=long-string parser=gson method=timeReadFromString reps=524288 nsPerRep=836 (best of 8)
+PORT-RESULT input=long-string parser=gson method=timeWriteToString reps=131072 nsPerRep=2037 (best of 8)
+PORT-CHECK input=long-string parser=jackson jsonLen=453 outLen=447
+PORT-RESULT input=long-string parser=jackson method=timeReadFromString reps=524288 nsPerRep=575 (best of 8)
+PORT-RESULT input=long-string parser=jackson method=timeWriteToString reps=524288 nsPerRep=669 (best of 8)
+PORT-DONE

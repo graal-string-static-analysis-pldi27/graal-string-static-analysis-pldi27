@@ -1,0 +1,57 @@
+# JMH 1.13 (released 3765 days ago, please consider updating!)
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladsch.flexmark.core.test.util.parser.SpecBenchmark.examples
+
+# Run progress: 0.00% complete, ETA 00:00:04
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 61.147 ops/s
+Iteration   1: 63.435 ops/s
+Iteration   2: 62.930 ops/s
+Iteration   3: 60.093 ops/s
+
+Result "examples":
+  62.153 ±(99.9%) 32.869 ops/s [Average]
+  (min, avg, max) = (60.093, 62.153, 63.435), stdev = 1.802
+  CI (99.9%): [29.284, 95.022] (assumes normal distribution)
+
+
+# JMH 1.13 (released 3765 days ago, please consider updating!)
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladsch.flexmark.core.test.util.parser.SpecBenchmark.wholeSpec
+
+# Run progress: 50.00% complete, ETA 00:00:02
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 27.603 ops/s
+Iteration   1: 28.028 ops/s
+Iteration   2: 28.075 ops/s
+Iteration   3: 28.237 ops/s
+
+Result "wholeSpec":
+  28.113 ±(99.9%) 2.002 ops/s [Average]
+  (min, avg, max) = (28.028, 28.113, 28.237), stdev = 0.110
+  CI (99.9%): [26.111, 30.116] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:04
+
+Benchmark                 Mode  Cnt   Score    Error  Units
+SpecBenchmark.examples   thrpt    3  62.153 ± 32.869  ops/s
+SpecBenchmark.wholeSpec  thrpt    3  28.113 ±  2.002  ops/s

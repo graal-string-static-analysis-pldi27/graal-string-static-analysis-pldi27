@@ -1,0 +1,49 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+stringbuffers            BASE b1 size 21.96/23.23/9.55/11.08 | parent 13.3 s 2.32 GB | driver 13.9 s REUSED
+stringbuffers            BASE b2 size 21.96/23.23/9.55/11.08 | parent 13.2 s 2.19 GB | driver 13.9 s REUSED
+stringbuffers            BASE b3 size 21.96/23.23/9.55/11.08 | parent 13.4 s 2.24 GB | driver 14.0 s REUSED
+stringbuffers            FULL b1 size 22.09/23.37/9.62/11.14 | parent 25.8 s 2.39 GB | driver 26.5 s | OK | child aa 9315 ms gen 11.7 s obs 11 s VmHWM 3.43 GB | wait 12.0 s | SBS=2 SV=118(ACC=102 ELEM=5) LS=2(JOINER=0) | IC=3812 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuffers            FULL b2 size 22.09/23.37/9.62/11.14 | parent 26.3 s 2.38 GB | driver 26.9 s | OK | child aa 9263 ms gen 11.6 s obs 11 s VmHWM 2.92 GB | wait 12.0 s | SBS=2 SV=118(ACC=102 ELEM=5) LS=2(JOINER=0) | IC=3812 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+stringbuffers            FULL b3 size 22.09/23.37/9.62/11.14 | parent 26.3 s 2.35 GB | driver 26.9 s | OK | child aa 9464 ms gen 11.9 s obs 11 s VmHWM 3.06 GB | wait 12.0 s | SBS=2 SV=118(ACC=102 ELEM=5) LS=2(JOINER=0) | IC=3812 TC=366 MIRROR=52 EXACT=0 other=2 REUSED
+logback-perf             BASE b1 size 32.44/34.11/14.82/15.93 | parent 16.2 s 2.39 GB | driver 16.9 s REUSED
+logback-perf             BASE b2 size 32.44/34.11/14.82/15.93 | parent 16.0 s 2.42 GB | driver 16.6 s REUSED
+logback-perf             BASE b3 size 32.44/34.11/14.82/15.93 | parent 16.2 s 2.38 GB | driver 16.8 s REUSED
+logback-perf             FULL b1 size 32.77/34.45/15.11/15.99 | parent 36.2 s 2.66 GB | driver 37.0 s | OK | child aa 16144 ms gen 18.8 s obs 19 s VmHWM 5.96 GB | wait 19.0 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL b2 size 32.77/34.45/15.11/15.99 | parent 36.1 s 2.70 GB | driver 36.8 s | OK | child aa 16357 ms gen 19.0 s obs 19 s VmHWM 6.10 GB | wait 19.0 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL b3 size 32.77/34.45/15.11/15.99 | parent 35.9 s 2.71 GB | driver 36.6 s | OK | child aa 15804 ms gen 18.4 s obs 18 s VmHWM 6.40 GB | wait 18.5 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+jte                      BASE b1 size 22.15/23.44/9.66/11.14 | parent 13.1 s 2.26 GB | driver 13.8 s REUSED
+jte                      BASE b2 size 22.15/23.44/9.66/11.14 | parent 13.4 s 2.30 GB | driver 14.0 s REUSED
+jte                      BASE b3 size 22.68/23.96/9.66/11.67 | parent 13.2 s 2.28 GB | driver 13.9 s REUSED
+jte                      FULL b1 size 22.74/24.03/9.73/11.67 | parent 27.8 s 2.36 GB | driver 28.4 s | OK | child aa 10769 ms gen 13.2 s obs 12 s VmHWM 4.14 GB | wait 13.5 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+jte                      FULL b2 size 22.74/24.03/9.73/11.67 | parent 27.9 s 2.38 GB | driver 28.6 s | OK | child aa 10638 ms gen 13.1 s obs 12 s VmHWM 4.01 GB | wait 13.5 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+jte                      FULL b3 size 22.74/24.03/9.73/11.67 | parent 27.8 s 2.37 GB | driver 28.4 s | OK | child aa 10738 ms gen 13.1 s obs 12 s VmHWM 4.13 GB | wait 13.5 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             BASE b1 size 29.17/30.69/13.12/14.48 | parent 15.3 s 2.33 GB | driver 16.0 s REUSED
+StringJoiner             BASE b2 size 29.17/30.69/13.12/14.48 | parent 15.0 s 2.33 GB | driver 15.6 s REUSED
+StringJoiner             BASE b3 size 29.17/30.69/13.12/14.48 | parent 14.8 s 2.34 GB | driver 15.5 s REUSED
+StringJoiner             FULL b1 size 29.76/31.28/13.19/15.01 | parent 29.6 s 2.53 GB | driver 30.4 s | OK | child aa 11016 ms gen 13.5 s obs 13 s VmHWM 3.29 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             FULL b2 size 29.76/31.28/13.19/15.01 | parent 30.5 s 2.49 GB | driver 31.3 s | OK | child aa 11089 ms gen 13.8 s obs 13 s VmHWM 3.44 GB | wait 14.0 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             FULL b3 size 29.76/31.28/13.19/15.01 | parent 29.9 s 2.48 GB | driver 30.5 s | OK | child aa 10937 ms gen 13.4 s obs 12 s VmHWM 3.30 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat-startup    BASE b1 size 23.33/24.63/10.20/11.80 | parent 14.8 s 3.33 GB | driver 15.5 s REUSED
+string-concat-startup    BASE b2 size 23.33/24.63/10.20/11.80 | parent 14.5 s 3.35 GB | driver 15.2 s REUSED
+string-concat-startup    BASE b3 size 23.33/24.63/10.20/11.80 | parent 14.3 s 3.63 GB | driver 15.0 s REUSED
+string-concat-startup    FULL b1 size 23.53/24.82/10.43/11.73 | parent 27.5 s 3.72 GB | driver 28.2 s | OK | child aa 9928 ms gen 12.3 s obs 12 s VmHWM 3.04 GB | wait 12.5 s | SBS=2 SV=117(ACC=102 ELEM=5) LS=229(JOINER=0) | IC=4295 TC=368 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat-startup    FULL b2 size 23.53/24.82/10.43/11.73 | parent 28.1 s 3.68 GB | driver 28.8 s | OK | child aa 10180 ms gen 12.6 s obs 12 s VmHWM 3.49 GB | wait 13.0 s | SBS=2 SV=117(ACC=102 ELEM=5) LS=229(JOINER=0) | IC=4295 TC=368 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat-startup    FULL b3 size 23.53/24.82/10.43/11.73 | parent 28.5 s 3.66 GB | driver 29.2 s | OK | child aa 10223 ms gen 12.6 s obs 13 s VmHWM 3.11 GB | wait 13.0 s | SBS=2 SV=117(ACC=102 ELEM=5) LS=229(JOINER=0) | IC=4295 TC=368 MIRROR=52 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+stringbuffers            FULL/BASE  parent wall 13.3 -> 26.1 s (x1.96)  Peak RSS 2.25 -> 2.37 GB (x1.05)  child VmHWM 3.13 GB  size 21.96 -> 22.09 MB (x1.006)  status OK,OK,OK
+logback-perf             FULL/BASE  parent wall 16.1 -> 36.1 s (x2.24)  Peak RSS 2.40 -> 2.69 GB (x1.12)  child VmHWM 6.15 GB  size 32.44 -> 32.77 MB (x1.010)  status OK,OK,OK
+jte                      FULL/BASE  parent wall 13.2 -> 27.8 s (x2.10)  Peak RSS 2.28 -> 2.37 GB (x1.04)  child VmHWM 4.09 GB  size 22.33 -> 22.74 MB (x1.019)  status OK,OK,OK
+StringJoiner             FULL/BASE  parent wall 15.0 -> 30.0 s (x2.00)  Peak RSS 2.33 -> 2.50 GB (x1.07)  child VmHWM 3.34 GB  size 29.17 -> 29.76 MB (x1.020)  status OK,OK,OK
+string-concat-startup    FULL/BASE  parent wall 14.5 -> 28.0 s (x1.93)  Peak RSS 3.44 -> 3.69 GB (x1.07)  child VmHWM 3.21 GB  size 23.33 -> 23.53 MB (x1.008)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+stringbuffers            FULL SBS=2 SV=118 (ACC=102 ELEM=5) LS=2 (JOINER=0)  OK
+logback-perf             FULL SBS=3 SV=157 (ACC=132 ELEM=6) LS=18 (JOINER=0)  OK
+jte                      FULL SBS=2 SV=120 (ACC=103 ELEM=5) LS=2 (JOINER=0)  OK
+StringJoiner             FULL SBS=2 SV=118 (ACC=103 ELEM=5) LS=2 (JOINER=2)  OK
+string-concat-startup    FULL SBS=2 SV=117 (ACC=102 ELEM=5) LS=229 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,84 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-antlr  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+antlr                    BASE b1 size 22.02/23.29/9.18/11.53 | parent 35.1 s 2.05 GB | driver 35.8 s REUSED
+antlr                    BASE b2 size 22.02/23.29/9.18/11.53 | parent 31.1 s 2.19 GB | driver 31.9 s REUSED
+antlr                    SBS  b1 size 22.02/23.29/9.18/11.53 | parent 35.6 s 2.32 GB | driver 36.4 s | OK | child aa 15150 ms gen 17.8 s obs 18 s VmHWM 2.83 GB | wait 18.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS  b2 size 22.02/23.29/9.18/11.53 | parent 31.7 s 2.31 GB | driver 32.5 s | OK | child aa 13018 ms gen 15.7 s obs 16 s VmHWM 2.89 GB | wait 16.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SV   b1 size 22.02/23.29/9.20/11.53 | parent 36.4 s 2.32 GB | driver 37.2 s | OK | child aa 12637 ms gen 15.3 s obs 15 s VmHWM 2.80 GB | wait 15.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV   b2 size 22.02/23.29/9.20/11.53 | parent 32.4 s 2.32 GB | driver 33.2 s | OK | child aa 11807 ms gen 14.5 s obs 15 s VmHWM 2.83 GB | wait 14.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    LS   b1 size 22.02/23.29/9.18/11.53 | parent 30.1 s 2.35 GB | driver 31.0 s | ZERO-ADMIT | child aa 8934 ms gen 11.9 s obs 11 s VmHWM 2.56 GB | wait 12.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS   b2 size 22.02/23.29/9.18/11.53 | parent 30.2 s 2.34 GB | driver 31.0 s | ZERO-ADMIT | child aa 9610 ms gen 12.2 s obs 11 s VmHWM 2.60 GB | wait 12.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    BASE_A32 b1 size 21.83/23.10/8.98/11.53 | parent 31.8 s 2.16 GB | driver 32.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A32 b2 size 21.83/23.10/8.98/11.53 | parent 30.1 s 2.20 GB | driver 31.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    SBS_A32 b1 size 21.83/23.10/8.98/11.53 | parent 33.7 s 2.39 GB | driver 34.4 s | OK | child aa 12163 ms gen 15.0 s obs 15 s VmHWM 2.85 GB | wait 15.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS_A32 b2 size 21.83/23.10/8.98/11.53 | parent 31.4 s 2.29 GB | driver 32.3 s | OK | child aa 11046 ms gen 13.8 s obs 12 s VmHWM 2.94 GB | wait 14.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SV_A32 b1 size 21.83/23.10/9.00/11.53 | parent 31.2 s 2.30 GB | driver 32.0 s | OK | child aa 12322 ms gen 15.3 s obs 15 s VmHWM 2.87 GB | wait 15.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV_A32 b2 size 21.83/23.10/9.00/11.53 | parent 26.2 s 2.34 GB | driver 26.9 s | OK | child aa 8714 ms gen 11.1 s obs 10 s VmHWM 2.91 GB | wait 11.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    LS_A32 b1 size 21.83/23.10/8.98/11.53 | parent 24.3 s 2.37 GB | driver 24.9 s | ZERO-ADMIT | child aa 6743 ms gen 9.2 s obs 8 s VmHWM 2.56 GB | wait 9.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS_A32 b2 size 21.83/23.10/8.98/11.53 | parent 24.4 s 2.32 GB | driver 25.1 s | ZERO-ADMIT | child aa 7096 ms gen 9.6 s obs 9 s VmHWM 2.73 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    BASE_A128 b1 size 22.48/23.75/9.65/11.53 | parent 29.5 s 2.16 GB | driver 30.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A128 b2 size 22.48/23.75/9.65/11.53 | parent 29.1 s 2.29 GB | driver 30.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    SBS_A128 b1 size 22.48/23.75/9.65/11.53 | parent 26.3 s 2.36 GB | driver 26.9 s | OK | child aa 8878 ms gen 11.4 s obs 11 s VmHWM 2.91 GB | wait 11.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS_A128 b2 size 22.48/23.75/9.65/11.53 | parent 26.3 s 2.31 GB | driver 27.0 s | OK | child aa 9010 ms gen 11.5 s obs 11 s VmHWM 3.00 GB | wait 11.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SV_A128 b1 size 22.48/23.75/9.67/11.53 | parent 26.1 s 2.34 GB | driver 26.8 s | OK | child aa 8710 ms gen 11.2 s obs 10 s VmHWM 2.95 GB | wait 11.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV_A128 b2 size 22.48/23.75/9.67/11.53 | parent 26.4 s 2.35 GB | driver 27.0 s | OK | child aa 9168 ms gen 11.7 s obs 11 s VmHWM 2.88 GB | wait 12.0 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    LS_A128 b1 size 22.48/23.75/9.65/11.53 | parent 24.3 s 2.33 GB | driver 24.9 s | ZERO-ADMIT | child aa 7114 ms gen 9.6 s obs 9 s VmHWM 2.60 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS_A128 b2 size 22.48/23.75/9.65/11.53 | parent 24.6 s 2.34 GB | driver 25.2 s | ZERO-ADMIT | child aa 7068 ms gen 9.6 s obs 9 s VmHWM 2.68 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    BASE_A256 b1 size 23.46/24.73/10.68/11.53 | parent 31.6 s 2.21 GB | driver 32.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A256 b2 size 23.46/24.73/10.67/11.53 | parent 26.1 s 2.17 GB | driver 27.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    SBS_A256 b1 size 23.46/24.73/10.67/11.53 | parent 25.9 s 2.33 GB | driver 26.5 s | OK | child aa 8976 ms gen 11.5 s obs 11 s VmHWM 2.97 GB | wait 11.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS_A256 b2 size 23.46/24.73/10.67/11.53 | parent 25.9 s 2.31 GB | driver 26.6 s | OK | child aa 8849 ms gen 11.3 s obs 10 s VmHWM 2.95 GB | wait 11.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SV_A256 b1 size 23.53/24.80/10.69/11.53 | parent 26.7 s 2.32 GB | driver 27.4 s | OK | child aa 9109 ms gen 11.7 s obs 12 s VmHWM 2.97 GB | wait 12.0 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV_A256 b2 size 23.53/24.80/10.69/11.53 | parent 26.6 s 2.31 GB | driver 27.3 s | OK | child aa 9156 ms gen 11.8 s obs 11 s VmHWM 2.98 GB | wait 12.0 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    LS_A256 b1 size 23.46/24.73/10.67/11.53 | parent 24.1 s 2.34 GB | driver 24.8 s | ZERO-ADMIT | child aa 7186 ms gen 9.7 s obs 10 s VmHWM 2.71 GB | wait 9.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS_A256 b2 size 23.46/24.73/10.67/11.53 | parent 24.6 s 2.36 GB | driver 25.3 s | ZERO-ADMIT | child aa 7084 ms gen 9.6 s obs 10 s VmHWM 2.66 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+antlr                    SBS /BASE  parent wall 33.1 -> 33.6 s (x1.02)  Peak RSS 2.12 -> 2.31 GB (x1.09)  child VmHWM 2.86 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK
+antlr                    SV  /BASE  parent wall 33.1 -> 34.4 s (x1.04)  Peak RSS 2.12 -> 2.32 GB (x1.09)  child VmHWM 2.82 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK
+antlr                    LS  /BASE  parent wall 33.1 -> 30.1 s (x0.91)  Peak RSS 2.12 -> 2.34 GB (x1.11)  child VmHWM 2.58 GB  size 22.02 -> 22.02 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+antlr                    BASE_A32/BASE  parent wall 33.1 -> 31.0 s (x0.94)  Peak RSS 2.12 -> 2.18 GB (x1.03)  child VmHWM ? GB  size 22.02 -> 21.83 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+antlr                    SBS_A32/BASE  parent wall 33.1 -> 32.5 s (x0.98)  Peak RSS 2.12 -> 2.34 GB (x1.10)  child VmHWM 2.89 GB  size 22.02 -> 21.83 MB (x0.991)  status OK,OK
+antlr                    SV_A32/BASE  parent wall 33.1 -> 28.7 s (x0.87)  Peak RSS 2.12 -> 2.32 GB (x1.09)  child VmHWM 2.89 GB  size 22.02 -> 21.83 MB (x0.991)  status OK,OK
+antlr                    LS_A32/BASE  parent wall 33.1 -> 24.4 s (x0.74)  Peak RSS 2.12 -> 2.34 GB (x1.11)  child VmHWM 2.64 GB  size 22.02 -> 21.83 MB (x0.991)  status ZERO-ADMIT,ZERO-ADMIT
+antlr                    BASE_A128/BASE  parent wall 33.1 -> 29.3 s (x0.89)  Peak RSS 2.12 -> 2.23 GB (x1.05)  child VmHWM ? GB  size 22.02 -> 22.48 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+antlr                    SBS_A128/BASE  parent wall 33.1 -> 26.3 s (x0.79)  Peak RSS 2.12 -> 2.33 GB (x1.10)  child VmHWM 2.95 GB  size 22.02 -> 22.48 MB (x1.021)  status OK,OK
+antlr                    SV_A128/BASE  parent wall 33.1 -> 26.2 s (x0.79)  Peak RSS 2.12 -> 2.34 GB (x1.11)  child VmHWM 2.91 GB  size 22.02 -> 22.48 MB (x1.021)  status OK,OK
+antlr                    LS_A128/BASE  parent wall 33.1 -> 24.5 s (x0.74)  Peak RSS 2.12 -> 2.33 GB (x1.10)  child VmHWM 2.64 GB  size 22.02 -> 22.48 MB (x1.021)  status ZERO-ADMIT,ZERO-ADMIT
+antlr                    BASE_A256/BASE  parent wall 33.1 -> 28.9 s (x0.87)  Peak RSS 2.12 -> 2.19 GB (x1.03)  child VmHWM ? GB  size 22.02 -> 23.46 MB (x1.065)  status NO-PROFILE,NO-PROFILE
+antlr                    SBS_A256/BASE  parent wall 33.1 -> 25.9 s (x0.78)  Peak RSS 2.12 -> 2.32 GB (x1.09)  child VmHWM 2.96 GB  size 22.02 -> 23.46 MB (x1.065)  status OK,OK
+antlr                    SV_A256/BASE  parent wall 33.1 -> 26.6 s (x0.81)  Peak RSS 2.12 -> 2.31 GB (x1.09)  child VmHWM 2.97 GB  size 22.02 -> 23.53 MB (x1.068)  status OK,OK
+antlr                    LS_A256/BASE  parent wall 33.1 -> 24.4 s (x0.74)  Peak RSS 2.12 -> 2.35 GB (x1.11)  child VmHWM 2.68 GB  size 22.02 -> 23.46 MB (x1.065)  status ZERO-ADMIT,ZERO-ADMIT
+## admits per rep kind (b1 profile; FULL/mode builds)
+antlr                    SBS  SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    SV   SBS=0 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+antlr                    BASE_A32 no profile  NO-PROFILE
+antlr                    SBS_A32 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    SV_A32 SBS=0 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+antlr                    BASE_A128 no profile  NO-PROFILE
+antlr                    SBS_A128 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    SV_A128 SBS=0 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+antlr                    BASE_A256 no profile  NO-PROFILE
+antlr                    SBS_A256 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    SV_A256 SBS=0 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+antlr                    LS   b1 ZERO-ADMIT               child obs 11 s VmHWM 2.56 GB | parent wait 12.0 s | driver wall 31.0 s
+antlr                    LS   b2 ZERO-ADMIT               child obs 11 s VmHWM 2.60 GB | parent wait 12.5 s | driver wall 31.0 s
+antlr                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.9 s
+antlr                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.3 s
+antlr                    LS_A32 b1 ZERO-ADMIT               child obs 8 s VmHWM 2.56 GB | parent wait 9.5 s | driver wall 24.9 s
+antlr                    LS_A32 b2 ZERO-ADMIT               child obs 9 s VmHWM 2.73 GB | parent wait 10.0 s | driver wall 25.1 s
+antlr                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.6 s
+antlr                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.4 s
+antlr                    LS_A128 b1 ZERO-ADMIT               child obs 9 s VmHWM 2.60 GB | parent wait 10.0 s | driver wall 24.9 s
+antlr                    LS_A128 b2 ZERO-ADMIT               child obs 9 s VmHWM 2.68 GB | parent wait 10.0 s | driver wall 25.2 s
+antlr                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.7 s
+antlr                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.3 s
+antlr                    LS_A256 b1 ZERO-ADMIT               child obs 10 s VmHWM 2.71 GB | parent wait 9.5 s | driver wall 24.8 s
+antlr                    LS_A256 b2 ZERO-ADMIT               child obs 10 s VmHWM 2.66 GB | parent wait 10.0 s | driver wall 25.3 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

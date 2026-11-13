@@ -1,0 +1,71 @@
+1794373468.090848 ========================================================================================================================
+1794373468.092423 GraalVM Native Image: Generating 'dacapo-pmd-BASE-b2' (executable)...
+1794373468.092442 ========================================================================================================================
+1794373468.092453 For detailed information and explanations on the build output, visit:
+1794373468.092466 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794373468.092482 ------------------------------------------------------------------------------------------------------------------------
+1794373469.856574 [1/8] Initializing...                                                                                    (2.4s @ 0.56GB)
+1794373469.856839  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794373469.856980  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794373469.857057  C compiler: gcc (linux, x86_64, 15.2.0)
+1794373469.857162  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794373469.857187  1 user-specific feature(s):
+1794373469.857359  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794373469.857952 ------------------------------------------------------------------------------------------------------------------------
+1794373469.857970  1 experimental option(s) unlocked:
+1794373469.858002  - '-H:CodeAlignment' (origin(s): command line)
+1794373469.858936 ------------------------------------------------------------------------------------------------------------------------
+1794373469.858946 Build resources:
+1794373469.859008  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794373469.859044  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794373469.870806 Skipped 2198 predefined class(es) because the classpath already contains a class with the same name: net.sourceforge.pmd.lang.java.symboltable.Search, net.sourceforge.pmd.lang.java.JavaDataFlowHandler, net.sf.saxon.pattern.AnyNodeTest, com.beust.jcommander.internal.Maps, net.sf.saxon.event.StandardOutputResolver, net.sf.saxon.expr.IntegerRangeTest, net.sourceforge.pmd.renderers.internal.sarif.SarifLog$ArtifactLocation$ArtifactLocationBuilder, net.sourceforge.pmd.lang.java.rule.performance.BooleanInstantiationRule, net.sourceforge.pmd.PmdAnalysis, net.sourceforge.pmd.lang.antlr.AntlrTokenManager$ANTLRSyntaxError, ...
+1794373475.598657 [2/8] Performing analysis...  [******]                                                                   (5.4s @ 1.56GB)
+1794373475.627079    10,089 types,  14,833 fields, and  47,354 methods found reachable
+1794373475.628371     5,000 types,   6,178 fields, and  22,081 methods registered for reflection
+1794373475.628411        59 types,      60 fields, and      52 methods registered for JNI access
+1794373475.628437         0 downcalls and 0 upcalls registered for foreign access
+1794373475.628460         4 native libraries: dl, pthread, rt, z
+1794373477.380090 [3/8] Building universe...                                                                               (1.8s @ 1.94GB)
+1794373477.999478 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 2.44GB)
+1794373478.650883 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.88GB)
+1794373484.649571 [6/8] Compiling methods...    [***]                                                                      (6.0s @ 1.68GB)
+1794373487.642216 [7/8] Laying out methods...   [**]                                                                       (3.0s @ 1.93GB)
+1794373490.294276 [8/8] Creating image...       [**]                                                                       (2.3s @ 2.24GB)
+1794373490.294524   26.88MB (44.17%) for code area:    31,085 compilation units
+1794373490.294566   28.64MB (47.05%) for image heap:  280,246 objects and 680 resources
+1794373490.294608    5.35MB ( 8.78%) for other data
+1794373490.294633   60.87MB in total image size, 58.26MB in total file size
+1794373490.294673 ------------------------------------------------------------------------------------------------------------------------
+1794373490.295419 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794373490.295671    8.35MB java.base                                            6.53MB byte[] for code metadata
+1794373490.295705    3.72MB saxon-9.1.0.8.jar                                    3.79MB byte[] for java.lang.String
+1794373490.295825    3.21MB java.xml                                             2.77MB byte[] for embedded resources
+1794373490.295854    2.22MB java.desktop                                         2.67MB java.lang.String
+1794373490.295893    1.69MB svm.jar (Native Image)                               2.02MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794373490.295923    1.62MB pmd-java-6.55.0.jar                                  1.84MB byte[] for reflection metadata
+1794373490.295954    1.46MB xercesImpl.jar                                       1.56MB java.lang.Class
+1794373490.295995  926.65kB pmd-core-6.55.0.jar                                820.89kB byte[] for general heap data
+1794373490.296025  300.50kB dacapo-evaluation-git-e947cbfc.jar                 553.67kB java.lang.String[]
+1794373490.296072  223.21kB jdk.zipfs                                          525.43kB int[][]
+1794373490.296992    1.14MB for 21 more packages                                 5.57MB for 1774 more object types
+1794373490.297870 ------------------------------------------------------------------------------------------------------------------------
+1794373490.297875 Recommendations:
+1794373490.297929  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794373490.297960  AWT:  Use the tracing agent to collect metadata for AWT.
+1794373490.297977  HEAP: Set max heap for improved and more predictable memory usage.
+1794373490.297994  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794373490.302099 ------------------------------------------------------------------------------------------------------------------------
+1794373490.302676                        1.6s (6.7% of total time) in 133 GCs | Peak RSS: 3.91GB | CPU load: 12.67
+1794373490.302983 ------------------------------------------------------------------------------------------------------------------------
+1794373490.302988 Build artifacts:
+1794373490.303333  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/dacapo-pmd-BASE-b2 (executable)
+1794373490.303350  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libawt.so (jdk_library)
+1794373490.303362  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libawt_headless.so (jdk_library)
+1794373490.303374  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libawt_xawt.so (jdk_library)
+1794373490.303386  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libfontmanager.so (jdk_library)
+1794373490.303398  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libjava.so (jdk_library_shim)
+1794373490.303411  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libjavajpeg.so (jdk_library)
+1794373490.303422  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/libjvm.so (jdk_library_shim)
+1794373490.303434  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/XU3/bin/liblcms.so (jdk_library)
+1794373490.303447 ========================================================================================================================
+1794373490.303496 Finished generating 'dacapo-pmd-BASE-b2' in 22.9s.

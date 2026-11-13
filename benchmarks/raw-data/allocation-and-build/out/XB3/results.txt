@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=XB3  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB3  CFGS=BASE SBS SV LS  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-csv  [jmh] commons-csv CSVBenchmark (hunt/ab-b34 candspec)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=12
+  GEOMEAN SBS/BASE  time 0.987 [0.971,0.998] FASTER (7 keys)  alloc 1.006 [1.000,1.020] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.975 [0.960,0.988] FASTER (7 keys)  alloc 0.993 [0.987,1.006] n.s. (1 keys)
+  GEOMEAN LS/BASE  time 0.990 [0.975,1.004] n.s. (7 keys)  alloc 1.006 [1.000,1.020] n.s. (1 keys)
+  CSVBenchmark.parseCommonsCSV                                           SBS 1.002 [0.978,1.030] n.s. | SV 1.021 [0.994,1.048] n.s. | LS 1.002 [0.986,1.017] n.s.
+  CSVBenchmark.parseGenJavaCSV                                           SBS 1.001 [0.989,1.014] n.s. | SV 0.895 [0.885,0.905] FASTER | LS 1.013 [0.986,1.039] n.s.
+  CSVBenchmark.parseJavaCSV                                              SBS 1.006 [1.003,1.009] SLOWER | SV 0.996 [0.993,0.999] FASTER | LS 1.003 [0.999,1.007] n.s.
+  CSVBenchmark.parseOpenCSV                                              SBS 0.973 [0.962,0.983] FASTER | SV 0.980 [0.972,0.988] FASTER | LS 0.996 [0.985,1.006] n.s.
+  CSVBenchmark.parseSuperCSV                                             SBS 1.005 [0.983,1.024] n.s. | SV 1.011 [1.001,1.018] SLOWER | LS 1.001 [0.987,1.016] n.s.
+  CSVBenchmark.read                                                      SBS 0.930 [0.838,0.989] FASTER | SV 0.947 [0.853,1.005] n.s. | LS 0.932 [0.842,0.995] FASTER
+  CSVBenchmark.scan                                                      SBS 0.996 [0.988,1.005] n.s. | SV 0.982 [0.973,0.992] FASTER | LS 0.984 [0.976,0.993] FASTER
+  ~alloc MB                                                              SBS 1.006 [1.000,1.020] n.s. | SV 0.993 [0.987,1.006] n.s. | LS 1.006 [1.000,1.020] n.s.
+  ~rss MB                                                                SBS 0.946 [0.852,1.037] n.s. | SV 0.883 [0.646,1.099] n.s. | LS 0.929 [0.825,1.019] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  commons-csv                0.987*|1.006      0.975*|0.993      0.990|1.006      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

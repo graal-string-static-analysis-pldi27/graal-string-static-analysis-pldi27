@@ -1,0 +1,25 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CN1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+commons-codec            BASE b1 size 14.09/14.99/5.49/7.67 | parent 10.2 s 2.17 GB | driver 10.8 s REUSED
+commons-codec            BASE b2 size 14.09/14.99/5.49/7.67 | parent 10.4 s 2.20 GB | driver 10.9 s REUSED
+commons-codec            BASE b3 size 14.09/14.99/5.49/7.67 | parent 10.3 s 2.18 GB | driver 10.8 s REUSED
+commons-codec            FULL b1 size 14.09/14.99/5.50/7.67 | parent 20.3 s 2.26 GB | driver 20.9 s | OK | child aa 7045 ms gen 9.4 s obs 9 s VmHWM 2.79 GB | wait 9.5 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL b2 size 14.09/14.99/5.50/7.67 | parent 20.6 s 2.29 GB | driver 21.2 s | OK | child aa 6867 ms gen 9.3 s obs 9 s VmHWM 2.82 GB | wait 9.5 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL b3 size 14.09/14.99/5.50/7.67 | parent 20.7 s 2.26 GB | driver 21.3 s | OK | child aa 7091 ms gen 9.6 s obs 9 s VmHWM 2.81 GB | wait 10.0 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+antlr                    BASE b1 size 22.02/23.29/9.18/11.53 | parent 13.4 s 2.27 GB | driver 13.9 s REUSED
+antlr                    BASE b2 size 22.02/23.29/9.18/11.53 | parent 12.9 s 2.29 GB | driver 13.5 s REUSED
+antlr                    BASE b3 size 22.02/23.29/9.18/11.53 | parent 13.0 s 2.29 GB | driver 13.6 s REUSED
+antlr                    FULL b1 size 22.02/23.29/9.20/11.53 | parent 25.0 s 2.33 GB | driver 25.6 s | OK | child aa 8666 ms gen 11.1 s obs 10 s VmHWM 3.00 GB | wait 11.0 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL b2 size 22.02/23.29/9.20/11.53 | parent 24.8 s 2.32 GB | driver 25.3 s | OK | child aa 8578 ms gen 11.0 s obs 10 s VmHWM 3.00 GB | wait 11.0 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL b3 size 22.02/23.29/9.20/11.53 | parent 25.1 s 2.33 GB | driver 25.7 s | OK | child aa 8295 ms gen 10.6 s obs 10 s VmHWM 2.91 GB | wait 11.0 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+commons-codec            FULL/BASE  parent wall 10.3 -> 20.5 s (x1.99)  Peak RSS 2.18 -> 2.27 GB (x1.04)  child VmHWM 2.81 GB  size 14.09 -> 14.09 MB (x1.000)  status OK,OK,OK
+antlr                    FULL/BASE  parent wall 13.1 -> 25.0 s (x1.91)  Peak RSS 2.28 -> 2.33 GB (x1.02)  child VmHWM 2.97 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+commons-codec            FULL SBS=0 SV=6 (ACC=3 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    FULL SBS=1 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

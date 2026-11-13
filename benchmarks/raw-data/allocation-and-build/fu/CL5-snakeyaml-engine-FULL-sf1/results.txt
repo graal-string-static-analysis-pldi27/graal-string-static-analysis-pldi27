@@ -1,0 +1,13 @@
+# C99 campaign results  SLOT=CL5  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL5-snakeyaml-engine-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## snakeyaml-engine  [jmh] snakeyaml-engine ParseBenchmark (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 1.001 [0.989,1.014] n.s. (4 keys)  alloc 1.004 [0.997,1.010] n.s. (1 keys)
+  ParseBenchmark.load 1000                                               FULL 0.998 [0.984,1.014] n.s.  BIMODAL(BASE)
+  ParseBenchmark.load 100000                                             FULL 1.029 [0.995,1.069] n.s.
+  ParseBenchmark.parse 1000                                              FULL 0.987 [0.978,0.994] FASTER  BIMODAL(BASE)
+  ParseBenchmark.parse 100000                                            FULL 0.992 [0.980,1.005] n.s.
+  ~alloc MB                                                              FULL 1.004 [0.997,1.010] n.s.
+  ~rss MB                                                                FULL 1.002 [0.994,1.010] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

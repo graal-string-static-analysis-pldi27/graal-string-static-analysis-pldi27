@@ -1,0 +1,69 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL4  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## opennlp  starts BASE:3 FULL:3  time keys 12
+  FULL/BASE time  ratio 1.0045  (mean FULL 1.0050 n=3, BASE 1.0004 n=3)  error margin 0.0132 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0033  (mean FULL 1.0033 n=3, BASE 1.0000 n=3)  error margin 0.0148 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 1.0045  (mean FULL 1.0051 n=30 iterations, BASE 1.0006 n=30)  error margin 0.0118 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 12 keys]
+    key o.t.postag.POSTaggerMEBenchmark.instancePerThread false      BASE 18172.4 sd 287  FULL 18475.1 sd 160  [higher]
+    key o.t.postag.POSTaggerMEBenchmark.instancePerThread true       BASE 29249.5 sd 102  FULL 29414.5 sd 158  [higher]
+    key o.t.postag.POSTaggerMEBenchmark.newInstancePerCall false     BASE 7217.13 sd 841  FULL 7347.19 sd 767  [higher]
+    key o.t.postag.POSTaggerMEBenchmark.newInstancePerCall true      BASE 4021.62 sd 27.6  FULL 4016.88 sd 39.8  [higher]
+    key o.t.postag.POSTaggerMEBenchmark.sharedInstance false         BASE 18327.1 sd 150  FULL 18432.3 sd 77.9  [higher]
+    key o.t.postag.POSTaggerMEBenchmark.sharedInstance true          BASE 29052.3 sd 479  FULL 29139.5 sd 160  [higher]
+    key o.t.sentdetect.SentenceDetectorMEBenchmark.instancePerThread BASE 234435 sd 828  FULL 222446 sd 1.61e+03  [higher]
+    key o.t.sentdetect.SentenceDetectorMEBenchmark.newInstancePerCal BASE 232044 sd 920  FULL 221466 sd 2.31e+03  [higher]
+    key o.t.sentdetect.SentenceDetectorMEBenchmark.sharedInstance N/ BASE 233457 sd 913  FULL 222358 sd 1.15e+03  [higher]
+    key o.t.tokenize.TokenizerMEBenchmark.instancePerThread N/A      BASE 215524 sd 1.44e+03  FULL 218957 sd 1.35e+03  [higher]
+    key o.t.tokenize.TokenizerMEBenchmark.newInstancePerCall N/A     BASE 210941 sd 214  FULL 213545 sd 1.5e+03  [higher]
+    key o.t.tokenize.TokenizerMEBenchmark.sharedInstance N/A         BASE 214931 sd 1.02e+03  FULL 218618 sd 909  [higher]
+
+## commonmark  starts BASE:3 FULL:3  time keys 7
+  FULL/BASE time  ratio 1.0010  (mean FULL 1.0010 n=3, BASE 1.0000 n=3)  error margin 0.0040 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9686  (mean FULL 0.9686 n=3, BASE 1.0000 n=3)  error margin 0.0031 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0010  (mean FULL 1.0010 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0041 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+    key SpecBenchmark.parseAndRenderExamples                         BASE 271.137 sd 2.23  FULL 273.672 sd 2.44  [higher]
+    key SpecBenchmark.parseAndRenderWholeSpec                        BASE 97.089 sd 0.608  FULL 97.8397 sd 0.402  [higher]
+    key SpecBenchmark.parseExamples                                  BASE 392.294 sd 3.15  FULL 394.133 sd 1.21  [higher]
+    key SpecBenchmark.parseWholeSpec                                 BASE 130.949 sd 0.535  FULL 131.243 sd 0.719  [higher]
+    key SpecBenchmark.renderMarkdownWholeSpec                        BASE 244.196 sd 1.55  FULL 238.279 sd 2.33  [higher]
+    key SpecBenchmark.renderMarkdownWholeSpecToWriter                BASE 231.09 sd 1.41  FULL 224.956 sd 3.82  [higher]
+    key SpecBenchmark.renderWholeSpec                                BASE 372.749 sd 3.88  FULL 380.532 sd 2.22  [higher]
+
+## jackson  starts BASE:3 FULL:3  time keys 15
+  FULL/BASE time  ratio 0.9947  (mean FULL 0.9949 n=3, BASE 1.0001 n=3)  error margin 0.0055 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0071  (mean FULL 1.0071 n=3, BASE 1.0000 n=3)  error margin 0.0072 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9947  (mean FULL 0.9949 n=30 iterations, BASE 1.0002 n=30)  error margin 0.0048 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 15 keys]
+    key JsonStdReadVanilla.readUntypedCitmCatalog                    BASE 384.844 sd 5.8  FULL 382.136 sd 2.4  [higher]
+    key JsonStdReadVanilla.readUntypedMediaItem                      BASE 408622 sd 4.73e+03  FULL 420021 sd 6.24e+03  [higher]
+    key JsonStdReadVanilla.readUntypedMenu                           BASE 734961 sd 1.6e+04  FULL 772316 sd 4.73e+03  [higher]
+    key JsonStdReadVanilla.readUntypedWebxml                         BASE 102960 sd 1.42e+03  FULL 113062 sd 422  [higher]
+    key JsonStringReadVanilla.readCurrencyPojoDefault                BASE 29400.8 sd 423  FULL 29793.8 sd 67.1  [higher]
+    key JsonStringReadVanilla.readCurrencyPojoFast                   BASE 43279 sd 2.73e+03  FULL 43497.7 sd 268  [higher]
+    key JsonStringReadVanilla.readNodeCitmCatalog                    BASE 109.925 sd 0.986  FULL 107.476 sd 0.0149  [higher]
+    key JsonStringReadVanilla.readNodeMediaItem                      BASE 357623 sd 3.05e+03  FULL 353132 sd 1.13e+04  [higher]
+    key JsonStringReadVanilla.readNodeMenu                           BASE 663583 sd 4.7e+03  FULL 653477 sd 5.19e+03  [higher]
+    key JsonStringReadVanilla.readNodeWebxml                         BASE 71513.3 sd 813  FULL 70308.6 sd 341  [higher]
+    key JsonStringReadVanilla.readPojoMediaItem                      BASE 300843 sd 4.72e+03  FULL 305034 sd 1.82e+03  [higher]
+    key JsonStringReadVanilla.readUntypedCitmCatalog                 BASE 113.02 sd 0.693  FULL 111.392 sd 0.211  [higher]
+    key JsonStringReadVanilla.readUntypedMediaItem                   BASE 365160 sd 2.75e+03  FULL 365072 sd 6.95e+03  [higher]
+    key JsonStringReadVanilla.readUntypedMenu                        BASE 664962 sd 8.46e+03  FULL 654174 sd 1.04e+04  [higher]
+    key JsonStringReadVanilla.readUntypedWebxml                      BASE 72300.9 sd 577  FULL 70929.3 sd 940  [higher]
+
+## pdfbox  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 1.0032  (mean FULL 1.0032 n=3, BASE 1.0000 n=3)  error margin 0.0096 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9975  (mean FULL 0.9975 n=3, BASE 1.0000 n=3)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0032  (mean FULL 1.0032 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0132 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key TextExtraction.extractPDFSpecSorted                          BASE 3251.72 sd 14.2  FULL 3234.21 sd 21.7  [lower]
+    key TextExtraction.extractPDFSpecUnsorted                        BASE 3040.5 sd 14.4  FULL 3076.59 sd 38.1  [lower]
+
+## snakeyaml  starts BASE:3 FULL:3  time keys 5
+  FULL/BASE time  ratio 1.0422  (mean FULL 1.0420 n=3, BASE 0.9998 n=3)  error margin 0.0295 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9579  (mean FULL 0.9579 n=3, BASE 1.0000 n=3)  error margin 0.0195 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0376  (mean FULL 1.0357 n=30 iterations, BASE 0.9982 n=30)  error margin 0.0353 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 4 keys]
+    key EmitterBenchmark.emitScalar N/A                              BASE 0.422 sd 0.006  FULL 0.449 sd 0.014  [lower]
+    key ParseBenchmark.load 1000                                     BASE 2.287 sd 0.0218  FULL 2.325 sd 0.0413  [lower]
+    key ParseBenchmark.load 100000                                   BASE 823.353 sd 38.4  FULL 823.751 sd 67.4  [lower]
+    key ParseBenchmark.parse 1000                                    BASE 1.382 sd 0.0128  FULL 1.47767 sd 0.0254  [lower]
+    key ParseBenchmark.parse 100000                                  BASE 147.791 sd 1.03  FULL 157.153 sd 2.37  [lower]
+
+PAPER30-DONE

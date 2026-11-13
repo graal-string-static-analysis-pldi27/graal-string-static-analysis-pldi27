@@ -1,0 +1,62 @@
+1792868537.608680 ========================================================================================================================
+1792868537.610326 GraalVM Native Image: Generating 'dacapo-avrora-BASE-b3' (executable)...
+1792868537.610344 ========================================================================================================================
+1792868537.610356 For detailed information and explanations on the build output, visit:
+1792868537.610368 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792868537.610383 ------------------------------------------------------------------------------------------------------------------------
+1792868539.085760 [1/8] Initializing...                                                                                    (2.1s @ 0.42GB)
+1792868539.086049  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792868539.086178  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792868539.086254  C compiler: gcc (linux, x86_64, 15.2.0)
+1792868539.086361  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792868539.086385  1 user-specific feature(s):
+1792868539.086563  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792868539.087233 ------------------------------------------------------------------------------------------------------------------------
+1792868539.087255  1 experimental option(s) unlocked:
+1792868539.087297  - '-H:CodeAlignment' (origin(s): command line)
+1792868539.088314 ------------------------------------------------------------------------------------------------------------------------
+1792868539.088343 Build resources:
+1792868539.088392  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792868539.088428  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792868539.101646 Skipped 497 predefined class(es) because the classpath already contains a class with the same name: avrora.sim.platform.LED, avrora.arch.legacy.LegacyInstrProperties, avrora.actions.SimAction$TimeoutException, avrora.arch.legacy.LegacyRegister$Set, avrora.arch.legacy.LegacyInstr$OUT, avrora.sim.mcu.RegisterSet$MultiFieldRegister, avrora.sim.mcu.Timer16Bit, avrora.arch.legacy.LegacyInstr$STPI, avrora.arch.legacy.LegacyInstr$WDR, avrora.monitors.PacketMonitor$Mon, ...
+1792868542.800543 [2/8] Performing analysis...  [*****]                                                                    (3.4s @ 0.73GB)
+1792868542.819211     5,886 types,   7,634 fields, and  25,964 methods found reachable
+1792868542.819886     1,816 types,     153 fields, and   1,431 methods registered for reflection
+1792868542.819907        59 types,      60 fields, and      52 methods registered for JNI access
+1792868542.819924         0 downcalls and 0 upcalls registered for foreign access
+1792868542.819983         4 native libraries: dl, pthread, rt, z
+1792868544.046747 [3/8] Building universe...                                                                               (1.2s @ 0.98GB)
+1792868544.463910 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.82GB)
+1792868544.862253 [5/8] Inlining methods...     [***]                                                                      (0.2s @ 0.87GB)
+1792868548.225807 [6/8] Compiling methods...    [**]                                                                       (3.4s @ 0.73GB)
+1792868549.746193 [7/8] Laying out methods...   [*]                                                                        (1.5s @ 0.90GB)
+1792868551.438428 [8/8] Creating image...       [*]                                                                        (1.5s @ 0.73GB)
+1792868551.438803   10.93MB (40.02%) for code area:    15,882 compilation units
+1792868551.438846   13.57MB (49.68%) for image heap:  163,032 objects and 61 resources
+1792868551.438886    2.81MB (10.30%) for other data
+1792868551.438911   27.31MB in total image size, 25.89MB in total file size
+1792868551.438969 ------------------------------------------------------------------------------------------------------------------------
+1792868551.439740 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792868551.439971    6.63MB java.base                                            2.86MB byte[] for code metadata
+1792868551.440024    1.46MB avrora-cvs-20131011.jar                              1.99MB byte[] for java.lang.String
+1792868551.440081    1.34MB svm.jar (Native Image)                               1.40MB java.lang.String
+1792868551.440153  300.32kB dacapo-evaluation-git-e947cbfc.jar                   1.18MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792868551.440201  213.81kB jdk.zipfs                                          785.33kB java.lang.Class
+1792868551.440252  113.14kB java.logging                                       669.73kB byte[] for general heap data
+1792868551.440297   93.47kB org.graalvm.nativeimage.base                       409.46kB heap alignment
+1792868551.440339   82.26kB jdk.charsets                                       384.34kB java.lang.Object[]
+1792868551.440354   55.32kB jdk.proxy2                                         348.62kB java.util.HashMap$Node
+1792868551.440369   42.51kB jdk.proxy1                                         265.61kB java.lang.String[]
+1792868551.440934  130.24kB for 9 more packages                                  3.28MB for 1581 more object types
+1792868551.441727 ------------------------------------------------------------------------------------------------------------------------
+1792868551.441743 Recommendations:
+1792868551.441768  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792868551.441777  HEAP: Set max heap for improved and more predictable memory usage.
+1792868551.441815  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792868551.444531 ------------------------------------------------------------------------------------------------------------------------
+1792868551.445599                         1.0s (6.7% of total time) in 84 GCs | Peak RSS: 2.33GB | CPU load: 13.97
+1792868551.446029 ------------------------------------------------------------------------------------------------------------------------
+1792868551.446034 Build artifacts:
+1792868551.446590  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-avrora-BASE-b3 (executable)
+1792868551.446610 ========================================================================================================================
+1792868551.446699 Finished generating 'dacapo-avrora-BASE-b3' in 14.5s.

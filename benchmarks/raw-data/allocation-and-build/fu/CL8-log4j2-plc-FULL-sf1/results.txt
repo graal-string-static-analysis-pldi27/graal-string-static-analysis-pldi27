@@ -1,0 +1,10 @@
+# C99 campaign results  SLOT=CL8  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL8-log4j2-plc-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## log4j2-plc  [jmh] log4j2 PatternLayoutComparisonBenchmark, log4j2 arm (hunt/ab candspec; failing logback arm not selected)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 0.994 [0.973,1.011] n.s. (1 keys)  alloc 1.007 [0.991,1.025] n.s. (1 keys)
+  PatternLayoutComparisonBenchmark.log4j2                                FULL 0.994 [0.973,1.011] n.s.
+  ~alloc MB                                                              FULL 1.007 [0.991,1.025] n.s.
+  ~rss MB                                                                FULL 1.004 [0.998,1.009] n.s.  BIMODAL(FULL)
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,51 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL3  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## string-concat  starts BASE:3 SBS:3 SV:3 LS:3  time keys 37
+  SBS/BASE time  ratio 1.0059  (mean SBS 1.0060 n=3, BASE 1.0001 n=3)  error margin 0.0044 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 0.9923  (mean SBS 0.9923 n=3, BASE 1.0000 n=3)  error margin 0.0082 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 1.0060  (mean SV 1.0061 n=3, BASE 1.0001 n=3)  error margin 0.0075 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9942  (mean SV 0.9942 n=3, BASE 1.0000 n=3)  error margin 0.0082 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 0.2338  (mean LS 0.2338 n=3, BASE 1.0001 n=3)  error margin 0.0044 (max sd)  paper-significance FASTER/LESS
+  LS/BASE alloc ratio 3.4440  (mean LS 3.4440 n=3, BASE 1.0000 n=3)  error margin 0.0238 (max sd)  paper-significance SLOWER/MORE
+  SBS/BASE iter  ratio 1.0059  (mean SBS 1.0060 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0040 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 37 keys]
+  SV/BASE iter  ratio 1.0060  (mean SV 1.0061 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0063 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 37 keys]
+  LS/BASE iter  ratio 0.2338  (mean LS 0.2338 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0038 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 37 keys]
+    key StringConcat.concat123String 4711                            BASE 173.594 sd 1.96  SBS 175.752 sd 0.821  SV 174.416 sd 0.914  LS 170.396 sd 11.4  [higher]
+    key StringConcat.concat13String 4711                             BASE 2701.49 sd 109  SBS 2699.25 sd 27.6  SV 2760.25 sd 92.4  LS 22319.1 sd 24  [higher]
+    key StringConcat.concat13StringConst 4711                        BASE 2606.63 sd 39.2  SBS 2520.85 sd 61.2  SV 2624.15 sd 33.1  LS 24358.3 sd 41.7  [higher]
+    key StringConcat.concat23String 4711                             BASE 1516.86 sd 13.5  SBS 1472.22 sd 66.8  SV 1501.8 sd 18.8  LS 13544.7 sd 15.6  [higher]
+    key StringConcat.concat23StringConst 4711                        BASE 1496.06 sd 12.4  SBS 1478.17 sd 23  SV 1473.82 sd 40.5  LS 14306.8 sd 4.97  [higher]
+    key StringConcat.concat30Mix 4711                                BASE 1129.1 sd 3.94  SBS 1095.09 sd 31  SV 1114.06 sd 41.7  LS 5389.46 sd 150  [higher]
+    key StringConcat.concat3String 4711                              BASE 11344.1 sd 118  SBS 11377 sd 83.2  SV 11223.7 sd 248  LS 148119 sd 1.03e+03  [higher]
+    key StringConcat.concat4String 4711                              BASE 9006.87 sd 54.4  SBS 8946.8 sd 84.7  SV 8880.63 sd 228  LS 128913 sd 725  [higher]
+    key StringConcat.concat6String 4711                              BASE 6051.95 sd 96.9  SBS 5882.19 sd 172  SV 5998.57 sd 279  LS 49594.8 sd 51.9  [higher]
+    key StringConcat.concatConst2String 4711                         BASE 15614 sd 63.5  SBS 15537.6 sd 86.1  SV 15364.3 sd 422  LS 149734 sd 621  [higher]
+    key StringConcat.concatConst4String 4711                         BASE 8872.68 sd 29.9  SBS 8830.61 sd 121  SV 8716.53 sd 229  LS 55975.5 sd 162  [higher]
+    key StringConcat.concatConst6Object 4711                         BASE 4980.05 sd 154  SBS 5049.05 sd 78.9  SV 5045.82 sd 91  LS 18201.9 sd 625  [higher]
+    key StringConcat.concatConst6String 4711                         BASE 5941.26 sd 205  SBS 5922.77 sd 169  SV 5813.13 sd 140  LS 44686.5 sd 83.1  [higher]
+    key StringConcat.concatConstBool 4711                            BASE 39708.6 sd 285  SBS 39049.6 sd 906  SV 38703.4 sd 541  LS 174246 sd 5.16e+03  [higher]
+    key StringConcat.concatConstBoolByte 4711                        BASE 23642.6 sd 372  SBS 23255.4 sd 489  SV 23242.7 sd 438  LS 76250.1 sd 555  [higher]
+    key StringConcat.concatConstBoolString 4711                      BASE 19861.1 sd 63.3  SBS 19662 sd 319  SV 19436.3 sd 365  LS 151642 sd 541  [higher]
+    key StringConcat.concatConstBoolean 4711                         BASE 36899.5 sd 208  SBS 37002.6 sd 1.07e+03  SV 36966.7 sd 228  LS 144427 sd 1.28e+03  [higher]
+    key StringConcat.concatConstBooleanString 4711                   BASE 15874.7 sd 238  SBS 15937 sd 188  SV 15673.6 sd 292  LS 140130 sd 552  [higher]
+    key StringConcat.concatConstFloat 4711                           BASE 10988 sd 44.7  SBS 10958.6 sd 26.3  SV 10966.4 sd 57.7  LS 17328 sd 46.2  [higher]
+    key StringConcat.concatConstFloatString 4711                     BASE 8631.83 sd 26  SBS 8650.58 sd 32.7  SV 8619.9 sd 8.42  LS 17387.8 sd 51.1  [higher]
+    key StringConcat.concatConstInt 4711                             BASE 32547.8 sd 495  SBS 32503.5 sd 618  SV 32495.3 sd 357  LS 72844.3 sd 2.06e+03  [higher]
+    key StringConcat.concatConstIntConstInt 4711                     BASE 21071.4 sd 286  SBS 21013.3 sd 187  SV 20798.5 sd 175  LS 46225.1 sd 626  [higher]
+    key StringConcat.concatConstIntString 4711                       BASE 17428 sd 309  SBS 17613.4 sd 399  SV 17350.7 sd 104  LS 74161.6 sd 1.27e+03  [higher]
+    key StringConcat.concatConstInteger 4711                         BASE 31301.7 sd 803  SBS 30932.2 sd 503  SV 30872.9 sd 912  LS 82176.4 sd 1.67e+03  [higher]
+    key StringConcat.concatConstIntegerString 4711                   BASE 14683.7 sd 98.3  SBS 14586.1 sd 33.2  SV 14410.2 sd 189  LS 86713.8 sd 424  [higher]
+    key StringConcat.concatConstString 4711                          BASE 36079.4 sd 477  SBS 36584.6 sd 637  SV 35891 sd 271  LS 168190 sd 2.18e+03  [higher]
+    key StringConcat.concatConstStringConstInt 4711                  BASE 17624.1 sd 218  SBS 17720.5 sd 350  SV 17419.7 sd 215  LS 68411.5 sd 943  [higher]
+    key StringConcat.concatEmptyConstInt 4711                        BASE 116798 sd 414  SBS 114481 sd 3.83e+03  SV 117141 sd 434  LS 116451 sd 838  [higher]
+    key StringConcat.concatEmptyConstString 4711                     BASE 271327 sd 1.13e+04  SBS 264172 sd 639  SV 264752 sd 515  LS 283540 sd 2.17e+03  [higher]
+    key StringConcat.concatEmptyLeft 4711                            BASE 215889 sd 520  SBS 215751 sd 886  SV 216038 sd 253  LS 225001 sd 2.18e+03  [higher]
+    key StringConcat.concatEmptyRight 4711                           BASE 201056 sd 371  SBS 201386 sd 894  SV 201143 sd 465  LS 217279 sd 1.52e+03  [higher]
+    key StringConcat.concatMethodConstString 4711                    BASE 35659.1 sd 865  SBS 35972.2 sd 143  SV 36173.8 sd 363  LS 164673 sd 523  [higher]
+    key StringConcat.concatMix4String 4711                           BASE 1750.5 sd 41.4  SBS 1748.82 sd 20.1  SV 1744.23 sd 23.4  LS 2159.25 sd 43.3  [higher]
+    key StringConcat.concatStringBoolString 4711                     BASE 13178.6 sd 160  SBS 13310.8 sd 116  SV 13296.1 sd 24.3  LS 147076 sd 579  [higher]
+    key StringConcat.concatStringBooleanString 4711                  BASE 11435.7 sd 169  SBS 11431.8 sd 76.1  SV 11464.5 sd 55.5  LS 146061 sd 551  [higher]
+    key StringConcat.concatStringIntString 4711                      BASE 12570.4 sd 103  SBS 12508.1 sd 99.9  SV 12611.4 sd 103  LS 72366.8 sd 995  [higher]
+    key StringConcat.concatStringIntegerString 4711                  BASE 10890.2 sd 118  SBS 10599.2 sd 74.2  SV 10944.7 sd 30.6  LS 82113.8 sd 205  [higher]
+
+PAPER30-DONE

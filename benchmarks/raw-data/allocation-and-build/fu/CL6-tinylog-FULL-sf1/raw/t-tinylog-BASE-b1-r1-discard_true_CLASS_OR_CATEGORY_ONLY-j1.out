@@ -1,0 +1,51 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.discard
+# Parameters: (async = true, locationInfo = CLASS_OR_CATEGORY_ONLY)
+
+# Run progress: 0.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 243410772.826 ops/s
+# Warmup Iteration   2: 235290741.110 ops/s
+# Warmup Iteration   3: 235621056.395 ops/s
+# Warmup Iteration   4: 235026532.406 ops/s
+# Warmup Iteration   5: 236737092.785 ops/s
+Iteration   1: 235553149.193 ops/s
+Iteration   2: 235047013.711 ops/s
+Iteration   3: 235059854.466 ops/s
+Iteration   4: 236384654.492 ops/s
+Iteration   5: 238680866.518 ops/s
+Iteration   6: 236524591.532 ops/s
+Iteration   7: 240927853.460 ops/s
+Iteration   8: 236341029.186 ops/s
+Iteration   9: 237063102.565 ops/s
+Iteration  10: 235773693.249 ops/s
+
+Result "org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.discard":
+  236735580.837 ±(99.9%) 2749779.119 ops/s [Average]
+  (min, avg, max) = (235047013.711, 236735580.837, 240927853.460), stdev = 1818808.632
+  CI (99.9%): [233985801.718, 239485359.956] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:15
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                  (async)          (locationInfo)   Mode  Cnt          Score         Error  Units
+Tinylog2Benchmark.discard     true  CLASS_OR_CATEGORY_ONLY  thrpt   10  236735580.837 ± 2749779.119  ops/s

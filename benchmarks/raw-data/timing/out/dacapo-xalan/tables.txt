@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-xalan  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-xalan             BASE b1 size 36.57/38.37/16.86/18.02 | parent 25.4 s 2.44 GB | driver 26.2 s REUSED
+dacapo-xalan             BASE b2 size 36.57/38.37/16.86/18.02 | parent 24.6 s 2.47 GB | driver 25.3 s REUSED
+dacapo-xalan             FULL b1 size 36.70/38.50/16.91/18.09 | parent 50.8 s 2.97 GB | driver 51.6 s | OK | child aa 21231 ms gen 24.0 s obs 24 s VmHWM 3.79 GB | wait 24.1 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL b2 size 36.70/38.50/16.92/18.09 | parent 46.4 s 2.92 GB | driver 47.2 s | OK | child aa 21200 ms gen 24.4 s obs 25 s VmHWM 3.86 GB | wait 24.1 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             BASE_A32 b1 size 36.37/38.17/16.56/18.09 | parent 28.7 s 2.46 GB | driver 29.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             BASE_A32 b2 size 36.37/38.17/16.56/18.09 | parent 23.2 s 2.50 GB | driver 24.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             FULL_A32 b1 size 36.44/38.24/16.61/18.09 | parent 48.5 s 3.05 GB | driver 49.5 s | OK | child aa 17328 ms gen 20.2 s obs 20 s VmHWM 3.97 GB | wait 20.5 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL_A32 b2 size 36.44/38.24/16.61/18.09 | parent 46.2 s 3.17 GB | driver 47.4 s | OK | child aa 21029 ms gen 23.8 s obs 23 s VmHWM 3.97 GB | wait 24.1 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             BASE_A128 b1 size 37.29/39.09/17.58/18.02 | parent 25.8 s 2.47 GB | driver 26.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             BASE_A128 b2 size 37.29/39.09/17.58/18.02 | parent 24.2 s 2.42 GB | driver 25.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             FULL_A128 b1 size 37.36/39.16/17.64/18.02 | parent 46.2 s 2.97 GB | driver 47.2 s | OK | child aa 19715 ms gen 22.8 s obs 22 s VmHWM 3.91 GB | wait 23.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL_A128 b2 size 37.36/39.16/17.64/18.02 | parent 46.4 s 3.00 GB | driver 47.5 s | OK | child aa 20981 ms gen 24.3 s obs 24 s VmHWM 3.99 GB | wait 24.5 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             BASE_A256 b1 size 39.00/40.79/19.17/18.02 | parent 19.1 s 2.45 GB | driver 19.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             BASE_A256 b2 size 39.00/40.79/19.17/18.02 | parent 19.4 s 2.42 GB | driver 20.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-xalan             FULL_A256 b1 size 39.06/40.86/19.23/18.02 | parent 39.5 s 2.91 GB | driver 40.3 s | OK | child aa 15963 ms gen 18.6 s obs 19 s VmHWM 3.81 GB | wait 19.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL_A256 b2 size 39.06/40.86/19.23/18.02 | parent 38.6 s 3.10 GB | driver 39.4 s | OK | child aa 15279 ms gen 18.0 s obs 17 s VmHWM 3.85 GB | wait 18.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+## build cost vs stock (means over builds)
+dacapo-xalan             FULL/BASE  parent wall 25.0 -> 48.6 s (x1.94)  Peak RSS 2.46 -> 2.95 GB (x1.20)  child VmHWM 3.83 GB  size 36.57 -> 36.70 MB (x1.004)  status OK,OK
+dacapo-xalan             BASE_A32/BASE  parent wall 25.0 -> 25.9 s (x1.04)  Peak RSS 2.46 -> 2.48 GB (x1.01)  child VmHWM ? GB  size 36.57 -> 36.37 MB (x0.995)  status NO-PROFILE,NO-PROFILE
+dacapo-xalan             FULL_A32/BASE  parent wall 25.0 -> 47.4 s (x1.89)  Peak RSS 2.46 -> 3.11 GB (x1.27)  child VmHWM 3.97 GB  size 36.57 -> 36.44 MB (x0.996)  status OK,OK
+dacapo-xalan             BASE_A128/BASE  parent wall 25.0 -> 25.0 s (x1.00)  Peak RSS 2.46 -> 2.45 GB (x1.00)  child VmHWM ? GB  size 36.57 -> 37.29 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+dacapo-xalan             FULL_A128/BASE  parent wall 25.0 -> 46.3 s (x1.85)  Peak RSS 2.46 -> 2.99 GB (x1.22)  child VmHWM 3.95 GB  size 36.57 -> 37.36 MB (x1.022)  status OK,OK
+dacapo-xalan             BASE_A256/BASE  parent wall 25.0 -> 19.2 s (x0.77)  Peak RSS 2.46 -> 2.44 GB (x0.99)  child VmHWM ? GB  size 36.57 -> 39.00 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+dacapo-xalan             FULL_A256/BASE  parent wall 25.0 -> 39.0 s (x1.56)  Peak RSS 2.46 -> 3.00 GB (x1.22)  child VmHWM 3.83 GB  size 36.57 -> 39.06 MB (x1.068)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-xalan             FULL SBS=1 SV=225 (ACC=141 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-xalan             BASE_A32 no profile  NO-PROFILE
+dacapo-xalan             FULL_A32 SBS=1 SV=225 (ACC=141 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-xalan             BASE_A128 no profile  NO-PROFILE
+dacapo-xalan             FULL_A128 SBS=1 SV=225 (ACC=141 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-xalan             BASE_A256 no profile  NO-PROFILE
+dacapo-xalan             FULL_A256 SBS=1 SV=225 (ACC=141 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-xalan             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.8 s
+dacapo-xalan             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.1 s
+dacapo-xalan             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.6 s
+dacapo-xalan             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.2 s
+dacapo-xalan             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.8 s
+dacapo-xalan             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.1 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

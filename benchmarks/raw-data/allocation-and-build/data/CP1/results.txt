@@ -1,0 +1,49 @@
+# C99 campaign results  SLOT=CP1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CP1  CFGS=BASE FULL  runs/build=5  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## minimal-json  [port] minimal-json Hunt3Port 24 rows (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=30
+  GEOMEAN FULL/BASE  time 1.001 [0.996,1.007] n.s. (24 keys)  alloc 0.986 [0.963,1.012] n.s. (1 keys)
+  input=caliper parser=gson method=timeReadFromString                    FULL 1.041 [1.025,1.065] SLOWER
+  input=caliper parser=gson method=timeWriteToString                     FULL 0.992 [0.982,1.002] n.s.
+  input=caliper parser=jackson method=timeReadFromString                 FULL 1.012 [0.996,1.027] n.s.  BIMODAL(FULL)
+  input=caliper parser=jackson method=timeWriteToString                  FULL 0.999 [0.990,1.006] n.s.
+  input=caliper parser=minimal-json method=timeReadFromString            FULL 1.037 [0.994,1.079] n.s.
+  input=caliper parser=minimal-json method=timeWriteToString             FULL 0.990 [0.977,1.001] n.s.
+  input=caliper parser=org-json method=timeReadFromString                FULL 1.003 [0.997,1.009] n.s.
+  input=caliper parser=org-json method=timeWriteToString                 FULL 0.986 [0.972,1.000] FASTER
+  input=long-string parser=gson method=timeReadFromString                FULL 0.973 [0.942,1.003] n.s.
+  input=long-string parser=gson method=timeWriteToString                 FULL 0.967 [0.949,0.986] FASTER
+  input=long-string parser=jackson method=timeReadFromString             FULL 1.012 [0.970,1.057] n.s.
+  input=long-string parser=jackson method=timeWriteToString              FULL 0.981 [0.936,1.031] n.s.
+  input=long-string parser=minimal-json method=timeReadFromString        FULL 1.012 [0.997,1.034] n.s.
+  input=long-string parser=minimal-json method=timeWriteToString         FULL 0.985 [0.969,1.001] n.s.
+  input=long-string parser=org-json method=timeReadFromString            FULL 0.997 [0.991,1.004] n.s.
+  input=long-string parser=org-json method=timeWriteToString             FULL 0.996 [0.985,1.007] n.s.
+  input=rap parser=gson method=timeReadFromString                        FULL 1.006 [0.993,1.030] n.s.
+  input=rap parser=gson method=timeWriteToString                         FULL 1.012 [0.992,1.033] n.s.
+  input=rap parser=jackson method=timeReadFromString                     FULL 1.071 [1.039,1.104] SLOWER
+  input=rap parser=jackson method=timeWriteToString                      FULL 1.000 [0.991,1.010] n.s.
+  input=rap parser=minimal-json method=timeReadFromString                FULL 0.981 [0.970,0.995] FASTER  BIMODAL(BASE)
+  input=rap parser=minimal-json method=timeWriteToString                 FULL 0.991 [0.981,1.000] n.s.
+  input=rap parser=org-json method=timeReadFromString                    FULL 0.999 [0.993,1.004] n.s.
+  input=rap parser=org-json method=timeWriteToString                     FULL 0.987 [0.977,0.997] FASTER
+  ~alloc MB                                                              FULL 0.986 [0.963,1.012] n.s.
+  ~rss MB                                                                FULL 1.001 [0.997,1.005] n.s.
+
+## gson  [port] gson metrics Hunt3Port 11 rows (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=30
+  GEOMEAN FULL/BASE  time 1.014 [0.990,1.038] n.s. (11 keys)  alloc 0.989 [0.989,0.989] LESS (1 keys)
+  parse document=READER_LONG api=GSON_BIND                               FULL 1.038 [0.991,1.084] n.s.
+  parse document=READER_LONG api=GSON_DOM                                FULL 0.987 [0.859,1.134] n.s.
+  parse document=READER_LONG api=GSON_STREAM                             FULL 1.042 [1.004,1.077] SLOWER
+  parse document=READER_SHORT api=GSON_BIND                              FULL 1.028 [0.997,1.058] n.s.
+  parse document=READER_SHORT api=GSON_DOM                               FULL 1.028 [0.981,1.077] n.s.
+  parse document=READER_SHORT api=GSON_STREAM                            FULL 1.038 [0.993,1.101] n.s.
+  parse document=TWEETS api=GSON_BIND                                    FULL 1.018 [1.011,1.024] SLOWER
+  parse document=TWEETS api=GSON_DOM                                     FULL 1.025 [0.986,1.086] n.s.
+  parse document=TWEETS api=GSON_STREAM                                  FULL 1.007 [0.988,1.026] n.s.
+  serialize pretty=false                                                 FULL 0.970 [0.946,0.995] FASTER
+  serialize pretty=true                                                  FULL 0.980 [0.961,0.996] FASTER
+  ~alloc MB                                                              FULL 0.989 [0.989,0.989] LESS
+  ~rss MB                                                                FULL 0.989 [0.940,1.042] n.s.  BIMODAL(FULL)
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

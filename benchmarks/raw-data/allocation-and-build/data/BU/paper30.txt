@@ -1,0 +1,58 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BU  CFGS=BASE SBS SV LS  RPB=3  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## json-parser  starts BASE:18 SBS:18 SV:18 LS:18  time keys 1
+  SBS/BASE time  ratio 0.6386  (mean SBS 0.6386 n=18, BASE 1.0000 n=18)  error margin 0.0152 (max sd)  paper-significance FASTER/LESS
+  SBS/BASE alloc ratio 0.2138  (mean SBS 0.2138 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  SV/BASE time  ratio 0.9964  (mean SV 0.9964 n=18, BASE 1.0000 n=18)  error margin 0.0087 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 1.0000  (mean SV 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 1.0076  (mean LS 1.0076 n=18, BASE 1.0000 n=18)  error margin 0.0094 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key Total Runtime us                                             BASE 9.87059e+06 sd 6.08e+04  SBS 6.30301e+06 sd 1.5e+05  SV 9.83554e+06 sd 8.58e+04  LS 9.94514e+06 sd 9.27e+04  [lower]
+
+## biojava  starts BASE:18 SBS:18 SV:18 LS:18  time keys 1
+  SBS/BASE time  ratio 0.8849  (mean SBS 0.8849 n=18, BASE 1.0000 n=18)  error margin 0.0208 (max sd)  paper-significance FASTER/LESS
+  SBS/BASE alloc ratio 0.3154  (mean SBS 0.3154 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  SV/BASE time  ratio 0.9432  (mean SV 0.9432 n=18, BASE 1.0000 n=18)  error margin 0.0208 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 0.9523  (mean SV 0.9523 n=18, BASE 1.0000 n=18)  error margin 0.0001 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9979  (mean LS 0.9979 n=18, BASE 1.0000 n=18)  error margin 0.0208 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key iteration ms                                                 BASE 12927.5 sd 269  SBS 11440 sd 35.8  SV 12193.3 sd 70.5  LS 12899.8 sd 50.6  [lower]
+
+## jsoup  starts BASE:18 SBS:18 SV:18 LS:18  time keys 2
+  SBS/BASE time  ratio 0.9976  (mean SBS 0.9976 n=18, BASE 1.0000 n=18)  error margin 0.0038 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0000  (mean SBS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.8940  (mean SV 0.8940 n=18, BASE 1.0000 n=18)  error margin 0.0038 (max sd)  paper-significance FASTER/LESS
+  SV/BASE alloc ratio 0.9221  (mean SV 0.9221 n=18, BASE 1.0000 n=18)  error margin 0.0001 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9971  (mean LS 0.9971 n=18, BASE 1.0000 n=18)  error margin 0.0034 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key large: wall/rep ms                                           BASE 13.0044 sd 0.0475  SBS 12.9819 sd 0.0723  SV 11.6703 sd 0.0813  LS 12.9857 sd 0.0462  [lower]
+    key medium: wall/rep ms                                          BASE 0.278186 sd 0.00156  SBS 0.277343 sd 0.00125  SV 0.247732 sd 0.00126  LS 0.27696 sd 0.00118  [lower]
+
+## dacapo-batik  starts BASE:18 SBS:18 SV:18 LS:18  time keys 1
+  SBS/BASE time  ratio 0.9923  (mean SBS 0.9923 n=18, BASE 1.0000 n=18)  error margin 0.0161 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0000  (mean SBS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0001 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9968  (mean SV 0.9968 n=18, BASE 1.0000 n=18)  error margin 0.0161 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9978  (mean SV 0.9978 n=18, BASE 1.0000 n=18)  error margin 0.0003 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 0.9972  (mean LS 0.9972 n=18, BASE 1.0000 n=18)  error margin 0.0161 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0002 (max sd)  paper-significance n.s.
+    key iteration ms                                                 BASE 2080.64 sd 33.5  SBS 2064.72 sd 32.4  SV 2073.91 sd 24.2  LS 2074.77 sd 19.8  [lower]
+
+## regex-redux  starts BASE:18 SBS:18 SV:18 LS:18  time keys 1
+  SBS/BASE time  ratio 1.0010  (mean SBS 1.0010 n=18, BASE 1.0000 n=18)  error margin 0.0154 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0000  (mean SBS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9906  (mean SV 0.9906 n=18, BASE 1.0000 n=18)  error margin 0.0154 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.7174  (mean SV 0.7174 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 1.0016  (mean LS 1.0016 n=18, BASE 1.0000 n=18)  error margin 0.0154 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key iteration s                                                  BASE 6.36553 sd 0.0977  SBS 6.37194 sd 0.0913  SV 6.30575 sd 0.0776  LS 6.37553 sd 0.0926  [lower]
+
+## luindex  starts BASE:18 SBS:18 SV:18 LS:18  time keys 1
+  SBS/BASE time  ratio 1.0167  (mean SBS 1.0167 n=18, BASE 1.0000 n=18)  error margin 0.0234 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0000  (mean SBS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 1.0074  (mean SV 1.0074 n=18, BASE 1.0000 n=18)  error margin 0.0071 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9306  (mean SV 0.9306 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 1.0108  (mean LS 1.0108 n=18, BASE 1.0000 n=18)  error margin 0.0030 (max sd)  paper-significance SLOWER/MORE
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=18, BASE 1.0000 n=18)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key iteration ms                                                 BASE 6644.13 sd 15  SBS 6755.3 sd 155  SV 6693.22 sd 47.3  LS 6715.79 sd 20.1  [lower]
+
+PAPER30-DONE

@@ -1,0 +1,84 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-lucene-bytask  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+lucene-bytask            BASE b1 size 28.51/30.19/13.88/13.17 | parent 30.3 s 2.38 GB | driver 31.1 s REUSED
+lucene-bytask            BASE b2 size 28.51/30.19/13.88/13.17 | parent 22.9 s 2.38 GB | driver 23.7 s REUSED
+lucene-bytask            SBS  b1 size 28.51/30.19/13.88/13.17 | parent 62.0 s 2.76 GB | driver 62.9 s | ZERO-ADMIT | child aa 25734 ms gen 31.5 s obs 32 s VmHWM 3.24 GB | wait 31.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS  b2 size 28.51/30.19/13.88/13.17 | parent 67.0 s 2.63 GB | driver 68.6 s | ZERO-ADMIT | child aa 30888 ms gen 34.9 s obs 33 s VmHWM 3.29 GB | wait 35.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3592 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SV   b1 size 28.58/30.26/13.95/13.17 | parent 65.0 s 2.83 GB | driver 66.4 s | OK | child aa 24202 ms gen 31.1 s obs 32 s VmHWM 3.38 GB | wait 31.6 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3591 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV   b2 size 28.58/30.26/13.95/13.17 | parent 72.0 s 2.67 GB | driver 74.5 s | OK | child aa 29131 ms gen 34.7 s obs 34 s VmHWM 3.31 GB | wait 34.6 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            LS   b1 size 28.51/30.20/13.88/13.17 | parent 71.0 s 2.83 GB | driver 73.1 s | OK | child aa 28263 ms gen 32.2 s obs 31 s VmHWM 5.52 GB | wait 32.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3591 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS   b2 size 28.51/30.20/13.88/13.17 | parent 64.0 s 2.74 GB | driver 65.4 s | OK | child aa 31354 ms gen 36.7 s obs 36 s VmHWM 5.47 GB | wait 36.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3591 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            BASE_A32 b1 size 28.25/29.93/13.62/13.17 | parent 28.7 s 2.42 GB | driver 29.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            BASE_A32 b2 size 28.25/29.93/13.62/13.17 | parent 33.0 s 2.39 GB | driver 33.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            SBS_A32 b1 size 28.25/29.93/13.62/13.17 | parent 62.0 s 2.66 GB | driver 63.7 s | ZERO-ADMIT | child aa 29415 ms gen 36.5 s obs 36 s VmHWM 3.29 GB | wait 36.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS_A32 b2 size 28.25/29.93/13.62/13.17 | parent 49.9 s 2.53 GB | driver 50.9 s | ZERO-ADMIT | child aa 16705 ms gen 22.1 s obs 21 s VmHWM 3.24 GB | wait 22.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SV_A32 b1 size 28.31/30.00/13.69/13.17 | parent 56.0 s 2.67 GB | driver 57.4 s | OK | child aa 22597 ms gen 26.7 s obs 26 s VmHWM 3.29 GB | wait 27.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV_A32 b2 size 28.31/30.00/13.69/13.17 | parent 51.7 s 2.87 GB | driver 53.0 s | OK | child aa 16155 ms gen 19.7 s obs 20 s VmHWM 3.26 GB | wait 19.5 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3595 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A32 b1 size 28.25/29.94/13.61/13.17 | parent 57.6 s 2.83 GB | driver 58.6 s | OK | child aa 20061 ms gen 25.1 s obs 25 s VmHWM 5.40 GB | wait 25.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3594 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A32 b2 size 28.25/29.94/13.61/13.17 | parent 58.8 s 2.57 GB | driver 59.9 s | OK | child aa 24092 ms gen 27.7 s obs 27 s VmHWM 5.46 GB | wait 28.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3590 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            BASE_A128 b1 size 29.17/30.85/14.52/13.17 | parent 38.9 s 2.37 GB | driver 40.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            BASE_A128 b2 size 29.17/30.85/14.52/13.17 | parent 28.5 s 2.37 GB | driver 29.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            SBS_A128 b1 size 29.17/30.85/14.52/13.17 | parent 51.8 s 2.57 GB | driver 52.7 s | ZERO-ADMIT | child aa 21064 ms gen 26.1 s obs 26 s VmHWM 3.24 GB | wait 26.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3592 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS_A128 b2 size 29.17/30.85/14.52/13.17 | parent 42.8 s 2.55 GB | driver 43.7 s | ZERO-ADMIT | child aa 19320 ms gen 24.2 s obs 23 s VmHWM 3.21 GB | wait 24.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SV_A128 b1 size 29.23/30.92/14.59/13.17 | parent 40.0 s 2.59 GB | driver 40.9 s | OK | child aa 13304 ms gen 18.2 s obs 19 s VmHWM 3.26 GB | wait 18.5 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV_A128 b2 size 29.23/30.92/14.59/13.17 | parent 42.6 s 2.60 GB | driver 43.8 s | OK | child aa 17165 ms gen 20.7 s obs 21 s VmHWM 3.29 GB | wait 21.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3593 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A128 b1 size 29.17/30.85/14.52/13.17 | parent 44.4 s 2.73 GB | driver 45.6 s | OK | child aa 15036 ms gen 18.3 s obs 18 s VmHWM 5.43 GB | wait 18.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3590 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A128 b2 size 29.17/30.85/14.52/13.17 | parent 45.4 s 2.59 GB | driver 46.3 s | OK | child aa 15328 ms gen 20.3 s obs 21 s VmHWM 5.44 GB | wait 20.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3590 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            BASE_A256 b1 size 30.48/32.16/15.93/13.11 | parent 34.3 s 2.35 GB | driver 35.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            BASE_A256 b2 size 30.48/32.16/15.93/13.11 | parent 22.9 s 2.38 GB | driver 24.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+lucene-bytask            SBS_A256 b1 size 30.48/32.16/15.93/13.11 | parent 45.6 s 2.69 GB | driver 46.4 s | ZERO-ADMIT | child aa 16165 ms gen 19.2 s obs 18 s VmHWM 3.21 GB | wait 19.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SBS_A256 b2 size 30.48/32.16/15.93/13.11 | parent 39.1 s 2.52 GB | driver 39.9 s | ZERO-ADMIT | child aa 16633 ms gen 19.7 s obs 19 s VmHWM 3.30 GB | wait 20.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=0 EXACT=0 other=0 REUSED
+lucene-bytask            SV_A256 b1 size 30.54/32.23/16.00/13.11 | parent 44.5 s 2.58 GB | driver 45.3 s | OK | child aa 17205 ms gen 20.9 s obs 20 s VmHWM 3.23 GB | wait 21.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3590 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            SV_A256 b2 size 30.54/32.23/16.00/13.11 | parent 38.8 s 2.53 GB | driver 39.6 s | OK | child aa 16538 ms gen 19.9 s obs 19 s VmHWM 3.23 GB | wait 20.0 s | SBS=0 SV=36(ACC=15 ELEM=1) LS=0(JOINER=0) | IC=3593 TC=323 MIRROR=33 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A256 b1 size 30.48/32.16/15.93/13.11 | parent 46.9 s 2.54 GB | driver 47.7 s | OK | child aa 22467 ms gen 26.7 s obs 26 s VmHWM 5.53 GB | wait 27.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3590 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+lucene-bytask            LS_A256 b2 size 30.48/32.16/15.93/13.11 | parent 44.1 s 2.66 GB | driver 44.9 s | OK | child aa 14965 ms gen 19.6 s obs 20 s VmHWM 5.52 GB | wait 20.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=167(JOINER=0) | IC=3591 TC=323 MIRROR=2 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+lucene-bytask            SBS /BASE  parent wall 26.6 -> 64.5 s (x2.42)  Peak RSS 2.38 -> 2.69 GB (x1.13)  child VmHWM 3.27 GB  size 28.51 -> 28.51 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+lucene-bytask            SV  /BASE  parent wall 26.6 -> 68.5 s (x2.58)  Peak RSS 2.38 -> 2.75 GB (x1.16)  child VmHWM 3.34 GB  size 28.51 -> 28.58 MB (x1.002)  status OK,OK
+lucene-bytask            LS  /BASE  parent wall 26.6 -> 67.5 s (x2.54)  Peak RSS 2.38 -> 2.79 GB (x1.17)  child VmHWM 5.49 GB  size 28.51 -> 28.51 MB (x1.000)  status OK,OK
+lucene-bytask            BASE_A32/BASE  parent wall 26.6 -> 30.9 s (x1.16)  Peak RSS 2.38 -> 2.41 GB (x1.01)  child VmHWM ? GB  size 28.51 -> 28.25 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+lucene-bytask            SBS_A32/BASE  parent wall 26.6 -> 56.0 s (x2.10)  Peak RSS 2.38 -> 2.59 GB (x1.09)  child VmHWM 3.26 GB  size 28.51 -> 28.25 MB (x0.991)  status ZERO-ADMIT,ZERO-ADMIT
+lucene-bytask            SV_A32/BASE  parent wall 26.6 -> 53.9 s (x2.02)  Peak RSS 2.38 -> 2.77 GB (x1.16)  child VmHWM 3.27 GB  size 28.51 -> 28.31 MB (x0.993)  status OK,OK
+lucene-bytask            LS_A32/BASE  parent wall 26.6 -> 58.2 s (x2.19)  Peak RSS 2.38 -> 2.70 GB (x1.13)  child VmHWM 5.43 GB  size 28.51 -> 28.25 MB (x0.991)  status OK,OK
+lucene-bytask            BASE_A128/BASE  parent wall 26.6 -> 33.7 s (x1.27)  Peak RSS 2.38 -> 2.37 GB (x1.00)  child VmHWM ? GB  size 28.51 -> 29.17 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+lucene-bytask            SBS_A128/BASE  parent wall 26.6 -> 47.3 s (x1.78)  Peak RSS 2.38 -> 2.56 GB (x1.08)  child VmHWM 3.23 GB  size 28.51 -> 29.17 MB (x1.023)  status ZERO-ADMIT,ZERO-ADMIT
+lucene-bytask            SV_A128/BASE  parent wall 26.6 -> 41.3 s (x1.55)  Peak RSS 2.38 -> 2.59 GB (x1.09)  child VmHWM 3.27 GB  size 28.51 -> 29.23 MB (x1.025)  status OK,OK
+lucene-bytask            LS_A128/BASE  parent wall 26.6 -> 44.9 s (x1.69)  Peak RSS 2.38 -> 2.66 GB (x1.12)  child VmHWM 5.43 GB  size 28.51 -> 29.17 MB (x1.023)  status OK,OK
+lucene-bytask            BASE_A256/BASE  parent wall 26.6 -> 28.6 s (x1.08)  Peak RSS 2.38 -> 2.37 GB (x0.99)  child VmHWM ? GB  size 28.51 -> 30.48 MB (x1.069)  status NO-PROFILE,NO-PROFILE
+lucene-bytask            SBS_A256/BASE  parent wall 26.6 -> 42.4 s (x1.59)  Peak RSS 2.38 -> 2.60 GB (x1.09)  child VmHWM 3.26 GB  size 28.51 -> 30.48 MB (x1.069)  status ZERO-ADMIT,ZERO-ADMIT
+lucene-bytask            SV_A256/BASE  parent wall 26.6 -> 41.6 s (x1.57)  Peak RSS 2.38 -> 2.55 GB (x1.07)  child VmHWM 3.23 GB  size 28.51 -> 30.54 MB (x1.071)  status OK,OK
+lucene-bytask            LS_A256/BASE  parent wall 26.6 -> 45.5 s (x1.71)  Peak RSS 2.38 -> 2.60 GB (x1.09)  child VmHWM 5.52 GB  size 28.51 -> 30.48 MB (x1.069)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+lucene-bytask            SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+lucene-bytask            SV   SBS=0 SV=36 (ACC=15 ELEM=1) LS=0 (JOINER=0)  OK
+lucene-bytask            LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=167 (JOINER=0)  OK
+lucene-bytask            BASE_A32 no profile  NO-PROFILE
+lucene-bytask            SBS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+lucene-bytask            SV_A32 SBS=0 SV=36 (ACC=15 ELEM=1) LS=0 (JOINER=0)  OK
+lucene-bytask            LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=167 (JOINER=0)  OK
+lucene-bytask            BASE_A128 no profile  NO-PROFILE
+lucene-bytask            SBS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+lucene-bytask            SV_A128 SBS=0 SV=36 (ACC=15 ELEM=1) LS=0 (JOINER=0)  OK
+lucene-bytask            LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=167 (JOINER=0)  OK
+lucene-bytask            BASE_A256 no profile  NO-PROFILE
+lucene-bytask            SBS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+lucene-bytask            SV_A256 SBS=0 SV=36 (ACC=15 ELEM=1) LS=0 (JOINER=0)  OK
+lucene-bytask            LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=167 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+lucene-bytask            SBS  b1 ZERO-ADMIT               child obs 32 s VmHWM 3.24 GB | parent wait 31.6 s | driver wall 62.9 s
+lucene-bytask            SBS  b2 ZERO-ADMIT               child obs 33 s VmHWM 3.29 GB | parent wait 35.1 s | driver wall 68.6 s
+lucene-bytask            BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.6 s
+lucene-bytask            BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.8 s
+lucene-bytask            SBS_A32 b1 ZERO-ADMIT               child obs 36 s VmHWM 3.29 GB | parent wait 36.6 s | driver wall 63.7 s
+lucene-bytask            SBS_A32 b2 ZERO-ADMIT               child obs 21 s VmHWM 3.24 GB | parent wait 22.5 s | driver wall 50.9 s
+lucene-bytask            BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 40.2 s
+lucene-bytask            BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.5 s
+lucene-bytask            SBS_A128 b1 ZERO-ADMIT               child obs 26 s VmHWM 3.24 GB | parent wait 26.5 s | driver wall 52.7 s
+lucene-bytask            SBS_A128 b2 ZERO-ADMIT               child obs 23 s VmHWM 3.21 GB | parent wait 24.0 s | driver wall 43.7 s
+lucene-bytask            BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 35.2 s
+lucene-bytask            BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.4 s
+lucene-bytask            SBS_A256 b1 ZERO-ADMIT               child obs 18 s VmHWM 3.21 GB | parent wait 19.5 s | driver wall 46.4 s
+lucene-bytask            SBS_A256 b2 ZERO-ADMIT               child obs 19 s VmHWM 3.30 GB | parent wait 20.0 s | driver wall 39.9 s
+## determinism: lucene-bytask SBS: admit counts differ across builds; lucene-bytask SV: admit counts differ across builds; lucene-bytask SV_A32: admit counts differ across builds; lucene-bytask LS_A32: admit counts differ across builds; lucene-bytask SBS_A128: admit counts differ across builds; lucene-bytask SV_A128: admit counts differ across builds; lucene-bytask SV_A256: admit counts differ across builds; lucene-bytask LS_A256: admit counts differ across builds
+TABLES-DONE

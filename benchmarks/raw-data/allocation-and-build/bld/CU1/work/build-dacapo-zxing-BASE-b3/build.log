@@ -1,0 +1,69 @@
+1792871666.139059 ========================================================================================================================
+1792871666.140472 GraalVM Native Image: Generating 'dacapo-zxing-BASE-b3' (executable)...
+1792871666.140502 ========================================================================================================================
+1792871666.140518 For detailed information and explanations on the build output, visit:
+1792871666.140531 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792871666.140545 ------------------------------------------------------------------------------------------------------------------------
+1792871667.707310 [1/8] Initializing...                                                                                    (2.2s @ 0.35GB)
+1792871667.707623  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792871667.707753  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792871667.707824  C compiler: gcc (linux, x86_64, 15.2.0)
+1792871667.707934  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792871667.707961  1 user-specific feature(s):
+1792871667.708184  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792871667.708862 ------------------------------------------------------------------------------------------------------------------------
+1792871667.708878  1 experimental option(s) unlocked:
+1792871667.708926  - '-H:CodeAlignment' (origin(s): command line)
+1792871667.710015 ------------------------------------------------------------------------------------------------------------------------
+1792871667.710037 Build resources:
+1792871667.710113  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792871667.710190  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792871672.463380 [2/8] Performing analysis...  [*****]                                                                    (4.4s @ 0.83GB)
+1792871672.485215     6,929 types,   9,763 fields, and  32,252 methods found reachable
+1792871672.486056     2,209 types,   1,056 fields, and   3,251 methods registered for reflection
+1792871672.486183       108 types,     176 fields, and      91 methods registered for JNI access
+1792871672.486219         0 downcalls and 0 upcalls registered for foreign access
+1792871672.486244         4 native libraries: dl, pthread, rt, z
+1792871673.719160 [3/8] Building universe...                                                                               (1.2s @ 0.91GB)
+1792871674.258370 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.15GB)
+1792871674.761705 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.20GB)
+1792871679.074226 [6/8] Compiling methods...    [**]                                                                       (4.3s @ 0.90GB)
+1792871681.200390 [7/8] Laying out methods...   [**]                                                                       (2.1s @ 1.13GB)
+1792871683.143762 [8/8] Creating image...       [*]                                                                        (1.8s @ 1.30GB)
+1792871683.144093   17.53MB (40.65%) for code area:    20,278 compilation units
+1792871683.144172   22.22MB (51.52%) for image heap:  197,967 objects and 68 resources
+1792871683.144206    3.38MB ( 7.83%) for other data
+1792871683.144283   43.12MB in total image size, 41.36MB in total file size
+1792871683.144323 ------------------------------------------------------------------------------------------------------------------------
+1792871683.144981 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792871683.145184    8.46MB java.base                                            4.57MB char[]
+1792871683.145288    3.61MB java.desktop                                         4.34MB byte[] for code metadata
+1792871683.145316    1.99MB javase-3.5.2-jar-with-dependencies.jar               2.91MB byte[] for java.lang.String
+1792871683.145341    1.60MB svm.jar (Native Image)                               1.69MB java.lang.String
+1792871683.145385  301.46kB dacapo-evaluation-git-e947cbfc.jar                   1.39MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792871683.145399  284.86kB jdk.charsets                                       923.06kB java.lang.Class
+1792871683.145424  220.44kB jdk.zipfs                                          800.50kB byte[] for general heap data
+1792871683.145447  116.97kB java.logging                                       490.22kB java.util.HashMap$Node
+1792871683.145471   93.47kB org.graalvm.nativeimage.base                       429.84kB heap alignment
+1792871683.145498   60.94kB jdk.proxy1                                         407.68kB java.lang.Object[]
+1792871683.146160  204.75kB for 11 more packages                                 4.27MB for 1612 more object types
+1792871683.147006 ------------------------------------------------------------------------------------------------------------------------
+1792871683.147011 Recommendations:
+1792871683.147052  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792871683.147062  HEAP: Set max heap for improved and more predictable memory usage.
+1792871683.147094  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792871683.150225 ------------------------------------------------------------------------------------------------------------------------
+1792871683.150818                        1.2s (6.8% of total time) in 175 GCs | Peak RSS: 2.38GB | CPU load: 13.61
+1792871683.151654 ------------------------------------------------------------------------------------------------------------------------
+1792871683.151659 Build artifacts:
+1792871683.152191  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-zxing-BASE-b3 (executable)
+1792871683.152211  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt.so (jdk_library)
+1792871683.152223  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_headless.so (jdk_library)
+1792871683.152235  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_xawt.so (jdk_library)
+1792871683.152247  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libfontmanager.so (jdk_library)
+1792871683.152259  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjava.so (jdk_library_shim)
+1792871683.152270  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjavajpeg.so (jdk_library)
+1792871683.152282  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjvm.so (jdk_library_shim)
+1792871683.152293  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/liblcms.so (jdk_library)
+1792871683.152308 ========================================================================================================================
+1792871683.152344 Finished generating 'dacapo-zxing-BASE-b3' in 17.6s.

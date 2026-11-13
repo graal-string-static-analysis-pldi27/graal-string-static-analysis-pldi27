@@ -1,0 +1,41 @@
+# CL2  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+rhino                    FULL   |   1.001   0.995   0.995 0.999[0.999,0.999]        0.999 | 0.992/0.996/0.997 | 35/35 | 0 | 2
+
+## CL2 rhino FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+AccessBinaryTreesState.accessBinaryTrees evalMethod=Interpre   4.02   3.97   1.00 91346076.9 91346387.7  1.000    5.2    5.1
+AccessFannAccessNsieveState.accessNsieve evalMethod=Interpre   1.59   1.57   1.00 82091310.8 82105842.4  1.000    1.9    1.8
+AccessFannkuchState.accessFannkuch evalMethod=Interpreter      0.90   0.88   0.98 124033162.0 124033952.5  1.000    1.6    1.5
+AccessNBodyState.accessNBody evalMethod=Interpreter            1.73   1.73   1.01 51228057.2 51230638.8  1.000    1.3    1.3
+Bitops3BitState.bitops3BitBitsInByte evalMethod=Interpreter    2.74   2.78   1.03 83025716.7 83025037.4  1.000    3.2    3.3
+BitopsAndState.bitopsBitwiseAnd evalMethod=Interpreter         1.00   1.05   1.06 52793205.5 52793895.4  1.000    0.8    0.8
+BitopsBitsState.bitopsBitsInByte evalMethod=Interpreter        1.66   1.64   1.00 86177131.8 86175123.3  1.000    2.0    2.0
+BitopsNsieveState.bitopsNsieveBits evalMethod=Interpreter      1.54   1.54   1.01 109848625.6 109848496.1  1.000    2.4    2.4
+CryptoAesState.cryptoAes evalMethod=Interpreter                2.65   2.64   1.01 62286111.8 62296909.5  1.000    2.3    2.3
+CryptoMd5State.cryptoMd5 evalMethod=Interpreter                3.55   3.62   1.03 86667139.3 86669495.7  1.000    4.4    4.5
+CryptoShaState.cryptoSha1 evalMethod=Interpreter               3.38   3.35   1.00 78925834.3 78927903.0  1.000    3.8    3.7
+DateFormatToFteState.dateFormatToFte evalMethod=Interpreter    2.28   2.26   1.00 111698307.3 111728137.1  1.000    3.6    3.6
+DateFormatXparbState.dateFormatXparb evalMethod=Interpreter    4.78   4.82   1.02 48307144.6 48366607.2  1.001    3.3    3.3
+MathCordicState.mathCordic evalMethod=Interpreter              1.49   1.47   1.00 90874876.9 90878720.0  1.000    1.9    1.9
+MathPartialState.mathPartialSums evalMethod=Interpreter        2.15   2.20   1.04 41650736.6 41659811.9  1.000    1.3    1.3
+MathSpectralNormState.mathSpectralNorm evalMethod=Interprete   2.85   3.04   1.08 90073055.2 90802569.3  1.008    3.7    3.9
+RecursiveState.controlflowRecursive evalMethod=Interpreter     3.13   3.18   1.03 159540062.5 159542561.8  1.000    7.1    7.2
+RegexpState.regexpDna evalMethod=Interpreter                   1.64   1.65   1.01 52197809.3 49282564.4  0.944    1.2    1.2
+StringBase64State.stringBase64 evalMethod=Interpreter          2.46   2.45   1.01 91279217.7 91290893.7  1.000    3.2    3.2
+StringFastaState.stringFasta evalMethod=Interpreter            1.69   1.73   1.04 89045476.3 89045202.1  1.000    2.1    2.2
+StringTagcloudState.stringTagcloud evalMethod=Interpreter      2.53   2.52   1.01 104298005.3 103820463.6  0.995    3.7    3.7
+StringUnpackState.stringUnpackCode evalMethod=Interpreter      2.95   2.93   1.00 126905122.4 126899058.2  1.000    5.3    5.3
+StringValidateState.stringValidateInput evalMethod=Interpret   3.46   3.47   1.01 63239524.8 63242407.9  1.000    3.1    3.1
+ThreeDCubeState.threeDCube evalMethod=Interpreter              2.38   2.31   0.98 47967246.2 48086289.0  1.002    1.6    1.6
+ThreeDMorphState.threeDMorph evalMethod=Interpreter            1.77   1.78   1.02 88176438.7 88175463.2  1.000    2.2    2.2
+ThreeDRayState.threeDRayTrace evalMethod=Interpreter           2.19   2.20   1.01 74567690.3 75323868.3  1.010    2.3    2.4
+V8Benchmark.boyer evalMethod=Interpreter                       0.36   0.37   1.05 527280402.9 527319281.8  1.000    2.7    2.8
+V8Benchmark.cryptoDecrypt evalMethod=Interpreter               0.39   0.38   0.99 254610258.8 254643676.1  1.000    1.4    1.4
+V8Benchmark.cryptoEncrpyt evalMethod=Interpreter               7.07   6.97   1.00 13927300.3 13987344.6  1.004    1.4    1.4
+V8Benchmark.deltaBlue evalMethod=Interpreter                   5.32   5.19   0.99 61051750.7 61293759.5  1.004    4.6    4.5
+V8Benchmark.earley evalMethod=Interpreter                      4.81   4.92   1.03 42184959.2 42052590.5  0.997    2.9    2.9
+V8Benchmark.rayTrace evalMethod=Interpreter                    1.16   1.15   1.01 197453237.0 197453440.1  1.000    3.2    3.2
+V8Benchmark.regExp evalMethod=Interpreter                      0.63   0.62   0.99 555498730.2 561129180.0  1.010    5.0    5.0
+V8Benchmark.richards evalMethod=Interpreter                    9.06   8.92   0.99 22483367.8 22548181.1  1.003    2.9    2.9
+V8Benchmark.splay evalMethod=Interpreter                       8.66   8.67   1.01 10449930.4 9022610.4  0.863    1.3    1.1
+

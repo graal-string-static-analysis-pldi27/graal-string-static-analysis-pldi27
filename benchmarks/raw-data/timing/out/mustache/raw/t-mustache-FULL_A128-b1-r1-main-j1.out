@@ -1,0 +1,138 @@
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.Main.benchEscapeHTML
+
+# Run progress: 0.00% complete, ETA 00:00:10
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 352.579 ops/s
+Iteration   1: 352.202 ops/s
+Iteration   2: 351.700 ops/s
+Iteration   3: 358.523 ops/s
+
+Result "mustachejava.benchmarks.Main.benchEscapeHTML":
+  354.142 ±(99.9%) 69.375 ops/s [Average]
+  (min, avg, max) = (351.700, 354.142, 358.523), stdev = 3.803
+  CI (99.9%): [284.767, 423.516] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.Main.benchEscapeHTMLwithSW
+
+# Run progress: 20.00% complete, ETA 00:00:08
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 128.238 ops/s
+Iteration   1: 128.083 ops/s
+Iteration   2: 128.603 ops/s
+Iteration   3: 128.556 ops/s
+
+Result "mustachejava.benchmarks.Main.benchEscapeHTMLwithSW":
+  128.414 ±(99.9%) 5.243 ops/s [Average]
+  (min, avg, max) = (128.083, 128.414, 128.603), stdev = 0.287
+  CI (99.9%): [123.171, 133.657] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testCompilation
+
+# Run progress: 40.00% complete, ETA 00:00:06
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 16511.594 ops/s
+Iteration   1: 16477.812 ops/s
+Iteration   2: 16353.346 ops/s
+Iteration   3: 16417.852 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testCompilation":
+  16416.337 ±(99.9%) 1135.615 ops/s [Average]
+  (min, avg, max) = (16353.346, 16416.337, 16477.812), stdev = 62.247
+  CI (99.9%): [15280.722, 17551.951] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testExecution
+
+# Run progress: 60.00% complete, ETA 00:00:04
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 814143.088 ops/s
+Iteration   1: 806500.968 ops/s
+Iteration   2: 798576.119 ops/s
+Iteration   3: 792628.002 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testExecution":
+  799235.030 ±(99.9%) 126974.761 ops/s [Average]
+  (min, avg, max) = (792628.002, 799235.030, 806500.968), stdev = 6959.915
+  CI (99.9%): [672260.269, 926209.791] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 1 iterations, 500 ms each
+# Measurement: 3 iterations, 500 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: mustachejava.benchmarks.TweetBench.testTimeline
+
+# Run progress: 80.00% complete, ETA 00:00:02
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 39097.328 ops/s
+Iteration   1: 39783.337 ops/s
+Iteration   2: 39848.816 ops/s
+Iteration   3: 39989.623 ops/s
+
+Result "mustachejava.benchmarks.TweetBench.testTimeline":
+  39873.925 ±(99.9%) 1923.075 ops/s [Average]
+  (min, avg, max) = (39783.337, 39873.925, 39989.623), stdev = 105.410
+  CI (99.9%): [37950.850, 41797.001] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:10
+
+Benchmark                    Mode  Cnt       Score        Error  Units
+Main.benchEscapeHTML        thrpt    3     354.142 ±     69.375  ops/s
+Main.benchEscapeHTMLwithSW  thrpt    3     128.414 ±      5.243  ops/s
+TweetBench.testCompilation  thrpt    3   16416.337 ±   1135.615  ops/s
+TweetBench.testExecution    thrpt    3  799235.030 ± 126974.761  ops/s
+TweetBench.testTimeline     thrpt    3   39873.925 ±   1923.075  ops/s

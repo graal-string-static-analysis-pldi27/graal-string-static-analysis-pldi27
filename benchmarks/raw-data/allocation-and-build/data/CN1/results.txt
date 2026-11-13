@@ -1,0 +1,36 @@
+# C99 campaign results  SLOT=CN1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CN1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-codec  [metric] commons-codec PhoneticEngine performance test (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=48
+  GEOMEAN FULL/BASE  time 0.999 [0.986,1.013] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  encode millis                                                          FULL 0.999 [0.986,1.013] n.s.  BIMODAL(BASE,FULL)
+  ~alloc MB                                                              FULL 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                FULL 0.997 [0.984,1.006] n.s.  BIMODAL(FULL)
+
+## antlr  [metric] ANTLR 4 TimeLexerSpeed (21 rows; hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=48
+  GEOMEAN FULL/BASE  time 0.977 [0.964,0.991] FASTER (21 keys)  alloc 0.999 [0.998,1.000] n.s. (1 keys)
+  lex_legacy_grapheme_utf8 udhr_hin DFA-cleared us                       FULL 0.950 [0.926,0.979] FASTER
+  lex_legacy_grapheme_utf8 udhr_hin us                                   FULL 0.957 [0.941,0.973] FASTER  BIMODAL(BASE)
+  lex_legacy_grapheme_utf8 udhr_kor DFA-cleared us                       FULL 0.966 [0.940,0.984] FASTER  BIMODAL(BASE)
+  lex_legacy_grapheme_utf8 udhr_kor us                                   FULL 0.966 [0.942,0.983] FASTER  BIMODAL(BASE)
+  lex_legacy_java_utf8 DFA-cleared us                                    FULL 0.998 [0.978,1.014] n.s.  BIMODAL(BASE)
+  lex_legacy_java_utf8 us                                                FULL 1.008 [0.996,1.021] n.s.  BIMODAL(FULL)
+  lex_new_grapheme_utf8 emoji DFA-cleared us                             FULL 0.988 [0.974,1.005] n.s.  BIMODAL(BASE)
+  lex_new_grapheme_utf8 emoji us                                         FULL 0.987 [0.969,1.008] n.s.  BIMODAL(BASE)
+  lex_new_grapheme_utf8 udhr_hin DFA-cleared us                          FULL 0.971 [0.944,0.993] FASTER  BIMODAL(BASE)
+  lex_new_grapheme_utf8 udhr_hin us                                      FULL 0.977 [0.946,1.001] n.s.
+  lex_new_grapheme_utf8 udhr_kor DFA-cleared us                          FULL 0.985 [0.963,1.015] n.s.
+  lex_new_grapheme_utf8 udhr_kor us                                      FULL 0.985 [0.964,1.013] n.s.
+  lex_new_java_utf8 DFA-cleared us                                       FULL 0.999 [0.986,1.011] n.s.
+  lex_new_java_utf8 us                                                   FULL 0.998 [0.980,1.017] n.s.
+  load_legacy_java_ascii Parser us                                       FULL 0.998 [0.898,1.130] n.s.
+  load_legacy_java_ascii RuleContext us                                  FULL 0.936 [0.823,1.047] n.s.
+  load_legacy_java_utf8 Parser us                                        FULL 0.933 [0.876,1.002] n.s.
+  load_legacy_java_utf8 udhr_hin us                                      FULL 0.968 [0.939,0.991] FASTER
+  load_new_utf8 Parser us                                                FULL 0.992 [0.945,1.036] n.s.
+  load_new_utf8 RuleContext us                                           FULL 0.990 [0.867,1.133] n.s.
+  load_new_utf8 udhr_hin us                                              FULL 0.973 [0.944,0.998] FASTER
+  ~alloc MB                                                              FULL 0.999 [0.998,1.000] n.s.  BIMODAL(BASE,FULL)
+  ~rss MB                                                                FULL 0.981 [0.928,1.038] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

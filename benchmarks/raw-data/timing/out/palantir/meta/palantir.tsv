@@ -1,0 +1,10 @@
+KIND	metric
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/palantir.sh
+DESC	palantir-java-format CLI -i --palantir over 24 files (hunt/ab candspec; CPU-time metric, inputs restored per run)
+CPUS	0-15
+JMHSET	-
+SLOTITER	-
+METRIC	main	cpu ms | lower | err | 1 | ^C100FIN-POSTRUN palantir task-clock ms=([0-9.]+)$
+METRIC	main	wall s | info | wall | 1 | 

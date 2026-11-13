@@ -1,0 +1,212 @@
+# C101 Welch log-score statistic (welch-summ.py): R = exp(mean s_F - mean s_B), s = mean_k log(time-normalised x), all 8 images pooled; > 1 = slower
+#   CI = exp(D +- t_{0.975,Welch df} * SE); P = point per start, I = point per measured iteration; class = gen_latest classify(R, CI, alloc A reused)
+#   boot = pooled-summ bootstrap (pooled-report.tsv, after its rb rule); C100 = latest/*.csv class A
+row                        cfg      R_P              CI_P   df_P   n_P ex1 class_P   |     R_I              CI_I   df_I   n_I ex1 class_I   |  boot R boot cls  |   C100 C100 cls  source/rb
+minimal-json               FULL  1.0045   [0.9919,1.0173]   13.7   8/8 no  neutral   |  1.0045   [0.9919,1.0173]   13.7   8/8 no  neutral   |  1.0047 neutral   | 1.0010 neutral   
+java-json-benchmark        FULL  0.9954   [0.9855,1.0054]   13.8   8/8 no  neutral   |  0.9954   [0.9872,1.0038]   38.5 24/24 no  neutral   |  0.9980 neutral   | 1.0040 neutral   
+antlr                      FULL  0.9999   [0.9890,1.0109]   62.0 32/32 no  neutral   |  0.9999   [0.9890,1.0109]   62.0 32/32 no  neutral   |  0.9996 neutral   | 0.9950 neutral   
+lucene-jmh                 FULL  0.9902   [0.9729,1.0077]   13.9   8/8 no  neutral   |  0.9902   [0.9812,0.9992]   45.7 24/24 yes neutral   |  0.9902 neutral   | 0.9960 neutral   
+stringbuffers              FULL  0.2113   [0.2085,0.2142]   13.9   8/8 yes win       |  0.2113   [0.2098,0.2128]   45.7 24/24 yes win       |  0.2113 win       | 0.2120 win       
+StringSubstring            FULL  0.3509   [0.3431,0.3589]    8.3   8/8 yes win       |  0.3509   [0.3468,0.3550]   28.3 24/24 yes win       |  0.3508 win       | 0.3490 win       
+stringbuilder-to-string    FULL  0.9526   [0.9260,0.9801]   12.5   8/8 yes win       |  0.9526   [0.9385,0.9670]   42.5 24/24 yes win       |  0.9525 win       | 0.9280 win       
+logback-perf               FULL  0.9662   [0.9166,1.0185]   14.0   8/8 no  win       |  0.9662   [0.9307,1.0031]   46.0 24/24 no  win       |  0.9661 win       | 0.9950 win       
+jte                        FULL  0.9714   [0.9573,0.9856]   12.6   8/8 yes win       |  0.9714   [0.9641,0.9787]   41.4 24/24 yes win       |  0.9713 win       | 0.9700 win       
+owasp                      FULL  0.9857   [0.9803,0.9911]   60.5 32/32 yes neutral   |  0.9857   [0.9803,0.9911]   60.5 32/32 yes neutral   |  0.9857 neutral   | 0.9720 win       
+stringbuilders             FULL  0.8038   [0.7323,0.8822]    7.3   8/8 yes win       |  0.8038   [0.7683,0.8410]   24.0 24/24 yes win       |  0.7973 win       | 0.7760 win       
+string-concat-startup      FULL  0.2498   [0.2433,0.2565]   10.6   8/8 yes win       |  0.2498   [0.2465,0.2532]   34.9 24/24 yes win       |  0.2498 win       | 0.2480 win       
+spring                     FULL  0.9773   [0.9514,1.0038]   13.6   8/8 no  win       |  0.9773   [0.9597,0.9951]   45.7 24/24 yes win       |  0.9772 win       | 0.9800 win       
+regex-redux                FULL  1.0106   [0.9929,1.0286]   13.6   8/8 no  win       |  1.0106   [0.9941,1.0274]   45.7 24/24 no  win       |  1.0107 win       | 0.9870 win       
+StringJoiner               FULL  0.2239   [0.2214,0.2265]   12.6   8/8 yes win       |  0.2239   [0.2226,0.2252]   41.7 24/24 yes win       |  0.2239 win       | 0.2240 win       
+string-concat              FULL  0.2329   [0.2285,0.2373]   14.0   8/8 yes win       |  0.2329   [0.2306,0.2352]   45.8 24/24 yes win       |  0.2328 win       | 0.2340 win       
+luindex                    FULL  0.9993   [0.9862,1.0127]    8.5   8/8 no  win       |  0.9993   [0.9926,1.0061]   28.7 24/24 no  win       |  0.9994 win       | 0.9940 win       
+json-parser                FULL  0.6315   [0.6135,0.6501]   11.6   8/8 yes win       |  0.6315   [0.6220,0.6412]   37.8 24/24 yes win       |  0.6313 win       | 0.6310 win       
+jsoup                      FULL  0.8993   [0.8916,0.9071]   13.2   8/8 yes win       |  0.8993   [0.8953,0.9034]   43.4 24/24 yes win       |  0.8994 win       | 0.8910 win       
+commons-lang-join          FULL  0.9513   [0.9415,0.9612]   12.6   8/8 yes win       |  0.9513   [0.9462,0.9564]   41.4 24/24 yes win       |  0.9508 win       | 0.9680 win       
+biojava                    FULL  0.8621   [0.8546,0.8697]   13.4   8/8 yes win       |  0.8621   [0.8572,0.8671]   37.5 24/24 yes win       |  0.8621 win       | 0.8720 win       
+commons-csv                FULL  0.9888   [0.9767,1.0011]   12.0   8/8 no  neutral   |  0.9888   [0.9824,0.9952]   40.7 24/24 yes neutral   |  0.9889 neutral   | 0.9770 win       
+lucene-bytask              FULL  0.9915   [0.9609,1.0231]   13.2   8/8 no  win       |  0.9915   [0.9609,1.0231]   13.2   8/8 no  win       |  0.9917 win       | 0.9920 win       
+guava                      FULL  0.8513   [0.8396,0.8630]    8.9   8/8 yes win       |  0.8513   [0.8396,0.8630]    8.9   8/8 yes win       |  0.8510 win       | 0.8490 win       
+dacapo-xalan               FULL  1.0141   [0.9868,1.0422]   12.3   8/8 no  neutral   |  1.0141   [0.9965,1.0320]   42.2 24/24 no  neutral   |  1.0144 neutral   | 1.0010 neutral   
+dacapo-zxing               FULL  1.0012   [0.9973,1.0051]   13.2   8/8 no  neutral   |  1.0012   [0.9979,1.0044]   44.5 24/24 no  neutral   |  1.0012 neutral   | 1.0010 neutral   
+dacapo-avrora              FULL  1.0016   [0.9960,1.0073]   14.0   8/8 no  neutral   |  1.0016   [0.9982,1.0051]   45.8 24/24 no  neutral   |  1.0016 neutral   | 1.0010 neutral   
+dacapo-batik               FULL  1.0016   [0.9848,1.0186]    8.3   8/8 no  neutral   |  1.0016   [0.9858,1.0176]   32.4 24/24 no  neutral   |  1.0011 neutral   | 1.0010 neutral   
+dacapo-fop                 FULL  1.0055   [0.9950,1.0161]   13.3   8/8 no  neutral   |  1.0055   [0.9984,1.0126]   45.2 24/24 no  neutral   |  1.0055 neutral   | 1.0052 neutral   
+dacapo-lusearch            FULL  1.0022   [0.9945,1.0101]    9.9   8/8 no  neutral   |  1.0022   [0.9974,1.0071]   43.6 24/24 no  neutral   |  1.0022 neutral   | 1.0000 neutral   
+dacapo-pmd                 FULL  1.0148   [0.9861,1.0443]   13.9   8/8 no  neutral   |  1.0148   [0.9860,1.0444]   44.8 24/24 no  neutral   |  1.0152 neutral   | 0.9890 neutral   
+dacapo-graphchi            FULL  0.9993   [0.9959,1.0028]    9.0   8/8 no  neutral   |  0.9993   [0.9969,1.0018]   35.6 24/24 no  neutral   |  0.9994 neutral   | 1.0000 neutral   
+dacapo-sunflow             FULL  0.9989   [0.9953,1.0025]   10.3   8/8 no  neutral   |  0.9989   [0.9959,1.0019]   45.9 24/24 no  neutral   |  0.9989 neutral   | 1.0111 neutral   
+dacapo-h2                  FULL  0.9869   [0.9602,1.0144]   13.9   8/8 no  neutral   |  0.9869   [0.9603,1.0142]   43.5 24/24 no  neutral   |  0.9874 neutral   | 1.0020 neutral   
+snakeyaml                  FULL  0.9961   [0.9717,1.0211]   13.4   8/8 no  neutral   |  0.9961   [0.9782,1.0143]   44.8 24/24 no  neutral   |  0.9967 neutral   | 1.0300 slowdown  
+csv-parsers-comparison     FULL  0.9834   [0.9732,0.9938]   10.4   8/8 yes neutral   |  0.9834   [0.9732,0.9938]   10.4   8/8 yes neutral   |  0.9836 neutral   | 0.9810 neutral   
+handlebars                 FULL  1.0041   [0.9628,1.0473]   12.2   8/8 no  neutral   |  1.0041   [0.9628,1.0473]   12.2   8/8 no  neutral   |  1.0037 neutral   | 0.9820 neutral   
+jackson-yaml               FULL  1.0130   [0.9878,1.0388]   12.4   8/8 no  neutral   |  1.0130   [0.9997,1.0264]   41.2 24/24 no  neutral   |  1.0127 slowdown  | 1.0070 neutral   
+commons-lang               FULL  1.0046   [0.9938,1.0157]   14.0   8/8 no  neutral   |  1.0046   [0.9989,1.0104]   46.0 24/24 no  neutral   |  1.0049 neutral   | 0.9830 neutral   
+opennlp                    FULL  1.0034   [0.9882,1.0188]   13.9   8/8 no  neutral   |  1.0034   [0.9949,1.0119]   45.4 24/24 no  neutral   |  1.0038 neutral   | 1.0050 neutral   
+template-benchmark         FULL  0.9684   [0.9325,1.0057]   10.8   8/8 no  neutral   |  0.9684   [0.9497,0.9875]   35.6 24/24 yes win       |  0.9714 win       | 1.0000 neutral   
+commonmark                 FULL  0.9987   [0.9896,1.0079]   12.8   8/8 no  neutral   |  0.9987   [0.9938,1.0036]   42.7 24/24 no  neutral   |  0.9986 neutral   | 1.0010 neutral   
+tinylog                    FULL  0.9988   [0.9892,1.0084]   14.0   8/8 no  neutral   |  0.9988   [0.9898,1.0078]   46.0 24/24 no  neutral   |  0.9987 neutral   | 1.0050 neutral   
+fastcsv                    FULL  0.9957   [0.9758,1.0159]   12.7   8/8 no  neutral   |  0.9957   [0.9850,1.0065]   43.0 24/24 no  neutral   |  0.9955 neutral   | 0.9860 neutral   
+jsqlparser                 FULL  1.0016   [0.9832,1.0204]   13.1   8/8 no  neutral   |  1.0016   [0.9916,1.0118]   43.0 24/24 no  neutral   |  1.0017 neutral   | 1.0030 neutral   
+pdfbox                     FULL  0.9860   [0.9576,1.0153]   13.9   8/8 no  neutral   |  0.9860   [0.9699,1.0024]   46.0 24/24 no  neutral   |  0.9860 neutral   | 1.0030 neutral   
+rhino                      FULL  0.9941   [0.9622,1.0272]   13.1   8/8 no  neutral   |  0.9941   [0.9775,1.0111]   43.1 24/24 no  neutral   |  0.9941 neutral   | 0.9870 neutral   
+gson                       FULL  0.9948   [0.9643,1.0262]   12.1   8/8 no  neutral   |  0.9948   [0.9643,1.0262]   12.1   8/8 no  neutral   |  0.9939 neutral   | 1.0020 neutral   
+thymeleaf                  FULL  1.0055   [0.9948,1.0164]   14.0   8/8 no  neutral   |  1.0055   [0.9997,1.0113]   45.9 24/24 no  neutral   |  1.0055 neutral   | 1.0000 neutral   
+snakeyaml-engine           FULL  0.9896   [0.9698,1.0099]   13.5   8/8 no  neutral   |  0.9896   [0.9749,1.0046]   45.7 24/24 no  neutral   |  0.9896 neutral   | 1.0010 neutral   
+palantir                   FULL  1.0057   [0.9914,1.0201]   57.5 32/32 no  neutral   |  1.0057   [0.9914,1.0201]   57.5 32/32 no  neutral   |  1.0054 neutral   | 0.9910 neutral   
+log4j2-plc                 FULL  1.0248   [0.9697,1.0831]   13.9   8/8 no  neutral   |  1.0248   [0.9958,1.0547]   45.8 24/24 no  neutral   |  1.0249 neutral   | 0.9940 neutral   
+calcite                    FULL  0.9987   [0.9831,1.0144]   13.6   8/8 no  neutral   |  0.9987   [0.9904,1.0070]   45.0 24/24 no  neutral   |  0.9987 neutral   | 0.9990 neutral   
+fastjson2                  FULL  0.9932   [0.9766,1.0099]   14.0   8/8 no  neutral   |  0.9932   [0.9843,1.0021]   46.0 24/24 no  neutral   |  0.9932 neutral   | 0.9930 neutral   
+commons-codec              FULL  0.9970   [0.9895,1.0045]   59.3 32/32 no  neutral   |  0.9970   [0.9895,1.0045]   59.3 32/32 no  neutral   |  0.9970 neutral   | 0.9990 neutral   
+jackson                    FULL  1.0254   [0.9852,1.0672]   12.0   8/8 no  neutral   |  1.0254   [1.0044,1.0469]   39.4 24/24 yes slowdown  |  1.0263 slowdown  | 0.9950 neutral   jackson-rb1 SWITCHED to jackson-rb1 (R_P 1.0254 < 1.0322)
+re2j                       FULL  0.9966   [0.9904,1.0028]    9.5   8/8 no  neutral   |  0.9966   [0.9933,0.9998]   31.7 24/24 yes neutral   |  0.9965 neutral   | 0.9910 neutral   
+commons-text               FULL  0.9999   [0.9867,1.0133]   13.8   8/8 no  neutral   |  0.9999   [0.9922,1.0077]   45.8 24/24 no  neutral   |  0.9998 neutral   | 0.9990 neutral   
+flexmark                   FULL  0.9905   [0.9831,0.9980]   13.6   8/8 yes neutral   |  0.9905   [0.9825,0.9986]   45.5 24/24 yes neutral   |  0.9904 neutral   | 0.9980 neutral   
+mustache                   FULL  0.9968   [0.9767,1.0174]   13.6   8/8 no  neutral   |  0.9968   [0.9863,1.0075]   44.7 24/24 no  neutral   |  0.9970 neutral   | 0.9980 neutral   
+yauaa                      FULL  0.9917   [0.9623,1.0221]   13.9   8/8 no  neutral   |  0.9917   [0.9646,1.0197]   36.0 24/24 no  neutral   |  0.9270 neutral   | 0.9980 neutral   
+sql-formatter              FULL  1.0056   [0.9940,1.0173]   10.4   8/8 no  neutral   |  1.0056   [0.9995,1.0117]   35.5 24/24 no  neutral   |  1.0056 neutral   | 0.9960 neutral   
+antlr                      SBS   1.0004   [0.9900,1.0108]   58.8 32/32 no  neutral   |  1.0004   [0.9900,1.0108]   58.8 32/32 no  neutral   |  1.0006 neutral   | 1.0030 neutral   
+stringbuffers              SBS   0.9972   [0.9782,1.0165]   12.3   8/8 no  neutral   |  0.9972   [0.9871,1.0073]   41.0 24/24 no  neutral   |  0.9970 neutral   | 1.0078 neutral   
+StringSubstring            SBS   0.9684   [0.9501,0.9871]   13.9   8/8 yes win       |  0.9684   [0.9582,0.9788]   45.6 24/24 yes win       |  0.9684 win       | 0.9820 neutral   
+stringbuilder-to-string    SBS   1.0092   [0.9871,1.0317]    9.3   8/8 no  neutral   |  1.0092   [0.9976,1.0208]   30.8 24/24 no  neutral   |  1.0088 neutral   | 0.9830 neutral   pr-stringbuilder-to-string-rb1 SWITCHED to pr-stringbuilder-to-string-rb1 (R_P 1.0092 < 1.0215)
+logback-perf               SBS   0.9690   [0.9438,0.9949]   13.8   8/8 yes win       |  0.9690   [0.9384,1.0006]   45.8 24/24 no  neutral   |  0.9692 win       | 0.9820 neutral   
+jte                        SBS   0.9986   [0.9860,1.0113]   14.0   8/8 no  neutral   |  0.9986   [0.9920,1.0052]   46.0 24/24 no  neutral   |  0.9986 neutral   | 0.9840 neutral   
+owasp                      SBS   1.0048   [0.9964,1.0132]   61.5 32/32 no  neutral   |  1.0048   [0.9964,1.0132]   61.5 32/32 no  neutral   |  1.0047 neutral   | 1.0040 neutral   
+stringbuilders             SBS   0.9984   [0.9877,1.0092]   12.7   8/8 no  neutral   |  0.9984   [0.9928,1.0040]   42.1 24/24 no  neutral   |  0.9984 neutral   | 1.0120 slowdown  
+string-concat-startup      SBS   0.9916   [0.9592,1.0251]   13.7   8/8 no  neutral   |  0.9916   [0.9747,1.0088]   45.0 24/24 no  neutral   |  0.9916 neutral   | 0.9960 neutral   
+spring                     SBS   0.9869   [0.9633,1.0111]   13.9   8/8 no  neutral   |  0.9869   [0.9700,1.0042]   45.3 24/24 no  neutral   |  0.9867 neutral   | 1.0060 neutral   
+regex-redux                SBS   1.0049   [0.9822,1.0280]   13.5   8/8 no  neutral   |  1.0049   [0.9887,1.0213]   46.0 24/24 no  neutral   |  1.0048 neutral   | 1.0010 neutral   
+StringJoiner               SBS   0.9913   [0.9750,1.0080]   12.8   8/8 no  neutral   |  0.9913   [0.9828,0.9999]   41.9 24/24 yes neutral   |  0.9911 neutral   | 1.0010 neutral   
+string-concat              SBS   0.9968   [0.9813,1.0125]   14.0   8/8 no  neutral   |  0.9968   [0.9887,1.0049]   46.0 24/24 no  neutral   |  0.9968 neutral   | 1.0060 neutral   
+luindex                    SBS   1.0015   [0.9940,1.0090]   14.0   8/8 no  neutral   |  1.0015   [0.9971,1.0058]   46.0 24/24 no  neutral   |  1.0015 neutral   | 1.0020 neutral   kept original (pr-luindex-rb1 R_P 1.0044 >= 1.0015)
+json-parser                SBS   0.6385   [0.6273,0.6499]   12.9   8/8 yes win       |  0.6385   [0.6325,0.6446]   43.0 24/24 yes win       |  0.6386 win       | 0.6390 win       
+jsoup                      SBS   1.0033   [0.9956,1.0110]   11.8   8/8 no  neutral   |  1.0033   [0.9993,1.0073]   39.2 24/24 no  neutral   |  1.0033 neutral   | 0.9980 neutral   
+commons-lang-join          SBS   1.0003   [0.9920,1.0087]   13.8   8/8 no  neutral   |  1.0003   [0.9960,1.0047]   45.5 24/24 no  neutral   |  1.0003 neutral   | 0.9990 neutral   
+biojava                    SBS   0.8837   [0.8764,0.8910]   12.1   8/8 yes win       |  0.8837   [0.8783,0.8891]   35.2 24/24 yes win       |  0.8836 win       | 0.8850 win       
+guava                      SBS   1.0030   [0.9870,1.0192]   14.0   8/8 no  neutral   |  1.0030   [0.9870,1.0192]   14.0   8/8 no  neutral   |  1.0036 neutral   | 0.9900 neutral   
+lucene-bytask              SBS   1.0044   [0.9750,1.0347]    9.6   8/8 no  neutral   |  1.0044   [0.9750,1.0347]    9.6   8/8 no  neutral   |  1.0048 neutral   | 0.9960 neutral   
+commons-csv                SBS   0.9975   [0.9871,1.0080]    9.7   8/8 no  neutral   |  0.9975   [0.9921,1.0029]   33.9 24/24 no  neutral   |  0.9974 neutral   | 0.9870 neutral   
+commonmark                 SBS   0.9903   [0.9774,1.0033]   11.0   8/8 no  neutral   |  0.9903   [0.9836,0.9970]   36.2 24/24 yes neutral   |         -         |        -         
+template-benchmark         SBS   0.9984   [0.9513,1.0478]   13.6   8/8 no  neutral   |  0.9984   [0.9734,1.0240]   44.8 24/24 no  neutral   |         -         |        -         
+antlr                      SV    0.9976   [0.9870,1.0084]   60.5 32/32 no  neutral   |  0.9976   [0.9870,1.0084]   60.5 32/32 no  neutral   |  0.9979 neutral   | 1.0060 neutral   
+stringbuffers              SV    0.6266   [0.6175,0.6358]   14.0   8/8 yes win       |  0.6266   [0.6214,0.6318]   46.0 24/24 yes win       |  0.6265 win       | 0.6280 win       
+StringSubstring            SV    0.3205   [0.3155,0.3256]   12.0   8/8 yes win       |  0.3205   [0.3176,0.3235]   43.7 24/24 yes win       |  0.3205 win       | 0.3150 win       
+stringbuilder-to-string    SV    0.9569   [0.9227,0.9924]    9.1   8/8 yes win       |  0.9569   [0.9395,0.9747]   29.9 24/24 yes win       |  0.9562 win       | 0.9700 win       kept original (pr-stringbuilder-to-string-rb1 R_P 0.9804 >= 0.9569)
+logback-perf               SV    0.9989   [0.9550,1.0448]    9.7   8/8 no  win       |  0.9989   [0.9625,1.0367]   44.1 24/24 no  win       |  0.9981 win       | 0.9870 win       
+jte                        SV    0.9761   [0.9635,0.9889]   13.9   8/8 yes win       |  0.9761   [0.9695,0.9828]   45.7 24/24 yes win       |  0.9761 win       | 0.9570 win       
+owasp                      SV    0.9896   [0.9823,0.9970]   53.5 32/32 yes neutral   |  0.9896   [0.9823,0.9970]   53.5 32/32 yes neutral   |  0.9895 neutral   | 0.9970 neutral   
+stringbuilders             SV    0.7728   [0.7659,0.7797]   14.0   8/8 yes win       |  0.7728   [0.7691,0.7764]   46.0 24/24 yes win       |  0.7727 win       | 0.7710 win       
+string-concat-startup      SV    0.9744   [0.9475,1.0021]    8.1   8/8 no  neutral   |  0.9744   [0.9611,0.9880]   26.8 24/24 yes win       |  0.9747 win       | 1.0090 neutral   
+spring                     SV    0.9883   [0.9637,1.0136]   13.7   8/8 no  win       |  0.9883   [0.9720,1.0049]   45.9 24/24 no  win       |  0.9883 win       | 0.9690 win       
+regex-redux                SV    0.9969   [0.9757,1.0185]   12.2   8/8 no  win       |  0.9969   [0.9816,1.0124]   45.2 24/24 no  win       |  0.9968 win       | 0.9910 win       
+StringJoiner               SV    0.9903   [0.9720,1.0088]   14.0   8/8 no  neutral   |  0.9903   [0.9807,0.9999]   46.0 24/24 yes neutral   |  0.9903 neutral   | 0.9940 neutral   
+string-concat              SV    0.9963   [0.9815,1.0114]   13.8   8/8 no  neutral   |  0.9963   [0.9886,1.0041]   45.4 24/24 no  neutral   |  0.9964 neutral   | 1.0060 neutral   
+luindex                    SV    1.0015   [0.9874,1.0158]    8.7   8/8 no  win       |  1.0015   [0.9942,1.0089]   31.7 24/24 no  win       |  1.0016 win       | 0.9980 win       pr-luindex-rb1 SWITCHED to pr-luindex-rb1 (R_P 1.0015 < 1.0078)
+json-parser                SV    0.9950   [0.9791,1.0112]   13.7   8/8 no  neutral   |  0.9950   [0.9861,1.0039]   44.7 24/24 no  neutral   |  0.9950 neutral   | 0.9960 neutral   
+jsoup                      SV    0.8944   [0.8853,0.9037]   13.3   8/8 yes win       |  0.8944   [0.8897,0.8993]   43.8 24/24 yes win       |  0.8945 win       | 0.8940 win       
+commons-lang-join          SV    0.9625   [0.9553,0.9698]   11.9   8/8 yes win       |  0.9625   [0.9588,0.9662]   39.2 24/24 yes win       |  0.9627 win       | 0.9650 win       
+biojava                    SV    0.9424   [0.9351,0.9496]    9.0   8/8 yes win       |  0.9424   [0.9353,0.9495]   46.0 24/24 yes win       |  0.9424 win       | 0.9430 win       
+guava                      SV    0.9163   [0.8977,0.9352]   12.3   8/8 yes win       |  0.9163   [0.8977,0.9352]   12.3   8/8 yes win       |  0.9214 win       | 0.9050 win       
+lucene-bytask              SV    1.0013   [0.9665,1.0374]    8.8   8/8 no  win       |  1.0013   [0.9665,1.0374]    8.8   8/8 no  win       |  1.0020 win       | 1.0040 win       
+commons-csv                SV    0.9892   [0.9777,1.0008]   13.2   8/8 no  neutral   |  0.9892   [0.9830,0.9954]   44.3 24/24 yes neutral   |  0.9892 neutral   | 0.9750 win       
+commonmark                 SV    0.9873   [0.9787,0.9960]   14.0   8/8 yes neutral   |  0.9873   [0.9826,0.9920]   46.0 24/24 yes neutral   |         -         |        -         
+template-benchmark         SV    0.9997   [0.9503,1.0515]   13.2   8/8 no  neutral   |  0.9997   [0.9736,1.0264]   43.7 24/24 no  neutral   |         -         |        -         
+antlr                      LS    1.0000   [0.9886,1.0115]   62.0 32/32 no  neutral   |  1.0000   [0.9886,1.0115]   62.0 32/32 no  neutral   |  1.0003 neutral   | 1.0000 neutral   
+stringbuffers              LS    0.3265   [0.3223,0.3307]   12.1   8/8 yes win       |  0.3265   [0.3241,0.3288]   42.7 24/24 yes win       |  0.3264 win       | 0.3300 win       
+StringSubstring            LS    0.9809   [0.9657,0.9963]   11.8   8/8 yes neutral   |  0.9809   [0.9721,0.9897]   42.4 24/24 yes neutral   |  0.9807 neutral   | 0.9860 neutral   
+stringbuilder-to-string    LS    1.0031   [0.9840,1.0226]   13.7   8/8 no  neutral   |  1.0031   [0.9929,1.0135]   44.9 24/24 no  neutral   |  1.0029 neutral   | 0.9910 neutral   kept original (pr-stringbuilder-to-string-rb1 R_P 1.0055 >= 1.0031)
+logback-perf               LS    0.9981   [0.9458,1.0532]    8.9   8/8 no  neutral   |  0.9981   [0.9629,1.0346]   45.0 24/24 no  neutral   |  0.9975 neutral   | 0.9810 neutral   
+jte                        LS    0.9930   [0.9819,1.0042]   13.0   8/8 no  neutral   |  0.9930   [0.9872,0.9988]   43.2 24/24 yes neutral   |  0.9929 neutral   | 0.9770 win       
+owasp                      LS    0.9975   [0.9899,1.0051]   55.6 32/32 no  neutral   |  0.9975   [0.9899,1.0051]   55.6 32/32 no  neutral   |  0.9974 neutral   | 1.0060 neutral   
+stringbuilders             LS    1.0195   [0.9775,1.0633]    7.4   8/8 no  neutral   |  1.0195   [0.9988,1.0406]   24.3 24/24 no  neutral   |  1.0159 slowdown  | 0.9950 neutral   
+string-concat-startup      LS    0.2468   [0.2399,0.2538]    8.8   8/8 yes win       |  0.2468   [0.2433,0.2503]   28.9 24/24 yes win       |  0.2469 win       | 0.2500 win       
+spring                     LS    0.9890   [0.9707,1.0077]    9.5   8/8 no  neutral   |  0.9890   [0.9743,1.0040]   44.6 24/24 no  neutral   |  0.9891 neutral   | 0.9960 neutral   
+regex-redux                LS    0.9976   [0.9774,1.0182]   10.5   8/8 no  neutral   |  0.9976   [0.9836,1.0118]   40.6 24/24 no  neutral   |  0.9974 neutral   | 1.0020 neutral   
+StringJoiner               LS    0.2095   [0.2063,0.2127]    9.5   8/8 yes win       |  0.2095   [0.2079,0.2111]   31.4 24/24 yes win       |  0.2095 win       | 0.2130 win       
+string-concat              LS    0.2345   [0.2313,0.2378]   12.6   8/8 yes win       |  0.2345   [0.2329,0.2362]   41.5 24/24 yes win       |  0.2345 win       | 0.2340 win       
+luindex                    LS    1.0045   [0.9940,1.0150]   10.1   8/8 no  neutral   |  1.0045   [0.9987,1.0102]   37.8 24/24 no  neutral   |  1.0045 neutral   | 1.0090 neutral   pr-luindex-rb1 SWITCHED to pr-luindex-rb1 (R_P 1.0045 < 1.0126)
+json-parser                LS    0.9870   [0.9720,1.0022]   13.9   8/8 no  neutral   |  0.9870   [0.9788,0.9953]   45.9 24/24 yes neutral   |  0.9870 neutral   | 0.9980 neutral   
+jsoup                      LS    1.0119   [0.9938,1.0303]    9.2   8/8 no  neutral   |  1.0119   [1.0028,1.0211]   30.3 24/24 yes slowdown  |  1.0122 slowdown  | 0.9970 neutral   
+commons-lang-join          LS    1.0050   [0.9954,1.0148]   13.7   8/8 no  neutral   |  1.0050   [1.0000,1.0101]   44.9 24/24 yes neutral   |  1.0051 neutral   | 0.9990 neutral   
+biojava                    LS    0.9987   [0.9884,1.0091]   13.8   8/8 no  neutral   |  0.9987   [0.9906,1.0068]   45.1 24/24 no  neutral   |  0.9987 neutral   | 0.9980 neutral   
+guava                      LS    0.9331   [0.9178,0.9487]   13.9   8/8 yes win       |  0.9331   [0.9178,0.9487]   13.9   8/8 yes win       |  0.9339 win       | 0.9460 win       
+lucene-bytask              LS    0.9930   [0.9731,1.0134]   12.5   8/8 no  neutral   |  0.9930   [0.9731,1.0134]   12.5   8/8 no  neutral   |  0.9931 neutral   | 0.9910 neutral   
+commons-csv                LS    1.0163   [0.9933,1.0398]    9.8   8/8 no  neutral   |  1.0163   [1.0046,1.0281]   32.5 24/24 yes slowdown  |  1.0183 slowdown  | 0.9900 neutral   
+commonmark                 LS    0.9966   [0.9862,1.0071]   12.9   8/8 no  neutral   |  0.9966   [0.9910,1.0022]   42.1 24/24 no  neutral   |         -         |        -         
+template-benchmark         LS    0.9985   [0.9522,1.0471]   13.7   8/8 no  neutral   |  0.9985   [0.9737,1.0240]   44.9 24/24 no  neutral   |         -         |        -         
+
+## counts (cells) win/neutral/slowdown
+  FULL n=63  Welch P      18/45/0
+  FULL n=63  Welch I      19/43/1
+  FULL n=63  pooled boot  19/42/2
+  FULL n=63  C100 latest  20/42/1
+  FULL CI excludes 1: P 16  I 22
+  SBS  n=23  Welch P      4/19/0
+  SBS  n=23  Welch I      3/20/0
+  SBS  n=23  pooled boot  4/17/0  - 2
+  SBS  n=23  C100 latest  2/18/1  - 2
+  SBS  CI excludes 1: P 4  I 5
+  SV   n=23  Welch P      14/9/0
+  SV   n=23  Welch I      15/8/0
+  SV   n=23  pooled boot  15/6/0  - 2
+  SV   n=23  C100 latest  15/6/0  - 2
+  SV   CI excludes 1: P 11  I 14
+  LS   n=23  Welch P      5/18/0
+  LS   n=23  Welch I      5/16/2
+  LS   n=23  pooled boot  5/13/3  - 2
+  LS   n=23  C100 latest  6/15/0  - 2
+  LS   CI excludes 1: P 6  I 11
+
+## cells whose class differs between P and I
+  logback-perf               SBS  P 0.9690 [0.9438,0.9949] win        I 0.9690 [0.9384,1.0006] neutral  
+  string-concat-startup      SV   P 0.9744 [0.9475,1.0021] neutral    I 0.9744 [0.9611,0.9880] win      
+  jsoup                      LS   P 1.0119 [0.9938,1.0303] neutral    I 1.0119 [1.0028,1.0211] slowdown 
+  commons-csv                LS   P 1.0163 [0.9933,1.0398] neutral    I 1.0163 [1.0046,1.0281] slowdown 
+  template-benchmark         FULL P 0.9684 [0.9325,1.0057] neutral    I 0.9684 [0.9497,0.9875] win      
+  jackson                    FULL P 1.0254 [0.9852,1.0672] neutral    I 1.0254 [1.0044,1.0469] slowdown 
+
+## cells whose Welch class (P or I) differs from C100 latest
+  owasp                      FULL P 0.9857 [0.9803,0.9911] neutral   I neutral   | C100 0.9720 win       | boot 0.9857 neutral
+  commons-csv                FULL P 0.9888 [0.9767,1.0011] neutral   I neutral   | C100 0.9770 win       | boot 0.9889 neutral
+  StringSubstring            SBS  P 0.9684 [0.9501,0.9871] win       I win       | C100 0.9820 neutral   | boot 0.9684 win
+  logback-perf               SBS  P 0.9690 [0.9438,0.9949] win       I neutral   | C100 0.9820 neutral   | boot 0.9692 win
+  jte                        LS   P 0.9930 [0.9819,1.0042] neutral   I neutral   | C100 0.9770 win       | boot 0.9929 neutral
+  stringbuilders             SBS  P 0.9984 [0.9877,1.0092] neutral   I neutral   | C100 1.0120 slowdown  | boot 0.9984 neutral
+  string-concat-startup      SV   P 0.9744 [0.9475,1.0021] neutral   I win       | C100 1.0090 neutral   | boot 0.9747 win
+  jsoup                      LS   P 1.0119 [0.9938,1.0303] neutral   I slowdown  | C100 0.9970 neutral   | boot 1.0122 slowdown
+  commons-csv                LS   P 1.0163 [0.9933,1.0398] neutral   I slowdown  | C100 0.9900 neutral   | boot 1.0183 slowdown
+  commons-csv                SV   P 0.9892 [0.9777,1.0008] neutral   I neutral   | C100 0.9750 win       | boot 0.9892 neutral
+  snakeyaml                  FULL P 0.9961 [0.9717,1.0211] neutral   I neutral   | C100 1.0300 slowdown  | boot 0.9967 neutral
+  template-benchmark         FULL P 0.9684 [0.9325,1.0057] neutral   I win       | C100 1.0000 neutral   | boot 0.9714 win
+  jackson                    FULL P 1.0254 [0.9852,1.0672] neutral   I slowdown  | C100 0.9950 neutral   | boot 1.0263 slowdown
+  commonmark                 LS   P 0.9966 [0.9862,1.0071] neutral   I neutral   | C100  -         | boot  -
+  commonmark                 SBS  P 0.9903 [0.9774,1.0033] neutral   I neutral   | C100  -         | boot  -
+  commonmark                 SV   P 0.9873 [0.9787,0.9960] neutral   I neutral   | C100  -         | boot  -
+  template-benchmark         LS   P 0.9985 [0.9522,1.0471] neutral   I neutral   | C100  -         | boot  -
+  template-benchmark         SBS  P 0.9984 [0.9513,1.0478] neutral   I neutral   | C100  -         | boot  -
+  template-benchmark         SV   P 0.9997 [0.9503,1.0515] neutral   I neutral   | C100  -         | boot  -
+
+## cells whose Welch class (P or I) differs from the pooled bootstrap class
+  logback-perf               SBS  P 0.9690 win       I 0.9690 neutral   | boot 0.9692 win
+  stringbuilders             LS   P 1.0195 neutral   I 1.0195 neutral   | boot 1.0159 slowdown
+  string-concat-startup      SV   P 0.9744 neutral   I 0.9744 win       | boot 0.9747 win
+  jsoup                      LS   P 1.0119 neutral   I 1.0119 slowdown  | boot 1.0122 slowdown
+  commons-csv                LS   P 1.0163 neutral   I 1.0163 slowdown  | boot 1.0183 slowdown
+  jackson-yaml               FULL P 1.0130 neutral   I 1.0130 neutral   | boot 1.0127 slowdown
+  template-benchmark         FULL P 0.9684 neutral   I 0.9684 win       | boot 0.9714 win
+  jackson                    FULL P 1.0254 neutral   I 1.0254 slowdown  | boot 1.0263 slowdown
+  commonmark                 LS   P 0.9966 neutral   I 0.9966 neutral   | boot  -
+  commonmark                 SBS  P 0.9903 neutral   I 0.9903 neutral   | boot  -
+  commonmark                 SV   P 0.9873 neutral   I 0.9873 neutral   | boot  -
+  template-benchmark         LS   P 0.9985 neutral   I 0.9985 neutral   | boot  -
+  template-benchmark         SBS  P 0.9984 neutral   I 0.9984 neutral   | boot  -
+  template-benchmark         SV   P 0.9997 neutral   I 0.9997 neutral   | boot  -
+
+## rebuilt cells (rule: rb run alone if its R_P is lower)
+  pr-stringbuilder-to-string-rb1     LS   orig R_P 1.0031 (R_I 1.0031) -> rb R_P 1.0055 (R_I 1.0055)  kept original
+  pr-stringbuilder-to-string-rb1     SBS  orig R_P 1.0215 (R_I 1.0215) -> rb R_P 1.0092 (R_I 1.0092)  SWITCHED
+  pr-stringbuilder-to-string-rb1     SV   orig R_P 0.9569 (R_I 0.9569) -> rb R_P 0.9804 (R_I 0.9804)  kept original
+  pr-luindex-rb1                     LS   orig R_P 1.0126 (R_I 1.0126) -> rb R_P 1.0045 (R_I 1.0045)  SWITCHED
+  pr-luindex-rb1                     SBS  orig R_P 1.0015 (R_I 1.0015) -> rb R_P 1.0044 (R_I 1.0044)  kept original
+  pr-luindex-rb1                     SV   orig R_P 1.0078 (R_I 1.0078) -> rb R_P 1.0015 (R_I 1.0015)  SWITCHED
+  jackson-rb1                        FULL orig R_P 1.0322 (R_I 1.0322) -> rb R_P 1.0254 (R_I 1.0254)  SWITCHED
+WELCH-REPORT-DONE

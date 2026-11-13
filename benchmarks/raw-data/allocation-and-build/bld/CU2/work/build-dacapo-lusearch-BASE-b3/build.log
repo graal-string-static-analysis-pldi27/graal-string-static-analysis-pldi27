@@ -1,0 +1,63 @@
+1792869672.505742 ========================================================================================================================
+1792869672.507201 GraalVM Native Image: Generating 'dacapo-lusearch-BASE-b3' (executable)...
+1792869672.513871 ========================================================================================================================
+1792869672.513886 For detailed information and explanations on the build output, visit:
+1792869672.513899 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792869672.513913 ------------------------------------------------------------------------------------------------------------------------
+1792869674.037508 [1/8] Initializing...                                                                                    (2.1s @ 0.44GB)
+1792869674.037765  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792869674.037892  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792869674.037967  C compiler: gcc (linux, x86_64, 15.2.0)
+1792869674.038087  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792869674.038108  1 user-specific feature(s):
+1792869674.038285  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792869674.038919 ------------------------------------------------------------------------------------------------------------------------
+1792869674.038943  1 experimental option(s) unlocked:
+1792869674.038983  - '-H:CodeAlignment' (origin(s): command line)
+1792869674.040155 ------------------------------------------------------------------------------------------------------------------------
+1792869674.040167 Build resources:
+1792869674.040240  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792869674.040289  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792869674.054055 Skipped 694 predefined class(es) because the classpath already contains a class with the same name: org.apache.lucene.backward_codecs.lucene87.Lucene87StoredFieldsFormat$Mode, org.apache.lucene.codecs.DocValuesProducer, org.apache.lucene.analysis.CharacterUtils, org.apache.lucene.index.Term, org.apache.lucene.search.PhraseQuery, org.apache.lucene.codecs.lucene94.Lucene94FieldInfosFormat, org.apache.lucene.util.fst.ReverseBytesReader, org.apache.lucene.queryparser.classic.QueryParser$LookaheadSuccess, org.apache.lucene.util.packed.PackedInts$ReaderIterator, org.apache.lucene.backward_codecs.lucene86.Lucene86PointsReader, ...
+1792869678.217648 [2/8] Performing analysis...  [*****]                                                                    (3.9s @ 0.75GB)
+1792869678.238404     6,557 types,   9,686 fields, and  30,781 methods found reachable
+1792869678.239240     2,280 types,     601 fields, and   3,081 methods registered for reflection
+1792869678.239316        63 types,      76 fields, and      54 methods registered for JNI access
+1792869678.239354         0 downcalls and 0 upcalls registered for foreign access
+1792869678.239378         4 native libraries: dl, pthread, rt, z
+1792869679.605272 [3/8] Building universe...                                                                               (1.4s @ 1.03GB)
+1792869680.135601 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 0.91GB)
+1792869680.571542 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 0.96GB)
+1792869684.320438 [6/8] Compiling methods...    [**]                                                                       (3.7s @ 0.88GB)
+1792869686.382506 [7/8] Laying out methods...   [*]                                                                        (1.9s @ 1.02GB)
+1792869688.163274 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.14GB)
+1792869688.163633   14.82MB (44.31%) for code area:    19,445 compilation units
+1792869688.163718   15.40MB (46.06%) for image heap:  178,237 objects and 67 resources
+1792869688.163756    3.22MB ( 9.63%) for other data
+1792869688.163816   33.44MB in total image size, 31.72MB in total file size
+1792869688.163855 ------------------------------------------------------------------------------------------------------------------------
+1792869688.164557 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792869688.164792    8.42MB java.base                                            3.75MB byte[] for code metadata
+1792869688.164854    2.17MB lucene-core-9.10.0-SNAPSHOT.jar                      2.22MB byte[] for java.lang.String
+1792869688.164902    1.56MB svm.jar (Native Image)                               1.52MB java.lang.String
+1792869688.164985  796.30kB lucene-backward-codecs-9.10.0-SNAPSHOT.jar           1.31MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792869688.165033  369.02kB dacapo-evaluation-git-e947cbfc.jar                 876.17kB java.lang.Class
+1792869688.165096  214.73kB jdk.zipfs                                          673.10kB byte[] for general heap data
+1792869688.165149  150.82kB lucene-queryparser-9.10.0-SNAPSHOT.jar             392.70kB java.lang.Object[]
+1792869688.165195  113.58kB java.logging                                       359.42kB java.util.HashMap$Node
+1792869688.165246   93.47kB org.graalvm.nativeimage.base                       334.88kB byte[] for embedded resources
+1792869688.165292   82.26kB jdk.charsets                                       276.48kB java.lang.String[]
+1792869688.165462  288.88kB for 17 more packages                                 3.68MB for 1574 more object types
+1792869688.166164 ------------------------------------------------------------------------------------------------------------------------
+1792869688.166172 Recommendations:
+1792869688.166214  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792869688.166225  HEAP: Set max heap for improved and more predictable memory usage.
+1792869688.166279  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792869688.168757 ------------------------------------------------------------------------------------------------------------------------
+1792869688.169305                        1.2s (7.0% of total time) in 137 GCs | Peak RSS: 2.40GB | CPU load: 13.85
+1792869688.169584 ------------------------------------------------------------------------------------------------------------------------
+1792869688.169596 Build artifacts:
+1792869688.169928  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-lusearch-BASE-b3 (executable)
+1792869688.169949  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libmanagement_ext.so (jdk_library)
+1792869688.169965 ========================================================================================================================
+1792869688.170015 Finished generating 'dacapo-lusearch-BASE-b3' in 16.3s.

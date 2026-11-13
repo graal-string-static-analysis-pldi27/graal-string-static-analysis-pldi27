@@ -1,0 +1,39 @@
+# C99 campaign results  SLOT=CL8  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL8  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## java-json-benchmark  [jmh] java-json-benchmark ser|deser, 7 libs, 1 KB users payload (hunt/ab candspec; own JMH setting)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 1.004 [1.000,1.009] n.s. (22 keys)  alloc 0.996 [0.988,1.003] n.s. (2 keys)
+  deser: c.g.f.j.databind.Deserialization.avajejsonb                     FULL 1.022 [0.985,1.062] n.s.
+  deser: c.g.f.j.databind.Deserialization.avajejsonb_jackson             FULL 1.007 [1.003,1.011] SLOWER
+  deser: c.g.f.j.databind.Deserialization.dsljson                        FULL 0.966 [0.945,0.990] FASTER
+  deser: c.g.f.j.databind.Deserialization.dsljson_reflection             FULL 0.969 [0.960,0.982] FASTER
+  deser: c.g.f.j.databind.Deserialization.gson                           FULL 1.022 [1.015,1.032] SLOWER
+  deser: c.g.f.j.databind.Deserialization.moshi                          FULL 0.994 [0.985,1.004] n.s.
+  deser: c.g.f.j.stream.Deserialization.gson                             FULL 1.002 [1.000,1.004] SLOWER
+  deser: c.g.f.j.stream.Deserialization.jakartajson                      FULL 1.005 [0.983,1.022] n.s.
+  deser: c.g.f.j.stream.Deserialization.minimaljson                      FULL 1.011 [1.003,1.019] SLOWER
+  deser: c.g.f.j.stream.Deserialization.moshi                            FULL 1.014 [1.001,1.026] SLOWER
+  deser: c.g.f.j.stream.Deserialization.orgjson                          FULL 0.995 [0.987,1.004] n.s.
+  ser: c.g.f.j.databind.Serialization.avajejsonb                         FULL 1.004 [0.981,1.030] n.s.
+  ser: c.g.f.j.databind.Serialization.avajejsonb_jackson                 FULL 1.032 [0.962,1.138] n.s.
+  ser: c.g.f.j.databind.Serialization.dsljson                            FULL 0.998 [0.989,1.006] n.s.
+  ser: c.g.f.j.databind.Serialization.dsljson_reflection                 FULL 1.015 [0.996,1.033] n.s.
+  ser: c.g.f.j.databind.Serialization.gson                               FULL 1.017 [0.990,1.043] n.s.
+  ser: c.g.f.j.databind.Serialization.moshi                              FULL 1.028 [1.012,1.051] SLOWER
+  ser: c.g.f.j.stream.Serialization.gson                                 FULL 0.995 [0.974,1.015] n.s.
+  ser: c.g.f.j.stream.Serialization.jakartajson                          FULL 1.014 [0.994,1.037] n.s.
+  ser: c.g.f.j.stream.Serialization.minimaljson                          FULL 1.007 [0.975,1.038] n.s.
+  ser: c.g.f.j.stream.Serialization.moshi                                FULL 1.013 [1.002,1.023] SLOWER
+  ser: c.g.f.j.stream.Serialization.orgjson                              FULL 0.969 [0.962,0.975] FASTER
+  ~alloc MB deser                                                        FULL 0.997 [0.988,1.008] n.s.
+  ~alloc MB ser                                                          FULL 0.994 [0.986,1.003] n.s.
+  ~rss MB deser                                                          FULL 1.020 [0.944,1.103] n.s.
+  ~rss MB ser                                                            FULL 0.975 [0.806,1.190] n.s.
+
+## log4j2-plc  [jmh] log4j2 PatternLayoutComparisonBenchmark, log4j2 arm (hunt/ab candspec; failing logback arm not selected)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 1.026 [0.975,1.103] n.s. (1 keys)  alloc 0.973 [0.907,1.025] n.s. (1 keys)
+  PatternLayoutComparisonBenchmark.log4j2                                FULL 1.026 [0.975,1.103] n.s.
+  ~alloc MB                                                              FULL 0.973 [0.907,1.025] n.s.
+  ~rss MB                                                                FULL 1.005 [0.999,1.010] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

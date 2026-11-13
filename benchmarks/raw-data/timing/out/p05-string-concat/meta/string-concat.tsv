@@ -1,0 +1,8 @@
+KIND	jmh
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/rows/string-concat.sh
+DESC	OpenJDK StringConcat (misc-benchmarks jar, 37 rows; ab-cmb recipe)
+CPUS	0-15
+JMHSET	-f 0 -wi 1 -w 500ms -i 3 -r 500ms
+SLOTITER	500ms

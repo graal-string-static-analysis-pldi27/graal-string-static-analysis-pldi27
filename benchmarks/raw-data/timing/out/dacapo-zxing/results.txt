@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=dacapo-zxing  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-zxing  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=1 UM=3 US=1 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## dacapo-zxing  [metric] DaCapo zxing (C99 deploy)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.001 [0.997,1.005] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.997 [0.994,1.000] FASTER (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.999 [0.994,1.004] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.003 [0.998,1.008] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.005 [1.003,1.008] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 0.999 [0.996,1.001] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.998 [0.992,1.004] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  iteration ms                                                           FULL 1.001 [0.997,1.005] n.s. | BASE_A32 0.997 [0.994,1.000] FASTER | FULL_A32 0.999 [0.994,1.004] n.s. | BASE_A128 1.003 [0.998,1.008] n.s. | FULL_A128 1.005 [1.003,1.008] SLOWER | BASE_A256 0.999 [0.996,1.001] n.s. | FULL_A256 0.998 [0.992,1.004] n.s.
+  iteration ms [cold]                                                    FULL 1.001 [0.990,1.013] n.s. | BASE_A32 0.995 [0.984,1.007] n.s. | FULL_A32 1.004 [0.998,1.011] n.s. | BASE_A128 0.999 [0.990,1.009] n.s. | FULL_A128 1.000 [0.992,1.008] n.s. | BASE_A256 1.007 [1.001,1.014] SLOWER | FULL_A256 0.998 [0.991,1.005] n.s.
+  ~alloc MB/iter                                                         FULL 1.000 [1.000,1.000] LESS | BASE_A32 1.000 [1.000,1.000] LESS | FULL_A32 1.000 [1.000,1.000] n.s. | BASE_A128 1.000 [1.000,1.000] LESS | FULL_A128 1.000 [1.000,1.000] n.s. | BASE_A256 1.000 [1.000,1.000] LESS | FULL_A256 1.000 [1.000,1.000] LESS
+  ~rss MB                                                                FULL 1.000 [0.910,1.100] n.s. | BASE_A32 1.016 [0.900,1.143] n.s. | FULL_A32 0.947 [0.873,1.029] n.s. | BASE_A128 0.870 [0.754,0.998] LESS | FULL_A128 0.907 [0.822,1.000] LESS | BASE_A256 0.945 [0.897,0.998] LESS | FULL_A256 0.903 [0.835,0.977] LESS
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  dacapo-zxing               1.001|1.000*      0.997*|1.000*     0.999|1.000       1.003|1.000*      1.005*|1.000      0.999|1.000*      0.998|1.000*     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

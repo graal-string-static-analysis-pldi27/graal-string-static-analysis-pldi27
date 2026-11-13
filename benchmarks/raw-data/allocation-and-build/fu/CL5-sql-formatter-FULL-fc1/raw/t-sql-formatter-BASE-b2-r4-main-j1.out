@@ -1,0 +1,50 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.33
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vertical_blank.sqlformatter.Benchmark.format
+
+# Run progress: 0.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 179065.889 ns/op
+# Warmup Iteration   2: 178970.882 ns/op
+# Warmup Iteration   3: 181614.423 ns/op
+# Warmup Iteration   4: 181384.215 ns/op
+# Warmup Iteration   5: 180828.209 ns/op
+Iteration   1: 180963.817 ns/op
+Iteration   2: 180934.281 ns/op
+Iteration   3: 181182.697 ns/op
+Iteration   4: 180737.058 ns/op
+Iteration   5: 180765.486 ns/op
+Iteration   6: 181336.729 ns/op
+Iteration   7: 180992.438 ns/op
+Iteration   8: 180963.937 ns/op
+Iteration   9: 180949.446 ns/op
+Iteration  10: 180717.862 ns/op
+
+Result "com.github.vertical_blank.sqlformatter.Benchmark.format":
+  180954.375 ±(99.9%) 293.518 ns/op [Average]
+  (min, avg, max) = (180717.862, 180954.375, 181336.729), stdev = 194.144
+  CI (99.9%): [180660.857, 181247.893] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:15
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark         Mode  Cnt       Score     Error  Units
+Benchmark.format  avgt   10  180954.375 ± 293.518  ns/op

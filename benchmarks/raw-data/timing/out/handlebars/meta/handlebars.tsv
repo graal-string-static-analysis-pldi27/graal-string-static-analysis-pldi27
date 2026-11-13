@@ -1,0 +1,10 @@
+KIND	metric
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/handlebars.sh
+DESC	handlebars.java HbsBench stocks.hbs (hunt/ab-b34 candspec; median of 30 iterations)
+CPUS	0-15
+JMHSET	-
+SLOTITER	-
+METRIC	main	stocks.hbs median per s | higher | err | 1 | ^C100FIN-POSTRUN handlebars stocks\.hbs median per-second=([0-9.]+) n=30$
+METRIC	main	stocks.hbs AVG per s | info | out | 1 | ^AVG: (\d+) per second$

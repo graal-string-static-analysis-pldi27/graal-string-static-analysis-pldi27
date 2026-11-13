@@ -1,0 +1,43 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL2  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## rhino  starts BASE:3 FULL:3  time keys 35
+  FULL/BASE time  ratio 0.9873  (mean FULL 0.9874 n=3, BASE 1.0001 n=3)  error margin 0.0086 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0155  (mean FULL 1.0155 n=3, BASE 1.0000 n=3)  error margin 0.0068 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.9873  (mean FULL 0.9878 n=30 iterations, BASE 1.0005 n=30)  error margin 0.0084 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 35 keys]
+    key AccessBinaryTreesState.accessBinaryTrees evalMethod=Interpre BASE 1.88677e-05 sd 2.48e-07  FULL 1.88452e-05 sd 1.42e-07  [higher]
+    key AccessFannAccessNsieveState.accessNsieve evalMethod=Interpre BASE 7.46284e-06 sd 1.42e-07  FULL 7.45274e-06 sd 1.38e-08  [higher]
+    key AccessFannkuchState.accessFannkuch evalMethod=Interpreter    BASE 4.25014e-06 sd 3.41e-08  FULL 4.17622e-06 sd 8.36e-08  [higher]
+    key AccessNBodyState.accessNBody evalMethod=Interpreter          BASE 8.14531e-06 sd 2.19e-07  FULL 8.21332e-06 sd 1.04e-07  [higher]
+    key Bitops3BitState.bitops3BitBitsInByte evalMethod=Interpreter  BASE 1.28749e-05 sd 1.67e-07  FULL 1.32341e-05 sd 1.93e-07  [higher]
+    key BitopsAndState.bitopsBitwiseAnd evalMethod=Interpreter       BASE 4.72054e-06 sd 1.58e-07  FULL 5.00535e-06 sd 3.07e-07  [higher]
+    key BitopsBitsState.bitopsBitsInByte evalMethod=Interpreter      BASE 7.81174e-06 sd 4.69e-08  FULL 7.81079e-06 sd 5.44e-08  [higher]
+    key BitopsNsieveState.bitopsNsieveBits evalMethod=Interpreter    BASE 7.22359e-06 sd 6.23e-08  FULL 7.30673e-06 sd 1.12e-07  [higher]
+    key CryptoAesState.cryptoAes evalMethod=Interpreter              BASE 1.24716e-05 sd 1.66e-07  FULL 1.25424e-05 sd 3.79e-07  [higher]
+    key CryptoMd5State.cryptoMd5 evalMethod=Interpreter              BASE 1.66948e-05 sd 3.89e-07  FULL 1.72207e-05 sd 2.58e-07  [higher]
+    key CryptoShaState.cryptoSha1 evalMethod=Interpreter             BASE 1.58763e-05 sd 2.99e-07  FULL 1.59041e-05 sd 2.15e-07  [higher]
+    key DateFormatToFteState.dateFormatToFte evalMethod=Interpreter  BASE 1.0718e-05 sd 1.65e-07  FULL 1.07602e-05 sd 6.5e-08  [higher]
+    key DateFormatXparbState.dateFormatXparb evalMethod=Interpreter  BASE 2.24608e-05 sd 4.09e-08  FULL 2.28944e-05 sd 2.95e-07  [higher]
+    key MathCordicState.mathCordic evalMethod=Interpreter            BASE 7.02425e-06 sd 1.64e-07  FULL 6.99418e-06 sd 5.22e-08  [higher]
+    key MathPartialState.mathPartialSums evalMethod=Interpreter      BASE 1.00827e-05 sd 1.97e-07  FULL 1.04495e-05 sd 1.34e-07  [higher]
+    key MathSpectralNormState.mathSpectralNorm evalMethod=Interprete BASE 1.34139e-05 sd 6.29e-07  FULL 1.44697e-05 sd 7.43e-08  [higher]
+    key RecursiveState.controlflowRecursive evalMethod=Interpreter   BASE 1.47017e-05 sd 3.11e-07  FULL 1.51245e-05 sd 1.68e-07  [higher]
+    key RegexpState.regexpDna evalMethod=Interpreter                 BASE 7.72181e-06 sd 4.73e-09  FULL 7.82703e-06 sd 1.29e-08  [higher]
+    key StringBase64State.stringBase64 evalMethod=Interpreter        BASE 1.15488e-05 sd 4.01e-07  FULL 1.16626e-05 sd 7.39e-08  [higher]
+    key StringFastaState.stringFasta evalMethod=Interpreter          BASE 7.93309e-06 sd 2.52e-07  FULL 8.22849e-06 sd 1.65e-07  [higher]
+    key StringTagcloudState.stringTagcloud evalMethod=Interpreter    BASE 1.18755e-05 sd 9.79e-08  FULL 1.19861e-05 sd 1.25e-07  [higher]
+    key StringUnpackState.stringUnpackCode evalMethod=Interpreter    BASE 1.38764e-05 sd 1.84e-07  FULL 1.39357e-05 sd 1.96e-07  [higher]
+    key StringValidateState.stringValidateInput evalMethod=Interpret BASE 1.62648e-05 sd 9.8e-08  FULL 1.6506e-05 sd 2.11e-07  [higher]
+    key ThreeDCubeState.threeDCube evalMethod=Interpreter            BASE 1.11812e-05 sd 6.27e-08  FULL 1.09681e-05 sd 3.82e-07  [higher]
+    key ThreeDMorphState.threeDMorph evalMethod=Interpreter          BASE 8.32979e-06 sd 2.15e-07  FULL 8.48085e-06 sd 8.29e-08  [higher]
+    key ThreeDRayState.threeDRayTrace evalMethod=Interpreter         BASE 1.03129e-05 sd 3.04e-07  FULL 1.04516e-05 sd 2.63e-07  [higher]
+    key V8Benchmark.boyer evalMethod=Interpreter                     BASE 1.68688e-06 sd 1.19e-08  FULL 1.77641e-06 sd 4.45e-08  [higher]
+    key V8Benchmark.cryptoDecrypt evalMethod=Interpreter             BASE 1.847e-06 sd 1.53e-08  FULL 1.82589e-06 sd 5.24e-08  [higher]
+    key V8Benchmark.cryptoEncrpyt evalMethod=Interpreter             BASE 3.32453e-05 sd 4.95e-07  FULL 3.31379e-05 sd 8.12e-07  [higher]
+    key V8Benchmark.deltaBlue evalMethod=Interpreter                 BASE 2.49765e-05 sd 2.73e-07  FULL 2.46879e-05 sd 7.84e-08  [higher]
+    key V8Benchmark.earley evalMethod=Interpreter                    BASE 2.26213e-05 sd 2.64e-07  FULL 2.3386e-05 sd 1.12e-07  [higher]
+    key V8Benchmark.rayTrace evalMethod=Interpreter                  BASE 5.43831e-06 sd 6.35e-08  FULL 5.47539e-06 sd 5.23e-08  [higher]
+    key V8Benchmark.regExp evalMethod=Interpreter                    BASE 2.97464e-06 sd 7.3e-09  FULL 2.95388e-06 sd 5.84e-08  [higher]
+    key V8Benchmark.richards evalMethod=Interpreter                  BASE 4.25923e-05 sd 4.71e-07  FULL 4.23782e-05 sd 9.54e-07  [higher]
+    key V8Benchmark.splay evalMethod=Interpreter                     BASE 4.06719e-05 sd 8.12e-07  FULL 4.11812e-05 sd 1.26e-07  [higher]
+
+PAPER30-DONE

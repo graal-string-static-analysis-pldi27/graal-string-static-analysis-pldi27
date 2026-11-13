@@ -1,0 +1,33 @@
+# C99 campaign results  SLOT=CL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL1  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## calcite  [jmh] Calcite ParserBenchmark (2 rows; ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.999 [0.995,1.004] n.s. (2 keys)  alloc 1.008 [1.002,1.014] MORE (1 keys)
+  ParserBenchmark.parseCached true 1000                                  FULL 1.011 [1.007,1.016] SLOWER
+  ParserBenchmark.parseNonCached true 1000                               FULL 0.987 [0.979,0.997] FASTER
+  ~alloc MB                                                              FULL 1.008 [1.002,1.014] MORE
+  ~rss MB                                                                FULL 0.996 [0.993,0.998] LESS
+
+## thymeleaf  [jmh] thymeleaf GTVG JMH (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 1.007 [0.997,1.014] n.s. (5 keys)  alloc 0.952 [0.946,0.962] LESS (1 keys)
+  GTVGHome.benchmark                                                     FULL 1.010 [1.002,1.017] SLOWER
+  GTVGOrderDetails.benchmark                                             FULL 1.008 [0.998,1.013] n.s.
+  GTVGOrderList.benchmark                                                FULL 1.007 [0.997,1.016] n.s.
+  GTVGProductComments.benchmark                                          FULL 1.006 [0.995,1.017] n.s.
+  GTVGProductList.benchmark                                              FULL 1.006 [0.990,1.022] n.s.
+  ~alloc MB                                                              FULL 0.952 [0.946,0.962] LESS
+  ~rss MB                                                                FULL 0.995 [0.992,0.999] LESS
+
+## commons-csv  [jmh] commons-csv CSVBenchmark (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.977 [0.973,0.981] FASTER (7 keys)  alloc 0.987 [0.987,0.987] LESS (1 keys)
+  CSVBenchmark.parseCommonsCSV                                           FULL 0.996 [0.978,1.016] n.s.
+  CSVBenchmark.parseGenJavaCSV                                           FULL 0.887 [0.872,0.900] FASTER
+  CSVBenchmark.parseJavaCSV                                              FULL 0.996 [0.992,1.001] n.s.
+  CSVBenchmark.parseOpenCSV                                              FULL 0.980 [0.969,0.994] FASTER
+  CSVBenchmark.parseSuperCSV                                             FULL 1.005 [0.990,1.020] n.s.
+  CSVBenchmark.read                                                      FULL 0.993 [0.971,1.018] n.s.
+  CSVBenchmark.scan                                                      FULL 0.986 [0.974,0.999] FASTER
+  ~alloc MB                                                              FULL 0.987 [0.987,0.987] LESS
+  ~rss MB                                                                FULL 1.051 [1.005,1.110] MORE
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

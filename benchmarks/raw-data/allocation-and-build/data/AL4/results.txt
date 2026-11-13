@@ -1,0 +1,73 @@
+# C99 campaign results  SLOT=AL4  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL4  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-lang-join  [jmh] commons-lang StringUtilsJoinBenchmark (hunt3 ab3 recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.968 [0.962,0.973] FASTER (64 keys)  alloc 0.924 [0.917,0.932] LESS (1 keys)
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_20_0  FULL 1.028 [1.020,1.036] SLOWER
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_20_0  FULL 1.025 [1.005,1.043] SLOWER
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_20_0  FULL 1.037 [0.994,1.100] n.s.
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_20_0  FULL 0.999 [0.937,1.046] n.s.
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_21_0  FULL 0.856 [0.841,0.873] FASTER
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_21_0  FULL 0.845 [0.820,0.874] FASTER
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_21_0  FULL 0.861 [0.833,0.889] FASTER
+  StringUtilsJoinBenchmark.BooleanArrayBenchmark.testJoinBoolean_3_21_0  FULL 0.853 [0.822,0.886] FASTER
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_20_0 10     FULL 0.975 [0.946,1.011] n.s.
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_20_0 100    FULL 0.997 [0.958,1.038] n.s.
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_20_0 1000   FULL 0.986 [0.953,1.018] n.s.
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_20_0 10000  FULL 0.971 [0.936,0.989] FASTER
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_21_0 10     FULL 0.864 [0.825,0.905] FASTER
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_21_0 100    FULL 0.977 [0.945,1.009] n.s.
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_21_0 1000   FULL 1.034 [1.018,1.050] SLOWER
+  StringUtilsJoinBenchmark.ByteArrayBenchmark.testJoinByte_3_21_0 10000  FULL 0.994 [0.969,1.029] n.s.
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_20_0 10     FULL 0.982 [0.976,0.988] FASTER
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_20_0 100    FULL 1.022 [0.994,1.054] n.s.
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_20_0 1000   FULL 1.000 [0.969,1.029] n.s.
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_20_0 10000  FULL 0.968 [0.947,0.994] FASTER
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_21_0 10     FULL 0.803 [0.796,0.816] FASTER
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_21_0 100    FULL 0.953 [0.926,0.987] FASTER
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_21_0 1000   FULL 0.996 [0.958,1.022] n.s.
+  StringUtilsJoinBenchmark.CharArrayBenchmark.testJoinChar_3_21_0 10000  FULL 0.957 [0.955,0.961] FASTER
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_20_0 10 FULL 1.002 [1.000,1.003] SLOWER
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_20_0 10 FULL 1.001 [0.998,1.004] n.s.
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_20_0 10 FULL 1.000 [0.998,1.002] n.s.
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_20_0 10 FULL 0.996 [0.992,1.001] n.s.
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_21_0 10 FULL 0.966 [0.956,0.977] FASTER
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_21_0 10 FULL 0.965 [0.963,0.966] FASTER
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_21_0 10 FULL 0.978 [0.976,0.980] FASTER
+  StringUtilsJoinBenchmark.DoubleArrayBenchmark.testJoinDouble_3_21_0 10 FULL 0.927 [0.922,0.931] FASTER
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat3_20_0 10    FULL 0.995 [0.980,1.007] n.s.
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat3_20_0 100   FULL 1.000 [0.998,1.003] n.s.
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat3_20_0 1000  FULL 1.000 [0.999,1.001] n.s.
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat3_20_0 10000 FULL 0.998 [0.993,1.003] n.s.
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat_3_21_0 10   FULL 0.967 [0.956,0.984] FASTER
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat_3_21_0 100  FULL 0.978 [0.977,0.980] FASTER
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat_3_21_0 1000 FULL 0.981 [0.980,0.983] FASTER
+  StringUtilsJoinBenchmark.FloatArrayBenchmark.testJoinFloat_3_21_0 1000 FULL 0.987 [0.985,0.989] FASTER
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_20_0 10       FULL 1.020 [0.999,1.041] n.s.
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_20_0 100      FULL 1.007 [0.997,1.018] n.s.
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_20_0 1000     FULL 0.998 [0.993,1.003] n.s.
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_20_0 10000    FULL 0.998 [0.994,1.003] n.s.
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_21_0 10       FULL 0.860 [0.832,0.887] FASTER
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_21_0 100      FULL 0.938 [0.933,0.943] FASTER
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_21_0 1000     FULL 0.967 [0.961,0.974] FASTER
+  StringUtilsJoinBenchmark.IntArrayBenchmark.testJoinInt_3_21_0 10000    FULL 0.985 [0.975,0.993] FASTER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_20_0 10     FULL 1.006 [1.003,1.009] SLOWER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_20_0 100    FULL 1.010 [1.004,1.019] SLOWER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_20_0 1000   FULL 1.009 [1.006,1.012] SLOWER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_20_0 10000  FULL 1.008 [1.004,1.011] SLOWER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_21_0 10     FULL 0.932 [0.923,0.945] FASTER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_21_0 100    FULL 0.951 [0.950,0.954] FASTER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_21_0 1000   FULL 0.977 [0.974,0.979] FASTER
+  StringUtilsJoinBenchmark.LongArrayBenchmark.testJoinLong_3_21_0 10000  FULL 0.888 [0.886,0.890] FASTER
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_20_0 10   FULL 0.998 [0.978,1.013] n.s.
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_20_0 100  FULL 1.003 [0.986,1.020] n.s.
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_20_0 1000 FULL 0.998 [0.984,1.013] n.s.
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_20_0 1000 FULL 0.985 [0.960,1.001] n.s.
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_21_0 10   FULL 0.863 [0.842,0.884] FASTER
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_21_0 100  FULL 0.958 [0.933,0.980] FASTER
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_21_0 1000 FULL 0.977 [0.964,0.991] FASTER
+  StringUtilsJoinBenchmark.ShortArrayBenchmark.testJoinShort_3_21_0 1000 FULL 0.977 [0.965,0.988] FASTER
+  ~alloc MB                                                              FULL 0.924 [0.917,0.932] LESS
+  ~rss MB                                                                FULL 0.982 [0.693,1.158] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

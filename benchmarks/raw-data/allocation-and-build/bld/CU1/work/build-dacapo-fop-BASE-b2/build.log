@@ -1,0 +1,74 @@
+1792868900.514498 Warning: The option '-H:DeadlockWatchdogInterval=0' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+1792868900.514593 Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+1792868901.762649 ========================================================================================================================
+1792868901.764276 GraalVM Native Image: Generating 'dacapo-fop-BASE-b2' (executable)...
+1792868901.764309 ========================================================================================================================
+1792868901.764321 For detailed information and explanations on the build output, visit:
+1792868901.764334 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792868901.764349 ------------------------------------------------------------------------------------------------------------------------
+1792868903.526560 [1/8] Initializing...                                                                                    (2.6s @ 0.28GB)
+1792868903.526621  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792868903.526672  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792868903.526744  C compiler: gcc (linux, x86_64, 15.2.0)
+1792868903.526846  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792868903.526871  1 user-specific feature(s):
+1792868903.527040  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792868903.527721 ------------------------------------------------------------------------------------------------------------------------
+1792868903.534866  2 experimental option(s) unlocked:
+1792868903.534884  - '-H:DeadlockWatchdogInterval' (origin(s): command line)
+1792868903.534892  - '-H:CodeAlignment' (origin(s): command line)
+1792868903.534907 ------------------------------------------------------------------------------------------------------------------------
+1792868903.534913 Build resources:
+1792868903.534923  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792868903.534935  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792868903.542761 Skipped 2582 predefined class(es) because the classpath already contains a class with the same name: org.apache.xml.serializer.WriterToUTF8Buffered, org.w3c.dom.views.DocumentView, org.apache.fop.render.pdf.PDFRendererConfigurator, org.apache.batik.util.ParsedURLDataProtocolHandler$DataParsedURLData, org.apache.fop.layoutmgr.LayoutManagerMaker, org.apache.fop.fo.FOElementMapping$InlineMaker, org.apache.batik.anim.values.AnimatableTransformListValue, org.apache.fop.render.pdf.extensions.PDFObjectType, org.apache.fop.layoutmgr.inline.InlineContainerLayoutManager, org.apache.fop.render.ps.extensions.PSExtensionElementMapping$PSCommentAfterMaker, ...
+1792868911.729095 [2/8] Performing analysis...  [******]                                                                   (7.9s @ 6.71GB)
+1792868911.770602    15,252 types,  28,682 fields, and  83,699 methods found reachable
+1792868911.771559     5,184 types,   2,979 fields, and   5,770 methods registered for reflection
+1792868911.771604       118 types,     192 fields, and     100 methods registered for JNI access
+1792868911.771631         0 downcalls and 0 upcalls registered for foreign access
+1792868911.771678         4 native libraries: dl, pthread, rt, z
+1792868914.101636 [3/8] Building universe...                                                                               (2.3s @ 6.54GB)
+1792868915.013622 [4/8] Parsing methods...      [*]                                                                        (0.9s @ 6.39GB)
+1792868916.299847 [5/8] Inlining methods...     [****]                                                                     (0.9s @ 2.28GB)
+1792868923.480269 [6/8] Compiling methods...    [***]                                                                      (7.2s @ 2.09GB)
+1792868929.262662 [7/8] Laying out methods...   [***]                                                                      (5.8s @ 2.05GB)
+1792868932.753230 [8/8] Creating image...       [**]                                                                       (3.2s @ 2.38GB)
+1792868932.753464   47.48MB (51.71%) for code area:    53,882 compilation units
+1792868932.753521   35.85MB (39.04%) for image heap:  343,918 objects and 221 resources
+1792868932.753564    8.50MB ( 9.25%) for other data
+1792868932.753599   91.83MB in total image size, 87.43MB in total file size
+1792868932.753759 ------------------------------------------------------------------------------------------------------------------------
+1792868932.754475 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792868932.754719   11.04MB java.desktop                                        12.29MB byte[] for code metadata
+1792868932.754781   10.20MB java.base                                            4.51MB byte[] for java.lang.String
+1792868932.754829    9.00MB fop.jar                                              3.26MB java.lang.String
+1792868932.754898    5.02MB java.xml                                             3.05MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792868932.754947    3.34MB batik-all-1.16.jar                                   2.60MB java.lang.Class
+1792868932.755000    1.70MB svm.jar (Native Image)                             935.94kB byte[] for general heap data
+1792868932.755046    1.42MB xercesImpl.jar                                     663.66kB java.lang.String[]
+1792868932.755089    1.19MB xmlgraphics-commons-2.8.jar                        635.18kB int[]
+1792868932.755122  901.87kB xalan.jar                                          624.62kB java.util.HashMap$Node
+1792868932.755165  372.30kB fontbox-2.0.24.jar                                 610.58kB byte[] for reflection metadata
+1792868932.755462    1.73MB for 23 more packages                                 6.67MB for 2310 more object types
+1792868932.756522 ------------------------------------------------------------------------------------------------------------------------
+1792868932.756529 Recommendations:
+1792868932.756607  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792868932.756625  HEAP: Set max heap for improved and more predictable memory usage.
+1792868932.756639  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792868932.762044 ------------------------------------------------------------------------------------------------------------------------
+1792868932.762630                        2.9s (9.0% of total time) in 147 GCs | Peak RSS: 8.96GB | CPU load: 12.79
+1792868932.762917 ------------------------------------------------------------------------------------------------------------------------
+1792868932.762923 Build artifacts:
+1792868932.763274  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-fop-BASE-b2 (executable)
+1792868932.763291  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt.so (jdk_library)
+1792868932.763303  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_headless.so (jdk_library)
+1792868932.763316  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_xawt.so (jdk_library)
+1792868932.763332  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libfontmanager.so (jdk_library)
+1792868932.763350  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjava.so (jdk_library_shim)
+1792868932.763368  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjavajpeg.so (jdk_library)
+1792868932.763385  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjvm.so (jdk_library_shim)
+1792868932.763402  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/liblcms.so (jdk_library)
+1792868932.763431  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libmlib_image.so (jdk_library)
+1792868932.763450 ========================================================================================================================
+1792868932.763461 Finished generating 'dacapo-fop-BASE-b2' in 31.8s.

@@ -1,0 +1,18 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AR1  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## spring  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 0.9788  (mean FULL 0.9808 n=3, BASE 1.0020 n=3)  error margin 0.0380 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.8972  (mean FULL 0.8972 n=3, BASE 1.0000 n=3)  error margin 0.0490 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 0.9792  (mean FULL 0.9818 n=30 iterations, BASE 1.0027 n=30)  error margin 0.0402 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10             BASE 26471.4 sd 2.43e+03  FULL 28441.3 sd 764  [higher]
+    key StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/ BASE 1.3201e+06 sd 3.48e+04  FULL 1.2797e+06 sd 5.98e+04  [higher]
+
+## stringbuilder-to-string  starts BASE:3 FULL:3  time keys 3
+  FULL/BASE time  ratio 0.9266  (mean FULL 0.9278 n=3, BASE 1.0013 n=3)  error margin 0.0388 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.6852  (mean FULL 0.6852 n=3, BASE 1.0000 n=3)  error margin 0.0361 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 0.9265  (mean FULL 0.9279 n=30 iterations, BASE 1.0014 n=30)  error margin 0.0333 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+    key StringBuilderToString.toStringWithMixedChars 1024            BASE 315.015 sd 15.4  FULL 334.754 sd 1.55  [higher]
+    key StringBuilderToString.toStringWithMixedChars 128             BASE 2182.92 sd 104  FULL 2452.14 sd 10.1  [higher]
+    key StringBuilderToString.toStringWithMixedChars 256             BASE 1188.62 sd 58.1  FULL 1247.27 sd 45.9  [higher]
+
+PAPER30-DONE

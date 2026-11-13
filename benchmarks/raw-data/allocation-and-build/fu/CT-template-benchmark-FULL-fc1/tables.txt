@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CT-template-benchmark-FULL-fc1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+template-benchmark       BASE b1 size 35.26/37.23/16.78/16.52 | parent 18.2 s 2.47 GB | driver 18.8 s REUSED
+template-benchmark       BASE b2 size 35.26/37.23/16.78/16.52 | parent 18.1 s 2.48 GB | driver 18.8 s REUSED
+template-benchmark       BASE b3 size 35.26/37.23/16.78/16.52 | parent 17.9 s 2.46 GB | driver 18.6 s REUSED
+template-benchmark       FULL b1 size 35.39/37.38/16.96/16.52 | parent 38.0 s 2.82 GB | driver 38.7 s | OK | child aa 15817 ms gen 18.6 s obs 19 s VmHWM 4.24 GB | wait 19.0 s | SBS=42 SV=469(ACC=316 ELEM=8) LS=10(JOINER=0) | IC=6705 TC=698 MIRROR=326 EXACT=0 other=16 REUSED
+template-benchmark       FULL b2 size 35.39/37.38/16.96/16.52 | parent 37.8 s 2.87 GB | driver 38.5 s | OK | child aa 15679 ms gen 18.4 s obs 19 s VmHWM 4.45 GB | wait 18.5 s | SBS=42 SV=469(ACC=316 ELEM=8) LS=10(JOINER=0) | IC=6705 TC=698 MIRROR=326 EXACT=0 other=16 REUSED
+template-benchmark       FULL b3 size 35.39/37.38/16.96/16.52 | parent 37.7 s 2.94 GB | driver 38.4 s | OK | child aa 15727 ms gen 18.4 s obs 18 s VmHWM 4.41 GB | wait 18.5 s | SBS=42 SV=469(ACC=316 ELEM=8) LS=10(JOINER=0) | IC=6708 TC=698 MIRROR=326 EXACT=0 other=16 REUSED
+## build cost vs stock (means over builds)
+template-benchmark       FULL/BASE  parent wall 18.1 -> 37.8 s (x2.09)  Peak RSS 2.47 -> 2.88 GB (x1.16)  child VmHWM 4.37 GB  size 35.26 -> 35.39 MB (x1.004)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+template-benchmark       FULL SBS=42 SV=469 (ACC=316 ELEM=8) LS=10 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: template-benchmark FULL: admit counts differ across builds
+TABLES-DONE

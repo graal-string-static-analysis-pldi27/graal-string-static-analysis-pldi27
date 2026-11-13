@@ -1,0 +1,133 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuilderToString.toStringWithMixedChars
+# Parameters: (MIXED_SIZE = 128)
+
+# Run progress: 0.00% complete, ETA 00:00:45
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 2321.526 ops/ms
+# Warmup Iteration   2: 2308.022 ops/ms
+# Warmup Iteration   3: 2275.841 ops/ms
+# Warmup Iteration   4: 2310.811 ops/ms
+# Warmup Iteration   5: 2309.985 ops/ms
+Iteration   1: 2308.977 ops/ms
+Iteration   2: 2313.122 ops/ms
+Iteration   3: 2310.039 ops/ms
+Iteration   4: 2317.811 ops/ms
+Iteration   5: 2289.603 ops/ms
+Iteration   6: 2310.580 ops/ms
+Iteration   7: 2314.254 ops/ms
+Iteration   8: 2310.380 ops/ms
+Iteration   9: 2279.618 ops/ms
+Iteration  10: 2298.833 ops/ms
+
+Result "org.test.StringBuilderToString.toStringWithMixedChars":
+  2305.322 ±(99.9%) 18.415 ops/ms [Average]
+  (min, avg, max) = (2279.618, 2305.322, 2317.811), stdev = 12.181
+  CI (99.9%): [2286.906, 2323.737] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuilderToString.toStringWithMixedChars
+# Parameters: (MIXED_SIZE = 256)
+
+# Run progress: 33.33% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1224.353 ops/ms
+# Warmup Iteration   2: 1226.834 ops/ms
+# Warmup Iteration   3: 1223.270 ops/ms
+# Warmup Iteration   4: 1220.300 ops/ms
+# Warmup Iteration   5: 1220.309 ops/ms
+Iteration   1: 1227.675 ops/ms
+Iteration   2: 1225.706 ops/ms
+Iteration   3: 1240.446 ops/ms
+Iteration   4: 1244.295 ops/ms
+Iteration   5: 1244.960 ops/ms
+Iteration   6: 1243.864 ops/ms
+Iteration   7: 1180.345 ops/ms
+Iteration   8: 1144.751 ops/ms
+Iteration   9: 1144.420 ops/ms
+Iteration  10: 1143.327 ops/ms
+
+Result "org.test.StringBuilderToString.toStringWithMixedChars":
+  1203.979 ±(99.9%) 68.640 ops/ms [Average]
+  (min, avg, max) = (1143.327, 1203.979, 1244.960), stdev = 45.401
+  CI (99.9%): [1135.338, 1272.619] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.test.StringBuilderToString.toStringWithMixedChars
+# Parameters: (MIXED_SIZE = 1024)
+
+# Run progress: 66.67% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 298.330 ops/ms
+# Warmup Iteration   2: 298.437 ops/ms
+# Warmup Iteration   3: 297.514 ops/ms
+# Warmup Iteration   4: 297.531 ops/ms
+# Warmup Iteration   5: 297.528 ops/ms
+Iteration   1: 297.724 ops/ms
+Iteration   2: 297.305 ops/ms
+Iteration   3: 311.296 ops/ms
+Iteration   4: 329.221 ops/ms
+Iteration   5: 328.056 ops/ms
+Iteration   6: 326.259 ops/ms
+Iteration   7: 325.369 ops/ms
+Iteration   8: 326.686 ops/ms
+Iteration   9: 326.319 ops/ms
+Iteration  10: 326.792 ops/ms
+
+Result "org.test.StringBuilderToString.toStringWithMixedChars":
+  319.503 ±(99.9%) 19.079 ops/ms [Average]
+  (min, avg, max) = (297.305, 319.503, 329.221), stdev = 12.619
+  CI (99.9%): [300.424, 338.581] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:45
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                     (MIXED_SIZE)   Mode  Cnt     Score    Error   Units
+StringBuilderToString.toStringWithMixedChars           128  thrpt   10  2305.322 ± 18.415  ops/ms
+StringBuilderToString.toStringWithMixedChars           256  thrpt   10  1203.979 ± 68.640  ops/ms
+StringBuilderToString.toStringWithMixedChars          1024  thrpt   10   319.503 ± 19.079  ops/ms

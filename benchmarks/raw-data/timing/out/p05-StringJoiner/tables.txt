@@ -1,0 +1,33 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/p05-StringJoiner  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+StringJoiner             BASE b1 size 29.17/30.69/13.12/14.48 | parent 15.1 s 2.32 GB | driver 15.8 s REUSED
+StringJoiner             FULL b1 size 29.76/31.28/13.19/15.01 | parent 29.8 s 2.53 GB | driver 30.5 s | OK | child aa 11363 ms gen 13.8 s obs 13 s VmHWM 3.26 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             BASE_A32 b1 size 28.90/30.43/12.87/14.48 | parent 15.2 s 2.32 GB | driver 15.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+StringJoiner             FULL_A32 b1 size 29.49/31.02/12.94/15.01 | parent 29.7 s 2.48 GB | driver 30.3 s | OK | child aa 11137 ms gen 13.5 s obs 14 s VmHWM 3.29 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             BASE_A128 b1 size 29.76/31.28/13.71/14.48 | parent 14.9 s 2.33 GB | driver 15.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+StringJoiner             FULL_A128 b1 size 30.35/31.87/13.78/15.01 | parent 30.0 s 2.56 GB | driver 30.6 s | OK | child aa 11031 ms gen 13.5 s obs 13 s VmHWM 3.31 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+StringJoiner             BASE_A256 b1 size 30.94/32.46/14.98/14.42 | parent 14.9 s 2.32 GB | driver 15.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+StringJoiner             FULL_A256 b1 size 31.59/33.12/15.06/15.01 | parent 29.6 s 2.55 GB | driver 30.2 s | OK | child aa 10895 ms gen 13.5 s obs 14 s VmHWM 3.33 GB | wait 13.5 s | SBS=2 SV=118(ACC=103 ELEM=5) LS=2(JOINER=2) | IC=5661 TC=547 MIRROR=52 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+StringJoiner             FULL/BASE  parent wall 15.1 -> 29.8 s (x1.97)  Peak RSS 2.32 -> 2.53 GB (x1.09)  child VmHWM 3.26 GB  size 29.17 -> 29.76 MB (x1.020)  status OK
+StringJoiner             BASE_A32/BASE  parent wall 15.1 -> 15.2 s (x1.01)  Peak RSS 2.32 -> 2.32 GB (x1.00)  child VmHWM ? GB  size 29.17 -> 28.90 MB (x0.991)  status NO-PROFILE
+StringJoiner             FULL_A32/BASE  parent wall 15.1 -> 29.7 s (x1.97)  Peak RSS 2.32 -> 2.48 GB (x1.07)  child VmHWM 3.29 GB  size 29.17 -> 29.49 MB (x1.011)  status OK
+StringJoiner             BASE_A128/BASE  parent wall 15.1 -> 14.9 s (x0.99)  Peak RSS 2.32 -> 2.33 GB (x1.00)  child VmHWM ? GB  size 29.17 -> 29.76 MB (x1.020)  status NO-PROFILE
+StringJoiner             FULL_A128/BASE  parent wall 15.1 -> 30.0 s (x1.99)  Peak RSS 2.32 -> 2.56 GB (x1.10)  child VmHWM 3.31 GB  size 29.17 -> 30.35 MB (x1.040)  status OK
+StringJoiner             BASE_A256/BASE  parent wall 15.1 -> 14.9 s (x0.99)  Peak RSS 2.32 -> 2.32 GB (x1.00)  child VmHWM ? GB  size 29.17 -> 30.94 MB (x1.061)  status NO-PROFILE
+StringJoiner             FULL_A256/BASE  parent wall 15.1 -> 29.6 s (x1.96)  Peak RSS 2.32 -> 2.55 GB (x1.10)  child VmHWM 3.33 GB  size 29.17 -> 31.59 MB (x1.083)  status OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+StringJoiner             FULL SBS=2 SV=118 (ACC=103 ELEM=5) LS=2 (JOINER=2)  OK
+StringJoiner             BASE_A32 no profile  NO-PROFILE
+StringJoiner             FULL_A32 SBS=2 SV=118 (ACC=103 ELEM=5) LS=2 (JOINER=2)  OK
+StringJoiner             BASE_A128 no profile  NO-PROFILE
+StringJoiner             FULL_A128 SBS=2 SV=118 (ACC=103 ELEM=5) LS=2 (JOINER=2)  OK
+StringJoiner             BASE_A256 no profile  NO-PROFILE
+StringJoiner             FULL_A256 SBS=2 SV=118 (ACC=103 ELEM=5) LS=2 (JOINER=2)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+StringJoiner             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 15.9 s
+StringJoiner             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 15.5 s
+StringJoiner             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 15.5 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

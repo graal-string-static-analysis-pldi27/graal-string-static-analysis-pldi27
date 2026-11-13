@@ -1,0 +1,43 @@
+# AL3  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+string-concat            FULL   |   1.285   1.066   1.066 1.032[1.029,1.036]        0.948 | 1.066/1.066/1.066 | 37/37 | 14 | 13
+
+## AL3 string-concat FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+StringConcat.concat123String intValue=4711                     0.01   0.01   1.01     640.2     392.4  0.613    0.2    0.0
+StringConcat.concat13String intValue=4711                      0.21   0.65   8.15      80.0     176.1  2.201    0.3    1.6
+StringConcat.concat13StringConst intValue=4711                 0.20   0.71   9.48    1180.5     168.2  0.142    4.3    1.7
+StringConcat.concat23String intValue=4711                      0.12   0.40   9.03      96.0     256.1  2.668    0.2    1.4
+StringConcat.concat23StringConst intValue=4711                 0.11   0.42   9.72    1193.0     248.3  0.208    2.5    1.5
+StringConcat.concat30Mix intValue=4711                         0.09   0.16   4.84     336.0     632.1  1.881    0.5    1.4
+StringConcat.concat3String intValue=4711                       0.89   4.33  13.01      56.0      56.0  1.000    0.9    3.4
+StringConcat.concat4String intValue=4711                       0.70   3.76  14.31      56.0      64.0  1.143    0.7    3.4
+StringConcat.concat6String intValue=4711                       0.47   1.45   8.19      56.0     104.1  1.858    0.5    2.1
+StringConcat.concatConst2String intValue=4711                  1.22   4.38   9.63      56.0      56.0  1.000    1.2    3.5
+StringConcat.concatConst4String intValue=4711                  0.69   1.63   6.31      64.0      96.0  1.501    0.8    2.2
+StringConcat.concatConst6Object intValue=4711                  0.38   0.54   3.74     400.2     448.2  1.120    2.8    3.4
+StringConcat.concatConst6String intValue=4711                  0.45   1.30   7.77      64.0     112.1  1.751    0.5    2.1
+StringConcat.concatConstBool intValue=4711                     3.06   5.13   4.48      64.0      48.0  0.750    3.6    3.5
+StringConcat.concatConstBoolByte intValue=4711                 1.85   2.19   3.16      64.0     112.1  1.750    2.2    3.5
+StringConcat.concatConstBoolString intValue=4711               1.55   4.38   7.58      64.0      56.0  0.875    1.8    3.5
+StringConcat.concatConstBoolean intValue=4711                  2.90   4.22   3.90      64.0      48.0  0.750    3.4    2.9
+StringConcat.concatConstBooleanString intValue=4711            1.25   4.09   8.79      64.0      56.0  0.875    1.5    3.3
+StringConcat.concatConstFloat intValue=4711                    0.86   0.51   1.59     160.0     144.1  0.900    2.5    1.0
+StringConcat.concatConstFloatString intValue=4711              0.68   0.51   2.01     160.1     152.1  0.950    2.0    1.1
+StringConcat.concatConstInt intValue=4711                      2.56   2.16   2.25      64.0     104.0  1.625    3.0    3.2
+StringConcat.concatConstIntConstInt intValue=4711              1.64   1.33   2.18      72.0     176.1  2.444    2.1    3.3
+StringConcat.concatConstIntString intValue=4711                1.37   2.13   4.16      64.0     112.1  1.750    1.6    3.4
+StringConcat.concatConstInteger intValue=4711                  2.39   2.40   2.68     112.0     104.0  0.928    4.9    3.5
+StringConcat.concatConstIntegerString intValue=4711            1.14   2.46   5.79     112.0     112.1  1.000    2.3    3.9
+StringConcat.concatConstString intValue=4711                   2.84   4.82   4.53      56.0      48.0  0.857    2.9    3.3
+StringConcat.concatConstStringConstInt intValue=4711           1.36   1.96   3.87      72.0     120.1  1.667    1.8    3.3
+StringConcat.concatEmptyConstInt intValue=4711                 9.12   3.32   0.98      56.0      56.0  1.000    9.3    2.6
+StringConcat.concatEmptyConstString intValue=4711             20.64   8.12   1.05      32.0      32.0  1.000   12.1    3.7
+StringConcat.concatEmptyLeft intValue=4711                    16.84   6.61   1.05      32.0      32.0  1.000    9.8    3.0
+StringConcat.concatEmptyRight intValue=4711                   15.70   6.36   1.08      32.0      32.0  1.000    9.2    2.9
+StringConcat.concatMethodConstString intValue=4711             2.83   4.72   4.46      56.0      48.0  0.857    2.9    3.2
+StringConcat.concatMix4String intValue=4711                    0.14   0.06   1.23     424.1     352.1  0.830    1.1    0.3
+StringConcat.concatStringBoolString intValue=4711              1.04   4.21  10.86      56.0      56.0  1.000    1.1    3.3
+StringConcat.concatStringBooleanString intValue=4711           0.89   4.17  12.48      56.0      56.0  1.000    0.9    3.3
+StringConcat.concatStringIntString intValue=4711               0.98   2.08   5.70      56.0     112.0  2.001    1.0    3.3
+StringConcat.concatStringIntegerString intValue=4711           0.84   2.34   7.42     112.0     112.1  1.000    1.7    3.7
+

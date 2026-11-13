@@ -1,0 +1,10 @@
+KIND	metric
+ARMS	large medium
+NSTART	2
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/rows/jsoup.sh
+DESC	jsoup HtmlToPlainText large+medium (hunt/ab candspec)
+CPUS	0-15
+ITER	large	wall/rep ms | lower | err | 2.5e-9 | 1 | ^HUNT-ITER \d+ ns=(\d+)
+ITER	medium	wall/rep ms | lower | err | 5e-11 | 1 | ^HUNT-ITER \d+ ns=(\d+)
+UW	3
+UM	5

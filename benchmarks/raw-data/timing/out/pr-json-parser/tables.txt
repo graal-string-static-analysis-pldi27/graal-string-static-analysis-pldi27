@@ -1,0 +1,76 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-json-parser  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+json-parser              BASE b1 size 13.96/14.84/5.35/7.67 | parent 15.6 s 2.09 GB | driver 16.4 s REUSED
+json-parser              BASE b2 size 13.96/14.84/5.35/7.67 | parent 14.3 s 2.05 GB | driver 14.9 s REUSED
+json-parser              SBS  b1 size 13.96/14.84/5.35/7.67 | parent 43.8 s 2.25 GB | driver 45.1 s | OK | child aa 19242 ms gen 22.9 s obs 22 s VmHWM 2.68 GB | wait 23.5 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS  b2 size 13.96/14.84/5.35/7.67 | parent 39.1 s 2.27 GB | driver 40.3 s | OK | child aa 16067 ms gen 21.3 s obs 21 s VmHWM 2.71 GB | wait 22.0 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SV   b1 size 13.96/14.84/5.36/7.67 | parent 47.2 s 2.23 GB | driver 48.1 s | OK | child aa 16445 ms gen 21.3 s obs 21 s VmHWM 2.64 GB | wait 22.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV   b2 size 13.96/14.84/5.36/7.67 | parent 39.3 s 2.24 GB | driver 40.8 s | OK | child aa 9116 ms gen 13.9 s obs 14 s VmHWM 2.70 GB | wait 14.5 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              LS   b1 size 13.96/14.84/5.38/7.67 | parent 40.4 s 2.23 GB | driver 41.8 s | OK | child aa 11629 ms gen 16.3 s obs 16 s VmHWM 3.19 GB | wait 17.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS   b2 size 13.96/14.84/5.38/7.67 | parent 49.1 s 2.23 GB | driver 50.3 s | OK | child aa 18818 ms gen 24.1 s obs 23 s VmHWM 3.32 GB | wait 24.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              BASE_A32 b1 size 13.83/14.71/5.23/7.67 | parent 13.6 s 2.11 GB | driver 14.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A32 b2 size 13.83/14.71/5.23/7.67 | parent 13.3 s 2.06 GB | driver 14.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              SBS_A32 b1 size 13.83/14.71/5.23/7.67 | parent 36.9 s 2.22 GB | driver 37.8 s | OK | child aa 17521 ms gen 21.3 s obs 22 s VmHWM 2.64 GB | wait 21.6 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS_A32 b2 size 13.83/14.71/5.23/7.67 | parent 38.5 s 2.23 GB | driver 39.3 s | OK | child aa 14901 ms gen 19.0 s obs 18 s VmHWM 2.68 GB | wait 19.6 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SV_A32 b1 size 13.83/14.71/5.24/7.67 | parent 34.2 s 2.21 GB | driver 35.1 s | OK | child aa 11086 ms gen 14.8 s obs 13 s VmHWM 2.62 GB | wait 15.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV_A32 b2 size 13.83/14.71/5.24/7.67 | parent 43.1 s 2.24 GB | driver 44.4 s | OK | child aa 14167 ms gen 18.6 s obs 18 s VmHWM 2.69 GB | wait 19.5 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              LS_A32 b1 size 13.83/14.71/5.25/7.67 | parent 40.5 s 2.26 GB | driver 42.0 s | OK | child aa 11775 ms gen 17.6 s obs 17 s VmHWM 3.49 GB | wait 18.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS_A32 b2 size 13.83/14.71/5.25/7.67 | parent 36.0 s 2.25 GB | driver 37.2 s | OK | child aa 11908 ms gen 15.6 s obs 15 s VmHWM 3.21 GB | wait 16.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              BASE_A128 b1 size 14.22/15.10/5.66/7.67 | parent 13.6 s 2.09 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A128 b2 size 14.22/15.10/5.66/7.67 | parent 13.6 s 2.05 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              SBS_A128 b1 size 14.22/15.10/5.66/7.67 | parent 44.7 s 2.23 GB | driver 45.7 s | OK | child aa 15281 ms gen 19.1 s obs 19 s VmHWM 2.63 GB | wait 19.6 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS_A128 b2 size 14.22/15.10/5.66/7.67 | parent 38.1 s 2.23 GB | driver 38.9 s | OK | child aa 15725 ms gen 20.5 s obs 19 s VmHWM 2.65 GB | wait 21.0 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SV_A128 b1 size 14.22/15.11/5.67/7.67 | parent 45.1 s 2.23 GB | driver 46.3 s | OK | child aa 17202 ms gen 23.6 s obs 24 s VmHWM 2.71 GB | wait 24.6 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV_A128 b2 size 14.22/15.11/5.67/7.67 | parent 42.9 s 2.26 GB | driver 43.7 s | OK | child aa 15487 ms gen 20.5 s obs 20 s VmHWM 2.74 GB | wait 21.1 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              LS_A128 b1 size 14.29/15.17/5.68/7.67 | parent 46.6 s 2.22 GB | driver 47.5 s | OK | child aa 14214 ms gen 20.1 s obs 20 s VmHWM 3.33 GB | wait 21.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2883 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS_A128 b2 size 14.29/15.17/5.68/7.67 | parent 44.9 s 2.24 GB | driver 45.7 s | OK | child aa 18851 ms gen 22.7 s obs 22 s VmHWM 3.30 GB | wait 23.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              BASE_A256 b1 size 14.81/15.69/6.31/7.60 | parent 13.7 s 2.05 GB | driver 14.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              BASE_A256 b2 size 14.81/15.69/6.31/7.60 | parent 17.0 s 2.05 GB | driver 17.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+json-parser              SBS_A256 b1 size 14.81/15.69/6.31/7.60 | parent 39.9 s 2.22 GB | driver 40.9 s | OK | child aa 15470 ms gen 19.2 s obs 19 s VmHWM 2.68 GB | wait 19.6 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS_A256 b2 size 14.81/15.69/6.31/7.60 | parent 43.7 s 2.25 GB | driver 45.2 s | OK | child aa 18000 ms gen 22.6 s obs 23 s VmHWM 2.69 GB | wait 23.1 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SV_A256 b1 size 14.88/15.76/6.32/7.60 | parent 40.2 s 2.24 GB | driver 41.4 s | OK | child aa 14706 ms gen 19.7 s obs 21 s VmHWM 2.69 GB | wait 20.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV_A256 b2 size 14.88/15.76/6.32/7.60 | parent 43.0 s 2.22 GB | driver 44.3 s | OK | child aa 17449 ms gen 21.7 s obs 21 s VmHWM 2.63 GB | wait 22.5 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              LS_A256 b1 size 14.88/15.76/6.34/7.60 | parent 43.3 s 2.22 GB | driver 44.6 s | OK | child aa 14742 ms gen 18.9 s obs 18 s VmHWM 3.40 GB | wait 19.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS_A256 b2 size 14.88/15.76/6.34/7.60 | parent 39.6 s 2.22 GB | driver 40.7 s | OK | child aa 16055 ms gen 20.8 s obs 20 s VmHWM 3.30 GB | wait 21.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+json-parser              SBS /BASE  parent wall 14.9 -> 41.5 s (x2.77)  Peak RSS 2.07 -> 2.26 GB (x1.09)  child VmHWM 2.69 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK
+json-parser              SV  /BASE  parent wall 14.9 -> 43.2 s (x2.89)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 2.67 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK
+json-parser              LS  /BASE  parent wall 14.9 -> 44.8 s (x2.99)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 3.26 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK
+json-parser              BASE_A32/BASE  parent wall 14.9 -> 13.4 s (x0.90)  Peak RSS 2.07 -> 2.08 GB (x1.01)  child VmHWM ? GB  size 13.96 -> 13.83 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+json-parser              SBS_A32/BASE  parent wall 14.9 -> 37.7 s (x2.52)  Peak RSS 2.07 -> 2.23 GB (x1.07)  child VmHWM 2.66 GB  size 13.96 -> 13.83 MB (x0.991)  status OK,OK
+json-parser              SV_A32/BASE  parent wall 14.9 -> 38.7 s (x2.59)  Peak RSS 2.07 -> 2.23 GB (x1.07)  child VmHWM 2.66 GB  size 13.96 -> 13.83 MB (x0.991)  status OK,OK
+json-parser              LS_A32/BASE  parent wall 14.9 -> 38.2 s (x2.56)  Peak RSS 2.07 -> 2.25 GB (x1.09)  child VmHWM 3.35 GB  size 13.96 -> 13.83 MB (x0.991)  status OK,OK
+json-parser              BASE_A128/BASE  parent wall 14.9 -> 13.6 s (x0.91)  Peak RSS 2.07 -> 2.07 GB (x1.00)  child VmHWM ? GB  size 13.96 -> 14.22 MB (x1.019)  status NO-PROFILE,NO-PROFILE
+json-parser              SBS_A128/BASE  parent wall 14.9 -> 41.4 s (x2.77)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 2.64 GB  size 13.96 -> 14.22 MB (x1.019)  status OK,OK
+json-parser              SV_A128/BASE  parent wall 14.9 -> 44.0 s (x2.94)  Peak RSS 2.07 -> 2.25 GB (x1.08)  child VmHWM 2.72 GB  size 13.96 -> 14.22 MB (x1.019)  status OK,OK
+json-parser              LS_A128/BASE  parent wall 14.9 -> 45.8 s (x3.06)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 3.31 GB  size 13.96 -> 14.29 MB (x1.023)  status OK,OK
+json-parser              BASE_A256/BASE  parent wall 14.9 -> 15.3 s (x1.03)  Peak RSS 2.07 -> 2.05 GB (x0.99)  child VmHWM ? GB  size 13.96 -> 14.81 MB (x1.061)  status NO-PROFILE,NO-PROFILE
+json-parser              SBS_A256/BASE  parent wall 14.9 -> 41.8 s (x2.80)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 2.68 GB  size 13.96 -> 14.81 MB (x1.061)  status OK,OK
+json-parser              SV_A256/BASE  parent wall 14.9 -> 41.6 s (x2.78)  Peak RSS 2.07 -> 2.23 GB (x1.08)  child VmHWM 2.66 GB  size 13.96 -> 14.88 MB (x1.066)  status OK,OK
+json-parser              LS_A256/BASE  parent wall 14.9 -> 41.5 s (x2.77)  Peak RSS 2.07 -> 2.22 GB (x1.07)  child VmHWM 3.35 GB  size 13.96 -> 14.88 MB (x1.066)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+json-parser              SBS  SBS=65 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              SV   SBS=0 SV=2 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A32 no profile  NO-PROFILE
+json-parser              SBS_A32 SBS=65 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              SV_A32 SBS=0 SV=2 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A128 no profile  NO-PROFILE
+json-parser              SBS_A128 SBS=65 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              SV_A128 SBS=0 SV=2 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+json-parser              BASE_A256 no profile  NO-PROFILE
+json-parser              SBS_A256 SBS=65 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              SV_A256 SBS=0 SV=2 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+json-parser              BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.3 s
+json-parser              BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.2 s
+json-parser              BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 14.4 s
+json-parser              BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.9 s
+## determinism: json-parser LS_A128: admit counts differ across builds
+TABLES-DONE

@@ -1,0 +1,25 @@
+# C99 campaign results  SLOT=BL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/BL1-string-concat-startup-SBS-sf1  CFGS=BASE SBS  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## string-concat-startup  [jmh] OpenJDK string-concat-startup (misc-benchmarks)  builds BASE:3 SBS:3  starts parsed=12
+  GEOMEAN SBS/BASE  time 0.996 [0.984,1.008] n.s. (16 keys)  alloc 1.005 [0.993,1.018] n.s. (1 keys)
+  StringConcatStartup.MixedLarge.run N/A                                 SBS 1.010 [0.998,1.023] n.s.  BIMODAL(BASE)
+  StringConcatStartup.MixedSmall.run N/A                                 SBS 0.980 [0.929,1.028] n.s.  BIMODAL(BASE,SBS)
+  StringConcatStartup.StringLarge.run N/A                                SBS 0.995 [0.980,1.009] n.s.  BIMODAL(BASE)
+  StringConcatStartup.StringSingle.constBool 4711                        SBS 1.000 [0.980,1.019] n.s.  BIMODAL(BASE)
+  StringConcatStartup.StringSingle.constBoolString 4711                  SBS 0.996 [0.979,1.012] n.s.
+  StringConcatStartup.StringSingle.constBoolean 4711                     SBS 0.992 [0.978,1.005] n.s.  BIMODAL(SBS)
+  StringConcatStartup.StringSingle.constBooleanString 4711               SBS 0.994 [0.976,1.013] n.s.  BIMODAL(BASE)
+  StringConcatStartup.StringSingle.constFloat 4711                       SBS 1.002 [0.995,1.009] n.s.  BIMODAL(SBS)
+  StringConcatStartup.StringSingle.constFloatString 4711                 SBS 1.004 [0.990,1.020] n.s.  BIMODAL(SBS)
+  StringConcatStartup.StringSingle.constInt 4711                         SBS 0.993 [0.970,1.017] n.s.
+  StringConcatStartup.StringSingle.constIntString 4711                   SBS 0.997 [0.978,1.015] n.s.  BIMODAL(SBS)
+  StringConcatStartup.StringSingle.constInteger 4711                     SBS 0.986 [0.960,1.016] n.s.
+  StringConcatStartup.StringSingle.constIntegerString 4711               SBS 0.996 [0.984,1.009] n.s.
+  StringConcatStartup.StringSingle.constString 4711                      SBS 1.001 [0.971,1.031] n.s.  BIMODAL(BASE)
+  StringConcatStartup.StringThree.stringIntString 4711                   SBS 0.994 [0.989,0.999] FASTER
+  StringConcatStartup.StringThree.stringIntegerString 4711               SBS 0.997 [0.984,1.009] n.s.  BIMODAL(BASE)
+  ~alloc MB                                                              SBS 1.005 [0.993,1.018] n.s.
+  ~rss MB                                                                SBS 1.002 [0.997,1.008] n.s.  BIMODAL(BASE)
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

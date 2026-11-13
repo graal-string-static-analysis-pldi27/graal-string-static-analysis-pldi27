@@ -1,0 +1,11 @@
+# C99 campaign results  SLOT=XL12  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/XL12-jackson-yaml-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jackson-yaml  [jmh] jackson-benchmarks YAMLStd{Read,Write}Vanilla MediaItem (jackson-dataformat-yaml 2.x)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 1.007 [0.993,1.021] n.s. (2 keys)  alloc 1.000 [0.988,1.014] n.s. (1 keys)
+  YAMLStdReadVanilla.readPojoMediaItem                                   FULL 0.989 [0.970,1.004] n.s.  BIMODAL(BASE)
+  YAMLStdWriteVanilla.writePojoMediaItem                                 FULL 1.024 [1.009,1.046] SLOWER  BIMODAL(FULL)
+  ~alloc MB                                                              FULL 1.000 [0.988,1.014] n.s.  BIMODAL(BASE,FULL)
+  ~rss MB                                                                FULL 1.018 [1.002,1.033] MORE
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

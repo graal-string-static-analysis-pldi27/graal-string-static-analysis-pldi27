@@ -1,0 +1,1 @@
+Tinylog2Benchmark.output true CLASS_OR_CATEGORY_ONLY

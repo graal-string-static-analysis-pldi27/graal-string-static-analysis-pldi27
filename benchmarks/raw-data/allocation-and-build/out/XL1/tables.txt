@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+jte                      BASE b1 size 22.15/23.44/9.66/11.14 | parent 13.0 s 2.34 GB | driver 13.6 s REUSED
+jte                      BASE b2 size 22.15/23.44/9.66/11.14 | parent 13.3 s 2.29 GB | driver 13.8 s REUSED
+jte                      BASE b3 size 22.15/23.44/9.66/11.14 | parent 13.4 s 2.30 GB | driver 14.0 s REUSED
+jte                      FULL b1 size 22.74/24.03/9.73/11.67 | parent 27.2 s 2.41 GB | driver 27.8 s | OK | child aa 10265 ms gen 12.6 s obs 12 s VmHWM 4.00 GB | wait 13.0 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+jte                      FULL b2 size 22.74/24.03/9.73/11.67 | parent 27.1 s 2.36 GB | driver 27.7 s | OK | child aa 10471 ms gen 12.8 s obs 12 s VmHWM 4.08 GB | wait 13.0 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+jte                      FULL b3 size 22.74/24.03/9.73/11.67 | parent 27.1 s 2.33 GB | driver 27.6 s | OK | child aa 10513 ms gen 12.9 s obs 12 s VmHWM 4.06 GB | wait 13.0 s | SBS=2 SV=120(ACC=103 ELEM=5) LS=2(JOINER=0) | IC=3853 TC=371 MIRROR=52 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+jte                      FULL/BASE  parent wall 13.2 -> 27.1 s (x2.05)  Peak RSS 2.31 -> 2.37 GB (x1.02)  child VmHWM 4.05 GB  size 22.15 -> 22.74 MB (x1.027)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+jte                      FULL SBS=2 SV=120 (ACC=103 ELEM=5) LS=2 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

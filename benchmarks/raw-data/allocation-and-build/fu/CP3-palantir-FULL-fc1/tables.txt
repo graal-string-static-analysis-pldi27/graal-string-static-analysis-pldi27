@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CP3-palantir-FULL-fc1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+palantir                 BASE b1 size 66.39/68.95/19.12/44.56 | parent 25.2 s 3.29 GB | driver 25.9 s REUSED
+palantir                 BASE b2 size 66.39/68.95/19.12/44.56 | parent 26.2 s 3.27 GB | driver 26.8 s REUSED
+palantir                 BASE b3 size 66.39/68.95/19.12/44.56 | parent 25.7 s 3.31 GB | driver 26.3 s REUSED
+palantir                 FULL b1 size 66.46/69.02/19.23/44.56 | parent 67.0 s 4.10 GB | driver 68.5 s | OK | child aa 36921 ms gen 42.3 s obs 42 s VmHWM 11.92 GB | wait 39.5 s | SBS=0 SV=69(ACC=28 ELEM=1) LS=4(JOINER=1) | IC=5551 TC=506 MIRROR=38 EXACT=1 other=3 REUSED
+palantir                 FULL b2 size 66.46/69.02/19.23/44.56 | parent 68.0 s 4.04 GB | driver 69.1 s | OK | child aa 36860 ms gen 42.5 s obs 43 s VmHWM 11.89 GB | wait 38.5 s | SBS=0 SV=69(ACC=28 ELEM=1) LS=4(JOINER=1) | IC=5550 TC=506 MIRROR=38 EXACT=1 other=3 REUSED
+palantir                 FULL b3 size 66.46/69.02/19.23/44.56 | parent 68.0 s 4.03 GB | driver 69.3 s | OK | child aa 37691 ms gen 43.2 s obs 43 s VmHWM 11.92 GB | wait 40.5 s | SBS=0 SV=69(ACC=28 ELEM=1) LS=4(JOINER=1) | IC=5551 TC=506 MIRROR=38 EXACT=1 other=3 REUSED
+## build cost vs stock (means over builds)
+palantir                 FULL/BASE  parent wall 25.7 -> 67.7 s (x2.63)  Peak RSS 3.29 -> 4.06 GB (x1.23)  child VmHWM 11.91 GB  size 66.39 -> 66.46 MB (x1.001)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+palantir                 FULL SBS=0 SV=69 (ACC=28 ELEM=1) LS=4 (JOINER=1)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: palantir FULL: admit counts differ across builds
+TABLES-DONE

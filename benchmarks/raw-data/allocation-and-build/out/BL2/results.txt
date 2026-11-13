@@ -1,0 +1,43 @@
+# C99 campaign results  SLOT=BL2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL2  CFGS=BASE SBS SV LS  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## stringbuilders  [jmh] OpenJDK StringBuilders (misc-benchmarks jar, 17 rows; ab-cmb recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=12
+  GEOMEAN SBS/BASE  time 1.012 [1.002,1.021] SLOWER (17 keys)  alloc 0.990 [0.980,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.771 [0.764,0.777] FASTER (17 keys)  alloc 1.331 [1.312,1.347] MORE (1 keys)
+  GEOMEAN LS/BASE  time 0.995 [0.987,1.003] n.s. (17 keys)  alloc 1.004 [0.996,1.012] n.s. (1 keys)
+  StringBuilders.appendLoop16                                            SBS 1.007 [0.985,1.030] n.s. | SV 0.996 [0.973,1.019] n.s. | LS 0.980 [0.967,1.000] FASTER
+  StringBuilders.appendLoop8                                             SBS 1.004 [0.984,1.020] n.s. | SV 0.990 [0.971,1.002] n.s. | LS 0.990 [0.970,1.003] n.s.
+  StringBuilders.concat16p8p7                                            SBS 1.008 [0.992,1.025] n.s. | SV 0.789 [0.777,0.797] FASTER | LS 1.002 [0.987,1.013] n.s.
+  StringBuilders.concat22p40p31                                          SBS 1.023 [0.995,1.047] n.s. | SV 0.838 [0.824,0.852] FASTER | LS 0.995 [0.984,1.011] n.s.
+  StringBuilders.concat3p4p2                                             SBS 1.034 [1.004,1.058] SLOWER | SV 0.799 [0.787,0.808] FASTER | LS 0.991 [0.968,1.012] n.s.
+  StringBuilders.concat3p9p8                                             SBS 1.012 [0.997,1.025] n.s. | SV 0.823 [0.817,0.829] FASTER | LS 1.003 [0.997,1.007] n.s.
+  StringBuilders.toStringCharWithBool8                                   SBS 1.031 [1.007,1.056] SLOWER | SV 0.850 [0.833,0.865] FASTER | LS 1.011 [0.982,1.042] n.s.
+  StringBuilders.toStringCharWithChar1                                   SBS 1.015 [1.000,1.035] SLOWER | SV 0.444 [0.432,0.463] FASTER | LS 1.012 [1.005,1.019] SLOWER
+  StringBuilders.toStringCharWithChar16                                  SBS 1.010 [0.998,1.024] n.s. | SV 0.775 [0.764,0.788] FASTER | LS 1.000 [0.994,1.007] n.s.
+  StringBuilders.toStringCharWithChar2                                   SBS 0.994 [0.969,1.019] n.s. | SV 0.464 [0.454,0.475] FASTER | LS 0.981 [0.960,1.003] n.s.
+  StringBuilders.toStringCharWithChar4                                   SBS 1.005 [0.987,1.024] n.s. | SV 0.566 [0.553,0.579] FASTER | LS 0.987 [0.970,1.004] n.s.
+  StringBuilders.toStringCharWithChar8                                   SBS 1.002 [0.989,1.017] n.s. | SV 0.668 [0.659,0.680] FASTER | LS 0.995 [0.987,1.004] n.s.
+  StringBuilders.toStringCharWithFloat8                                  SBS 0.993 [0.983,0.999] FASTER | SV 0.958 [0.946,0.971] FASTER | LS 0.996 [0.986,1.002] n.s.
+  StringBuilders.toStringCharWithInt8                                    SBS 0.998 [0.986,1.011] n.s. | SV 0.856 [0.841,0.870] FASTER | LS 0.984 [0.973,0.994] FASTER
+  StringBuilders.toStringCharWithMixed8                                  SBS 1.035 [1.007,1.078] SLOWER | SV 0.864 [0.854,0.875] FASTER | LS 0.997 [0.981,1.015] n.s.
+  StringBuilders.toStringCharWithString16                                SBS 1.005 [0.985,1.023] n.s. | SV 0.901 [0.878,0.923] FASTER | LS 1.012 [0.978,1.040] n.s.
+  StringBuilders.toStringCharWithString8                                 SBS 1.025 [0.997,1.056] n.s. | SV 0.850 [0.837,0.862] FASTER | LS 0.982 [0.957,1.013] n.s.
+  ~alloc MB                                                              SBS 0.990 [0.980,1.000] n.s. | SV 1.331 [1.312,1.347] MORE | LS 1.004 [0.996,1.012] n.s.
+  ~rss MB                                                                SBS 1.000 [0.995,1.005] n.s. | SV 0.999 [0.991,1.006] n.s. | LS 1.000 [0.993,1.007] n.s.
+
+## StringSubstring  [jmh] OpenJDK test/micro StringSubstring (3 rows; former jdk-micro-c99 image)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=12
+  GEOMEAN SBS/BASE  time 0.982 [0.960,1.004] n.s. (3 keys)  alloc 1.011 [0.993,1.029] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.315 [0.308,0.322] FASTER (3 keys)  alloc 2.478 [2.430,2.521] MORE (1 keys)
+  GEOMEAN LS/BASE  time 0.986 [0.967,1.005] n.s. (3 keys)  alloc 1.009 [0.994,1.024] n.s. (1 keys)
+  StringSubstring.empty                                                  SBS 0.974 [0.941,1.006] n.s. | SV 0.532 [0.513,0.549] FASTER | LS 0.976 [0.941,1.006] n.s.
+  StringSubstring.from26toEnd0                                           SBS 1.000 [0.978,1.022] n.s. | SV 0.234 [0.231,0.237] FASTER | LS 1.006 [0.991,1.019] n.s.
+  StringSubstring.from26toEnd1                                           SBS 0.971 [0.950,0.994] FASTER | SV 0.251 [0.244,0.259] FASTER | LS 0.976 [0.946,1.004] n.s.
+  ~alloc MB                                                              SBS 1.011 [0.993,1.029] n.s. | SV 2.478 [2.430,2.521] MORE | LS 1.009 [0.994,1.024] n.s.
+  ~rss MB                                                                SBS 0.996 [0.992,1.001] n.s. | SV 1.001 [0.997,1.005] n.s. | LS 0.994 [0.984,1.001] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  stringbuilders             1.012*|0.990      0.771*|1.331*     0.995|1.004      
+  StringSubstring            0.982|1.011       0.315*|2.478*     0.986|1.009      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

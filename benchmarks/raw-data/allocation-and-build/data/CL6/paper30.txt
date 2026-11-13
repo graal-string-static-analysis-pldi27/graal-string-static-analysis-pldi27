@@ -1,0 +1,62 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL6  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## re2j  starts BASE:3 FULL:3  time keys 38
+  FULL/BASE time  ratio 0.9907  (mean FULL 0.9906 n=3, BASE 0.9999 n=3)  error margin 0.0028 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 1.0046  (mean FULL 1.0046 n=3, BASE 1.0000 n=3)  error margin 0.0027 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9907  (mean FULL 0.9906 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0025 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 38 keys]
+    key BenchmarkBacktrack.matched N/A JDK N/A 10                    BASE 31.7357 sd 0.237  FULL 31.2707 sd 0.289  [lower]
+    key BenchmarkBacktrack.matched N/A JDK N/A 15                    BASE 1332.07 sd 15.1  FULL 1305.88 sd 11.4  [lower]
+    key BenchmarkBacktrack.matched N/A JDK N/A 20                    BASE 53682.8 sd 1.84e+03  FULL 53501.3 sd 1.7e+03  [lower]
+    key BenchmarkBacktrack.matched N/A JDK N/A 5                     BASE 0.820667 sd 0.00929  FULL 0.794667 sd 0.0185  [lower]
+    key BenchmarkBacktrack.matched N/A RE2J N/A 10                   BASE 4.00167 sd 0.154  FULL 3.889 sd 0.0605  [lower]
+    key BenchmarkBacktrack.matched N/A RE2J N/A 15                   BASE 7.70933 sd 0.0545  FULL 7.62467 sd 0.114  [lower]
+    key BenchmarkBacktrack.matched N/A RE2J N/A 20                   BASE 12.8033 sd 0.203  FULL 12.531 sd 0.12  [lower]
+    key BenchmarkBacktrack.matched N/A RE2J N/A 5                    BASE 1.25167 sd 0.00987  FULL 1.236 sd 0.0113  [lower]
+    key BenchmarkCaseInsensitiveSubmatch.caseInsensitiveSubMatch fal BASE 354.962 sd 5.71  FULL 347.057 sd 0.332  [lower]
+    key BenchmarkCaseInsensitiveSubmatch.caseInsensitiveSubMatch fal BASE 1055.82 sd 21.5  FULL 1041.17 sd 21.1  [lower]
+    key BenchmarkCaseInsensitiveSubmatch.caseInsensitiveSubMatch tru BASE 366.855 sd 5.22  FULL 360.79 sd 1.17  [lower]
+    key BenchmarkCaseInsensitiveSubmatch.caseInsensitiveSubMatch tru BASE 963.174 sd 11.2  FULL 973.17 sd 17.9  [lower]
+    key BenchmarkCompile.compile N/A JDK DATE N/A                    BASE 1000.22 sd 12.4  FULL 999.194 sd 6.51  [lower]
+    key BenchmarkCompile.compile N/A JDK EMAIL N/A                   BASE 251.816 sd 2.35  FULL 250.55 sd 1.87  [lower]
+    key BenchmarkCompile.compile N/A JDK PHONE N/A                   BASE 532.771 sd 5.91  FULL 532.113 sd 9.77  [lower]
+    key BenchmarkCompile.compile N/A JDK RANDOM N/A                  BASE 1713.52 sd 30.5  FULL 1690.13 sd 32.8  [lower]
+    key BenchmarkCompile.compile N/A JDK SOCIAL N/A                  BASE 498.906 sd 8.16  FULL 498.345 sd 11.1  [lower]
+    key BenchmarkCompile.compile N/A JDK STATES N/A                  BASE 2528.53 sd 45.2  FULL 2501.65 sd 23  [lower]
+    key BenchmarkCompile.compile N/A RE2J DATE N/A                   BASE 4327.75 sd 107  FULL 4257.71 sd 34  [lower]
+    key BenchmarkCompile.compile N/A RE2J EMAIL N/A                  BASE 1458.7 sd 8.98  FULL 1428.21 sd 16.2  [lower]
+    key BenchmarkCompile.compile N/A RE2J PHONE N/A                  BASE 2412.32 sd 102  FULL 2410.62 sd 27.2  [lower]
+    key BenchmarkCompile.compile N/A RE2J RANDOM N/A                 BASE 7887.4 sd 119  FULL 8042.16 sd 187  [lower]
+    key BenchmarkCompile.compile N/A RE2J SOCIAL N/A                 BASE 1881.31 sd 44.4  FULL 1860.44 sd 15.9  [lower]
+    key BenchmarkCompile.compile N/A RE2J STATES N/A                 BASE 12048 sd 105  FULL 11730.7 sd 12.4  [lower]
+    key BenchmarkFullMatch.matched false JDK N/A N/A                 BASE 106.147 sd 0.298  FULL 105.828 sd 0.184  [lower]
+    key BenchmarkFullMatch.matched false RE2J N/A N/A                BASE 732.502 sd 12.6  FULL 715.388 sd 2.48  [lower]
+    key BenchmarkFullMatch.matched true JDK N/A N/A                  BASE 123.456 sd 0.236  FULL 122.874 sd 1.03  [lower]
+    key BenchmarkFullMatch.matched true RE2J N/A N/A                 BASE 643.894 sd 2.11  FULL 642.727 sd 16.4  [lower]
+    key BenchmarkFullMatch.notMatched false JDK N/A N/A              BASE 80.3953 sd 0.0665  FULL 80.2923 sd 0.153  [lower]
+    key BenchmarkFullMatch.notMatched false RE2J N/A N/A             BASE 704.445 sd 1.5  FULL 689.411 sd 5.08  [lower]
+    key BenchmarkFullMatch.notMatched true JDK N/A N/A               BASE 99.0593 sd 1.04  FULL 98.1463 sd 0.151  [lower]
+    key BenchmarkFullMatch.notMatched true RE2J N/A N/A              BASE 583.256 sd 1.41  FULL 579.626 sd 5.78  [lower]
+    key BenchmarkSplit.benchmarkSplit N/A JDK N/A N/A                BASE 69.1033 sd 0.933  FULL 69.521 sd 0.973  [lower]
+    key BenchmarkSplit.benchmarkSplit N/A RE2J N/A N/A               BASE 85.0123 sd 1.47  FULL 83.6377 sd 4.17  [lower]
+    key BenchmarkSubMatch.findPhoneNumbers false JDK N/A N/A         BASE 3.19967 sd 0.00551  FULL 3.204 sd 0.00721  [lower]
+    key BenchmarkSubMatch.findPhoneNumbers false RE2J N/A N/A        BASE 18.078 sd 0.003  FULL 18.12 sd 0.0771  [lower]
+    key BenchmarkSubMatch.findPhoneNumbers true JDK N/A N/A          BASE 3.62533 sd 0.0154  FULL 3.63533 sd 0.00666  [lower]
+    key BenchmarkSubMatch.findPhoneNumbers true RE2J N/A N/A         BASE 15.585 sd 0.0512  FULL 15.531 sd 0.0208  [lower]
+
+## tinylog  starts BASE:3 FULL:3  time keys 12
+  FULL/BASE time  ratio 1.0075  (mean FULL 1.0075 n=3, BASE 1.0000 n=3)  error margin 0.0048 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9955  (mean FULL 0.9955 n=3, BASE 1.0000 n=3)  error margin 0.0051 (max sd)  paper-significance n.s.
+    key discard_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.disc BASE 2.39497e+08 sd 3.89e+06  FULL 2.37674e+08 sd 2.08e+06  [higher]
+    key discard_false_FULL: Tinylog2Benchmark.discard false FULL     BASE 2.39815e+08 sd 6.16e+06  FULL 2.36513e+08 sd 5.53e+05  [higher]
+    key discard_false_NONE: Tinylog2Benchmark.discard false NONE     BASE 2.37224e+08 sd 4.09e+06  FULL 2.38112e+08 sd 4.45e+06  [higher]
+    key discard_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.disca BASE 2.37709e+08 sd 1.72e+06  FULL 2.34618e+08 sd 4.85e+05  [higher]
+    key discard_true_FULL: Tinylog2Benchmark.discard true FULL       BASE 2.38631e+08 sd 1.06e+06  FULL 2.3534e+08 sd 5.8e+05  [higher]
+    key discard_true_NONE: Tinylog2Benchmark.discard true NONE       BASE 2.39057e+08 sd 3.19e+06  FULL 2.35761e+08 sd 9.69e+05  [higher]
+    key output_false_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.outpu BASE 4.15333 sd 0.0467  FULL 4.20433 sd 0.0567  [lower]
+    key output_false_FULL: Tinylog2Benchmark.output false FULL       BASE 2.363 sd 0.0248  FULL 2.36433 sd 0.0374  [lower]
+    key output_false_NONE: Tinylog2Benchmark.output false NONE       BASE 1.399 sd 0.0177  FULL 1.407 sd 0.0272  [lower]
+    key output_true_CLASS_OR_CATEGORY_ONLY: Tinylog2Benchmark.output BASE 3.35667 sd 0.0365  FULL 3.43567 sd 0.0713  [lower]
+    key output_true_FULL: Tinylog2Benchmark.output true FULL         BASE 1.202 sd 0.0195  FULL 1.20167 sd 0.0402  [lower]
+    key output_true_NONE: Tinylog2Benchmark.output true NONE         BASE 0.588 sd 0.002  FULL 0.583 sd 0.0314  [lower]
+
+PAPER30-DONE

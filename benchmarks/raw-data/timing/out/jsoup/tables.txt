@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jsoup  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+jsoup                    BASE b1 size 15.34/16.31/6.08/8.26 | parent 25.3 s 2.12 GB | driver 26.1 s REUSED
+jsoup                    BASE b2 size 15.34/16.31/6.08/8.26 | parent 21.8 s 2.13 GB | driver 23.4 s REUSED
+jsoup                    FULL b1 size 15.40/16.37/6.10/8.32 | parent 46.3 s 2.23 GB | driver 47.6 s | OK | child aa 15204 ms gen 20.3 s obs 21 s VmHWM 2.76 GB | wait 21.1 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL b2 size 15.40/16.37/6.10/8.32 | parent 43.2 s 2.26 GB | driver 44.4 s | OK | child aa 16314 ms gen 21.4 s obs 21 s VmHWM 2.79 GB | wait 22.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    BASE_A32 b1 size 15.27/16.24/5.94/8.32 | parent 20.5 s 2.14 GB | driver 22.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    BASE_A32 b2 size 15.27/16.24/5.94/8.32 | parent 26.6 s 2.12 GB | driver 27.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    FULL_A32 b1 size 15.27/16.24/5.96/8.32 | parent 53.6 s 2.25 GB | driver 54.4 s | OK | child aa 20916 ms gen 25.8 s obs 26 s VmHWM 2.72 GB | wait 26.1 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL_A32 b2 size 15.27/16.24/5.96/8.32 | parent 45.7 s 2.26 GB | driver 46.8 s | OK | child aa 21146 ms gen 25.6 s obs 25 s VmHWM 2.76 GB | wait 26.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    BASE_A128 b1 size 15.67/16.63/6.42/8.26 | parent 27.5 s 2.12 GB | driver 28.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    BASE_A128 b2 size 15.67/16.63/6.42/8.26 | parent 21.1 s 2.12 GB | driver 22.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    FULL_A128 b1 size 15.67/16.64/6.45/8.26 | parent 46.2 s 2.25 GB | driver 47.5 s | OK | child aa 15821 ms gen 20.2 s obs 20 s VmHWM 2.77 GB | wait 21.1 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL_A128 b2 size 15.67/16.64/6.45/8.26 | parent 51.2 s 2.27 GB | driver 52.6 s | OK | child aa 16571 ms gen 20.4 s obs 20 s VmHWM 2.81 GB | wait 21.1 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    BASE_A256 b1 size 16.39/17.36/7.17/8.26 | parent 21.7 s 2.13 GB | driver 22.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    BASE_A256 b2 size 16.39/17.36/7.17/8.26 | parent 25.4 s 2.13 GB | driver 26.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jsoup                    FULL_A256 b1 size 16.45/17.42/7.20/8.26 | parent 47.7 s 2.30 GB | driver 48.7 s | OK | child aa 18328 ms gen 24.4 s obs 24 s VmHWM 2.74 GB | wait 25.1 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL_A256 b2 size 16.45/17.42/7.20/8.26 | parent 54.0 s 2.28 GB | driver 55.4 s | OK | child aa 19297 ms gen 24.9 s obs 25 s VmHWM 2.83 GB | wait 25.6 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+jsoup                    FULL/BASE  parent wall 23.6 -> 44.8 s (x1.90)  Peak RSS 2.12 -> 2.25 GB (x1.06)  child VmHWM 2.78 GB  size 15.34 -> 15.40 MB (x1.004)  status OK,OK
+jsoup                    BASE_A32/BASE  parent wall 23.6 -> 23.6 s (x1.00)  Peak RSS 2.12 -> 2.13 GB (x1.00)  child VmHWM ? GB  size 15.34 -> 15.27 MB (x0.996)  status NO-PROFILE,NO-PROFILE
+jsoup                    FULL_A32/BASE  parent wall 23.6 -> 49.7 s (x2.11)  Peak RSS 2.12 -> 2.25 GB (x1.06)  child VmHWM 2.74 GB  size 15.34 -> 15.27 MB (x0.996)  status OK,OK
+jsoup                    BASE_A128/BASE  parent wall 23.6 -> 24.3 s (x1.03)  Peak RSS 2.12 -> 2.12 GB (x1.00)  child VmHWM ? GB  size 15.34 -> 15.67 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+jsoup                    FULL_A128/BASE  parent wall 23.6 -> 48.7 s (x2.07)  Peak RSS 2.12 -> 2.26 GB (x1.06)  child VmHWM 2.79 GB  size 15.34 -> 15.67 MB (x1.021)  status OK,OK
+jsoup                    BASE_A256/BASE  parent wall 23.6 -> 23.5 s (x1.00)  Peak RSS 2.12 -> 2.13 GB (x1.00)  child VmHWM ? GB  size 15.34 -> 16.39 MB (x1.068)  status NO-PROFILE,NO-PROFILE
+jsoup                    FULL_A256/BASE  parent wall 23.6 -> 50.9 s (x2.16)  Peak RSS 2.12 -> 2.29 GB (x1.08)  child VmHWM 2.79 GB  size 15.34 -> 16.45 MB (x1.073)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+jsoup                    FULL SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+jsoup                    BASE_A32 no profile  NO-PROFILE
+jsoup                    FULL_A32 SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+jsoup                    BASE_A128 no profile  NO-PROFILE
+jsoup                    FULL_A128 SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+jsoup                    BASE_A256 no profile  NO-PROFILE
+jsoup                    FULL_A256 SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+jsoup                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.0 s
+jsoup                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.7 s
+jsoup                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.7 s
+jsoup                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.1 s
+jsoup                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.5 s
+jsoup                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.6 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

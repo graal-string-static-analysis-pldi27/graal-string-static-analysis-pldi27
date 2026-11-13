@@ -1,0 +1,43 @@
+diff --git a/metrics/src/main/java/com/google/gson/metrics/ParseBenchmark.java b/metrics/src/main/java/com/google/gson/metrics/ParseBenchmark.java
+index 4738de7..2be7b86 100644
+--- a/metrics/src/main/java/com/google/gson/metrics/ParseBenchmark.java
++++ b/metrics/src/main/java/com/google/gson/metrics/ParseBenchmark.java
+@@ -37,11 +37,13 @@ import com.google.gson.stream.JsonReader;
+ import java.io.CharArrayReader;
+ import java.io.File;
+ import java.io.IOException;
++import java.io.InputStream;
+ import java.io.InputStreamReader;
+ import java.io.Reader;
+ import java.io.StringWriter;
+-import java.net.URL;
+ import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.StandardCopyOption;
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ import java.util.List;
+@@ -134,13 +136,16 @@ public final class ParseBenchmark {
+   }
+ 
+   private static File getResourceFile(String path) throws Exception {
+-    URL url = ParseBenchmark.class.getResource(path);
+-    if (url == null) {
+-      throw new IllegalArgumentException("Resource " + path + " does not exist");
+-    }
+-    File file = new File(url.toURI());
+-    if (!file.isFile()) {
+-      throw new IllegalArgumentException("Resource " + path + " is not a file");
++    // Hunt3 patch (supervisor-approved, batch1 gson): native images serve classpath resources with
++    // the resource: scheme, so File(url.toURI()) throws "URI scheme is not file"; copy the resource
++    // stream to a temp file so the existing ZipFile code in resourceToString works unchanged.
++    File file = File.createTempFile("ParseBenchmarkData", ".zip");
++    file.deleteOnExit();
++    try (InputStream in = ParseBenchmark.class.getResourceAsStream(path)) {
++      if (in == null) {
++        throw new IllegalArgumentException("Resource " + path + " does not exist");
++      }
++      Files.copy(in, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+     }
+     return file;
+   }

@@ -1,0 +1,90 @@
+1793892463.726530 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1793892464.736665 ========================================================================================================================
+1793892464.738605 GraalVM Native Image: Generating 'regex-redux-FULL-b3' (executable)...
+1793892464.738646 ========================================================================================================================
+1793892464.738665 For detailed information and explanations on the build output, visit:
+1793892464.738686 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1793892464.738711 ------------------------------------------------------------------------------------------------------------------------
+1793892466.211813 [1/8] Initializing...                                                                                    (2.0s @ 0.43GB)
+1793892466.212122  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1793892466.212342  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1793892466.212415  C compiler: gcc (linux, x86_64, 15.2.0)
+1793892466.212530  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1793892466.212553  1 user-specific feature(s):
+1793892466.212733  - com.oracle.svm.thirdparty.gson.GsonFeature
+1793892466.213294 ------------------------------------------------------------------------------------------------------------------------
+1793892466.213320  3 experimental option(s) unlocked:
+1793892466.213357  - '-H:CodeAlignment' (origin(s): command line)
+1793892466.213374  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1793892466.213382  - '-H:+StringAnalysis' (origin(s): command line)
+1793892466.214345 ------------------------------------------------------------------------------------------------------------------------
+1793892466.214352 Build resources:
+1793892466.214415  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1793892466.214454  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1793892466.214925 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile5434712568969221527.txt
+1793892466.214943 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child12273528491339886470.log
+1793892466.215218 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile5434712568969221527.txt
+1793892466.215262 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1793892466.215277 [string-analysis-fork] Child log: /tmp/string-analysis-child12273528491339886470.log
+1793892466.388291 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1793892466.388374 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile5434712568969221527.txt
+1793892473.903027 [string-analysis-fork] Loaded 2849 entries from child profile: /tmp/string-analysis-profile5434712568969221527.txt
+1793892473.903078 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile5434712568969221527.txt
+1793892473.903423 [string-analysis-timing] beforeAnalysis done: 7514ms
+1793892476.422021 [string-analysis-timing] afterAnalysis start: 10033ms (gap since beforeAnalysis done: 2518ms)
+1793892476.432757 [2/8] Performing analysis...  [******]                                                                   (2.5s @ 0.90GB)
+1793892476.447527     3,293 types,   3,757 fields, and  15,313 methods found reachable
+1793892476.448238     1,061 types,      36 fields, and     417 methods registered for reflection
+1793892476.448314        58 types,      59 fields, and      52 methods registered for JNI access
+1793892476.448340         0 downcalls and 0 upcalls registered for foreign access
+1793892476.448414         4 native libraries: dl, pthread, rt, z
+1793892477.209638 [3/8] Building universe...                                                                               (0.8s @ 0.79GB)
+1793892477.217433 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=2020 chain-else=1 chain-flat=0 acc=0 (chain sites=1, aot-parse sites=0); at strengthen: present=1470 (inlined copies=72) removed=1425 (inlined copies=63) killed-dead=45 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1793892477.217958 [string-analysis] ic-widen: maxreps=5 lowered sites: chain/widened=1 direct=1384 direct/widened=751; declined sites: no-entry=142 terminal-body-unmarked=4
+1793892477.217991 [ic-widen-decline-by-method] no-entry {charAt(I)C=7, coder()B=61, concat(Ljava/lang/String;)Ljava/lang/String;=6, getBytes()[B=1, getBytes(Ljava/nio/charset/Charset;)[B=1, isEmpty()Z=4, isLatin1()Z=10, length()I=45, startsWith(Ljava/lang/String;)Z=1, substring(II)Ljava/lang/String;=1, value()[B=5}
+1793892477.218002 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1793892477.218012 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 0
+1793892477.218022 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1793892477.218498 [string-analysis] ic-flatstock: 1 stock-path flat calls=2136 legacy (interface caller)=0 legacy (null receiver)=0
+1793892477.218930 [string-analysis] codegen-knobs: chain rep-arm ifs=1 swap sites=0 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1793892477.219465 [string-analysis] ic-csfinal: rep-excluded supertype sites=341 (diamonds=341 guards=0) by decl={CharSequence.charAt=75, CharSequence.length=52, CharSequence.subSequence=16, CharSequence.toString=36, Object.equals=87, Object.hashCode=56, Object.toString=19} rep-list sites left stock=6 unproven sites left stock=0; at strengthen: ifs=330 (dead-arm=1 iba-free nodes=4 folded=2) ifs left=0
+1793892477.219609 [string-analysis] concat-copy: sites=0 lowered-parses=0 count.diag=false
+1793892477.220104 [string-analysis] mirror-append: sites=0 lowered-parses=0 arms=0 lowered-keys=0
+1793892477.220931 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=197/13 list=1/0 (cast/inst parses) stock: no-line=62/1 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=0/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=221
+1793892477.643164 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.74GB)
+1793892478.081044 [5/8] Inlining methods...     [****]                                                                     (0.3s @ 0.66GB)
+1793892480.379205 [6/8] Compiling methods...    [**]                                                                       (2.3s @ 0.74GB)
+1793892481.270837 [7/8] Laying out methods...   [*]                                                                        (0.9s @ 0.79GB)
+1793892481.280508 [string-analysis] r2-trivial: active=true graphs with rep arms=0, made trivial by the discount=0; graphs with a rep call but no recognised arm=2 (first 5: [com.oracle.svm.core.stringrep.ElementSourceFactory.splitPiece(String, int, int, boolean), com.oracle.svm.core.stringrep.RepEquals.contentEquals(String, String)]); graphs with a rep-test If that is no arm=0
+1793892481.687860 [string-analysis-dc] clinitsim-repaborts=0
+1793892481.716015 [string-analysis-dc] heapreps=0 poolreps=0 scanned=89045
+1793892482.339648 [8/8] Creating image...       [*]                                                                        (0.9s @ 0.64GB)
+1793892482.339927    5.35MB (36.07%) for code area:     8,768 compilation units
+1793892482.340001    7.67MB (51.66%) for image heap:   89,045 objects and 55 resources
+1793892482.340031    1.82MB (12.28%) for other data
+1793892482.340067   14.84MB in total image size, 13.96MB in total file size
+1793892482.340145 ------------------------------------------------------------------------------------------------------------------------
+1793892482.340993 Top 10 origins of code area:                                Top 10 object types in image heap:
+1793892482.341231    3.74MB java.base                                            1.41MB byte[] for code metadata
+1793892482.341249  920.50kB svm.jar (Native Image)                               1.20MB byte[] for java.lang.String
+1793892482.341276  110.54kB java.logging                                       834.85kB java.lang.String
+1793892482.341341   90.78kB org.graalvm.nativeimage.base                       632.26kB com.oracle.svm.core.hub.DynamicHubCompanion
+1793892482.341377   48.90kB jdk.proxy2                                         497.01kB heap alignment
+1793892482.341459   38.97kB jdk.proxy1                                         460.77kB byte[] for general heap data
+1793892482.341491   38.18kB org.graalvm.nativeimage.configure                  427.09kB java.lang.Class
+1793892482.341523   28.03kB jdk.internal.vm.ci                                 315.79kB java.util.HashMap$Node
+1793892482.341571   26.12kB jdk.graal.compiler                                 223.74kB java.lang.Object[]
+1793892482.341667   20.07kB org.graalvm.collections                            179.44kB java.util.HashMap$Node[]
+1793892482.342250   30.01kB for 11 more packages                                 1.49MB for 968 more object types
+1793892482.343403 ------------------------------------------------------------------------------------------------------------------------
+1793892482.343411 Recommendations:
+1793892482.343469  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1793892482.343480  HEAP: Set max heap for improved and more predictable memory usage.
+1793892482.343493  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1793892482.345561 ------------------------------------------------------------------------------------------------------------------------
+1793892482.346259                         0.6s (3.3% of total time) in 56 GCs | Peak RSS: 2.26GB | CPU load: 8.19
+1793892482.346599 ------------------------------------------------------------------------------------------------------------------------
+1793892482.346604 Build artifacts:
+1793892482.347043  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/AU/bin/regex-redux-FULL-b3 (executable)
+1793892482.347057 ========================================================================================================================
+1793892482.347146 Finished generating 'regex-redux-FULL-b3' in 18.2s.

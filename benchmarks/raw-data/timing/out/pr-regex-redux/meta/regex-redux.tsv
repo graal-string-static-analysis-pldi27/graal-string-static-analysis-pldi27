@@ -1,0 +1,11 @@
+KIND	metric
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/rows/regex-redux.sh
+DESC	regex-redux fasta 5M (recheck s2 recipe)
+CPUS	0-15
+JMHSET	-
+SLOTITER	-
+ITER	main	iteration s | lower | err | 1e-9 | 1 | ^HUNT-ITER \d+ ns=(\d+)
+UW	1
+UM	3

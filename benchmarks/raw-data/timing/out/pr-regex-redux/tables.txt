@@ -1,0 +1,92 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-regex-redux  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+regex-redux              BASE b1 size 13.90/14.78/5.34/7.67 | parent 23.6 s 2.11 GB | driver 25.0 s REUSED
+regex-redux              BASE b2 size 13.90/14.78/5.34/7.67 | parent 22.3 s 2.07 GB | driver 23.4 s REUSED
+regex-redux              SBS  b1 size 13.90/14.78/5.34/7.67 | parent 38.6 s 2.24 GB | driver 39.5 s | ZERO-ADMIT | child aa 12313 ms gen 18.3 s obs 18 s VmHWM 2.32 GB | wait 19.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS  b2 size 13.90/14.78/5.34/7.67 | parent 43.2 s 2.23 GB | driver 44.4 s | ZERO-ADMIT | child aa 10414 ms gen 14.5 s obs 14 s VmHWM 2.28 GB | wait 15.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV   b1 size 13.96/14.84/5.35/7.67 | parent 37.3 s 2.23 GB | driver 38.7 s | OK | child aa 9806 ms gen 14.5 s obs 14 s VmHWM 2.27 GB | wait 15.0 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV   b2 size 13.96/14.84/5.35/7.67 | parent 33.9 s 2.20 GB | driver 35.1 s | OK | child aa 8937 ms gen 12.8 s obs 12 s VmHWM 2.29 GB | wait 13.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS   b1 size 13.90/14.78/5.34/7.67 | parent 41.7 s 2.25 GB | driver 42.6 s | ZERO-ADMIT | child aa 13857 ms gen 17.3 s obs 17 s VmHWM 2.34 GB | wait 17.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS   b2 size 13.90/14.78/5.34/7.67 | parent 33.8 s 2.26 GB | driver 34.9 s | ZERO-ADMIT | child aa 9030 ms gen 14.0 s obs 14 s VmHWM 2.32 GB | wait 14.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              BASE_A32 b1 size 13.83/14.71/5.21/7.67 | parent 11.8 s 2.09 GB | driver 12.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              BASE_A32 b2 size 13.83/14.71/5.21/7.67 | parent 18.3 s 2.09 GB | driver 19.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              SBS_A32 b1 size 13.83/14.71/5.21/7.67 | parent 33.9 s 2.24 GB | driver 35.7 s | ZERO-ADMIT | child aa 7325 ms gen 11.6 s obs 12 s VmHWM 2.31 GB | wait 12.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS_A32 b2 size 13.83/14.71/5.21/7.67 | parent 40.8 s 2.26 GB | driver 42.2 s | ZERO-ADMIT | child aa 12737 ms gen 15.4 s obs 15 s VmHWM 2.32 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A32 b1 size 13.83/14.71/5.23/7.67 | parent 40.7 s 2.25 GB | driver 41.6 s | OK | child aa 9075 ms gen 14.5 s obs 14 s VmHWM 2.28 GB | wait 15.0 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A32 b2 size 13.83/14.71/5.23/7.67 | parent 26.4 s 2.22 GB | driver 27.4 s | OK | child aa 6069 ms gen 9.8 s obs 9 s VmHWM 2.31 GB | wait 10.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A32 b1 size 13.83/14.71/5.21/7.67 | parent 37.5 s 2.27 GB | driver 38.5 s | ZERO-ADMIT | child aa 9013 ms gen 13.5 s obs 14 s VmHWM 2.36 GB | wait 14.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A32 b2 size 13.83/14.71/5.21/7.67 | parent 36.1 s 2.25 GB | driver 37.5 s | ZERO-ADMIT | child aa 8705 ms gen 11.1 s obs 12 s VmHWM 2.29 GB | wait 11.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              BASE_A128 b1 size 14.22/15.10/5.64/7.67 | parent 12.9 s 2.08 GB | driver 13.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              BASE_A128 b2 size 14.22/15.10/5.64/7.67 | parent 18.3 s 2.07 GB | driver 19.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              SBS_A128 b1 size 14.22/15.10/5.64/7.67 | parent 31.8 s 2.25 GB | driver 33.4 s | ZERO-ADMIT | child aa 7825 ms gen 11.0 s obs 11 s VmHWM 2.29 GB | wait 11.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS_A128 b2 size 14.22/15.10/5.64/7.67 | parent 43.1 s 2.22 GB | driver 44.3 s | ZERO-ADMIT | child aa 16599 ms gen 21.0 s obs 21 s VmHWM 2.36 GB | wait 22.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A128 b1 size 14.22/15.11/5.66/7.67 | parent 37.2 s 2.25 GB | driver 38.0 s | OK | child aa 12367 ms gen 16.1 s obs 15 s VmHWM 2.25 GB | wait 16.6 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A128 b2 size 14.22/15.11/5.66/7.67 | parent 38.1 s 2.23 GB | driver 38.9 s | OK | child aa 11488 ms gen 15.5 s obs 15 s VmHWM 2.31 GB | wait 16.0 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A128 b1 size 14.22/15.10/5.64/7.67 | parent 33.8 s 2.26 GB | driver 35.2 s | ZERO-ADMIT | child aa 8724 ms gen 13.7 s obs 13 s VmHWM 2.35 GB | wait 14.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A128 b2 size 14.22/15.10/5.64/7.67 | parent 35.8 s 2.25 GB | driver 37.1 s | ZERO-ADMIT | child aa 9535 ms gen 15.5 s obs 16 s VmHWM 2.33 GB | wait 16.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              BASE_A256 b1 size 14.81/15.69/6.30/7.60 | parent 18.2 s 2.08 GB | driver 19.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              BASE_A256 b2 size 14.81/15.69/6.30/7.60 | parent 11.6 s 2.06 GB | driver 12.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+regex-redux              SBS_A256 b1 size 14.81/15.69/6.30/7.60 | parent 42.9 s 2.21 GB | driver 44.2 s | ZERO-ADMIT | child aa 9821 ms gen 14.6 s obs 14 s VmHWM 2.39 GB | wait 15.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS_A256 b2 size 14.81/15.69/6.30/7.60 | parent 35.8 s 2.27 GB | driver 37.1 s | ZERO-ADMIT | child aa 8060 ms gen 10.8 s obs 10 s VmHWM 2.34 GB | wait 11.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A256 b1 size 14.81/15.70/6.32/7.60 | parent 32.9 s 2.23 GB | driver 34.2 s | OK | child aa 9466 ms gen 13.3 s obs 12 s VmHWM 2.26 GB | wait 13.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV_A256 b2 size 14.81/15.70/6.32/7.60 | parent 42.9 s 2.24 GB | driver 43.8 s | OK | child aa 13608 ms gen 18.2 s obs 18 s VmHWM 2.35 GB | wait 18.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A256 b1 size 14.81/15.69/6.30/7.60 | parent 40.1 s 2.24 GB | driver 41.2 s | ZERO-ADMIT | child aa 10236 ms gen 15.8 s obs 16 s VmHWM 2.31 GB | wait 16.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS_A256 b2 size 14.81/15.69/6.30/7.60 | parent 31.9 s 2.24 GB | driver 33.1 s | ZERO-ADMIT | child aa 7044 ms gen 9.5 s obs 9 s VmHWM 2.31 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+regex-redux              SBS /BASE  parent wall 23.0 -> 40.9 s (x1.78)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.30 GB  size 13.90 -> 13.90 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SV  /BASE  parent wall 23.0 -> 35.6 s (x1.55)  Peak RSS 2.09 -> 2.21 GB (x1.06)  child VmHWM 2.28 GB  size 13.90 -> 13.96 MB (x1.005)  status OK,OK
+regex-redux              LS  /BASE  parent wall 23.0 -> 37.8 s (x1.64)  Peak RSS 2.09 -> 2.25 GB (x1.08)  child VmHWM 2.33 GB  size 13.90 -> 13.90 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              BASE_A32/BASE  parent wall 23.0 -> 15.1 s (x0.66)  Peak RSS 2.09 -> 2.09 GB (x1.00)  child VmHWM ? GB  size 13.90 -> 13.83 MB (x0.995)  status NO-PROFILE,NO-PROFILE
+regex-redux              SBS_A32/BASE  parent wall 23.0 -> 37.3 s (x1.63)  Peak RSS 2.09 -> 2.25 GB (x1.08)  child VmHWM 2.31 GB  size 13.90 -> 13.83 MB (x0.995)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SV_A32/BASE  parent wall 23.0 -> 33.5 s (x1.46)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.29 GB  size 13.90 -> 13.83 MB (x0.995)  status OK,OK
+regex-redux              LS_A32/BASE  parent wall 23.0 -> 36.8 s (x1.60)  Peak RSS 2.09 -> 2.26 GB (x1.08)  child VmHWM 2.32 GB  size 13.90 -> 13.83 MB (x0.995)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              BASE_A128/BASE  parent wall 23.0 -> 15.6 s (x0.68)  Peak RSS 2.09 -> 2.08 GB (x0.99)  child VmHWM ? GB  size 13.90 -> 14.22 MB (x1.024)  status NO-PROFILE,NO-PROFILE
+regex-redux              SBS_A128/BASE  parent wall 23.0 -> 37.5 s (x1.63)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.33 GB  size 13.90 -> 14.22 MB (x1.024)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SV_A128/BASE  parent wall 23.0 -> 37.7 s (x1.64)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.28 GB  size 13.90 -> 14.22 MB (x1.024)  status OK,OK
+regex-redux              LS_A128/BASE  parent wall 23.0 -> 34.8 s (x1.52)  Peak RSS 2.09 -> 2.25 GB (x1.08)  child VmHWM 2.34 GB  size 13.90 -> 14.22 MB (x1.024)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              BASE_A256/BASE  parent wall 23.0 -> 14.9 s (x0.65)  Peak RSS 2.09 -> 2.07 GB (x0.99)  child VmHWM ? GB  size 13.90 -> 14.81 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+regex-redux              SBS_A256/BASE  parent wall 23.0 -> 39.3 s (x1.71)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.36 GB  size 13.90 -> 14.81 MB (x1.066)  status ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SV_A256/BASE  parent wall 23.0 -> 37.9 s (x1.65)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.31 GB  size 13.90 -> 14.81 MB (x1.066)  status OK,OK
+regex-redux              LS_A256/BASE  parent wall 23.0 -> 36.0 s (x1.57)  Peak RSS 2.09 -> 2.24 GB (x1.07)  child VmHWM 2.31 GB  size 13.90 -> 14.81 MB (x1.066)  status ZERO-ADMIT,ZERO-ADMIT
+## admits per rep kind (b1 profile; FULL/mode builds)
+regex-redux              SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SV   SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              BASE_A32 no profile  NO-PROFILE
+regex-redux              SBS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SV_A32 SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              BASE_A128 no profile  NO-PROFILE
+regex-redux              SBS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SV_A128 SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              BASE_A256 no profile  NO-PROFILE
+regex-redux              SBS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SV_A256 SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+regex-redux              SBS  b1 ZERO-ADMIT               child obs 18 s VmHWM 2.32 GB | parent wait 19.1 s | driver wall 39.5 s
+regex-redux              SBS  b2 ZERO-ADMIT               child obs 14 s VmHWM 2.28 GB | parent wait 15.0 s | driver wall 44.4 s
+regex-redux              LS   b1 ZERO-ADMIT               child obs 17 s VmHWM 2.34 GB | parent wait 17.5 s | driver wall 42.6 s
+regex-redux              LS   b2 ZERO-ADMIT               child obs 14 s VmHWM 2.32 GB | parent wait 14.5 s | driver wall 34.9 s
+regex-redux              BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 12.5 s
+regex-redux              BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.5 s
+regex-redux              SBS_A32 b1 ZERO-ADMIT               child obs 12 s VmHWM 2.31 GB | parent wait 12.0 s | driver wall 35.7 s
+regex-redux              SBS_A32 b2 ZERO-ADMIT               child obs 15 s VmHWM 2.32 GB | parent wait 15.5 s | driver wall 42.2 s
+regex-redux              LS_A32 b1 ZERO-ADMIT               child obs 14 s VmHWM 2.36 GB | parent wait 14.0 s | driver wall 38.5 s
+regex-redux              LS_A32 b2 ZERO-ADMIT               child obs 12 s VmHWM 2.29 GB | parent wait 11.5 s | driver wall 37.5 s
+regex-redux              BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 13.8 s
+regex-redux              BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.3 s
+regex-redux              SBS_A128 b1 ZERO-ADMIT               child obs 11 s VmHWM 2.29 GB | parent wait 11.5 s | driver wall 33.4 s
+regex-redux              SBS_A128 b2 ZERO-ADMIT               child obs 21 s VmHWM 2.36 GB | parent wait 22.0 s | driver wall 44.3 s
+regex-redux              LS_A128 b1 ZERO-ADMIT               child obs 13 s VmHWM 2.35 GB | parent wait 14.0 s | driver wall 35.2 s
+regex-redux              LS_A128 b2 ZERO-ADMIT               child obs 16 s VmHWM 2.33 GB | parent wait 16.0 s | driver wall 37.1 s
+regex-redux              BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.0 s
+regex-redux              BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 12.3 s
+regex-redux              SBS_A256 b1 ZERO-ADMIT               child obs 14 s VmHWM 2.39 GB | parent wait 15.1 s | driver wall 44.2 s
+regex-redux              SBS_A256 b2 ZERO-ADMIT               child obs 10 s VmHWM 2.34 GB | parent wait 11.0 s | driver wall 37.1 s
+regex-redux              LS_A256 b1 ZERO-ADMIT               child obs 16 s VmHWM 2.31 GB | parent wait 16.0 s | driver wall 41.2 s
+regex-redux              LS_A256 b2 ZERO-ADMIT               child obs 9 s VmHWM 2.31 GB | parent wait 10.0 s | driver wall 33.1 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

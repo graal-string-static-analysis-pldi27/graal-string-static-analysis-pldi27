@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/commons-codec  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+commons-codec            BASE b1 size 14.09/14.99/5.49/7.67 | parent 24.2 s 2.12 GB | driver 25.4 s REUSED
+commons-codec            BASE b2 size 14.09/14.99/5.49/7.67 | parent 22.4 s 2.11 GB | driver 23.5 s REUSED
+commons-codec            FULL b1 size 14.09/14.99/5.50/7.67 | parent 39.9 s 2.24 GB | driver 41.2 s | OK | child aa 10217 ms gen 17.1 s obs 17 s VmHWM 2.76 GB | wait 17.5 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL b2 size 14.09/14.99/5.50/7.67 | parent 37.8 s 2.20 GB | driver 39.2 s | OK | child aa 9274 ms gen 13.8 s obs 14 s VmHWM 2.95 GB | wait 14.0 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            BASE_A32 b1 size 13.96/14.86/5.36/7.67 | parent 25.3 s 2.11 GB | driver 26.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            BASE_A32 b2 size 13.96/14.86/5.36/7.67 | parent 19.8 s 2.11 GB | driver 21.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            FULL_A32 b1 size 13.96/14.86/5.37/7.67 | parent 41.9 s 2.26 GB | driver 42.8 s | OK | child aa 17665 ms gen 22.9 s obs 22 s VmHWM 2.85 GB | wait 23.0 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL_A32 b2 size 13.96/14.86/5.37/7.67 | parent 50.1 s 2.26 GB | driver 51.3 s | OK | child aa 18629 ms gen 23.3 s obs 23 s VmHWM 2.79 GB | wait 23.5 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            BASE_A128 b1 size 14.42/15.32/5.80/7.67 | parent 16.5 s 2.12 GB | driver 17.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            BASE_A128 b2 size 14.42/15.32/5.80/7.67 | parent 27.8 s 2.10 GB | driver 29.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            FULL_A128 b1 size 14.42/15.32/5.81/7.67 | parent 39.4 s 2.26 GB | driver 40.7 s | OK | child aa 14469 ms gen 17.8 s obs 18 s VmHWM 2.82 GB | wait 18.1 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL_A128 b2 size 14.42/15.32/5.81/7.67 | parent 44.4 s 2.27 GB | driver 45.7 s | OK | child aa 16138 ms gen 20.2 s obs 20 s VmHWM 2.73 GB | wait 20.5 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            BASE_A256 b1 size 15.08/15.97/6.47/7.67 | parent 16.5 s 2.09 GB | driver 17.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            BASE_A256 b2 size 15.08/15.97/6.47/7.67 | parent 26.3 s 2.12 GB | driver 27.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-codec            FULL_A256 b1 size 15.08/15.97/6.48/7.67 | parent 39.0 s 2.26 GB | driver 40.2 s | OK | child aa 15500 ms gen 20.5 s obs 20 s VmHWM 2.77 GB | wait 21.0 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+commons-codec            FULL_A256 b2 size 15.08/15.97/6.48/7.67 | parent 36.8 s 2.25 GB | driver 37.8 s | OK | child aa 12242 ms gen 16.6 s obs 16 s VmHWM 2.73 GB | wait 17.0 s | SBS=0 SV=6(ACC=3 ELEM=0) LS=0(JOINER=0) | IC=2931 TC=228 MIRROR=11 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+commons-codec            FULL/BASE  parent wall 23.3 -> 38.8 s (x1.67)  Peak RSS 2.12 -> 2.22 GB (x1.05)  child VmHWM 2.85 GB  size 14.09 -> 14.09 MB (x1.000)  status OK,OK
+commons-codec            BASE_A32/BASE  parent wall 23.3 -> 22.6 s (x0.97)  Peak RSS 2.12 -> 2.11 GB (x1.00)  child VmHWM ? GB  size 14.09 -> 13.96 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+commons-codec            FULL_A32/BASE  parent wall 23.3 -> 46.0 s (x1.97)  Peak RSS 2.12 -> 2.26 GB (x1.07)  child VmHWM 2.82 GB  size 14.09 -> 13.96 MB (x0.991)  status OK,OK
+commons-codec            BASE_A128/BASE  parent wall 23.3 -> 22.1 s (x0.95)  Peak RSS 2.12 -> 2.11 GB (x1.00)  child VmHWM ? GB  size 14.09 -> 14.42 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+commons-codec            FULL_A128/BASE  parent wall 23.3 -> 41.9 s (x1.80)  Peak RSS 2.12 -> 2.26 GB (x1.07)  child VmHWM 2.77 GB  size 14.09 -> 14.42 MB (x1.023)  status OK,OK
+commons-codec            BASE_A256/BASE  parent wall 23.3 -> 21.4 s (x0.92)  Peak RSS 2.12 -> 2.10 GB (x1.00)  child VmHWM ? GB  size 14.09 -> 15.08 MB (x1.070)  status NO-PROFILE,NO-PROFILE
+commons-codec            FULL_A256/BASE  parent wall 23.3 -> 37.9 s (x1.63)  Peak RSS 2.12 -> 2.25 GB (x1.07)  child VmHWM 2.75 GB  size 14.09 -> 15.08 MB (x1.070)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+commons-codec            FULL SBS=0 SV=6 (ACC=3 ELEM=0) LS=0 (JOINER=0)  OK
+commons-codec            BASE_A32 no profile  NO-PROFILE
+commons-codec            FULL_A32 SBS=0 SV=6 (ACC=3 ELEM=0) LS=0 (JOINER=0)  OK
+commons-codec            BASE_A128 no profile  NO-PROFILE
+commons-codec            FULL_A128 SBS=0 SV=6 (ACC=3 ELEM=0) LS=0 (JOINER=0)  OK
+commons-codec            BASE_A256 no profile  NO-PROFILE
+commons-codec            FULL_A256 SBS=0 SV=6 (ACC=3 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+commons-codec            BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.9 s
+commons-codec            BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.3 s
+commons-codec            BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.4 s
+commons-codec            BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.0 s
+commons-codec            BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.9 s
+commons-codec            BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.2 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/BU-luindex-SV-fc1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+luindex                  BASE b1 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.43 GB | driver 17.5 s REUSED
+luindex                  BASE b2 size 33.69/35.57/15.81/16.25 | parent 16.7 s 2.42 GB | driver 17.4 s REUSED
+luindex                  BASE b3 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.41 GB | driver 17.4 s REUSED
+luindex                  SV   b1 size 33.82/35.70/15.87/16.32 | parent 33.6 s 2.88 GB | driver 34.4 s | OK | child aa 11970 ms gen 14.6 s obs 14 s VmHWM 3.47 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV   b2 size 33.82/35.70/15.87/16.32 | parent 33.2 s 2.80 GB | driver 33.9 s | OK | child aa 11982 ms gen 14.7 s obs 15 s VmHWM 3.47 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV   b3 size 33.75/35.64/15.87/16.25 | parent 33.6 s 2.75 GB | driver 34.2 s | OK | child aa 11892 ms gen 14.5 s obs 15 s VmHWM 3.50 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+## build cost vs stock (means over builds)
+luindex                  SV  /BASE  parent wall 16.8 -> 33.5 s (x2.00)  Peak RSS 2.42 -> 2.81 GB (x1.16)  child VmHWM 3.48 GB  size 33.69 -> 33.80 MB (x1.003)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+luindex                  SV   SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: luindex SV: admit counts differ across builds
+TABLES-DONE

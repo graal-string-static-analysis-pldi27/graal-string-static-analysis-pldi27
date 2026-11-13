@@ -1,0 +1,189 @@
+# C101 pooled statistic report (pooled-summ.py --report): R = geomean_k mean(F)/mean(BASE) over all points of the 8 images pooled (> 1 = slower);
+#   CI p30 = paper-30 margin (max sd, non-overlap); CI boot = i.i.d. bootstrap of the pooled points (percentile 95 %); strat/hier/t3 = data/<slot>.tsv; C100 = latest/*.csv class A
+row                        cfg  n B/F keys       R      p30 interval verd             boot CI verd   class p30          class boot         | strat R class strat        class hier         class t3           |   C100 C100 class         source / rb
+antlr                      SBS  32/32   21  1.0006   [0.9549,1.0478] n.s.     [0.9902,1.0112] n.s.   neutral            neutral            |  1.0008 neutral            neutral            neutral            | 1.0030 neutral            
+antlr                      SV   32/32   21  0.9979   [0.9523,1.0450] n.s.     [0.9875,1.0082] n.s.   neutral            neutral            |  0.9980 neutral            neutral            neutral            | 1.0060 neutral            
+antlr                      LS   32/32   21  1.0003   [0.9546,1.0474] n.s.     [0.9887,1.0120] n.s.   neutral            neutral            |  0.9998 neutral            neutral            neutral            | 1.0000 neutral            
+minimal-json               FULL  8/8    24  1.0047   [0.9796,1.0301] n.s.     [0.9936,1.0153] n.s.   neutral            neutral            |  1.0046 neutral            neutral            neutral            | 1.0010 neutral            
+java-json-benchmark        FULL 24/24   22  0.9980   [0.9609,1.0310] n.s.     [0.9921,1.0036] n.s.   neutral            neutral            |  0.9978 neutral            neutral            neutral            | 1.0040 neutral            
+antlr                      FULL 32/32   21  0.9996   [0.9569,1.0448] n.s.     [0.9889,1.0101] n.s.   neutral            neutral            |  0.9994 neutral            neutral            neutral            | 0.9950 neutral            
+lucene-jmh                 FULL 24/24   94  0.9902   [0.9583,1.0231] n.s.     [0.9818,0.9989] FASTER neutral            neutral            |  0.9904 neutral            neutral            neutral            | 0.9960 neutral            
+stringbuffers              FULL 24/24    3  0.2113   [0.1973,0.2256] FASTER   [0.2100,0.2128] FASTER clear win          clear win          |  0.2113 clear win          clear win          clear win          | 0.2120 clear win          
+StringSubstring            FULL 24/24    3  0.3508   [0.3159,0.3877] FASTER   [0.3470,0.3546] FASTER clear win          clear win          |  0.3508 clear win          clear win          clear win          | 0.3490 clear win          
+stringbuilder-to-string    FULL 24/24    3  0.9525   [0.8990,1.0097] n.s.     [0.9396,0.9661] FASTER clear win          clear win          |  0.9526 clear win          clear win          clear win          | 0.9280 clear win          
+logback-perf               FULL 24/24    1  0.9661   [0.8475,1.1013] n.s.     [0.9326,1.0005] n.s.   clear win          clear win          |  0.9666 clear win          clear win          clear win          | 0.9950 clear win          
+jte                        FULL 24/24    7  0.9713   [0.9421,1.0014] n.s.     [0.9642,0.9782] FASTER neutral            clear win          |  0.9714 clear win          clear win          clear win          | 0.9700 clear win          
+owasp                      FULL 32/32    2  0.9857   [0.9626,1.0093] n.s.     [0.9806,0.9910] FASTER neutral            neutral            |  0.9857 neutral            neutral            neutral            | 0.9720 clear win          
+stringbuilders             FULL 24/24   17  0.7973   [0.6496,1.0010] n.s.     [0.7750,0.8281] FASTER clear win          clear win          |  0.7992 clear win          clear win          clear win          | 0.7760 clear win          
+string-concat-startup      FULL 24/24   16  0.2498   [0.2141,0.2875] FASTER   [0.2465,0.2528] FASTER clear win          clear win          |  0.2498 clear win          clear win          clear win          | 0.2480 clear win          
+spring                     FULL 24/24    2  0.9772   [0.9167,1.0419] n.s.     [0.9603,0.9947] FASTER clear win          clear win          |  0.9771 clear win          clear win          clear win          | 0.9800 clear win          
+regex-redux                FULL 24/24    1  1.0107   [0.9531,1.0718] n.s.     [0.9948,1.0261] n.s.   clear win          clear win          |  1.0106 clear win          clear win          clear win          | 0.9870 clear win          
+StringJoiner               FULL 24/24   32  0.2239   [0.2100,0.2382] FASTER   [0.2227,0.2252] FASTER clear win          clear win          |  0.2239 clear win          clear win          clear win          | 0.2240 clear win          
+string-concat              FULL 24/24   37  0.2328   [0.2128,0.2536] FASTER   [0.2307,0.2350] FASTER clear win          clear win          |  0.2328 clear win          clear win          clear win          | 0.2340 clear win          
+luindex                    FULL 24/24    1  0.9994   [0.9692,1.0306] n.s.     [0.9932,1.0059] n.s.   clear win          clear win          |  0.9994 clear win          clear win          clear win          | 0.9940 clear win          
+json-parser                FULL 24/24    1  0.6313   [0.5804,0.6856] FASTER   [0.6219,0.6402] FASTER clear win          clear win          |  0.6315 clear win          clear win          clear win          | 0.6310 clear win          
+jsoup                      FULL 24/24    2  0.8994   [0.8848,0.9141] FASTER   [0.8955,0.9030] FASTER clear win          clear win          |  0.8993 clear win          clear win          clear win          | 0.8910 clear win          
+commons-lang-join          FULL 24/24   64  0.9508   [0.9309,0.9721] FASTER   [0.9460,0.9558] FASTER clear win          clear win          |  0.9510 clear win          clear win          clear win          | 0.9680 clear win          
+biojava                    FULL 24/24    1  0.8621   [0.8402,0.8845] FASTER   [0.8574,0.8667] FASTER clear win          clear win          |  0.8621 clear win          clear win          clear win          | 0.8720 clear win          
+commons-csv                FULL 24/24    7  0.9889   [0.9636,1.0147] n.s.     [0.9827,0.9949] FASTER neutral            neutral            |  0.9888 neutral            neutral            neutral            | 0.9770 clear win          
+lucene-bytask              FULL  8/8     1  0.9917   [0.9282,1.0596] n.s.     [0.9661,1.0202] n.s.   clear win          clear win          |  0.9915 clear win          clear win          clear win          | 0.9920 clear win          
+guava                      FULL  8/8   467  0.8510   [0.8217,0.8816] FASTER   [0.8410,0.8602] FASTER clear win          clear win          |  0.8511 clear win          clear win          clear win          | 0.8490 clear win          
+stringbuffers              SBS  24/24    3  0.9970   [0.9580,1.0381] n.s.     [0.9878,1.0065] n.s.   neutral            neutral            |  0.9972 neutral            neutral            neutral            | 1.0078 neutral            
+stringbuffers              SV   24/24    3  0.6265   [0.6043,0.6495] FASTER   [0.6217,0.6315] FASTER clear win          clear win          |  0.6265 clear win          clear win          clear win          | 0.6280 clear win          
+stringbuffers              LS   24/24    3  0.3264   [0.3082,0.3451] FASTER   [0.3243,0.3287] FASTER clear win          clear win          |  0.3264 clear win          clear win          clear win          | 0.3300 clear win          
+StringSubstring            SBS  24/24    3  0.9684   [0.9330,1.0052] n.s.     [0.9590,0.9780] FASTER neutral            clear win          |  0.9684 clear win          clear win          clear win          | 0.9820 neutral            
+StringSubstring            SV   24/24    3  0.3205   [0.2980,0.3437] FASTER   [0.3178,0.3233] FASTER clear win          clear win          |  0.3205 clear win          clear win          clear win          | 0.3150 clear win          
+StringSubstring            LS   24/24    3  0.9807   [0.9471,1.0157] n.s.     [0.9727,0.9890] FASTER neutral            neutral            |  0.9809 neutral            neutral            neutral            | 0.9860 neutral            
+stringbuilder-to-string    SBS  24/24    3  1.0088   [0.9582,1.0634] n.s.     [0.9989,1.0203] n.s.   neutral            neutral            |  1.0089 neutral            neutral            neutral            | 0.9830 neutral            pr-stringbuilder-to-string-rb1 SWITCHED to pr-stringbuilder-to-string-rb1 (R 1.0088 < 1.0210)
+stringbuilder-to-string    SV   24/24    3  0.9562   [0.8820,1.0395] n.s.     [0.9410,0.9733] FASTER clear win          clear win          |  0.9569 clear win          clear win          clear win          | 0.9700 clear win           kept original (pr-stringbuilder-to-string-rb1 R 0.9791 >= 0.9562)
+stringbuilder-to-string    LS   24/24    3  1.0029   [0.9659,1.0419] n.s.     [0.9930,1.0123] n.s.   neutral            neutral            |  1.0030 neutral            neutral            neutral            | 0.9910 neutral             kept original (pr-stringbuilder-to-string-rb1 R 1.0054 >= 1.0029)
+logback-perf               SBS  24/24    1  0.9692   [0.8618,1.0888] n.s.     [0.9400,0.9995] FASTER neutral            clear win          |  0.9690 clear win          clear win          clear win          | 0.9820 neutral            
+logback-perf               SV   24/24    1  0.9981   [0.8703,1.1483] n.s.     [0.9624,1.0331] n.s.   clear win          clear win          |  0.9990 clear win          clear win          clear win          | 0.9870 clear win          
+logback-perf               LS   24/24    1  0.9975   [0.8756,1.1389] n.s.     [0.9637,1.0311] n.s.   neutral            neutral            |  0.9979 neutral            neutral            neutral            | 0.9810 neutral            
+jte                        SBS  24/24    7  0.9986   [0.9757,1.0220] n.s.     [0.9925,1.0050] n.s.   neutral            neutral            |  0.9986 neutral            neutral            neutral            | 0.9840 neutral            
+jte                        SV   24/24    7  0.9761   [0.9529,0.9999] FASTER   [0.9699,0.9826] FASTER clear win          clear win          |  0.9761 clear win          clear win          clear win          | 0.9570 clear win          
+jte                        LS   24/24    7  0.9929   [0.9709,1.0155] n.s.     [0.9877,0.9984] FASTER neutral            neutral            |  0.9929 neutral            neutral            neutral            | 0.9770 clear win          
+owasp                      SBS  32/32    2  1.0047   [0.9696,1.0411] n.s.     [0.9963,1.0129] n.s.   neutral            neutral            |  1.0047 neutral            neutral            neutral            | 1.0040 neutral            
+owasp                      SV   32/32    2  0.9895   [0.9547,1.0256] n.s.     [0.9820,0.9963] FASTER neutral            neutral            |  0.9896 neutral            neutral            neutral            | 0.9970 neutral            
+owasp                      LS   32/32    2  0.9974   [0.9624,1.0337] n.s.     [0.9898,1.0046] n.s.   neutral            neutral            |  0.9974 neutral            neutral            neutral            | 1.0060 neutral            
+stringbuilders             SBS  24/24   17  0.9984   [0.9766,1.0207] n.s.     [0.9933,1.0039] n.s.   neutral            neutral            |  0.9984 neutral            neutral            neutral            | 1.0120 slowdown candidate 
+stringbuilders             SV   24/24   17  0.7727   [0.7586,0.7871] FASTER   [0.7693,0.7763] FASTER clear win          clear win          |  0.7727 clear win          clear win          clear win          | 0.7710 clear win          
+stringbuilders             LS   24/24   17  1.0159   [0.9219,1.1300] n.s.     [1.0021,1.0344] SLOWER neutral            slowdown candidate |  1.0172 neutral            neutral            neutral            | 0.9950 neutral            
+string-concat-startup      SBS  24/24   16  0.9916   [0.9295,1.0576] n.s.     [0.9757,1.0075] n.s.   neutral            neutral            |  0.9916 neutral            neutral            neutral            | 0.9960 neutral            
+string-concat-startup      SV   24/24   16  0.9747   [0.9125,1.0395] n.s.     [0.9619,0.9865] FASTER neutral            clear win          |  0.9744 clear win          neutral            neutral            | 1.0090 neutral            
+string-concat-startup      LS   24/24   16  0.2469   [0.2078,0.2880] FASTER   [0.2436,0.2499] FASTER clear win          clear win          |  0.2468 clear win          clear win          clear win          | 0.2500 clear win          
+spring                     SBS  24/24    2  0.9867   [0.9273,1.0506] n.s.     [0.9701,1.0030] n.s.   neutral            neutral            |  0.9866 neutral            neutral            neutral            | 1.0060 neutral            
+spring                     SV   24/24    2  0.9883   [0.9319,1.0481] n.s.     [0.9728,1.0037] n.s.   clear win          clear win          |  0.9882 clear win          clear win          clear win          | 0.9690 clear win          
+spring                     LS   24/24    2  0.9891   [0.9349,1.0460] n.s.     [0.9753,1.0029] n.s.   neutral            neutral            |  0.9888 neutral            neutral            neutral            | 0.9960 neutral            
+regex-redux                SBS  24/24    1  1.0048   [0.9496,1.0633] n.s.     [0.9896,1.0203] n.s.   neutral            neutral            |  1.0048 neutral            neutral            neutral            | 1.0010 neutral            
+regex-redux                SV   24/24    1  0.9968   [0.9418,1.0550] n.s.     [0.9824,1.0118] n.s.   clear win          clear win          |  0.9968 clear win          clear win          clear win          | 0.9910 clear win          
+regex-redux                LS   24/24    1  0.9974   [0.9424,1.0556] n.s.     [0.9844,1.0109] n.s.   neutral            neutral            |  0.9975 neutral            neutral            neutral            | 1.0020 neutral            
+StringJoiner               SBS  24/24   32  0.9911   [0.9579,1.0257] n.s.     [0.9829,0.9992] FASTER neutral            neutral            |  0.9912 neutral            neutral            neutral            | 1.0010 neutral            
+StringJoiner               SV   24/24   32  0.9903   [0.9570,1.0247] n.s.     [0.9810,0.9998] FASTER neutral            neutral            |  0.9902 neutral            neutral            neutral            | 0.9940 neutral            
+StringJoiner               LS   24/24   32  0.2095   [0.1892,0.2304] FASTER   [0.2078,0.2109] FASTER clear win          clear win          |  0.2095 clear win          clear win          clear win          | 0.2130 clear win          
+string-concat              SBS  24/24   37  0.9968   [0.9689,1.0254] n.s.     [0.9893,1.0045] n.s.   neutral            neutral            |  0.9968 neutral            neutral            neutral            | 1.0060 neutral            
+string-concat              SV   24/24   37  0.9964   [0.9685,1.0249] n.s.     [0.9892,1.0040] n.s.   neutral            neutral            |  0.9964 neutral            neutral            neutral            | 1.0060 neutral            
+string-concat              LS   24/24   37  0.2345   [0.2173,0.2522] FASTER   [0.2329,0.2362] FASTER clear win          clear win          |  0.2345 clear win          clear win          clear win          | 0.2340 clear win          
+luindex                    SBS  24/24    1  1.0015   [0.9864,1.0167] n.s.     [0.9972,1.0056] n.s.   neutral            neutral            |  1.0015 neutral            neutral            neutral            | 1.0020 neutral             kept original (pr-luindex-rb1 R 1.0045 >= 1.0015)
+luindex                    SV   24/24    1  1.0016   [0.9697,1.0345] n.s.     [0.9947,1.0087] n.s.   clear win          clear win          |  1.0015 clear win          clear win          clear win          | 0.9980 clear win          pr-luindex-rb1 SWITCHED to pr-luindex-rb1 (R 1.0016 < 1.0081)
+luindex                    LS   24/24    1  1.0045   [0.9809,1.0287] n.s.     [0.9991,1.0100] n.s.   neutral            neutral            |  1.0044 neutral            neutral            neutral            | 1.0090 neutral            pr-luindex-rb1 SWITCHED to pr-luindex-rb1 (R 1.0045 < 1.0126)
+json-parser                SBS  24/24    1  0.6386   [0.6159,0.6619] FASTER   [0.6330,0.6444] FASTER clear win          clear win          |  0.6385 clear win          clear win          clear win          | 0.6390 clear win          
+json-parser                SV   24/24    1  0.9950   [0.9624,1.0287] n.s.     [0.9866,1.0034] n.s.   neutral            neutral            |  0.9949 neutral            neutral            neutral            | 0.9960 neutral            
+json-parser                LS   24/24    1  0.9870   [0.9584,1.0165] n.s.     [0.9792,0.9948] FASTER neutral            neutral            |  0.9870 neutral            neutral            neutral            | 0.9980 neutral            
+jsoup                      SBS  24/24    2  1.0033   [0.9871,1.0197] n.s.     [0.9994,1.0070] n.s.   neutral            neutral            |  1.0033 neutral            neutral            neutral            | 0.9980 neutral            
+jsoup                      SV   24/24    2  0.8945   [0.8773,0.9119] FASTER   [0.8899,0.8990] FASTER clear win          clear win          |  0.8944 clear win          clear win          clear win          | 0.8940 clear win          
+jsoup                      LS   24/24    2  1.0122   [0.9716,1.0543] n.s.     [1.0036,1.0214] SLOWER neutral            slowdown candidate |  1.0121 slowdown candidate neutral            neutral            | 0.9970 neutral            
+commons-lang-join          SBS  24/24   64  1.0003   [0.9846,1.0162] n.s.     [0.9960,1.0045] n.s.   neutral            neutral            |  1.0003 neutral            neutral            neutral            | 0.9990 neutral            
+commons-lang-join          SV   24/24   64  0.9627   [0.9472,0.9781] FASTER   [0.9592,0.9662] FASTER clear win          clear win          |  0.9626 clear win          clear win          clear win          | 0.9650 clear win          
+commons-lang-join          LS   24/24   64  1.0051   [0.9865,1.0239] n.s.     [1.0004,1.0100] SLOWER neutral            neutral            |  1.0051 neutral            neutral            neutral            | 0.9990 neutral            
+biojava                    SBS  24/24    1  0.8836   [0.8595,0.9084] FASTER   [0.8786,0.8888] FASTER clear win          clear win          |  0.8837 clear win          clear win          clear win          | 0.8850 clear win          
+biojava                    SV   24/24    1  0.9424   [0.9175,0.9679] FASTER   [0.9355,0.9492] FASTER clear win          clear win          |  0.9424 clear win          clear win          clear win          | 0.9430 clear win          
+biojava                    LS   24/24    1  0.9987   [0.9693,1.0291] n.s.     [0.9910,1.0067] n.s.   neutral            neutral            |  0.9987 neutral            neutral            neutral            | 0.9980 neutral            
+guava                      SBS   8/8   467  1.0036   [0.9733,1.0336] n.s.     [0.9894,1.0171] n.s.   neutral            neutral            |  1.0033 neutral            neutral            neutral            | 0.9900 neutral            
+guava                      SV    8/8   467  0.9214   [0.8781,0.9563] FASTER   [0.9013,0.9406] FASTER clear win          clear win          |  0.9182 clear win          clear win          clear win          | 0.9050 clear win          
+guava                      LS    8/8   467  0.9339   [0.9045,0.9626] FASTER   [0.9206,0.9475] FASTER clear win          clear win          |  0.9333 clear win          clear win          clear win          | 0.9460 clear win          
+lucene-bytask              SBS   8/8     1  1.0048   [0.9369,1.0776] n.s.     [0.9821,1.0308] n.s.   neutral            neutral            |  1.0045 neutral            neutral            neutral            | 0.9960 neutral            
+lucene-bytask              SV    8/8     1  1.0020   [0.9207,1.0905] n.s.     [0.9754,1.0334] n.s.   clear win          clear win          |  1.0013 clear win          clear win          clear win          | 1.0040 clear win          
+lucene-bytask              LS    8/8     1  0.9931   [0.9504,1.0378] n.s.     [0.9777,1.0120] n.s.   neutral            neutral            |  0.9931 neutral            neutral            neutral            | 0.9910 neutral            
+commons-csv                SBS  24/24    7  0.9974   [0.9742,1.0213] n.s.     [0.9920,1.0023] n.s.   neutral            neutral            |  0.9975 neutral            neutral            neutral            | 0.9870 neutral            
+commons-csv                SV   24/24    7  0.9892   [0.9660,1.0129] n.s.     [0.9832,0.9948] FASTER neutral            neutral            |  0.9892 neutral            neutral            neutral            | 0.9750 clear win          
+commons-csv                LS   24/24    7  1.0183   [0.9655,1.0703] n.s.     [1.0067,1.0306] SLOWER neutral            slowdown candidate |  1.0173 slowdown candidate neutral            neutral            | 0.9900 neutral            
+dacapo-xalan               FULL 24/24    1  1.0144   [0.9466,1.0870] n.s.     [0.9978,1.0310] n.s.   neutral            neutral            |  1.0143 neutral            neutral            neutral            | 1.0010 neutral            
+dacapo-zxing               FULL 24/24    1  1.0012   [0.9892,1.0133] n.s.     [0.9982,1.0042] n.s.   neutral            neutral            |  1.0012 neutral            neutral            neutral            | 1.0010 neutral            
+dacapo-avrora              FULL 24/24    1  1.0016   [0.9894,1.0140] n.s.     [0.9983,1.0049] n.s.   neutral            neutral            |  1.0016 neutral            neutral            neutral            | 1.0010 neutral            
+dacapo-batik               FULL 24/24    1  1.0011   [0.9370,1.0696] n.s.     [0.9882,1.0173] n.s.   neutral            neutral            |  1.0012 neutral            neutral            neutral            | 1.0010 neutral            
+dacapo-fop                 FULL 24/24    1  1.0055   [0.9797,1.0319] n.s.     [0.9985,1.0121] n.s.   neutral            neutral            |  1.0055 neutral            neutral            neutral            | 1.0052 neutral            
+dacapo-lusearch            FULL 24/24    1  1.0022   [0.9838,1.0210] n.s.     [0.9976,1.0069] n.s.   neutral            neutral            |  1.0023 neutral            neutral            neutral            | 1.0000 neutral            
+dacapo-pmd                 FULL 24/24    1  1.0152   [0.9107,1.1317] n.s.     [0.9883,1.0438] n.s.   neutral            neutral            |  1.0152 neutral            neutral            neutral            | 0.9890 neutral             dacapo-pmd-rb1 not available
+dacapo-graphchi            FULL 24/24    1  0.9994   [0.9892,1.0096] n.s.     [0.9971,1.0017] n.s.   neutral            neutral            |  0.9994 neutral            neutral            neutral            | 1.0000 neutral            
+dacapo-sunflow             FULL 24/24    1  0.9989   [0.9883,1.0096] n.s.     [0.9961,1.0018] n.s.   neutral            neutral            |  0.9989 neutral            neutral            neutral            | 1.0111 neutral            
+dacapo-h2                  FULL 24/24    1  0.9874   [0.8893,1.0963] n.s.     [0.9627,1.0136] n.s.   neutral            neutral            |  0.9874 neutral            neutral            neutral            | 1.0020 neutral            
+snakeyaml                  FULL 24/24    5  0.9967   [0.9316,1.0654] n.s.     [0.9796,1.0146] n.s.   neutral            neutral            |  0.9960 neutral            neutral            neutral            | 1.0300 slowdown candidate 
+csv-parsers-comparison     FULL  8/8    28  0.9836   [0.9604,1.0071] n.s.     [0.9751,0.9922] FASTER neutral            neutral            |  0.9835 neutral            neutral            neutral            | 0.9810 neutral            
+handlebars                 FULL  8/8     1  1.0037   [0.9156,1.1024] n.s.     [0.9703,1.0412] n.s.   neutral            neutral            |  1.0042 neutral            neutral            neutral            | 0.9820 neutral            
+jackson-yaml               FULL 24/24    2  1.0127   [0.9608,1.0684] n.s.     [1.0006,1.0255] SLOWER neutral            slowdown candidate |  1.0129 slowdown candidate neutral            neutral            | 1.0070 neutral            
+commons-lang               FULL 24/24   45  1.0049   [0.9849,1.0247] n.s.     [0.9994,1.0106] n.s.   neutral            neutral            |  1.0049 neutral            neutral            neutral            | 0.9830 neutral            
+opennlp                    FULL 24/24   12  1.0038   [0.9729,1.0347] n.s.     [0.9958,1.0115] n.s.   neutral            neutral            |  1.0036 neutral            neutral            neutral            | 1.0050 neutral            
+template-benchmark         FULL 24/24   10  0.9714   [0.8888,1.0537] n.s.     [0.9540,0.9877] FASTER neutral            clear win          |  0.9708 clear win          clear win          neutral            | 1.0000 neutral            
+commonmark                 FULL 24/24    7  0.9986   [0.9800,1.0178] n.s.     [0.9940,1.0032] n.s.   neutral            neutral            |  0.9986 neutral            neutral            neutral            | 1.0010 neutral            
+tinylog                    FULL 24/24   12  0.9987   [0.9678,1.0307] n.s.     [0.9904,1.0074] n.s.   neutral            neutral            |  0.9987 neutral            neutral            neutral            | 1.0050 neutral            
+fastcsv                    FULL 24/24    2  0.9955   [0.9547,1.0386] n.s.     [0.9860,1.0056] n.s.   neutral            neutral            |  0.9955 neutral            neutral            neutral            | 0.9860 neutral            
+jsqlparser                 FULL 24/24    1  1.0017   [0.9633,1.0416] n.s.     [0.9921,1.0115] n.s.   neutral            neutral            |  1.0016 neutral            neutral            neutral            | 1.0030 neutral            
+pdfbox                     FULL 24/24    2  0.9860   [0.9310,1.0442] n.s.     [0.9704,1.0015] n.s.   neutral            neutral            |  0.9860 neutral            neutral            neutral            | 1.0030 neutral            
+rhino                      FULL 24/24   35  0.9941   [0.9310,1.0620] n.s.     [0.9789,1.0102] n.s.   neutral            neutral            |  0.9943 neutral            neutral            neutral            | 0.9870 neutral            
+gson                       FULL  8/8    11  0.9939   [0.9297,1.0639] n.s.     [0.9680,1.0216] n.s.   neutral            neutral            |  0.9945 neutral            neutral            neutral            | 1.0020 neutral            
+thymeleaf                  FULL 24/24    5  1.0055   [0.9852,1.0263] n.s.     [0.9999,1.0110] n.s.   neutral            neutral            |  1.0055 neutral            neutral            neutral            | 1.0000 neutral            
+snakeyaml-engine           FULL 24/24    4  0.9896   [0.9373,1.0447] n.s.     [0.9755,1.0040] n.s.   neutral            neutral            |  0.9895 neutral            neutral            neutral            | 1.0010 neutral            
+palantir                   FULL 32/32    1  1.0054   [0.9433,1.0717] n.s.     [0.9918,1.0196] n.s.   neutral            neutral            |  1.0055 neutral            neutral            neutral            | 0.9910 neutral            
+log4j2-plc                 FULL 24/24    1  1.0249   [0.9242,1.1361] n.s.     [0.9975,1.0519] n.s.   neutral            neutral            |  1.0243 slowdown candidate neutral            neutral            | 0.9940 neutral            
+calcite                    FULL 24/24    2  0.9987   [0.9688,1.0295] n.s.     [0.9909,1.0065] n.s.   neutral            neutral            |  0.9987 neutral            neutral            neutral            | 0.9990 neutral            
+fastjson2                  FULL 24/24    5  0.9932   [0.9629,1.0244] n.s.     [0.9849,1.0017] n.s.   neutral            neutral            |  0.9933 neutral            neutral            neutral            | 0.9930 neutral            
+commons-codec              FULL 32/32    1  0.9970   [0.9644,1.0308] n.s.     [0.9900,1.0044] n.s.   neutral            neutral            |  0.9970 neutral            neutral            neutral            | 0.9990 neutral            
+jackson                    FULL 24/24   15  1.0263   [0.9418,1.1176] n.s.     [1.0070,1.0458] SLOWER neutral            slowdown candidate |  1.0280 slowdown candidate neutral            neutral            | 0.9950 neutral            jackson-rb1 SWITCHED to jackson-rb1 (R 1.0263 < 1.0301)
+re2j                       FULL 24/24   38  0.9965   [0.9824,1.0109] n.s.     [0.9934,0.9995] FASTER neutral            neutral            |  0.9965 neutral            neutral            neutral            | 0.9910 neutral            
+commons-text               FULL 24/24    4  0.9998   [0.9727,1.0279] n.s.     [0.9924,1.0070] n.s.   neutral            neutral            |  1.0000 neutral            neutral            neutral            | 0.9990 neutral            
+flexmark                   FULL 24/24    2  0.9904   [0.9615,1.0203] n.s.     [0.9829,0.9978] FASTER neutral            neutral            |  0.9904 neutral            neutral            neutral            | 0.9980 neutral            
+mustache                   FULL 24/24    5  0.9970   [0.9582,1.0369] n.s.     [0.9871,1.0069] n.s.   neutral            neutral            |  0.9970 neutral            neutral            neutral            | 0.9980 neutral            
+yauaa                      FULL 24/24   15  0.9270   [0.8700,1.1276] n.s.     [0.8659,1.0228] n.s.   neutral            neutral            |  0.9648 neutral            neutral            neutral            | 0.9980 neutral            
+sql-formatter              FULL 24/24    1  1.0056   [0.9797,1.0323] n.s.     [1.0001,1.0117] SLOWER neutral            neutral            |  1.0056 neutral            neutral            neutral            | 0.9960 neutral            
+
+## counts (cells)
+  FULL n=63  pooled p30   win 17  neutral 46  slowdown 0
+  FULL n=63  pooled boot  win 19  neutral 42  slowdown 2
+  FULL n=63  strat        win 19  neutral 41  slowdown 3
+  FULL n=63  hier         win 19  neutral 44  slowdown 0
+  FULL n=63  t3           win 18  neutral 45  slowdown 0
+  FULL n=63  C100 latest  win 20  neutral 42  slowdown 1
+  SBS  n=21  pooled p30   win 2  neutral 19  slowdown 0
+  SBS  n=21  pooled boot  win 4  neutral 17  slowdown 0
+  SBS  n=21  strat        win 4  neutral 17  slowdown 0
+  SBS  n=21  hier         win 4  neutral 17  slowdown 0
+  SBS  n=21  t3           win 4  neutral 17  slowdown 0
+  SBS  n=21  C100 latest  win 2  neutral 18  slowdown 1
+  SV   n=21  pooled p30   win 14  neutral 7  slowdown 0
+  SV   n=21  pooled boot  win 15  neutral 6  slowdown 0
+  SV   n=21  strat        win 15  neutral 6  slowdown 0
+  SV   n=21  hier         win 14  neutral 7  slowdown 0
+  SV   n=21  t3           win 14  neutral 7  slowdown 0
+  SV   n=21  C100 latest  win 15  neutral 6  slowdown 0
+  LS   n=21  pooled p30   win 5  neutral 16  slowdown 0
+  LS   n=21  pooled boot  win 5  neutral 13  slowdown 3
+  LS   n=21  strat        win 5  neutral 14  slowdown 2
+  LS   n=21  hier         win 5  neutral 16  slowdown 0
+  LS   n=21  t3           win 5  neutral 16  slowdown 0
+  LS   n=21  C100 latest  win 6  neutral 15  slowdown 0
+
+## cells whose pooled class differs from the hier-CI class or from C100 latest
+  jte                        FULL R 0.9713  p30 neutral            boot clear win          | hier clear win          (strat R 0.9714) | C100 clear win          (0.9700)
+  owasp                      FULL R 0.9857  p30 neutral            boot neutral            | hier neutral            (strat R 0.9857) | C100 clear win          (0.9720)
+  commons-csv                FULL R 0.9889  p30 neutral            boot neutral            | hier neutral            (strat R 0.9888) | C100 clear win          (0.9770)
+  StringSubstring            SBS  R 0.9684  p30 neutral            boot clear win          | hier clear win          (strat R 0.9684) | C100 neutral            (0.9820)
+  logback-perf               SBS  R 0.9692  p30 neutral            boot clear win          | hier clear win          (strat R 0.9690) | C100 neutral            (0.9820)
+  jte                        LS   R 0.9929  p30 neutral            boot neutral            | hier neutral            (strat R 0.9929) | C100 clear win          (0.9770)
+  stringbuilders             SBS  R 0.9984  p30 neutral            boot neutral            | hier neutral            (strat R 0.9984) | C100 slowdown candidate (1.0120)
+  stringbuilders             LS   R 1.0159  p30 neutral            boot slowdown candidate | hier neutral            (strat R 1.0172) | C100 neutral            (0.9950)
+  string-concat-startup      SV   R 0.9747  p30 neutral            boot clear win          | hier neutral            (strat R 0.9744) | C100 neutral            (1.0090)
+  jsoup                      LS   R 1.0122  p30 neutral            boot slowdown candidate | hier neutral            (strat R 1.0121) | C100 neutral            (0.9970)
+  commons-csv                SV   R 0.9892  p30 neutral            boot neutral            | hier neutral            (strat R 0.9892) | C100 clear win          (0.9750)
+  commons-csv                LS   R 1.0183  p30 neutral            boot slowdown candidate | hier neutral            (strat R 1.0173) | C100 neutral            (0.9900)
+  snakeyaml                  FULL R 0.9967  p30 neutral            boot neutral            | hier neutral            (strat R 0.9960) | C100 slowdown candidate (1.0300)
+  jackson-yaml               FULL R 1.0127  p30 neutral            boot slowdown candidate | hier neutral            (strat R 1.0129) | C100 neutral            (1.0070)
+  template-benchmark         FULL R 0.9714  p30 neutral            boot clear win          | hier clear win          (strat R 0.9708) | C100 neutral            (1.0000)
+  jackson                    FULL R 1.0263  p30 neutral            boot slowdown candidate | hier neutral            (strat R 1.0280) | C100 neutral            (0.9950)  [jackson-rb1]
+
+## rebuilt cells (supervisor rule: the new run alone if its R is lower, per cell)
+  pr-stringbuilder-to-string-rb1     LS   orig R 1.0029 neutral/neutral -> rb R 1.0054 neutral/neutral  kept original
+  pr-stringbuilder-to-string-rb1     SBS  orig R 1.0210 neutral/slowdown candidate -> rb R 1.0088 neutral/neutral  SWITCHED
+  pr-stringbuilder-to-string-rb1     SV   orig R 0.9562 clear win/clear win -> rb R 0.9791 clear win/clear win  kept original
+  dacapo-pmd-rb1: no pooled data (not processed)
+  pr-luindex-rb1                     LS   orig R 1.0126 neutral/slowdown candidate -> rb R 1.0045 neutral/neutral  SWITCHED
+  pr-luindex-rb1                     SBS  orig R 1.0015 neutral/neutral -> rb R 1.0045 neutral/neutral  kept original
+  pr-luindex-rb1                     SV   orig R 1.0081 clear win/clear win -> rb R 1.0016 clear win/clear win  SWITCHED
+  jackson-rb1                        FULL orig R 1.0301 neutral/slowdown candidate -> rb R 1.0263 neutral/slowdown candidate  SWITCHED
+
+## pilots (0.2 s vs 0.5 s iterations, b1 images only, pooled over the 4 alignments; not table rows)
+  StringJoiner           FULL  0.2s: R 0.2249 n 12/12 boot [0.2230,0.2268] p30 0.2249+-0.0110 FASTER  0.5s: R 0.2241 n 12/12 boot [0.2227,0.2255] p30 0.2241+-0.0092 FASTER
+  string-concat          FULL  0.2s: R 0.2335 n 12/12 boot [0.2302,0.2369] p30 0.2335+-0.0175 FASTER  0.5s: R 0.2335 n 12/12 boot [0.2319,0.2351] p30 0.2338+-0.0124 FASTER
+  commons-lang-join      FULL  0.2s: R 0.9485 n 12/12 boot [0.9413,0.9559] p30 0.9488+-0.0125 FASTER  0.5s: R 0.9574 n 12/12 boot [0.9525,0.9625] p30 0.9573+-0.0077 FASTER
+  stringbuilders         FULL  0.2s: R 0.7744 n 12/12 boot [0.7672,0.7815] p30 0.7728+-0.0144 FASTER  0.5s: R 0.7742 n 12/12 boot [0.7707,0.7777] p30 0.7743+-0.0054 FASTER
+POOLED-REPORT-DONE

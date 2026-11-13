@@ -1,0 +1,77 @@
+1792865020.249271 Warning: The option '-H:IncludeResources=templates/.*' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+1792865020.249365 Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+1792865021.460973 ========================================================================================================================
+1792865021.462445 GraalVM Native Image: Generating 'template-benchmark-BASE-b2' (executable)...
+1792865021.462463 ========================================================================================================================
+1792865021.462477 For detailed information and explanations on the build output, visit:
+1792865021.462492 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792865021.462506 ------------------------------------------------------------------------------------------------------------------------
+1792865021.479578 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+1792865021.479666 WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/home/anonymous/hunt3/src/agentgt_template-benchmark/target/benchmarks.jar)
+1792865021.479721 WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+1792865021.479752 WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+1792865022.985375 [1/8] Initializing...                                                                                    (2.3s @ 0.48GB)
+1792865022.985686  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792865022.985825  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792865022.985896  C compiler: gcc (linux, x86_64, 15.2.0)
+1792865022.986018  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792865022.986043  1 user-specific feature(s):
+1792865022.986263  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792865022.987309 ------------------------------------------------------------------------------------------------------------------------
+1792865022.987333  2 experimental option(s) unlocked:
+1792865022.987375  - '-H:CodeAlignment' (origin(s): command line)
+1792865022.987403  - '-H:IncludeResources': Use a resource-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+1792865022.988462 ------------------------------------------------------------------------------------------------------------------------
+1792865022.988482 Build resources:
+1792865022.988531  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792865022.988568  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792865023.319977 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.320636 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.321325 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.321908 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.322393 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.322869 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.332009 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.332658 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865023.333362 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1792865027.843329 [2/8] Performing analysis...  [*****]                                                                    (4.6s @ 0.91GB)
+1792865027.865449     8,042 types,  10,834 fields, and  37,159 methods found reachable
+1792865027.866371     2,774 types,   5,306 fields, and   3,472 methods registered for reflection
+1792865027.866425        63 types,      71 fields, and      55 methods registered for JNI access
+1792865027.866455         0 downcalls and 0 upcalls registered for foreign access
+1792865027.866525         4 native libraries: dl, pthread, rt, z
+1792865029.336275 [3/8] Building universe...                                                                               (1.5s @ 1.03GB)
+1792865029.882394 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.00GB)
+1792865030.403096 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.31GB)
+1792865034.744509 [6/8] Compiling methods...    [**]                                                                       (4.3s @ 0.85GB)
+1792865036.983200 [7/8] Laying out methods...   [**]                                                                       (2.2s @ 1.07GB)
+1792865038.781799 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.26GB)
+1792865038.782059   16.78MB (45.07%) for code area:    22,708 compilation units
+1792865038.782168   16.52MB (44.35%) for image heap:  178,125 objects and 83 resources
+1792865038.782190    3.94MB (10.57%) for other data
+1792865038.782217   37.23MB in total image size, 35.26MB in total file size
+1792865038.782259 ------------------------------------------------------------------------------------------------------------------------
+1792865038.782919 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792865038.783192    6.86MB java.base                                            4.38MB byte[] for code metadata
+1792865038.783257    6.73MB benchmarks.jar                                       2.48MB byte[] for java.lang.String
+1792865038.783292    1.31MB svm.jar (Native Image)                               1.72MB java.lang.String
+1792865038.783332  459.53kB java.rmi                                             1.61MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792865038.783366  165.51kB java.desktop                                         1.12MB java.lang.Class
+1792865038.783402  125.63kB java.logging                                       591.70kB byte[] for general heap data
+1792865038.783438   90.77kB org.graalvm.nativeimage.base                       500.40kB byte[] for reflection metadata
+1792865038.783482   71.47kB jdk.proxy4                                         405.21kB heap alignment
+1792865038.783516   61.41kB jdk.proxy1                                         352.18kB java.util.HashMap$Node
+1792865038.783548   60.71kB jdk.proxy2                                         337.08kB java.lang.String[]
+1792865038.784063  178.22kB for 16 more packages                                 3.02MB for 1521 more object types
+1792865038.784801 ------------------------------------------------------------------------------------------------------------------------
+1792865038.784807 Recommendations:
+1792865038.784848  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792865038.784858  HEAP: Set max heap for improved and more predictable memory usage.
+1792865038.784874  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792865038.787945 ------------------------------------------------------------------------------------------------------------------------
+1792865038.788563                        1.2s (6.7% of total time) in 173 GCs | Peak RSS: 2.48GB | CPU load: 13.85
+1792865038.788857 ------------------------------------------------------------------------------------------------------------------------
+1792865038.788862 Build artifacts:
+1792865038.789208  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/template-benchmark-BASE-b2 (executable)
+1792865038.789223 ========================================================================================================================
+1792865038.789261 Finished generating 'template-benchmark-BASE-b2' in 18.1s.

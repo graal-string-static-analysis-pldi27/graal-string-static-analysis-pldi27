@@ -1,0 +1,25 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL8  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+java-json-benchmark      BASE b1 size 48.37/51.02/22.66/23.27 | parent 21.0 s 2.91 GB | driver 21.6 s REUSED
+java-json-benchmark      BASE b2 size 48.37/51.02/22.66/23.27 | parent 21.4 s 2.91 GB | driver 22.0 s REUSED
+java-json-benchmark      BASE b3 size 48.37/51.02/22.66/23.27 | parent 21.2 s 2.91 GB | driver 21.8 s REUSED
+java-json-benchmark      FULL b1 size 48.63/51.29/22.83/23.33 | parent 48.7 s 3.60 GB | driver 49.4 s | OK | child aa 23178 ms gen 26.1 s obs 26 s VmHWM 6.56 GB | wait 26.0 s | SBS=3 SV=227(ACC=160 ELEM=9) LS=2(JOINER=2) | IC=8485 TC=891 MIRROR=161 EXACT=1 other=16 REUSED
+java-json-benchmark      FULL b2 size 48.63/51.29/22.83/23.33 | parent 48.7 s 3.70 GB | driver 49.4 s | OK | child aa 22909 ms gen 25.8 s obs 26 s VmHWM 6.42 GB | wait 26.0 s | SBS=3 SV=227(ACC=160 ELEM=9) LS=2(JOINER=2) | IC=8485 TC=891 MIRROR=161 EXACT=1 other=16 REUSED
+java-json-benchmark      FULL b3 size 48.63/51.29/22.83/23.33 | parent 49.5 s 3.70 GB | driver 50.2 s | OK | child aa 23184 ms gen 26.1 s obs 25 s VmHWM 6.30 GB | wait 26.5 s | SBS=3 SV=227(ACC=160 ELEM=9) LS=2(JOINER=2) | IC=8485 TC=891 MIRROR=161 EXACT=1 other=16 REUSED
+log4j2-plc               BASE b1 size 39.65/41.73/18.31/19.40 | parent 18.4 s 2.59 GB | driver 19.1 s REUSED
+log4j2-plc               BASE b2 size 39.65/41.73/18.31/19.40 | parent 18.7 s 2.59 GB | driver 19.3 s REUSED
+log4j2-plc               BASE b3 size 39.65/41.73/18.31/19.40 | parent 18.5 s 2.62 GB | driver 19.1 s REUSED
+log4j2-plc               FULL b1 size 39.72/41.80/18.40/19.40 | parent 41.3 s 3.16 GB | driver 42.0 s | OK | child aa 18095 ms gen 21.1 s obs 20 s VmHWM 7.24 GB | wait 21.5 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL b2 size 39.72/41.80/18.40/19.40 | parent 40.9 s 3.07 GB | driver 41.6 s | OK | child aa 17826 ms gen 20.8 s obs 21 s VmHWM 7.05 GB | wait 21.0 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+log4j2-plc               FULL b3 size 39.72/41.80/18.40/19.40 | parent 40.9 s 3.14 GB | driver 41.6 s | OK | child aa 17853 ms gen 20.8 s obs 19 s VmHWM 7.18 GB | wait 21.0 s | SBS=7 SV=234(ACC=170 ELEM=9) LS=0(JOINER=0) | IC=6378 TC=649 MIRROR=115 EXACT=0 other=10 REUSED
+## build cost vs stock (means over builds)
+java-json-benchmark      FULL/BASE  parent wall 21.2 -> 49.0 s (x2.31)  Peak RSS 2.91 -> 3.67 GB (x1.26)  child VmHWM 6.43 GB  size 48.37 -> 48.63 MB (x1.005)  status OK,OK,OK
+log4j2-plc               FULL/BASE  parent wall 18.5 -> 41.0 s (x2.21)  Peak RSS 2.60 -> 3.12 GB (x1.20)  child VmHWM 7.15 GB  size 39.65 -> 39.72 MB (x1.002)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+java-json-benchmark      FULL SBS=3 SV=227 (ACC=160 ELEM=9) LS=2 (JOINER=2)  OK
+log4j2-plc               FULL SBS=7 SV=234 (ACC=170 ELEM=9) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

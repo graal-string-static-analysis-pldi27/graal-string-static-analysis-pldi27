@@ -1,0 +1,50 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labsjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.apache.logging.log4j.perf.jmh.PatternLayoutComparisonBenchmark.log4j2
+
+# Run progress: 0.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3126352.175 ops/s
+# Warmup Iteration   2: 3116407.593 ops/s
+# Warmup Iteration   3: 3143074.774 ops/s
+# Warmup Iteration   4: 3137461.981 ops/s
+# Warmup Iteration   5: 3126267.338 ops/s
+Iteration   1: 3112596.428 ops/s
+Iteration   2: 3128971.203 ops/s
+Iteration   3: 3132904.446 ops/s
+Iteration   4: 3117778.687 ops/s
+Iteration   5: 3132328.384 ops/s
+Iteration   6: 3125846.086 ops/s
+Iteration   7: 3057780.817 ops/s
+Iteration   8: 3071567.012 ops/s
+Iteration   9: 2969526.246 ops/s
+Iteration  10: 3000595.997 ops/s
+
+Result "org.apache.logging.log4j.perf.jmh.PatternLayoutComparisonBenchmark.log4j2":
+  3084989.531 ±(99.9%) 89232.657 ops/s [Average]
+  (min, avg, max) = (2969526.246, 3084989.531, 3132904.446), stdev = 59021.877
+  CI (99.9%): [2995756.874, 3174222.187] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:15
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                 Mode  Cnt        Score       Error  Units
+PatternLayoutComparisonBenchmark.log4j2  thrpt   10  3084989.531 ± 89232.657  ops/s

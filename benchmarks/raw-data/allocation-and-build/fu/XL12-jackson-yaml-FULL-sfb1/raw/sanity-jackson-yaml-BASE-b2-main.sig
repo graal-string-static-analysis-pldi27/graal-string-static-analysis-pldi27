@@ -1,0 +1,2 @@
+YAMLStdReadVanilla.readPojoMediaItem
+YAMLStdWriteVanilla.writePojoMediaItem

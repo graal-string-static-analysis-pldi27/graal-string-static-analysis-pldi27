@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/commons-lang  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+commons-lang             BASE b1 size 22.74/24.03/9.71/11.67 | parent 27.3 s 2.28 GB | driver 28.5 s REUSED
+commons-lang             BASE b2 size 22.74/24.03/9.71/11.67 | parent 23.4 s 2.26 GB | driver 24.2 s REUSED
+commons-lang             FULL b1 size 22.74/24.04/9.75/11.67 | parent 48.3 s 2.47 GB | driver 49.1 s | OK | child aa 15092 ms gen 21.0 s obs 21 s VmHWM 3.04 GB | wait 21.6 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             FULL b2 size 22.74/24.04/9.75/11.67 | parent 44.8 s 2.42 GB | driver 45.9 s | OK | child aa 13999 ms gen 18.8 s obs 19 s VmHWM 3.03 GB | wait 19.0 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             BASE_A32 b1 size 22.55/23.84/9.51/11.67 | parent 25.5 s 2.28 GB | driver 26.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             BASE_A32 b2 size 22.55/23.84/9.51/11.67 | parent 21.9 s 2.27 GB | driver 23.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             FULL_A32 b1 size 22.55/23.84/9.55/11.67 | parent 41.7 s 2.54 GB | driver 42.6 s | OK | child aa 17621 ms gen 22.0 s obs 22 s VmHWM 3.03 GB | wait 22.0 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             FULL_A32 b2 size 22.55/23.84/9.55/11.67 | parent 46.9 s 2.47 GB | driver 47.9 s | OK | child aa 16876 ms gen 21.6 s obs 22 s VmHWM 3.03 GB | wait 22.0 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             BASE_A128 b1 size 23.20/24.49/10.19/11.67 | parent 23.4 s 2.27 GB | driver 24.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             BASE_A128 b2 size 23.20/24.49/10.19/11.67 | parent 24.1 s 2.26 GB | driver 24.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             FULL_A128 b1 size 23.27/24.56/10.23/11.67 | parent 49.8 s 2.46 GB | driver 50.7 s | OK | child aa 16909 ms gen 22.8 s obs 23 s VmHWM 3.10 GB | wait 23.0 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             FULL_A128 b2 size 23.27/24.56/10.23/11.67 | parent 44.4 s 2.47 GB | driver 45.5 s | OK | child aa 17951 ms gen 21.9 s obs 21 s VmHWM 3.10 GB | wait 22.0 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             BASE_A256 b1 size 24.25/25.54/11.23/11.67 | parent 28.4 s 2.26 GB | driver 29.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             BASE_A256 b2 size 24.25/25.54/11.23/11.67 | parent 24.8 s 2.27 GB | driver 25.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+commons-lang             FULL_A256 b1 size 24.25/25.54/11.27/11.67 | parent 47.9 s 2.46 GB | driver 49.1 s | OK | child aa 21001 ms gen 24.6 s obs 24 s VmHWM 3.04 GB | wait 24.6 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+commons-lang             FULL_A256 b2 size 24.25/25.54/11.27/11.67 | parent 52.5 s 2.59 GB | driver 53.8 s | OK | child aa 18757 ms gen 23.4 s obs 24 s VmHWM 3.01 GB | wait 23.6 s | SBS=2 SV=133(ACC=110 ELEM=5) LS=0(JOINER=0) | IC=3823 TC=374 MIRROR=52 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+commons-lang             FULL/BASE  parent wall 25.4 -> 46.5 s (x1.84)  Peak RSS 2.27 -> 2.45 GB (x1.08)  child VmHWM 3.03 GB  size 22.74 -> 22.74 MB (x1.000)  status OK,OK
+commons-lang             BASE_A32/BASE  parent wall 25.4 -> 23.7 s (x0.93)  Peak RSS 2.27 -> 2.27 GB (x1.00)  child VmHWM ? GB  size 22.74 -> 22.55 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+commons-lang             FULL_A32/BASE  parent wall 25.4 -> 44.3 s (x1.75)  Peak RSS 2.27 -> 2.50 GB (x1.10)  child VmHWM 3.03 GB  size 22.74 -> 22.55 MB (x0.991)  status OK,OK
+commons-lang             BASE_A128/BASE  parent wall 25.4 -> 23.8 s (x0.94)  Peak RSS 2.27 -> 2.26 GB (x1.00)  child VmHWM ? GB  size 22.74 -> 23.20 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+commons-lang             FULL_A128/BASE  parent wall 25.4 -> 47.1 s (x1.86)  Peak RSS 2.27 -> 2.46 GB (x1.09)  child VmHWM 3.10 GB  size 22.74 -> 23.27 MB (x1.023)  status OK,OK
+commons-lang             BASE_A256/BASE  parent wall 25.4 -> 26.6 s (x1.05)  Peak RSS 2.27 -> 2.26 GB (x1.00)  child VmHWM ? GB  size 22.74 -> 24.25 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+commons-lang             FULL_A256/BASE  parent wall 25.4 -> 50.2 s (x1.98)  Peak RSS 2.27 -> 2.52 GB (x1.11)  child VmHWM 3.02 GB  size 22.74 -> 24.25 MB (x1.066)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+commons-lang             FULL SBS=2 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang             BASE_A32 no profile  NO-PROFILE
+commons-lang             FULL_A32 SBS=2 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang             BASE_A128 no profile  NO-PROFILE
+commons-lang             FULL_A128 SBS=2 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+commons-lang             BASE_A256 no profile  NO-PROFILE
+commons-lang             FULL_A256 SBS=2 SV=133 (ACC=110 ELEM=5) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+commons-lang             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.5 s
+commons-lang             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.3 s
+commons-lang             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.7 s
+commons-lang             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.9 s
+commons-lang             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.4 s
+commons-lang             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.6 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

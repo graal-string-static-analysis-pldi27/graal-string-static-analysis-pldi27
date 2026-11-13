@@ -1,0 +1,23 @@
+# C99 campaign results  SLOT=AR2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/AR2-lucene-bytask-FULL-ld1  CFGS=BASE FULL BASE_A16 FULL_A16 BASE_A32 FULL_A32 BASE_A128 FULL_A128  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## lucene-bytask  [metric] Lucene byTask indexLineFile 2M enwiki lines (recheck s2 recipe)  builds BASE:2 FULL:2 BASE_A16:2 FULL_A16:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2  starts parsed=32
+  GEOMEAN FULL/BASE  time 0.999 [0.993,1.005] n.s. (2 keys)  alloc 0.929 [0.929,0.929] LESS (1 keys)
+  GEOMEAN BASE_A16/BASE  time 1.012 [1.002,1.025] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A16/BASE  time 1.021 [1.007,1.038] SLOWER (2 keys)  alloc 0.929 [0.929,0.930] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.009 [1.002,1.016] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.010 [0.992,1.032] n.s. (2 keys)  alloc 0.929 [0.929,0.929] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.029 [1.020,1.037] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.013 [0.993,1.042] n.s. (2 keys)  alloc 0.929 [0.929,0.930] LESS (1 keys)
+  addDoc s r0 (warm-up)                                                  FULL 1.008 [0.992,1.023] info-only | BASE_A16 1.003 [0.994,1.011] info-only | FULL_A16 1.013 [1.005,1.023] info-only | BASE_A32 1.005 [0.995,1.018] info-only | FULL_A32 1.005 [0.993,1.017] info-only | BASE_A128 1.027 [1.020,1.035] info-only | FULL_A128 1.002 [0.991,1.016] info-only  BIMODAL(FULL,BASE_A16,FULL_A32)
+  addDoc s r1                                                            FULL 0.998 [0.989,1.007] n.s. | BASE_A16 1.015 [0.999,1.036] n.s. | FULL_A16 1.023 [1.007,1.036] SLOWER | BASE_A32 1.017 [1.002,1.031] SLOWER | FULL_A32 1.024 [0.990,1.067] n.s. | BASE_A128 1.029 [1.011,1.047] SLOWER | FULL_A128 1.010 [0.992,1.032] n.s.  BIMODAL(BASE,BASE_A32,BASE_A128)
+  addDoc s r2                                                            FULL 1.000 [0.991,1.008] n.s. | BASE_A16 1.009 [0.998,1.018] n.s. | FULL_A16 1.018 [1.002,1.045] SLOWER | BASE_A32 1.002 [0.997,1.006] n.s. | FULL_A32 0.995 [0.991,1.000] n.s. | BASE_A128 1.028 [1.021,1.036] SLOWER | FULL_A128 1.017 [0.992,1.054] n.s.  BIMODAL(BASE_A16)
+  wall s                                                                 FULL 1.002 [0.995,1.009] info-only | BASE_A16 1.009 [1.001,1.020] info-only | FULL_A16 1.018 [1.007,1.031] info-only | BASE_A32 1.008 [1.002,1.016] info-only | FULL_A32 1.008 [0.995,1.025] info-only | BASE_A128 1.027 [1.021,1.032] info-only | FULL_A128 1.009 [0.995,1.031] info-only  BIMODAL(FULL,FULL_A32)
+  ~alloc MB                                                              FULL 0.929 [0.929,0.929] LESS | BASE_A16 1.000 [1.000,1.000] n.s. | FULL_A16 0.929 [0.929,0.930] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.929 [0.929,0.929] LESS | BASE_A128 1.000 [1.000,1.000] MORE | FULL_A128 0.929 [0.929,0.930] LESS  BIMODAL(BASE_A32)
+  ~rss MB                                                                FULL 0.987 [0.964,1.009] n.s. | BASE_A16 0.978 [0.954,1.008] n.s. | FULL_A16 0.965 [0.935,0.994] LESS | BASE_A32 0.987 [0.956,1.010] n.s. | FULL_A32 1.000 [0.965,1.035] n.s. | BASE_A128 0.976 [0.951,0.999] LESS | FULL_A128 0.992 [0.948,1.031] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A16          FULL_A16          BASE_A32          FULL_A32          BASE_A128         FULL_A128        
+  lucene-bytask              0.999|0.929*      1.012*|1.000      1.021*|0.929*     1.009*|1.000      1.010|0.929*      1.029*|1.000*     1.013|0.929*     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

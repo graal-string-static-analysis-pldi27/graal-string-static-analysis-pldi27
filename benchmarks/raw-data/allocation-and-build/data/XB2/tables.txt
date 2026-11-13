@@ -1,0 +1,29 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB2  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+antlr                    BASE b1 size 22.02/23.29/9.18/11.53 | parent 13.4 s 2.27 GB | driver 13.9 s REUSED
+antlr                    BASE b2 size 22.02/23.29/9.18/11.53 | parent 12.9 s 2.29 GB | driver 13.5 s REUSED
+antlr                    BASE b3 size 22.02/23.29/9.18/11.53 | parent 13.0 s 2.29 GB | driver 13.6 s REUSED
+antlr                    SBS  b1 size 22.02/23.29/9.18/11.53 | parent 24.8 s 2.36 GB | driver 25.3 s | OK | child aa 8443 ms gen 10.8 s obs 10 s VmHWM 2.96 GB | wait 11.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS  b2 size 22.02/23.29/9.18/11.53 | parent 24.8 s 2.33 GB | driver 25.4 s | OK | child aa 8434 ms gen 10.8 s obs 11 s VmHWM 2.96 GB | wait 11.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SBS  b3 size 22.02/23.29/9.18/11.53 | parent 24.8 s 2.33 GB | driver 25.4 s | OK | child aa 8356 ms gen 10.8 s obs 10 s VmHWM 2.98 GB | wait 11.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    SV   b1 size 22.02/23.29/9.20/11.53 | parent 24.8 s 2.35 GB | driver 25.4 s | OK | child aa 8530 ms gen 10.9 s obs 11 s VmHWM 2.96 GB | wait 11.0 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV   b2 size 22.02/23.29/9.20/11.53 | parent 25.8 s 2.35 GB | driver 26.3 s | OK | child aa 8669 ms gen 11.1 s obs 10 s VmHWM 2.96 GB | wait 11.5 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    SV   b3 size 22.02/23.29/9.20/11.53 | parent 25.1 s 2.32 GB | driver 25.7 s | OK | child aa 8674 ms gen 11.0 s obs 11 s VmHWM 2.97 GB | wait 11.0 s | SBS=0 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    LS   b1 size 22.02/23.29/9.18/11.53 | parent 23.0 s 2.31 GB | driver 23.6 s | ZERO-ADMIT | child aa 6714 ms gen 9.1 s obs 8 s VmHWM 2.60 GB | wait 9.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS   b2 size 22.02/23.29/9.18/11.53 | parent 23.5 s 2.32 GB | driver 24.1 s | ZERO-ADMIT | child aa 6817 ms gen 9.2 s obs 8 s VmHWM 2.65 GB | wait 9.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+antlr                    LS   b3 size 22.02/23.29/9.18/11.53 | parent 22.9 s 2.35 GB | driver 23.5 s | ZERO-ADMIT | child aa 6665 ms gen 9.0 s obs 8 s VmHWM 2.74 GB | wait 9.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+antlr                    SBS /BASE  parent wall 13.1 -> 24.8 s (x1.89)  Peak RSS 2.28 -> 2.34 GB (x1.02)  child VmHWM 2.96 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK,OK
+antlr                    SV  /BASE  parent wall 13.1 -> 25.2 s (x1.93)  Peak RSS 2.28 -> 2.34 GB (x1.02)  child VmHWM 2.96 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK,OK
+antlr                    LS  /BASE  parent wall 13.1 -> 23.1 s (x1.77)  Peak RSS 2.28 -> 2.33 GB (x1.02)  child VmHWM 2.66 GB  size 22.02 -> 22.02 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+## admits per rep kind (b1 profile; FULL/mode builds)
+antlr                    SBS  SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    SV   SBS=0 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+antlr                    LS   b1 ZERO-ADMIT               child obs 8 s VmHWM 2.60 GB | parent wait 9.0 s | driver wall 23.6 s
+antlr                    LS   b2 ZERO-ADMIT               child obs 8 s VmHWM 2.65 GB | parent wait 9.5 s | driver wall 24.1 s
+antlr                    LS   b3 ZERO-ADMIT               child obs 8 s VmHWM 2.74 GB | parent wait 9.0 s | driver wall 23.5 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

@@ -1,0 +1,65 @@
+1792863093.614294 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1792863094.700673 ========================================================================================================================
+1792863094.702110 GraalVM Native Image: Generating 'luindex-BASE-b3' (executable)...
+1792863094.702128 ========================================================================================================================
+1792863094.702138 For detailed information and explanations on the build output, visit:
+1792863094.702152 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792863094.702167 ------------------------------------------------------------------------------------------------------------------------
+1792863096.308264 [1/8] Initializing...                                                                                    (2.2s @ 0.44GB)
+1792863096.308531  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792863096.308657  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792863096.308732  C compiler: gcc (linux, x86_64, 15.2.0)
+1792863096.308845  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792863096.308870  1 user-specific feature(s):
+1792863096.309033  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792863096.309675 ------------------------------------------------------------------------------------------------------------------------
+1792863096.309698  2 experimental option(s) unlocked:
+1792863096.309733  - '-H:+SharedArenaSupport' (origin(s): command line)
+1792863096.309744  - '-H:CodeAlignment' (origin(s): command line)
+1792863096.310715 ------------------------------------------------------------------------------------------------------------------------
+1792863096.310721 Build resources:
+1792863096.310798  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792863096.310846  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792863096.324107 Skipped 863 predefined class(es) because the classpath already contains a class with the same name: org.apache.lucene.index.MultiReader, org.apache.lucene.backward_codecs.lucene87.Lucene87StoredFieldsFormat$Mode, org.apache.lucene.util.ArrayTimSorter, org.apache.lucene.util.compress.LZ4$FastCompressionHashTable, org.apache.lucene.codecs.DocValuesProducer, org.apache.lucene.index.FieldInfos$Builder, org.apache.lucene.codecs.lucene94.Lucene94FieldInfosFormat, org.apache.lucene.util.fst.ReverseBytesReader, org.apache.lucene.backward_codecs.lucene86.Lucene86PointsReader, org.apache.lucene.util.packed.PackedInts$ReaderIterator, ...
+1792863100.714715 [2/8] Performing analysis...  [*****]                                                                    (4.1s @ 0.75GB)
+1792863100.737551     6,979 types,  11,204 fields, and  33,536 methods found reachable
+1792863100.738359     2,367 types,     663 fields, and   3,260 methods registered for reflection
+1792863100.738436        63 types,      76 fields, and      54 methods registered for JNI access
+1792863100.738479         0 downcalls and 0 upcalls registered for foreign access
+1792863100.738514         4 native libraries: dl, pthread, rt, z
+1792863101.906378 [3/8] Building universe...                                                                               (1.2s @ 1.01GB)
+1792863102.403692 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.09GB)
+1792863102.871232 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.24GB)
+1792863106.957589 [6/8] Compiling methods...    [**]                                                                       (4.1s @ 0.89GB)
+1792863109.023389 [7/8] Laying out methods...   [**]                                                                       (2.1s @ 1.10GB)
+1792863110.810226 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.22GB)
+1792863110.810538   15.81MB (44.46%) for code area:    21,333 compilation units
+1792863110.810604   16.25MB (45.70%) for image heap:  182,790 objects and 67 resources
+1792863110.810626    3.50MB ( 9.84%) for other data
+1792863110.810656   35.57MB in total image size, 33.69MB in total file size
+1792863110.810721 ------------------------------------------------------------------------------------------------------------------------
+1792863110.811406 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792863110.811662    8.22MB java.base                                            4.11MB byte[] for code metadata
+1792863110.811704    3.41MB lucene-core-9.10.0-SNAPSHOT.jar                      2.31MB byte[] for java.lang.String
+1792863110.811737    1.56MB svm.jar (Native Image)                               1.57MB java.lang.String
+1792863110.811874  930.90kB lucene-backward-codecs-9.10.0-SNAPSHOT.jar           1.40MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792863110.811914  302.83kB dacapo-evaluation-git-e947cbfc.jar                 947.38kB java.lang.Class
+1792863110.811930  214.84kB jdk.zipfs                                          673.89kB byte[] for general heap data
+1792863110.811940  113.50kB java.logging                                       434.98kB heap alignment
+1792863110.811970   93.47kB org.graalvm.nativeimage.base                       392.35kB java.lang.Object[]
+1792863110.811993   82.26kB jdk.charsets                                       351.41kB java.util.HashMap$Node
+1792863110.812039   55.32kB jdk.proxy2                                         286.17kB byte[] for reflection metadata
+1792863110.812528  206.52kB for 15 more packages                                 3.78MB for 1582 more object types
+1792863110.813280 ------------------------------------------------------------------------------------------------------------------------
+1792863110.813285 Recommendations:
+1792863110.813329  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792863110.813385  HEAP: Set max heap for improved and more predictable memory usage.
+1792863110.813411  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792863110.816389 ------------------------------------------------------------------------------------------------------------------------
+1792863110.817053                        1.2s (6.8% of total time) in 167 GCs | Peak RSS: 2.41GB | CPU load: 13.77
+1792863110.817356 ------------------------------------------------------------------------------------------------------------------------
+1792863110.817361 Build artifacts:
+1792863110.817687  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libmanagement_ext.so (jdk_library)
+1792863110.817704  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/luindex-BASE-b3 (executable)
+1792863110.817718 ========================================================================================================================
+1792863110.817767 Finished generating 'luindex-BASE-b3' in 16.8s.

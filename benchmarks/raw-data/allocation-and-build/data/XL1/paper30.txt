@@ -1,0 +1,15 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL1  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## jte  starts BASE:3 FULL:3  time keys 7
+  FULL/BASE time  ratio 0.9702  (mean FULL 0.9702 n=3, BASE 1.0000 n=3)  error margin 0.0078 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 1.0055  (mean FULL 1.0055 n=3, BASE 1.0000 n=3)  error margin 0.0091 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9702  (mean FULL 0.9702 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0068 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 7 keys]
+    key TemplateOutputTest.stringBuilder                             BASE 742.135 sd 10.6  FULL 693.332 sd 5.46  [lower]
+    key TemplateOutputTest.templateOutput                            BASE 753.192 sd 8.94  FULL 758.368 sd 14.1  [lower]
+    key bench.JteBench.directString                                  BASE 1356.26 sd 15.9  FULL 1352.37 sd 17.4  [lower]
+    key bench.JteBench.engineString                                  BASE 1421.1 sd 13  FULL 1400.2 sd 6.67  [lower]
+    key bench.JteBench.engineStringEsc                               BASE 2421.75 sd 28.2  FULL 2406.74 sd 32.5  [lower]
+    key bench.JteBench.engineUtf8                                    BASE 1037.66 sd 15.3  FULL 1026.24 sd 18.4  [lower]
+    key bench.JteBench.engineUtf8Esc                                 BASE 2498.93 sd 26.6  FULL 2226.61 sd 12.3  [lower]
+
+PAPER30-DONE

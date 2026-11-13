@@ -1,0 +1,79 @@
+# JMH 1.13 (released 3761 days ago, please consider updating!)
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladsch.flexmark.core.test.util.parser.SpecBenchmark.examples
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 62.768 ops/s
+# Warmup Iteration   2: 61.703 ops/s
+# Warmup Iteration   3: 60.741 ops/s
+# Warmup Iteration   4: 60.140 ops/s
+# Warmup Iteration   5: 59.672 ops/s
+Iteration   1: 59.667 ops/s
+Iteration   2: 59.565 ops/s
+Iteration   3: 59.390 ops/s
+Iteration   4: 59.379 ops/s
+Iteration   5: 59.379 ops/s
+Iteration   6: 59.358 ops/s
+Iteration   7: 59.390 ops/s
+Iteration   8: 59.268 ops/s
+Iteration   9: 59.351 ops/s
+Iteration  10: 59.315 ops/s
+
+Result "examples":
+  59.406 ±(99.9%) 0.181 ops/s [Average]
+  (min, avg, max) = (59.268, 59.406, 59.667), stdev = 0.119
+  CI (99.9%): [59.226, 59.587] (assumes normal distribution)
+
+
+# JMH 1.13 (released 3761 days ago, please consider updating!)
+# VM version: JDK 25.0.2-internal, VM 25.0.2-internal-adhoc.anonymous.labsjdk
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.vladsch.flexmark.core.test.util.parser.SpecBenchmark.wholeSpec
+
+# Run progress: 50.00% complete, ETA 00:00:15
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 27.200 ops/s
+# Warmup Iteration   2: 27.518 ops/s
+# Warmup Iteration   3: 27.556 ops/s
+# Warmup Iteration   4: 27.655 ops/s
+# Warmup Iteration   5: 27.615 ops/s
+Iteration   1: 27.345 ops/s
+Iteration   2: 27.732 ops/s
+Iteration   3: 27.700 ops/s
+Iteration   4: 27.810 ops/s
+Iteration   5: 27.463 ops/s
+Iteration   6: 27.424 ops/s
+Iteration   7: 27.426 ops/s
+Iteration   8: 27.590 ops/s
+Iteration   9: 27.631 ops/s
+Iteration  10: 27.639 ops/s
+
+Result "wholeSpec":
+  27.576 ±(99.9%) 0.233 ops/s [Average]
+  (min, avg, max) = (27.345, 27.576, 27.810), stdev = 0.154
+  CI (99.9%): [27.343, 27.809] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:30
+
+Benchmark                 Mode  Cnt   Score   Error  Units
+SpecBenchmark.examples   thrpt   10  59.406 ± 0.181  ops/s
+SpecBenchmark.wholeSpec  thrpt   10  27.576 ± 0.233  ops/s

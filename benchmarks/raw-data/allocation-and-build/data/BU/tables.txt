@@ -1,0 +1,131 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BU  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+json-parser              BASE b1 size 13.96/14.84/5.35/7.67 | parent 10.9 s 2.11 GB | driver 11.6 s REUSED
+json-parser              BASE b2 size 13.96/14.84/5.35/7.67 | parent 10.4 s 2.08 GB | driver 11.1 s REUSED
+json-parser              BASE b3 size 13.96/14.84/5.35/7.67 | parent 10.6 s 2.11 GB | driver 11.2 s REUSED
+json-parser              SBS  b1 size 13.96/14.84/5.35/7.67 | parent 20.1 s 2.26 GB | driver 20.7 s | OK | child aa 6715 ms gen 9.0 s obs 8 s VmHWM 2.72 GB | wait 9.5 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS  b2 size 13.96/14.84/5.35/7.67 | parent 19.6 s 2.25 GB | driver 20.2 s | OK | child aa 6585 ms gen 8.8 s obs 8 s VmHWM 2.71 GB | wait 9.0 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SBS  b3 size 13.96/14.84/5.35/7.67 | parent 19.5 s 2.23 GB | driver 20.1 s | OK | child aa 6685 ms gen 8.9 s obs 9 s VmHWM 2.68 GB | wait 9.0 s | SBS=65 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=45 REUSED
+json-parser              SV   b1 size 13.96/14.84/5.36/7.67 | parent 19.6 s 2.25 GB | driver 20.2 s | OK | child aa 6575 ms gen 8.8 s obs 8 s VmHWM 2.70 GB | wait 9.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV   b2 size 13.96/14.84/5.36/7.67 | parent 19.6 s 2.27 GB | driver 20.2 s | OK | child aa 6549 ms gen 8.7 s obs 8 s VmHWM 2.72 GB | wait 9.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              SV   b3 size 13.96/14.84/5.36/7.67 | parent 19.5 s 2.23 GB | driver 20.1 s | OK | child aa 6449 ms gen 8.6 s obs 8 s VmHWM 2.73 GB | wait 9.0 s | SBS=0 SV=2(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=2 REUSED
+json-parser              LS   b1 size 13.96/14.84/5.38/7.67 | parent 20.8 s 2.25 GB | driver 21.4 s | OK | child aa 7466 ms gen 9.7 s obs 10 s VmHWM 3.33 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS   b2 size 13.96/14.84/5.38/7.67 | parent 20.6 s 2.26 GB | driver 21.2 s | OK | child aa 7489 ms gen 9.7 s obs 9 s VmHWM 3.36 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+json-parser              LS   b3 size 13.96/14.84/5.38/7.67 | parent 20.5 s 2.22 GB | driver 21.1 s | OK | child aa 7606 ms gen 9.8 s obs 10 s VmHWM 3.35 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=0 REUSED
+biojava                  BASE b1 size 61.34/64.49/30.78/28.05 | parent 26.0 s 4.61 GB | driver 27.0 s REUSED
+biojava                  BASE b2 size 61.34/64.49/30.78/28.05 | parent 25.7 s 4.17 GB | driver 26.5 s REUSED
+biojava                  BASE b3 size 61.34/64.49/30.78/28.05 | parent 25.2 s 4.82 GB | driver 26.0 s REUSED
+biojava                  SBS  b1 size 61.34/64.49/30.78/28.05 | parent 51.5 s 5.69 GB | driver 52.3 s | OK | child aa 21210 ms gen 24.1 s obs 23 s VmHWM 7.11 GB | wait 24.0 s | SBS=40 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=1 REUSED
+biojava                  SBS  b2 size 61.34/64.49/30.78/28.05 | parent 51.4 s 5.92 GB | driver 52.2 s | OK | child aa 21079 ms gen 23.9 s obs 24 s VmHWM 7.71 GB | wait 24.0 s | SBS=40 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=1 REUSED
+biojava                  SBS  b3 size 61.34/64.49/30.78/28.05 | parent 52.1 s 5.95 GB | driver 52.9 s | OK | child aa 21296 ms gen 24.1 s obs 24 s VmHWM 7.89 GB | wait 24.0 s | SBS=40 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=1 REUSED
+biojava                  SV   b1 size 61.48/64.63/30.91/28.05 | parent 52.5 s 5.47 GB | driver 53.3 s | OK | child aa 21789 ms gen 24.6 s obs 24 s VmHWM 7.56 GB | wait 25.0 s | SBS=0 SV=229(ACC=154 ELEM=9) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=12 REUSED
+biojava                  SV   b2 size 61.48/64.63/30.91/28.05 | parent 52.5 s 6.01 GB | driver 53.3 s | OK | child aa 22142 ms gen 24.9 s obs 25 s VmHWM 7.19 GB | wait 25.0 s | SBS=0 SV=229(ACC=154 ELEM=9) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=12 REUSED
+biojava                  SV   b3 size 61.48/64.63/30.91/28.05 | parent 52.0 s 6.19 GB | driver 52.8 s | OK | child aa 21809 ms gen 24.7 s obs 25 s VmHWM 7.77 GB | wait 24.5 s | SBS=0 SV=229(ACC=154 ELEM=9) LS=0(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=12 REUSED
+biojava                  LS   b1 size 61.34/64.49/30.79/28.05 | parent 50.6 s 6.08 GB | driver 51.4 s | OK | child aa 20827 ms gen 23.6 s obs 24 s VmHWM 7.43 GB | wait 23.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=0 REUSED
+biojava                  LS   b2 size 61.34/64.49/30.79/28.05 | parent 51.6 s 5.76 GB | driver 52.4 s | OK | child aa 20961 ms gen 23.8 s obs 24 s VmHWM 7.62 GB | wait 24.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=0 REUSED
+biojava                  LS   b3 size 61.34/64.49/30.79/28.05 | parent 51.6 s 5.50 GB | driver 52.4 s | OK | child aa 21300 ms gen 24.1 s obs 24 s VmHWM 7.47 GB | wait 24.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    BASE b1 size 15.34/16.31/6.08/8.26 | parent 10.7 s 2.15 GB | driver 11.3 s REUSED
+jsoup                    BASE b2 size 15.34/16.31/6.08/8.26 | parent 10.5 s 2.12 GB | driver 11.1 s REUSED
+jsoup                    BASE b3 size 15.34/16.31/6.08/8.26 | parent 10.7 s 2.15 GB | driver 11.4 s REUSED
+jsoup                    SBS  b1 size 15.34/16.31/6.08/8.26 | parent 21.1 s 2.32 GB | driver 21.7 s | ZERO-ADMIT | child aa 7306 ms gen 9.6 s obs 10 s VmHWM 2.85 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    SBS  b2 size 15.34/16.31/6.08/8.26 | parent 21.4 s 2.29 GB | driver 22.0 s | ZERO-ADMIT | child aa 7359 ms gen 9.6 s obs 10 s VmHWM 2.80 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    SBS  b3 size 15.34/16.31/6.08/8.26 | parent 21.0 s 2.32 GB | driver 21.7 s | ZERO-ADMIT | child aa 7205 ms gen 9.4 s obs 10 s VmHWM 2.84 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    SV   b1 size 15.40/16.37/6.10/8.32 | parent 21.5 s 2.32 GB | driver 22.1 s | OK | child aa 7248 ms gen 9.5 s obs 10 s VmHWM 2.80 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    SV   b2 size 15.40/16.37/6.10/8.32 | parent 21.1 s 2.28 GB | driver 21.7 s | OK | child aa 7411 ms gen 9.7 s obs 10 s VmHWM 2.76 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    SV   b3 size 15.40/16.37/6.10/8.32 | parent 21.4 s 2.29 GB | driver 22.0 s | OK | child aa 7319 ms gen 9.6 s obs 10 s VmHWM 2.86 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    LS   b1 size 15.34/16.31/6.08/8.26 | parent 19.4 s 2.27 GB | driver 20.0 s | ZERO-ADMIT | child aa 5213 ms gen 7.5 s obs 8 s VmHWM 2.42 GB | wait 8.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    LS   b2 size 15.34/16.31/6.08/8.26 | parent 19.1 s 2.27 GB | driver 19.8 s | ZERO-ADMIT | child aa 5237 ms gen 7.5 s obs 7 s VmHWM 2.37 GB | wait 8.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+jsoup                    LS   b3 size 15.34/16.31/6.08/8.26 | parent 18.8 s 2.33 GB | driver 19.4 s | ZERO-ADMIT | child aa 5156 ms gen 7.4 s obs 7 s VmHWM 2.45 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             BASE b1 size 49.81/52.37/25.55/22.02 | parent 21.7 s 2.90 GB | driver 22.5 s REUSED
+dacapo-batik             BASE b2 size 49.81/52.37/25.55/22.02 | parent 21.5 s 2.87 GB | driver 22.2 s REUSED
+dacapo-batik             BASE b3 size 49.81/52.37/25.55/22.02 | parent 21.3 s 2.94 GB | driver 22.0 s REUSED
+dacapo-batik             SBS  b1 size 49.81/52.37/25.55/22.02 | parent 43.3 s 3.76 GB | driver 44.1 s | OK | child aa 17593 ms gen 20.2 s obs 20 s VmHWM 4.78 GB | wait 20.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             SBS  b2 size 49.81/52.37/25.55/22.02 | parent 43.3 s 3.77 GB | driver 44.0 s | OK | child aa 17624 ms gen 20.2 s obs 20 s VmHWM 4.80 GB | wait 20.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             SBS  b3 size 49.81/52.37/25.55/22.02 | parent 43.6 s 3.64 GB | driver 44.4 s | OK | child aa 18079 ms gen 20.8 s obs 21 s VmHWM 4.68 GB | wait 21.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8278 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             SV   b1 size 49.88/52.43/25.60/22.02 | parent 43.1 s 3.74 GB | driver 43.8 s | OK | child aa 17905 ms gen 20.6 s obs 21 s VmHWM 4.73 GB | wait 20.5 s | SBS=0 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             SV   b2 size 49.88/52.43/25.60/22.02 | parent 43.5 s 3.73 GB | driver 44.3 s | OK | child aa 17893 ms gen 20.6 s obs 20 s VmHWM 4.82 GB | wait 20.5 s | SBS=0 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             SV   b3 size 49.88/52.43/25.60/22.02 | parent 43.7 s 3.71 GB | driver 44.5 s | OK | child aa 17730 ms gen 20.4 s obs 20 s VmHWM 4.68 GB | wait 20.5 s | SBS=0 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             LS   b1 size 49.81/52.37/25.55/22.02 | parent 38.1 s 3.73 GB | driver 38.9 s | ZERO-ADMIT | child aa 12383 ms gen 15.1 s obs 14 s VmHWM 4.27 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             LS   b2 size 49.81/52.37/25.55/22.02 | parent 38.4 s 3.73 GB | driver 39.2 s | ZERO-ADMIT | child aa 12863 ms gen 15.6 s obs 15 s VmHWM 4.08 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+dacapo-batik             LS   b3 size 49.81/52.37/25.55/22.02 | parent 38.5 s 3.75 GB | driver 39.2 s | ZERO-ADMIT | child aa 12648 ms gen 15.3 s obs 16 s VmHWM 4.15 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              BASE b1 size 13.90/14.78/5.34/7.67 | parent 10.4 s 2.05 GB | driver 11.1 s REUSED
+regex-redux              BASE b2 size 13.90/14.78/5.34/7.67 | parent 10.5 s 2.08 GB | driver 11.1 s REUSED
+regex-redux              BASE b3 size 13.90/14.78/5.34/7.67 | parent 10.2 s 2.09 GB | driver 10.8 s REUSED
+regex-redux              SBS  b1 size 13.90/14.78/5.34/7.67 | parent 18.2 s 2.24 GB | driver 18.8 s | ZERO-ADMIT | child aa 4909 ms gen 7.1 s obs 6 s VmHWM 2.38 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS  b2 size 13.90/14.78/5.34/7.67 | parent 18.0 s 2.23 GB | driver 18.6 s | ZERO-ADMIT | child aa 4816 ms gen 7.0 s obs 6 s VmHWM 2.41 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SBS  b3 size 13.90/14.78/5.34/7.67 | parent 18.0 s 2.26 GB | driver 18.7 s | ZERO-ADMIT | child aa 4812 ms gen 7.1 s obs 6 s VmHWM 2.35 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV   b1 size 13.96/14.84/5.35/7.67 | parent 18.2 s 2.23 GB | driver 18.8 s | OK | child aa 4977 ms gen 7.1 s obs 6 s VmHWM 2.33 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV   b2 size 13.96/14.84/5.35/7.67 | parent 18.0 s 2.24 GB | driver 18.7 s | OK | child aa 4903 ms gen 7.1 s obs 7 s VmHWM 2.42 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              SV   b3 size 13.96/14.84/5.35/7.67 | parent 18.1 s 2.25 GB | driver 18.8 s | OK | child aa 4784 ms gen 7.0 s obs 6 s VmHWM 2.38 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS   b1 size 13.90/14.78/5.34/7.67 | parent 18.6 s 2.24 GB | driver 19.2 s | ZERO-ADMIT | child aa 5248 ms gen 7.5 s obs 7 s VmHWM 2.42 GB | wait 8.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS   b2 size 13.90/14.78/5.34/7.67 | parent 17.9 s 2.25 GB | driver 18.6 s | ZERO-ADMIT | child aa 5125 ms gen 7.3 s obs 6 s VmHWM 2.43 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              LS   b3 size 13.90/14.78/5.34/7.67 | parent 18.0 s 2.23 GB | driver 18.6 s | ZERO-ADMIT | child aa 5176 ms gen 7.3 s obs 6 s VmHWM 2.38 GB | wait 7.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  BASE b1 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.43 GB | driver 17.5 s REUSED
+luindex                  BASE b2 size 33.69/35.57/15.81/16.25 | parent 16.7 s 2.42 GB | driver 17.4 s REUSED
+luindex                  BASE b3 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.41 GB | driver 17.4 s REUSED
+luindex                  SBS  b1 size 33.69/35.57/15.81/16.25 | parent 32.8 s 2.74 GB | driver 33.4 s | OK | child aa 11748 ms gen 14.3 s obs 14 s VmHWM 3.46 GB | wait 14.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS  b2 size 33.69/35.57/15.81/16.25 | parent 33.3 s 2.71 GB | driver 34.1 s | OK | child aa 11917 ms gen 14.5 s obs 15 s VmHWM 3.47 GB | wait 15.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4295 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS  b3 size 33.69/35.57/15.81/16.25 | parent 32.5 s 2.71 GB | driver 33.2 s | OK | child aa 11732 ms gen 14.3 s obs 14 s VmHWM 3.40 GB | wait 14.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4295 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SV   b1 size 33.82/35.70/15.87/16.32 | parent 33.6 s 2.88 GB | driver 34.4 s | OK | child aa 11970 ms gen 14.6 s obs 14 s VmHWM 3.47 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV   b2 size 33.82/35.70/15.87/16.32 | parent 33.2 s 2.80 GB | driver 33.9 s | OK | child aa 11982 ms gen 14.7 s obs 15 s VmHWM 3.47 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV   b3 size 33.75/35.64/15.87/16.25 | parent 33.6 s 2.75 GB | driver 34.2 s | OK | child aa 11892 ms gen 14.5 s obs 15 s VmHWM 3.50 GB | wait 15.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  LS   b1 size 33.88/35.77/15.90/16.32 | parent 36.0 s 2.79 GB | driver 36.7 s | OK | child aa 14674 ms gen 17.3 s obs 17 s VmHWM 6.16 GB | wait 17.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4294 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS   b2 size 33.88/35.77/15.90/16.32 | parent 35.8 s 2.75 GB | driver 36.4 s | OK | child aa 15083 ms gen 17.7 s obs 18 s VmHWM 6.07 GB | wait 17.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4292 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS   b3 size 33.88/35.77/15.90/16.32 | parent 35.4 s 2.79 GB | driver 36.1 s | OK | child aa 14986 ms gen 17.6 s obs 18 s VmHWM 6.12 GB | wait 17.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4293 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+json-parser              SBS /BASE  parent wall 10.6 -> 19.7 s (x1.86)  Peak RSS 2.10 -> 2.25 GB (x1.07)  child VmHWM 2.70 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK,OK
+json-parser              SV  /BASE  parent wall 10.6 -> 19.6 s (x1.84)  Peak RSS 2.10 -> 2.25 GB (x1.07)  child VmHWM 2.72 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK,OK
+json-parser              LS  /BASE  parent wall 10.6 -> 20.6 s (x1.94)  Peak RSS 2.10 -> 2.24 GB (x1.07)  child VmHWM 3.34 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK,OK
+biojava                  SBS /BASE  parent wall 25.6 -> 51.7 s (x2.02)  Peak RSS 4.53 -> 5.85 GB (x1.29)  child VmHWM 7.57 GB  size 61.34 -> 61.34 MB (x1.000)  status OK,OK,OK
+biojava                  SV  /BASE  parent wall 25.6 -> 52.3 s (x2.04)  Peak RSS 4.53 -> 5.89 GB (x1.30)  child VmHWM 7.51 GB  size 61.34 -> 61.48 MB (x1.002)  status OK,OK,OK
+biojava                  LS  /BASE  parent wall 25.6 -> 51.3 s (x2.00)  Peak RSS 4.53 -> 5.78 GB (x1.27)  child VmHWM 7.50 GB  size 61.34 -> 61.34 MB (x1.000)  status OK,OK,OK
+jsoup                    SBS /BASE  parent wall 10.6 -> 21.2 s (x1.99)  Peak RSS 2.14 -> 2.31 GB (x1.08)  child VmHWM 2.83 GB  size 15.34 -> 15.34 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+jsoup                    SV  /BASE  parent wall 10.6 -> 21.3 s (x2.01)  Peak RSS 2.14 -> 2.30 GB (x1.07)  child VmHWM 2.81 GB  size 15.34 -> 15.40 MB (x1.004)  status OK,OK,OK
+jsoup                    LS  /BASE  parent wall 10.6 -> 19.1 s (x1.80)  Peak RSS 2.14 -> 2.29 GB (x1.07)  child VmHWM 2.42 GB  size 15.34 -> 15.34 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+dacapo-batik             SBS /BASE  parent wall 21.5 -> 43.4 s (x2.02)  Peak RSS 2.90 -> 3.72 GB (x1.28)  child VmHWM 4.75 GB  size 49.81 -> 49.81 MB (x1.000)  status OK,OK,OK
+dacapo-batik             SV  /BASE  parent wall 21.5 -> 43.4 s (x2.02)  Peak RSS 2.90 -> 3.73 GB (x1.28)  child VmHWM 4.74 GB  size 49.81 -> 49.88 MB (x1.001)  status OK,OK,OK
+dacapo-batik             LS  /BASE  parent wall 21.5 -> 38.3 s (x1.78)  Peak RSS 2.90 -> 3.74 GB (x1.29)  child VmHWM 4.17 GB  size 49.81 -> 49.81 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SBS /BASE  parent wall 10.4 -> 18.1 s (x1.74)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 2.38 GB  size 13.90 -> 13.90 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+regex-redux              SV  /BASE  parent wall 10.4 -> 18.1 s (x1.75)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 2.38 GB  size 13.90 -> 13.96 MB (x1.005)  status OK,OK,OK
+regex-redux              LS  /BASE  parent wall 10.4 -> 18.2 s (x1.75)  Peak RSS 2.07 -> 2.24 GB (x1.08)  child VmHWM 2.41 GB  size 13.90 -> 13.90 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT,ZERO-ADMIT
+luindex                  SBS /BASE  parent wall 16.8 -> 32.9 s (x1.96)  Peak RSS 2.42 -> 2.72 GB (x1.12)  child VmHWM 3.44 GB  size 33.69 -> 33.69 MB (x1.000)  status OK,OK,OK
+luindex                  SV  /BASE  parent wall 16.8 -> 33.5 s (x2.00)  Peak RSS 2.42 -> 2.81 GB (x1.16)  child VmHWM 3.48 GB  size 33.69 -> 33.80 MB (x1.003)  status OK,OK,OK
+luindex                  LS  /BASE  parent wall 16.8 -> 35.7 s (x2.13)  Peak RSS 2.42 -> 2.78 GB (x1.15)  child VmHWM 6.12 GB  size 33.69 -> 33.88 MB (x1.006)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+json-parser              SBS  SBS=65 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              SV   SBS=0 SV=2 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+json-parser              LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+biojava                  SBS  SBS=40 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+biojava                  SV   SBS=0 SV=229 (ACC=154 ELEM=9) LS=0 (JOINER=0)  OK
+biojava                  LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+jsoup                    SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+jsoup                    SV   SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+jsoup                    LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+dacapo-batik             SBS  SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-batik             SV   SBS=0 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-batik             LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+regex-redux              SV   SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+luindex                  SBS  SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+luindex                  SV   SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=152 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+jsoup                    SBS  b1 ZERO-ADMIT               child obs 10 s VmHWM 2.85 GB | parent wait 10.0 s | driver wall 21.7 s
+jsoup                    SBS  b2 ZERO-ADMIT               child obs 10 s VmHWM 2.80 GB | parent wait 10.0 s | driver wall 22.0 s
+jsoup                    SBS  b3 ZERO-ADMIT               child obs 10 s VmHWM 2.84 GB | parent wait 10.0 s | driver wall 21.7 s
+jsoup                    LS   b1 ZERO-ADMIT               child obs 8 s VmHWM 2.42 GB | parent wait 8.0 s | driver wall 20.0 s
+jsoup                    LS   b2 ZERO-ADMIT               child obs 7 s VmHWM 2.37 GB | parent wait 8.0 s | driver wall 19.8 s
+jsoup                    LS   b3 ZERO-ADMIT               child obs 7 s VmHWM 2.45 GB | parent wait 7.5 s | driver wall 19.4 s
+dacapo-batik             LS   b1 ZERO-ADMIT               child obs 14 s VmHWM 4.27 GB | parent wait 15.5 s | driver wall 38.9 s
+dacapo-batik             LS   b2 ZERO-ADMIT               child obs 15 s VmHWM 4.08 GB | parent wait 15.5 s | driver wall 39.2 s
+dacapo-batik             LS   b3 ZERO-ADMIT               child obs 16 s VmHWM 4.15 GB | parent wait 15.5 s | driver wall 39.2 s
+regex-redux              SBS  b1 ZERO-ADMIT               child obs 6 s VmHWM 2.38 GB | parent wait 7.5 s | driver wall 18.8 s
+regex-redux              SBS  b2 ZERO-ADMIT               child obs 6 s VmHWM 2.41 GB | parent wait 7.5 s | driver wall 18.6 s
+regex-redux              SBS  b3 ZERO-ADMIT               child obs 6 s VmHWM 2.35 GB | parent wait 7.5 s | driver wall 18.7 s
+regex-redux              LS   b1 ZERO-ADMIT               child obs 7 s VmHWM 2.42 GB | parent wait 8.0 s | driver wall 19.2 s
+regex-redux              LS   b2 ZERO-ADMIT               child obs 6 s VmHWM 2.43 GB | parent wait 7.5 s | driver wall 18.6 s
+regex-redux              LS   b3 ZERO-ADMIT               child obs 6 s VmHWM 2.38 GB | parent wait 7.5 s | driver wall 18.6 s
+## determinism: dacapo-batik SBS: admit counts differ across builds; luindex SBS: admit counts differ across builds; luindex SV: admit counts differ across builds; luindex LS: admit counts differ across builds
+TABLES-DONE

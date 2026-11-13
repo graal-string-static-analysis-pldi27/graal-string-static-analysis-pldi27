@@ -1,0 +1,16 @@
+# C99 campaign results  SLOT=XL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL1  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jte  [jmh] jte JMH TemplateOutputTest + JteBench (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.970 [0.961,0.980] FASTER (7 keys)  alloc 1.005 [0.994,1.017] n.s. (1 keys)
+  TemplateOutputTest.stringBuilder                                       FULL 0.934 [0.920,0.947] FASTER
+  TemplateOutputTest.templateOutput                                      FULL 1.007 [0.988,1.028] n.s.
+  bench.JteBench.directString                                            FULL 0.997 [0.982,1.013] n.s.
+  bench.JteBench.engineString                                            FULL 0.985 [0.976,0.994] FASTER
+  bench.JteBench.engineStringEsc                                         FULL 0.994 [0.978,1.010] n.s.
+  bench.JteBench.engineUtf8                                              FULL 0.989 [0.968,1.010] n.s.
+  bench.JteBench.engineUtf8Esc                                           FULL 0.891 [0.881,0.900] FASTER
+  ~alloc MB                                                              FULL 1.005 [0.994,1.017] n.s.
+  ~rss MB                                                                FULL 1.008 [1.003,1.015] MORE
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

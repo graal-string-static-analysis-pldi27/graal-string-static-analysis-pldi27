@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=lucene-bytask  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/lucene-bytask  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## lucene-bytask  [metric] Lucene byTask indexLineFile 2M enwiki lines (recheck s2 recipe)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.989 [0.986,0.992] FASTER (1 keys)  alloc 0.928 [0.928,0.928] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.003 [0.997,1.009] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.996 [0.989,1.003] n.s. (1 keys)  alloc 0.929 [0.928,0.929] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.032 [1.018,1.047] SLOWER (1 keys)  alloc 1.000 [0.999,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.996 [0.991,1.000] n.s. (1 keys)  alloc 0.929 [0.928,0.929] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.041 [1.007,1.075] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.061 [1.038,1.085] SLOWER (1 keys)  alloc 0.929 [0.928,0.929] LESS (1 keys)
+  addDoc s r0 (warm-up)                                                  FULL 0.988 [0.985,0.991] info-only | BASE_A32 0.992 [0.988,0.996] info-only | FULL_A32 0.991 [0.985,0.996] info-only | BASE_A128 1.011 [1.007,1.016] info-only | FULL_A128 0.988 [0.986,0.990] info-only | BASE_A256 1.042 [1.016,1.068] info-only | FULL_A256 1.039 [1.022,1.056] info-only
+  addDoc s r1                                                            FULL 0.989 [0.986,0.992] FASTER | BASE_A32 1.003 [0.997,1.009] n.s. | FULL_A32 0.996 [0.989,1.003] n.s. | BASE_A128 1.032 [1.018,1.047] SLOWER | FULL_A128 0.996 [0.991,1.000] n.s. | BASE_A256 1.041 [1.007,1.075] SLOWER | FULL_A256 1.061 [1.038,1.085] SLOWER
+  wall s                                                                 FULL 0.989 [0.987,0.991] info-only | BASE_A32 0.998 [0.993,1.002] info-only | FULL_A32 0.993 [0.988,0.999] info-only | BASE_A128 1.021 [1.013,1.029] info-only | FULL_A128 0.992 [0.989,0.994] info-only | BASE_A256 1.041 [1.013,1.069] info-only | FULL_A256 1.049 [1.030,1.069] info-only
+  ~alloc MB                                                              FULL 0.928 [0.928,0.928] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.929 [0.928,0.929] LESS | BASE_A128 1.000 [0.999,1.000] n.s. | FULL_A128 0.929 [0.928,0.929] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.929 [0.928,0.929] LESS
+  ~rss MB                                                                FULL 1.074 [1.040,1.109] MORE | BASE_A32 1.032 [0.994,1.072] n.s. | FULL_A32 1.042 [1.001,1.084] MORE | BASE_A128 1.028 [0.983,1.074] n.s. | FULL_A128 1.003 [0.972,1.035] n.s. | BASE_A256 1.005 [0.969,1.042] n.s. | FULL_A256 1.027 [0.980,1.076] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  lucene-bytask              0.989*|0.928*     1.003|1.000       0.996|0.929*      1.032*|1.000      0.996|0.929*      1.041*|1.000      1.061*|0.929*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

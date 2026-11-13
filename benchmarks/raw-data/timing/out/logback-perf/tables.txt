@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/logback-perf  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+logback-perf             BASE b1 size 32.44/34.11/14.82/15.93 | parent 36.5 s 2.37 GB | driver 37.3 s REUSED
+logback-perf             BASE b2 size 32.44/34.11/14.82/15.93 | parent 34.3 s 2.36 GB | driver 35.3 s REUSED
+logback-perf             FULL b1 size 32.77/34.45/15.11/15.99 | parent 70.0 s 2.92 GB | driver 72.1 s | OK | child aa 32650 ms gen 38.3 s obs 39 s VmHWM 8.16 GB | wait 38.6 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL b2 size 32.77/34.45/15.11/15.99 | parent 80.0 s 3.09 GB | driver 81.3 s | OK | child aa 36309 ms gen 41.3 s obs 42 s VmHWM 8.80 GB | wait 40.6 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             BASE_A32 b1 size 32.18/33.85/14.56/15.93 | parent 33.7 s 2.33 GB | driver 35.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             BASE_A32 b2 size 32.18/33.85/14.56/15.93 | parent 30.0 s 2.44 GB | driver 30.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             FULL_A32 b1 size 32.51/34.19/14.83/15.99 | parent 74.0 s 2.95 GB | driver 76.2 s | OK | child aa 31642 ms gen 38.3 s obs 38 s VmHWM 9.84 GB | wait 38.6 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL_A32 b2 size 32.51/34.19/14.83/15.99 | parent 77.0 s 2.86 GB | driver 78.9 s | OK | child aa 37122 ms gen 42.9 s obs 43 s VmHWM 9.09 GB | wait 42.1 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6161 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             BASE_A128 b1 size 33.03/34.70/15.46/15.93 | parent 32.6 s 2.34 GB | driver 34.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             BASE_A128 b2 size 33.03/34.70/15.46/15.93 | parent 32.3 s 2.43 GB | driver 33.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             FULL_A128 b1 size 33.36/35.04/15.75/15.93 | parent 77.0 s 3.04 GB | driver 79.4 s | OK | child aa 33888 ms gen 39.8 s obs 39 s VmHWM 9.57 GB | wait 40.1 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL_A128 b2 size 33.36/35.04/15.75/15.93 | parent 75.0 s 2.85 GB | driver 76.0 s | OK | child aa 35116 ms gen 41.0 s obs 41 s VmHWM 11.10 GB | wait 41.6 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             BASE_A256 b1 size 34.41/36.08/16.88/15.86 | parent 30.8 s 2.39 GB | driver 32.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             BASE_A256 b2 size 34.41/36.08/16.88/15.86 | parent 30.4 s 2.38 GB | driver 31.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+logback-perf             FULL_A256 b1 size 34.80/36.48/17.17/15.93 | parent 39.6 s 2.69 GB | driver 41.0 s | OK | child aa 16777 ms gen 19.6 s obs 19 s VmHWM 6.51 GB | wait 20.0 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+logback-perf             FULL_A256 b2 size 34.80/36.48/17.17/15.93 | parent 36.5 s 2.73 GB | driver 37.3 s | OK | child aa 16062 ms gen 18.6 s obs 19 s VmHWM 6.18 GB | wait 19.0 s | SBS=3 SV=157(ACC=132 ELEM=6) LS=18(JOINER=0) | IC=6159 TC=619 MIRROR=79 EXACT=0 other=4 REUSED
+## build cost vs stock (means over builds)
+logback-perf             FULL/BASE  parent wall 35.4 -> 75.0 s (x2.12)  Peak RSS 2.37 -> 3.00 GB (x1.27)  child VmHWM 8.48 GB  size 32.44 -> 32.77 MB (x1.010)  status OK,OK
+logback-perf             BASE_A32/BASE  parent wall 35.4 -> 31.9 s (x0.90)  Peak RSS 2.37 -> 2.38 GB (x1.01)  child VmHWM ? GB  size 32.44 -> 32.18 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+logback-perf             FULL_A32/BASE  parent wall 35.4 -> 75.5 s (x2.13)  Peak RSS 2.37 -> 2.91 GB (x1.23)  child VmHWM 9.46 GB  size 32.44 -> 32.51 MB (x1.002)  status OK,OK
+logback-perf             BASE_A128/BASE  parent wall 35.4 -> 32.5 s (x0.92)  Peak RSS 2.37 -> 2.38 GB (x1.01)  child VmHWM ? GB  size 32.44 -> 33.03 MB (x1.018)  status NO-PROFILE,NO-PROFILE
+logback-perf             FULL_A128/BASE  parent wall 35.4 -> 76.0 s (x2.15)  Peak RSS 2.37 -> 2.95 GB (x1.25)  child VmHWM 10.34 GB  size 32.44 -> 33.36 MB (x1.028)  status OK,OK
+logback-perf             BASE_A256/BASE  parent wall 35.4 -> 30.6 s (x0.86)  Peak RSS 2.37 -> 2.38 GB (x1.01)  child VmHWM ? GB  size 32.44 -> 34.41 MB (x1.061)  status NO-PROFILE,NO-PROFILE
+logback-perf             FULL_A256/BASE  parent wall 35.4 -> 38.0 s (x1.07)  Peak RSS 2.37 -> 2.71 GB (x1.15)  child VmHWM 6.34 GB  size 32.44 -> 34.80 MB (x1.073)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+logback-perf             FULL SBS=3 SV=157 (ACC=132 ELEM=6) LS=18 (JOINER=0)  OK
+logback-perf             BASE_A32 no profile  NO-PROFILE
+logback-perf             FULL_A32 SBS=3 SV=157 (ACC=132 ELEM=6) LS=18 (JOINER=0)  OK
+logback-perf             BASE_A128 no profile  NO-PROFILE
+logback-perf             FULL_A128 SBS=3 SV=157 (ACC=132 ELEM=6) LS=18 (JOINER=0)  OK
+logback-perf             BASE_A256 no profile  NO-PROFILE
+logback-perf             FULL_A256 SBS=3 SV=157 (ACC=132 ELEM=6) LS=18 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+logback-perf             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 35.0 s
+logback-perf             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.8 s
+logback-perf             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.0 s
+logback-perf             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.6 s
+logback-perf             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.1 s
+logback-perf             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.7 s
+## determinism: logback-perf FULL_A32: admit counts differ across builds
+TABLES-DONE

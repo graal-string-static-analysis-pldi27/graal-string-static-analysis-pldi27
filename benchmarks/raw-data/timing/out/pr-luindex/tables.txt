@@ -1,0 +1,76 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-luindex  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+luindex                  BASE b1 size 33.69/35.57/15.81/16.25 | parent 40.4 s 2.39 GB | driver 41.3 s REUSED
+luindex                  BASE b2 size 33.69/35.57/15.81/16.25 | parent 37.7 s 2.35 GB | driver 39.4 s REUSED
+luindex                  SBS  b1 size 33.69/35.57/15.81/16.25 | parent 71.0 s 2.90 GB | driver 72.3 s | OK | child aa 22921 ms gen 31.5 s obs 32 s VmHWM 3.64 GB | wait 32.1 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4295 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS  b2 size 33.69/35.57/15.81/16.25 | parent 71.0 s 2.72 GB | driver 71.9 s | OK | child aa 27152 ms gen 31.8 s obs 31 s VmHWM 3.55 GB | wait 32.1 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SV   b1 size 33.82/35.70/15.87/16.32 | parent 67.0 s 2.84 GB | driver 69.0 s | OK | child aa 25574 ms gen 32.6 s obs 32 s VmHWM 3.49 GB | wait 33.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4296 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV   b2 size 33.82/35.70/15.87/16.32 | parent 70.0 s 2.83 GB | driver 72.0 s | OK | child aa 28347 ms gen 32.6 s obs 32 s VmHWM 3.40 GB | wait 33.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4292 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  LS   b1 size 33.88/35.77/15.90/16.32 | parent 78.0 s 2.94 GB | driver 79.7 s | OK | child aa 27000 ms gen 31.1 s obs 31 s VmHWM 6.05 GB | wait 31.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4293 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS   b2 size 33.88/35.77/15.90/16.32 | parent 74.0 s 2.92 GB | driver 75.5 s | OK | child aa 31451 ms gen 35.7 s obs 35 s VmHWM 6.26 GB | wait 36.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4297 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  BASE_A32 b1 size 33.43/35.30/15.52/16.25 | parent 34.4 s 2.41 GB | driver 35.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  BASE_A32 b2 size 33.43/35.30/15.52/16.25 | parent 41.7 s 2.35 GB | driver 42.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  SBS_A32 b1 size 33.43/35.30/15.52/16.25 | parent 70.0 s 2.60 GB | driver 71.2 s | OK | child aa 24605 ms gen 31.4 s obs 32 s VmHWM 3.46 GB | wait 32.0 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS_A32 b2 size 33.43/35.30/15.52/16.25 | parent 74.0 s 2.70 GB | driver 75.4 s | OK | child aa 29344 ms gen 34.9 s obs 35 s VmHWM 3.46 GB | wait 35.1 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4295 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SV_A32 b1 size 33.56/35.44/15.57/16.32 | parent 63.0 s 2.88 GB | driver 65.1 s | OK | child aa 25572 ms gen 30.7 s obs 30 s VmHWM 3.53 GB | wait 31.0 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV_A32 b2 size 33.56/35.44/15.57/16.32 | parent 58.3 s 2.87 GB | driver 59.5 s | OK | child aa 20352 ms gen 23.5 s obs 23 s VmHWM 3.49 GB | wait 24.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4295 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  LS_A32 b1 size 33.56/35.44/15.61/16.32 | parent 70.0 s 2.86 GB | driver 71.5 s | OK | child aa 29281 ms gen 32.7 s obs 31 s VmHWM 6.01 GB | wait 33.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4290 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS_A32 b2 size 33.56/35.44/15.61/16.32 | parent 75.0 s 2.99 GB | driver 77.1 s | OK | child aa 29873 ms gen 36.4 s obs 36 s VmHWM 6.06 GB | wait 36.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4293 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  BASE_A128 b1 size 34.47/36.35/16.55/16.25 | parent 36.5 s 2.39 GB | driver 37.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  BASE_A128 b2 size 34.47/36.35/16.55/16.25 | parent 38.7 s 2.39 GB | driver 40.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  SBS_A128 b1 size 34.47/36.35/16.55/16.25 | parent 73.0 s 2.72 GB | driver 74.2 s | OK | child aa 24925 ms gen 31.3 s obs 32 s VmHWM 3.62 GB | wait 31.6 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4292 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS_A128 b2 size 34.47/36.35/16.55/16.25 | parent 76.0 s 2.84 GB | driver 77.2 s | OK | child aa 29045 ms gen 34.3 s obs 33 s VmHWM 3.51 GB | wait 34.6 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SV_A128 b1 size 34.54/36.42/16.61/16.25 | parent 65.0 s 2.69 GB | driver 66.3 s | OK | child aa 22798 ms gen 28.0 s obs 28 s VmHWM 3.50 GB | wait 28.5 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4293 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV_A128 b2 size 34.54/36.42/16.61/16.25 | parent 64.0 s 2.89 GB | driver 66.2 s | OK | child aa 26411 ms gen 29.6 s obs 30 s VmHWM 3.48 GB | wait 30.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4292 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  LS_A128 b1 size 34.54/36.42/16.64/16.25 | parent 70.0 s 2.82 GB | driver 71.4 s | OK | child aa 29917 ms gen 36.7 s obs 36 s VmHWM 6.06 GB | wait 37.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4290 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS_A128 b2 size 34.54/36.42/16.64/16.25 | parent 72.0 s 2.99 GB | driver 73.6 s | OK | child aa 30027 ms gen 33.7 s obs 34 s VmHWM 6.06 GB | wait 34.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4290 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  BASE_A256 b1 size 36.05/37.93/18.16/16.25 | parent 25.7 s 2.36 GB | driver 26.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  BASE_A256 b2 size 36.05/37.93/18.16/16.25 | parent 28.8 s 2.34 GB | driver 29.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+luindex                  SBS_A256 b1 size 36.05/37.93/18.16/16.25 | parent 71.0 s 2.87 GB | driver 73.0 s | OK | child aa 27644 ms gen 33.2 s obs 32 s VmHWM 3.59 GB | wait 33.5 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4291 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SBS_A256 b2 size 36.05/37.93/18.16/16.25 | parent 71.0 s 2.77 GB | driver 72.5 s | OK | child aa 28679 ms gen 32.2 s obs 32 s VmHWM 3.74 GB | wait 32.6 s | SBS=1 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  SV_A256 b1 size 36.11/37.99/18.22/16.25 | parent 73.0 s 2.87 GB | driver 75.1 s | OK | child aa 27522 ms gen 33.3 s obs 32 s VmHWM 3.58 GB | wait 33.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4290 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  SV_A256 b2 size 36.11/37.99/18.22/16.25 | parent 75.0 s 2.77 GB | driver 76.9 s | OK | child aa 27010 ms gen 31.8 s obs 32 s VmHWM 3.47 GB | wait 32.1 s | SBS=0 SV=125(ACC=99 ELEM=1) LS=0(JOINER=0) | IC=4296 TC=379 MIRROR=50 EXACT=1 other=11 REUSED
+luindex                  LS_A256 b1 size 36.18/38.06/18.26/16.25 | parent 77.0 s 2.95 GB | driver 78.6 s | OK | child aa 35144 ms gen 39.4 s obs 39 s VmHWM 6.07 GB | wait 39.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4290 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+luindex                  LS_A256 b2 size 36.18/38.06/18.26/16.25 | parent 76.0 s 2.87 GB | driver 77.9 s | OK | child aa 31734 ms gen 38.0 s obs 38 s VmHWM 6.10 GB | wait 38.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=152(JOINER=0) | IC=4292 TC=379 MIRROR=2 EXACT=0 other=1 REUSED
+## build cost vs stock (means over builds)
+luindex                  SBS /BASE  parent wall 39.0 -> 71.0 s (x1.82)  Peak RSS 2.37 -> 2.81 GB (x1.19)  child VmHWM 3.59 GB  size 33.69 -> 33.69 MB (x1.000)  status OK,OK
+luindex                  SV  /BASE  parent wall 39.0 -> 68.5 s (x1.75)  Peak RSS 2.37 -> 2.83 GB (x1.20)  child VmHWM 3.45 GB  size 33.69 -> 33.82 MB (x1.004)  status OK,OK
+luindex                  LS  /BASE  parent wall 39.0 -> 76.0 s (x1.95)  Peak RSS 2.37 -> 2.93 GB (x1.24)  child VmHWM 6.16 GB  size 33.69 -> 33.88 MB (x1.006)  status OK,OK
+luindex                  BASE_A32/BASE  parent wall 39.0 -> 38.0 s (x0.97)  Peak RSS 2.37 -> 2.38 GB (x1.00)  child VmHWM ? GB  size 33.69 -> 33.43 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+luindex                  SBS_A32/BASE  parent wall 39.0 -> 72.0 s (x1.84)  Peak RSS 2.37 -> 2.65 GB (x1.12)  child VmHWM 3.46 GB  size 33.69 -> 33.43 MB (x0.992)  status OK,OK
+luindex                  SV_A32/BASE  parent wall 39.0 -> 60.6 s (x1.55)  Peak RSS 2.37 -> 2.88 GB (x1.21)  child VmHWM 3.51 GB  size 33.69 -> 33.56 MB (x0.996)  status OK,OK
+luindex                  LS_A32/BASE  parent wall 39.0 -> 72.5 s (x1.86)  Peak RSS 2.37 -> 2.92 GB (x1.23)  child VmHWM 6.04 GB  size 33.69 -> 33.56 MB (x0.996)  status OK,OK
+luindex                  BASE_A128/BASE  parent wall 39.0 -> 37.6 s (x0.96)  Peak RSS 2.37 -> 2.39 GB (x1.01)  child VmHWM ? GB  size 33.69 -> 34.47 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+luindex                  SBS_A128/BASE  parent wall 39.0 -> 74.5 s (x1.91)  Peak RSS 2.37 -> 2.78 GB (x1.17)  child VmHWM 3.56 GB  size 33.69 -> 34.47 MB (x1.023)  status OK,OK
+luindex                  SV_A128/BASE  parent wall 39.0 -> 64.5 s (x1.65)  Peak RSS 2.37 -> 2.79 GB (x1.18)  child VmHWM 3.49 GB  size 33.69 -> 34.54 MB (x1.025)  status OK,OK
+luindex                  LS_A128/BASE  parent wall 39.0 -> 71.0 s (x1.82)  Peak RSS 2.37 -> 2.91 GB (x1.23)  child VmHWM 6.06 GB  size 33.69 -> 34.54 MB (x1.025)  status OK,OK
+luindex                  BASE_A256/BASE  parent wall 39.0 -> 27.2 s (x0.70)  Peak RSS 2.37 -> 2.35 GB (x0.99)  child VmHWM ? GB  size 33.69 -> 36.05 MB (x1.070)  status NO-PROFILE,NO-PROFILE
+luindex                  SBS_A256/BASE  parent wall 39.0 -> 71.0 s (x1.82)  Peak RSS 2.37 -> 2.82 GB (x1.19)  child VmHWM 3.67 GB  size 33.69 -> 36.05 MB (x1.070)  status OK,OK
+luindex                  SV_A256/BASE  parent wall 39.0 -> 74.0 s (x1.90)  Peak RSS 2.37 -> 2.82 GB (x1.19)  child VmHWM 3.53 GB  size 33.69 -> 36.11 MB (x1.072)  status OK,OK
+luindex                  LS_A256/BASE  parent wall 39.0 -> 76.5 s (x1.96)  Peak RSS 2.37 -> 2.91 GB (x1.23)  child VmHWM 6.08 GB  size 33.69 -> 36.18 MB (x1.074)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+luindex                  SBS  SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+luindex                  SV   SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=152 (JOINER=0)  OK
+luindex                  BASE_A32 no profile  NO-PROFILE
+luindex                  SBS_A32 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+luindex                  SV_A32 SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=152 (JOINER=0)  OK
+luindex                  BASE_A128 no profile  NO-PROFILE
+luindex                  SBS_A128 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+luindex                  SV_A128 SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=152 (JOINER=0)  OK
+luindex                  BASE_A256 no profile  NO-PROFILE
+luindex                  SBS_A256 SBS=1 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+luindex                  SV_A256 SBS=0 SV=125 (ACC=99 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=152 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+luindex                  BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 35.8 s
+luindex                  BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 42.9 s
+luindex                  BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 37.4 s
+luindex                  BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 40.0 s
+luindex                  BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.9 s
+luindex                  BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.7 s
+## determinism: luindex SBS: admit counts differ across builds; luindex SV: admit counts differ across builds; luindex LS: admit counts differ across builds; luindex SBS_A32: admit counts differ across builds; luindex SV_A32: admit counts differ across builds; luindex LS_A32: admit counts differ across builds; luindex SBS_A128: admit counts differ across builds; luindex SV_A128: admit counts differ across builds; luindex SBS_A256: admit counts differ across builds; luindex SV_A256: admit counts differ across builds; luindex LS_A256: admit counts differ across builds
+TABLES-DONE

@@ -1,0 +1,16 @@
+# CT  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+template-benchmark       FULL   |   0.964   0.955   0.955 0.969[0.969,0.969]        0.968 | 0.946/0.958/0.960 | 10/10 | 2 | 5
+
+## CT template-benchmark FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+Freemarker.benchmark                                           3.71   3.79   1.02   60265.6   54878.6  0.911    4.9    4.7
+Handlebars.benchmark                                           3.48   3.65   1.04  302067.5  295044.0  0.977   22.8   24.3
+JMustache.benchmark                                            6.96   6.94   0.99   46559.7   49807.8  1.070    7.0    7.8
+JStachio.benchmark                                            29.23  29.37   1.00    6468.5    6617.2  1.023    4.1    4.4
+JStachioContext.benchmark                                     17.32  17.14   0.98   21969.7   22151.4  1.008    8.3    8.6
+Mustache.benchmark                                             7.15   7.22   1.01   33281.7   26720.4  0.803    5.2    4.3
+Pebble.benchmark                                               6.63   6.71   1.01   57795.2   48738.0  0.843    8.3    7.4
+Qute.benchmark                                                 4.38   3.97   0.90  193858.6  194501.8  1.003   18.5   17.4
+Rocker.benchmark                                              14.63  14.65   1.00   37162.3   36745.9  0.989   11.8   12.1
+Trimou.benchmark                                               6.50   6.58   1.01   64450.9   61446.7  0.953    9.1    9.1
+

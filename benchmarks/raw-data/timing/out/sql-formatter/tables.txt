@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/sql-formatter  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+sql-formatter            BASE b1 size 22.61/23.89/10.14/11.14 | parent 32.8 s 2.30 GB | driver 34.2 s REUSED
+sql-formatter            BASE b2 size 22.61/23.89/10.14/11.14 | parent 31.0 s 2.25 GB | driver 32.1 s REUSED
+sql-formatter            FULL b1 size 22.68/23.96/10.21/11.14 | parent 62.0 s 2.46 GB | driver 63.2 s | OK | child aa 20951 ms gen 25.6 s obs 26 s VmHWM 4.22 GB | wait 25.6 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            FULL b2 size 22.68/23.96/10.21/11.14 | parent 58.4 s 2.58 GB | driver 59.3 s | OK | child aa 21887 ms gen 27.5 s obs 27 s VmHWM 3.97 GB | wait 27.6 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            BASE_A32 b1 size 22.42/23.70/9.94/11.14 | parent 29.9 s 2.23 GB | driver 30.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            BASE_A32 b2 size 22.42/23.70/9.94/11.14 | parent 24.6 s 2.30 GB | driver 25.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            FULL_A32 b1 size 22.48/23.77/10.01/11.14 | parent 55.8 s 2.46 GB | driver 56.9 s | OK | child aa 17111 ms gen 23.7 s obs 23 s VmHWM 3.97 GB | wait 24.0 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            FULL_A32 b2 size 22.48/23.77/10.01/11.14 | parent 43.7 s 2.45 GB | driver 44.6 s | OK | child aa 18726 ms gen 22.4 s obs 22 s VmHWM 4.16 GB | wait 22.5 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            BASE_A128 b1 size 23.14/24.42/10.62/11.14 | parent 20.0 s 2.29 GB | driver 21.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            BASE_A128 b2 size 23.14/24.42/10.62/11.14 | parent 20.3 s 2.34 GB | driver 21.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            FULL_A128 b1 size 23.20/24.49/10.69/11.14 | parent 35.7 s 2.44 GB | driver 36.5 s | OK | child aa 15362 ms gen 18.6 s obs 18 s VmHWM 4.12 GB | wait 18.5 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            FULL_A128 b2 size 23.20/24.49/10.69/11.14 | parent 39.1 s 2.45 GB | driver 39.9 s | OK | child aa 17838 ms gen 20.7 s obs 20 s VmHWM 4.09 GB | wait 21.0 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            BASE_A256 b1 size 24.05/25.33/11.66/11.08 | parent 20.5 s 2.29 GB | driver 21.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            BASE_A256 b2 size 24.05/25.33/11.66/11.08 | parent 18.6 s 2.26 GB | driver 19.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+sql-formatter            FULL_A256 b1 size 24.77/26.06/11.74/11.67 | parent 37.0 s 2.50 GB | driver 37.9 s | OK | child aa 12034 ms gen 15.1 s obs 15 s VmHWM 4.16 GB | wait 15.5 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+sql-formatter            FULL_A256 b2 size 24.77/26.06/11.74/11.67 | parent 38.9 s 2.44 GB | driver 39.6 s | OK | child aa 13444 ms gen 16.3 s obs 16 s VmHWM 4.19 GB | wait 16.5 s | SBS=2 SV=134(ACC=117 ELEM=5) LS=1(JOINER=1) | IC=3846 TC=366 MIRROR=72 EXACT=0 other=3 REUSED
+## build cost vs stock (means over builds)
+sql-formatter            FULL/BASE  parent wall 31.9 -> 60.2 s (x1.89)  Peak RSS 2.27 -> 2.52 GB (x1.11)  child VmHWM 4.10 GB  size 22.61 -> 22.68 MB (x1.003)  status OK,OK
+sql-formatter            BASE_A32/BASE  parent wall 31.9 -> 27.2 s (x0.85)  Peak RSS 2.27 -> 2.26 GB (x1.00)  child VmHWM ? GB  size 22.61 -> 22.42 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+sql-formatter            FULL_A32/BASE  parent wall 31.9 -> 49.8 s (x1.56)  Peak RSS 2.27 -> 2.46 GB (x1.08)  child VmHWM 4.06 GB  size 22.61 -> 22.48 MB (x0.994)  status OK,OK
+sql-formatter            BASE_A128/BASE  parent wall 31.9 -> 20.1 s (x0.63)  Peak RSS 2.27 -> 2.31 GB (x1.02)  child VmHWM ? GB  size 22.61 -> 23.14 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+sql-formatter            FULL_A128/BASE  parent wall 31.9 -> 37.4 s (x1.17)  Peak RSS 2.27 -> 2.45 GB (x1.07)  child VmHWM 4.10 GB  size 22.61 -> 23.20 MB (x1.026)  status OK,OK
+sql-formatter            BASE_A256/BASE  parent wall 31.9 -> 19.6 s (x0.61)  Peak RSS 2.27 -> 2.27 GB (x1.00)  child VmHWM ? GB  size 22.61 -> 24.05 MB (x1.064)  status NO-PROFILE,NO-PROFILE
+sql-formatter            FULL_A256/BASE  parent wall 31.9 -> 38.0 s (x1.19)  Peak RSS 2.27 -> 2.47 GB (x1.09)  child VmHWM 4.18 GB  size 22.61 -> 24.77 MB (x1.096)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+sql-formatter            FULL SBS=2 SV=134 (ACC=117 ELEM=5) LS=1 (JOINER=1)  OK
+sql-formatter            BASE_A32 no profile  NO-PROFILE
+sql-formatter            FULL_A32 SBS=2 SV=134 (ACC=117 ELEM=5) LS=1 (JOINER=1)  OK
+sql-formatter            BASE_A128 no profile  NO-PROFILE
+sql-formatter            FULL_A128 SBS=2 SV=134 (ACC=117 ELEM=5) LS=1 (JOINER=1)  OK
+sql-formatter            BASE_A256 no profile  NO-PROFILE
+sql-formatter            FULL_A256 SBS=2 SV=134 (ACC=117 ELEM=5) LS=1 (JOINER=1)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+sql-formatter            BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.9 s
+sql-formatter            BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.8 s
+sql-formatter            BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.4 s
+sql-formatter            BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.0 s
+sql-formatter            BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.6 s
+sql-formatter            BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.3 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

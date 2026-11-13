@@ -1,0 +1,27 @@
+KIND	metric
+ARMS	main
+NSTART	4
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/rows/antlr.sh
+DESC	ANTLR 4 TimeLexerSpeed (21 rows; hunt/ab-b34 candspec)
+CPUS	0-15
+METRIC	main	load_legacy_java_ascii Parser us | lower | out | 1 | ^ *load_legacy_java_ascii average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?Parser\.java$
+METRIC	main	load_legacy_java_ascii RuleContext us | lower | out | 1 | ^ *load_legacy_java_ascii average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?RuleContext\.java$
+METRIC	main	load_legacy_java_utf8 Parser us | lower | out | 1 | ^ *load_legacy_java_utf8 average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?Parser\.java$
+METRIC	main	load_legacy_java_utf8 udhr_hin us | lower | out | 1 | ^ *load_legacy_java_utf8 average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?udhr_hin\.txt$
+METRIC	main	load_new_utf8 Parser us | lower | out | 1 | ^ *load_new_utf8 average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?Parser\.java$
+METRIC	main	load_new_utf8 RuleContext us | lower | out | 1 | ^ *load_new_utf8 average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?RuleContext\.java$
+METRIC	main	load_new_utf8 udhr_hin us | lower | out | 1 | ^ *load_new_utf8 average time +(\d+)us size +\d+b over +\d+ loads of +\d+ symbols from (?:\S*/)?udhr_hin\.txt$
+METRIC	main	lex_legacy_java_utf8 us | lower | out | 1 | ^ *lex_legacy_java_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols$
+METRIC	main	lex_legacy_java_utf8 DFA-cleared us | lower | out | 1 | ^ *lex_legacy_java_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols DFA cleared$
+METRIC	main	lex_new_java_utf8 us | lower | out | 1 | ^ *lex_new_java_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols$
+METRIC	main	lex_new_java_utf8 DFA-cleared us | lower | out | 1 | ^ *lex_new_java_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols DFA cleared$
+METRIC	main	lex_legacy_grapheme_utf8 udhr_kor us | lower | out | 1 | ^ *lex_legacy_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_kor\.txt$
+METRIC	main	lex_legacy_grapheme_utf8 udhr_kor DFA-cleared us | lower | out | 1 | ^ *lex_legacy_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_kor\.txt DFA cleared$
+METRIC	main	lex_legacy_grapheme_utf8 udhr_hin us | lower | out | 1 | ^ *lex_legacy_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_hin\.txt$
+METRIC	main	lex_legacy_grapheme_utf8 udhr_hin DFA-cleared us | lower | out | 1 | ^ *lex_legacy_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_hin\.txt DFA cleared$
+METRIC	main	lex_new_grapheme_utf8 udhr_kor us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_kor\.txt$
+METRIC	main	lex_new_grapheme_utf8 udhr_kor DFA-cleared us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_kor\.txt DFA cleared$
+METRIC	main	lex_new_grapheme_utf8 udhr_hin us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_hin\.txt$
+METRIC	main	lex_new_grapheme_utf8 udhr_hin DFA-cleared us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from udhr_hin\.txt DFA cleared$
+METRIC	main	lex_new_grapheme_utf8 emoji us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from emoji\.txt$
+METRIC	main	lex_new_grapheme_utf8 emoji DFA-cleared us | lower | out | 1 | ^ *lex_new_grapheme_utf8 average time +(\d+)us over +\d+ runs of +\d+ symbols from emoji\.txt DFA cleared$

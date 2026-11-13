@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=StringSubstring  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/StringSubstring  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## StringSubstring  [jmh] OpenJDK test/micro StringSubstring (3 rows; former jdk-micro-c99 image)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.341 [0.329,0.354] FASTER (3 keys)  alloc 2.220 [2.172,2.269] MORE (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.972 [0.926,1.020] n.s. (3 keys)  alloc 1.023 [0.967,1.081] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.343 [0.335,0.352] FASTER (3 keys)  alloc 2.232 [2.182,2.283] MORE (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.959 [0.937,0.982] FASTER (3 keys)  alloc 1.040 [1.018,1.062] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.345 [0.337,0.353] FASTER (3 keys)  alloc 2.220 [2.172,2.271] MORE (1 keys)
+  GEOMEAN BASE_A256/BASE  time 0.980 [0.940,1.023] n.s. (3 keys)  alloc 1.024 [0.996,1.054] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.343 [0.334,0.353] FASTER (3 keys)  alloc 2.231 [2.182,2.281] MORE (1 keys)
+  StringSubstring.empty                                                  FULL 0.544 [0.510,0.579] FASTER | BASE_A32 0.970 [0.942,0.999] FASTER | FULL_A32 0.562 [0.546,0.579] FASTER | BASE_A128 0.954 [0.927,0.983] FASTER | FULL_A128 0.562 [0.546,0.579] FASTER | BASE_A256 0.992 [0.934,1.053] n.s. | FULL_A256 0.558 [0.534,0.582] FASTER
+  StringSubstring.from26toEnd0                                           FULL 0.270 [0.262,0.279] FASTER | BASE_A32 0.960 [0.888,1.037] n.s. | FULL_A32 0.268 [0.260,0.276] FASTER | BASE_A128 0.960 [0.933,0.989] FASTER | FULL_A128 0.269 [0.261,0.277] FASTER | BASE_A256 0.967 [0.936,1.000] FASTER | FULL_A256 0.269 [0.261,0.277] FASTER
+  StringSubstring.from26toEnd1                                           FULL 0.271 [0.267,0.275] FASTER | BASE_A32 0.988 [0.949,1.027] n.s. | FULL_A32 0.269 [0.265,0.272] FASTER | BASE_A128 0.963 [0.950,0.976] FASTER | FULL_A128 0.271 [0.267,0.275] FASTER | BASE_A256 0.983 [0.941,1.025] n.s. | FULL_A256 0.269 [0.265,0.273] FASTER
+  ~alloc MB                                                              FULL 2.220 [2.172,2.269] MORE | BASE_A32 1.023 [0.967,1.081] n.s. | FULL_A32 2.232 [2.182,2.283] MORE | BASE_A128 1.040 [1.018,1.062] MORE | FULL_A128 2.220 [2.172,2.271] MORE | BASE_A256 1.024 [0.996,1.054] n.s. | FULL_A256 2.231 [2.182,2.281] MORE
+  ~rss MB                                                                FULL 0.997 [0.995,1.000] LESS | BASE_A32 0.992 [0.991,0.993] LESS | FULL_A32 1.002 [0.996,1.007] n.s. | BASE_A128 0.999 [0.996,1.002] n.s. | FULL_A128 1.001 [1.000,1.003] n.s. | BASE_A256 1.006 [1.005,1.008] MORE | FULL_A256 1.016 [1.016,1.017] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  StringSubstring            0.341*|2.220*     0.972|1.023       0.343*|2.232*     0.959*|1.040*     0.345*|2.220*     0.980|1.024       0.343*|2.231*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,44 @@
+# C99 campaign results  SLOT=AU  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AU  CFGS=BASE FULL  runs/build=5  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## json-parser  [metric] AWFY json-parser Json 100 100 (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.631 [0.627,0.636] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  Total Runtime us                                                       FULL 0.631 [0.627,0.636] FASTER
+  Total Runtime us [cold]                                                FULL 0.618 [0.614,0.622] FASTER
+  ~alloc MB/iter                                                         FULL 0.214 [0.214,0.214] LESS
+  ~rss MB                                                                FULL 0.999 [0.996,1.003] n.s.
+
+## biojava  [metric] DaCapo biojava (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.872 [0.871,0.874] FASTER (1 keys)  alloc 0.298 [0.298,0.298] LESS (1 keys)
+  iteration ms                                                           FULL 0.872 [0.871,0.874] FASTER
+  iteration ms [cold]                                                    FULL 0.850 [0.848,0.852] FASTER
+  ~alloc MB/iter                                                         FULL 0.298 [0.298,0.298] LESS
+  ~rss MB                                                                FULL 1.363 [1.330,1.394] MORE
+
+## jsoup  [metric] jsoup HtmlToPlainText large+medium (hunt/ab candspec)  builds BASE:3 FULL:3  starts parsed=120
+  GEOMEAN FULL/BASE  time 0.891 [0.885,0.897] FASTER (2 keys)  alloc 0.922 [0.922,0.922] LESS (2 keys)
+  large: wall/rep ms                                                     FULL 0.893 [0.887,0.899] FASTER  BIMODAL(BASE)
+  large: wall/rep ms [cold]                                              FULL 0.891 [0.885,0.897] FASTER
+  medium: wall/rep ms                                                    FULL 0.890 [0.884,0.895] FASTER
+  medium: wall/rep ms [cold]                                             FULL 0.890 [0.884,0.894] FASTER
+  ~alloc MB/iter large                                                   FULL 0.921 [0.921,0.921] LESS
+  ~alloc MB/iter medium                                                  FULL 0.923 [0.923,0.923] LESS
+  ~rss MB large                                                          FULL 1.001 [0.995,1.007] n.s.  BIMODAL(FULL)
+  ~rss MB medium                                                         FULL 0.997 [0.990,1.004] n.s.
+
+## regex-redux  [metric] regex-redux fasta 5M (recheck s2 recipe)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.987 [0.980,0.994] FASTER (1 keys)  alloc 0.717 [0.717,0.717] LESS (1 keys)
+  iteration s                                                            FULL 0.987 [0.980,0.994] FASTER
+  iteration s [cold]                                                     FULL 0.985 [0.971,1.000] n.s.
+  ~alloc MB/iter                                                         FULL 0.717 [0.717,0.717] LESS
+  ~rss MB                                                                FULL 0.909 [0.877,0.943] LESS
+
+## luindex  [metric] DaCapo luindex (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=60
+  GEOMEAN FULL/BASE  time 0.994 [0.990,0.999] FASTER (1 keys)  alloc 0.931 [0.931,0.931] LESS (1 keys)
+  iteration ms                                                           FULL 0.994 [0.990,0.999] FASTER  BIMODAL(BASE)
+  iteration ms [cold]                                                    FULL 0.998 [0.992,1.003] n.s.
+  ~alloc MB/iter                                                         FULL 0.931 [0.931,0.931] LESS
+  ~rss MB                                                                FULL 1.103 [1.092,1.117] MORE
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,103 @@
+1794188481.615735 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794188483.215460 ========================================================================================================================
+1794188483.217194 GraalVM Native Image: Generating 'calcite-FULL-b2' (executable)...
+1794188483.223713 ========================================================================================================================
+1794188483.223748 For detailed information and explanations on the build output, visit:
+1794188483.223795 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794188483.223840 ------------------------------------------------------------------------------------------------------------------------
+1794188483.236359 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+1794188483.236463 WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/home/anonymous/hunt3/src/apache_calcite/ubenchmark/build/libs/calcite-ubenchmark-1.43.0-SNAPSHOT-jmh.jar)
+1794188483.236504 WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+1794188483.236536 WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+1794188484.866750 [1/8] Initializing...                                                                                    (2.8s @ 0.60GB)
+1794188484.867092  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794188484.867236  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794188484.867334  C compiler: gcc (linux, x86_64, 15.2.0)
+1794188484.867454  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794188484.867484  1 user-specific feature(s):
+1794188484.867757  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794188484.868511 ------------------------------------------------------------------------------------------------------------------------
+1794188484.868533  3 experimental option(s) unlocked:
+1794188484.868578  - '-H:CodeAlignment' (origin(s): command line)
+1794188484.868591  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794188484.868603  - '-H:+StringAnalysis' (origin(s): command line)
+1794188484.869774 ------------------------------------------------------------------------------------------------------------------------
+1794188484.869793 Build resources:
+1794188484.869879  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794188484.869931  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794188484.870412 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile650922284623567305.txt
+1794188484.870438 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child10661685283912331482.log
+1794188484.870735 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile650922284623567305.txt
+1794188484.870807 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794188484.870828 [string-analysis-fork] Child log: /tmp/string-analysis-child10661685283912331482.log
+1794188485.212732 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794188485.212803 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile650922284623567305.txt
+1794188500.234575 [string-analysis-fork] Loaded 4485 entries from child profile: /tmp/string-analysis-profile650922284623567305.txt
+1794188500.234644 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile650922284623567305.txt
+1794188500.234993 [string-analysis-timing] beforeAnalysis done: 15022ms
+1794188500.355096 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.356059 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.356930 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.357800 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.358606 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.359461 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.runner.InfraControl. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.381746 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.382431 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188500.383060 Warning: RecomputeFieldValue.FieldOffset automatic field value transformation failed. The automatic registration was attempted because a call to sun.misc.Unsafe.objectFieldOffset(Field) was detected in the class initializer of org.openjdk.jmh.infra.Blackhole. Detailed failure reason(s): The argument of sun.misc.Unsafe.objectFieldOffset(java.lang.reflect.Field) is not a constant value or a field load that can be constant-folded., Could not determine the field where the value produced by the call to sun.misc.Unsafe.objectFieldOffset(Field) for the field offset computation is stored. The call is not directly followed by a field store or by a sign extend node followed directly by a field store. 
+1794188504.340624 [string-analysis-timing] afterAnalysis start: 19127ms (gap since beforeAnalysis done: 4105ms)
+1794188504.356930 [2/8] Performing analysis...  [*****]                                                                    (4.1s @ 1.50GB)
+1794188504.377439     6,147 types,   8,970 fields, and  28,899 methods found reachable
+1794188504.378052     2,058 types,   2,295 fields, and   1,599 methods registered for reflection
+1794188504.378078        61 types,      68 fields, and      53 methods registered for JNI access
+1794188504.378101         0 downcalls and 0 upcalls registered for foreign access
+1794188504.378195         4 native libraries: dl, pthread, rt, z
+1794188505.821583 [3/8] Building universe...                                                                               (1.4s @ 1.39GB)
+1794188505.829996 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=3122 chain-else=329 chain-flat=257 acc=0 (chain sites=330, aot-parse sites=0); at strengthen: present=2926 (inlined copies=425) removed=2826 (inlined copies=385) killed-dead=100 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794188505.830522 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=54 chain/widened=17 collapsed=96 collapsed/widened=161 direct=2139 direct/widened=1228 redirect=2 redirect/widened=1; declined sites: no-entry=220 terminal-body-unmarked=4
+1794188505.830584 [ic-widen-decline-by-method] no-entry {charAt(I)C=25, coder()B=67, compareTo(Ljava/lang/String;)I=2, concat(Ljava/lang/String;)Ljava/lang/String;=11, equals(Ljava/lang/Object;)Z=8, getBytes()[B=1, getBytes(Ljava/nio/charset/Charset;)[B=1, getBytes([BIIBI)V=4, getChars(II[CI)V=1, hashCode()I=2, indexOf(I)I=2, indexOf(II)I=3, isEmpty()Z=4, isLatin1()Z=15, length()I=59, split(Ljava/lang/String;I)[Ljava/lang/String;=1, startsWith(Ljava/lang/String;)Z=1, substring(I)Ljava/lang/String;=1, substring(II)Ljava/lang/String;=2, toLowerCase(Ljava/util/Locale;)Ljava/lang/String;=1, toUpperCase(Ljava/util/Locale;)Ljava/lang/String;=2, value()[B=7}
+1794188505.830606 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794188505.830616 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 0
+1794188505.830625 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794188505.831089 [string-analysis] ic-flatstock: 1 stock-path flat calls=3695 legacy (interface caller)=0 legacy (null receiver)=0
+1794188505.831520 [string-analysis] codegen-knobs: chain rep-arm ifs=73 swap sites=6 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1794188505.832075 [string-analysis] ic-csfinal: rep-excluded supertype sites=393 (diamonds=393 guards=0) by decl={CharSequence.charAt=76, CharSequence.length=48, CharSequence.subSequence=15, CharSequence.toString=30, Object.equals=109, Object.hashCode=81, Object.toString=34} rep-list sites left stock=26 unproven sites left stock=0; at strengthen: ifs=382 (dead-arm=1 iba-free nodes=0 folded=2) ifs left=0
+1794188505.832219 [string-analysis] concat-copy: sites=0 lowered-parses=0 count.diag=false
+1794188505.832693 [string-analysis] mirror-append: sites=89 lowered-parses=89 arms=89 lowered-keys=89
+1794188505.834642 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=387/33 list=5/0 (cast/inst parses) stock: no-line=108/1 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=0/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=430
+1794188506.467135 [4/8] Parsing methods...      [*]                                                                        (0.6s @ 1.61GB)
+1794188506.917561 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.44GB)
+1794188510.803292 [6/8] Compiling methods...    [**]                                                                       (3.9s @ 1.51GB)
+1794188512.723425 [7/8] Laying out methods...   [*]                                                                        (1.9s @ 1.24GB)
+1794188512.740780 [string-analysis] r2-trivial: active=true graphs with rep arms=51, made trivial by the discount=3 (first 20: [java.io.StringWriter.write(String, int, int) stock 2+27 discounted 1+16, java.text.StringCharacterIterator.hashCode() stock 2+31 discounted 1+19, joptsimple.internal.Strings.isNullOrEmpty(String) stock 2+26 discounted 1+14]); graphs with a rep call but no recognised arm=85 (first 5: [com.oracle.svm.core.stringrep.ElementSourceFactory.splitPiece(String, int, int, boolean), com.oracle.svm.core.stringrep.RepEquals.contentEquals(String, String), java.io.BufferedWriter.write(String, int, int), java.lang.AbstractStringBuilder.appendRep(String), java.lang.AbstractStringBuilder.appendRep(String, int, int)]); graphs with a rep-test If that is no arm=33 (first 5: [com.google.common.base.Strings.lenientFormat(String, Object[]), java.io.BufferedWriter.write(String, int, int), java.lang.Integer.parseInt(String, int), java.lang.String.replace(CharSequence, CharSequence), java.math.BigDecimal.<init>(String)])
+1794188513.359187 [string-analysis-dc] clinitsim-repaborts=0
+1794188513.404361 [string-analysis-dc] heapreps=0 poolreps=256 {com.oracle.svm.core.stringrep.SingleByteString.POOL=256} poolarrayrefs={CODE=1} scanned=154706
+1794188514.438026 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.35GB)
+1794188514.438275   14.48MB (46.24%) for code area:    17,440 compilation units
+1794188514.438334   13.70MB (43.74%) for image heap:  154,706 objects and 57 resources
+1794188514.438364    3.14MB (10.02%) for other data
+1794188514.438395   31.31MB in total image size, 29.76MB in total file size
+1794188514.438452 ------------------------------------------------------------------------------------------------------------------------
+1794188514.439164 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794188514.439411    6.44MB java.base                                            3.56MB byte[] for code metadata
+1794188514.439456    5.64MB calcite-ubenchmark-1.43.0-SNAPSHOT-jmh.jar           2.07MB byte[] for java.lang.String
+1794188514.439486    1.33MB svm.jar (Native Image)                               1.47MB java.lang.String
+1794188514.439508  114.71kB java.logging                                         1.23MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794188514.439524   90.77kB org.graalvm.nativeimage.base                       844.85kB java.lang.Class
+1794188514.439567   84.38kB jdk.proxy4                                         502.69kB byte[] for general heap data
+1794188514.439584   56.27kB jdk.proxy2                                         348.72kB java.util.HashMap$Node
+1794188514.439599   50.50kB jdk.proxy1                                         322.43kB heap alignment
+1794188514.439615   42.66kB org.graalvm.nativeimage.configure                  300.97kB java.lang.String[]
+1794188514.439795   29.13kB jdk.graal.compiler                                 297.74kB java.lang.Object[]
+1794188514.440516   80.39kB for 10 more packages                                 2.75MB for 1489 more object types
+1794188514.441266 ------------------------------------------------------------------------------------------------------------------------
+1794188514.441271 Recommendations:
+1794188514.441320  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794188514.441331  HEAP: Set max heap for improved and more predictable memory usage.
+1794188514.441344  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794188514.443833 ------------------------------------------------------------------------------------------------------------------------
+1794188514.444454                         1.3s (4.0% of total time) in 124 GCs | Peak RSS: 3.30GB | CPU load: 7.38
+1794188514.444744 ------------------------------------------------------------------------------------------------------------------------
+1794188514.444749 Build artifacts:
+1794188514.445091  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CL1/bin/calcite-FULL-b2 (executable)
+1794188514.445117 ========================================================================================================================
+1794188514.445167 Finished generating 'calcite-FULL-b2' in 32.4s.

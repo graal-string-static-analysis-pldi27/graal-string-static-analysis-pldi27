@@ -1,0 +1,13 @@
+# C99 campaign results  SLOT=AR2  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/AR2-lucene-bytask-FULL-fc1  CFGS=BASE FULL  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## lucene-bytask  [metric] Lucene byTask indexLineFile 2M enwiki lines (recheck s2 recipe)  builds BASE:3 FULL:3  starts parsed=24
+  GEOMEAN FULL/BASE  time 1.006 [0.987,1.032] n.s. (2 keys)  alloc 0.929 [0.929,0.929] LESS (1 keys)
+  addDoc s r0 (warm-up)                                                  FULL 1.003 [0.989,1.024] info-only  BIMODAL(FULL)
+  addDoc s r1                                                            FULL 1.004 [0.983,1.029] n.s.  BIMODAL(FULL)
+  addDoc s r2                                                            FULL 1.008 [0.987,1.035] n.s.
+  wall s                                                                 FULL 1.005 [0.989,1.029] info-only  BIMODAL(FULL)
+  ~alloc MB                                                              FULL 0.929 [0.929,0.929] LESS
+  ~rss MB                                                                FULL 0.997 [0.976,1.016] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

@@ -1,0 +1,83 @@
+# WARNING: JMH lock is ignored by user request, make sure no other JMH instances are running
+# JMH version: 1.37
+# VM version: JDK 25.0.2-internal, Substrate VM, 25.0.2-internal-adhoc.anonymous.labs-openjdk
+# *** WARNING: This VM is not supported by JMH. The produced benchmark data can be completely wrong.
+# VM invoker: null/bin/java
+# VM options: -XX:+PrintGCSummary -Djmh.ignoreLock=true
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.output
+# Parameters: (async = true, locationInfo = CLASS_OR_CATEGORY_ONLY)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 3.297 s/op
+# Warmup Iteration   2: 3.315 s/op
+# Warmup Iteration   3: 3.326 s/op
+# Warmup Iteration   4: 3.327 s/op
+# Warmup Iteration   5: 3.320 s/op
+Iteration   1: 3.318 s/op
+Iteration   2: 3.317 s/op
+Iteration   3: 3.333 s/op
+Iteration   4: 3.305 s/op
+Iteration   5: 3.300 s/op
+Iteration   6: 3.300 s/op
+Iteration   7: 3.297 s/op
+Iteration   8: 3.296 s/op
+Iteration   9: 3.294 s/op
+Iteration  10: 3.292 s/op
+
+Result "org.tinylog.benchmarks.logging.tinylog2.Tinylog2Benchmark.output":
+  N = 10
+  mean =      3.305 ±(99.9%) 0.020 s/op
+
+  Histogram, s/op:
+    [3.290, 3.293) = 1 
+    [3.293, 3.295) = 1 
+    [3.295, 3.298) = 2 
+    [3.298, 3.300) = 2 
+    [3.300, 3.303) = 0 
+    [3.303, 3.305) = 0 
+    [3.305, 3.308) = 1 
+    [3.308, 3.310) = 0 
+    [3.310, 3.313) = 0 
+    [3.313, 3.315) = 0 
+    [3.315, 3.318) = 1 
+    [3.318, 3.320) = 1 
+    [3.320, 3.323) = 0 
+    [3.323, 3.325) = 0 
+    [3.325, 3.328) = 0 
+    [3.328, 3.330) = 0 
+    [3.330, 3.333) = 0 
+    [3.333, 3.335) = 1 
+    [3.335, 3.338) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      3.292 s/op
+     p(50.0000) =      3.300 s/op
+     p(90.0000) =      3.331 s/op
+     p(95.0000) =      3.333 s/op
+     p(99.0000) =      3.333 s/op
+     p(99.9000) =      3.333 s/op
+     p(99.9900) =      3.333 s/op
+     p(99.9990) =      3.333 s/op
+     p(99.9999) =      3.333 s/op
+    p(100.0000) =      3.333 s/op
+
+
+# Run complete. Total time: 00:00:50
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                 (async)          (locationInfo)  Mode  Cnt  Score   Error  Units
+Tinylog2Benchmark.output     true  CLASS_OR_CATEGORY_ONLY    ss   10  3.305 ± 0.020   s/op

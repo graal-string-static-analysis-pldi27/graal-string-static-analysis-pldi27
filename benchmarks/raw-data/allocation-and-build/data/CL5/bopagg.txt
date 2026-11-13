@@ -1,0 +1,54 @@
+# CL5  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+commons-text             FULL   |   1.006   0.997   0.997 0.998[0.998,0.998]        0.998 | 0.997/0.997/0.998 | 4/4 | 0 | 0
+fastcsv                  FULL   |   1.000   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 2/2 | 0 | 0
+jsqlparser               FULL   |   0.986   0.986   0.986 0.986[0.986,0.986]        0.986 | 0.991/0.992/0.976 | 1/1 | 0 | 0
+mustache                 FULL   |   0.998   0.998   0.998 0.998[0.998,0.998]        0.998 | 0.998/0.998/0.998 | 5/5 | 0 | 0
+snakeyaml-engine         FULL   |   0.998   0.995   0.995 0.998[0.998,0.998]        0.999 | 1.000/1.012/0.973 | 2/2 | 0 | 0
+sql-formatter            FULL   |   0.988   0.988   0.988 0.988[0.988,0.988]        0.988 | 0.988/0.988/0.988 | 1/1 | 0 | 0
+yauaa                    FULL   |   1.007   0.998   0.998 0.998[0.998,0.998]        0.998 | 1.000/0.999/0.996 | 15/15 | 0 | 0
+
+## CL5 commons-text FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+LongestCommonSubsequencePerformance.testLCS                   13.56  13.24   0.97  591470.0  583930.6  0.987   13.1   12.6
+LongestCommonSubsequencePerformance.testLCSBaseline           27.98  28.15   1.00  950603.4  950573.4  1.000   43.5   43.5
+LongestCommonSubsequencePerformance.testLCSLen                30.72  30.32   0.98    2844.6    2851.8  1.003    0.1    0.1
+LongestCommonSubsequencePerformance.testLCSLenBaseline        27.75  28.30   1.02  951097.0  950077.6  0.999   43.2   43.8
+
+## CL5 fastcsv FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+FastCsvReadBenchmark.read                                     81.60  81.59   1.01     340.1     340.1  1.000   75.9   75.8
+FastCsvWriteBenchmark.write                                   18.40  18.41   1.01     480.1     480.1  1.000   24.1   24.2
+
+## CL5 jsqlparser FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+JSQLParserBenchmark.parseSQLStatements version=latest        100.00 100.00   0.97 9983611.7 9843250.3  0.986  100.0  100.0
+
+## CL5 mustache FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+Main.benchEscapeHTML                                           0.04   0.04   0.98 1365206.4 1364979.8  1.000   15.2   14.9
+Main.benchEscapeHTMLwithSW                                     0.01   0.01   1.00 6080675.5 6088395.8  1.001   23.8   23.8
+TweetBench.testCompilation                                     1.87   1.88   1.01   51643.6   51111.7  0.990   25.3   25.2
+TweetBench.testExecution                                      93.47  93.40   1.00     832.2     832.2  1.000   20.4   20.4
+TweetBench.testTimeline                                        4.60   4.67   1.02   12754.8   12752.2  1.000   15.4   15.6
+
+## CL5 snakeyaml-engine FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:ParseBenchmark.load                                         35.13  33.82   0.98 4762445.1 4681759.4  0.983   36.0   34.2
+M:ParseBenchmark.parse                                        64.87  66.18   1.04 4576518.0 4607819.8  1.007   64.0   65.8
+
+## CL5 sql-formatter FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+Benchmark.format                                             100.00 100.00   0.99  279372.3  275925.2  0.988  100.0  100.0
+
+## CL5 yauaa FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+AnalyzerBenchmarks.android6Chrome46                            2.49   2.49   0.99  514123.5  513883.1  1.000    8.6    8.5
+AnalyzerBenchmarks.androidPhone                                1.81   1.92   1.05  826014.8  825364.6  0.999   10.0   10.6
+AnalyzerBenchmarks.googleAdsBot                               14.64  14.07   0.95   63722.7   63746.7  1.000    6.3    6.0
+AnalyzerBenchmarks.googleAdsBotMobile                          3.65   3.64   0.99  196653.5  196334.6  0.998    4.8    4.8
+AnalyzerBenchmarks.googleBotMobileAndroid                      2.18   2.22   1.01  552323.3  545319.8  0.987    8.1    8.1
+AnalyzerBenchmarks.googlebot                                   8.48   8.41   0.98   93936.2   93369.3  0.994    5.4    5.2
+AnalyzerBenchmarks.hackerSQL                                  15.92  16.09   1.00   40527.9   40245.5  0.993    4.3    4.3
+AnalyzerBenchmarks.hackerShellShock                           21.61  21.69   1.00   42767.2   42813.2  1.001    6.2    6.2
+AnalyzerBenchmarks.iPad                                        4.44   4.60   1.03  169203.1  169389.6  1.001    5.1    5.2
+AnalyzerBenchmarks.iPhone                                      4.42   4.37   0.98  171958.5  172003.2  1.000    5.1    5.0
+AnalyzerBenchmarks.iPhoneFacebookApp                           2.07   2.10   1.00  584251.9  582872.8  0.998    8.1    8.2
+AnalyzerBenchmarks.win10Chrome51                               4.65   4.62   0.99  147480.4  147679.6  1.001    4.6    4.6
+AnalyzerBenchmarks.win10Edge13                                 4.08   4.20   1.02  165494.5  165347.4  0.999    4.5    4.6
+AnalyzerBenchmarks.win10IE11                                   4.84   4.84   0.99  292479.0  292654.8  1.001    9.5    9.5
+AnalyzerBenchmarks.win7ie11                                    4.73   4.76   1.00  291107.6  291485.2  1.001    9.3    9.3
+

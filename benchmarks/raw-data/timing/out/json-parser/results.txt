@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=json-parser  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/json-parser  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=1 UM=3 US=1 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## json-parser  [metric] AWFY json-parser Json 100 100 (ab-cmb recipe)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.622 [0.621,0.623] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.977 [0.973,0.981] FASTER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.639 [0.630,0.647] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.985 [0.982,0.987] FASTER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.626 [0.622,0.630] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.044 [1.011,1.077] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.642 [0.629,0.655] FASTER (1 keys)  alloc 0.214 [0.214,0.214] LESS (1 keys)
+  Total Runtime us                                                       FULL 0.622 [0.621,0.623] FASTER | BASE_A32 0.977 [0.973,0.981] FASTER | FULL_A32 0.639 [0.630,0.647] FASTER | BASE_A128 0.985 [0.982,0.987] FASTER | FULL_A128 0.626 [0.622,0.630] FASTER | BASE_A256 1.044 [1.011,1.077] SLOWER | FULL_A256 0.642 [0.629,0.655] FASTER
+  Total Runtime us [cold]                                                FULL 0.609 [0.605,0.613] FASTER | BASE_A32 0.984 [0.980,0.989] FASTER | FULL_A32 0.626 [0.616,0.636] FASTER | BASE_A128 0.968 [0.961,0.975] FASTER | FULL_A128 0.610 [0.604,0.615] FASTER | BASE_A256 1.027 [0.980,1.076] n.s. | FULL_A256 0.629 [0.615,0.643] FASTER
+  ~alloc MB/iter                                                         FULL 0.214 [0.214,0.214] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.214 [0.214,0.214] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 0.214 [0.214,0.214] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.214 [0.214,0.214] LESS
+  ~rss MB                                                                FULL 0.998 [0.992,1.004] n.s. | BASE_A32 1.001 [0.997,1.004] n.s. | FULL_A32 0.995 [0.990,1.000] n.s. | BASE_A128 1.008 [1.001,1.016] MORE | FULL_A128 1.002 [0.995,1.010] n.s. | BASE_A256 1.010 [1.005,1.014] MORE | FULL_A256 1.006 [1.002,1.010] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  json-parser                0.622*|0.214*     0.977*|1.000      0.639*|0.214*     0.985*|1.000      0.626*|0.214*     1.044*|1.000      0.642*|0.214*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

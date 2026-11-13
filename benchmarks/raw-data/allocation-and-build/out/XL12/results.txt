@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=XL12  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL12  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## fastjson2  [jmh] fastjson2 2.0.66 benchmark module: Eishay{Parse,ParseTree,Write,WriteTree}String + TwitterParseString, fastjson2 arm  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.993 [0.968,1.018] n.s. (5 keys)  alloc 1.002 [0.965,1.040] n.s. (1 keys)
+  c.a.f.b.eishay.EishayParseString.fastjson2                             FULL 1.006 [0.934,1.075] n.s.
+  c.a.f.b.eishay.EishayParseTreeString.fastjson2                         FULL 1.005 [0.932,1.097] n.s.
+  c.a.f.b.eishay.EishayWriteString.fastjson2                             FULL 0.963 [0.953,0.973] FASTER
+  c.a.f.b.eishay.EishayWriteStringTree.fastjson2                         FULL 0.993 [0.980,1.007] n.s.
+  c.a.f.b.twitter.TwitterParseString.fastjson2                           FULL 1.000 [0.982,1.022] n.s.
+  ~alloc MB                                                              FULL 1.002 [0.965,1.040] n.s.
+  ~rss MB                                                                FULL 1.016 [0.938,1.088] n.s.
+
+## jackson-yaml  [jmh] jackson-benchmarks YAMLStd{Read,Write}Vanilla MediaItem (jackson-dataformat-yaml 2.x)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 1.008 [0.999,1.017] n.s. (2 keys)  alloc 0.996 [0.986,1.006] n.s. (1 keys)
+  YAMLStdReadVanilla.readPojoMediaItem                                   FULL 0.998 [0.983,1.013] n.s.
+  YAMLStdWriteVanilla.writePojoMediaItem                                 FULL 1.019 [1.013,1.025] SLOWER
+  ~alloc MB                                                              FULL 0.996 [0.986,1.006] n.s.
+  ~rss MB                                                                FULL 0.995 [0.972,1.008] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

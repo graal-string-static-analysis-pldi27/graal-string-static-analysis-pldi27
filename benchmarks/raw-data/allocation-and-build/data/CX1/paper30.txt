@@ -1,0 +1,35 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CX1  CFGS=BASE FULL  RPB=2  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## csv-parsers-comparison  starts BASE:6 FULL:6  time keys 28
+  FULL/BASE time  ratio 0.9814  (mean FULL 0.9814 n=6, BASE 1.0000 n=6)  error margin 0.0034 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 0.9758  (mean FULL 0.9758 n=6, BASE 1.0000 n=6)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key huge:Apache Commons CSV ms                                   BASE 7810.03 sd 43.1  FULL 7839.87 sd 57.8  [lower]
+    key huge:Bean IO Parser ms                                       BASE 6813.3 sd 18.4  FULL 6634.93 sd 39.9  [lower]
+    key huge:Esperio CSV parser ms                                   BASE 16171.7 sd 117  FULL 15186.6 sd 124  [lower]
+    key huge:Gen-Java CSV ms                                         BASE 9618.43 sd 75.6  FULL 8572.43 sd 54.4  [lower]
+    key huge:JCSV Parser ms                                          BASE 2257.07 sd 33.8  FULL 2043.77 sd 15.8  [lower]
+    key huge:Jackson CSV parser ms                                   BASE 1001.77 sd 1.13  FULL 1011.07 sd 4.8  [lower]
+    key huge:Java CSV Parser ms                                      BASE 1567.93 sd 6.32  FULL 1552.57 sd 2.66  [lower]
+    key huge:OpenCSV ms                                              BASE 2384.87 sd 21.7  FULL 2369.3 sd 25.3  [lower]
+    key huge:Oster Miller CSV parser ms                              BASE 2326.63 sd 12.5  FULL 2050.87 sd 11  [lower]
+    key huge:Product Collections parser ms                           BASE 1582.8 sd 5.95  FULL 1582.07 sd 4.77  [lower]
+    key huge:Simple CSV parser ms                                    BASE 3331.43 sd 12.2  FULL 3341.7 sd 23.8  [lower]
+    key huge:SimpleFlatMapper CSV parser ms                          BASE 743.733 sd 3.01  FULL 740.733 sd 1.79  [lower]
+    key huge:SuperCSV ms                                             BASE 2237.13 sd 8.47  FULL 2217.83 sd 6.83  [lower]
+    key huge:Way IO Parser ms                                        BASE 3382.5 sd 26.5  FULL 3421.27 sd 36.8  [lower]
+    key huge:uniVocity CSV parser ms                                 BASE 717 sd 7.96  FULL 707.967 sd 2.08  [lower]
+    key normal:Apache Commons CSV ms                                 BASE 5231.87 sd 49.4  FULL 5204.9 sd 15.7  [lower]
+    key normal:Gen-Java CSV ms                                       BASE 8367.8 sd 92  FULL 7428.23 sd 46.3  [lower]
+    key normal:JCSV Parser ms                                        BASE 1805.5 sd 41.6  FULL 1623.43 sd 20.9  [lower]
+    key normal:Jackson CSV parser ms                                 BASE 882.1 sd 7.69  FULL 960.9 sd 1.45  [lower]
+    key normal:Java CSV Parser ms                                    BASE 1189.77 sd 4.68  FULL 1201.63 sd 2.27  [lower]
+    key normal:OpenCSV ms                                            BASE 1797.7 sd 23.5  FULL 1785 sd 26  [lower]
+    key normal:Oster Miller CSV parser ms                            BASE 1624.6 sd 12.8  FULL 1628.17 sd 19.3  [lower]
+    key normal:Product Collections parser ms                         BASE 1494.8 sd 5.32  FULL 1559.67 sd 13.6  [lower]
+    key normal:Simple CSV parser ms                                  BASE 2304.63 sd 11.7  FULL 2307.6 sd 27.7  [lower]
+    key normal:SimpleFlatMapper CSV parser ms                        BASE 692.5 sd 3.26  FULL 692.3 sd 2.65  [lower]
+    key normal:SuperCSV ms                                           BASE 2257.23 sd 8.69  FULL 2254.47 sd 8.11  [lower]
+    key normal:Way IO Parser ms                                      BASE 2783.83 sd 19.4  FULL 2829.57 sd 23.6  [lower]
+    key normal:uniVocity CSV parser ms                               BASE 616.267 sd 5.19  FULL 616.433 sd 5.16  [lower]
+
+PAPER30-DONE

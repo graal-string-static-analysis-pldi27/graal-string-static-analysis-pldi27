@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-graphchi  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-graphchi          BASE b1 size 25.76/27.12/10.50/13.96 | parent 17.6 s 2.44 GB | driver 18.3 s REUSED
+dacapo-graphchi          BASE b2 size 25.76/27.12/10.50/13.96 | parent 21.1 s 2.43 GB | driver 21.9 s REUSED
+dacapo-graphchi          FULL b1 size 25.89/27.26/10.54/14.02 | parent 39.1 s 2.71 GB | driver 40.1 s | OK | child aa 11845 ms gen 15.0 s obs 14 s VmHWM 3.33 GB | wait 14.5 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          FULL b2 size 25.89/27.26/10.54/14.02 | parent 41.8 s 2.73 GB | driver 42.6 s | OK | child aa 12653 ms gen 15.8 s obs 15 s VmHWM 3.35 GB | wait 15.6 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          BASE_A32 b1 size 25.56/26.92/10.29/13.96 | parent 31.2 s 2.41 GB | driver 32.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          BASE_A32 b2 size 25.56/26.92/10.29/13.96 | parent 21.5 s 2.39 GB | driver 22.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          FULL_A32 b1 size 25.69/27.06/10.33/14.02 | parent 52.2 s 2.62 GB | driver 53.4 s | OK | child aa 19290 ms gen 25.3 s obs 26 s VmHWM 3.22 GB | wait 25.1 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          FULL_A32 b2 size 25.69/27.06/10.33/14.02 | parent 49.7 s 2.58 GB | driver 51.3 s | OK | child aa 15509 ms gen 18.7 s obs 18 s VmHWM 3.33 GB | wait 19.0 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          BASE_A128 b1 size 26.28/27.65/11.03/13.96 | parent 23.2 s 2.44 GB | driver 24.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          BASE_A128 b2 size 26.28/27.65/11.03/13.96 | parent 25.9 s 2.42 GB | driver 27.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          FULL_A128 b1 size 26.35/27.71/11.07/13.96 | parent 55.2 s 2.56 GB | driver 56.4 s | OK | child aa 16271 ms gen 23.3 s obs 23 s VmHWM 3.31 GB | wait 23.5 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          FULL_A128 b2 size 26.35/27.71/11.07/13.96 | parent 62.0 s 2.72 GB | driver 63.6 s | OK | child aa 17167 ms gen 23.9 s obs 23 s VmHWM 3.31 GB | wait 24.0 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          BASE_A256 b1 size 27.46/28.83/12.16/13.96 | parent 32.8 s 2.38 GB | driver 34.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          BASE_A256 b2 size 27.46/28.83/12.16/13.96 | parent 25.8 s 2.42 GB | driver 27.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-graphchi          FULL_A256 b1 size 27.46/28.83/12.20/13.96 | parent 64.0 s 2.76 GB | driver 66.1 s | OK | child aa 20654 ms gen 27.0 s obs 27 s VmHWM 3.34 GB | wait 27.1 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+dacapo-graphchi          FULL_A256 b2 size 27.46/28.83/12.20/13.96 | parent 53.7 s 2.71 GB | driver 55.0 s | OK | child aa 20934 ms gen 28.0 s obs 29 s VmHWM 3.23 GB | wait 28.1 s | SBS=1 SV=132(ACC=114 ELEM=3) LS=0(JOINER=0) | IC=4177 TC=364 MIRROR=64 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+dacapo-graphchi          FULL/BASE  parent wall 19.4 -> 40.5 s (x2.09)  Peak RSS 2.44 -> 2.72 GB (x1.12)  child VmHWM 3.34 GB  size 25.76 -> 25.89 MB (x1.005)  status OK,OK
+dacapo-graphchi          BASE_A32/BASE  parent wall 19.4 -> 26.4 s (x1.36)  Peak RSS 2.44 -> 2.40 GB (x0.99)  child VmHWM ? GB  size 25.76 -> 25.56 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+dacapo-graphchi          FULL_A32/BASE  parent wall 19.4 -> 51.0 s (x2.63)  Peak RSS 2.44 -> 2.60 GB (x1.07)  child VmHWM 3.27 GB  size 25.76 -> 25.69 MB (x0.997)  status OK,OK
+dacapo-graphchi          BASE_A128/BASE  parent wall 19.4 -> 24.5 s (x1.27)  Peak RSS 2.44 -> 2.43 GB (x1.00)  child VmHWM ? GB  size 25.76 -> 26.28 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+dacapo-graphchi          FULL_A128/BASE  parent wall 19.4 -> 58.6 s (x3.03)  Peak RSS 2.44 -> 2.64 GB (x1.08)  child VmHWM 3.31 GB  size 25.76 -> 26.35 MB (x1.023)  status OK,OK
+dacapo-graphchi          BASE_A256/BASE  parent wall 19.4 -> 29.3 s (x1.51)  Peak RSS 2.44 -> 2.40 GB (x0.99)  child VmHWM ? GB  size 25.76 -> 27.46 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+dacapo-graphchi          FULL_A256/BASE  parent wall 19.4 -> 58.9 s (x3.04)  Peak RSS 2.44 -> 2.73 GB (x1.12)  child VmHWM 3.29 GB  size 25.76 -> 27.46 MB (x1.066)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-graphchi          FULL SBS=1 SV=132 (ACC=114 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-graphchi          BASE_A32 no profile  NO-PROFILE
+dacapo-graphchi          FULL_A32 SBS=1 SV=132 (ACC=114 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-graphchi          BASE_A128 no profile  NO-PROFILE
+dacapo-graphchi          FULL_A128 SBS=1 SV=132 (ACC=114 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-graphchi          BASE_A256 no profile  NO-PROFILE
+dacapo-graphchi          FULL_A256 SBS=1 SV=132 (ACC=114 ELEM=3) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-graphchi          BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.2 s
+dacapo-graphchi          BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 22.4 s
+dacapo-graphchi          BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.3 s
+dacapo-graphchi          BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.0 s
+dacapo-graphchi          BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.1 s
+dacapo-graphchi          BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.3 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

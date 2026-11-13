@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/biojava  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+biojava                  BASE b1 size 61.34/64.49/30.78/28.05 | parent 53.7 s 4.22 GB | driver 54.7 s REUSED
+biojava                  BASE b2 size 61.34/64.49/30.78/28.05 | parent 52.9 s 4.34 GB | driver 54.2 s REUSED
+biojava                  FULL b1 size 61.54/64.69/30.94/28.11 | parent 106.0 s 5.00 GB | driver 107.8 s | OK | child aa 45929 ms gen 52.4 s obs 52 s VmHWM 8.04 GB | wait 52.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL b2 size 61.54/64.69/30.94/28.11 | parent 95.0 s 5.91 GB | driver 97.2 s | OK | child aa 45063 ms gen 50.4 s obs 50 s VmHWM 8.51 GB | wait 50.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  BASE_A32 b1 size 60.82/63.97/30.24/28.05 | parent 40.0 s 4.09 GB | driver 41.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  BASE_A32 b2 size 60.82/63.97/30.24/28.05 | parent 36.6 s 4.50 GB | driver 37.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  FULL_A32 b1 size 61.02/64.17/30.40/28.11 | parent 104.0 s 4.98 GB | driver 105.6 s | OK | child aa 46104 ms gen 52.5 s obs 51 s VmHWM 6.40 GB | wait 52.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL_A32 b2 size 61.02/64.17/30.40/28.11 | parent 100.0 s 6.02 GB | driver 101.5 s | OK | child aa 43223 ms gen 49.3 s obs 50 s VmHWM 6.65 GB | wait 49.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  BASE_A128 b1 size 62.65/65.80/32.09/28.05 | parent 47.1 s 4.71 GB | driver 48.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  BASE_A128 b2 size 62.65/65.80/32.09/28.05 | parent 53.8 s 4.45 GB | driver 55.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  FULL_A128 b1 size 62.79/65.94/32.25/28.05 | parent 115.0 s 5.60 GB | driver 117.3 s | OK | child aa 55234 ms gen 59.6 s obs 60 s VmHWM 6.82 GB | wait 59.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9484 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL_A128 b2 size 62.79/65.94/32.25/28.05 | parent 99.0 s 5.80 GB | driver 100.6 s | OK | child aa 45264 ms gen 50.9 s obs 50 s VmHWM 6.29 GB | wait 51.1 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  BASE_A256 b1 size 65.41/68.55/34.91/27.98 | parent 45.2 s 4.32 GB | driver 46.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  BASE_A256 b2 size 65.41/68.55/34.91/27.98 | parent 46.4 s 3.90 GB | driver 47.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+biojava                  FULL_A256 b1 size 65.67/68.82/35.07/28.05 | parent 98.0 s 4.84 GB | driver 99.7 s | OK | child aa 42484 ms gen 46.5 s obs 46 s VmHWM 6.94 GB | wait 46.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL_A256 b2 size 65.67/68.82/35.07/28.05 | parent 76.0 s 5.43 GB | driver 78.2 s | OK | child aa 40154 ms gen 44.6 s obs 44 s VmHWM 6.58 GB | wait 44.6 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9481 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+## build cost vs stock (means over builds)
+biojava                  FULL/BASE  parent wall 53.3 -> 100.5 s (x1.89)  Peak RSS 4.28 -> 5.46 GB (x1.27)  child VmHWM 8.28 GB  size 61.34 -> 61.54 MB (x1.003)  status OK,OK
+biojava                  BASE_A32/BASE  parent wall 53.3 -> 38.3 s (x0.72)  Peak RSS 4.28 -> 4.29 GB (x1.00)  child VmHWM ? GB  size 61.34 -> 60.82 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+biojava                  FULL_A32/BASE  parent wall 53.3 -> 102.0 s (x1.91)  Peak RSS 4.28 -> 5.50 GB (x1.29)  child VmHWM 6.52 GB  size 61.34 -> 61.02 MB (x0.995)  status OK,OK
+biojava                  BASE_A128/BASE  parent wall 53.3 -> 50.5 s (x0.95)  Peak RSS 4.28 -> 4.58 GB (x1.07)  child VmHWM ? GB  size 61.34 -> 62.65 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+biojava                  FULL_A128/BASE  parent wall 53.3 -> 107.0 s (x2.01)  Peak RSS 4.28 -> 5.70 GB (x1.33)  child VmHWM 6.56 GB  size 61.34 -> 62.79 MB (x1.024)  status OK,OK
+biojava                  BASE_A256/BASE  parent wall 53.3 -> 45.8 s (x0.86)  Peak RSS 4.28 -> 4.11 GB (x0.96)  child VmHWM ? GB  size 61.34 -> 65.41 MB (x1.066)  status NO-PROFILE,NO-PROFILE
+biojava                  FULL_A256/BASE  parent wall 53.3 -> 87.0 s (x1.63)  Peak RSS 4.28 -> 5.13 GB (x1.20)  child VmHWM 6.76 GB  size 61.34 -> 65.67 MB (x1.071)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+biojava                  FULL SBS=40 SV=228 (ACC=154 ELEM=9) LS=1 (JOINER=0)  OK
+biojava                  BASE_A32 no profile  NO-PROFILE
+biojava                  FULL_A32 SBS=40 SV=228 (ACC=154 ELEM=9) LS=1 (JOINER=0)  OK
+biojava                  BASE_A128 no profile  NO-PROFILE
+biojava                  FULL_A128 SBS=40 SV=228 (ACC=154 ELEM=9) LS=1 (JOINER=0)  OK
+biojava                  BASE_A256 no profile  NO-PROFILE
+biojava                  FULL_A256 SBS=40 SV=228 (ACC=154 ELEM=9) LS=1 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+biojava                  BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 41.2 s
+biojava                  BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 37.5 s
+biojava                  BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 48.3 s
+biojava                  BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 55.1 s
+biojava                  BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 46.3 s
+biojava                  BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 47.5 s
+## determinism: biojava FULL_A128: admit counts differ across builds; biojava FULL_A256: admit counts differ across builds
+TABLES-DONE

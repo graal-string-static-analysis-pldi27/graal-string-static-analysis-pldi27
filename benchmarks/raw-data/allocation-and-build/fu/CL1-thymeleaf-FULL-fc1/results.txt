@@ -1,0 +1,14 @@
+# C99 campaign results  SLOT=CL1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL1-thymeleaf-FULL-fc1  CFGS=BASE FULL  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## thymeleaf  [jmh] thymeleaf GTVG JMH (ab-cmb recipe)  builds BASE:3 FULL:3  starts parsed=24
+  GEOMEAN FULL/BASE  time 1.000 [0.993,1.007] n.s. (5 keys)  alloc 0.959 [0.952,0.965] LESS (1 keys)
+  GTVGHome.benchmark                                                     FULL 0.998 [0.992,1.005] n.s.
+  GTVGOrderDetails.benchmark                                             FULL 0.999 [0.990,1.009] n.s.
+  GTVGOrderList.benchmark                                                FULL 1.001 [0.994,1.008] n.s.
+  GTVGProductComments.benchmark                                          FULL 0.999 [0.993,1.007] n.s.
+  GTVGProductList.benchmark                                              FULL 1.001 [0.993,1.008] n.s.
+  ~alloc MB                                                              FULL 0.959 [0.952,0.965] LESS
+  ~rss MB                                                                FULL 1.003 [1.000,1.006] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

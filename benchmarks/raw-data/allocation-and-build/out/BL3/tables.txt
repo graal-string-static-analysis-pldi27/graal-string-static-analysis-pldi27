@@ -1,0 +1,27 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL3  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+string-concat            BASE b1 size 23.01/24.30/9.85/11.80 | parent 13.1 s 2.28 GB | driver 13.8 s REUSED
+string-concat            BASE b2 size 23.01/24.30/9.85/11.80 | parent 13.5 s 2.25 GB | driver 14.1 s REUSED
+string-concat            BASE b3 size 23.01/24.30/9.85/11.80 | parent 13.6 s 2.25 GB | driver 14.3 s REUSED
+string-concat            SBS  b1 size 23.01/24.30/9.86/11.80 | parent 27.5 s 2.36 GB | driver 28.2 s | OK | child aa 10345 ms gen 12.7 s obs 13 s VmHWM 4.03 GB | wait 13.0 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4013 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS  b2 size 23.01/24.30/9.86/11.80 | parent 27.4 s 2.39 GB | driver 28.1 s | OK | child aa 10559 ms gen 13.0 s obs 12 s VmHWM 4.21 GB | wait 13.0 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS  b3 size 23.01/24.30/9.86/11.80 | parent 27.8 s 2.42 GB | driver 28.4 s | OK | child aa 10644 ms gen 13.0 s obs 12 s VmHWM 4.17 GB | wait 13.5 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=4013 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SV   b1 size 23.01/24.31/9.88/11.80 | parent 28.5 s 2.37 GB | driver 29.1 s | OK | child aa 11228 ms gen 13.7 s obs 14 s VmHWM 4.29 GB | wait 14.0 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV   b2 size 23.01/24.31/9.88/11.80 | parent 27.9 s 2.35 GB | driver 28.5 s | OK | child aa 10989 ms gen 13.4 s obs 12 s VmHWM 4.12 GB | wait 13.5 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV   b3 size 23.01/24.31/9.88/11.80 | parent 28.1 s 2.36 GB | driver 28.7 s | OK | child aa 10945 ms gen 13.4 s obs 14 s VmHWM 4.16 GB | wait 13.5 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            LS   b1 size 23.07/24.38/9.91/11.80 | parent 24.7 s 2.39 GB | driver 25.3 s | OK | child aa 7216 ms gen 9.7 s obs 9 s VmHWM 2.69 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS   b2 size 23.07/24.38/9.91/11.80 | parent 23.8 s 2.38 GB | driver 24.5 s | OK | child aa 7223 ms gen 9.6 s obs 9 s VmHWM 2.73 GB | wait 9.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS   b3 size 23.07/24.38/9.91/11.80 | parent 24.6 s 2.35 GB | driver 25.2 s | OK | child aa 7217 ms gen 9.7 s obs 10 s VmHWM 2.75 GB | wait 10.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+string-concat            SBS /BASE  parent wall 13.4 -> 27.6 s (x2.06)  Peak RSS 2.26 -> 2.39 GB (x1.06)  child VmHWM 4.14 GB  size 23.01 -> 23.01 MB (x1.000)  status OK,OK,OK
+string-concat            SV  /BASE  parent wall 13.4 -> 28.2 s (x2.10)  Peak RSS 2.26 -> 2.36 GB (x1.04)  child VmHWM 4.19 GB  size 23.01 -> 23.01 MB (x1.000)  status OK,OK,OK
+string-concat            LS  /BASE  parent wall 13.4 -> 24.4 s (x1.82)  Peak RSS 2.26 -> 2.37 GB (x1.05)  child VmHWM 2.72 GB  size 23.01 -> 23.07 MB (x1.003)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+string-concat            SBS  SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+string-concat            SV   SBS=0 SV=117 (ACC=102 ELEM=5) LS=0 (JOINER=0)  OK
+string-concat            LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=35 (JOINER=3)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: string-concat SBS: admit counts differ across builds
+TABLES-DONE

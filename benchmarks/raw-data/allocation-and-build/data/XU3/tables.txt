@@ -1,0 +1,17 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XU3  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-pmd               BASE b1 size 58.26/60.87/26.88/28.64 | parent 23.1 s 3.56 GB | driver 23.7 s REUSED
+dacapo-pmd               BASE b2 size 58.26/60.87/26.88/28.64 | parent 22.9 s 3.91 GB | driver 23.5 s REUSED
+dacapo-pmd               BASE b3 size 58.26/60.87/26.88/28.64 | parent 22.9 s 3.66 GB | driver 23.5 s REUSED
+dacapo-pmd               FULL b1 size 58.53/61.14/27.08/28.70 | parent 59.0 s 4.87 GB | driver 59.7 s | OK | child aa 30814 ms gen 33.7 s obs 33 s VmHWM 11.35 GB | wait 34.0 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b2 size 58.53/61.14/27.08/28.70 | parent 58.3 s 4.73 GB | driver 59.1 s | OK | child aa 30485 ms gen 33.3 s obs 33 s VmHWM 11.56 GB | wait 33.5 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11888 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b3 size 58.53/61.14/27.08/28.70 | parent 58.6 s 4.85 GB | driver 59.3 s | OK | child aa 30872 ms gen 33.7 s obs 34 s VmHWM 11.71 GB | wait 33.6 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+## build cost vs stock (means over builds)
+dacapo-pmd               FULL/BASE  parent wall 23.0 -> 58.6 s (x2.55)  Peak RSS 3.71 -> 4.82 GB (x1.30)  child VmHWM 11.54 GB  size 58.26 -> 58.53 MB (x1.004)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-pmd               FULL SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: dacapo-pmd FULL: admit counts differ across builds
+TABLES-DONE

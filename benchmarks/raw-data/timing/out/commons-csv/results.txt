@@ -1,0 +1,26 @@
+# C99 campaign results  SLOT=commons-csv  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/commons-csv  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## commons-csv  [jmh] commons-csv CSVBenchmark (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.968 [0.957,0.980] FASTER (7 keys)  alloc 0.976 [0.976,0.976] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.988 [0.976,1.001] n.s. (7 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.984 [0.975,0.994] FASTER (7 keys)  alloc 0.976 [0.976,0.976] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.994 [0.986,1.002] n.s. (7 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.989 [0.979,0.998] FASTER (7 keys)  alloc 0.976 [0.976,0.976] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.006 [0.996,1.016] n.s. (7 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.002 [0.995,1.010] n.s. (7 keys)  alloc 0.976 [0.976,0.976] LESS (1 keys)
+  CSVBenchmark.parseCommonsCSV                                           FULL 0.988 [0.979,0.997] FASTER | BASE_A32 0.950 [0.940,0.960] FASTER | FULL_A32 0.983 [0.967,0.999] FASTER | BASE_A128 0.991 [0.982,1.001] n.s. | FULL_A128 0.987 [0.947,1.029] n.s. | BASE_A256 1.000 [0.983,1.018] n.s. | FULL_A256 0.997 [0.979,1.015] n.s.
+  CSVBenchmark.parseGenJavaCSV                                           FULL 0.892 [0.885,0.898] FASTER | BASE_A32 1.006 [0.998,1.013] n.s. | FULL_A32 0.954 [0.929,0.979] FASTER | BASE_A128 0.998 [0.986,1.011] n.s. | FULL_A128 0.904 [0.899,0.910] FASTER | BASE_A256 0.996 [0.987,1.005] n.s. | FULL_A256 0.926 [0.919,0.933] FASTER
+  CSVBenchmark.parseJavaCSV                                              FULL 0.985 [0.976,0.995] FASTER | BASE_A32 0.985 [0.973,0.997] FASTER | FULL_A32 0.979 [0.970,0.989] FASTER | BASE_A128 0.989 [0.980,0.999] FASTER | FULL_A128 0.994 [0.984,1.004] n.s. | BASE_A256 0.988 [0.978,0.998] FASTER | FULL_A256 0.990 [0.980,1.000] FASTER
+  CSVBenchmark.parseOpenCSV                                              FULL 0.972 [0.964,0.980] FASTER | BASE_A32 0.990 [0.977,1.003] n.s. | FULL_A32 0.996 [0.990,1.001] n.s. | BASE_A128 0.991 [0.987,0.995] FASTER | FULL_A128 1.032 [1.024,1.040] SLOWER | BASE_A256 1.017 [1.007,1.027] SLOWER | FULL_A256 1.033 [1.019,1.047] SLOWER
+  CSVBenchmark.parseSuperCSV                                             FULL 1.017 [0.999,1.035] n.s. | BASE_A32 0.970 [0.961,0.979] FASTER | FULL_A32 0.990 [0.986,0.994] FASTER | BASE_A128 0.994 [0.983,1.005] n.s. | FULL_A128 1.016 [1.001,1.030] SLOWER | BASE_A256 1.011 [1.001,1.022] SLOWER | FULL_A256 1.019 [1.013,1.026] SLOWER
+  CSVBenchmark.read                                                      FULL 0.962 [0.959,0.966] FASTER | BASE_A32 1.051 [1.047,1.054] SLOWER | FULL_A32 1.002 [0.987,1.017] n.s. | BASE_A128 0.996 [0.992,1.000] FASTER | FULL_A128 0.980 [0.955,1.005] n.s. | BASE_A256 0.991 [0.967,1.014] n.s. | FULL_A256 0.984 [0.964,1.003] n.s.
+  CSVBenchmark.scan                                                      FULL 0.968 [0.934,1.004] n.s. | BASE_A32 0.971 [0.929,1.016] n.s. | FULL_A32 0.988 [0.951,1.028] n.s. | BASE_A128 0.997 [0.963,1.033] n.s. | FULL_A128 1.013 [0.959,1.072] n.s. | BASE_A256 1.043 [0.996,1.093] n.s. | FULL_A256 1.074 [1.032,1.118] SLOWER
+  ~alloc MB                                                              FULL 0.976 [0.976,0.976] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.976 [0.976,0.976] LESS | BASE_A128 1.000 [1.000,1.000] MORE | FULL_A128 0.976 [0.976,0.976] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.976 [0.976,0.976] LESS
+  ~rss MB                                                                FULL 0.761 [0.656,0.872] LESS | BASE_A32 1.079 [0.942,1.224] n.s. | FULL_A32 0.935 [0.658,1.230] n.s. | BASE_A128 0.971 [0.942,1.001] n.s. | FULL_A128 0.852 [0.657,1.059] n.s. | BASE_A256 1.082 [0.945,1.227] n.s. | FULL_A256 0.939 [0.824,1.061] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  commons-csv                0.968*|0.976*     0.988|1.000       0.984*|0.976*     0.994|1.000*      0.989*|0.976*     1.006|1.000       1.002|0.976*     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

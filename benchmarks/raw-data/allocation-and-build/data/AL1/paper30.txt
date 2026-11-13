@@ -1,0 +1,87 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL1  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## stringbuffers  starts BASE:3 FULL:3  time keys 3
+  FULL/BASE time  ratio 0.2124  (mean FULL 0.2124 n=3, BASE 1.0002 n=3)  error margin 0.0094 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 4.2233  (mean FULL 4.2233 n=3, BASE 1.0000 n=3)  error margin 0.0391 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.2124  (mean FULL 0.2124 n=30 iterations, BASE 1.0003 n=30)  error margin 0.0090 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+    key StringBuffers.appendAndToString                              BASE 24203.3 sd 517  FULL 200367 sd 5.05e+03  [higher]
+    key StringBuffers.substring                                      BASE 51098.9 sd 1.51e+03  FULL 188702 sd 874  [higher]
+    key StringBuffers.toStringComplex                                BASE 9899.13 sd 187  FULL 33795.8 sd 144  [higher]
+
+## logback-perf  starts BASE:3 FULL:3  time keys 1
+  FULL/BASE time  ratio 0.9946  (mean FULL 0.9947 n=3, BASE 1.0001 n=3)  error margin 0.0140 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.8870  (mean FULL 0.8870 n=3, BASE 1.0000 n=3)  error margin 0.0093 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 0.9945  (mean FULL 0.9949 n=27 iterations, BASE 1.0003 n=27)  error margin 0.0251 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key FileAppenderBenchmark.enhancedLogbackToFile                  BASE 3377.73 sd 46.9  FULL 3395.88 sd 33.5  [higher]
+
+## jte  starts BASE:3 FULL:3  time keys 7
+  FULL/BASE time  ratio 0.9859  (mean FULL 0.9859 n=3, BASE 0.9999 n=3)  error margin 0.0161 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9971  (mean FULL 0.9971 n=3, BASE 1.0000 n=3)  error margin 0.0145 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9859  (mean FULL 0.9858 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0136 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+    key TemplateOutputTest.stringBuilder                             BASE 754.903 sd 11.1  FULL 697.977 sd 25.4  [lower]
+    key TemplateOutputTest.templateOutput                            BASE 776.743 sd 30.7  FULL 772.172 sd 5.25  [lower]
+    key bench.JteBench.directString                                  BASE 1366.71 sd 26.1  FULL 1383.64 sd 5.35  [lower]
+    key bench.JteBench.engineString                                  BASE 1414.97 sd 24.6  FULL 1443.52 sd 16.9  [lower]
+    key bench.JteBench.engineStringEsc                               BASE 2410.77 sd 40.9  FULL 2438.11 sd 55.1  [lower]
+    key bench.JteBench.engineUtf8                                    BASE 1028.67 sd 12.6  FULL 1051.92 sd 19.2  [lower]
+    key bench.JteBench.engineUtf8Esc                                 BASE 2496.89 sd 20.7  FULL 2303.37 sd 79  [lower]
+
+## StringJoiner  starts BASE:3 FULL:3  time keys 32
+  FULL/BASE time  ratio 0.2242  (mean FULL 0.2241 n=3, BASE 0.9999 n=3)  error margin 0.0076 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 1.6513  (mean FULL 1.6513 n=3, BASE 1.0000 n=3)  error margin 0.0045 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.2242  (mean FULL 0.2241 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0065 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 32 keys]
+    key StringJoinerBenchmark.join 20 1 cyrillic                     BASE 558.647 sd 11.3  FULL 72.5863 sd 0.629  [lower]
+    key StringJoinerBenchmark.join 20 1 latin                        BASE 564.899 sd 12.8  FULL 70.794 sd 2.84  [lower]
+    key StringJoinerBenchmark.join 20 128 cyrillic                   BASE 626.733 sd 3.98  FULL 73.093 sd 0.603  [lower]
+    key StringJoinerBenchmark.join 20 128 latin                      BASE 629.143 sd 5.45  FULL 72.8303 sd 0.296  [lower]
+    key StringJoinerBenchmark.join 20 32 cyrillic                    BASE 553.207 sd 17.8  FULL 72.7877 sd 0.358  [lower]
+    key StringJoinerBenchmark.join 20 32 latin                       BASE 556.535 sd 13.1  FULL 72.7207 sd 0.56  [lower]
+    key StringJoinerBenchmark.join 20 8 cyrillic                     BASE 544.093 sd 6.83  FULL 72.9483 sd 0.512  [lower]
+    key StringJoinerBenchmark.join 20 8 latin                        BASE 545.043 sd 19.9  FULL 72.6743 sd 0.239  [lower]
+    key StringJoinerBenchmark.join 5 1 cyrillic                      BASE 150.504 sd 5.18  FULL 25.6863 sd 0.085  [lower]
+    key StringJoinerBenchmark.join 5 1 latin                         BASE 149.558 sd 4.34  FULL 25.7817 sd 0.177  [lower]
+    key StringJoinerBenchmark.join 5 128 cyrillic                    BASE 163.295 sd 0.257  FULL 25.6143 sd 0.022  [lower]
+    key StringJoinerBenchmark.join 5 128 latin                       BASE 163.457 sd 0.177  FULL 25.586 sd 0.0356  [lower]
+    key StringJoinerBenchmark.join 5 32 cyrillic                     BASE 142.484 sd 2.3  FULL 25.5857 sd 0.0464  [lower]
+    key StringJoinerBenchmark.join 5 32 latin                        BASE 141.682 sd 2.12  FULL 25.6323 sd 0.0237  [lower]
+    key StringJoinerBenchmark.join 5 8 cyrillic                      BASE 141.079 sd 2.44  FULL 25.6747 sd 0.0522  [lower]
+    key StringJoinerBenchmark.join 5 8 latin                         BASE 142.462 sd 2.11  FULL 25.677 sd 0.0879  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 1 cyrillic             BASE 756.138 sd 10.9  FULL 268.024 sd 8.61  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 1 latin                BASE 756.829 sd 11.5  FULL 265.955 sd 2.6  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 128 cyrillic           BASE 827.428 sd 1.44  FULL 266.991 sd 7.37  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 128 latin              BASE 822.198 sd 3.27  FULL 264.226 sd 5.75  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 32 cyrillic            BASE 738.101 sd 8.1  FULL 265.837 sd 3.53  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 32 latin               BASE 739.465 sd 11.1  FULL 265.758 sd 9.79  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 8 cyrillic             BASE 738.091 sd 6.94  FULL 265.416 sd 7.32  [lower]
+    key StringJoinerBenchmark.stringJoiner 20 8 latin                BASE 736.564 sd 2.62  FULL 266.339 sd 2.44  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 1 cyrillic              BASE 190.02 sd 5.17  FULL 63.9933 sd 0.0919  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 1 latin                 BASE 191.347 sd 4.63  FULL 63.9573 sd 0.0768  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 128 cyrillic            BASE 205.487 sd 2.13  FULL 63.9157 sd 0.154  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 128 latin               BASE 209.897 sd 6.48  FULL 63.9147 sd 0.088  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 32 cyrillic             BASE 186.507 sd 5.57  FULL 64.0277 sd 0.087  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 32 latin                BASE 188.403 sd 5.58  FULL 63.9987 sd 0.137  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 8 cyrillic              BASE 188.512 sd 2.1  FULL 64.103 sd 0.0782  [lower]
+    key StringJoinerBenchmark.stringJoiner 5 8 latin                 BASE 185.865 sd 2.75  FULL 64.09 sd 0.092  [lower]
+
+## string-concat-startup  starts BASE:3 FULL:3  time keys 16
+  FULL/BASE time  ratio 0.2479  (mean FULL 0.2479 n=3, BASE 1.0002 n=3)  error margin 0.0147 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 4.6684  (mean FULL 4.6684 n=3, BASE 1.0000 n=3)  error margin 0.0229 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.2479  (mean FULL 0.2479 n=30 iterations, BASE 1.0003 n=30)  error margin 0.0123 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 16 keys]
+    key StringConcatStartup.MixedLarge.run N/A                       BASE 18.9547 sd 0.343  FULL 35.0907 sd 0.0709  [higher]
+    key StringConcatStartup.MixedSmall.run N/A                       BASE 2735.46 sd 123  FULL 6830.36 sd 11.4  [higher]
+    key StringConcatStartup.StringLarge.run N/A                      BASE 21.052 sd 0.586  FULL 161.737 sd 0.602  [higher]
+    key StringConcatStartup.StringSingle.constBool 4711              BASE 38976.4 sd 944  FULL 172841 sd 4.98e+03  [higher]
+    key StringConcatStartup.StringSingle.constBoolString 4711        BASE 19508.2 sd 440  FULL 153194 sd 294  [higher]
+    key StringConcatStartup.StringSingle.constBoolean 4711           BASE 36801.4 sd 1.11e+03  FULL 144687 sd 665  [higher]
+    key StringConcatStartup.StringSingle.constBooleanString 4711     BASE 15747.9 sd 323  FULL 150204 sd 194  [higher]
+    key StringConcatStartup.StringSingle.constFloat 4711             BASE 10973.5 sd 52.7  FULL 17349.5 sd 70.9  [higher]
+    key StringConcatStartup.StringSingle.constFloatString 4711       BASE 8572.07 sd 122  FULL 17403.5 sd 55.9  [higher]
+    key StringConcatStartup.StringSingle.constInt 4711               BASE 32410.2 sd 302  FULL 72500.2 sd 1.23e+03  [higher]
+    key StringConcatStartup.StringSingle.constIntString 4711         BASE 17355.7 sd 197  FULL 75318.2 sd 155  [higher]
+    key StringConcatStartup.StringSingle.constInteger 4711           BASE 31337.4 sd 750  FULL 84297.7 sd 421  [higher]
+    key StringConcatStartup.StringSingle.constIntegerString 4711     BASE 14552.8 sd 224  FULL 87398.6 sd 278  [higher]
+    key StringConcatStartup.StringSingle.constString 4711            BASE 36347.5 sd 649  FULL 168781 sd 1.35e+03  [higher]
+    key StringConcatStartup.StringThree.stringIntString 4711         BASE 12420.9 sd 117  FULL 73456.6 sd 146  [higher]
+    key StringConcatStartup.StringThree.stringIntegerString 4711     BASE 10804.9 sd 198  FULL 82762.3 sd 208  [higher]
+
+PAPER30-DONE

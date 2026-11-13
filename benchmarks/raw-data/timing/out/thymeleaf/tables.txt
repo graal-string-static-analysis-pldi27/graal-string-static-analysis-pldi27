@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/thymeleaf  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+thymeleaf                BASE b1 size 27.40/28.90/12.54/13.37 | parent 21.7 s 3.29 GB | driver 22.7 s REUSED
+thymeleaf                BASE b2 size 27.40/28.90/12.54/13.37 | parent 19.6 s 3.24 GB | driver 20.6 s REUSED
+thymeleaf                FULL b1 size 27.46/28.97/12.60/13.37 | parent 45.9 s 3.69 GB | driver 46.9 s | OK | child aa 17635 ms gen 20.3 s obs 21 s VmHWM 3.99 GB | wait 20.5 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                FULL b2 size 27.46/28.97/12.60/13.37 | parent 35.9 s 3.73 GB | driver 36.8 s | OK | child aa 15787 ms gen 18.4 s obs 19 s VmHWM 3.76 GB | wait 18.0 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                BASE_A32 b1 size 27.13/28.64/12.30/13.37 | parent 16.5 s 3.11 GB | driver 17.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                BASE_A32 b2 size 27.13/28.64/12.30/13.37 | parent 16.7 s 3.08 GB | driver 17.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                FULL_A32 b1 size 27.27/28.77/12.36/13.43 | parent 35.5 s 3.76 GB | driver 36.3 s | OK | child aa 15196 ms gen 17.9 s obs 17 s VmHWM 3.99 GB | wait 18.0 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                FULL_A32 b2 size 27.27/28.77/12.36/13.43 | parent 36.0 s 3.88 GB | driver 36.8 s | OK | child aa 14820 ms gen 17.6 s obs 18 s VmHWM 4.02 GB | wait 18.0 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                BASE_A128 b1 size 27.92/29.42/13.10/13.37 | parent 16.6 s 3.31 GB | driver 17.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                BASE_A128 b2 size 27.92/29.42/13.10/13.37 | parent 16.7 s 3.31 GB | driver 17.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                FULL_A128 b1 size 28.05/29.56/13.18/13.37 | parent 36.1 s 3.72 GB | driver 37.0 s | OK | child aa 14835 ms gen 17.6 s obs 18 s VmHWM 4.13 GB | wait 18.0 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                FULL_A128 b2 size 28.05/29.56/13.18/13.37 | parent 35.6 s 3.72 GB | driver 36.4 s | OK | child aa 14665 ms gen 17.4 s obs 18 s VmHWM 3.82 GB | wait 17.5 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                BASE_A256 b1 size 29.17/30.67/14.34/13.37 | parent 16.5 s 3.30 GB | driver 17.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                BASE_A256 b2 size 29.17/30.67/14.34/13.37 | parent 16.7 s 3.11 GB | driver 17.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+thymeleaf                FULL_A256 b1 size 29.23/30.74/14.41/13.37 | parent 35.5 s 3.72 GB | driver 36.3 s | OK | child aa 14591 ms gen 17.4 s obs 18 s VmHWM 3.99 GB | wait 17.5 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+thymeleaf                FULL_A256 b2 size 29.23/30.74/14.41/13.37 | parent 35.5 s 3.66 GB | driver 36.4 s | OK | child aa 15242 ms gen 17.9 s obs 17 s VmHWM 4.18 GB | wait 18.0 s | SBS=3 SV=375(ACC=303 ELEM=5) LS=0(JOINER=0) | IC=5191 TC=463 MIRROR=164 EXACT=0 other=18 REUSED
+## build cost vs stock (means over builds)
+thymeleaf                FULL/BASE  parent wall 20.6 -> 40.9 s (x1.98)  Peak RSS 3.27 -> 3.71 GB (x1.14)  child VmHWM 3.87 GB  size 27.40 -> 27.46 MB (x1.002)  status OK,OK
+thymeleaf                BASE_A32/BASE  parent wall 20.6 -> 16.6 s (x0.80)  Peak RSS 3.27 -> 3.09 GB (x0.95)  child VmHWM ? GB  size 27.40 -> 27.13 MB (x0.990)  status NO-PROFILE,NO-PROFILE
+thymeleaf                FULL_A32/BASE  parent wall 20.6 -> 35.8 s (x1.73)  Peak RSS 3.27 -> 3.82 GB (x1.17)  child VmHWM 4.01 GB  size 27.40 -> 27.27 MB (x0.995)  status OK,OK
+thymeleaf                BASE_A128/BASE  parent wall 20.6 -> 16.6 s (x0.81)  Peak RSS 3.27 -> 3.31 GB (x1.01)  child VmHWM ? GB  size 27.40 -> 27.92 MB (x1.019)  status NO-PROFILE,NO-PROFILE
+thymeleaf                FULL_A128/BASE  parent wall 20.6 -> 35.9 s (x1.74)  Peak RSS 3.27 -> 3.72 GB (x1.14)  child VmHWM 3.97 GB  size 27.40 -> 28.05 MB (x1.024)  status OK,OK
+thymeleaf                BASE_A256/BASE  parent wall 20.6 -> 16.6 s (x0.80)  Peak RSS 3.27 -> 3.21 GB (x0.98)  child VmHWM ? GB  size 27.40 -> 29.17 MB (x1.065)  status NO-PROFILE,NO-PROFILE
+thymeleaf                FULL_A256/BASE  parent wall 20.6 -> 35.5 s (x1.72)  Peak RSS 3.27 -> 3.69 GB (x1.13)  child VmHWM 4.08 GB  size 27.40 -> 29.23 MB (x1.067)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+thymeleaf                FULL SBS=3 SV=375 (ACC=303 ELEM=5) LS=0 (JOINER=0)  OK
+thymeleaf                BASE_A32 no profile  NO-PROFILE
+thymeleaf                FULL_A32 SBS=3 SV=375 (ACC=303 ELEM=5) LS=0 (JOINER=0)  OK
+thymeleaf                BASE_A128 no profile  NO-PROFILE
+thymeleaf                FULL_A128 SBS=3 SV=375 (ACC=303 ELEM=5) LS=0 (JOINER=0)  OK
+thymeleaf                BASE_A256 no profile  NO-PROFILE
+thymeleaf                FULL_A256 SBS=3 SV=375 (ACC=303 ELEM=5) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+thymeleaf                BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.2 s
+thymeleaf                BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.4 s
+thymeleaf                BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.3 s
+thymeleaf                BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.4 s
+thymeleaf                BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.2 s
+thymeleaf                BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 17.4 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

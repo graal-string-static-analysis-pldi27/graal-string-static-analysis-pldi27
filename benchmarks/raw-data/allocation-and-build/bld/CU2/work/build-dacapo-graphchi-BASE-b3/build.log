@@ -1,0 +1,64 @@
+1792869301.887467 ========================================================================================================================
+1792869301.888957 GraalVM Native Image: Generating 'dacapo-graphchi-BASE-b3' (executable)...
+1792869301.888986 ========================================================================================================================
+1792869301.889004 For detailed information and explanations on the build output, visit:
+1792869301.889032 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792869301.889052 ------------------------------------------------------------------------------------------------------------------------
+1792869303.562748 [1/8] Initializing...                                                                                    (2.6s @ 0.19GB)
+1792869303.563040  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792869303.563176  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792869303.571019  C compiler: gcc (linux, x86_64, 15.2.0)
+1792869303.571039  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792869303.571047  2 user-specific feature(s):
+1792869303.571055  - com.oracle.svm.polyglot.scala.ScalaFeature
+1792869303.571064  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792869303.571086 ------------------------------------------------------------------------------------------------------------------------
+1792869303.571094  1 experimental option(s) unlocked:
+1792869303.571102  - '-H:CodeAlignment' (origin(s): command line)
+1792869303.571117 ------------------------------------------------------------------------------------------------------------------------
+1792869303.571124 Build resources:
+1792869303.571134  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792869303.571146  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792869303.576671 Skipped 123 predefined class(es) because the classpath already contains a class with the same name: com.yammer.metrics.core.Clock$UserTimeClock, edu.cmu.graphchi.engine.NoEdgesInIntervalException, com.yammer.metrics.reporting.JmxReporter$MeterMBean, org.apache.commons.math.MathException, edu.cmu.graphchi.ChiLogger$SingleLineFormatter, edu.cmu.graphchi.engine.GraphChiEngine$3, edu.cmu.graphchi.engine.GraphChiEngine$4, edu.cmu.graphchi.engine.GraphChiEngine$1, org.slf4j.helpers.Util, edu.cmu.graphchi.engine.GraphChiEngine$2, ...
+1792869307.339920 [2/8] Performing analysis...  [*****]                                                                    (3.5s @ 1.01GB)
+1792869307.359505     5,555 types,   6,682 fields, and  24,796 methods found reachable
+1792869307.360168     2,136 types,     605 fields, and   3,504 methods registered for reflection
+1792869307.360183        63 types,      69 fields, and      55 methods registered for JNI access
+1792869307.360217         0 downcalls and 0 upcalls registered for foreign access
+1792869307.360286         4 native libraries: dl, pthread, rt, z
+1792869308.573798 [3/8] Building universe...                                                                               (1.2s @ 1.03GB)
+1792869309.038477 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.86GB)
+1792869309.452902 [5/8] Inlining methods...     [****]                                                                     (0.3s @ 0.90GB)
+1792869312.672946 [6/8] Compiling methods...    [**]                                                                       (3.2s @ 0.76GB)
+1792869314.132718 [7/8] Laying out methods...   [*]                                                                        (1.5s @ 0.93GB)
+1792869315.825660 [8/8] Creating image...       [*]                                                                        (1.5s @ 0.82GB)
+1792869315.826045   10.50MB (38.71%) for code area:    15,044 compilation units
+1792869315.826233   13.96MB (51.47%) for image heap:  162,072 objects and 64 resources
+1792869315.826281    2.66MB ( 9.82%) for other data
+1792869315.826333   27.12MB in total image size, 25.76MB in total file size
+1792869315.826373 ------------------------------------------------------------------------------------------------------------------------
+1792869315.827119 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792869315.827427    6.80MB java.base                                            2.72MB byte[] for code metadata
+1792869315.827497    1.36MB svm.jar (Native Image)                               2.37MB byte[] for java.lang.String
+1792869315.827558  484.15kB java.management                                      1.40MB java.lang.String
+1792869315.827622  418.47kB graphchi-0.2.2.jar                                   1.11MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792869315.827654  247.53kB dacapo-evaluation-git-e947cbfc.jar                 733.62kB java.lang.Class
+1792869315.827706  213.13kB jdk.zipfs                                          670.50kB byte[] for general heap data
+1792869315.827748  117.22kB java.logging                                       525.10kB heap alignment
+1792869315.827842   93.47kB org.graalvm.nativeimage.base                       387.07kB java.lang.Object[]
+1792869315.827891   82.26kB jdk.charsets                                       357.84kB java.util.HashMap$Node
+1792869315.827948   55.32kB jdk.proxy2                                         293.14kB byte[] for reflection metadata
+1792869315.829029  196.23kB for 15 more packages                                 3.38MB for 1400 more object types
+1792869315.829941 ------------------------------------------------------------------------------------------------------------------------
+1792869315.829949 Recommendations:
+1792869315.829996  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792869315.830074  HEAP: Set max heap for improved and more predictable memory usage.
+1792869315.830097  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792869315.832947 ------------------------------------------------------------------------------------------------------------------------
+1792869315.833640                         1.0s (6.7% of total time) in 84 GCs | Peak RSS: 2.45GB | CPU load: 13.63
+1792869315.834010 ------------------------------------------------------------------------------------------------------------------------
+1792869315.834033 Build artifacts:
+1792869315.834427  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-graphchi-BASE-b3 (executable)
+1792869315.834473  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libmanagement_ext.so (jdk_library)
+1792869315.834512 ========================================================================================================================
+1792869315.834537 Finished generating 'dacapo-graphchi-BASE-b3' in 14.8s.

@@ -1,0 +1,77 @@
+# AL1  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+StringJoiner             FULL   |   0.343   0.456   0.456 0.384[0.380,0.388]        0.330 | 0.456/0.456/0.456 | 32/32 | 0 | 32
+jte                      FULL   |   0.979   0.983   0.983 0.979[0.978,0.980]        0.978 | 0.983/0.983/0.983 | 7/7 | 0 | 2
+logback-perf             FULL   |   0.882   0.882   0.882 0.882[0.882,0.882]        0.882 | 0.885/0.880/0.881 | 1/1 | 0 | 1
+string-concat-startup    FULL   |   1.029   1.315   1.315 1.181[1.178,1.184]        1.109 | 1.315/1.315/1.315 | 16/16 | 6 | 8
+stringbuffers            FULL   |   0.849   0.903   0.903 0.909[0.908,0.911]        0.847 | 0.903/0.903/0.903 | 3/3 | 1 | 2
+
+## AL1 StringJoiner FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+StringJoinerBenchmark.join count=5,length=1,mode=latin         5.59   6.72   5.78     120.0     112.0  0.933    1.3    4.1
+StringJoinerBenchmark.join count=5,length=1,mode=cyrillic      5.54   6.74   5.86     120.0     112.1  0.934    1.3    4.1
+StringJoinerBenchmark.join count=5,length=8,mode=latin         5.86   6.75   5.54     152.1     112.0  0.737    1.7    4.1
+StringJoinerBenchmark.join count=5,length=8,mode=cyrillic      5.90   6.75   5.50     152.1     112.1  0.737    1.7    4.1
+StringJoinerBenchmark.join count=5,length=32,mode=latin        5.90   6.76   5.51     272.2     112.0  0.412    3.0    4.1
+StringJoinerBenchmark.join count=5,length=32,mode=cyrillic     5.86   6.77   5.56     272.1     112.1  0.412    3.0    4.2
+StringJoinerBenchmark.join count=5,length=128,mode=latin       5.10   6.77   6.39     752.4     112.0  0.149    7.2    4.2
+StringJoinerBenchmark.join count=5,length=128,mode=cyrillic    5.11   6.77   6.38     752.4     112.1  0.149    7.2    4.2
+StringJoinerBenchmark.join count=20,length=1,mode=latin        1.47   2.45   8.02     264.0     232.1  0.879    0.7    3.1
+StringJoinerBenchmark.join count=20,length=1,mode=cyrillic     1.49   2.38   7.69     264.0     232.1  0.879    0.7    3.0
+StringJoinerBenchmark.join count=20,length=8,mode=latin        1.53   2.39   7.50     408.2     232.1  0.569    1.2    3.0
+StringJoinerBenchmark.join count=20,length=8,mode=cyrillic     1.53   2.38   7.46     408.2     232.2  0.569    1.2    3.0
+StringJoinerBenchmark.join count=20,length=32,mode=latin       1.51   2.38   7.60     892.2     232.1  0.260    2.5    3.0
+StringJoinerBenchmark.join count=20,length=32,mode=cyrillic    1.51   2.38   7.58     892.2     232.2  0.260    2.5    3.0
+StringJoinerBenchmark.join count=20,length=128,mode=latin      1.32   2.37   8.61    2818.0     232.1  0.082    7.0    3.0
+StringJoinerBenchmark.join count=20,length=128,mode=cyrillic   1.33   2.37   8.61    2818.0     232.1  0.082    7.0    3.0
+StringJoinerBenchmark.stringJoiner count=5,length=1,mode=lat   4.36   2.71   2.99     216.1     208.1  0.963    1.8    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=1,mode=cyr   4.40   2.71   2.96     216.1     208.1  0.963    1.8    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=8,mode=lat   4.49   2.70   2.90     248.1     208.1  0.839    2.1    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=8,mode=cyr   4.43   2.70   2.94     248.1     208.1  0.839    2.1    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=32,mode=la   4.44   2.71   2.93     368.3     208.1  0.565    3.1    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=32,mode=cy   4.47   2.71   2.92     368.3     208.1  0.565    3.1    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=128,mode=l   3.98   2.71   3.28     851.8     208.1  0.244    6.4    3.1
+StringJoinerBenchmark.stringJoiner count=5,length=128,mode=c   4.07   2.71   3.21     851.9     208.1  0.244    6.5    3.1
+StringJoinerBenchmark.stringJoiner count=20,length=1,mode=la   1.10   0.65   2.85     664.3     625.0  0.941    1.4    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=1,mode=cy   1.10   0.65   2.83     664.4     625.0  0.941    1.4    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=8,mode=la   1.13   0.65   2.76     800.8     625.0  0.780    1.7    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=8,mode=cy   1.13   0.65   2.79     800.9     625.0  0.780    1.7    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=32,mode=l   1.13   0.66   2.79    1282.6     625.0  0.487    2.7    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=32,mode=c   1.13   0.65   2.78    1283.0     625.0  0.487    2.7    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=128,mode=   1.01   0.66   3.11    3228.4     625.0  0.194    6.2    2.2
+StringJoinerBenchmark.stringJoiner count=20,length=128,mode=   1.01   0.65   3.10    3231.3     625.0  0.193    6.1    2.2
+
+## AL1 jte FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+TemplateOutputTest.stringBuilder                              22.68  24.18   1.09    9149.4    8456.6  0.924   25.1   25.3
+TemplateOutputTest.templateOutput                             22.14  21.84   1.00    9175.2    9169.4  0.999   24.6   24.7
+JteBench.directString                                         12.51  12.17   0.99    9158.2    9167.3  1.001   13.9   13.8
+JteBench.engineString                                         12.09  11.61   0.98    9232.8    9232.6  1.000   13.5   13.2
+JteBench.engineStringEsc                                       7.10   6.90   0.99    9418.6    9418.4  1.000    8.1    8.0
+JteBench.engineUtf8                                           16.63  16.00   0.98    4779.2    4779.5  1.000    9.6    9.4
+JteBench.engineUtf8Esc                                         6.84   7.30   1.09    6362.4    6109.5  0.960    5.3    5.5
+
+## AL1 logback-perf FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+FileAppenderBenchmark.enhancedLogbackToFile                  100.00 100.00   1.01    2607.7    2300.2  0.882  100.0  100.0
+
+## AL1 string-concat-startup FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+MixedLarge.run                                                 0.01   0.00   1.85   39072.9   99641.2  2.550    3.1    3.1
+MixedSmall.run                                                 0.94   0.52   2.51     200.0    1056.7  5.283    2.3    6.5
+StringLarge.run                                                0.01   0.01   7.68    5534.9   19583.3  3.538    0.5    2.8
+StringSingle.constBool intValue=4711                          13.50  13.28   4.46      64.0      48.0  0.750   10.4    7.5
+StringSingle.constBoolString intValue=4711                     6.78  11.70   7.84      64.0      56.0  0.875    5.2    7.7
+StringSingle.constBoolean intValue=4711                       12.76  11.05   3.93      64.0      48.0  0.750    9.9    6.2
+StringSingle.constBooleanString intValue=4711                  5.46  11.47   9.54      64.0      56.0  0.875    4.2    7.5
+StringSingle.constFloat intValue=4711                          3.81   1.33   1.58     160.1     144.1  0.900    7.4    2.2
+StringSingle.constFloatString intValue=4711                    2.97   1.33   2.03     160.0     152.1  0.950    5.7    2.4
+StringSingle.constInt intValue=4711                           11.23   5.56   2.25      64.0     104.0  1.625    8.7    6.8
+StringSingle.constIntString intValue=4711                      6.02   5.75   4.34      64.0     112.1  1.750    4.6    7.6
+StringSingle.constInteger intValue=4711                       10.85   6.49   2.71     112.0     104.0  0.929   14.7    7.9
+StringSingle.constIntegerString intValue=4711                  5.05   6.68   6.00     112.0     112.1  1.000    6.8    8.8
+StringSingle.constString intValue=4711                        12.56  12.90   4.66      56.0      48.0  0.857    8.5    7.3
+StringThree.stringIntString intValue=4711                      4.31   5.61   5.90      56.0     112.0  2.001    2.9    7.4
+StringThree.stringIntegerString intValue=4711                  3.75   6.32   7.65     112.0     112.1  1.000    5.1    8.3
+
+## AL1 stringbuffers FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+StringBuffers.appendAndToString                               28.45  47.42   8.29      80.0      56.0  0.700   29.6   40.7
+StringBuffers.substring                                       59.90  44.59   3.70      56.0      48.0  0.857   43.7   32.8
+StringBuffers.toStringComplex                                 11.65   7.99   3.41     176.1     216.1  1.227   26.7   26.5
+

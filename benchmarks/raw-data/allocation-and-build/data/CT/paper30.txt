@@ -1,0 +1,18 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CT  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## template-benchmark  starts BASE:3 FULL:3  time keys 10
+  FULL/BASE time  ratio 1.0064  (mean FULL 1.0064 n=3, BASE 1.0000 n=3)  error margin 0.0071 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9518  (mean FULL 0.9518 n=3, BASE 1.0000 n=3)  error margin 0.0142 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0064  (mean FULL 1.0065 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0074 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 10 keys]
+    key Freemarker.benchmark                                         BASE 105344 sd 248  FULL 107031 sd 908  [higher]
+    key Handlebars.benchmark                                         BASE 99752.5 sd 671  FULL 104195 sd 814  [higher]
+    key JMustache.benchmark                                          BASE 197670 sd 325  FULL 195822 sd 2.13e+03  [higher]
+    key JStachio.benchmark                                           BASE 836713 sd 6.52e+03  FULL 832312 sd 1.24e+04  [higher]
+    key JStachioContext.benchmark                                    BASE 494421 sd 4.84e+03  FULL 486765 sd 4.22e+03  [higher]
+    key Mustache.benchmark                                           BASE 203617 sd 354  FULL 204781 sd 3.04e+03  [higher]
+    key Pebble.benchmark                                             BASE 189275 sd 1.36e+03  FULL 190549 sd 463  [higher]
+    key Qute.benchmark                                               BASE 125854 sd 337  FULL 113756 sd 1.04e+04  [higher]
+    key Rocker.benchmark                                             BASE 417801 sd 1.67e+03  FULL 414882 sd 2.24e+03  [higher]
+    key Trimou.benchmark                                             BASE 185232 sd 693  FULL 186332 sd 1.44e+03  [higher]
+
+PAPER30-DONE

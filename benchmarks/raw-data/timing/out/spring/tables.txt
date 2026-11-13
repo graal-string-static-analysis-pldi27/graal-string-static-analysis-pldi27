@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/spring  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+spring                   BASE b1 size 63.57/66.66/29.09/31.85 | parent 49.6 s 3.55 GB | driver 50.6 s REUSED
+spring                   BASE b2 size 63.57/66.66/29.09/31.85 | parent 46.0 s 3.72 GB | driver 47.5 s REUSED
+spring                   FULL b1 size 63.64/66.73/29.16/31.85 | parent 117.0 s 5.02 GB | driver 119.5 s | OK | child aa 54437 ms gen 64.0 s obs 66 s VmHWM 10.21 GB | wait 65.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   FULL b2 size 63.64/66.73/29.15/31.85 | parent 117.0 s 4.49 GB | driver 119.7 s | OK | child aa 55621 ms gen 62.0 s obs 62 s VmHWM 10.30 GB | wait 63.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   BASE_A32 b1 size 63.11/66.20/28.59/31.85 | parent 49.2 s 3.57 GB | driver 50.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   BASE_A32 b2 size 63.11/66.20/28.59/31.85 | parent 49.6 s 3.60 GB | driver 51.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   FULL_A32 b1 size 63.18/66.27/28.64/31.85 | parent 115.0 s 4.69 GB | driver 117.5 s | OK | child aa 56266 ms gen 63.0 s obs 63 s VmHWM 10.32 GB | wait 63.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   FULL_A32 b2 size 63.18/66.27/28.64/31.85 | parent 115.0 s 4.92 GB | driver 116.9 s | OK | child aa 56401 ms gen 62.0 s obs 61 s VmHWM 10.97 GB | wait 62.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9887 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   BASE_A128 b1 size 64.82/67.90/30.36/31.78 | parent 43.8 s 3.62 GB | driver 45.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   BASE_A128 b2 size 64.82/67.90/30.37/31.78 | parent 39.8 s 3.45 GB | driver 41.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   FULL_A128 b1 size 64.95/68.04/30.42/31.85 | parent 84.0 s 4.09 GB | driver 85.7 s | OK | child aa 42500 ms gen 49.7 s obs 49 s VmHWM 10.11 GB | wait 49.6 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   FULL_A128 b2 size 64.95/68.04/30.42/31.85 | parent 77.0 s 4.24 GB | driver 78.4 s | OK | child aa 37393 ms gen 42.8 s obs 42 s VmHWM 9.82 GB | wait 42.6 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   BASE_A256 b1 size 67.50/70.59/33.09/31.78 | parent 33.4 s 3.45 GB | driver 34.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   BASE_A256 b2 size 67.50/70.59/33.08/31.78 | parent 32.0 s 3.46 GB | driver 33.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+spring                   FULL_A256 b1 size 67.57/70.66/33.14/31.78 | parent 71.0 s 4.20 GB | driver 72.4 s | OK | child aa 38936 ms gen 42.9 s obs 43 s VmHWM 9.92 GB | wait 43.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+spring                   FULL_A256 b2 size 67.57/70.66/33.15/31.78 | parent 57.2 s 4.36 GB | driver 58.0 s | OK | child aa 27132 ms gen 30.8 s obs 31 s VmHWM 10.27 GB | wait 31.1 s | SBS=12 SV=349(ACC=248 ELEM=15) LS=0(JOINER=0) | IC=9886 TC=1061 MIRROR=183 EXACT=0 other=19 REUSED
+## build cost vs stock (means over builds)
+spring                   FULL/BASE  parent wall 47.8 -> 117.0 s (x2.45)  Peak RSS 3.63 -> 4.75 GB (x1.31)  child VmHWM 10.26 GB  size 63.57 -> 63.64 MB (x1.001)  status OK,OK
+spring                   BASE_A32/BASE  parent wall 47.8 -> 49.4 s (x1.03)  Peak RSS 3.63 -> 3.58 GB (x0.99)  child VmHWM ? GB  size 63.57 -> 63.11 MB (x0.993)  status NO-PROFILE,NO-PROFILE
+spring                   FULL_A32/BASE  parent wall 47.8 -> 115.0 s (x2.41)  Peak RSS 3.63 -> 4.80 GB (x1.32)  child VmHWM 10.65 GB  size 63.57 -> 63.18 MB (x0.994)  status OK,OK
+spring                   BASE_A128/BASE  parent wall 47.8 -> 41.8 s (x0.87)  Peak RSS 3.63 -> 3.54 GB (x0.97)  child VmHWM ? GB  size 63.57 -> 64.82 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+spring                   FULL_A128/BASE  parent wall 47.8 -> 80.5 s (x1.68)  Peak RSS 3.63 -> 4.17 GB (x1.15)  child VmHWM 9.97 GB  size 63.57 -> 64.95 MB (x1.022)  status OK,OK
+spring                   BASE_A256/BASE  parent wall 47.8 -> 32.7 s (x0.68)  Peak RSS 3.63 -> 3.46 GB (x0.95)  child VmHWM ? GB  size 63.57 -> 67.50 MB (x1.062)  status NO-PROFILE,NO-PROFILE
+spring                   FULL_A256/BASE  parent wall 47.8 -> 64.1 s (x1.34)  Peak RSS 3.63 -> 4.28 GB (x1.18)  child VmHWM 10.09 GB  size 63.57 -> 67.57 MB (x1.063)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+spring                   FULL SBS=12 SV=349 (ACC=248 ELEM=15) LS=0 (JOINER=0)  OK
+spring                   BASE_A32 no profile  NO-PROFILE
+spring                   FULL_A32 SBS=12 SV=349 (ACC=248 ELEM=15) LS=0 (JOINER=0)  OK
+spring                   BASE_A128 no profile  NO-PROFILE
+spring                   FULL_A128 SBS=12 SV=349 (ACC=248 ELEM=15) LS=0 (JOINER=0)  OK
+spring                   BASE_A256 no profile  NO-PROFILE
+spring                   FULL_A256 SBS=12 SV=349 (ACC=248 ELEM=15) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+spring                   BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 50.7 s
+spring                   BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 51.4 s
+spring                   BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 45.1 s
+spring                   BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 41.1 s
+spring                   BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 34.4 s
+spring                   BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.3 s
+## determinism: spring FULL_A32: admit counts differ across builds
+TABLES-DONE

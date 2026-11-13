@@ -1,0 +1,21 @@
+# C99 campaign results  SLOT=jackson-yaml  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jackson-yaml  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jackson-yaml  [jmh] jackson-benchmarks YAMLStd{Read,Write}Vanilla MediaItem (jackson-dataformat-yaml 2.x)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.001 [0.998,1.004] n.s. (2 keys)  alloc 1.010 [1.007,1.013] MORE (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.041 [1.034,1.048] SLOWER (2 keys)  alloc 0.968 [0.962,0.975] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.035 [1.035,1.036] SLOWER (2 keys)  alloc 0.975 [0.971,0.979] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.000 [0.999,1.001] n.s. (2 keys)  alloc 1.008 [1.005,1.011] MORE (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.014 [1.012,1.016] SLOWER (2 keys)  alloc 0.993 [0.990,0.996] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.025 [1.023,1.027] SLOWER (2 keys)  alloc 0.982 [0.980,0.984] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.068 [1.056,1.081] SLOWER (2 keys)  alloc 0.956 [0.946,0.965] LESS (1 keys)
+  YAMLStdReadVanilla.readPojoMediaItem                                   FULL 0.971 [0.965,0.978] FASTER | BASE_A32 1.026 [1.015,1.036] SLOWER | FULL_A32 1.010 [1.002,1.017] SLOWER | BASE_A128 0.979 [0.973,0.986] FASTER | FULL_A128 1.002 [0.996,1.007] n.s. | BASE_A256 1.010 [1.003,1.018] SLOWER | FULL_A256 1.018 [1.007,1.029] SLOWER
+  YAMLStdWriteVanilla.writePojoMediaItem                                 FULL 1.032 [1.019,1.045] SLOWER | BASE_A32 1.056 [1.043,1.070] SLOWER | FULL_A32 1.062 [1.053,1.070] SLOWER | BASE_A128 1.021 [1.014,1.028] SLOWER | FULL_A128 1.027 [1.019,1.036] SLOWER | BASE_A256 1.040 [1.033,1.047] SLOWER | FULL_A256 1.121 [1.097,1.147] SLOWER
+  ~alloc MB                                                              FULL 1.010 [1.007,1.013] MORE | BASE_A32 0.968 [0.962,0.975] LESS | FULL_A32 0.975 [0.971,0.979] LESS | BASE_A128 1.008 [1.005,1.011] MORE | FULL_A128 0.993 [0.990,0.996] LESS | BASE_A256 0.982 [0.980,0.984] LESS | FULL_A256 0.956 [0.946,0.965] LESS
+  ~rss MB                                                                FULL 1.006 [1.003,1.009] MORE | BASE_A32 1.002 [0.996,1.009] n.s. | FULL_A32 1.038 [0.997,1.079] n.s. | BASE_A128 1.006 [1.002,1.011] MORE | FULL_A128 1.009 [1.005,1.013] MORE | BASE_A256 1.006 [0.980,1.033] n.s. | FULL_A256 1.024 [1.020,1.028] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  jackson-yaml               1.001|1.010*      1.041*|0.968*     1.035*|0.975*     1.000|1.008*      1.014*|0.993*     1.025*|0.982*     1.068*|0.956*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

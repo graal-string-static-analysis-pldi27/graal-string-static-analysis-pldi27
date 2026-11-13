@@ -1,0 +1,76 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-string-concat  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+string-concat            BASE b1 size 23.01/24.30/9.85/11.80 | parent 34.5 s 2.33 GB | driver 35.2 s REUSED
+string-concat            BASE b2 size 23.01/24.30/9.85/11.80 | parent 30.0 s 2.27 GB | driver 31.2 s REUSED
+string-concat            SBS  b1 size 23.01/24.30/9.86/11.80 | parent 60.0 s 2.43 GB | driver 61.2 s | OK | child aa 32947 ms gen 37.0 s obs 36 s VmHWM 4.25 GB | wait 37.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS  b2 size 23.01/24.30/9.86/11.80 | parent 58.9 s 2.37 GB | driver 60.0 s | OK | child aa 25555 ms gen 29.6 s obs 28 s VmHWM 4.09 GB | wait 30.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SV   b1 size 23.01/24.31/9.88/11.80 | parent 60.0 s 2.58 GB | driver 62.1 s | OK | child aa 23956 ms gen 29.7 s obs 31 s VmHWM 4.26 GB | wait 30.1 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV   b2 size 23.01/24.31/9.88/11.80 | parent 59.4 s 2.33 GB | driver 60.4 s | OK | child aa 23821 ms gen 28.0 s obs 28 s VmHWM 4.11 GB | wait 28.1 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=4014 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            LS   b1 size 23.07/24.38/9.91/11.80 | parent 50.7 s 2.52 GB | driver 52.0 s | OK | child aa 13816 ms gen 17.8 s obs 18 s VmHWM 2.79 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS   b2 size 23.07/24.38/9.91/11.80 | parent 45.1 s 2.45 GB | driver 45.9 s | OK | child aa 12949 ms gen 16.6 s obs 17 s VmHWM 2.61 GB | wait 17.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            BASE_A32 b1 size 22.81/24.11/9.65/11.80 | parent 28.6 s 2.17 GB | driver 29.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            BASE_A32 b2 size 22.81/24.11/9.65/11.80 | parent 30.7 s 2.29 GB | driver 31.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            SBS_A32 b1 size 22.81/24.11/9.65/11.80 | parent 54.5 s 2.36 GB | driver 55.7 s | OK | child aa 21774 ms gen 26.9 s obs 26 s VmHWM 4.25 GB | wait 27.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS_A32 b2 size 22.81/24.11/9.65/11.80 | parent 63.0 s 2.39 GB | driver 64.5 s | OK | child aa 24433 ms gen 29.2 s obs 29 s VmHWM 4.23 GB | wait 29.6 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SV_A32 b1 size 22.81/24.11/9.68/11.80 | parent 53.8 s 2.39 GB | driver 54.7 s | OK | child aa 25029 ms gen 29.5 s obs 29 s VmHWM 4.30 GB | wait 30.0 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV_A32 b2 size 22.81/24.11/9.68/11.80 | parent 61.0 s 2.37 GB | driver 62.3 s | OK | child aa 24269 ms gen 30.8 s obs 31 s VmHWM 4.07 GB | wait 31.1 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            LS_A32 b1 size 22.87/24.18/9.71/11.80 | parent 50.4 s 2.54 GB | driver 51.6 s | OK | child aa 20748 ms gen 25.2 s obs 24 s VmHWM 2.67 GB | wait 25.6 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS_A32 b2 size 22.87/24.18/9.71/11.80 | parent 56.5 s 2.52 GB | driver 57.5 s | OK | child aa 14078 ms gen 17.8 s obs 17 s VmHWM 2.69 GB | wait 18.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            BASE_A128 b1 size 23.46/24.76/10.34/11.80 | parent 30.0 s 2.31 GB | driver 31.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            BASE_A128 b2 size 23.46/24.76/10.34/11.80 | parent 30.5 s 2.23 GB | driver 31.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            SBS_A128 b1 size 23.46/24.76/10.34/11.80 | parent 50.9 s 2.45 GB | driver 51.9 s | OK | child aa 22988 ms gen 26.7 s obs 26 s VmHWM 4.14 GB | wait 27.0 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS_A128 b2 size 23.46/24.76/10.34/11.80 | parent 59.2 s 2.36 GB | driver 60.1 s | OK | child aa 25282 ms gen 33.4 s obs 33 s VmHWM 4.30 GB | wait 34.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SV_A128 b1 size 23.53/24.83/10.37/11.80 | parent 61.0 s 2.53 GB | driver 62.9 s | OK | child aa 22521 ms gen 29.0 s obs 29 s VmHWM 4.14 GB | wait 29.5 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV_A128 b2 size 23.53/24.83/10.37/11.80 | parent 63.0 s 2.41 GB | driver 64.9 s | OK | child aa 26372 ms gen 31.1 s obs 31 s VmHWM 4.25 GB | wait 31.6 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            LS_A128 b1 size 23.53/24.83/10.40/11.80 | parent 51.9 s 2.50 GB | driver 53.1 s | OK | child aa 17381 ms gen 21.0 s obs 21 s VmHWM 2.73 GB | wait 21.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS_A128 b2 size 23.53/24.83/10.40/11.80 | parent 41.8 s 2.38 GB | driver 43.1 s | OK | child aa 11002 ms gen 15.1 s obs 14 s VmHWM 2.74 GB | wait 15.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            BASE_A256 b1 size 24.45/25.75/11.39/11.73 | parent 29.5 s 2.17 GB | driver 30.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            BASE_A256 b2 size 24.45/25.75/11.39/11.73 | parent 32.8 s 2.25 GB | driver 33.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+string-concat            SBS_A256 b1 size 24.45/25.75/11.39/11.73 | parent 42.9 s 2.36 GB | driver 44.1 s | OK | child aa 16288 ms gen 19.0 s obs 18 s VmHWM 4.23 GB | wait 19.0 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SBS_A256 b2 size 24.45/25.75/11.39/11.73 | parent 60.0 s 2.67 GB | driver 61.7 s | OK | child aa 22356 ms gen 30.6 s obs 31 s VmHWM 4.42 GB | wait 31.1 s | SBS=2 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            SV_A256 b1 size 24.58/25.88/11.42/11.80 | parent 56.6 s 2.56 GB | driver 57.6 s | OK | child aa 22251 ms gen 26.1 s obs 25 s VmHWM 4.11 GB | wait 26.1 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            SV_A256 b2 size 24.58/25.88/11.42/11.80 | parent 62.0 s 2.39 GB | driver 64.0 s | OK | child aa 21194 ms gen 27.4 s obs 27 s VmHWM 4.26 GB | wait 27.6 s | SBS=0 SV=117(ACC=102 ELEM=5) LS=0(JOINER=0) | IC=3989 TC=370 MIRROR=52 EXACT=0 other=2 REUSED
+string-concat            LS_A256 b1 size 24.58/25.88/11.45/11.80 | parent 44.8 s 2.35 GB | driver 46.0 s | OK | child aa 15752 ms gen 18.9 s obs 19 s VmHWM 2.77 GB | wait 19.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+string-concat            LS_A256 b2 size 24.58/25.88/11.45/11.80 | parent 52.7 s 2.40 GB | driver 53.8 s | OK | child aa 19004 ms gen 25.9 s obs 26 s VmHWM 2.70 GB | wait 26.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=35(JOINER=3) | IC=3989 TC=370 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+string-concat            SBS /BASE  parent wall 32.2 -> 59.5 s (x1.84)  Peak RSS 2.30 -> 2.40 GB (x1.04)  child VmHWM 4.17 GB  size 23.01 -> 23.01 MB (x1.000)  status OK,OK
+string-concat            SV  /BASE  parent wall 32.2 -> 59.7 s (x1.85)  Peak RSS 2.30 -> 2.46 GB (x1.07)  child VmHWM 4.19 GB  size 23.01 -> 23.01 MB (x1.000)  status OK,OK
+string-concat            LS  /BASE  parent wall 32.2 -> 47.9 s (x1.49)  Peak RSS 2.30 -> 2.49 GB (x1.08)  child VmHWM 2.70 GB  size 23.01 -> 23.07 MB (x1.003)  status OK,OK
+string-concat            BASE_A32/BASE  parent wall 32.2 -> 29.6 s (x0.92)  Peak RSS 2.30 -> 2.23 GB (x0.97)  child VmHWM ? GB  size 23.01 -> 22.81 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+string-concat            SBS_A32/BASE  parent wall 32.2 -> 58.8 s (x1.82)  Peak RSS 2.30 -> 2.38 GB (x1.03)  child VmHWM 4.24 GB  size 23.01 -> 22.81 MB (x0.991)  status OK,OK
+string-concat            SV_A32/BASE  parent wall 32.2 -> 57.4 s (x1.78)  Peak RSS 2.30 -> 2.38 GB (x1.03)  child VmHWM 4.19 GB  size 23.01 -> 22.81 MB (x0.991)  status OK,OK
+string-concat            LS_A32/BASE  parent wall 32.2 -> 53.5 s (x1.66)  Peak RSS 2.30 -> 2.53 GB (x1.10)  child VmHWM 2.68 GB  size 23.01 -> 22.87 MB (x0.994)  status OK,OK
+string-concat            BASE_A128/BASE  parent wall 32.2 -> 30.2 s (x0.94)  Peak RSS 2.30 -> 2.27 GB (x0.99)  child VmHWM ? GB  size 23.01 -> 23.46 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+string-concat            SBS_A128/BASE  parent wall 32.2 -> 55.0 s (x1.71)  Peak RSS 2.30 -> 2.41 GB (x1.05)  child VmHWM 4.22 GB  size 23.01 -> 23.46 MB (x1.020)  status OK,OK
+string-concat            SV_A128/BASE  parent wall 32.2 -> 62.0 s (x1.92)  Peak RSS 2.30 -> 2.47 GB (x1.07)  child VmHWM 4.19 GB  size 23.01 -> 23.53 MB (x1.023)  status OK,OK
+string-concat            LS_A128/BASE  parent wall 32.2 -> 46.8 s (x1.45)  Peak RSS 2.30 -> 2.44 GB (x1.06)  child VmHWM 2.74 GB  size 23.01 -> 23.53 MB (x1.023)  status OK,OK
+string-concat            BASE_A256/BASE  parent wall 32.2 -> 31.1 s (x0.97)  Peak RSS 2.30 -> 2.21 GB (x0.96)  child VmHWM ? GB  size 23.01 -> 24.45 MB (x1.063)  status NO-PROFILE,NO-PROFILE
+string-concat            SBS_A256/BASE  parent wall 32.2 -> 51.5 s (x1.60)  Peak RSS 2.30 -> 2.51 GB (x1.09)  child VmHWM 4.32 GB  size 23.01 -> 24.45 MB (x1.063)  status OK,OK
+string-concat            SV_A256/BASE  parent wall 32.2 -> 59.3 s (x1.84)  Peak RSS 2.30 -> 2.48 GB (x1.08)  child VmHWM 4.18 GB  size 23.01 -> 24.58 MB (x1.068)  status OK,OK
+string-concat            LS_A256/BASE  parent wall 32.2 -> 48.8 s (x1.51)  Peak RSS 2.30 -> 2.38 GB (x1.03)  child VmHWM 2.73 GB  size 23.01 -> 24.58 MB (x1.068)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+string-concat            SBS  SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+string-concat            SV   SBS=0 SV=117 (ACC=102 ELEM=5) LS=0 (JOINER=0)  OK
+string-concat            LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=35 (JOINER=3)  OK
+string-concat            BASE_A32 no profile  NO-PROFILE
+string-concat            SBS_A32 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+string-concat            SV_A32 SBS=0 SV=117 (ACC=102 ELEM=5) LS=0 (JOINER=0)  OK
+string-concat            LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=35 (JOINER=3)  OK
+string-concat            BASE_A128 no profile  NO-PROFILE
+string-concat            SBS_A128 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+string-concat            SV_A128 SBS=0 SV=117 (ACC=102 ELEM=5) LS=0 (JOINER=0)  OK
+string-concat            LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=35 (JOINER=3)  OK
+string-concat            BASE_A256 no profile  NO-PROFILE
+string-concat            SBS_A256 SBS=2 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  OK
+string-concat            SV_A256 SBS=0 SV=117 (ACC=102 ELEM=5) LS=0 (JOINER=0)  OK
+string-concat            LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=35 (JOINER=3)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+string-concat            BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 29.4 s
+string-concat            BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.9 s
+string-concat            BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.4 s
+string-concat            BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.5 s
+string-concat            BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.8 s
+string-concat            BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.8 s
+## determinism: string-concat SV: admit counts differ across builds
+TABLES-DONE

@@ -1,0 +1,29 @@
+# C99 campaign results  SLOT=pr-spring  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-spring  CFGS=BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## spring  [jmh] Spring StringUtilsBenchmark (hunt/ab-b34 candspec)  builds BASE:2 SBS:2 SV:2 LS:2 BASE_A32:2 SBS_A32:2 SV_A32:2 LS_A32:2 BASE_A128:2 SBS_A128:2 SV_A128:2 LS_A128:2 BASE_A256:2 SBS_A256:2 SV_A256:2 LS_A256:2  starts parsed=32
+  GEOMEAN SBS/BASE  time 1.000 [0.981,1.020] n.s. (2 keys)  alloc 0.994 [0.973,1.016] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 1.007 [0.988,1.027] n.s. (2 keys)  alloc 0.862 [0.849,0.876] LESS (1 keys)
+  GEOMEAN LS/BASE  time 1.009 [0.990,1.030] n.s. (2 keys)  alloc 0.967 [0.952,0.982] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.037 [1.010,1.065] SLOWER (2 keys)  alloc 0.971 [0.948,0.994] LESS (1 keys)
+  GEOMEAN SBS_A32/BASE  time 1.010 [0.961,1.063] n.s. (2 keys)  alloc 0.987 [0.945,1.030] n.s. (1 keys)
+  GEOMEAN SV_A32/BASE  time 1.032 [1.003,1.063] SLOWER (2 keys)  alloc 0.839 [0.819,0.860] LESS (1 keys)
+  GEOMEAN LS_A32/BASE  time 1.008 [0.989,1.027] n.s. (2 keys)  alloc 0.988 [0.972,1.005] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.016 [0.989,1.043] n.s. (2 keys)  alloc 0.981 [0.944,1.019] n.s. (1 keys)
+  GEOMEAN SBS_A128/BASE  time 1.009 [0.981,1.039] n.s. (2 keys)  alloc 0.983 [0.955,1.013] n.s. (1 keys)
+  GEOMEAN SV_A128/BASE  time 0.979 [0.966,0.992] FASTER (2 keys)  alloc 0.875 [0.858,0.893] LESS (1 keys)
+  GEOMEAN LS_A128/BASE  time 1.014 [0.994,1.033] n.s. (2 keys)  alloc 0.962 [0.942,0.982] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.019 [0.985,1.055] n.s. (2 keys)  alloc 0.994 [0.976,1.012] n.s. (1 keys)
+  GEOMEAN SBS_A256/BASE  time 0.997 [0.972,1.023] n.s. (2 keys)  alloc 0.991 [0.972,1.010] n.s. (1 keys)
+  GEOMEAN SV_A256/BASE  time 1.006 [0.970,1.043] n.s. (2 keys)  alloc 0.863 [0.835,0.892] LESS (1 keys)
+  GEOMEAN LS_A256/BASE  time 0.995 [0.981,1.010] n.s. (2 keys)  alloc 0.990 [0.970,1.010] n.s. (1 keys)
+  StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10                       SBS 0.987 [0.943,1.032] n.s. | SV 1.011 [0.978,1.043] n.s. | LS 0.975 [0.918,1.036] n.s. | BASE_A32 0.989 [0.955,1.023] n.s. | SBS_A32 0.964 [0.910,1.021] n.s. | SV_A32 1.013 [0.982,1.044] n.s. | LS_A32 0.954 [0.927,0.981] FASTER | BASE_A128 1.015 [0.966,1.067] n.s. | SBS_A128 0.989 [0.961,1.017] n.s. | SV_A128 0.971 [0.922,1.023] n.s. | LS_A128 0.975 [0.948,1.003] n.s. | BASE_A256 1.004 [0.963,1.047] n.s. | SBS_A256 0.966 [0.900,1.039] n.s. | SV_A256 0.991 [0.923,1.066] n.s. | LS_A256 0.952 [0.923,0.981] FASTER
+  StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/A N/A      SBS 1.014 [1.008,1.020] SLOWER | SV 1.004 [0.986,1.022] n.s. | LS 1.044 [0.997,1.096] n.s. | BASE_A32 1.088 [1.065,1.112] SLOWER | SBS_A32 1.058 [1.012,1.109] SLOWER | SV_A32 1.052 [1.021,1.084] SLOWER | LS_A32 1.065 [1.052,1.078] SLOWER | BASE_A128 1.016 [1.010,1.022] SLOWER | SBS_A128 1.030 [0.999,1.064] n.s. | SV_A128 0.987 [0.962,1.013] n.s. | LS_A128 1.054 [1.039,1.069] SLOWER | BASE_A256 1.034 [1.004,1.065] SLOWER | SBS_A256 1.029 [1.008,1.051] SLOWER | SV_A256 1.021 [1.018,1.023] SLOWER | LS_A256 1.040 [1.039,1.042] SLOWER
+  ~alloc MB                                                              SBS 0.994 [0.973,1.016] n.s. | SV 0.862 [0.849,0.876] LESS | LS 0.967 [0.952,0.982] LESS | BASE_A32 0.971 [0.948,0.994] LESS | SBS_A32 0.987 [0.945,1.030] n.s. | SV_A32 0.839 [0.819,0.860] LESS | LS_A32 0.988 [0.972,1.005] n.s. | BASE_A128 0.981 [0.944,1.019] n.s. | SBS_A128 0.983 [0.955,1.013] n.s. | SV_A128 0.875 [0.858,0.893] LESS | LS_A128 0.962 [0.942,0.982] LESS | BASE_A256 0.994 [0.976,1.012] n.s. | SBS_A256 0.991 [0.972,1.010] n.s. | SV_A256 0.863 [0.835,0.892] LESS | LS_A256 0.990 [0.970,1.010] n.s.
+  ~rss MB                                                                SBS 1.003 [0.998,1.007] n.s. | SV 1.006 [1.002,1.011] MORE | LS 1.002 [1.001,1.003] MORE | BASE_A32 1.002 [0.997,1.007] n.s. | SBS_A32 0.997 [0.996,0.998] LESS | SV_A32 0.999 [0.993,1.006] n.s. | LS_A32 1.002 [0.996,1.008] n.s. | BASE_A128 0.997 [0.995,1.000] LESS | SBS_A128 1.008 [1.005,1.010] MORE | SV_A128 0.997 [0.993,1.000] n.s. | LS_A128 1.006 [1.003,1.010] MORE | BASE_A256 1.015 [1.013,1.017] MORE | SBS_A256 1.009 [1.006,1.011] MORE | SV_A256 1.017 [1.016,1.018] MORE | LS_A256 1.015 [1.013,1.016] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS                BASE_A32          SBS_A32           SV_A32            LS_A32            BASE_A128         SBS_A128          SV_A128           LS_A128           BASE_A256         SBS_A256          SV_A256           LS_A256          
+  spring                     1.000|0.994       1.007|0.862*      1.009|0.967*      1.037*|0.971*     1.010|0.987       1.032*|0.839*     1.008|0.988       1.016|0.981       1.009|0.983       0.979*|0.875*     1.014|0.962*      1.019|0.994       0.997|0.991       1.006|0.863*      0.995|0.990      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

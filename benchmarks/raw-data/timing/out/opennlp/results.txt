@@ -1,0 +1,31 @@
+# C99 campaign results  SLOT=opennlp  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/opennlp  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## opennlp  [jmh] OpenNLP ME benchmarks (hunt/ab candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.003 [1.001,1.006] SLOWER (12 keys)  alloc 1.000 [0.996,1.005] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.011 [0.999,1.024] n.s. (12 keys)  alloc 0.985 [0.971,0.998] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.029 [1.017,1.042] SLOWER (12 keys)  alloc 0.975 [0.961,0.989] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.009 [1.005,1.014] SLOWER (12 keys)  alloc 0.987 [0.983,0.991] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.009 [1.006,1.011] SLOWER (12 keys)  alloc 0.998 [0.995,1.001] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.034 [1.026,1.042] SLOWER (12 keys)  alloc 0.965 [0.956,0.973] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.028 [1.019,1.036] SLOWER (12 keys)  alloc 0.979 [0.967,0.990] LESS (1 keys)
+  o.t.postag.POSTaggerMEBenchmark.instancePerThread false                FULL 0.984 [0.972,0.996] FASTER | BASE_A32 1.015 [1.010,1.020] SLOWER | FULL_A32 1.029 [1.024,1.034] SLOWER | BASE_A128 0.994 [0.985,1.004] n.s. | FULL_A128 0.999 [0.996,1.002] n.s. | BASE_A256 1.027 [1.018,1.036] SLOWER | FULL_A256 1.035 [1.032,1.038] SLOWER
+  o.t.postag.POSTaggerMEBenchmark.instancePerThread true                 FULL 0.987 [0.980,0.993] FASTER | BASE_A32 1.021 [1.014,1.028] SLOWER | FULL_A32 1.023 [1.010,1.036] SLOWER | BASE_A128 0.995 [0.984,1.005] n.s. | FULL_A128 0.993 [0.982,1.004] n.s. | BASE_A256 1.010 [0.996,1.023] n.s. | FULL_A256 1.013 [1.004,1.022] SLOWER
+  o.t.postag.POSTaggerMEBenchmark.newInstancePerCall false               FULL 1.080 [1.059,1.102] SLOWER | BASE_A32 1.113 [1.005,1.247] SLOWER | FULL_A32 1.113 [1.049,1.185] SLOWER | BASE_A128 1.206 [1.161,1.254] SLOWER | FULL_A128 1.027 [0.996,1.060] n.s. | BASE_A256 1.211 [1.130,1.304] SLOWER | FULL_A256 1.046 [1.018,1.075] SLOWER
+  o.t.postag.POSTaggerMEBenchmark.newInstancePerCall true                FULL 1.010 [1.006,1.013] SLOWER | BASE_A32 0.990 [0.982,0.999] FASTER | FULL_A32 1.005 [1.002,1.009] SLOWER | BASE_A128 1.005 [0.992,1.019] n.s. | FULL_A128 1.009 [1.004,1.014] SLOWER | BASE_A256 1.008 [0.999,1.017] n.s. | FULL_A256 1.053 [1.021,1.087] SLOWER
+  o.t.postag.POSTaggerMEBenchmark.sharedInstance false                   FULL 1.020 [0.991,1.051] n.s. | BASE_A32 1.012 [1.004,1.021] SLOWER | FULL_A32 1.033 [1.023,1.043] SLOWER | BASE_A128 0.999 [0.983,1.015] n.s. | FULL_A128 1.002 [0.994,1.010] n.s. | BASE_A256 1.051 [1.034,1.069] SLOWER | FULL_A256 1.045 [1.035,1.056] SLOWER
+  o.t.postag.POSTaggerMEBenchmark.sharedInstance true                    FULL 0.963 [0.917,1.009] n.s. | BASE_A32 1.020 [0.984,1.056] n.s. | FULL_A32 1.018 [0.957,1.082] n.s. | BASE_A128 0.955 [0.915,0.996] FASTER | FULL_A128 0.956 [0.921,0.991] FASTER | BASE_A256 1.072 [0.948,1.221] n.s. | FULL_A256 0.997 [0.942,1.055] n.s.
+  o.t.sentdetect.SentenceDetectorMEBenchmark.instancePerThread N/A       FULL 1.024 [0.989,1.058] n.s. | BASE_A32 0.967 [0.938,0.995] FASTER | FULL_A32 1.039 [0.995,1.085] n.s. | BASE_A128 0.992 [0.952,1.032] n.s. | FULL_A128 1.032 [0.992,1.073] n.s. | BASE_A256 1.013 [0.961,1.068] n.s. | FULL_A256 1.034 [1.000,1.068] n.s.
+  o.t.sentdetect.SentenceDetectorMEBenchmark.newInstancePerCall N/A      FULL 1.028 [1.008,1.049] SLOWER | BASE_A32 0.984 [0.964,1.004] n.s. | FULL_A32 1.039 [1.022,1.056] SLOWER | BASE_A128 1.000 [0.984,1.016] n.s. | FULL_A128 1.047 [1.020,1.074] SLOWER | BASE_A256 1.011 [0.992,1.030] n.s. | FULL_A256 1.047 [1.032,1.061] SLOWER
+  o.t.sentdetect.SentenceDetectorMEBenchmark.sharedInstance N/A          FULL 1.036 [1.021,1.051] SLOWER | BASE_A32 0.988 [0.974,1.003] n.s. | FULL_A32 1.046 [1.032,1.060] SLOWER | BASE_A128 0.999 [0.990,1.008] n.s. | FULL_A128 1.049 [1.036,1.061] SLOWER | BASE_A256 1.033 [1.016,1.051] SLOWER | FULL_A256 1.052 [1.045,1.059] SLOWER
+  o.t.tokenize.TokenizerMEBenchmark.instancePerThread N/A                FULL 0.964 [0.940,0.989] FASTER | BASE_A32 0.993 [0.974,1.012] n.s. | FULL_A32 0.977 [0.957,0.998] FASTER | BASE_A128 0.993 [0.959,1.028] n.s. | FULL_A128 0.983 [0.950,1.017] n.s. | BASE_A256 0.980 [0.949,1.012] n.s. | FULL_A256 1.015 [0.985,1.046] n.s.
+  o.t.tokenize.TokenizerMEBenchmark.newInstancePerCall N/A               FULL 0.982 [0.970,0.994] FASTER | BASE_A32 1.031 [1.012,1.051] SLOWER | FULL_A32 1.008 [1.001,1.016] SLOWER | BASE_A128 1.007 [0.997,1.017] n.s. | FULL_A128 1.008 [0.984,1.033] n.s. | BASE_A256 1.013 [0.999,1.027] n.s. | FULL_A256 1.023 [0.982,1.065] n.s.
+  o.t.tokenize.TokenizerMEBenchmark.sharedInstance N/A                   FULL 0.972 [0.946,0.998] FASTER | BASE_A32 1.007 [0.976,1.040] n.s. | FULL_A32 1.028 [0.976,1.083] n.s. | BASE_A128 0.989 [0.962,1.016] n.s. | FULL_A128 1.003 [0.961,1.047] n.s. | BASE_A256 0.994 [0.952,1.037] n.s. | FULL_A256 0.974 [0.938,1.010] n.s.
+  ~alloc MB                                                              FULL 1.000 [0.996,1.005] n.s. | BASE_A32 0.985 [0.971,0.998] LESS | FULL_A32 0.975 [0.961,0.989] LESS | BASE_A128 0.987 [0.983,0.991] LESS | FULL_A128 0.998 [0.995,1.001] n.s. | BASE_A256 0.965 [0.956,0.973] LESS | FULL_A256 0.979 [0.967,0.990] LESS
+  ~rss MB                                                                FULL 0.913 [0.701,1.174] n.s. | BASE_A32 0.778 [0.685,0.892] LESS | FULL_A32 0.932 [0.688,1.231] n.s. | BASE_A128 0.937 [0.738,1.182] n.s. | FULL_A128 1.125 [0.996,1.285] n.s. | BASE_A256 0.803 [0.714,0.911] LESS | FULL_A256 0.991 [0.707,1.340] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  opennlp                    1.003*|1.000      1.011|0.985*      1.029*|0.975*     1.009*|0.987*     1.009*|0.998      1.034*|0.965*     1.028*|0.979*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

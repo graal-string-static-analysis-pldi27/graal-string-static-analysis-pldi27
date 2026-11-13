@@ -1,0 +1,33 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AL2  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## stringbuilders  starts BASE:3 FULL:3  time keys 17
+  FULL/BASE time  ratio 0.7763  (mean FULL 0.7764 n=3, BASE 1.0001 n=3)  error margin 0.0073 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 1.3325  (mean FULL 1.3325 n=3, BASE 1.0000 n=3)  error margin 0.0076 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.7763  (mean FULL 0.7764 n=30 iterations, BASE 1.0001 n=30)  error margin 0.0063 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 17 keys]
+    key StringBuilders.appendLoop16                                  BASE 3710.89 sd 36.1  FULL 3691.03 sd 15.5  [higher]
+    key StringBuilders.appendLoop8                                   BASE 7480.16 sd 34.5  FULL 7427.49 sd 63.1  [higher]
+    key StringBuilders.concat16p8p7                                  BASE 14293.6 sd 151  FULL 17894.6 sd 138  [higher]
+    key StringBuilders.concat22p40p31                                BASE 8319.03 sd 72.9  FULL 9915.57 sd 133  [higher]
+    key StringBuilders.concat3p4p2                                   BASE 14048.8 sd 249  FULL 17483.8 sd 304  [higher]
+    key StringBuilders.concat3p9p8                                   BASE 11013.9 sd 173  FULL 13293.5 sd 196  [higher]
+    key StringBuilders.toStringCharWithBool8                         BASE 10274.6 sd 247  FULL 12268.4 sd 12.7  [higher]
+    key StringBuilders.toStringCharWithChar1                         BASE 37717.6 sd 732  FULL 87860 sd 1.12e+03  [higher]
+    key StringBuilders.toStringCharWithChar16                        BASE 15645 sd 71.9  FULL 20270 sd 37.3  [higher]
+    key StringBuilders.toStringCharWithChar2                         BASE 34678.7 sd 649  FULL 73619.4 sd 1.34e+03  [higher]
+    key StringBuilders.toStringCharWithChar4                         BASE 30113.5 sd 331  FULL 53875.1 sd 176  [higher]
+    key StringBuilders.toStringCharWithChar8                         BASE 23186.9 sd 224  FULL 34600.2 sd 490  [higher]
+    key StringBuilders.toStringCharWithFloat8                        BASE 2736.4 sd 15.9  FULL 2854.65 sd 19.3  [higher]
+    key StringBuilders.toStringCharWithInt8                          BASE 8838.14 sd 140  FULL 10285.2 sd 219  [higher]
+    key StringBuilders.toStringCharWithMixed8                        BASE 6373.41 sd 90.7  FULL 7314.01 sd 73.5  [higher]
+    key StringBuilders.toStringCharWithString16                      BASE 3957.57 sd 68.3  FULL 4060.06 sd 60  [higher]
+    key StringBuilders.toStringCharWithString8                       BASE 7269.12 sd 166  FULL 8326.94 sd 91.6  [higher]
+
+## StringSubstring  starts BASE:3 FULL:3  time keys 3
+  FULL/BASE time  ratio 0.3489  (mean FULL 0.3488 n=3, BASE 0.9999 n=3)  error margin 0.0127 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 2.2190  (mean FULL 2.2190 n=3, BASE 1.0000 n=3)  error margin 0.0072 (max sd)  paper-significance SLOWER/MORE
+  FULL/BASE iter  ratio 0.3489  (mean FULL 0.3488 n=30 iterations, BASE 0.9998 n=30)  error margin 0.0151 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 3 keys]
+    key StringSubstring.empty                                        BASE 6.24867 sd 0.155  FULL 3.621 sd 0.153  [lower]
+    key StringSubstring.from26toEnd0                                 BASE 22.118 sd 0.558  FULL 6.00833 sd 0.032  [lower]
+    key StringSubstring.from26toEnd1                                 BASE 23.769 sd 0.138  FULL 6.41233 sd 0.012  [lower]
+
+PAPER30-DONE

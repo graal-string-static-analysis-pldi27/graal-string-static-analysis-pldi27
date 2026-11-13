@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jackson-yaml  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+jackson-yaml             BASE b1 size 27.53/29.17/12.55/13.43 | parent 20.0 s 2.43 GB | driver 21.2 s REUSED
+jackson-yaml             BASE b2 size 27.53/29.17/12.55/13.43 | parent 21.7 s 2.48 GB | driver 22.8 s REUSED
+jackson-yaml             FULL b1 size 27.59/29.24/12.60/13.43 | parent 60.0 s 2.95 GB | driver 61.5 s | OK | child aa 31401 ms gen 36.7 s obs 36 s VmHWM 5.32 GB | wait 37.1 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL b2 size 27.59/29.24/12.60/13.43 | parent 53.2 s 2.71 GB | driver 54.1 s | OK | child aa 18523 ms gen 24.5 s obs 24 s VmHWM 5.22 GB | wait 24.6 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             BASE_A32 b1 size 27.27/28.91/12.30/13.43 | parent 20.7 s 2.42 GB | driver 21.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             BASE_A32 b2 size 27.27/28.91/12.30/13.43 | parent 17.9 s 2.43 GB | driver 18.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             FULL_A32 b1 size 27.33/28.98/12.34/13.43 | parent 52.2 s 2.73 GB | driver 52.9 s | OK | child aa 19690 ms gen 23.3 s obs 23 s VmHWM 5.27 GB | wait 23.5 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL_A32 b2 size 27.33/28.98/12.34/13.43 | parent 41.7 s 2.66 GB | driver 42.5 s | OK | child aa 20112 ms gen 23.2 s obs 23 s VmHWM 5.18 GB | wait 23.5 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             BASE_A128 b1 size 28.18/29.83/13.19/13.43 | parent 19.6 s 2.46 GB | driver 20.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             BASE_A128 b2 size 28.18/29.83/13.19/13.43 | parent 23.9 s 2.39 GB | driver 25.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             FULL_A128 b1 size 28.25/29.90/13.24/13.43 | parent 55.9 s 2.62 GB | driver 57.1 s | OK | child aa 19459 ms gen 22.5 s obs 22 s VmHWM 5.22 GB | wait 22.6 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL_A128 b2 size 28.25/29.90/13.24/13.43 | parent 64.0 s 2.70 GB | driver 65.3 s | OK | child aa 29931 ms gen 35.8 s obs 36 s VmHWM 5.19 GB | wait 36.0 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             BASE_A256 b1 size 29.56/31.20/14.57/13.43 | parent 21.7 s 2.40 GB | driver 23.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             BASE_A256 b2 size 29.56/31.20/14.57/13.43 | parent 27.3 s 2.42 GB | driver 28.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson-yaml             FULL_A256 b1 size 29.62/31.27/14.62/13.43 | parent 63.0 s 2.68 GB | driver 64.3 s | OK | child aa 30455 ms gen 36.7 s obs 37 s VmHWM 5.30 GB | wait 37.1 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+jackson-yaml             FULL_A256 b2 size 29.62/31.27/14.62/13.43 | parent 51.7 s 2.84 GB | driver 52.9 s | OK | child aa 20794 ms gen 24.0 s obs 24 s VmHWM 5.24 GB | wait 24.0 s | SBS=6 SV=238(ACC=188 ELEM=8) LS=0(JOINER=0) | IC=4991 TC=455 MIRROR=99 EXACT=0 other=7 REUSED
+## build cost vs stock (means over builds)
+jackson-yaml             FULL/BASE  parent wall 20.9 -> 56.6 s (x2.71)  Peak RSS 2.46 -> 2.83 GB (x1.15)  child VmHWM 5.27 GB  size 27.53 -> 27.59 MB (x1.002)  status OK,OK
+jackson-yaml             BASE_A32/BASE  parent wall 20.9 -> 19.3 s (x0.93)  Peak RSS 2.46 -> 2.42 GB (x0.99)  child VmHWM ? GB  size 27.53 -> 27.27 MB (x0.990)  status NO-PROFILE,NO-PROFILE
+jackson-yaml             FULL_A32/BASE  parent wall 20.9 -> 47.0 s (x2.25)  Peak RSS 2.46 -> 2.70 GB (x1.10)  child VmHWM 5.23 GB  size 27.53 -> 27.33 MB (x0.993)  status OK,OK
+jackson-yaml             BASE_A128/BASE  parent wall 20.9 -> 21.8 s (x1.04)  Peak RSS 2.46 -> 2.42 GB (x0.99)  child VmHWM ? GB  size 27.53 -> 28.18 MB (x1.024)  status NO-PROFILE,NO-PROFILE
+jackson-yaml             FULL_A128/BASE  parent wall 20.9 -> 60.0 s (x2.88)  Peak RSS 2.46 -> 2.66 GB (x1.08)  child VmHWM 5.21 GB  size 27.53 -> 28.25 MB (x1.026)  status OK,OK
+jackson-yaml             BASE_A256/BASE  parent wall 20.9 -> 24.5 s (x1.18)  Peak RSS 2.46 -> 2.41 GB (x0.98)  child VmHWM ? GB  size 27.53 -> 29.56 MB (x1.074)  status NO-PROFILE,NO-PROFILE
+jackson-yaml             FULL_A256/BASE  parent wall 20.9 -> 57.4 s (x2.75)  Peak RSS 2.46 -> 2.76 GB (x1.12)  child VmHWM 5.27 GB  size 27.53 -> 29.62 MB (x1.076)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+jackson-yaml             FULL SBS=6 SV=238 (ACC=188 ELEM=8) LS=0 (JOINER=0)  OK
+jackson-yaml             BASE_A32 no profile  NO-PROFILE
+jackson-yaml             FULL_A32 SBS=6 SV=238 (ACC=188 ELEM=8) LS=0 (JOINER=0)  OK
+jackson-yaml             BASE_A128 no profile  NO-PROFILE
+jackson-yaml             FULL_A128 SBS=6 SV=238 (ACC=188 ELEM=8) LS=0 (JOINER=0)  OK
+jackson-yaml             BASE_A256 no profile  NO-PROFILE
+jackson-yaml             FULL_A256 SBS=6 SV=238 (ACC=188 ELEM=8) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+jackson-yaml             BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.4 s
+jackson-yaml             BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 18.9 s
+jackson-yaml             BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.4 s
+jackson-yaml             BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.0 s
+jackson-yaml             BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.1 s
+jackson-yaml             BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 28.1 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

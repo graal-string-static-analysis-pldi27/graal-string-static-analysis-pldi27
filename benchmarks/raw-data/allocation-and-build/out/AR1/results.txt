@@ -1,0 +1,19 @@
+# C99 campaign results  SLOT=AR1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AR1  CFGS=BASE FULL  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## spring  [jmh] Spring StringUtilsBenchmark (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.980 [0.937,1.022] n.s. (2 keys)  alloc 0.897 [0.854,0.951] LESS (1 keys)
+  StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10                       FULL 0.931 [0.837,1.002] n.s.
+  StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/A N/A      FULL 1.032 [0.985,1.089] n.s.
+  ~alloc MB                                                              FULL 0.897 [0.854,0.951] LESS
+  ~rss MB                                                                FULL 0.999 [0.994,1.004] n.s.
+
+## stringbuilder-to-string  [jmh] OpenJDK stringbuilder-to-string (misc-benchmarks)  builds BASE:3 FULL:3  starts parsed=6
+  GEOMEAN FULL/BASE  time 0.928 [0.894,0.963] FASTER (3 keys)  alloc 0.685 [0.662,0.709] LESS (1 keys)
+  StringBuilderToString.toStringWithMixedChars 1024                      FULL 0.941 [0.889,0.973] FASTER
+  StringBuilderToString.toStringWithMixedChars 128                       FULL 0.890 [0.849,0.932] FASTER
+  StringBuilderToString.toStringWithMixedChars 256                       FULL 0.953 [0.902,1.005] n.s.
+  ~alloc MB                                                              FULL 0.685 [0.662,0.709] LESS
+  ~rss MB                                                                FULL 1.001 [0.994,1.007] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

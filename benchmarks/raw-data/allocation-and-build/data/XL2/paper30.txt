@@ -1,0 +1,19 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XL2  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## snakeyaml  starts BASE:3 FULL:3  time keys 5
+  FULL/BASE time  ratio 0.9689  (mean FULL 0.9688 n=3, BASE 1.0000 n=3)  error margin 0.0062 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 1.0031  (mean FULL 1.0031 n=3, BASE 1.0000 n=3)  error margin 0.0039 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9555  (mean FULL 0.9546 n=30 iterations, BASE 0.9990 n=30)  error margin 0.0274 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 4 keys]
+    key EmitterBenchmark.emitScalar N/A                              BASE 0.434667 sd 0.00702  FULL 0.445333 sd 0.00153  [lower]
+    key ParseBenchmark.load 1000                                     BASE 2.33733 sd 0.0189  FULL 2.29433 sd 0.00896  [lower]
+    key ParseBenchmark.load 100000                                   BASE 844.15 sd 6.75  FULL 822.915 sd 35  [lower]
+    key ParseBenchmark.parse 1000                                    BASE 1.479 sd 0.0125  FULL 1.38467 sd 0.0153  [lower]
+    key ParseBenchmark.parse 100000                                  BASE 156.965 sd 0.619  FULL 146.058 sd 0.927  [lower]
+
+## jsqlparser  starts BASE:3 FULL:3  time keys 1
+  FULL/BASE time  ratio 1.0135  (mean FULL 1.0135 n=3, BASE 1.0000 n=3)  error margin 0.0084 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9858  (mean FULL 0.9858 n=3, BASE 1.0000 n=3)  error margin 0.0037 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0135  (mean FULL 1.0135 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0118 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 1 keys]
+    key JSQLParserBenchmark.parseSQLStatements latest                BASE 50.9783 sd 0.203  FULL 51.665 sd 0.427  [lower]
+
+PAPER30-DONE

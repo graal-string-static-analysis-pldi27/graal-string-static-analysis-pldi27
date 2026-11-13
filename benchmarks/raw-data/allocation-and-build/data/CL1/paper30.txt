@@ -1,0 +1,32 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL1  CFGS=BASE FULL  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## calcite  starts BASE:3 FULL:3  time keys 2
+  FULL/BASE time  ratio 0.9991  (mean FULL 0.9991 n=3, BASE 1.0000 n=3)  error margin 0.0050 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 1.0081  (mean FULL 1.0081 n=3, BASE 1.0000 n=3)  error margin 0.0052 (max sd)  paper-significance n.s.
+  FULL/BASE iter  ratio 0.9991  (mean FULL 0.9991 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0052 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 2 keys]
+    key ParserBenchmark.parseCached true 1000                        BASE 93.7883 sd 0.181  FULL 94.828 sd 0.454  [lower]
+    key ParserBenchmark.parseNonCached true 1000                     BASE 90.6677 sd 0.742  FULL 89.511 sd 0.5  [lower]
+
+## thymeleaf  starts BASE:3 FULL:3  time keys 5
+  FULL/BASE time  ratio 1.0075  (mean FULL 1.0075 n=3, BASE 1.0000 n=3)  error margin 0.0094 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9517  (mean FULL 0.9517 n=3, BASE 1.0000 n=3)  error margin 0.0090 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 1.0075  (mean FULL 1.0075 n=30 iterations, BASE 1.0000 n=30)  error margin 0.0079 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 5 keys]
+    key GTVGHome.benchmark                                           BASE 36344.3 sd 203  FULL 35995.7 sd 199  [higher]
+    key GTVGOrderDetails.benchmark                                   BASE 26006.6 sd 16.9  FULL 25812.5 sd 206  [higher]
+    key GTVGOrderList.benchmark                                      BASE 24403.8 sd 118  FULL 24225.4 sd 222  [higher]
+    key GTVGProductComments.benchmark                                BASE 41604.4 sd 291  FULL 41344.1 sd 423  [higher]
+    key GTVGProductList.benchmark                                    BASE 4128.07 sd 37.4  FULL 4102.53 sd 64.1  [higher]
+
+## commons-csv  starts BASE:3 FULL:3  time keys 7
+  FULL/BASE time  ratio 0.9769  (mean FULL 0.9768 n=3, BASE 0.9999 n=3)  error margin 0.0042 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE alloc ratio 0.9867  (mean FULL 0.9867 n=3, BASE 1.0000 n=3)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+  FULL/BASE iter  ratio 0.9769  (mean FULL 0.9768 n=30 iterations, BASE 0.9999 n=30)  error margin 0.0046 (max sd)  paper-significance FASTER/LESS  [JMH: run = measured iteration, 7 keys]
+    key CSVBenchmark.parseCommonsCSV                                 BASE 2634.95 sd 44.2  FULL 2624.93 sd 34.9  [lower]
+    key CSVBenchmark.parseGenJavaCSV                                 BASE 8905.17 sd 144  FULL 7899.42 sd 23.2  [lower]
+    key CSVBenchmark.parseJavaCSV                                    BASE 1178.39 sd 5.63  FULL 1173.71 sd 0.878  [lower]
+    key CSVBenchmark.parseOpenCSV                                    BASE 2015.51 sd 25.8  FULL 1976.1 sd 11.8  [lower]
+    key CSVBenchmark.parseSuperCSV                                   BASE 2219.32 sd 23.7  FULL 2229.96 sd 27.7  [lower]
+    key CSVBenchmark.read                                            BASE 229.279 sd 4.89  FULL 227.685 sd 3.62  [lower]
+    key CSVBenchmark.scan                                            BASE 1957.26 sd 13.4  FULL 1929.08 sd 22.3  [lower]
+
+PAPER30-DONE

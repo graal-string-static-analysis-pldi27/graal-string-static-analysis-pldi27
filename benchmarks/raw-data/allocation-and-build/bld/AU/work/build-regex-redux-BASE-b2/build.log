@@ -1,0 +1,61 @@
+1793182368.428886 ========================================================================================================================
+1793182368.430393 GraalVM Native Image: Generating 'regex-redux-BASE-b2' (executable)...
+1793182368.430413 ========================================================================================================================
+1793182368.430423 For detailed information and explanations on the build output, visit:
+1793182368.430435 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1793182368.430450 ------------------------------------------------------------------------------------------------------------------------
+1793182369.933331 [1/8] Initializing...                                                                                    (2.0s @ 0.36GB)
+1793182369.933610  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1793182369.933738  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1793182369.933812  C compiler: gcc (linux, x86_64, 15.2.0)
+1793182369.933922  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1793182369.933944  1 user-specific feature(s):
+1793182369.934136  - com.oracle.svm.thirdparty.gson.GsonFeature
+1793182369.934741 ------------------------------------------------------------------------------------------------------------------------
+1793182369.934764  1 experimental option(s) unlocked:
+1793182369.934790  - '-H:CodeAlignment' (origin(s): command line)
+1793182369.935834 ------------------------------------------------------------------------------------------------------------------------
+1793182369.935855 Build resources:
+1793182369.935911  - 28.45GB of memory (21.2% of system memory, using available memory)
+1793182369.935958  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1793182372.482153 [2/8] Performing analysis...  [******]                                                                   (2.4s @ 0.78GB)
+1793182372.495574     3,286 types,   3,740 fields, and  15,252 methods found reachable
+1793182372.496752     1,061 types,      36 fields, and     417 methods registered for reflection
+1793182372.496801        58 types,      59 fields, and      52 methods registered for JNI access
+1793182372.496853         0 downcalls and 0 upcalls registered for foreign access
+1793182372.497031         4 native libraries: dl, pthread, rt, z
+1793182373.229674 [3/8] Building universe...                                                                               (0.7s @ 0.84GB)
+1793182373.630805 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.40GB)
+1793182373.943055 [5/8] Inlining methods...     [****]                                                                     (0.2s @ 0.42GB)
+1793182376.488262 [6/8] Compiling methods...    [**]                                                                       (2.5s @ 0.70GB)
+1793182377.373160 [7/8] Laying out methods...   [*]                                                                        (0.9s @ 0.59GB)
+1793182378.356945 [8/8] Creating image...       [*]                                                                        (0.8s @ 0.52GB)
+1793182378.357211    5.34MB (36.13%) for code area:     8,737 compilation units
+1793182378.357296    7.67MB (51.89%) for image heap:   88,875 objects and 55 resources
+1793182378.357333    1.77MB (11.98%) for other data
+1793182378.357432   14.78MB in total image size, 13.90MB in total file size
+1793182378.357487 ------------------------------------------------------------------------------------------------------------------------
+1793182378.357867 Top 10 origins of code area:                                Top 10 object types in image heap:
+1793182378.358085    3.74MB java.base                                            1.40MB byte[] for code metadata
+1793182378.358143  905.29kB svm.jar (Native Image)                               1.20MB byte[] for java.lang.String
+1793182378.358182  110.54kB java.logging                                       833.22kB java.lang.String
+1793182378.358248   90.80kB org.graalvm.nativeimage.base                       630.91kB com.oracle.svm.core.hub.DynamicHubCompanion
+1793182378.358562   48.90kB jdk.proxy2                                         512.30kB heap alignment
+1793182378.358674   38.97kB jdk.proxy1                                         460.77kB byte[] for general heap data
+1793182378.358833   38.09kB org.graalvm.nativeimage.configure                  426.22kB java.lang.Class
+1793182378.358916   28.03kB jdk.internal.vm.ci                                 314.83kB java.util.HashMap$Node
+1793182378.358986   26.12kB jdk.graal.compiler                                 222.86kB java.lang.Object[]
+1793182378.359024   20.07kB org.graalvm.collections                            178.82kB java.util.HashMap$Node[]
+1793182378.359545   30.00kB for 11 more packages                                 1.49MB for 968 more object types
+1793182378.360363 ------------------------------------------------------------------------------------------------------------------------
+1793182378.360377 Recommendations:
+1793182378.360405  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1793182378.360420  HEAP: Set max heap for improved and more predictable memory usage.
+1793182378.360590  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1793182378.362374 ------------------------------------------------------------------------------------------------------------------------
+1793182378.363065                         0.5s (4.9% of total time) in 36 GCs | Peak RSS: 2.08GB | CPU load: 13.47
+1793182378.363428 ------------------------------------------------------------------------------------------------------------------------
+1793182378.363434 Build artifacts:
+1793182378.363834  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/outCE/FU/bin/regex-redux-BASE-b2 (executable)
+1793182378.363848 ========================================================================================================================
+1793182378.363915 Finished generating 'regex-redux-BASE-b2' in 10.5s.

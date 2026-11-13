@@ -1,0 +1,70 @@
+1792869816.734658 ========================================================================================================================
+1792869816.735763 GraalVM Native Image: Generating 'dacapo-sunflow-BASE-b2' (executable)...
+1792869816.735781 ========================================================================================================================
+1792869816.735794 For detailed information and explanations on the build output, visit:
+1792869816.735806 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792869816.735821 ------------------------------------------------------------------------------------------------------------------------
+1792869818.208894 [1/8] Initializing...                                                                                    (2.1s @ 0.36GB)
+1792869818.209179  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792869818.209305  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792869818.209381  C compiler: gcc (linux, x86_64, 15.2.0)
+1792869818.209503  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792869818.209517  1 user-specific feature(s):
+1792869818.209738  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792869818.210477 ------------------------------------------------------------------------------------------------------------------------
+1792869818.210504  1 experimental option(s) unlocked:
+1792869818.210540  - '-H:CodeAlignment' (origin(s): command line)
+1792869818.211588 ------------------------------------------------------------------------------------------------------------------------
+1792869818.211594 Build resources:
+1792869818.211675  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792869818.211719  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792869818.224303 Skipped 103 predefined class(es) because the classpath already contains a class with the same name: org.sunflow.core.ShadingState, org.sunflow.core.gi.InstantGI$PointLightStore, org.sunflow.core.Instance, org.sunflow.core.LightServer, org.sunflow.Benchmark, org.sunflow.system.Timer, org.sunflow.core.Scene, org.sunflow.math.BoundingBox, org.sunflow.Benchmark$BenchmarkScene, org.sunflow.image.RGBSpace, ...
+1792869822.561740 [2/8] Performing analysis...  [*****]                                                                    (4.1s @ 0.76GB)
+1792869822.583205     5,897 types,   8,641 fields, and  28,981 methods found reachable
+1792869822.584302     1,974 types,     252 fields, and   2,314 methods registered for reflection
+1792869822.584370        67 types,      92 fields, and      60 methods registered for JNI access
+1792869822.584383         0 downcalls and 0 upcalls registered for foreign access
+1792869822.584487         4 native libraries: dl, pthread, rt, z
+1792869823.792633 [3/8] Building universe...                                                                               (1.2s @ 0.86GB)
+1792869824.310079 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.09GB)
+1792869824.765362 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.12GB)
+1792869828.717977 [6/8] Compiling methods...    [**]                                                                       (3.9s @ 0.87GB)
+1792869830.560186 [7/8] Laying out methods...   [*]                                                                        (1.8s @ 1.03GB)
+1792869832.308090 [8/8] Creating image...       [*]                                                                        (1.6s @ 1.13GB)
+1792869832.308336   15.06MB (44.17%) for code area:    17,973 compilation units
+1792869832.308408   15.99MB (46.89%) for image heap:  176,863 objects and 66 resources
+1792869832.308438    3.05MB ( 8.94%) for other data
+1792869832.308486   34.10MB in total image size, 32.51MB in total file size
+1792869832.308536 ------------------------------------------------------------------------------------------------------------------------
+1792869832.309322 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792869832.309574    8.20MB java.base                                            3.76MB byte[] for code metadata
+1792869832.309598    3.27MB java.desktop                                         2.16MB byte[] for java.lang.String
+1792869832.309630    1.52MB svm.jar (Native Image)                               1.54MB java.lang.String
+1792869832.309760  508.26kB sunflow-0.07.2.jar                                   1.18MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792869832.309822  289.87kB dacapo-evaluation-git-e947cbfc.jar                 868.81kB byte[] for embedded resources
+1792869832.309849  214.13kB jdk.zipfs                                          788.59kB java.lang.Class
+1792869832.309874  117.05kB java.logging                                       681.24kB byte[] for general heap data
+1792869832.309898   93.47kB org.graalvm.nativeimage.base                       502.08kB heap alignment
+1792869832.310221   82.26kB jdk.charsets                                       433.30kB java.util.HashMap$Node
+1792869832.310373   55.32kB jdk.proxy2                                         397.65kB java.lang.Object[]
+1792869832.310965  186.89kB for 10 more packages                                 3.67MB for 1382 more object types
+1792869832.311739 ------------------------------------------------------------------------------------------------------------------------
+1792869832.311751 Recommendations:
+1792869832.311776  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792869832.311786  HEAP: Set max heap for improved and more predictable memory usage.
+1792869832.311824  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792869832.314562 ------------------------------------------------------------------------------------------------------------------------
+1792869832.315183                        1.1s (6.8% of total time) in 133 GCs | Peak RSS: 2.35GB | CPU load: 13.89
+1792869832.315480 ------------------------------------------------------------------------------------------------------------------------
+1792869832.315485 Build artifacts:
+1792869832.315856  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/dacapo-sunflow-BASE-b2 (executable)
+1792869832.315874  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt.so (jdk_library)
+1792869832.315887  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_headless.so (jdk_library)
+1792869832.315900  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libawt_xawt.so (jdk_library)
+1792869832.315912  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libfontmanager.so (jdk_library)
+1792869832.315926  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjava.so (jdk_library_shim)
+1792869832.315940  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjavajpeg.so (jdk_library)
+1792869832.315954  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/libjvm.so (jdk_library_shim)
+1792869832.315966  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T2/bin/liblcms.so (jdk_library)
+1792869832.315980 ========================================================================================================================
+1792869832.316036 Finished generating 'dacapo-sunflow-BASE-b2' in 16.2s.

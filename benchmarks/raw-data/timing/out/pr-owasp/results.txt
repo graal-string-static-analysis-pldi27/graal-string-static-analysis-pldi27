@@ -1,0 +1,29 @@
+# C99 campaign results  SLOT=pr-owasp  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-owasp  CFGS=BASE SBS SV LS BASE_A32 SBS_A32 SV_A32 LS_A32 BASE_A128 SBS_A128 SV_A128 LS_A128 BASE_A256 SBS_A256 SV_A256 LS_A256  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## owasp  [metric] OWASP html-sanitizer Benchmark sp (hunt3 ab3 recipe)  builds BASE:2 SBS:2 SV:2 LS:2 BASE_A32:2 SBS_A32:2 SV_A32:2 LS_A32:2 BASE_A128:2 SBS_A128:2 SV_A128:2 LS_A128:2 BASE_A256:2 SBS_A256:2 SV_A256:2 LS_A256:2  starts parsed=128
+  GEOMEAN SBS/BASE  time 1.005 [0.994,1.014] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 0.985 [0.976,0.993] FASTER (2 keys)  alloc 0.950 [0.950,0.951] LESS (1 keys)
+  GEOMEAN LS/BASE  time 0.999 [0.991,1.006] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.002 [0.994,1.010] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SBS_A32/BASE  time 1.031 [1.017,1.045] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV_A32/BASE  time 1.003 [0.987,1.019] n.s. (2 keys)  alloc 0.950 [0.950,0.951] LESS (1 keys)
+  GEOMEAN LS_A32/BASE  time 1.005 [0.987,1.023] n.s. (2 keys)  alloc 1.000 [0.999,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.996 [0.988,1.006] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SBS_A128/BASE  time 0.996 [0.986,1.008] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV_A128/BASE  time 0.994 [0.986,1.002] n.s. (2 keys)  alloc 0.951 [0.950,0.951] LESS (1 keys)
+  GEOMEAN LS_A128/BASE  time 0.999 [0.991,1.006] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.028 [1.002,1.055] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SBS_A256/BASE  time 1.013 [1.000,1.027] n.s. (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN SV_A256/BASE  time 1.002 [0.991,1.014] n.s. (2 keys)  alloc 0.951 [0.950,0.951] LESS (1 keys)
+  GEOMEAN LS_A256/BASE  time 1.013 [1.002,1.028] SLOWER (2 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  sanitize custom                                                        SBS 1.002 [0.992,1.013] n.s. | SV 0.978 [0.970,0.986] FASTER | LS 0.996 [0.988,1.003] n.s. | BASE_A32 0.999 [0.992,1.006] n.s. | SBS_A32 1.029 [1.013,1.044] SLOWER | SV_A32 0.993 [0.977,1.010] n.s. | LS_A32 1.004 [0.983,1.024] n.s. | BASE_A128 0.995 [0.986,1.006] n.s. | SBS_A128 0.993 [0.984,1.003] n.s. | SV_A128 0.989 [0.981,0.997] FASTER | LS_A128 0.996 [0.990,1.004] n.s. | BASE_A256 1.032 [0.999,1.067] n.s. | SBS_A256 1.011 [0.997,1.025] n.s. | SV_A256 0.992 [0.983,1.003] n.s. | LS_A256 1.012 [1.001,1.026] SLOWER  BIMODAL(LS_A32,BASE_A256)
+  sanitize w/ PB                                                         SBS 1.007 [0.996,1.016] n.s. | SV 0.992 [0.983,1.001] n.s. | LS 1.002 [0.993,1.010] n.s. | BASE_A32 1.006 [0.995,1.017] n.s. | SBS_A32 1.034 [1.021,1.047] SLOWER | SV_A32 1.012 [0.997,1.028] n.s. | LS_A32 1.006 [0.990,1.023] n.s. | BASE_A128 0.997 [0.989,1.006] n.s. | SBS_A128 1.000 [0.988,1.013] n.s. | SV_A128 1.000 [0.991,1.010] n.s. | LS_A128 1.001 [0.992,1.010] n.s. | BASE_A256 1.024 [1.004,1.043] SLOWER | SBS_A256 1.016 [1.002,1.029] SLOWER | SV_A256 1.012 [0.999,1.026] n.s. | LS_A256 1.015 [1.004,1.031] SLOWER
+  ~alloc MB                                                              SBS 1.000 [1.000,1.000] n.s. | SV 0.950 [0.950,0.951] LESS | LS 1.000 [1.000,1.000] n.s. | BASE_A32 1.000 [1.000,1.000] n.s. | SBS_A32 1.000 [1.000,1.000] n.s. | SV_A32 0.950 [0.950,0.951] LESS | LS_A32 1.000 [0.999,1.000] n.s. | BASE_A128 1.000 [1.000,1.000] n.s. | SBS_A128 1.000 [1.000,1.000] n.s. | SV_A128 0.951 [0.950,0.951] LESS | LS_A128 1.000 [1.000,1.000] n.s. | BASE_A256 1.000 [1.000,1.000] n.s. | SBS_A256 1.000 [1.000,1.000] n.s. | SV_A256 0.951 [0.950,0.951] LESS | LS_A256 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                SBS 1.003 [0.999,1.006] n.s. | SV 0.999 [0.995,1.003] n.s. | LS 0.998 [0.993,1.003] n.s. | BASE_A32 0.997 [0.993,1.001] n.s. | SBS_A32 0.992 [0.988,0.996] LESS | SV_A32 1.003 [0.999,1.007] n.s. | LS_A32 0.995 [0.990,0.999] LESS | BASE_A128 1.000 [0.996,1.005] n.s. | SBS_A128 0.995 [0.989,1.002] n.s. | SV_A128 0.997 [0.993,1.001] n.s. | LS_A128 1.000 [0.995,1.004] n.s. | BASE_A256 0.996 [0.991,1.001] n.s. | SBS_A256 1.000 [0.997,1.003] n.s. | SV_A256 1.010 [1.005,1.014] MORE | LS_A256 1.002 [0.998,1.006] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS                BASE_A32          SBS_A32           SV_A32            LS_A32            BASE_A128         SBS_A128          SV_A128           LS_A128           BASE_A256         SBS_A256          SV_A256           LS_A256          
+  owasp                      1.005|1.000       0.985*|0.950*     0.999|1.000       1.002|1.000       1.031*|1.000      1.003|0.950*      1.005|1.000       0.996|1.000       0.996|1.000       0.994|0.951*      0.999|1.000       1.028*|1.000      1.013|1.000       1.002|0.951*      1.013*|1.000     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

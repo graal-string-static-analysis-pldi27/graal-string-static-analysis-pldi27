@@ -1,0 +1,45 @@
+diff --git a/benchmarks/pom.xml b/benchmarks/pom.xml
+index 0fc8917..4124c70 100644
+--- a/benchmarks/pom.xml
++++ b/benchmarks/pom.xml
+@@ -59,7 +59,10 @@
+     <dependency>
+       <groupId>org.apache.logging.log4j</groupId>
+       <artifactId>log4j-core</artifactId>
+-      <scope>test</scope>
++      <!-- hunt4: scope test -> removed (compile). Upstream at this pin ships run-benchmarks.sh doing
++           `java -jar target/benchmarks.jar`, but log4j-core is test-scoped here and provided-scoped in the
++           analyzer, so the shaded uberjar has no log4j at all -> ClassNotFoundException: LogManager at the
++           first benchmark. Build-system-only fix; does not change what is measured. -->
+     </dependency>
+ 
+     <!-- Needed for some of the older versions of Yauaa -->
+@@ -143,6 +146,28 @@
+ 
+   <build>
+     <plugins>
++      <plugin>
++        <groupId>org.apache.maven.plugins</groupId>
++        <artifactId>maven-compiler-plugin</artifactId>
++        <!-- hunt4: the parent pom sets annotationProcessorPaths to lombok ONLY, which prevents the
++             JMH annotation processor (jmh-generator-annprocess, provided scope) from running -> no
++             META-INF/BenchmarkList is generated and the benchmarks.jar is unusable. Override with
++             lombok + jmh-generator-annprocess (build-system-only fix; benchmark sources unchanged). -->
++        <configuration combine.self="override">
++          <annotationProcessorPaths>
++            <path>
++              <groupId>org.projectlombok</groupId>
++              <artifactId>lombok</artifactId>
++              <version>${lombok.version}</version>
++            </path>
++            <path>
++              <groupId>org.openjdk.jmh</groupId>
++              <artifactId>jmh-generator-annprocess</artifactId>
++              <version>${jmh.version}</version>
++            </path>
++          </annotationProcessorPaths>
++        </configuration>
++      </plugin>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-shade-plugin</artifactId>

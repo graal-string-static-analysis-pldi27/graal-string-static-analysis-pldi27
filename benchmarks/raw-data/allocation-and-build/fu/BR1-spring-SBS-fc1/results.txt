@@ -1,0 +1,11 @@
+# C99 campaign results  SLOT=BR1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/BR1-spring-SBS-fc1  CFGS=BASE SBS  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## spring  [jmh] Spring StringUtilsBenchmark (hunt/ab-b34 candspec)  builds BASE:3 SBS:3  starts parsed=24
+  GEOMEAN SBS/BASE  time 1.006 [0.982,1.036] n.s. (2 keys)  alloc 0.985 [0.958,1.006] n.s. (1 keys)
+  StringUtilsBenchmark.cleanPath N/A N/A N/A 20 10                       SBS 1.026 [0.998,1.062] n.s.
+  StringUtilsBenchmark.collectionToDelimitedString 10 20 10 N/A N/A      SBS 0.986 [0.958,1.019] n.s.
+  ~alloc MB                                                              SBS 0.985 [0.958,1.006] n.s.
+  ~rss MB                                                                SBS 0.999 [0.996,1.002] n.s.
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

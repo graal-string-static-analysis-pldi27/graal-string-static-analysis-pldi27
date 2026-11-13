@@ -1,0 +1,88 @@
+diff --git a/com.eclipsesource.json/pom.xml b/com.eclipsesource.json/pom.xml
+index f682ba4..bfa1bc4 100644
+--- a/com.eclipsesource.json/pom.xml
++++ b/com.eclipsesource.json/pom.xml
+@@ -21,8 +21,8 @@
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>3.2</version>
+         <configuration>
+-          <source>1.5</source>
+-          <target>1.5</target>
++          <source>1.8</source>
++          <target>1.8</target>
+         </configuration>
+       </plugin>
+       <plugin>
+diff --git a/com.eclipsesource.json.performancetest/src/main/java/com/eclipsesource/json/performancetest/Hunt3Port.java b/com.eclipsesource.json.performancetest/src/main/java/com/eclipsesource/json/performancetest/Hunt3Port.java
+new file mode 100644
+index 0000000..ce1404b
+--- /dev/null
++++ b/com.eclipsesource.json.performancetest/src/main/java/com/eclipsesource/json/performancetest/Hunt3Port.java
+@@ -0,0 +1,67 @@
++/*******************************************************************************
++ * Hunt3 harness-only port (batch1 #3). Upstream ReadWriteBenchmark is a Caliper 0.5-rc1
++ * SimpleBenchmark; native-image needs a plain main. This class ONLY sets the upstream @Param
++ * fields to the values named in the hunt3 deployment notes (input in rap/caliper/long-string,
++ * parser in minimal-json/org-json/gson/jackson), calls the upstream setUp(), and loops the
++ * upstream timeWriteToString(int reps) / timeReadFromString(int reps) methods. No benchmark
++ * logic is changed or duplicated.
++ ******************************************************************************/
++package com.eclipsesource.json.performancetest;
++
++import com.eclipsesource.json.performancetest.jsonrunners.JsonRunner;
++
++public class Hunt3Port {
++
++  public static void main(String[] args) throws Exception {
++    String[] inputs = {"rap", "caliper", "long-string"};
++    String[] parsers = {"minimal-json", "org-json", "gson", "jackson"};
++    int warm = 3, meas = 8;              // calls of timeX(reps) per combo
++    for (String in : inputs) {
++      for (String p : parsers) {
++        ReadWriteBenchmark bench = new ReadWriteBenchmark();
++        bench.input = in;
++        bench.parser = p;
++        bench.setUp();
++        String json = com.eclipsesource.json.performancetest.resources.Resources
++            .readResource("input/" + in + ".json");
++        Object model = com.eclipsesource.json.performancetest.jsonrunners.JsonRunnerFactory
++            .findByName(p).readFromString(json);
++        String out = com.eclipsesource.json.performancetest.jsonrunners.JsonRunnerFactory
++            .findByName(p).writeToString(model);
++        System.out.println("PORT-CHECK input=" + in + " parser=" + p
++            + " jsonLen=" + json.length() + " outLen=" + out.length());
++        for (String method : new String[] {"timeReadFromString", "timeWriteToString"}) {
++          int reps = calibrate(bench, method);
++          for (int i = 0; i < warm; i++) run(bench, method, reps);
++          long best = Long.MAX_VALUE;
++          for (int i = 0; i < meas; i++) {
++            long t = System.nanoTime();
++            run(bench, method, reps);
++            best = Math.min(best, System.nanoTime() - t);
++          }
++          System.out.println("PORT-RESULT input=" + in + " parser=" + p + " method=" + method
++              + " reps=" + reps + " nsPerRep=" + (best / reps) + " (best of " + meas + ")");
++        }
++      }
++    }
++    System.out.println("PORT-DONE");
++  }
++
++  static void run(ReadWriteBenchmark b, String method, int reps) throws Exception {
++    if (method.equals("timeReadFromString")) b.timeReadFromString(reps);
++    else b.timeWriteToString(reps);
++  }
++
++  static int calibrate(ReadWriteBenchmark b, String method) throws Exception {
++    int reps = 1;
++    while (reps <= (1 << 20)) {
++      long t = System.nanoTime();
++      run(b, method, reps);
++      if (System.nanoTime() - t > 250_000_000L) break;
++      reps *= 2;
++    }
++    return reps;
++  }
++
++  private Hunt3Port() {}
++}

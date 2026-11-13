@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-lusearch  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-lusearch          BASE b1 size 31.72/33.44/14.82/15.40 | parent 22.3 s 2.32 GB | driver 23.1 s REUSED
+dacapo-lusearch          BASE b2 size 31.72/33.44/14.82/15.40 | parent 25.0 s 2.34 GB | driver 25.8 s REUSED
+dacapo-lusearch          FULL b1 size 31.92/33.64/14.95/15.47 | parent 48.9 s 2.73 GB | driver 49.7 s | OK | child aa 22400 ms gen 25.5 s obs 25 s VmHWM 5.30 GB | wait 25.5 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4452 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          FULL b2 size 31.92/33.64/14.95/15.47 | parent 42.9 s 2.63 GB | driver 43.7 s | OK | child aa 20075 ms gen 23.2 s obs 23 s VmHWM 5.31 GB | wait 23.5 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4453 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          BASE_A32 b1 size 31.53/33.24/14.55/15.47 | parent 19.4 s 2.36 GB | driver 20.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          BASE_A32 b2 size 31.53/33.24/14.55/15.47 | parent 21.1 s 2.40 GB | driver 21.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          FULL_A32 b1 size 31.66/33.38/14.68/15.47 | parent 47.5 s 2.69 GB | driver 48.6 s | OK | child aa 21504 ms gen 24.9 s obs 24 s VmHWM 5.41 GB | wait 25.0 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4451 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          FULL_A32 b2 size 31.66/33.38/14.68/15.47 | parent 41.3 s 2.61 GB | driver 42.4 s | OK | child aa 15299 ms gen 18.7 s obs 17 s VmHWM 5.28 GB | wait 19.0 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4450 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          BASE_A128 b1 size 32.38/34.09/15.49/15.40 | parent 20.0 s 2.38 GB | driver 20.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          BASE_A128 b2 size 32.38/34.09/15.49/15.40 | parent 26.4 s 2.40 GB | driver 27.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          FULL_A128 b1 size 32.64/34.36/15.63/15.47 | parent 48.4 s 2.63 GB | driver 49.6 s | OK | child aa 15192 ms gen 19.1 s obs 18 s VmHWM 5.48 GB | wait 19.5 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4456 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          FULL_A128 b2 size 32.64/34.36/15.63/15.47 | parent 52.6 s 2.65 GB | driver 53.8 s | OK | child aa 16463 ms gen 19.6 s obs 20 s VmHWM 5.40 GB | wait 20.0 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4451 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          BASE_A256 b1 size 33.88/35.60/16.95/15.40 | parent 19.3 s 2.37 GB | driver 20.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          BASE_A256 b2 size 33.88/35.60/16.95/15.40 | parent 24.2 s 2.31 GB | driver 25.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-lusearch          FULL_A256 b1 size 34.54/36.26/17.10/15.93 | parent 39.3 s 2.79 GB | driver 40.0 s | OK | child aa 15198 ms gen 18.0 s obs 17 s VmHWM 5.28 GB | wait 18.0 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4455 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+dacapo-lusearch          FULL_A256 b2 size 34.54/36.26/17.10/15.93 | parent 49.1 s 2.51 GB | driver 49.9 s | OK | child aa 20146 ms gen 23.1 s obs 23 s VmHWM 5.34 GB | wait 23.0 s | SBS=1 SV=158(ACC=127 ELEM=0) LS=15(JOINER=0) | IC=4452 TC=341 MIRROR=73 EXACT=0 other=15 REUSED
+## build cost vs stock (means over builds)
+dacapo-lusearch          FULL/BASE  parent wall 23.6 -> 45.9 s (x1.94)  Peak RSS 2.33 -> 2.68 GB (x1.15)  child VmHWM 5.31 GB  size 31.72 -> 31.92 MB (x1.006)  status OK,OK
+dacapo-lusearch          BASE_A32/BASE  parent wall 23.6 -> 20.2 s (x0.86)  Peak RSS 2.33 -> 2.38 GB (x1.02)  child VmHWM ? GB  size 31.72 -> 31.53 MB (x0.994)  status NO-PROFILE,NO-PROFILE
+dacapo-lusearch          FULL_A32/BASE  parent wall 23.6 -> 44.4 s (x1.88)  Peak RSS 2.33 -> 2.65 GB (x1.14)  child VmHWM 5.34 GB  size 31.72 -> 31.66 MB (x0.998)  status OK,OK
+dacapo-lusearch          BASE_A128/BASE  parent wall 23.6 -> 23.2 s (x0.98)  Peak RSS 2.33 -> 2.39 GB (x1.03)  child VmHWM ? GB  size 31.72 -> 32.38 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+dacapo-lusearch          FULL_A128/BASE  parent wall 23.6 -> 50.5 s (x2.14)  Peak RSS 2.33 -> 2.64 GB (x1.13)  child VmHWM 5.44 GB  size 31.72 -> 32.64 MB (x1.029)  status OK,OK
+dacapo-lusearch          BASE_A256/BASE  parent wall 23.6 -> 21.8 s (x0.92)  Peak RSS 2.33 -> 2.34 GB (x1.00)  child VmHWM ? GB  size 31.72 -> 33.88 MB (x1.068)  status NO-PROFILE,NO-PROFILE
+dacapo-lusearch          FULL_A256/BASE  parent wall 23.6 -> 44.2 s (x1.87)  Peak RSS 2.33 -> 2.65 GB (x1.14)  child VmHWM 5.31 GB  size 31.72 -> 34.54 MB (x1.089)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-lusearch          FULL SBS=1 SV=158 (ACC=127 ELEM=0) LS=15 (JOINER=0)  OK
+dacapo-lusearch          BASE_A32 no profile  NO-PROFILE
+dacapo-lusearch          FULL_A32 SBS=1 SV=158 (ACC=127 ELEM=0) LS=15 (JOINER=0)  OK
+dacapo-lusearch          BASE_A128 no profile  NO-PROFILE
+dacapo-lusearch          FULL_A128 SBS=1 SV=158 (ACC=127 ELEM=0) LS=15 (JOINER=0)  OK
+dacapo-lusearch          BASE_A256 no profile  NO-PROFILE
+dacapo-lusearch          FULL_A256 SBS=1 SV=158 (ACC=127 ELEM=0) LS=15 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-lusearch          BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.2 s
+dacapo-lusearch          BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.9 s
+dacapo-lusearch          BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.7 s
+dacapo-lusearch          BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.3 s
+dacapo-lusearch          BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.3 s
+dacapo-lusearch          BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 25.0 s
+## determinism: dacapo-lusearch FULL: admit counts differ across builds; dacapo-lusearch FULL_A32: admit counts differ across builds; dacapo-lusearch FULL_A128: admit counts differ across builds; dacapo-lusearch FULL_A256: admit counts differ across builds
+TABLES-DONE

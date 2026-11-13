@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/rhino  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+rhino                    BASE b1 size 29.76/31.41/13.20/14.81 | parent 31.8 s 2.37 GB | driver 32.8 s REUSED
+rhino                    BASE b2 size 29.76/31.41/13.20/14.81 | parent 30.5 s 2.35 GB | driver 31.7 s REUSED
+rhino                    FULL b1 size 29.95/31.62/13.35/14.88 | parent 59.2 s 2.69 GB | driver 60.2 s | OK | child aa 27097 ms gen 30.7 s obs 30 s VmHWM 3.45 GB | wait 31.1 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    FULL b2 size 29.95/31.62/13.35/14.88 | parent 59.1 s 2.56 GB | driver 60.1 s | OK | child aa 26068 ms gen 31.3 s obs 32 s VmHWM 3.63 GB | wait 31.6 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    BASE_A32 b1 size 29.49/31.15/12.94/14.81 | parent 25.8 s 2.36 GB | driver 26.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    BASE_A32 b2 size 29.49/31.15/12.94/14.81 | parent 32.1 s 2.37 GB | driver 33.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    FULL_A32 b1 size 29.69/31.35/13.08/14.88 | parent 69.0 s 2.83 GB | driver 70.7 s | OK | child aa 28312 ms gen 33.3 s obs 33 s VmHWM 3.51 GB | wait 34.0 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    FULL_A32 b2 size 29.69/31.35/13.08/14.88 | parent 53.5 s 2.63 GB | driver 54.4 s | OK | child aa 25880 ms gen 28.9 s obs 29 s VmHWM 3.51 GB | wait 29.1 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    BASE_A128 b1 size 30.35/32.00/13.82/14.81 | parent 29.9 s 2.38 GB | driver 31.0 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    BASE_A128 b2 size 30.35/32.00/13.82/14.81 | parent 28.6 s 2.37 GB | driver 30.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    FULL_A128 b1 size 30.61/32.27/13.97/14.88 | parent 59.1 s 2.64 GB | driver 60.3 s | OK | child aa 21274 ms gen 24.1 s obs 23 s VmHWM 3.60 GB | wait 24.0 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    FULL_A128 b2 size 30.61/32.27/13.97/14.88 | parent 61.0 s 2.70 GB | driver 62.7 s | OK | child aa 25366 ms gen 29.6 s obs 28 s VmHWM 3.62 GB | wait 29.6 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    BASE_A256 b1 size 31.79/33.44/15.25/14.81 | parent 29.3 s 2.37 GB | driver 30.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    BASE_A256 b2 size 31.79/33.44/15.25/14.81 | parent 29.1 s 2.34 GB | driver 30.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+rhino                    FULL_A256 b1 size 31.92/33.58/15.40/14.81 | parent 62.0 s 2.55 GB | driver 63.4 s | OK | child aa 28692 ms gen 31.8 s obs 31 s VmHWM 3.63 GB | wait 32.1 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+rhino                    FULL_A256 b2 size 31.92/33.58/15.40/14.81 | parent 60.0 s 2.69 GB | driver 61.3 s | OK | child aa 23308 ms gen 28.7 s obs 28 s VmHWM 3.53 GB | wait 29.0 s | SBS=5 SV=158(ACC=108 ELEM=5) LS=13(JOINER=0) | IC=4728 TC=491 MIRROR=74 EXACT=0 other=4 REUSED
+## build cost vs stock (means over builds)
+rhino                    FULL/BASE  parent wall 31.1 -> 59.2 s (x1.90)  Peak RSS 2.36 -> 2.62 GB (x1.11)  child VmHWM 3.54 GB  size 29.76 -> 29.95 MB (x1.007)  status OK,OK
+rhino                    BASE_A32/BASE  parent wall 31.1 -> 29.0 s (x0.93)  Peak RSS 2.36 -> 2.37 GB (x1.00)  child VmHWM ? GB  size 29.76 -> 29.49 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+rhino                    FULL_A32/BASE  parent wall 31.1 -> 61.2 s (x1.97)  Peak RSS 2.36 -> 2.73 GB (x1.16)  child VmHWM 3.51 GB  size 29.76 -> 29.69 MB (x0.998)  status OK,OK
+rhino                    BASE_A128/BASE  parent wall 31.1 -> 29.2 s (x0.94)  Peak RSS 2.36 -> 2.38 GB (x1.01)  child VmHWM ? GB  size 29.76 -> 30.35 MB (x1.020)  status NO-PROFILE,NO-PROFILE
+rhino                    FULL_A128/BASE  parent wall 31.1 -> 60.0 s (x1.93)  Peak RSS 2.36 -> 2.67 GB (x1.13)  child VmHWM 3.61 GB  size 29.76 -> 30.61 MB (x1.029)  status OK,OK
+rhino                    BASE_A256/BASE  parent wall 31.1 -> 29.2 s (x0.94)  Peak RSS 2.36 -> 2.35 GB (x1.00)  child VmHWM ? GB  size 29.76 -> 31.79 MB (x1.068)  status NO-PROFILE,NO-PROFILE
+rhino                    FULL_A256/BASE  parent wall 31.1 -> 61.0 s (x1.96)  Peak RSS 2.36 -> 2.62 GB (x1.11)  child VmHWM 3.58 GB  size 29.76 -> 31.92 MB (x1.073)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+rhino                    FULL SBS=5 SV=158 (ACC=108 ELEM=5) LS=13 (JOINER=0)  OK
+rhino                    BASE_A32 no profile  NO-PROFILE
+rhino                    FULL_A32 SBS=5 SV=158 (ACC=108 ELEM=5) LS=13 (JOINER=0)  OK
+rhino                    BASE_A128 no profile  NO-PROFILE
+rhino                    FULL_A128 SBS=5 SV=158 (ACC=108 ELEM=5) LS=13 (JOINER=0)  OK
+rhino                    BASE_A256 no profile  NO-PROFILE
+rhino                    FULL_A256 SBS=5 SV=158 (ACC=108 ELEM=5) LS=13 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+rhino                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.7 s
+rhino                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 33.3 s
+rhino                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.0 s
+rhino                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.3 s
+rhino                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.6 s
+rhino                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.3 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

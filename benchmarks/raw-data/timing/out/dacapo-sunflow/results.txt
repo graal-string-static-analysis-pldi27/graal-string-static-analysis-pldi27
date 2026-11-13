@@ -1,0 +1,22 @@
+# C99 campaign results  SLOT=dacapo-sunflow  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-sunflow  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=1 UM=3 US=1 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## dacapo-sunflow  [metric] DaCapo sunflow (C99 deploy)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.001 [0.999,1.004] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.997 [0.996,0.999] FASTER (1 keys)  alloc 1.000 [1.000,1.000] MORE (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.998 [0.998,0.999] FASTER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.001 [1.001,1.002] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.000 [0.995,1.005] n.s. (1 keys)  alloc 1.000 [1.000,1.000] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.000 [0.998,1.002] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 0.994 [0.994,0.995] FASTER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           FULL 1.001 [0.999,1.004] n.s. | BASE_A32 0.997 [0.996,0.999] FASTER | FULL_A32 0.998 [0.998,0.999] FASTER | BASE_A128 1.001 [1.001,1.002] SLOWER | FULL_A128 1.000 [0.995,1.005] n.s. | BASE_A256 1.000 [0.998,1.002] n.s. | FULL_A256 0.994 [0.994,0.995] FASTER
+  iteration ms [cold]                                                    FULL 1.005 [1.000,1.010] n.s. | BASE_A32 0.998 [0.990,1.006] n.s. | FULL_A32 1.001 [0.995,1.007] n.s. | BASE_A128 1.003 [0.998,1.009] n.s. | FULL_A128 0.996 [0.993,0.999] FASTER | BASE_A256 0.999 [0.995,1.004] n.s. | FULL_A256 0.995 [0.993,0.998] FASTER
+  ~alloc MB/iter                                                         FULL 1.000 [1.000,1.000] LESS | BASE_A32 1.000 [1.000,1.000] MORE | FULL_A32 1.000 [1.000,1.000] n.s. | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 1.000 [1.000,1.000] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 1.000 [1.000,1.000] n.s.
+  ~rss MB                                                                FULL 1.024 [0.942,1.122] n.s. | BASE_A32 1.001 [0.840,1.193] n.s. | FULL_A32 1.112 [1.016,1.226] MORE | BASE_A128 1.090 [1.002,1.193] MORE | FULL_A128 1.089 [1.000,1.193] MORE | BASE_A256 1.046 [0.960,1.147] n.s. | FULL_A256 1.046 [0.940,1.172] n.s.
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  dacapo-sunflow             1.001|1.000*      0.997*|1.000*     0.998*|1.000      1.001*|1.000      1.000|1.000*      1.000|1.000       0.994*|1.000     
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

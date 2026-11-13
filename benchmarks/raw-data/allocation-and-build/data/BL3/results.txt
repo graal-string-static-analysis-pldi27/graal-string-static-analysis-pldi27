@@ -1,0 +1,52 @@
+# C99 campaign results  SLOT=BL3  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/BL3  CFGS=BASE SBS SV LS  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## string-concat  [jmh] OpenJDK StringConcat (misc-benchmarks jar, 37 rows; ab-cmb recipe)  builds BASE:3 SBS:3 SV:3 LS:3  starts parsed=12
+  GEOMEAN SBS/BASE  time 1.006 [1.000,1.012] SLOWER (37 keys)  alloc 0.992 [0.984,1.000] n.s. (1 keys)
+  GEOMEAN SV/BASE  time 1.006 [0.998,1.014] n.s. (37 keys)  alloc 0.994 [0.986,1.002] n.s. (1 keys)
+  GEOMEAN LS/BASE  time 0.234 [0.232,0.235] FASTER (37 keys)  alloc 3.444 [3.410,3.478] MORE (1 keys)
+  StringConcat.concat123String 4711                                      SBS 0.988 [0.976,0.998] FASTER | SV 0.995 [0.983,1.006] n.s. | LS 1.019 [0.969,1.102] n.s.
+  StringConcat.concat13String 4711                                       SBS 1.001 [0.968,1.045] n.s. | SV 0.979 [0.935,1.024] n.s. | LS 0.121 [0.117,0.126] FASTER
+  StringConcat.concat13StringConst 4711                                  SBS 1.034 [1.007,1.061] SLOWER | SV 0.993 [0.976,1.011] n.s. | LS 0.107 [0.105,0.109] FASTER
+  StringConcat.concat23String 4711                                       SBS 1.030 [0.998,1.086] n.s. | SV 1.010 [0.996,1.024] n.s. | LS 0.112 [0.111,0.113] FASTER
+  StringConcat.concat23StringConst 4711                                  SBS 1.012 [0.995,1.028] n.s. | SV 1.015 [0.993,1.047] n.s. | LS 0.105 [0.104,0.105] FASTER
+  StringConcat.concat30Mix 4711                                          SBS 1.031 [1.003,1.061] SLOWER | SV 1.014 [0.985,1.058] n.s. | LS 0.210 [0.206,0.216] FASTER
+  StringConcat.concat3String 4711                                        SBS 0.997 [0.986,1.008] n.s. | SV 1.011 [0.991,1.036] n.s. | LS 0.077 [0.076,0.077] FASTER
+  StringConcat.concat4String 4711                                        SBS 1.007 [0.997,1.017] n.s. | SV 1.014 [0.996,1.045] n.s. | LS 0.070 [0.069,0.070] FASTER
+  StringConcat.concat6String 4711                                        SBS 1.029 [0.997,1.060] n.s. | SV 1.009 [0.967,1.060] n.s. | LS 0.122 [0.121,0.124] FASTER
+  StringConcat.concatConst2String 4711                                   SBS 1.005 [0.999,1.011] n.s. | SV 1.016 [0.997,1.048] n.s. | LS 0.104 [0.104,0.105] FASTER
+  StringConcat.concatConst4String 4711                                   SBS 1.005 [0.995,1.019] n.s. | SV 1.018 [1.000,1.048] n.s. | LS 0.159 [0.158,0.159] FASTER
+  StringConcat.concatConst6Object 4711                                   SBS 0.986 [0.954,1.017] n.s. | SV 0.987 [0.955,1.019] n.s. | LS 0.274 [0.263,0.285] FASTER
+  StringConcat.concatConst6String 4711                                   SBS 1.003 [0.962,1.046] n.s. | SV 1.022 [0.984,1.061] n.s. | LS 0.133 [0.128,0.137] FASTER
+  StringConcat.concatConstBool 4711                                      SBS 1.017 [0.994,1.039] n.s. | SV 1.026 [1.012,1.040] SLOWER | LS 0.228 [0.223,0.236] FASTER
+  StringConcat.concatConstBoolByte 4711                                  SBS 1.017 [0.993,1.041] n.s. | SV 1.017 [0.995,1.040] n.s. | LS 0.310 [0.305,0.315] FASTER
+  StringConcat.concatConstBoolString 4711                                SBS 1.010 [0.994,1.027] n.s. | SV 1.022 [1.002,1.040] SLOWER | LS 0.131 [0.130,0.132] FASTER
+  StringConcat.concatConstBoolean 4711                                   SBS 0.997 [0.966,1.019] n.s. | SV 0.998 [0.991,1.006] n.s. | LS 0.255 [0.253,0.258] FASTER
+  StringConcat.concatConstBooleanString 4711                             SBS 0.996 [0.979,1.013] n.s. | SV 1.013 [0.991,1.035] n.s. | LS 0.113 [0.111,0.115] FASTER
+  StringConcat.concatConstFloat 4711                                     SBS 1.003 [0.998,1.007] n.s. | SV 1.002 [0.996,1.008] n.s. | LS 0.634 [0.631,0.637] FASTER
+  StringConcat.concatConstFloatString 4711                               SBS 0.998 [0.993,1.002] n.s. | SV 1.001 [0.998,1.004] n.s. | LS 0.496 [0.494,0.498] FASTER
+  StringConcat.concatConstInt 4711                                       SBS 1.001 [0.980,1.024] n.s. | SV 1.002 [0.985,1.019] n.s. | LS 0.447 [0.434,0.460] FASTER
+  StringConcat.concatConstIntConstInt 4711                               SBS 1.003 [0.988,1.018] n.s. | SV 1.013 [0.998,1.028] n.s. | LS 0.456 [0.448,0.464] FASTER
+  StringConcat.concatConstIntString 4711                                 SBS 0.989 [0.964,1.016] n.s. | SV 1.004 [0.986,1.020] n.s. | LS 0.235 [0.230,0.240] FASTER
+  StringConcat.concatConstInteger 4711                                   SBS 1.012 [0.982,1.039] n.s. | SV 1.014 [0.980,1.048] n.s. | LS 0.381 [0.370,0.392] FASTER
+  StringConcat.concatConstIntegerString 4711                             SBS 1.007 [0.999,1.012] n.s. | SV 1.019 [1.004,1.031] SLOWER | LS 0.169 [0.168,0.171] FASTER
+  StringConcat.concatConstString 4711                                    SBS 0.986 [0.967,1.006] n.s. | SV 1.005 [0.990,1.018] n.s. | LS 0.215 [0.211,0.218] FASTER
+  StringConcat.concatConstStringConstInt 4711                            SBS 0.995 [0.974,1.017] n.s. | SV 1.012 [0.996,1.028] n.s. | LS 0.258 [0.253,0.262] FASTER
+  StringConcat.concatEmptyConstInt 4711                                  SBS 1.020 [0.998,1.061] n.s. | SV 0.997 [0.992,1.002] n.s. | LS 1.003 [0.996,1.010] n.s.
+  StringConcat.concatEmptyConstString 4711                               SBS 1.027 [1.000,1.076] SLOWER | SV 1.025 [0.998,1.074] n.s. | LS 0.957 [0.929,1.001] n.s.
+  StringConcat.concatEmptyLeft 4711                                      SBS 1.001 [0.996,1.005] n.s. | SV 0.999 [0.997,1.002] n.s. | LS 0.960 [0.952,0.970] FASTER
+  StringConcat.concatEmptyRight 4711                                     SBS 0.998 [0.994,1.003] n.s. | SV 1.000 [0.997,1.002] n.s. | LS 0.925 [0.919,0.931] FASTER
+  StringConcat.concatMethodConstString 4711                              SBS 0.991 [0.970,1.017] n.s. | SV 0.986 [0.964,1.011] n.s. | LS 0.217 [0.212,0.222] FASTER
+  StringConcat.concatMix4String 4711                                     SBS 1.001 [0.976,1.023] n.s. | SV 1.004 [0.977,1.026] n.s. | LS 0.811 [0.789,0.833] FASTER
+  StringConcat.concatStringBoolString 4711                               SBS 0.990 [0.976,1.003] n.s. | SV 0.991 [0.978,0.999] FASTER | LS 0.090 [0.088,0.090] FASTER
+  StringConcat.concatStringBooleanString 4711                            SBS 1.000 [0.985,1.013] n.s. | SV 0.997 [0.982,1.009] n.s. | LS 0.078 [0.077,0.079] FASTER
+  StringConcat.concatStringIntString 4711                                SBS 1.005 [0.995,1.015] n.s. | SV 0.997 [0.987,1.007] n.s. | LS 0.174 [0.171,0.176] FASTER
+  StringConcat.concatStringIntegerString 4711                            SBS 1.027 [1.015,1.039] SLOWER | SV 0.995 [0.984,1.004] n.s. | LS 0.133 [0.131,0.134] FASTER
+  ~alloc MB                                                              SBS 0.992 [0.984,1.000] n.s. | SV 0.994 [0.986,1.002] n.s. | LS 3.444 [3.410,3.478] MORE
+  ~rss MB                                                                SBS 0.999 [0.998,1.001] n.s. | SV 1.008 [1.007,1.009] MORE | LS 1.004 [1.000,1.006] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        SBS               SV                LS               
+  string-concat              1.006*|0.992      1.006|0.994       0.234*|3.444*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

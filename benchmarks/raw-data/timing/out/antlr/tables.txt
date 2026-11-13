@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/antlr  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+antlr                    BASE b1 size 22.02/23.29/9.18/11.53 | parent 35.1 s 2.05 GB | driver 35.8 s REUSED
+antlr                    BASE b2 size 22.02/23.29/9.18/11.53 | parent 31.1 s 2.19 GB | driver 31.9 s REUSED
+antlr                    FULL b1 size 22.02/23.29/9.20/11.53 | parent 54.2 s 2.42 GB | driver 55.5 s | OK | child aa 15831 ms gen 21.8 s obs 22 s VmHWM 2.95 GB | wait 22.0 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL b2 size 22.02/23.29/9.20/11.53 | parent 49.0 s 2.68 GB | driver 50.2 s | OK | child aa 14265 ms gen 18.5 s obs 17 s VmHWM 2.74 GB | wait 19.0 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    BASE_A32 b1 size 21.83/23.10/8.98/11.53 | parent 31.8 s 2.16 GB | driver 32.9 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A32 b2 size 21.83/23.10/8.98/11.53 | parent 30.1 s 2.20 GB | driver 31.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    FULL_A32 b1 size 21.83/23.10/9.00/11.53 | parent 50.9 s 2.43 GB | driver 52.2 s | OK | child aa 16349 ms gen 19.4 s obs 18 s VmHWM 2.86 GB | wait 19.5 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL_A32 b2 size 21.83/23.10/9.00/11.53 | parent 57.2 s 2.33 GB | driver 58.6 s | OK | child aa 15327 ms gen 20.7 s obs 21 s VmHWM 2.99 GB | wait 21.1 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    BASE_A128 b1 size 22.48/23.75/9.65/11.53 | parent 29.5 s 2.16 GB | driver 30.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A128 b2 size 22.48/23.75/9.65/11.53 | parent 29.1 s 2.29 GB | driver 30.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    FULL_A128 b1 size 22.48/23.75/9.67/11.53 | parent 52.0 s 2.39 GB | driver 53.2 s | OK | child aa 20621 ms gen 25.5 s obs 25 s VmHWM 2.88 GB | wait 25.6 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL_A128 b2 size 22.48/23.75/9.67/11.53 | parent 60.0 s 2.38 GB | driver 61.2 s | OK | child aa 24078 ms gen 29.1 s obs 29 s VmHWM 2.89 GB | wait 29.6 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    BASE_A256 b1 size 23.46/24.73/10.68/11.53 | parent 31.6 s 2.21 GB | driver 32.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    BASE_A256 b2 size 23.46/24.73/10.67/11.53 | parent 26.1 s 2.17 GB | driver 27.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+antlr                    FULL_A256 b1 size 23.53/24.80/10.69/11.53 | parent 55.1 s 2.35 GB | driver 56.0 s | OK | child aa 24575 ms gen 31.1 s obs 31 s VmHWM 2.85 GB | wait 31.1 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+antlr                    FULL_A256 b2 size 23.53/24.80/10.69/11.53 | parent 58.3 s 2.32 GB | driver 59.8 s | OK | child aa 23553 ms gen 27.6 s obs 28 s VmHWM 2.89 GB | wait 27.6 s | SBS=1 SV=19(ACC=18 ELEM=0) LS=0(JOINER=0) | IC=3677 TC=281 MIRROR=13 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+antlr                    FULL/BASE  parent wall 33.1 -> 51.6 s (x1.56)  Peak RSS 2.12 -> 2.55 GB (x1.20)  child VmHWM 2.84 GB  size 22.02 -> 22.02 MB (x1.000)  status OK,OK
+antlr                    BASE_A32/BASE  parent wall 33.1 -> 31.0 s (x0.94)  Peak RSS 2.12 -> 2.18 GB (x1.03)  child VmHWM ? GB  size 22.02 -> 21.83 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+antlr                    FULL_A32/BASE  parent wall 33.1 -> 54.0 s (x1.63)  Peak RSS 2.12 -> 2.38 GB (x1.12)  child VmHWM 2.92 GB  size 22.02 -> 21.83 MB (x0.991)  status OK,OK
+antlr                    BASE_A128/BASE  parent wall 33.1 -> 29.3 s (x0.89)  Peak RSS 2.12 -> 2.23 GB (x1.05)  child VmHWM ? GB  size 22.02 -> 22.48 MB (x1.021)  status NO-PROFILE,NO-PROFILE
+antlr                    FULL_A128/BASE  parent wall 33.1 -> 56.0 s (x1.69)  Peak RSS 2.12 -> 2.38 GB (x1.12)  child VmHWM 2.89 GB  size 22.02 -> 22.48 MB (x1.021)  status OK,OK
+antlr                    BASE_A256/BASE  parent wall 33.1 -> 28.9 s (x0.87)  Peak RSS 2.12 -> 2.19 GB (x1.03)  child VmHWM ? GB  size 22.02 -> 23.46 MB (x1.065)  status NO-PROFILE,NO-PROFILE
+antlr                    FULL_A256/BASE  parent wall 33.1 -> 56.7 s (x1.71)  Peak RSS 2.12 -> 2.33 GB (x1.10)  child VmHWM 2.87 GB  size 22.02 -> 23.53 MB (x1.068)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+antlr                    FULL SBS=1 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    BASE_A32 no profile  NO-PROFILE
+antlr                    FULL_A32 SBS=1 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    BASE_A128 no profile  NO-PROFILE
+antlr                    FULL_A128 SBS=1 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+antlr                    BASE_A256 no profile  NO-PROFILE
+antlr                    FULL_A256 SBS=1 SV=19 (ACC=18 ELEM=0) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+antlr                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.9 s
+antlr                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.3 s
+antlr                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.6 s
+antlr                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.4 s
+antlr                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 32.7 s
+antlr                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 27.3 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

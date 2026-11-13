@@ -1,0 +1,73 @@
+1792862831.829584 ========================================================================================================================
+1792862831.830996 GraalVM Native Image: Generating 'biojava-BASE-b2' (executable)...
+1792862831.831013 ========================================================================================================================
+1792862831.831024 For detailed information and explanations on the build output, visit:
+1792862831.831036 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792862831.831054 ------------------------------------------------------------------------------------------------------------------------
+1792862833.542811 [1/8] Initializing...                                                                                    (2.5s @ 0.56GB)
+1792862833.543079  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792862833.543220  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792862833.543302  C compiler: gcc (linux, x86_64, 15.2.0)
+1792862833.543454  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792862833.543487  2 user-specific feature(s):
+1792862833.543733  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792862833.543752  - org.eclipse.angus.activation.nativeimage.AngusActivationFeature
+1792862833.544439 ------------------------------------------------------------------------------------------------------------------------
+1792862833.544478  1 experimental option(s) unlocked:
+1792862833.544510  - '-H:CodeAlignment' (origin(s): command line)
+1792862833.545538 ------------------------------------------------------------------------------------------------------------------------
+1792862833.545564 Build resources:
+1792862833.545623  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792862833.545682  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792862833.561231 Skipped 778 predefined class(es) because the classpath already contains a class with the same name: org.apache.logging.log4j.core.config.ConfigurationAware, org.apache.logging.log4j.core.async.BlockingQueueFactory, org.apache.logging.log4j.core.net.SocketOptions, org.apache.logging.log4j.core.appender.db.jdbc.ColumnConfig, org.apache.logging.log4j.core.config.plugins.visitors.PluginBuilderAttributeVisitor, org.apache.logging.log4j.core.util.datetime.FixedDateFormat$FixedFormat, org.apache.logging.log4j.core.async.AsyncLoggerConfig, org.biojava.nbio.core.sequence.DataSource, org.apache.logging.log4j.core.appender.DefaultErrorHandler, org.apache.logging.log4j.core.config.Node, ...
+1792862840.015477 [2/8] Performing analysis...  [*****]                                                                    (6.2s @ 1.94GB)
+1792862840.051916    12,376 types,  19,187 fields, and  58,700 methods found reachable
+1792862840.053232     4,547 types,   1,291 fields, and   7,146 methods registered for reflection
+1792862840.053281        63 types,      69 fields, and      55 methods registered for JNI access
+1792862840.053309         0 downcalls and 0 upcalls registered for foreign access
+1792862840.053353         4 native libraries: dl, pthread, rt, z
+1792862841.889079 [3/8] Building universe...                                                                               (1.8s @ 2.32GB)
+1792862842.617985 [4/8] Parsing methods...      [*]                                                                        (0.7s @ 1.90GB)
+1792862843.363243 [5/8] Inlining methods...     [***]                                                                      (0.5s @ 2.03GB)
+1792862849.904331 [6/8] Compiling methods...    [***]                                                                      (6.5s @ 1.85GB)
+1792862853.715809 [7/8] Laying out methods...   [**]                                                                       (3.8s @ 2.07GB)
+1792862856.706227 [8/8] Creating image...       [**]                                                                       (2.7s @ 2.32GB)
+1792862856.706505   30.78MB (47.72%) for code area:    37,444 compilation units
+1792862856.706581   28.05MB (43.49%) for image heap:  301,758 objects and 168 resources
+1792862856.706602    5.66MB ( 8.78%) for other data
+1792862856.706627   64.49MB in total image size, 61.34MB in total file size
+1792862856.706669 ------------------------------------------------------------------------------------------------------------------------
+1792862856.707397 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792862856.707666   10.98MB java.base                                            7.85MB byte[] for code metadata
+1792862856.707700    8.17MB java.desktop                                         3.94MB byte[] for java.lang.String
+1792862856.707754    3.71MB java.xml                                             2.74MB java.lang.String
+1792862856.707788    3.27MB AAProperties-jar-with-dependencies.jar               2.48MB com.oracle.svm.core.hub.DynamicHubCompanion
+1792862856.707821    1.65MB svm.jar (Native Image)                               1.70MB java.lang.Class
+1792862856.707858  495.50kB java.management                                    840.69kB byte[] for general heap data
+1792862856.707911  303.91kB dacapo-evaluation-git-e947cbfc.jar                 620.56kB byte[] for reflection metadata
+1792862856.707964  215.94kB jdk.zipfs                                          528.91kB java.util.HashMap$Node
+1792862856.707994  132.85kB java.datatransfer                                  526.41kB int[][]
+1792862856.708026  118.62kB java.logging                                       511.03kB java.lang.Object[]
+1792862856.708386  607.97kB for 17 more packages                                 6.32MB for 2550 more object types
+1792862856.729846 ------------------------------------------------------------------------------------------------------------------------
+1792862856.729919 Recommendations:
+1792862856.729935  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792862856.729949  AWT:  Use the tracing agent to collect metadata for AWT.
+1792862856.729964  HEAP: Set max heap for improved and more predictable memory usage.
+1792862856.729980  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792862856.733956 ------------------------------------------------------------------------------------------------------------------------
+1792862856.734721                        1.8s (6.8% of total time) in 142 GCs | Peak RSS: 4.17GB | CPU load: 13.01
+1792862856.735044 ------------------------------------------------------------------------------------------------------------------------
+1792862856.735051 Build artifacts:
+1792862856.735386  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/biojava-BASE-b2 (executable)
+1792862856.735400  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libawt.so (jdk_library)
+1792862856.735413  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libawt_headless.so (jdk_library)
+1792862856.735427  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libawt_xawt.so (jdk_library)
+1792862856.735444  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libfontmanager.so (jdk_library)
+1792862856.735460  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libjava.so (jdk_library_shim)
+1792862856.735472  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libjavajpeg.so (jdk_library)
+1792862856.735485  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libjvm.so (jdk_library_shim)
+1792862856.735497  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/liblcms.so (jdk_library)
+1792862856.735510  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/libmanagement_ext.so (jdk_library)
+1792862856.735524 ========================================================================================================================
+1792862856.735592 Finished generating 'biojava-BASE-b2' in 25.7s.

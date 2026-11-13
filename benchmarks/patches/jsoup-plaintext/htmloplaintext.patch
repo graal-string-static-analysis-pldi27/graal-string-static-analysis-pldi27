@@ -1,0 +1,41 @@
+diff --git a/src/main/java/org/jsoup/examples/HtmlToPlainText.java b/src/main/java/org/jsoup/examples/HtmlToPlainText.java
+index 9b98ca9..3915be3 100644
+--- a/src/main/java/org/jsoup/examples/HtmlToPlainText.java
++++ b/src/main/java/org/jsoup/examples/HtmlToPlainText.java
+@@ -11,6 +11,7 @@ import org.jsoup.nodes.TextNode;
+ import org.jsoup.select.Elements;
+ import org.jsoup.select.NodeVisitor;
+ 
++import java.io.File;
+ import java.io.IOException;
+ import java.util.HashSet;
+ 
+@@ -36,10 +37,11 @@ public class HtmlToPlainText {
+         final String selector = args.length == 2 ? args[1] : null;
+ 
+         // fetch the specified URL and parse to a HTML DOM:
+-        Connection session = Jsoup.newSession() // .newSession creates a session to maintain settings and cookies across multiple requests
+-            .userAgent(userAgent)
+-            .timeout(timeout);
+-        Document doc = session.newRequest(url).get(); // .get executes a GET request, and parses the result
++        // hunt4 harness change (see ADAPT.md): file input instead of network -- Jsoup.parse(new File(url), "UTF-8")
++        // replaces the upstream session.newRequest(url).get() fetch; the file is re-parsed on every rep of the
++        // repetition loop below (hunt.reps, default 1) so a native census can reach steady state.
++        Document doc = Jsoup.parse(new File(url), "UTF-8");
++        int reps = Integer.getInteger("hunt.reps", 1);
+ 
+         if (selector != null) {
+             Elements elements = doc.select(selector); // get each element that matches the CSS selector
+@@ -49,7 +51,11 @@ public class HtmlToPlainText {
+                 System.out.println(plainText);
+             }
+         } else { // format the whole doc
+-            String plainText = getPlainText(doc);
++            String plainText = null;
++            for (int i = 0; i < reps; i++) {
++                doc = Jsoup.parse(new File(url), "UTF-8");
++                plainText = getPlainText(doc);
++            }
+             System.out.println(plainText);
+         }
+     }

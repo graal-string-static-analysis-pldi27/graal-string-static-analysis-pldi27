@@ -1,0 +1,18 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XP1  CFGS=BASE FULL  RPB=5  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## gson  starts BASE:15 FULL:15  time keys 11
+  FULL/BASE time  ratio 0.9964  (mean FULL 0.9959 n=15, BASE 0.9994 n=15)  error margin 0.0187 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9886  (mean FULL 0.9886 n=15, BASE 1.0000 n=15)  error margin 0.0000 (max sd)  paper-significance FASTER/LESS
+    key parse document=READER_LONG api=GSON_BIND                     BASE 649134 sd 1.79e+04  FULL 659614 sd 2.41e+04  [lower]
+    key parse document=READER_LONG api=GSON_DOM                      BASE 652187 sd 5.82e+04  FULL 680941 sd 8.79e+04  [lower]
+    key parse document=READER_LONG api=GSON_STREAM                   BASE 569508 sd 1.41e+04  FULL 572730 sd 1.77e+04  [lower]
+    key parse document=READER_SHORT api=GSON_BIND                    BASE 48586.6 sd 1.7e+03  FULL 48205.2 sd 1.6e+03  [lower]
+    key parse document=READER_SHORT api=GSON_DOM                     BASE 67326.3 sd 3e+03  FULL 69065.5 sd 2.86e+03  [lower]
+    key parse document=READER_SHORT api=GSON_STREAM                  BASE 49143 sd 2.59e+03  FULL 49632.9 sd 2.15e+03  [lower]
+    key parse document=TWEETS api=GSON_BIND                          BASE 575368 sd 7.85e+03  FULL 568706 sd 5.48e+03  [lower]
+    key parse document=TWEETS api=GSON_DOM                           BASE 355526 sd 5.05e+03  FULL 356733 sd 6.44e+03  [lower]
+    key parse document=TWEETS api=GSON_STREAM                        BASE 241493 sd 3.23e+03  FULL 239914 sd 3.78e+03  [lower]
+    key serialize pretty=false                                       BASE 896 sd 8.42  FULL 846.4 sd 14.5  [lower]
+    key serialize pretty=true                                        BASE 1163.8 sd 13.5  FULL 1099.47 sd 21.2  [lower]
+
+PAPER30-DONE

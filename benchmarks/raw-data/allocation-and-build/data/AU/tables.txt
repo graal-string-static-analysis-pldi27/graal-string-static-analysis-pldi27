@@ -1,0 +1,49 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/AU  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+json-parser              BASE b1 size 13.96/14.84/5.35/7.67 | parent 10.9 s 2.11 GB | driver 11.6 s REUSED
+json-parser              BASE b2 size 13.96/14.84/5.35/7.67 | parent 10.4 s 2.08 GB | driver 11.1 s REUSED
+json-parser              BASE b3 size 13.96/14.84/5.35/7.67 | parent 10.6 s 2.11 GB | driver 11.2 s REUSED
+json-parser              FULL b1 size 13.96/14.85/5.39/7.67 | parent 20.6 s 2.28 GB | driver 21.3 s | OK | child aa 7584 ms gen 9.8 s obs 10 s VmHWM 3.33 GB | wait 10.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL b2 size 13.96/14.85/5.39/7.67 | parent 20.5 s 2.24 GB | driver 21.1 s | OK | child aa 7544 ms gen 9.7 s obs 9 s VmHWM 3.40 GB | wait 10.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+json-parser              FULL b3 size 13.96/14.85/5.39/7.67 | parent 20.9 s 2.27 GB | driver 21.5 s | OK | child aa 7577 ms gen 9.7 s obs 9 s VmHWM 3.26 GB | wait 10.0 s | SBS=65 SV=2(ACC=0 ELEM=0) LS=1(JOINER=0) | IC=2882 TC=217 MIRROR=0 EXACT=0 other=47 REUSED
+biojava                  BASE b1 size 61.34/64.49/30.78/28.05 | parent 26.0 s 4.61 GB | driver 27.0 s REUSED
+biojava                  BASE b2 size 61.34/64.49/30.78/28.05 | parent 25.7 s 4.17 GB | driver 26.5 s REUSED
+biojava                  BASE b3 size 61.34/64.49/30.78/28.05 | parent 25.2 s 4.82 GB | driver 26.0 s REUSED
+biojava                  FULL b1 size 61.54/64.69/30.94/28.11 | parent 52.6 s 5.92 GB | driver 53.4 s | OK | child aa 21851 ms gen 24.6 s obs 24 s VmHWM 7.79 GB | wait 25.0 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9482 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL b2 size 61.54/64.69/30.94/28.11 | parent 53.0 s 5.87 GB | driver 53.9 s | OK | child aa 22484 ms gen 25.3 s obs 25 s VmHWM 7.17 GB | wait 25.5 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9481 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+biojava                  FULL b3 size 61.54/64.69/30.94/28.11 | parent 53.0 s 5.63 GB | driver 53.8 s | OK | child aa 22529 ms gen 25.4 s obs 25 s VmHWM 7.69 GB | wait 25.5 s | SBS=40 SV=228(ACC=154 ELEM=9) LS=1(JOINER=0) | IC=9480 TC=934 MIRROR=126 EXACT=0 other=13 REUSED
+jsoup                    BASE b1 size 15.34/16.31/6.08/8.26 | parent 10.7 s 2.15 GB | driver 11.3 s REUSED
+jsoup                    BASE b2 size 15.34/16.31/6.08/8.26 | parent 10.5 s 2.12 GB | driver 11.1 s REUSED
+jsoup                    BASE b3 size 15.34/16.31/6.08/8.26 | parent 10.7 s 2.15 GB | driver 11.4 s REUSED
+jsoup                    FULL b1 size 15.40/16.37/6.10/8.32 | parent 21.3 s 2.29 GB | driver 21.9 s | OK | child aa 7593 ms gen 9.9 s obs 9 s VmHWM 2.79 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL b2 size 15.40/16.37/6.10/8.32 | parent 21.4 s 2.29 GB | driver 22.1 s | OK | child aa 7563 ms gen 9.8 s obs 9 s VmHWM 2.82 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+jsoup                    FULL b3 size 15.40/16.37/6.10/8.32 | parent 21.4 s 2.29 GB | driver 22.1 s | OK | child aa 7387 ms gen 9.6 s obs 9 s VmHWM 2.87 GB | wait 10.0 s | SBS=0 SV=11(ACC=6 ELEM=1) LS=0(JOINER=0) | IC=3270 TC=230 MIRROR=7 EXACT=0 other=1 REUSED
+regex-redux              BASE b1 size 13.90/14.78/5.34/7.67 | parent 10.4 s 2.05 GB | driver 11.1 s REUSED
+regex-redux              BASE b2 size 13.90/14.78/5.34/7.67 | parent 10.5 s 2.08 GB | driver 11.1 s REUSED
+regex-redux              BASE b3 size 13.90/14.78/5.34/7.67 | parent 10.2 s 2.09 GB | driver 10.8 s REUSED
+regex-redux              FULL b1 size 13.96/14.84/5.35/7.67 | parent 18.1 s 2.25 GB | driver 18.7 s | OK | child aa 5236 ms gen 7.4 s obs 7 s VmHWM 2.33 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              FULL b2 size 13.96/14.84/5.35/7.67 | parent 18.1 s 2.26 GB | driver 18.7 s | OK | child aa 5194 ms gen 7.4 s obs 8 s VmHWM 2.37 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+regex-redux              FULL b3 size 13.96/14.84/5.35/7.67 | parent 18.2 s 2.26 GB | driver 18.8 s | OK | child aa 5223 ms gen 7.4 s obs 8 s VmHWM 2.36 GB | wait 7.5 s | SBS=0 SV=1(ACC=0 ELEM=1) LS=0(JOINER=0) | IC=2848 TC=221 MIRROR=0 EXACT=0 other=0 REUSED
+luindex                  BASE b1 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.43 GB | driver 17.5 s REUSED
+luindex                  BASE b2 size 33.69/35.57/15.81/16.25 | parent 16.7 s 2.42 GB | driver 17.4 s REUSED
+luindex                  BASE b3 size 33.69/35.57/15.81/16.25 | parent 16.8 s 2.41 GB | driver 17.4 s REUSED
+luindex                  FULL b1 size 33.88/35.77/15.89/16.32 | parent 36.1 s 2.67 GB | driver 36.8 s | OK | child aa 15257 ms gen 18.0 s obs 18 s VmHWM 6.26 GB | wait 17.5 s | SBS=1 SV=125(ACC=99 ELEM=1) LS=148(JOINER=0) | IC=4292 TC=379 MIRROR=52 EXACT=1 other=12 REUSED
+luindex                  FULL b2 size 33.88/35.77/15.89/16.32 | parent 36.5 s 2.75 GB | driver 37.2 s | OK | child aa 15224 ms gen 17.8 s obs 17 s VmHWM 6.17 GB | wait 18.0 s | SBS=1 SV=125(ACC=99 ELEM=1) LS=148(JOINER=0) | IC=4295 TC=379 MIRROR=52 EXACT=1 other=12 REUSED
+luindex                  FULL b3 size 33.88/35.77/15.89/16.32 | parent 36.1 s 2.77 GB | driver 36.8 s | OK | child aa 15043 ms gen 17.6 s obs 18 s VmHWM 6.17 GB | wait 18.0 s | SBS=1 SV=125(ACC=99 ELEM=1) LS=148(JOINER=0) | IC=4290 TC=379 MIRROR=52 EXACT=1 other=12 REUSED
+## build cost vs stock (means over builds)
+json-parser              FULL/BASE  parent wall 10.6 -> 20.7 s (x1.94)  Peak RSS 2.10 -> 2.26 GB (x1.08)  child VmHWM 3.33 GB  size 13.96 -> 13.96 MB (x1.000)  status OK,OK,OK
+biojava                  FULL/BASE  parent wall 25.6 -> 52.9 s (x2.06)  Peak RSS 4.53 -> 5.81 GB (x1.28)  child VmHWM 7.55 GB  size 61.34 -> 61.54 MB (x1.003)  status OK,OK,OK
+jsoup                    FULL/BASE  parent wall 10.6 -> 21.4 s (x2.01)  Peak RSS 2.14 -> 2.29 GB (x1.07)  child VmHWM 2.83 GB  size 15.34 -> 15.40 MB (x1.004)  status OK,OK,OK
+regex-redux              FULL/BASE  parent wall 10.4 -> 18.1 s (x1.75)  Peak RSS 2.07 -> 2.26 GB (x1.09)  child VmHWM 2.35 GB  size 13.90 -> 13.96 MB (x1.005)  status OK,OK,OK
+luindex                  FULL/BASE  parent wall 16.8 -> 36.2 s (x2.16)  Peak RSS 2.42 -> 2.73 GB (x1.13)  child VmHWM 6.20 GB  size 33.69 -> 33.88 MB (x1.006)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+json-parser              FULL SBS=65 SV=2 (ACC=0 ELEM=0) LS=1 (JOINER=0)  OK
+biojava                  FULL SBS=40 SV=228 (ACC=154 ELEM=9) LS=1 (JOINER=0)  OK
+jsoup                    FULL SBS=0 SV=11 (ACC=6 ELEM=1) LS=0 (JOINER=0)  OK
+regex-redux              FULL SBS=0 SV=1 (ACC=0 ELEM=1) LS=0 (JOINER=0)  OK
+luindex                  FULL SBS=1 SV=125 (ACC=99 ELEM=1) LS=148 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: biojava FULL: admit counts differ across builds; luindex FULL: admit counts differ across builds
+TABLES-DONE

@@ -1,0 +1,71 @@
+Java VM args: -XX:+PrintGCSummary 
+Warming up Java compiler....
+     load_legacy_java_ascii average time    61us size  65584b over 3500 loads of 29191 symbols from Parser.java
+     load_legacy_java_ascii average time    14us size  32816b over 3500 loads of  7552 symbols from RuleContext.java
+      load_legacy_java_utf8 average time    52us size  65584b over 3500 loads of 29191 symbols from Parser.java
+      load_legacy_java_utf8 average time    70us size  32816b over 3500 loads of 13379 symbols from udhr_hin.txt
+              load_new_utf8 average time    38us size  29296b over 3500 loads of 29191 symbols from Parser.java
+              load_new_utf8 average time     8us size   7656b over 3500 loads of  7552 symbols from RuleContext.java
+              load_new_utf8 average time    78us size  31888b over 3500 loads of 13379 symbols from udhr_hin.txt
+
+       lex_legacy_java_utf8 average time   522us over 2000 runs of 29191 symbols
+       lex_legacy_java_utf8 average time  1177us over 2000 runs of 29191 symbols DFA cleared
+          lex_new_java_utf8 average time   571us over 2000 runs of 29191 symbols
+          lex_new_java_utf8 average time  1225us over 2000 runs of 29191 symbols DFA cleared
+
+   lex_legacy_grapheme_utf8 average time  4817us over  400 runs of  6614 symbols from udhr_kor.txt
+   lex_legacy_grapheme_utf8 average time  4944us over  400 runs of  6614 symbols from udhr_kor.txt DFA cleared
+   lex_legacy_grapheme_utf8 average time  9997us over  400 runs of 13379 symbols from udhr_hin.txt
+   lex_legacy_grapheme_utf8 average time 10487us over  400 runs of 13379 symbols from udhr_hin.txt DFA cleared
+      lex_new_grapheme_utf8 average time  5183us over  400 runs of  6614 symbols from udhr_kor.txt
+      lex_new_grapheme_utf8 average time  5315us over  400 runs of  6614 symbols from udhr_kor.txt DFA cleared
+      lex_new_grapheme_utf8 average time 10383us over  400 runs of 13379 symbols from udhr_hin.txt
+      lex_new_grapheme_utf8 average time 10437us over  400 runs of 13379 symbols from udhr_hin.txt DFA cleared
+      lex_new_grapheme_utf8 average time    87us over  400 runs of    85 symbols from emoji.txt
+      lex_new_grapheme_utf8 average time   100us over  400 runs of    85 symbols from emoji.txt DFA cleared
+Parser.java (29191 char): org.antlr.v4.runtime.ANTLRInputStream@fdd5ae6d footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         1     65552     65552   [C
+         1        32        32   org.antlr.v4.runtime.ANTLRInputStream
+         2               65584   (total)
+
+RuleContext.java (7552 char): org.antlr.v4.runtime.ANTLRInputStream@5e0cbc65d footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         1     32784     32784   [C
+         1        32        32   org.antlr.v4.runtime.ANTLRInputStream
+         2               32816   (total)
+
+Parser.java (29191 char): org.antlr.v4.runtime.ANTLRInputStream@41fc7918d footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         1     65552     65552   [C
+         1        32        32   org.antlr.v4.runtime.ANTLRInputStream
+         2               65584   (total)
+
+udhr_hin.txt (13379 char): org.antlr.v4.runtime.ANTLRInputStream@10afff4bd footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         1     32784     32784   [C
+         1        32        32   org.antlr.v4.runtime.ANTLRInputStream
+         2               32816   (total)
+
+Parser.java (29191 char): org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream@cc16557d footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         2     14620     29240   [B
+         1        24        24   java.lang.String
+         1        32        32   org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream
+         4               29296   (total)
+
+RuleContext.java (7552 char): org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream@67ce618dd footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         2      3800      7600   [B
+         1        24        24   java.lang.String
+         1        32        32   org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream
+         4                7656   (total)
+
+udhr_hin.txt (13379 char): org.antlr.v4.runtime.CodePointCharStream$CodePoint16BitCharStream@8a3d67cd footprint:
+     COUNT       AVG       SUM   DESCRIPTION
+         1        32        32   [B
+         1     31800     31800   [C
+         1        24        24   java.lang.String
+         1        32        32   org.antlr.v4.runtime.CodePointCharStream$CodePoint16BitCharStream
+         4               31888   (total)
+

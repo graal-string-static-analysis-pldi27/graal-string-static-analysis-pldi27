@@ -1,0 +1,28 @@
+# CL8  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+java-json-benchmark      FULL   |   0.999   0.998   0.998 0.998[0.998,0.998]        0.998 | 1.003/0.990/1.000 | 18/18 | 0 | 2
+log4j2-plc               FULL   |   1.000   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 1/1 | 0 | 0
+
+## CL8 java-json-benchmark FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+G:databind.Deserialization.avajejsonb                         13.09  12.91   0.98    5964.6    5995.9  1.005   11.5   11.4
+G:databind.Deserialization.dsljson                            15.79  16.13   1.02    5858.0    5740.1  0.980   13.7   13.7
+G:databind.Deserialization.gson                                4.60   4.51   0.98   18808.1   18813.4  1.000   12.8   12.6
+G:databind.Deserialization.moshi                               3.85   3.88   1.00    6437.4    6436.7  1.000    3.7    3.7
+G:stream.Deserialization.gson                                  5.23   5.23   1.00   18742.9   18769.1  1.001   14.5   14.5
+G:stream.Deserialization.jakartajson                           0.04   0.04   1.00  740805.9  748031.2  1.010    4.3    4.4
+G:stream.Deserialization.minimaljson                           3.78   3.81   1.00   23195.9   23203.1  1.000   12.9   13.1
+G:stream.Deserialization.moshi                                 3.80   3.80   1.00    7808.0    7804.7  1.000    4.4    4.4
+G:stream.Deserialization.orgjson                               0.73   0.74   1.01   16400.5   16423.8  1.001    1.8    1.8
+G:databind.Serialization.avajejsonb                           13.74  13.62   0.99     842.4     819.3  0.973    1.7    1.7
+G:databind.Serialization.dsljson                              16.10  16.17   1.00     184.5     185.0  1.003    0.4    0.4
+G:databind.Serialization.gson                                  3.53   3.49   0.99    1230.3    1229.3  0.999    0.6    0.6
+G:databind.Serialization.moshi                                 2.77   2.72   0.98    1342.7    1341.8  0.999    0.6    0.5
+G:stream.Serialization.gson                                    1.11   1.12   1.00   34322.0   34274.7  0.999    5.6    5.7
+G:stream.Serialization.jakartajson                             4.53   4.49   0.99    6990.7    6995.2  1.001    4.7    4.6
+G:stream.Serialization.minimaljson                             3.61   3.62   1.00    7872.5    7885.5  1.002    4.2    4.2
+G:stream.Serialization.moshi                                   2.90   2.88   0.99    1278.4    1279.2  1.001    0.5    0.5
+G:stream.Serialization.orgjson                                 0.80   0.83   1.03   17268.8   16971.4  0.983    2.0    2.1
+
+## CL8 log4j2-plc FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+PatternLayoutComparisonBenchmark.log4j2                      100.00 100.00   0.97     440.4     440.4  1.000  100.0  100.0
+

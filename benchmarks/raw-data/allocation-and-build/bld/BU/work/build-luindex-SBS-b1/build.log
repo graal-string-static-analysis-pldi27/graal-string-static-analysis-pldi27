@@ -1,0 +1,95 @@
+1794014367.176197 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794014367.176279 Warning: '-H:+UnlockExperimentalVMOptions' was used repeatedly. Please check your build arguments, for example with '--verbose', and ensure experimental options are not unlocked more than once. Use '-H:-UnlockExperimentalVMOptions' to lock access to experimental options again.
+1794014368.271247 ========================================================================================================================
+1794014368.272881 GraalVM Native Image: Generating 'luindex-SBS-b1' (executable)...
+1794014368.272913 ========================================================================================================================
+1794014368.272926 For detailed information and explanations on the build output, visit:
+1794014368.272942 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794014368.272957 ------------------------------------------------------------------------------------------------------------------------
+1794014369.962182 [1/8] Initializing...                                                                                    (2.3s @ 0.58GB)
+1794014369.962503  Java version: 25.0.2-internal-adhoc.anonymous.labs-openjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794014369.962651  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794014369.962739  C compiler: gcc (linux, x86_64, 15.2.0)
+1794014369.962870  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794014369.962905  1 user-specific feature(s):
+1794014369.963179  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794014369.964189 ------------------------------------------------------------------------------------------------------------------------
+1794014369.964210  5 experimental option(s) unlocked:
+1794014369.964256  - '-H:+SharedArenaSupport' (origin(s): command line)
+1794014369.964272  - '-H:+StringAnalysisSingleByteOnly' (origin(s): command line)
+1794014369.964284  - '-H:CodeAlignment' (origin(s): command line)
+1794014369.964297  - '-H:+StringAnalysisKeepProfile' (origin(s): command line)
+1794014369.964316  - '-H:+StringAnalysis' (origin(s): command line)
+1794014369.965428 ------------------------------------------------------------------------------------------------------------------------
+1794014369.965447 Build resources:
+1794014369.965528  - 45.81GB of memory (34.1% of system memory, set via '-Xmx48g')
+1794014369.965575  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794014369.966039 [string-analysis-fork] KeepProfile: retaining profile at /tmp/string-analysis-profile7968957875768444391.txt
+1794014369.966066 [string-analysis-fork] KeepProfile: retaining child log at /tmp/string-analysis-child817819297691868200.log
+1794014369.966748 [string-analysis-fork] Forking child profile: /tmp/string-analysis-profile7968957875768444391.txt
+1794014369.966805 [string-analysis-fork] Child java: /home/anonymous/graal-ce/graal/sdk/mxbuild/linux-amd64/GRAALVM_COMMUNITY_JAVA25/graalvm-community-openjdk-25.0.2.1/bin/java -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct ... -H:+StringAnalysisFork -H:StringAnalysisDumpProfile=... -H:+ReturnAfterAnalysis
+1794014369.966841 [string-analysis-fork] Child log: /tmp/string-analysis-child817819297691868200.log
+1794014369.986511 Skipped 863 predefined class(es) because the classpath already contains a class with the same name: org.apache.lucene.index.MultiReader, org.apache.lucene.backward_codecs.lucene87.Lucene87StoredFieldsFormat$Mode, org.apache.lucene.util.ArrayTimSorter, org.apache.lucene.util.compress.LZ4$FastCompressionHashTable, org.apache.lucene.codecs.DocValuesProducer, org.apache.lucene.index.FieldInfos$Builder, org.apache.lucene.codecs.lucene94.Lucene94FieldInfosFormat, org.apache.lucene.util.fst.ReverseBytesReader, org.apache.lucene.backward_codecs.lucene86.Lucene86PointsReader, org.apache.lucene.util.packed.PackedInts$ReaderIterator, ...
+1794014370.266570 [string-analysis-timing] beforeAnalysis start: 0ms (process start)
+1794014370.266628 [string-analysis-fork] Waiting for child profile: /tmp/string-analysis-profile7968957875768444391.txt
+1794014384.785775 [string-analysis-fork] Loaded 4294 entries from child profile: /tmp/string-analysis-profile7968957875768444391.txt
+1794014384.785821 [string-analysis-fork] KeepProfile: profile retained at /tmp/string-analysis-profile7968957875768444391.txt
+1794014384.786228 [string-analysis-timing] beforeAnalysis done: 14519ms
+1794014389.443651 [string-analysis-timing] afterAnalysis start: 19177ms (gap since beforeAnalysis done: 4657ms)
+1794014389.461692 [2/8] Performing analysis...  [*****]                                                                    (4.7s @ 1.16GB)
+1794014389.483783     6,982 types,  11,205 fields, and  33,549 methods found reachable
+1794014389.484478     2,367 types,     663 fields, and   3,287 methods registered for reflection
+1794014389.484551        63 types,      76 fields, and      54 methods registered for JNI access
+1794014389.484578         0 downcalls and 0 upcalls registered for foreign access
+1794014389.484601         4 native libraries: dl, pthread, rt, z
+1794014390.774944 [3/8] Building universe...                                                                               (1.3s @ 1.20GB)
+1794014390.782715 [string-analysis] exactpi mode=1 chain=1 marked guards emitted: direct=3154 chain-else=255 chain-flat=247 acc=0 (chain sites=256, aot-parse sites=0); at strengthen: present=3889 (inlined copies=1373) removed=3535 (inlined copies=1117) killed-dead=354 folded-throw=0 (marked deopts left=0) surviving=0 (inlined copies=0); partB-ifs=0 partB-ifs-left=0; attributed=ok
+1794014390.783261 [string-analysis] ic-widen: maxreps=5 lowered sites: chain=7 chain/widened=1 collapsed=93 collapsed/widened=155 direct=2110 direct/widened=1282; declined sites: no-entry=250 terminal-body-unmarked=4
+1794014390.783391 [ic-widen-decline-by-method] no-entry {charAt(I)C=12, coder()B=120, concat(Ljava/lang/String;)Ljava/lang/String;=14, equals(Ljava/lang/Object;)Z=12, equalsIgnoreCase(Ljava/lang/String;)Z=1, hashCode()I=2, indexOf(I)I=1, indexOf(II)I=2, isEmpty()Z=2, length()I=81, startsWith(Ljava/lang/String;)Z=1, toCharArray()[C=1, toUpperCase(Ljava/util/Locale;)Ljava/lang/String;=1}
+1794014390.783428 [ic-widen-decline-by-method] terminal-body-unmarked {coder()B=2, value()[B=2}
+1794014390.783454 [ic-widen-multiflat] Part-B else filters with >=2 flat arms: 0
+1794014390.783483 [ic-widen-value-null-inherits] sites (print-only, expected 0): 0
+1794014390.783687 [string-analysis] ic-flatstock: 1 stock-path flat calls=3648 legacy (interface caller)=0 legacy (null receiver)=0
+1794014390.784056 [string-analysis] codegen-knobs: chain rep-arm ifs=8 swap sites=0 xd.rangecopy=1 ic.exactfirst=0 (exact-first ifs=0) super sites=0 super casts=0
+1794014390.784557 [string-analysis] ic-csfinal: rep-excluded supertype sites=400 (diamonds=400 guards=0) by decl={CharSequence.charAt=82, CharSequence.getChars=1, CharSequence.length=53, CharSequence.subSequence=14, CharSequence.toString=29, Object.equals=115, Object.hashCode=66, Object.toString=40} rep-list sites left stock=18 unproven sites left stock=0; at strengthen: ifs=389 (dead-arm=1 iba-free nodes=0 folded=2) ifs left=0
+1794014390.784675 [string-analysis] concat-copy: sites=0 lowered-parses=0 count.diag=false
+1794014390.785033 [string-analysis] mirror-append: sites=0 lowered-parses=0 arms=0 lowered-keys=0
+1794014390.785745 [string-analysis] typecheck-ic: mode=1 list=2 lowered exact=337/36 list=3/0 (cast/inst parses) stock: no-line=147/4 unproven=0/0 kt-only=0/0 mismatch=0/0 list-cap=0/0 unknown-rep=0/0 constant=0 check-guards=0 profile-lines=379
+1794014391.338524 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.42GB)
+1794014391.855729 [5/8] Inlining methods...     [***]                                                                      (0.3s @ 1.35GB)
+1794014396.243459 [6/8] Compiling methods...    [**]                                                                       (4.4s @ 1.19GB)
+1794014398.427945 [7/8] Laying out methods...   [**]                                                                       (2.2s @ 1.51GB)
+1794014398.450002 [string-analysis] r2-trivial: active=true graphs with rep arms=1, made trivial by the discount=0; graphs with a rep call but no recognised arm=1 (first 5: [org.apache.commons.cli.PosixParser.burstToken(String, boolean)]); graphs with a rep-test If that is no arm=0
+1794014399.159603 [string-analysis-dc] clinitsim-repaborts=0
+1794014399.210218 [string-analysis-dc] heapreps=0 poolreps=256 {com.oracle.svm.core.stringrep.SingleByteString.POOL=256} poolarrayrefs={CODE=1} scanned=183431
+1794014400.370729 [8/8] Creating image...       [*]                                                                        (1.7s @ 1.74GB)
+1794014400.371028   15.81MB (44.45%) for code area:    21,337 compilation units
+1794014400.371110   16.25MB (45.70%) for image heap:  183,431 objects and 67 resources
+1794014400.371146    3.50MB ( 9.85%) for other data
+1794014400.371171   35.57MB in total image size, 33.69MB in total file size
+1794014400.371211 ------------------------------------------------------------------------------------------------------------------------
+1794014400.371857 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794014400.372073    8.21MB java.base                                            4.11MB byte[] for code metadata
+1794014400.372113    3.42MB lucene-core-9.10.0-SNAPSHOT.jar                      2.32MB byte[] for java.lang.String
+1794014400.372142    1.56MB svm.jar (Native Image)                               1.57MB java.lang.String
+1794014400.372182  930.90kB lucene-backward-codecs-9.10.0-SNAPSHOT.jar           1.40MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794014400.372213  303.08kB dacapo-evaluation-git-e947cbfc.jar                 947.75kB java.lang.Class
+1794014400.372240  214.84kB jdk.zipfs                                          673.89kB byte[] for general heap data
+1794014400.372295  113.51kB java.logging                                       407.28kB heap alignment
+1794014400.372327   93.47kB org.graalvm.nativeimage.base                       393.87kB java.lang.Object[]
+1794014400.372354   81.95kB jdk.charsets                                       352.32kB java.util.HashMap$Node
+1794014400.372398   55.32kB jdk.proxy2                                         288.07kB byte[] for reflection metadata
+1794014400.372795  206.67kB for 15 more packages                                 3.79MB for 1585 more object types
+1794014400.373972 ------------------------------------------------------------------------------------------------------------------------
+1794014400.373978 Recommendations:
+1794014400.374012  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794014400.374026  HEAP: Set max heap for improved and more predictable memory usage.
+1794014400.374036  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794014400.376763 ------------------------------------------------------------------------------------------------------------------------
+1794014400.377436                         1.4s (4.1% of total time) in 264 GCs | Peak RSS: 2.74GB | CPU load: 7.70
+1794014400.377754 ------------------------------------------------------------------------------------------------------------------------
+1794014400.377759 Build artifacts:
+1794014400.378094  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/BU/bin/libmanagement_ext.so (jdk_library)
+1794014400.378114  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/BU/bin/luindex-SBS-b1 (executable)
+1794014400.378128 ========================================================================================================================
+1794014400.378174 Finished generating 'luindex-SBS-b1' in 32.8s.

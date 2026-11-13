@@ -1,0 +1,13 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB1  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## owasp  starts BASE:15 SBS:15 SV:15 LS:15  time keys 2
+  SBS/BASE time  ratio 1.0046  (mean SBS 1.0046 n=15, BASE 1.0000 n=15)  error margin 0.0085 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0000  (mean SBS 1.0000 n=15, BASE 1.0000 n=15)  error margin 0.0001 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9979  (mean SV 0.9979 n=15, BASE 1.0000 n=15)  error margin 0.0089 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9507  (mean SV 0.9507 n=15, BASE 1.0000 n=15)  error margin 0.0005 (max sd)  paper-significance FASTER/LESS
+  LS/BASE time  ratio 1.0055  (mean LS 1.0055 n=15, BASE 1.0000 n=15)  error margin 0.0070 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0000  (mean LS 1.0000 n=15, BASE 1.0000 n=15)  error margin 0.0000 (max sd)  paper-significance n.s.
+    key sanitize custom                                              BASE 4.6931e+08 sd 3.46e+06  SBS 4.70617e+08 sd 4.23e+06  SV 4.66506e+08 sd 3.8e+06  LS 4.71427e+08 sd 3.34e+06  [lower]
+    key sanitize w/ PB                                               BASE 4.06877e+08 sd 2.36e+06  SBS 4.09487e+08 sd 3.85e+06  SV 4.07571e+08 sd 4.47e+06  LS 4.09529e+08 sd 2.95e+06  [lower]
+
+PAPER30-DONE

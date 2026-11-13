@@ -1,0 +1,20 @@
+# C99 campaign results  SLOT=jsqlparser  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jsqlparser  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jsqlparser  [jmh] JSqlParser JSQLParserBenchmark version=latest (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.995 [0.983,1.008] n.s. (1 keys)  alloc 0.992 [0.992,0.992] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.014 [1.003,1.024] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.035 [1.017,1.053] SLOWER (1 keys)  alloc 0.992 [0.992,0.992] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 0.995 [0.977,1.012] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.994 [0.976,1.011] n.s. (1 keys)  alloc 0.992 [0.992,0.992] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.026 [1.014,1.038] SLOWER (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.018 [1.006,1.029] SLOWER (1 keys)  alloc 0.992 [0.992,0.992] LESS (1 keys)
+  JSQLParserBenchmark.parseSQLStatements latest                          FULL 0.995 [0.983,1.008] n.s. | BASE_A32 1.014 [1.003,1.024] SLOWER | FULL_A32 1.035 [1.017,1.053] SLOWER | BASE_A128 0.995 [0.977,1.012] n.s. | FULL_A128 0.994 [0.976,1.011] n.s. | BASE_A256 1.026 [1.014,1.038] SLOWER | FULL_A256 1.018 [1.006,1.029] SLOWER
+  ~alloc MB                                                              FULL 0.992 [0.992,0.992] LESS | BASE_A32 1.000 [1.000,1.000] n.s. | FULL_A32 0.992 [0.992,0.992] LESS | BASE_A128 1.000 [1.000,1.000] n.s. | FULL_A128 0.992 [0.992,0.992] LESS | BASE_A256 1.000 [1.000,1.000] n.s. | FULL_A256 0.992 [0.992,0.992] LESS
+  ~rss MB                                                                FULL 1.010 [1.004,1.017] MORE | BASE_A32 0.993 [0.988,0.999] LESS | FULL_A32 1.009 [1.004,1.015] MORE | BASE_A128 0.996 [0.990,1.003] n.s. | FULL_A128 1.012 [1.005,1.019] MORE | BASE_A256 1.010 [1.005,1.015] MORE | FULL_A256 1.023 [1.014,1.032] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  jsqlparser                 0.995|0.992*      1.014*|1.000      1.035*|0.992*     0.995|1.000       0.994|0.992*      1.026*|1.000      1.018*|0.992*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

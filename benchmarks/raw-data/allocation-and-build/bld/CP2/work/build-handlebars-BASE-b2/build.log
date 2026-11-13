@@ -1,0 +1,61 @@
+1794233772.959436 ========================================================================================================================
+1794233772.961359 GraalVM Native Image: Generating 'handlebars-BASE-b2' (executable)...
+1794233772.961412 ========================================================================================================================
+1794233772.961440 For detailed information and explanations on the build output, visit:
+1794233772.961457 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1794233772.961479 ------------------------------------------------------------------------------------------------------------------------
+1794233774.445319 [1/8] Initializing...                                                                                    (2.2s @ 0.54GB)
+1794233774.445574  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1794233774.445690  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1794233774.445761  C compiler: gcc (linux, x86_64, 15.2.0)
+1794233774.445880  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1794233774.445907  1 user-specific feature(s):
+1794233774.446055  - com.oracle.svm.thirdparty.gson.GsonFeature
+1794233774.446631 ------------------------------------------------------------------------------------------------------------------------
+1794233774.446644  1 experimental option(s) unlocked:
+1794233774.446683  - '-H:CodeAlignment' (origin(s): command line)
+1794233774.447643 ------------------------------------------------------------------------------------------------------------------------
+1794233774.447659 Build resources:
+1794233774.447712  - 28.45GB of memory (21.2% of system memory, using available memory)
+1794233774.447747  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1794233779.299903 [2/8] Performing analysis...  [*****]                                                                    (4.5s @ 1.03GB)
+1794233779.323016     8,152 types,  12,577 fields, and  41,459 methods found reachable
+1794233779.323689     2,561 types,      97 fields, and   1,458 methods registered for reflection
+1794233779.323729        62 types,      63 fields, and      55 methods registered for JNI access
+1794233779.323756         0 downcalls and 0 upcalls registered for foreign access
+1794233779.323843         4 native libraries: dl, pthread, rt, z
+1794233780.602246 [3/8] Building universe...                                                                               (1.3s @ 1.26GB)
+1794233781.160985 [4/8] Parsing methods...      [*]                                                                        (0.5s @ 1.19GB)
+1794233781.769824 [5/8] Inlining methods...     [***]                                                                      (0.4s @ 1.35GB)
+1794233786.173048 [6/8] Compiling methods...    [**]                                                                       (4.4s @ 0.97GB)
+1794233788.619020 [7/8] Laying out methods...   [**]                                                                       (2.4s @ 1.19GB)
+1794233790.660977 [8/8] Creating image...       [*]                                                                        (1.9s @ 1.35GB)
+1794233790.661208   19.99MB (46.09%) for code area:    25,921 compilation units
+1794233790.661284   19.27MB (44.43%) for image heap:  213,704 objects and 155 resources
+1794233790.661373    4.11MB ( 9.48%) for other data
+1794233790.661404   43.37MB in total image size, 41.16MB in total file size
+1794233790.661445 ------------------------------------------------------------------------------------------------------------------------
+1794233790.662157 Top 10 origins of code area:                                Top 10 object types in image heap:
+1794233790.662412    8.45MB java.base                                            5.16MB byte[] for code metadata
+1794233790.662479    2.89MB java.xml                                             2.70MB byte[] for java.lang.String
+1794233790.662506    2.55MB nashorn-core-15.4.jar                                1.90MB java.lang.String
+1794233790.662534    1.46MB svm.jar (Native Image)                               1.63MB com.oracle.svm.core.hub.DynamicHubCompanion
+1794233790.662570  637.63kB logback-core-1.6.3.jar                               1.14MB java.lang.Class
+1794233790.662713  352.91kB java.rmi                                             1.00MB byte[] for general heap data
+1794233790.662743  336.46kB asm-7.3.1.jar                                      525.45kB int[][]
+1794233790.662771  318.22kB antlr4-runtime-4.13.2.jar                          427.67kB java.lang.Object[]
+1794233790.662834  282.71kB logback-classic-1.6.3.jar                          419.38kB java.util.HashMap$Node
+1794233790.662881  270.80kB com.github.jknack.handlebars.internal              354.42kB java.lang.String[]
+1794233790.663516    1.67MB for 39 more packages                                 4.01MB for 1915 more object types
+1794233790.664387 ------------------------------------------------------------------------------------------------------------------------
+1794233790.664401 Recommendations:
+1794233790.664422  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1794233790.664436  HEAP: Set max heap for improved and more predictable memory usage.
+1794233790.664501  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1794233790.667097 ------------------------------------------------------------------------------------------------------------------------
+1794233790.667678                        1.3s (7.0% of total time) in 227 GCs | Peak RSS: 2.51GB | CPU load: 13.86
+1794233790.668046 ------------------------------------------------------------------------------------------------------------------------
+1794233790.668053 Build artifacts:
+1794233790.668537  /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/bld/CP2/bin/handlebars-BASE-b2 (executable)
+1794233790.668553 ========================================================================================================================
+1794233790.668615 Finished generating 'handlebars-BASE-b2' in 18.5s.

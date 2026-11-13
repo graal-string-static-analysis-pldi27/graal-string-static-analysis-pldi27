@@ -1,0 +1,61 @@
+1792863245.429875 ========================================================================================================================
+1792863245.431360 GraalVM Native Image: Generating 'json-parser-BASE-b3' (executable)...
+1792863245.431384 ========================================================================================================================
+1792863245.431397 For detailed information and explanations on the build output, visit:
+1792863245.431410 https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+1792863245.431426 ------------------------------------------------------------------------------------------------------------------------
+1792863246.896509 [1/8] Initializing...                                                                                    (2.0s @ 0.35GB)
+1792863246.896775  Java version: 25.0.2-internal-adhoc.anonymous.labsjdk, vendor version: GraalVM CE 25.0.2-internal.1
+1792863246.896926  Graal compiler: optimization level: 2, target machine: x86-64-v3
+1792863246.896994  C compiler: gcc (linux, x86_64, 15.2.0)
+1792863246.897155  Garbage collector: Serial GC (max heap size: 80% of RAM)
+1792863246.897183  1 user-specific feature(s):
+1792863246.897406  - com.oracle.svm.thirdparty.gson.GsonFeature
+1792863246.898038 ------------------------------------------------------------------------------------------------------------------------
+1792863246.898058  1 experimental option(s) unlocked:
+1792863246.898126  - '-H:CodeAlignment' (origin(s): command line)
+1792863246.899162 ------------------------------------------------------------------------------------------------------------------------
+1792863246.899170 Build resources:
+1792863246.899256  - 28.45GB of memory (21.2% of system memory, using available memory)
+1792863246.899301  - 16 thread(s) (50.0% of 32 available processor(s), set via '--parallelism=16')
+1792863249.610557 [2/8] Performing analysis...  [******]                                                                   (2.6s @ 0.37GB)
+1792863249.623545     3,280 types,   3,736 fields, and  15,260 methods found reachable
+1792863249.624363     1,058 types,      36 fields, and     415 methods registered for reflection
+1792863249.624461        58 types,      59 fields, and      52 methods registered for JNI access
+1792863249.624487         0 downcalls and 0 upcalls registered for foreign access
+1792863249.624507         4 native libraries: dl, pthread, rt, z
+1792863250.373546 [3/8] Building universe...                                                                               (0.7s @ 0.44GB)
+1792863250.751393 [4/8] Parsing methods...      [*]                                                                        (0.4s @ 0.48GB)
+1792863251.075701 [5/8] Inlining methods...     [****]                                                                     (0.2s @ 0.50GB)
+1792863253.620565 [6/8] Compiling methods...    [**]                                                                       (2.5s @ 0.62GB)
+1792863254.477776 [7/8] Laying out methods...   [*]                                                                        (0.9s @ 0.55GB)
+1792863255.457226 [8/8] Creating image...       [*]                                                                        (0.9s @ 0.77GB)
+1792863255.457335    5.35MB (36.07%) for code area:     8,737 compilation units
+1792863255.457452    7.67MB (51.66%) for image heap:   88,894 objects and 55 resources
+1792863255.457472    1.82MB (12.26%) for other data
+1792863255.457493   14.84MB in total image size, 13.96MB in total file size
+1792863255.457527 ------------------------------------------------------------------------------------------------------------------------
+1792863255.458284 Top 10 origins of code area:                                Top 10 object types in image heap:
+1792863255.458552    3.73MB java.base                                            1.40MB byte[] for code metadata
+1792863255.458608  905.04kB svm.jar (Native Image)                               1.22MB byte[] for java.lang.String
+1792863255.458635  110.54kB java.logging                                       834.05kB java.lang.String
+1792863255.458693   90.80kB org.graalvm.nativeimage.base                       629.76kB com.oracle.svm.core.hub.DynamicHubCompanion
+1792863255.458720   48.90kB jdk.proxy2                                         485.49kB heap alignment
+1792863255.458759   40.09kB json                                               460.67kB byte[] for general heap data
+1792863255.458826   38.97kB jdk.proxy1                                         427.37kB java.lang.Class
+1792863255.458866   38.09kB org.graalvm.nativeimage.configure                  315.17kB java.util.HashMap$Node
+1792863255.458894   28.03kB jdk.internal.vm.ci                                 222.85kB java.lang.Object[]
+1792863255.458922   26.12kB jdk.graal.compiler                                 178.82kB java.util.HashMap$Node[]
+1792863255.459823   43.31kB for 11 more packages                                 1.49MB for 963 more object types
+1792863255.460753 ------------------------------------------------------------------------------------------------------------------------
+1792863255.460781 Recommendations:
+1792863255.460811  FUTR: Use '--future-defaults=all' to prepare for future releases.
+1792863255.460843  HEAP: Set max heap for improved and more predictable memory usage.
+1792863255.460877  CPU:  Enable more CPU features with '-march=native' for improved performance.
+1792863255.462635 ------------------------------------------------------------------------------------------------------------------------
+1792863255.463188                         0.6s (5.2% of total time) in 36 GCs | Peak RSS: 2.11GB | CPU load: 13.68
+1792863255.463487 ------------------------------------------------------------------------------------------------------------------------
+1792863255.463513 Build artifacts:
+1792863255.463861  /home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/out/T1/bin/json-parser-BASE-b3 (executable)
+1792863255.463923 ========================================================================================================================
+1792863255.463951 Finished generating 'json-parser-BASE-b3' in 10.6s.

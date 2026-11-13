@@ -1,0 +1,28 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XA1  CFGS=BASE FULL  RPB=3  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## antlr  starts BASE:36 FULL:36  time keys 21
+  FULL/BASE time  ratio 0.9968  (mean FULL 0.9946 n=36, BASE 0.9978 n=36)  error margin 0.0166 (max sd)  paper-significance n.s.
+  FULL/BASE alloc ratio 0.9994  (mean FULL 0.9994 n=36, BASE 1.0000 n=36)  error margin 0.0007 (max sd)  paper-significance n.s.
+    key lex_legacy_grapheme_utf8 udhr_hin DFA-cleared us             BASE 9436.28 sd 300  FULL 9250.72 sd 295  [lower]
+    key lex_legacy_grapheme_utf8 udhr_hin us                         BASE 9340.61 sd 223  FULL 9196.86 sd 224  [lower]
+    key lex_legacy_grapheme_utf8 udhr_kor DFA-cleared us             BASE 4740.94 sd 75.2  FULL 4674.25 sd 78.6  [lower]
+    key lex_legacy_grapheme_utf8 udhr_kor us                         BASE 4670.78 sd 77.8  FULL 4608.5 sd 99.4  [lower]
+    key lex_legacy_java_utf8 DFA-cleared us                          BASE 1088.5 sd 11.8  FULL 1092.72 sd 12.6  [lower]
+    key lex_legacy_java_utf8 us                                      BASE 494.333 sd 4.81  FULL 497.417 sd 9.31  [lower]
+    key lex_new_grapheme_utf8 emoji DFA-cleared us                   BASE 98.1111 sd 2.35  FULL 98.4167 sd 3.32  [lower]
+    key lex_new_grapheme_utf8 emoji us                               BASE 84.3333 sd 2.01  FULL 84.6944 sd 3.01  [lower]
+    key lex_new_grapheme_utf8 udhr_hin DFA-cleared us                BASE 9929.75 sd 274  FULL 9727.36 sd 382  [lower]
+    key lex_new_grapheme_utf8 udhr_hin us                            BASE 9834.22 sd 193  FULL 9657.17 sd 288  [lower]
+    key lex_new_grapheme_utf8 udhr_kor DFA-cleared us                BASE 4826.19 sd 116  FULL 4801.69 sd 143  [lower]
+    key lex_new_grapheme_utf8 udhr_kor us                            BASE 4743.86 sd 114  FULL 4715.17 sd 123  [lower]
+    key lex_new_java_utf8 DFA-cleared us                             BASE 1152.72 sd 30.6  FULL 1158.56 sd 28.7  [lower]
+    key lex_new_java_utf8 us                                         BASE 570.972 sd 17.2  FULL 571.861 sd 15.6  [lower]
+    key load_legacy_java_ascii Parser us                             BASE 45.0556 sd 5.94  FULL 46.75 sd 6.29  [lower]
+    key load_legacy_java_ascii RuleContext us                        BASE 17.7222 sd 2.58  FULL 18.0833 sd 3.11  [lower]
+    key load_legacy_java_utf8 Parser us                              BASE 43.9167 sd 4.9  FULL 44.6111 sd 6.29  [lower]
+    key load_legacy_java_utf8 udhr_hin us                            BASE 65.4444 sd 3.36  FULL 64.7778 sd 3.25  [lower]
+    key load_new_utf8 Parser us                                      BASE 33.6111 sd 3.27  FULL 32.9444 sd 3.09  [lower]
+    key load_new_utf8 RuleContext us                                 BASE 8.61111 sd 1.42  FULL 8.61111 sd 1.15  [lower]
+    key load_new_utf8 udhr_hin us                                    BASE 74.5556 sd 3.28  FULL 73.3889 sd 3.67  [lower]
+
+PAPER30-DONE

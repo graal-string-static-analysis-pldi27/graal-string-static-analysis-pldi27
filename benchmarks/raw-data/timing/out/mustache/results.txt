@@ -1,0 +1,24 @@
+# C99 campaign results  SLOT=mustache  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/mustache  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## mustache  [jmh] mustache.java TweetBench|Main (hunt/ab-b34 candspec)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 0.996 [0.987,1.005] n.s. (5 keys)  alloc 1.002 [0.994,1.009] n.s. (1 keys)
+  GEOMEAN BASE_A32/BASE  time 0.966 [0.957,0.975] FASTER (5 keys)  alloc 1.031 [1.023,1.039] MORE (1 keys)
+  GEOMEAN FULL_A32/BASE  time 0.963 [0.955,0.971] FASTER (5 keys)  alloc 1.032 [1.024,1.039] MORE (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.005 [0.980,1.031] n.s. (5 keys)  alloc 0.997 [0.974,1.020] n.s. (1 keys)
+  GEOMEAN FULL_A128/BASE  time 0.998 [0.991,1.005] n.s. (5 keys)  alloc 1.001 [0.993,1.010] n.s. (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.002 [0.992,1.012] n.s. (5 keys)  alloc 0.997 [0.990,1.004] n.s. (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.003 [0.996,1.010] n.s. (5 keys)  alloc 0.995 [0.989,1.001] n.s. (1 keys)
+  Main.benchEscapeHTML                                                   FULL 1.022 [1.015,1.030] SLOWER | BASE_A32 0.929 [0.922,0.936] FASTER | FULL_A32 0.947 [0.939,0.955] FASTER | BASE_A128 0.993 [0.986,1.001] n.s. | FULL_A128 1.019 [1.008,1.031] SLOWER | BASE_A256 0.994 [0.972,1.016] n.s. | FULL_A256 1.025 [1.017,1.032] SLOWER
+  Main.benchEscapeHTMLwithSW                                             FULL 1.004 [0.993,1.014] n.s. | BASE_A32 0.995 [0.987,1.004] n.s. | FULL_A32 0.989 [0.981,0.996] FASTER | BASE_A128 1.005 [0.994,1.016] n.s. | FULL_A128 1.004 [0.989,1.020] n.s. | BASE_A256 1.002 [0.988,1.017] n.s. | FULL_A256 1.001 [0.993,1.009] n.s.
+  TweetBench.testCompilation                                             FULL 0.983 [0.976,0.990] FASTER | BASE_A32 1.000 [0.990,1.011] n.s. | FULL_A32 0.976 [0.967,0.984] FASTER | BASE_A128 0.980 [0.967,0.993] FASTER | FULL_A128 0.981 [0.972,0.990] FASTER | BASE_A256 1.008 [0.999,1.018] n.s. | FULL_A256 0.998 [0.989,1.008] n.s.
+  TweetBench.testExecution                                               FULL 0.982 [0.950,1.015] n.s. | BASE_A32 0.951 [0.917,0.986] FASTER | FULL_A32 0.943 [0.913,0.973] FASTER | BASE_A128 1.018 [0.950,1.092] n.s. | FULL_A128 0.989 [0.957,1.021] n.s. | BASE_A256 1.011 [0.976,1.048] n.s. | FULL_A256 0.988 [0.962,1.015] n.s.
+  TweetBench.testTimeline                                                FULL 0.989 [0.973,1.006] n.s. | BASE_A32 0.955 [0.951,0.960] FASTER | FULL_A32 0.962 [0.961,0.963] FASTER | BASE_A128 1.028 [0.980,1.082] n.s. | FULL_A128 0.998 [0.988,1.009] n.s. | BASE_A256 0.993 [0.984,1.001] n.s. | FULL_A256 1.002 [1.000,1.005] SLOWER
+  ~alloc MB                                                              FULL 1.002 [0.994,1.009] n.s. | BASE_A32 1.031 [1.023,1.039] MORE | FULL_A32 1.032 [1.024,1.039] MORE | BASE_A128 0.997 [0.974,1.020] n.s. | FULL_A128 1.001 [0.993,1.010] n.s. | BASE_A256 0.997 [0.990,1.004] n.s. | FULL_A256 0.995 [0.989,1.001] n.s.
+  ~rss MB                                                                FULL 0.997 [0.992,1.002] n.s. | BASE_A32 0.997 [0.989,1.005] n.s. | FULL_A32 0.998 [0.993,1.003] n.s. | BASE_A128 1.011 [1.002,1.020] MORE | FULL_A128 1.004 [1.001,1.007] MORE | BASE_A256 1.012 [1.008,1.017] MORE | FULL_A256 1.012 [1.008,1.016] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  mustache                   0.996|1.002       0.966*|1.031*     0.963*|1.032*     1.005|0.997       0.998|1.001       1.002|0.997       1.003|0.995      
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

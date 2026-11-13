@@ -1,0 +1,24 @@
+# C99 campaign results  SLOT=thymeleaf  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/thymeleaf  CFGS=BASE FULL BASE_A32 FULL_A32 BASE_A128 FULL_A128 BASE_A256 FULL_A256  runs/build=1  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## thymeleaf  [jmh] thymeleaf GTVG JMH (ab-cmb recipe)  builds BASE:2 FULL:2 BASE_A32:2 FULL_A32:2 BASE_A128:2 FULL_A128:2 BASE_A256:2 FULL_A256:2  starts parsed=16
+  GEOMEAN FULL/BASE  time 1.009 [1.000,1.018] n.s. (5 keys)  alloc 0.950 [0.942,0.959] LESS (1 keys)
+  GEOMEAN BASE_A32/BASE  time 1.015 [1.012,1.018] SLOWER (5 keys)  alloc 0.985 [0.981,0.989] LESS (1 keys)
+  GEOMEAN FULL_A32/BASE  time 1.016 [1.012,1.021] SLOWER (5 keys)  alloc 0.943 [0.938,0.949] LESS (1 keys)
+  GEOMEAN BASE_A128/BASE  time 1.013 [1.007,1.018] SLOWER (5 keys)  alloc 0.987 [0.981,0.992] LESS (1 keys)
+  GEOMEAN FULL_A128/BASE  time 1.021 [1.018,1.024] SLOWER (5 keys)  alloc 0.940 [0.936,0.943] LESS (1 keys)
+  GEOMEAN BASE_A256/BASE  time 1.023 [1.015,1.032] SLOWER (5 keys)  alloc 0.977 [0.968,0.985] LESS (1 keys)
+  GEOMEAN FULL_A256/BASE  time 1.027 [1.015,1.040] SLOWER (5 keys)  alloc 0.933 [0.921,0.946] LESS (1 keys)
+  GTVGHome.benchmark                                                     FULL 1.002 [0.994,1.011] n.s. | BASE_A32 1.025 [1.013,1.037] SLOWER | FULL_A32 1.020 [1.006,1.034] SLOWER | BASE_A128 1.015 [1.004,1.026] SLOWER | FULL_A128 1.019 [1.009,1.029] SLOWER | BASE_A256 1.028 [1.019,1.037] SLOWER | FULL_A256 1.033 [1.017,1.050] SLOWER
+  GTVGOrderDetails.benchmark                                             FULL 1.012 [1.001,1.023] SLOWER | BASE_A32 1.006 [0.997,1.015] n.s. | FULL_A32 1.012 [1.004,1.021] SLOWER | BASE_A128 1.012 [1.006,1.018] SLOWER | FULL_A128 1.019 [1.017,1.022] SLOWER | BASE_A256 1.022 [1.016,1.028] SLOWER | FULL_A256 1.028 [1.020,1.037] SLOWER
+  GTVGOrderList.benchmark                                                FULL 1.018 [1.010,1.027] SLOWER | BASE_A32 1.017 [1.015,1.019] SLOWER | FULL_A32 1.017 [1.013,1.022] SLOWER | BASE_A128 1.012 [1.011,1.014] SLOWER | FULL_A128 1.022 [1.014,1.030] SLOWER | BASE_A256 1.030 [1.026,1.033] SLOWER | FULL_A256 1.034 [1.018,1.051] SLOWER
+  GTVGProductComments.benchmark                                          FULL 1.008 [0.996,1.019] n.s. | BASE_A32 1.022 [1.013,1.031] SLOWER | FULL_A32 1.012 [1.001,1.023] SLOWER | BASE_A128 1.013 [1.002,1.023] SLOWER | FULL_A128 1.022 [1.010,1.034] SLOWER | BASE_A256 1.019 [1.006,1.033] SLOWER | FULL_A256 1.019 [1.006,1.031] SLOWER
+  GTVGProductList.benchmark                                              FULL 1.005 [0.992,1.018] n.s. | BASE_A32 1.006 [1.002,1.011] SLOWER | FULL_A32 1.019 [1.015,1.023] SLOWER | BASE_A128 1.011 [0.998,1.025] n.s. | FULL_A128 1.023 [1.020,1.025] SLOWER | BASE_A256 1.018 [1.002,1.035] SLOWER | FULL_A256 1.022 [1.006,1.039] SLOWER
+  ~alloc MB                                                              FULL 0.950 [0.942,0.959] LESS | BASE_A32 0.985 [0.981,0.989] LESS | FULL_A32 0.943 [0.938,0.949] LESS | BASE_A128 0.987 [0.981,0.992] LESS | FULL_A128 0.940 [0.936,0.943] LESS | BASE_A256 0.977 [0.968,0.985] LESS | FULL_A256 0.933 [0.921,0.946] LESS
+  ~rss MB                                                                FULL 1.001 [0.996,1.006] n.s. | BASE_A32 0.999 [0.998,0.999] LESS | FULL_A32 0.999 [0.994,1.004] n.s. | BASE_A128 1.011 [1.001,1.021] MORE | FULL_A128 1.010 [1.008,1.012] MORE | BASE_A256 1.019 [1.015,1.024] MORE | FULL_A256 1.017 [1.014,1.020] MORE
+
+## mode table: row geomean vs BASE, time | alloc  (* = CI excludes 1.0)
+  row                        FULL              BASE_A32          FULL_A32          BASE_A128         FULL_A128         BASE_A256         FULL_A256        
+  thymeleaf                  1.009|0.950*      1.015*|0.985*     1.016*|0.943*     1.013*|0.987*     1.021*|0.940*     1.023*|0.977*     1.027*|0.933*    
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

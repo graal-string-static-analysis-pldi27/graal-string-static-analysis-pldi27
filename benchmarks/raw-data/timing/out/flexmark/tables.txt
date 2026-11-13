@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/flexmark  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+flexmark                 BASE b1 size 24.91/26.27/10.57/12.91 | parent 34.5 s 2.20 GB | driver 36.0 s REUSED
+flexmark                 BASE b2 size 24.91/26.27/10.57/12.91 | parent 30.0 s 2.20 GB | driver 30.9 s REUSED
+flexmark                 FULL b1 size 24.97/26.34/10.65/12.91 | parent 49.0 s 2.42 GB | driver 49.7 s | OK | child aa 19121 ms gen 23.5 s obs 24 s VmHWM 3.25 GB | wait 23.5 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 FULL b2 size 24.97/26.34/10.65/12.91 | parent 45.4 s 2.49 GB | driver 46.2 s | OK | child aa 17911 ms gen 21.1 s obs 20 s VmHWM 3.18 GB | wait 21.0 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 BASE_A32 b1 size 24.64/26.01/10.36/12.91 | parent 25.6 s 2.20 GB | driver 26.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 BASE_A32 b2 size 24.64/26.01/10.36/12.91 | parent 20.0 s 2.23 GB | driver 20.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 FULL_A32 b1 size 24.77/26.15/10.44/12.91 | parent 41.5 s 2.43 GB | driver 42.3 s | OK | child aa 16307 ms gen 20.0 s obs 20 s VmHWM 3.24 GB | wait 20.0 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 FULL_A32 b2 size 24.77/26.15/10.44/12.91 | parent 44.1 s 2.45 GB | driver 45.0 s | OK | child aa 15673 ms gen 20.1 s obs 20 s VmHWM 3.19 GB | wait 20.5 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 BASE_A128 b1 size 25.36/26.73/11.08/12.85 | parent 20.6 s 2.30 GB | driver 21.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 BASE_A128 b2 size 25.36/26.73/11.08/12.85 | parent 18.9 s 2.29 GB | driver 19.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 FULL_A128 b1 size 25.50/26.87/11.17/12.91 | parent 42.0 s 2.38 GB | driver 42.8 s | OK | child aa 18765 ms gen 21.6 s obs 21 s VmHWM 3.21 GB | wait 22.0 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 FULL_A128 b2 size 25.50/26.87/11.17/12.91 | parent 55.6 s 2.40 GB | driver 56.5 s | OK | child aa 22632 ms gen 27.1 s obs 26 s VmHWM 3.19 GB | wait 27.6 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 BASE_A256 b1 size 26.48/27.84/12.21/12.85 | parent 29.8 s 2.27 GB | driver 31.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 BASE_A256 b2 size 26.48/27.84/12.21/12.85 | parent 29.5 s 2.36 GB | driver 30.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+flexmark                 FULL_A256 b1 size 26.54/27.92/12.30/12.85 | parent 61.0 s 2.41 GB | driver 62.6 s | OK | child aa 22864 ms gen 27.6 s obs 28 s VmHWM 3.31 GB | wait 27.6 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4354 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+flexmark                 FULL_A256 b2 size 26.54/27.92/12.30/12.85 | parent 57.9 s 2.44 GB | driver 58.8 s | OK | child aa 21761 ms gen 27.4 s obs 27 s VmHWM 3.10 GB | wait 27.6 s | SBS=5 SV=154(ACC=105 ELEM=3) LS=23(JOINER=0) | IC=4351 TC=401 MIRROR=50 EXACT=3 other=11 REUSED
+## build cost vs stock (means over builds)
+flexmark                 FULL/BASE  parent wall 32.2 -> 47.2 s (x1.46)  Peak RSS 2.20 -> 2.46 GB (x1.12)  child VmHWM 3.22 GB  size 24.91 -> 24.97 MB (x1.003)  status OK,OK
+flexmark                 BASE_A32/BASE  parent wall 32.2 -> 22.8 s (x0.71)  Peak RSS 2.20 -> 2.21 GB (x1.01)  child VmHWM ? GB  size 24.91 -> 24.64 MB (x0.989)  status NO-PROFILE,NO-PROFILE
+flexmark                 FULL_A32/BASE  parent wall 32.2 -> 42.8 s (x1.33)  Peak RSS 2.20 -> 2.44 GB (x1.11)  child VmHWM 3.21 GB  size 24.91 -> 24.77 MB (x0.995)  status OK,OK
+flexmark                 BASE_A128/BASE  parent wall 32.2 -> 19.8 s (x0.61)  Peak RSS 2.20 -> 2.29 GB (x1.04)  child VmHWM ? GB  size 24.91 -> 25.36 MB (x1.018)  status NO-PROFILE,NO-PROFILE
+flexmark                 FULL_A128/BASE  parent wall 32.2 -> 48.8 s (x1.51)  Peak RSS 2.20 -> 2.39 GB (x1.09)  child VmHWM 3.20 GB  size 24.91 -> 25.50 MB (x1.024)  status OK,OK
+flexmark                 BASE_A256/BASE  parent wall 32.2 -> 29.6 s (x0.92)  Peak RSS 2.20 -> 2.31 GB (x1.05)  child VmHWM ? GB  size 24.91 -> 26.48 MB (x1.063)  status NO-PROFILE,NO-PROFILE
+flexmark                 FULL_A256/BASE  parent wall 32.2 -> 59.5 s (x1.84)  Peak RSS 2.20 -> 2.42 GB (x1.10)  child VmHWM 3.21 GB  size 24.91 -> 26.54 MB (x1.066)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+flexmark                 FULL SBS=5 SV=154 (ACC=105 ELEM=3) LS=23 (JOINER=0)  OK
+flexmark                 BASE_A32 no profile  NO-PROFILE
+flexmark                 FULL_A32 SBS=5 SV=154 (ACC=105 ELEM=3) LS=23 (JOINER=0)  OK
+flexmark                 BASE_A128 no profile  NO-PROFILE
+flexmark                 FULL_A128 SBS=5 SV=154 (ACC=105 ELEM=3) LS=23 (JOINER=0)  OK
+flexmark                 BASE_A256 no profile  NO-PROFILE
+flexmark                 FULL_A256 SBS=5 SV=154 (ACC=105 ELEM=3) LS=23 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+flexmark                 BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 26.8 s
+flexmark                 BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 20.7 s
+flexmark                 BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 21.4 s
+flexmark                 BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 19.6 s
+flexmark                 BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 31.2 s
+flexmark                 BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 30.6 s
+## determinism: flexmark FULL_A256: admit counts differ across builds
+TABLES-DONE

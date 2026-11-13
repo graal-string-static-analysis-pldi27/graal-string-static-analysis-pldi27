@@ -1,0 +1,10 @@
+# C99 campaign results  SLOT=CL5  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL5-jsqlparser-FULL-sf1  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## jsqlparser  [jmh] JSqlParser JSQLParserBenchmark version=latest (hunt/ab-b34 candspec)  builds BASE:3 FULL:3  starts parsed=12
+  GEOMEAN FULL/BASE  time 1.021 [1.008,1.034] SLOWER (1 keys)  alloc 0.973 [0.959,0.987] LESS (1 keys)
+  JSQLParserBenchmark.parseSQLStatements latest                          FULL 1.021 [1.008,1.034] SLOWER
+  ~alloc MB                                                              FULL 0.973 [0.959,0.987] LESS  BIMODAL(BASE)
+  ~rss MB                                                                FULL 0.928 [0.888,0.977] LESS
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE

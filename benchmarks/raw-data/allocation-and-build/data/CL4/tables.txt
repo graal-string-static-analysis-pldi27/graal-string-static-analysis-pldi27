@@ -1,0 +1,49 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CL4  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+opennlp                  BASE b1 size 32.64/34.37/15.42/15.53 | parent 16.2 s 2.44 GB | driver 16.9 s REUSED
+opennlp                  BASE b2 size 32.64/34.37/15.42/15.53 | parent 16.3 s 2.43 GB | driver 16.9 s REUSED
+opennlp                  BASE b3 size 32.64/34.37/15.42/15.53 | parent 16.1 s 2.47 GB | driver 16.8 s REUSED
+opennlp                  FULL b1 size 33.23/34.97/15.52/16.06 | parent 35.2 s 2.73 GB | driver 36.0 s | OK | child aa 15318 ms gen 18.0 s obs 18 s VmHWM 6.29 GB | wait 18.0 s | SBS=4 SV=198(ACC=145 ELEM=5) LS=0(JOINER=0) | IC=6517 TC=650 MIRROR=104 EXACT=2 other=4 REUSED
+opennlp                  FULL b2 size 33.23/34.97/15.52/16.06 | parent 35.9 s 2.71 GB | driver 36.6 s | OK | child aa 15810 ms gen 18.5 s obs 18 s VmHWM 6.37 GB | wait 18.5 s | SBS=4 SV=198(ACC=145 ELEM=5) LS=0(JOINER=0) | IC=6517 TC=650 MIRROR=104 EXACT=2 other=4 REUSED
+opennlp                  FULL b3 size 33.23/34.97/15.52/16.06 | parent 35.8 s 2.74 GB | driver 36.6 s | OK | child aa 15479 ms gen 18.1 s obs 18 s VmHWM 6.02 GB | wait 18.5 s | SBS=4 SV=198(ACC=145 ELEM=5) LS=0(JOINER=0) | IC=6517 TC=650 MIRROR=104 EXACT=2 other=4 REUSED
+commonmark               BASE b1 size 23.46/24.78/9.88/12.26 | parent 13.7 s 2.36 GB | driver 14.3 s REUSED
+commonmark               BASE b2 size 23.46/24.78/9.88/12.26 | parent 13.9 s 2.36 GB | driver 14.5 s REUSED
+commonmark               BASE b3 size 23.46/24.78/9.88/12.26 | parent 13.5 s 2.36 GB | driver 14.2 s REUSED
+commonmark               FULL b1 size 23.60/24.92/9.99/12.26 | parent 27.8 s 2.58 GB | driver 28.5 s | OK | child aa 9980 ms gen 12.7 s obs 13 s VmHWM 3.50 GB | wait 13.0 s | SBS=8 SV=119(ACC=90 ELEM=3) LS=5(JOINER=0) | IC=3983 TC=367 MIRROR=43 EXACT=1 other=11 REUSED
+commonmark               FULL b2 size 23.60/24.92/9.99/12.26 | parent 27.4 s 2.54 GB | driver 28.0 s | OK | child aa 9908 ms gen 12.6 s obs 12 s VmHWM 3.43 GB | wait 12.5 s | SBS=8 SV=119(ACC=90 ELEM=3) LS=5(JOINER=0) | IC=3983 TC=367 MIRROR=43 EXACT=1 other=11 REUSED
+commonmark               FULL b3 size 23.60/24.92/9.99/12.26 | parent 27.8 s 2.52 GB | driver 28.4 s | OK | child aa 9911 ms gen 12.6 s obs 12 s VmHWM 3.29 GB | wait 13.0 s | SBS=8 SV=119(ACC=90 ELEM=3) LS=5(JOINER=0) | IC=3983 TC=367 MIRROR=43 EXACT=1 other=11 REUSED
+jackson                  BASE b1 size 27.07/28.69/12.13/13.37 | parent 15.7 s 2.47 GB | driver 16.3 s REUSED
+jackson                  BASE b2 size 27.07/28.69/12.13/13.37 | parent 15.4 s 2.44 GB | driver 16.0 s REUSED
+jackson                  BASE b3 size 27.07/28.69/12.13/13.37 | parent 15.6 s 2.44 GB | driver 16.3 s REUSED
+jackson                  FULL b1 size 27.07/28.69/12.18/13.37 | parent 33.2 s 2.61 GB | driver 33.9 s | OK | child aa 13628 ms gen 16.4 s obs 17 s VmHWM 5.16 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL b2 size 27.07/28.69/12.18/13.37 | parent 33.4 s 2.58 GB | driver 34.0 s | OK | child aa 13340 ms gen 16.2 s obs 17 s VmHWM 5.31 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL b3 size 27.07/28.69/12.18/13.37 | parent 33.6 s 2.60 GB | driver 34.4 s | OK | child aa 13852 ms gen 16.6 s obs 16 s VmHWM 5.31 GB | wait 17.0 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+pdfbox                   BASE b1 size 59.31/62.18/29.74/27.07 | parent 22.8 s 3.05 GB | driver 23.4 s REUSED
+pdfbox                   BASE b2 size 59.31/62.18/29.74/27.07 | parent 22.3 s 3.10 GB | driver 23.0 s REUSED
+pdfbox                   BASE b3 size 59.31/62.18/29.74/27.07 | parent 23.0 s 3.08 GB | driver 23.6 s REUSED
+pdfbox                   FULL b1 size 59.71/62.59/30.02/27.13 | parent 52.1 s 3.80 GB | driver 52.9 s | OK | child aa 24855 ms gen 27.5 s obs 27 s VmHWM 9.31 GB | wait 27.5 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL b2 size 59.71/62.59/30.02/27.13 | parent 51.9 s 3.96 GB | driver 52.7 s | OK | child aa 24751 ms gen 27.4 s obs 26 s VmHWM 9.31 GB | wait 27.5 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+pdfbox                   FULL b3 size 59.71/62.59/30.02/27.13 | parent 52.6 s 3.88 GB | driver 53.4 s | OK | child aa 24637 ms gen 27.3 s obs 27 s VmHWM 9.22 GB | wait 27.5 s | SBS=6 SV=247(ACC=165 ELEM=17) LS=4(JOINER=0) | IC=9601 TC=1027 MIRROR=135 EXACT=0 other=5 REUSED
+snakeyaml                BASE b1 size 23.73/25.07/10.51/11.86 | parent 14.1 s 2.39 GB | driver 14.8 s REUSED
+snakeyaml                BASE b2 size 23.73/25.07/10.51/11.86 | parent 14.3 s 2.38 GB | driver 14.9 s REUSED
+snakeyaml                BASE b3 size 23.73/25.07/10.51/11.86 | parent 13.5 s 2.39 GB | driver 14.1 s REUSED
+snakeyaml                FULL b1 size 23.79/25.14/10.55/11.86 | parent 29.7 s 2.45 GB | driver 30.4 s | OK | child aa 11822 ms gen 14.4 s obs 14 s VmHWM 4.94 GB | wait 14.5 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL b2 size 23.79/25.14/10.55/11.86 | parent 29.8 s 2.46 GB | driver 30.5 s | OK | child aa 12017 ms gen 14.6 s obs 14 s VmHWM 4.82 GB | wait 14.5 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+snakeyaml                FULL b3 size 23.79/25.14/10.55/11.86 | parent 30.4 s 2.43 GB | driver 31.1 s | OK | child aa 12075 ms gen 14.6 s obs 15 s VmHWM 4.83 GB | wait 15.0 s | SBS=6 SV=198(ACC=169 ELEM=7) LS=0(JOINER=0) | IC=4176 TC=401 MIRROR=80 EXACT=0 other=3 REUSED
+## build cost vs stock (means over builds)
+opennlp                  FULL/BASE  parent wall 16.2 -> 35.6 s (x2.20)  Peak RSS 2.45 -> 2.73 GB (x1.11)  child VmHWM 6.23 GB  size 32.64 -> 33.23 MB (x1.018)  status OK,OK,OK
+commonmark               FULL/BASE  parent wall 13.7 -> 27.7 s (x2.02)  Peak RSS 2.36 -> 2.55 GB (x1.08)  child VmHWM 3.41 GB  size 23.46 -> 23.60 MB (x1.006)  status OK,OK,OK
+jackson                  FULL/BASE  parent wall 15.6 -> 33.4 s (x2.15)  Peak RSS 2.45 -> 2.60 GB (x1.06)  child VmHWM 5.26 GB  size 27.07 -> 27.07 MB (x1.000)  status OK,OK,OK
+pdfbox                   FULL/BASE  parent wall 22.7 -> 52.2 s (x2.30)  Peak RSS 3.08 -> 3.88 GB (x1.26)  child VmHWM 9.28 GB  size 59.31 -> 59.71 MB (x1.007)  status OK,OK,OK
+snakeyaml                FULL/BASE  parent wall 14.0 -> 30.0 s (x2.15)  Peak RSS 2.39 -> 2.45 GB (x1.03)  child VmHWM 4.86 GB  size 23.73 -> 23.79 MB (x1.003)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+opennlp                  FULL SBS=4 SV=198 (ACC=145 ELEM=5) LS=0 (JOINER=0)  OK
+commonmark               FULL SBS=8 SV=119 (ACC=90 ELEM=3) LS=5 (JOINER=0)  OK
+jackson                  FULL SBS=2 SV=168 (ACC=130 ELEM=6) LS=0 (JOINER=0)  OK
+pdfbox                   FULL SBS=6 SV=247 (ACC=165 ELEM=17) LS=4 (JOINER=0)  OK
+snakeyaml                FULL SBS=6 SV=198 (ACC=169 ELEM=7) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

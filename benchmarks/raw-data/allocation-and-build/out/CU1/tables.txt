@@ -1,0 +1,57 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/CU1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-batik             BASE b1 size 49.81/52.37/25.55/22.02 | parent 21.7 s 2.90 GB | driver 22.5 s REUSED
+dacapo-batik             BASE b2 size 49.81/52.37/25.55/22.02 | parent 21.5 s 2.87 GB | driver 22.2 s REUSED
+dacapo-batik             BASE b3 size 49.81/52.37/25.55/22.02 | parent 21.3 s 2.94 GB | driver 22.0 s REUSED
+dacapo-batik             FULL b1 size 49.88/52.44/25.60/22.02 | parent 43.7 s 3.78 GB | driver 44.4 s | OK | child aa 18220 ms gen 20.8 s obs 20 s VmHWM 4.59 GB | wait 21.0 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL b2 size 49.88/52.44/25.60/22.02 | parent 44.4 s 3.72 GB | driver 45.2 s | OK | child aa 18162 ms gen 20.8 s obs 21 s VmHWM 4.90 GB | wait 21.0 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8278 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-batik             FULL b3 size 49.88/52.44/25.60/22.02 | parent 43.7 s 3.80 GB | driver 44.4 s | OK | child aa 18122 ms gen 20.7 s obs 20 s VmHWM 4.88 GB | wait 21.0 s | SBS=1 SV=219(ACC=162 ELEM=0) LS=0(JOINER=0) | IC=8276 TC=654 MIRROR=98 EXACT=0 other=21 REUSED
+dacapo-fop               BASE b1 size 87.43/91.83/47.48/35.85 | parent 32.8 s 9.92 GB | driver 33.8 s REUSED
+dacapo-fop               BASE b2 size 87.43/91.83/47.48/35.85 | parent 31.8 s 8.96 GB | driver 32.8 s REUSED
+dacapo-fop               BASE b3 size 87.43/91.83/47.49/35.85 | parent 31.7 s 9.11 GB | driver 32.7 s REUSED
+dacapo-fop               FULL b1 size 87.75/92.16/47.73/35.91 | parent 82.0 s 12.71 GB | driver 83.4 s | OK | child aa 45626 ms gen 48.7 s obs 47 s VmHWM 19.90 GB | wait 48.6 s | SBS=13 SV=847(ACC=607 ELEM=14) LS=2(JOINER=0) | IC=14191 TC=1146 MIRROR=505 EXACT=0 other=56 REUSED
+dacapo-fop               FULL b2 size 87.75/92.16/47.73/35.91 | parent 83.0 s 12.03 GB | driver 84.4 s | OK | child aa 46828 ms gen 49.8 s obs 49 s VmHWM 17.48 GB | wait 48.6 s | SBS=13 SV=847(ACC=607 ELEM=14) LS=2(JOINER=0) | IC=14189 TC=1146 MIRROR=505 EXACT=0 other=56 REUSED
+dacapo-fop               FULL b3 size 87.75/92.16/47.73/35.91 | parent 81.0 s 12.20 GB | driver 82.7 s | OK | child aa 44362 ms gen 47.5 s obs 46 s VmHWM 18.16 GB | wait 47.6 s | SBS=13 SV=847(ACC=607 ELEM=14) LS=2(JOINER=0) | IC=14192 TC=1146 MIRROR=505 EXACT=0 other=56 REUSED
+dacapo-pmd               BASE b1 size 57.15/59.76/25.78/28.64 | parent 23.7 s 3.47 GB | driver 24.4 s REUSED
+dacapo-pmd               BASE b2 size 57.15/59.76/25.78/28.64 | parent 23.8 s 3.63 GB | driver 24.6 s REUSED
+dacapo-pmd               BASE b3 size 57.15/59.76/25.78/28.64 | parent 23.9 s 3.38 GB | driver 24.6 s REUSED
+dacapo-pmd               FULL b1 size 57.41/60.02/25.97/28.70 | parent 59.3 s 5.20 GB | driver 60.1 s | OK | child aa 31235 ms gen 34.2 s obs 34 s VmHWM 11.38 GB | wait 34.0 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b2 size 57.41/60.02/25.97/28.70 | parent 59.2 s 5.03 GB | driver 60.0 s | OK | child aa 31100 ms gen 34.0 s obs 34 s VmHWM 11.32 GB | wait 34.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b3 size 57.41/60.02/25.97/28.70 | parent 58.8 s 4.81 GB | driver 59.6 s | OK | child aa 30699 ms gen 33.6 s obs 33 s VmHWM 11.53 GB | wait 33.6 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-avrora            BASE b1 size 25.89/27.31/10.93/13.57 | parent 14.4 s 2.34 GB | driver 15.1 s REUSED
+dacapo-avrora            BASE b2 size 25.89/27.31/10.93/13.57 | parent 14.3 s 2.30 GB | driver 14.9 s REUSED
+dacapo-avrora            BASE b3 size 25.89/27.31/10.93/13.57 | parent 14.5 s 2.33 GB | driver 15.1 s REUSED
+dacapo-avrora            FULL b1 size 25.89/27.31/10.96/13.57 | parent 28.7 s 2.41 GB | driver 29.4 s | OK | child aa 10616 ms gen 13.2 s obs 12 s VmHWM 3.16 GB | wait 13.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL b2 size 25.89/27.31/10.96/13.57 | parent 28.1 s 2.40 GB | driver 28.8 s | OK | child aa 10389 ms gen 12.9 s obs 13 s VmHWM 3.18 GB | wait 13.0 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-avrora            FULL b3 size 25.89/27.31/10.96/13.57 | parent 28.7 s 2.38 GB | driver 29.4 s | OK | child aa 10483 ms gen 13.0 s obs 12 s VmHWM 3.20 GB | wait 13.5 s | SBS=13 SV=401(ACC=372 ELEM=3) LS=0(JOINER=0) | IC=4056 TC=328 MIRROR=171 EXACT=0 other=16 REUSED
+dacapo-xalan             BASE b1 size 36.57/38.37/16.86/18.02 | parent 17.4 s 2.44 GB | driver 18.1 s REUSED
+dacapo-xalan             BASE b2 size 36.57/38.37/16.86/18.02 | parent 17.0 s 2.44 GB | driver 17.7 s REUSED
+dacapo-xalan             BASE b3 size 36.57/38.37/16.86/18.02 | parent 17.6 s 2.44 GB | driver 18.3 s REUSED
+dacapo-xalan             FULL b1 size 36.70/38.50/16.92/18.09 | parent 35.7 s 3.00 GB | driver 36.5 s | OK | child aa 13920 ms gen 16.5 s obs 17 s VmHWM 4.12 GB | wait 17.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL b2 size 36.70/38.50/16.91/18.09 | parent 36.2 s 2.92 GB | driver 36.9 s | OK | child aa 14269 ms gen 16.9 s obs 16 s VmHWM 3.81 GB | wait 17.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-xalan             FULL b3 size 36.70/38.50/16.91/18.09 | parent 35.7 s 3.10 GB | driver 36.4 s | OK | child aa 14108 ms gen 16.7 s obs 17 s VmHWM 3.91 GB | wait 17.0 s | SBS=1 SV=225(ACC=141 ELEM=0) LS=0(JOINER=0) | IC=7894 TC=648 MIRROR=102 EXACT=0 other=8 REUSED
+dacapo-zxing             BASE b1 size 41.36/43.12/17.53/22.22 | parent 18.4 s 2.37 GB | driver 19.1 s REUSED
+dacapo-zxing             BASE b2 size 41.36/43.12/17.53/22.22 | parent 18.1 s 2.40 GB | driver 18.7 s REUSED
+dacapo-zxing             BASE b3 size 41.36/43.12/17.53/22.22 | parent 17.6 s 2.38 GB | driver 18.3 s REUSED
+dacapo-zxing             FULL b1 size 41.42/43.19/17.60/22.22 | parent 35.4 s 2.91 GB | driver 36.2 s | OK | child aa 13413 ms gen 15.9 s obs 16 s VmHWM 3.60 GB | wait 16.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL b2 size 41.42/43.19/17.60/22.22 | parent 35.5 s 2.89 GB | driver 36.2 s | OK | child aa 13662 ms gen 16.1 s obs 15 s VmHWM 3.61 GB | wait 16.5 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+dacapo-zxing             FULL b3 size 41.42/43.19/17.60/22.22 | parent 35.0 s 2.90 GB | driver 35.7 s | OK | child aa 13259 ms gen 15.8 s obs 16 s VmHWM 3.68 GB | wait 16.0 s | SBS=1 SV=186(ACC=145 ELEM=2) LS=0(JOINER=0) | IC=5468 TC=450 MIRROR=108 EXACT=0 other=5 REUSED
+## build cost vs stock (means over builds)
+dacapo-batik             FULL/BASE  parent wall 21.5 -> 43.9 s (x2.04)  Peak RSS 2.90 -> 3.77 GB (x1.30)  child VmHWM 4.79 GB  size 49.81 -> 49.88 MB (x1.001)  status OK,OK,OK
+dacapo-fop               FULL/BASE  parent wall 32.1 -> 82.0 s (x2.55)  Peak RSS 9.33 -> 12.31 GB (x1.32)  child VmHWM 18.51 GB  size 87.43 -> 87.75 MB (x1.004)  status OK,OK,OK
+dacapo-pmd               FULL/BASE  parent wall 23.8 -> 59.1 s (x2.48)  Peak RSS 3.49 -> 5.01 GB (x1.44)  child VmHWM 11.41 GB  size 57.15 -> 57.41 MB (x1.005)  status OK,OK,OK
+dacapo-avrora            FULL/BASE  parent wall 14.4 -> 28.5 s (x1.98)  Peak RSS 2.32 -> 2.40 GB (x1.03)  child VmHWM 3.18 GB  size 25.89 -> 25.89 MB (x1.000)  status OK,OK,OK
+dacapo-xalan             FULL/BASE  parent wall 17.3 -> 35.9 s (x2.07)  Peak RSS 2.44 -> 3.01 GB (x1.23)  child VmHWM 3.95 GB  size 36.57 -> 36.70 MB (x1.004)  status OK,OK,OK
+dacapo-zxing             FULL/BASE  parent wall 18.0 -> 35.3 s (x1.96)  Peak RSS 2.38 -> 2.90 GB (x1.22)  child VmHWM 3.63 GB  size 41.36 -> 41.42 MB (x1.002)  status OK,OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-batik             FULL SBS=1 SV=219 (ACC=162 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-fop               FULL SBS=13 SV=847 (ACC=607 ELEM=14) LS=2 (JOINER=0)  OK
+dacapo-pmd               FULL SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+dacapo-avrora            FULL SBS=13 SV=401 (ACC=372 ELEM=3) LS=0 (JOINER=0)  OK
+dacapo-xalan             FULL SBS=1 SV=225 (ACC=141 ELEM=0) LS=0 (JOINER=0)  OK
+dacapo-zxing             FULL SBS=1 SV=186 (ACC=145 ELEM=2) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+  (all OK)
+## determinism: dacapo-batik FULL: admit counts differ across builds; dacapo-fop FULL: admit counts differ across builds
+TABLES-DONE

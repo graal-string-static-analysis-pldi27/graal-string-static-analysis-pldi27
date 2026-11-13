@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/jackson-rb1  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+jackson                  BASE b1 size 27.07/28.69/12.13/13.37 | parent 15.4 s 2.44 GB | driver 16.0 s REUSED
+jackson                  BASE b2 size 27.07/28.69/12.13/13.37 | parent 15.2 s 2.45 GB | driver 15.9 s REUSED
+jackson                  FULL b1 size 27.07/28.69/12.18/13.37 | parent 33.5 s 2.61 GB | driver 34.1 s | OK | child aa 13530 ms gen 16.3 s obs 17 s VmHWM 5.40 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL b2 size 27.07/28.69/12.18/13.37 | parent 33.4 s 2.57 GB | driver 34.1 s | OK | child aa 13359 ms gen 16.7 s obs 17 s VmHWM 5.18 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  BASE_A32 b1 size 26.81/28.43/11.88/13.37 | parent 15.4 s 2.44 GB | driver 16.1 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  BASE_A32 b2 size 26.81/28.43/11.88/13.37 | parent 15.6 s 2.49 GB | driver 16.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  FULL_A32 b1 size 26.81/28.43/11.93/13.37 | parent 33.3 s 2.60 GB | driver 33.9 s | OK | child aa 14039 ms gen 16.9 s obs 17 s VmHWM 5.30 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL_A32 b2 size 26.81/28.43/11.93/13.37 | parent 33.2 s 2.59 GB | driver 33.9 s | OK | child aa 13616 ms gen 16.4 s obs 17 s VmHWM 5.31 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  BASE_A128 b1 size 27.59/29.21/12.76/13.30 | parent 15.7 s 2.45 GB | driver 16.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  BASE_A128 b2 size 27.59/29.21/12.76/13.30 | parent 15.6 s 2.49 GB | driver 16.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  FULL_A128 b1 size 27.72/29.35/12.81/13.37 | parent 33.3 s 2.60 GB | driver 34.0 s | OK | child aa 13454 ms gen 16.3 s obs 16 s VmHWM 5.32 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL_A128 b2 size 27.72/29.35/12.81/13.37 | parent 33.6 s 2.63 GB | driver 34.2 s | OK | child aa 13712 ms gen 16.5 s obs 16 s VmHWM 5.41 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  BASE_A256 b1 size 28.97/30.59/14.11/13.30 | parent 15.7 s 2.48 GB | driver 16.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  BASE_A256 b2 size 28.97/30.59/14.11/13.30 | parent 15.6 s 2.45 GB | driver 16.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+jackson                  FULL_A256 b1 size 29.03/30.66/14.16/13.30 | parent 33.3 s 2.59 GB | driver 34.0 s | OK | child aa 13487 ms gen 16.3 s obs 17 s VmHWM 5.30 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+jackson                  FULL_A256 b2 size 29.03/30.66/14.16/13.30 | parent 33.4 s 2.68 GB | driver 34.0 s | OK | child aa 13518 ms gen 16.9 s obs 17 s VmHWM 5.26 GB | wait 16.5 s | SBS=2 SV=168(ACC=130 ELEM=6) LS=0(JOINER=0) | IC=4734 TC=440 MIRROR=75 EXACT=0 other=2 REUSED
+## build cost vs stock (means over builds)
+jackson                  FULL/BASE  parent wall 15.3 -> 33.5 s (x2.19)  Peak RSS 2.45 -> 2.59 GB (x1.06)  child VmHWM 5.29 GB  size 27.07 -> 27.07 MB (x1.000)  status OK,OK
+jackson                  BASE_A32/BASE  parent wall 15.3 -> 15.5 s (x1.01)  Peak RSS 2.45 -> 2.46 GB (x1.01)  child VmHWM ? GB  size 27.07 -> 26.81 MB (x0.990)  status NO-PROFILE,NO-PROFILE
+jackson                  FULL_A32/BASE  parent wall 15.3 -> 33.2 s (x2.17)  Peak RSS 2.45 -> 2.59 GB (x1.06)  child VmHWM 5.31 GB  size 27.07 -> 26.81 MB (x0.990)  status OK,OK
+jackson                  BASE_A128/BASE  parent wall 15.3 -> 15.6 s (x1.02)  Peak RSS 2.45 -> 2.47 GB (x1.01)  child VmHWM ? GB  size 27.07 -> 27.59 MB (x1.019)  status NO-PROFILE,NO-PROFILE
+jackson                  FULL_A128/BASE  parent wall 15.3 -> 33.5 s (x2.19)  Peak RSS 2.45 -> 2.62 GB (x1.07)  child VmHWM 5.37 GB  size 27.07 -> 27.72 MB (x1.024)  status OK,OK
+jackson                  BASE_A256/BASE  parent wall 15.3 -> 15.6 s (x1.02)  Peak RSS 2.45 -> 2.46 GB (x1.01)  child VmHWM ? GB  size 27.07 -> 28.97 MB (x1.070)  status NO-PROFILE,NO-PROFILE
+jackson                  FULL_A256/BASE  parent wall 15.3 -> 33.3 s (x2.18)  Peak RSS 2.45 -> 2.63 GB (x1.08)  child VmHWM 5.28 GB  size 27.07 -> 29.03 MB (x1.073)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+jackson                  FULL SBS=2 SV=168 (ACC=130 ELEM=6) LS=0 (JOINER=0)  OK
+jackson                  BASE_A32 no profile  NO-PROFILE
+jackson                  FULL_A32 SBS=2 SV=168 (ACC=130 ELEM=6) LS=0 (JOINER=0)  OK
+jackson                  BASE_A128 no profile  NO-PROFILE
+jackson                  FULL_A128 SBS=2 SV=168 (ACC=130 ELEM=6) LS=0 (JOINER=0)  OK
+jackson                  BASE_A256 no profile  NO-PROFILE
+jackson                  FULL_A256 SBS=2 SV=168 (ACC=130 ELEM=6) LS=0 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+jackson                  BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.1 s
+jackson                  BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.2 s
+jackson                  BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.3 s
+jackson                  BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.2 s
+jackson                  BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.3 s
+jackson                  BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.2 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

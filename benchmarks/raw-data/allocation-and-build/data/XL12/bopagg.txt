@@ -1,0 +1,16 @@
+# XL12  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+fastjson2                FULL   |   0.993   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 5/5 | 0 | 0
+jackson-yaml             FULL   |   1.006   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 2/2 | 0 | 0
+
+## XL12 fastjson2 FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+EishayParseString.fastjson2                                   11.47  11.30   0.99    3961.4    3961.4  1.000   19.2   19.0
+EishayParseTreeString.fastjson2                               25.53  25.11   0.99    3754.3    3754.4  1.000   40.5   40.1
+EishayWriteString.fastjson2                                   23.72  24.42   1.04    1321.3    1321.3  1.000   13.2   13.7
+EishayWriteStringTree.fastjson2                               36.37  36.28   1.01    1017.3    1017.1  1.000   15.6   15.7
+TwitterParseString.fastjson2                                   2.91   2.87   1.00    9355.8    9355.4  1.000   11.5   11.4
+
+## XL12 jackson-yaml FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+YAMLStdReadVanilla.readPojoMediaItem                          39.21  39.67   1.00   64740.5   64739.6  1.000   69.1   69.5
+YAMLStdWriteVanilla.writePojoMediaItem                        60.79  60.33   0.98   18680.4   18681.8  1.000   30.9   30.5
+

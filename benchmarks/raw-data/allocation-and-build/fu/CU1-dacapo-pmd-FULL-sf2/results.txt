@@ -1,0 +1,36 @@
+# C99 campaign results  SLOT=CU1  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CU1-dacapo-pmd-FULL-sf2  CFGS=BASE FULL  runs/build=2  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+# PROTO=uniform UW=3 UM=5 US=2 JP_UNIT=block: non-JMH rows: time key = mean of the measured iterations per start, "[cold]" = iteration 1 (verdict, not in the geomeans), ~alloc MB/iter = process allocation / iterations
+
+## dacapo-pmd  [metric] DaCapo pmd (C99 deploy)  builds BASE:3 FULL:3  starts parsed=24
+  GEOMEAN FULL/BASE  time 0.989 [0.976,1.001] n.s. (1 keys)  alloc 1.000 [1.000,1.000] n.s. (1 keys)
+  iteration ms                                                           FULL 0.989 [0.976,1.001] n.s.  BIMODAL(FULL)
+  iteration ms [cold]                                                    FULL 1.000 [0.986,1.015] n.s.
+  ~alloc MB/iter                                                         FULL 1.000 [1.000,1.000] n.s.  BIMODAL(BASE,FULL)
+  ~rss MB                                                                FULL 1.009 [0.962,1.056] n.s.
+
+## frequency: 24 cold start(s) off 3.0 GHz by > 2 % or without perf data:
+  dacapo-pmd-BASE-b1-r1-main-j1 2.898
+  dacapo-pmd-BASE-b1-r1-main-j2 2.899
+  dacapo-pmd-BASE-b1-r2-main-j1 2.900
+  dacapo-pmd-BASE-b1-r2-main-j2 2.900
+  dacapo-pmd-BASE-b2-r1-main-j1 2.901
+  dacapo-pmd-BASE-b2-r1-main-j2 2.902
+  dacapo-pmd-BASE-b2-r2-main-j1 2.902
+  dacapo-pmd-BASE-b2-r2-main-j2 2.902
+  dacapo-pmd-BASE-b3-r1-main-j1 2.901
+  dacapo-pmd-BASE-b3-r1-main-j2 2.901
+  dacapo-pmd-BASE-b3-r2-main-j1 2.903
+  dacapo-pmd-BASE-b3-r2-main-j2 2.901
+  dacapo-pmd-FULL-b1-r1-main-j1 2.902
+  dacapo-pmd-FULL-b1-r1-main-j2 2.902
+  dacapo-pmd-FULL-b1-r2-main-j1 2.901
+  dacapo-pmd-FULL-b1-r2-main-j2 2.902
+  dacapo-pmd-FULL-b2-r1-main-j1 2.902
+  dacapo-pmd-FULL-b2-r1-main-j2 2.902
+  dacapo-pmd-FULL-b2-r2-main-j1 2.902
+  dacapo-pmd-FULL-b2-r2-main-j2 2.901
+  dacapo-pmd-FULL-b3-r1-main-j1 2.902
+  dacapo-pmd-FULL-b3-r1-main-j2 2.903
+  dacapo-pmd-FULL-b3-r2-main-j1 2.903
+  dacapo-pmd-FULL-b3-r2-main-j2 2.903
+SUMMARY-DONE

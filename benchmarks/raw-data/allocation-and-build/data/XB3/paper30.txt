@@ -1,0 +1,21 @@
+# paper30 /home/anonymous/graal-string-analysis/benchmarks/cycle100/final/out/XB3  CFGS=BASE SBS SV LS  RPB=1  (a run = one timed process start; row value per start = geomean over time keys of value/BASE mean, > 1 = slower)
+
+## commons-csv  starts BASE:3 SBS:3 SV:3 LS:3  time keys 7
+  SBS/BASE time  ratio 0.9875  (mean SBS 0.9872 n=3, BASE 0.9996 n=3)  error margin 0.0152 (max sd)  paper-significance n.s.
+  SBS/BASE alloc ratio 1.0065  (mean SBS 1.0065 n=3, BASE 1.0000 n=3)  error margin 0.0112 (max sd)  paper-significance n.s.
+  SV/BASE time  ratio 0.9754  (mean SV 0.9751 n=3, BASE 0.9996 n=3)  error margin 0.0152 (max sd)  paper-significance n.s.
+  SV/BASE alloc ratio 0.9931  (mean SV 0.9931 n=3, BASE 1.0000 n=3)  error margin 0.0112 (max sd)  paper-significance n.s.
+  LS/BASE time  ratio 0.9903  (mean LS 0.9899 n=3, BASE 0.9996 n=3)  error margin 0.0152 (max sd)  paper-significance n.s.
+  LS/BASE alloc ratio 1.0065  (mean LS 1.0065 n=3, BASE 1.0000 n=3)  error margin 0.0112 (max sd)  paper-significance n.s.
+  SBS/BASE iter  ratio 0.9875  (mean SBS 0.9871 n=30 iterations, BASE 0.9996 n=30)  error margin 0.0128 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+  SV/BASE iter  ratio 0.9754  (mean SV 0.9751 n=30 iterations, BASE 0.9996 n=30)  error margin 0.0128 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+  LS/BASE iter  ratio 0.9903  (mean LS 0.9899 n=30 iterations, BASE 0.9996 n=30)  error margin 0.0128 (max sd)  paper-significance n.s.  [JMH: run = measured iteration, 7 keys]
+    key CSVBenchmark.parseCommonsCSV                                 BASE 2605.91 sd 38.5  SBS 2610.85 sd 65  SV 2659.94 sd 71.2  LS 2611.43 sd 26.8  [lower]
+    key CSVBenchmark.parseGenJavaCSV                                 BASE 8843.42 sd 90.1  SBS 8854.46 sd 72.2  SV 7914.97 sd 60  LS 8962.15 sd 239  [lower]
+    key CSVBenchmark.parseJavaCSV                                    BASE 1180.29 sd 2.98  SBS 1187.15 sd 2.94  SV 1175.35 sd 2.81  LS 1184.1 sd 4.46  [lower]
+    key CSVBenchmark.parseOpenCSV                                    BASE 2030.86 sd 16.2  SBS 1975.76 sd 17.9  SV 1990.82 sd 8.3  LS 2021.81 sd 16.4  [lower]
+    key CSVBenchmark.parseSuperCSV                                   BASE 2236.65 sd 18.4  SBS 2248.27 sd 45.4  SV 2260.22 sd 8.95  LS 2239.41 sd 32.1  [lower]
+    key CSVBenchmark.read                                            BASE 245.212 sd 23.6  SBS 227.93 sd 1.46  SV 232.135 sd 0.589  LS 228.525 sd 3.28  [lower]
+    key CSVBenchmark.scan                                            BASE 1941.59 sd 9.87  SBS 1934.73 sd 16.4  SV 1907.52 sd 17.4  LS 1911.33 sd 16.3  [lower]
+
+PAPER30-DONE

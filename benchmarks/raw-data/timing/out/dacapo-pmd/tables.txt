@@ -1,0 +1,44 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/dacapo-pmd  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+dacapo-pmd               BASE b1 size 57.15/59.76/25.78/28.64 | parent 27.8 s 3.40 GB | driver 28.6 s REUSED
+dacapo-pmd               BASE b2 size 57.15/59.76/25.78/28.64 | parent 36.5 s 3.77 GB | driver 37.4 s REUSED
+dacapo-pmd               FULL b1 size 57.41/60.02/25.97/28.70 | parent 80.0 s 4.54 GB | driver 81.5 s | OK | child aa 42203 ms gen 45.3 s obs 44 s VmHWM 11.51 GB | wait 45.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL b2 size 57.41/60.02/25.97/28.70 | parent 105.0 s 4.52 GB | driver 106.1 s | OK | child aa 55165 ms gen 59.6 s obs 60 s VmHWM 11.87 GB | wait 60.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               BASE_A32 b1 size 56.69/59.30/25.34/28.64 | parent 40.6 s 3.52 GB | driver 41.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               BASE_A32 b2 size 56.69/59.30/25.34/28.64 | parent 42.0 s 3.53 GB | driver 43.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               FULL_A32 b1 size 56.95/59.57/25.54/28.70 | parent 113.0 s 5.10 GB | driver 114.1 s | OK | child aa 65227 ms gen 70.0 s obs 71 s VmHWM 11.97 GB | wait 70.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL_A32 b2 size 56.95/59.57/25.54/28.70 | parent 132.0 s 5.09 GB | driver 134.1 s | OK | child aa 72929 ms gen 80.0 s obs 79 s VmHWM 12.35 GB | wait 80.2 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               BASE_A128 b1 size 58.26/60.87/26.88/28.64 | parent 47.0 s 3.85 GB | driver 48.3 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               BASE_A128 b2 size 58.26/60.87/26.88/28.64 | parent 50.4 s 3.41 GB | driver 51.7 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               FULL_A128 b1 size 58.46/61.07/27.08/28.70 | parent 120.0 s 5.25 GB | driver 122.0 s | OK | child aa 65420 ms gen 69.0 s obs 68 s VmHWM 11.43 GB | wait 69.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL_A128 b2 size 58.46/61.07/27.08/28.70 | parent 128.0 s 4.97 GB | driver 129.7 s | OK | child aa 68685 ms gen 73.0 s obs 73 s VmHWM 12.15 GB | wait 73.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               BASE_A256 b1 size 60.56/63.16/29.29/28.57 | parent 39.0 s 3.55 GB | driver 40.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               BASE_A256 b2 size 60.56/63.16/29.29/28.57 | parent 43.2 s 3.33 GB | driver 44.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+dacapo-pmd               FULL_A256 b1 size 60.82/63.43/29.49/28.64 | parent 128.0 s 4.66 GB | driver 130.2 s | OK | child aa 61429 ms gen 64.0 s obs 65 s VmHWM 12.02 GB | wait 64.6 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+dacapo-pmd               FULL_A256 b2 size 60.82/63.43/29.49/28.64 | parent 126.0 s 4.50 GB | driver 127.6 s | OK | child aa 73307 ms gen 78.0 s obs 78 s VmHWM 11.50 GB | wait 78.1 s | SBS=8 SV=864(ACC=661 ELEM=25) LS=8(JOINER=0) | IC=11886 TC=973 MIRROR=465 EXACT=4 other=65 REUSED
+## build cost vs stock (means over builds)
+dacapo-pmd               FULL/BASE  parent wall 32.1 -> 92.5 s (x2.88)  Peak RSS 3.58 -> 4.53 GB (x1.26)  child VmHWM 11.69 GB  size 57.15 -> 57.41 MB (x1.005)  status OK,OK
+dacapo-pmd               BASE_A32/BASE  parent wall 32.1 -> 41.3 s (x1.28)  Peak RSS 3.58 -> 3.52 GB (x0.98)  child VmHWM ? GB  size 57.15 -> 56.69 MB (x0.992)  status NO-PROFILE,NO-PROFILE
+dacapo-pmd               FULL_A32/BASE  parent wall 32.1 -> 122.5 s (x3.81)  Peak RSS 3.58 -> 5.09 GB (x1.42)  child VmHWM 12.16 GB  size 57.15 -> 56.95 MB (x0.997)  status OK,OK
+dacapo-pmd               BASE_A128/BASE  parent wall 32.1 -> 48.7 s (x1.51)  Peak RSS 3.58 -> 3.63 GB (x1.01)  child VmHWM ? GB  size 57.15 -> 58.26 MB (x1.019)  status NO-PROFILE,NO-PROFILE
+dacapo-pmd               FULL_A128/BASE  parent wall 32.1 -> 124.0 s (x3.86)  Peak RSS 3.58 -> 5.11 GB (x1.43)  child VmHWM 11.79 GB  size 57.15 -> 58.46 MB (x1.023)  status OK,OK
+dacapo-pmd               BASE_A256/BASE  parent wall 32.1 -> 41.1 s (x1.28)  Peak RSS 3.58 -> 3.44 GB (x0.96)  child VmHWM ? GB  size 57.15 -> 60.56 MB (x1.060)  status NO-PROFILE,NO-PROFILE
+dacapo-pmd               FULL_A256/BASE  parent wall 32.1 -> 127.0 s (x3.95)  Peak RSS 3.58 -> 4.58 GB (x1.28)  child VmHWM 11.76 GB  size 57.15 -> 60.82 MB (x1.064)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+dacapo-pmd               FULL SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+dacapo-pmd               BASE_A32 no profile  NO-PROFILE
+dacapo-pmd               FULL_A32 SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+dacapo-pmd               BASE_A128 no profile  NO-PROFILE
+dacapo-pmd               FULL_A128 SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+dacapo-pmd               BASE_A256 no profile  NO-PROFILE
+dacapo-pmd               FULL_A256 SBS=8 SV=864 (ACC=661 ELEM=25) LS=8 (JOINER=0)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+dacapo-pmd               BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 41.8 s
+dacapo-pmd               BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 43.4 s
+dacapo-pmd               BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 48.3 s
+dacapo-pmd               BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 51.7 s
+dacapo-pmd               BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 40.8 s
+dacapo-pmd               BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 44.2 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

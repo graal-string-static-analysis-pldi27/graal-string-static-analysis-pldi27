@@ -1,0 +1,10 @@
+KIND	metric
+ARMS	main
+NSTART	1
+RECIPE	/home/anonymous/graal-string-analysis/benchmarks/cycle99/campaign/rows/lucene-bytask.sh
+DESC	Lucene byTask indexLineFile 2M enwiki lines (recheck s2 recipe)
+CPUS	0-15
+METRIC	main	addDoc s r1 | lower | both | 1 | ^AddDocR1_Exhaust[\s-]+\d+[\s-]+\d+[\s-]+[\d,]+[\s-]+[\d,.]+[\s-]+([\d,.]+)
+METRIC	main	addDoc s r2 | lower | both | 1 | ^AddDocR2_Exhaust[\s-]+\d+[\s-]+\d+[\s-]+[\d,]+[\s-]+[\d,.]+[\s-]+([\d,.]+)
+METRIC	main	addDoc s r0 (warm-up) | info | both | 1 | ^AddDocR0_Exhaust[\s-]+\d+[\s-]+\d+[\s-]+[\d,]+[\s-]+[\d,.]+[\s-]+([\d,.]+)
+METRIC	main	wall s | info | wall | 1 | 

@@ -1,0 +1,26 @@
+# CL1  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+calcite                  FULL   |   1.006   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 2/2 | 0 | 0
+commons-csv              FULL   |   1.004   0.995   0.995 0.997[0.997,0.997]        0.997 | 0.995/0.995/0.995 | 7/7 | 0 | 1
+thymeleaf                FULL   |   0.959   0.959   0.959 0.958[0.958,0.959]        0.958 | 0.959/0.959/0.959 | 5/5 | 0 | 5
+
+## CL1 calcite FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+ParserBenchmark.parseCached comments=true,length=1000         49.23  48.58   0.99   54195.9   54188.7  1.000   26.7   26.2
+ParserBenchmark.parseNonCached comments=true,length=1000      50.77  51.42   1.01  144039.8  144037.4  1.000   73.3   73.8
+
+## CL1 commons-csv FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+CSVBenchmark.parseCommonsCSV                                   5.34   5.30   1.00 1450040025.4 1450042545.5  1.000    8.8    8.7
+CSVBenchmark.parseGenJavaCSV                                   1.58   1.75   1.13 3940436935.1 3818118824.5  0.969    7.1    7.6
+CSVBenchmark.parseJavaCSV                                     11.88  11.80   1.01 1319852225.8 1313293716.3  0.995   17.9   17.6
+CSVBenchmark.parseOpenCSV                                      6.94   7.03   1.02 2532534573.1 2532540080.4  1.000   20.0   20.2
+CSVBenchmark.parseSuperCSV                                     6.30   6.22   1.00 1659006056.3 1659003499.0  1.000   11.9   11.7
+CSVBenchmark.read                                             60.80  60.70   1.01 276191552.6 276191084.6  1.000   19.2   19.0
+CSVBenchmark.scan                                              7.18   7.20   1.01 1845305715.4 1845303897.8  1.000   15.1   15.1
+
+## CL1 thymeleaf FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+GTVGHome.benchmark                                            27.37  27.32   0.99   26352.1   25078.3  0.952   20.8   20.6
+GTVGOrderDetails.benchmark                                    19.64  19.66   0.99   33521.9   32238.8  0.962   18.9   19.0
+GTVGOrderList.benchmark                                       18.41  18.43   0.99   35836.8   34522.8  0.963   19.0   19.1
+GTVGProductComments.benchmark                                 31.46  31.47   0.99   24396.0   23180.0  0.950   22.1   21.9
+GTVGProductList.benchmark                                      3.12   3.12   0.99  214243.6  207235.8  0.967   19.2   19.4
+

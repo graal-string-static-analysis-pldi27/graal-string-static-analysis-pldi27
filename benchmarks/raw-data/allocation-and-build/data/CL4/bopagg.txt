@@ -1,0 +1,44 @@
+# CL4  ZERO=1.0 B/op  builds measured: ['1', '2', '3']
+row                      cfg    |     CUR       A      A0 B [t-CI BASE runs]          BF | A per build   | keys n/allocating | up>2% | down<-2%
+jackson                  FULL   |   0.998   1.000   1.000 1.000[1.000,1.000]        1.000 | 1.000/1.000/1.000 | 15/15 | 0 | 0
+opennlp                  FULL   |   1.019   1.006   1.006 1.005[1.005,1.005]        1.005 | 1.002/1.005/1.011 | 9/9 | 2 | 0
+pdfbox                   FULL   |   0.990   0.990   0.990 0.990[0.990,0.990]        0.990 | 0.998/0.998/0.975 | 2/2 | 0 | 0
+snakeyaml                FULL   |   1.003   0.996   0.996 0.997[0.996,0.997]        0.997 | 1.005/0.986/0.997 | 3/3 | 0 | 0
+
+## CL4 jackson FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+JsonStdReadVanilla.readUntypedCitmCatalog                      0.01   0.01   0.99 6881341.1 6879267.5  1.000   10.0    9.8
+JsonStdReadVanilla.readUntypedMediaItem                       10.76  10.94   1.03    5331.2    5330.7  1.000    8.3    8.4
+JsonStdReadVanilla.readUntypedMenu                            19.25  20.05   1.05    4592.9    4595.3  1.001   12.8   13.3
+JsonStdReadVanilla.readUntypedWebxml                           2.69   2.93   1.10   15153.0   15153.3  1.000    5.9    6.4
+JsonStringReadVanilla.readCurrencyPojoDefault                  0.77   0.77   1.01   38165.3   38162.6  1.000    4.3    4.3
+JsonStringReadVanilla.readCurrencyPojoFast                     1.13   1.13   1.01   19788.8   19784.1  1.000    3.2    3.2
+JsonStringReadVanilla.readNodeCitmCatalog                      0.00   0.00   0.98 6250576.8 6231397.7  0.997    2.6    2.5
+JsonStringReadVanilla.readNodeMediaItem                        9.40   9.19   0.99    5667.2    5666.9  1.000    7.7    7.5
+JsonStringReadVanilla.readNodeMenu                            17.35  16.96   0.99    4675.9    4676.0  1.000   11.7   11.5
+JsonStringReadVanilla.readNodeWebxml                           1.87   1.82   0.98   16630.9   16631.9  1.000    4.5    4.4
+JsonStringReadVanilla.readPojoMediaItem                        7.87   7.92   1.01    3185.4    3184.9  1.000    3.6    3.7
+JsonStringReadVanilla.readUntypedCitmCatalog                   0.00   0.00   0.99 6870058.0 6883000.5  1.002    2.9    2.9
+JsonStringReadVanilla.readUntypedMediaItem                     9.56   9.48   1.00    5187.1    5186.5  1.000    7.2    7.1
+JsonStringReadVanilla.readUntypedMenu                         17.43  16.96   0.98    4451.3    4454.1  1.001   11.2   10.9
+JsonStringReadVanilla.readUntypedWebxml                        1.89   1.84   0.98   15006.8   15000.2  1.000    4.1    4.0
+
+## CL4 opennlp FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:POSTaggerMEBenchmark.instancePerThread                       3.28   3.37   1.01  468158.0  472557.9  1.009   17.9   18.2
+M:POSTaggerMEBenchmark.newInstancePerCall                      0.77   0.79   1.01 1493310.0 1492809.4  1.000   13.4   13.4
+M:POSTaggerMEBenchmark.sharedInstance                          3.25   3.34   1.01  468774.4  471480.8  1.006   17.8   18.0
+M:SentenceDetectorMEBenchmark.instancePerThread               16.23  15.67   0.95   38936.6   39712.9  1.020    7.4    7.1
+M:SentenceDetectorMEBenchmark.newInstancePerCall              16.05  15.55   0.95   40085.2   40945.9  1.021    7.5    7.3
+M:SentenceDetectorMEBenchmark.sharedInstance                  16.10  15.63   0.96   38862.5   39669.9  1.021    7.3    7.1
+M:TokenizerMEBenchmark.instancePerThread                      14.90  15.37   1.02   55087.5   54589.2  0.991    9.6    9.6
+M:TokenizerMEBenchmark.newInstancePerCall                     14.58  14.94   1.01   56911.4   56490.7  0.993    9.7    9.7
+M:TokenizerMEBenchmark.sharedInstance                         14.83  15.34   1.02   55050.7   54577.9  0.991    9.5    9.6
+
+## CL4 pdfbox FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+TextExtraction.extractPDFSpecSorted                           48.20  48.50   1.01 4209970239.9 4133986117.5  0.982   48.6   48.5
+TextExtraction.extractPDFSpecUnsorted                         51.80  51.50   0.99 4141317524.0 4130940343.0  0.997   51.4   51.5
+
+## CL4 snakeyaml FULL vs BASE: key | ops% BASE | ops% FULL | ops ratio | B/op BASE | B/op FULL | ratio | bytes% BASE | bytes% FULL
+M:EmitterBenchmark.emitScalar                                 99.95  99.95   0.94    2066.1    2070.5  1.002   48.4   48.4
+M:ParseBenchmark.load                                          0.02   0.02   0.98 4240245.1 4233399.6  0.998   18.2   18.9
+M:ParseBenchmark.parse                                         0.03   0.03   0.94 4668059.9 4608662.8  0.987   33.3   32.7
+

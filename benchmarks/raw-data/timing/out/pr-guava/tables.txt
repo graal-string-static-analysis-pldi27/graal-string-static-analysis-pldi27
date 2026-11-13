@@ -1,0 +1,84 @@
+# C99 campaign build tables  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle101/align/out/pr-guava  (build phase at normal CPU settings; sizes MB, walls s, RSS GB)
+## per build: size file/total/code/heap | parent wall, Peak RSS | driver wall | child afterAnalysis, gen, observed, VmHWM | wait | admits
+guava                    BASE b1 size 14.35/15.26/5.78/7.67 | parent 24.9 s 2.31 GB | driver 26.0 s REUSED
+guava                    BASE b2 size 14.35/15.26/5.78/7.67 | parent 23.4 s 2.27 GB | driver 24.9 s REUSED
+guava                    SBS  b1 size 14.35/15.26/5.78/7.67 | parent 43.0 s 2.45 GB | driver 44.1 s | ZERO-ADMIT | child aa 14207 ms gen 21.0 s obs 22 s VmHWM 2.99 GB | wait 21.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SBS  b2 size 14.35/15.26/5.78/7.67 | parent 51.9 s 2.50 GB | driver 53.0 s | ZERO-ADMIT | child aa 17467 ms gen 23.5 s obs 23 s VmHWM 2.96 GB | wait 24.1 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SV   b1 size 14.35/15.26/5.79/7.67 | parent 48.0 s 2.49 GB | driver 49.0 s | OK | child aa 15504 ms gen 21.7 s obs 21 s VmHWM 2.99 GB | wait 22.1 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    SV   b2 size 14.35/15.26/5.79/7.67 | parent 44.4 s 2.51 GB | driver 45.6 s | OK | child aa 14828 ms gen 19.3 s obs 19 s VmHWM 2.98 GB | wait 20.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    LS   b1 size 14.62/15.53/5.95/7.73 | parent 39.7 s 2.53 GB | driver 41.2 s | OK | child aa 7533 ms gen 13.4 s obs 13 s VmHWM 2.66 GB | wait 14.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    LS   b2 size 14.62/15.53/5.95/7.73 | parent 42.8 s 2.52 GB | driver 43.7 s | OK | child aa 12615 ms gen 18.5 s obs 18 s VmHWM 2.54 GB | wait 19.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    BASE_A32 b1 size 14.22/15.13/5.65/7.67 | parent 14.8 s 2.29 GB | driver 16.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    BASE_A32 b2 size 14.22/15.13/5.65/7.67 | parent 22.3 s 2.29 GB | driver 23.5 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    SBS_A32 b1 size 14.22/15.13/5.65/7.67 | parent 48.8 s 2.51 GB | driver 49.9 s | ZERO-ADMIT | child aa 16908 ms gen 23.4 s obs 22 s VmHWM 2.93 GB | wait 24.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SBS_A32 b2 size 14.22/15.13/5.65/7.67 | parent 44.3 s 2.49 GB | driver 45.5 s | ZERO-ADMIT | child aa 15264 ms gen 19.1 s obs 19 s VmHWM 3.03 GB | wait 19.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SV_A32 b1 size 14.22/15.13/5.66/7.67 | parent 45.9 s 2.54 GB | driver 46.9 s | OK | child aa 16567 ms gen 21.1 s obs 20 s VmHWM 2.95 GB | wait 21.5 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    SV_A32 b2 size 14.22/15.13/5.67/7.67 | parent 45.2 s 2.52 GB | driver 46.5 s | OK | child aa 13080 ms gen 20.6 s obs 20 s VmHWM 2.94 GB | wait 21.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    LS_A32 b1 size 14.49/15.39/5.82/7.73 | parent 41.1 s 2.51 GB | driver 42.5 s | OK | child aa 9350 ms gen 14.8 s obs 14 s VmHWM 2.68 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    LS_A32 b2 size 14.49/15.39/5.82/7.73 | parent 47.7 s 2.52 GB | driver 48.7 s | OK | child aa 13798 ms gen 19.9 s obs 19 s VmHWM 2.63 GB | wait 20.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    BASE_A128 b1 size 14.68/15.59/6.10/7.67 | parent 17.9 s 2.27 GB | driver 18.8 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    BASE_A128 b2 size 14.68/15.59/6.10/7.67 | parent 22.9 s 2.30 GB | driver 24.2 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    SBS_A128 b1 size 14.68/15.59/6.10/7.67 | parent 44.7 s 2.53 GB | driver 45.8 s | ZERO-ADMIT | child aa 15711 ms gen 21.3 s obs 21 s VmHWM 2.96 GB | wait 22.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SBS_A128 b2 size 14.68/15.59/6.10/7.67 | parent 46.2 s 2.49 GB | driver 47.2 s | ZERO-ADMIT | child aa 11304 ms gen 18.0 s obs 17 s VmHWM 2.95 GB | wait 18.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SV_A128 b1 size 14.68/15.59/6.11/7.67 | parent 37.9 s 2.54 GB | driver 39.1 s | OK | child aa 11433 ms gen 17.9 s obs 17 s VmHWM 2.96 GB | wait 18.5 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    SV_A128 b2 size 14.68/15.59/6.11/7.67 | parent 34.4 s 2.48 GB | driver 35.6 s | OK | child aa 8857 ms gen 14.2 s obs 14 s VmHWM 2.96 GB | wait 14.5 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    LS_A128 b1 size 14.88/15.79/6.26/7.67 | parent 39.3 s 2.49 GB | driver 40.5 s | OK | child aa 10233 ms gen 15.3 s obs 15 s VmHWM 2.67 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    LS_A128 b2 size 14.88/15.79/6.26/7.67 | parent 35.6 s 2.48 GB | driver 36.4 s | OK | child aa 10254 ms gen 15.2 s obs 15 s VmHWM 2.62 GB | wait 15.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    BASE_A256 b1 size 15.34/16.24/6.77/7.67 | parent 14.6 s 2.28 GB | driver 15.4 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    BASE_A256 b2 size 15.34/16.24/6.77/7.67 | parent 22.5 s 2.30 GB | driver 23.6 s | NO-PROFILE | child aa ? ms gen ? s obs ? s VmHWM ? GB | wait ? s | NO-PROFILE REUSED
+guava                    SBS_A256 b1 size 15.34/16.24/6.77/7.67 | parent 34.1 s 2.54 GB | driver 35.0 s | ZERO-ADMIT | child aa 9069 ms gen 12.3 s obs 13 s VmHWM 2.98 GB | wait 12.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SBS_A256 b2 size 15.34/16.24/6.77/7.67 | parent 36.1 s 2.52 GB | driver 37.6 s | ZERO-ADMIT | child aa 15493 ms gen 20.0 s obs 20 s VmHWM 2.99 GB | wait 20.5 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    SV_A256 b1 size 15.40/16.31/6.79/7.67 | parent 36.4 s 2.55 GB | driver 37.3 s | OK | child aa 14728 ms gen 21.0 s obs 20 s VmHWM 2.94 GB | wait 21.5 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    SV_A256 b2 size 15.40/16.31/6.79/7.67 | parent 39.1 s 2.52 GB | driver 40.0 s | OK | child aa 11850 ms gen 16.2 s obs 16 s VmHWM 2.96 GB | wait 17.0 s | SBS=0 SV=13(ACC=11 ELEM=0) LS=0(JOINER=0) | IC=2922 TC=237 MIRROR=6 EXACT=3 other=0 REUSED
+guava                    LS_A256 b1 size 15.53/16.44/6.95/7.67 | parent 33.8 s 2.44 GB | driver 35.1 s | OK | child aa 7500 ms gen 10.6 s obs 10 s VmHWM 2.63 GB | wait 11.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+guava                    LS_A256 b2 size 15.53/16.44/6.95/7.67 | parent 31.5 s 2.43 GB | driver 32.6 s | OK | child aa 9151 ms gen 12.7 s obs 13 s VmHWM 2.73 GB | wait 13.0 s | SBS=0 SV=0(ACC=0 ELEM=0) LS=6(JOINER=1) | IC=2922 TC=237 MIRROR=0 EXACT=0 other=0 REUSED
+## build cost vs stock (means over builds)
+guava                    SBS /BASE  parent wall 24.1 -> 47.5 s (x1.96)  Peak RSS 2.29 -> 2.48 GB (x1.08)  child VmHWM 2.97 GB  size 14.35 -> 14.35 MB (x1.000)  status ZERO-ADMIT,ZERO-ADMIT
+guava                    SV  /BASE  parent wall 24.1 -> 46.2 s (x1.91)  Peak RSS 2.29 -> 2.50 GB (x1.09)  child VmHWM 2.99 GB  size 14.35 -> 14.35 MB (x1.000)  status OK,OK
+guava                    LS  /BASE  parent wall 24.1 -> 41.2 s (x1.71)  Peak RSS 2.29 -> 2.52 GB (x1.10)  child VmHWM 2.60 GB  size 14.35 -> 14.62 MB (x1.018)  status OK,OK
+guava                    BASE_A32/BASE  parent wall 24.1 -> 18.6 s (x0.77)  Peak RSS 2.29 -> 2.29 GB (x1.00)  child VmHWM ? GB  size 14.35 -> 14.22 MB (x0.991)  status NO-PROFILE,NO-PROFILE
+guava                    SBS_A32/BASE  parent wall 24.1 -> 46.5 s (x1.93)  Peak RSS 2.29 -> 2.50 GB (x1.09)  child VmHWM 2.98 GB  size 14.35 -> 14.22 MB (x0.991)  status ZERO-ADMIT,ZERO-ADMIT
+guava                    SV_A32/BASE  parent wall 24.1 -> 45.5 s (x1.89)  Peak RSS 2.29 -> 2.53 GB (x1.10)  child VmHWM 2.95 GB  size 14.35 -> 14.22 MB (x0.991)  status OK,OK
+guava                    LS_A32/BASE  parent wall 24.1 -> 44.4 s (x1.84)  Peak RSS 2.29 -> 2.51 GB (x1.10)  child VmHWM 2.65 GB  size 14.35 -> 14.49 MB (x1.009)  status OK,OK
+guava                    BASE_A128/BASE  parent wall 24.1 -> 20.4 s (x0.84)  Peak RSS 2.29 -> 2.29 GB (x1.00)  child VmHWM ? GB  size 14.35 -> 14.68 MB (x1.023)  status NO-PROFILE,NO-PROFILE
+guava                    SBS_A128/BASE  parent wall 24.1 -> 45.5 s (x1.88)  Peak RSS 2.29 -> 2.51 GB (x1.10)  child VmHWM 2.96 GB  size 14.35 -> 14.68 MB (x1.023)  status ZERO-ADMIT,ZERO-ADMIT
+guava                    SV_A128/BASE  parent wall 24.1 -> 36.1 s (x1.50)  Peak RSS 2.29 -> 2.51 GB (x1.10)  child VmHWM 2.96 GB  size 14.35 -> 14.68 MB (x1.023)  status OK,OK
+guava                    LS_A128/BASE  parent wall 24.1 -> 37.5 s (x1.55)  Peak RSS 2.29 -> 2.49 GB (x1.09)  child VmHWM 2.65 GB  size 14.35 -> 14.88 MB (x1.037)  status OK,OK
+guava                    BASE_A256/BASE  parent wall 24.1 -> 18.6 s (x0.77)  Peak RSS 2.29 -> 2.29 GB (x1.00)  child VmHWM ? GB  size 14.35 -> 15.34 MB (x1.068)  status NO-PROFILE,NO-PROFILE
+guava                    SBS_A256/BASE  parent wall 24.1 -> 35.1 s (x1.45)  Peak RSS 2.29 -> 2.53 GB (x1.10)  child VmHWM 2.98 GB  size 14.35 -> 15.34 MB (x1.068)  status ZERO-ADMIT,ZERO-ADMIT
+guava                    SV_A256/BASE  parent wall 24.1 -> 37.8 s (x1.56)  Peak RSS 2.29 -> 2.54 GB (x1.11)  child VmHWM 2.95 GB  size 14.35 -> 15.40 MB (x1.073)  status OK,OK
+guava                    LS_A256/BASE  parent wall 24.1 -> 32.6 s (x1.35)  Peak RSS 2.29 -> 2.44 GB (x1.06)  child VmHWM 2.68 GB  size 14.35 -> 15.53 MB (x1.082)  status OK,OK
+## admits per rep kind (b1 profile; FULL/mode builds)
+guava                    SBS  SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+guava                    SV   SBS=0 SV=13 (ACC=11 ELEM=0) LS=0 (JOINER=0)  OK
+guava                    LS   SBS=0 SV=0 (ACC=0 ELEM=0) LS=6 (JOINER=1)  OK
+guava                    BASE_A32 no profile  NO-PROFILE
+guava                    SBS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+guava                    SV_A32 SBS=0 SV=13 (ACC=11 ELEM=0) LS=0 (JOINER=0)  OK
+guava                    LS_A32 SBS=0 SV=0 (ACC=0 ELEM=0) LS=6 (JOINER=1)  OK
+guava                    BASE_A128 no profile  NO-PROFILE
+guava                    SBS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+guava                    SV_A128 SBS=0 SV=13 (ACC=11 ELEM=0) LS=0 (JOINER=0)  OK
+guava                    LS_A128 SBS=0 SV=0 (ACC=0 ELEM=0) LS=6 (JOINER=1)  OK
+guava                    BASE_A256 no profile  NO-PROFILE
+guava                    SBS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=0 (JOINER=0)  ZERO-ADMIT
+guava                    SV_A256 SBS=0 SV=13 (ACC=11 ELEM=0) LS=0 (JOINER=0)  OK
+guava                    LS_A256 SBS=0 SV=0 (ACC=0 ELEM=0) LS=6 (JOINER=1)  OK
+## analysis status: builds not OK (FALLBACK = profile-less image, timed as is; ZERO-ADMIT = profile without SBS/SV/LS admits;
+##   GUARD-TRIP = evaluation guard tripped; NO-PROFILE = no retained profile)
+guava                    SBS  b1 ZERO-ADMIT               child obs 22 s VmHWM 2.99 GB | parent wait 21.5 s | driver wall 44.1 s
+guava                    SBS  b2 ZERO-ADMIT               child obs 23 s VmHWM 2.96 GB | parent wait 24.1 s | driver wall 53.0 s
+guava                    BASE_A32 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 16.2 s
+guava                    BASE_A32 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.5 s
+guava                    SBS_A32 b1 ZERO-ADMIT               child obs 22 s VmHWM 2.93 GB | parent wait 24.0 s | driver wall 49.9 s
+guava                    SBS_A32 b2 ZERO-ADMIT               child obs 19 s VmHWM 3.03 GB | parent wait 19.5 s | driver wall 45.5 s
+guava                    BASE_A128 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 18.8 s
+guava                    BASE_A128 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 24.2 s
+guava                    SBS_A128 b1 ZERO-ADMIT               child obs 21 s VmHWM 2.96 GB | parent wait 22.0 s | driver wall 45.8 s
+guava                    SBS_A128 b2 ZERO-ADMIT               child obs 17 s VmHWM 2.95 GB | parent wait 18.5 s | driver wall 47.2 s
+guava                    BASE_A256 b1 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 15.4 s
+guava                    BASE_A256 b2 NO-PROFILE               child obs ? s VmHWM ? GB | parent wait ? s | driver wall 23.6 s
+guava                    SBS_A256 b1 ZERO-ADMIT               child obs 13 s VmHWM 2.98 GB | parent wait 12.5 s | driver wall 35.0 s
+guava                    SBS_A256 b2 ZERO-ADMIT               child obs 20 s VmHWM 2.99 GB | parent wait 20.5 s | driver wall 37.6 s
+## determinism: admit counts identical across the builds of every config
+TABLES-DONE

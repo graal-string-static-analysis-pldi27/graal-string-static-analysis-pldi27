@@ -1,0 +1,10 @@
+# C99 campaign results  SLOT=CL5  OUT=/home/anonymous/graal-string-analysis/benchmarks/cycle100/final/fu/CL5-sql-formatter-FULL-fc1  CFGS=BASE FULL  runs/build=4  NBOOT=10000  (ratios config/BASE, time-normalized: > 1 = slower / more alloc; 95 % two-level bootstrap CI)
+
+## sql-formatter  [jmh] sql-formatter JMH Benchmark (hunt/ab candspec sqlformatter)  builds BASE:3 FULL:3  starts parsed=24
+  GEOMEAN FULL/BASE  time 0.996 [0.990,1.001] n.s. (1 keys)  alloc 0.991 [0.987,0.996] LESS (1 keys)
+  Benchmark.format                                                       FULL 0.996 [0.990,1.001] n.s.
+  ~alloc MB                                                              FULL 0.991 [0.987,0.996] LESS
+  ~rss MB                                                                FULL 0.996 [0.991,1.000] LESS
+
+## frequency: 0 cold start(s) off 3.0 GHz by > 2 % or without perf data
+SUMMARY-DONE
